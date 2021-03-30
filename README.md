@@ -83,7 +83,9 @@ For a detailed explanation on how things work, check out the [guide](http://vuej
 
 ### V1.0.0 版本，yyyy-mm-dd
 
-1. 新功能：aaaaaaaaa
-2. 新功能：bbbbbbbbb
-3. 修改：ccccccccc
-4. 修复：ddddddddd
+1. 新功能：飞机火车酒店查询下单
+2. 新功能：建立出差申请单
+3. 新功能：申请单，审批单，意向单，订单，行程单等查询
+5. 新功能：差旅报告展示
+6. 新功能：添加企业管理信息
+7. 新功能：个人中心
