@@ -1,0 +1,187 @@
+
+
+
+// 变量 less 
+/*
+例：
+ <div class="demo">
+    测试公共样式
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+ </div>
+
+ <style lang="less" scoped>
+  @import "../../../static/css/mixin.less";
+  .demo{
+    width: 1000px;
+    height:500px;
+    .mixin_scroll-default-style(30px);
+    .mixin_ellipsis(5);
+    .mixin_displayBox(column,flex-end,flex-start);
+    &>div{
+      margin-bottom: 50px;
+      .mixin_bottonTrue(100px,48px);
+    }
+    &>div:nth-child(2){
+      .mixin_bottonFalse(100px,48px);
+      .mixin_boxShow(@width:8px,@shad:red);
+    }
+    &>div:nth-child(3){
+      .mixin_boxShow()
+    }
+  }
+</style>
+
+
+*/ 
+// 文字
+.mixin_fontSize(@ft:14px,@cl:#666,@lh:14px){
+  font-size: @ft;
+  color: @cl;
+  line-height:@lh;
+}
+@scrollbar_color: #999;
+// 滚动条样式
+.mixin_scroll-default-style (@width: 2px) {
+  &::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 @width rgba(0, 0, 0, 0.15);
+    background-color: #fff;
+  }
+  &::-webkit-scrollbar {
+    width: @width;
+    background-color: #fff;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: @scrollbar_color !important;
+    border-radius: @width;
+    background-image: -webkit-linear-gradient(0deg, rgba(255, 255, 255, 0.5) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.5) 50%, rgba(255, 255, 255, 0.5) 75%, transparent 75%, transparent)
+  }
+}
+
+// 文本超出隐藏 @count为第几行开始隐藏
+.mixin_ellipsis(@count:1){
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: @count;
+  word-break: break-all;
+  overflow: hidden;
+  white-space: normal;
+}
+
+/*
+  flex布局
+  @fd: column row(默认)
+  @jc: flex-start flex-end space-around space-between center(默认)
+  @ai: flex-start flex-end center(默认)
+*/
+.mixin_displayBox(@fd:row,@jc:center,@ai:center){
+  display: flex;
+  flex-direction: @fd;
+  justify-content: @jc;
+  align-items: @ai;
+}
+
+// 水平垂直居中
+.mixin_vertical_center(@index:10) {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: @index;
+}
+
+// 过度动画+提交按钮
+.mixin_bottonTrue(@width:48px,@height:30px,@pd:10px,@time:0.5s,@bg:#3C85FD,@cl:#3C85FD,@fz:16px,@op:0.8){
+  width: @width;
+  height: @height;
+  padding: 0 @pd;
+  text-align: center;
+  line-height: @height;
+  font-size: @fz;
+  background: @bg;
+  color: #fff;
+  border: 1px solid @cl;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: @time;
+  -webkit-transition: @time;
+  -moz-transition: @time;
+  -ms-transition: @time;
+  -o-transition: @time;
+  &:hover{
+    opacity: @op;
+  }
+}
+
+// 过度动画+取消按钮
+.mixin_bottonFalse(@width:48px,@height:30px,@pd:10px,@time:0.5s,@bg:#3C85FD,@cl:#3C85FD,@fz:16px,@op:0.8){
+  width: @width;
+  height: @height;
+  padding: 0 @pd;
+  text-align: center;
+  line-height: @height;
+  font-size: @fz;
+  background: #fff;
+  color: @bg;
+  border: 1px solid @cl;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: @time;
+  -webkit-transition: @time;
+  -moz-transition: @time;
+  -ms-transition: @time;
+  -o-transition: @time;
+  &:hover{
+    opacity: @op;
+  }
+}
+// 类似导航栏点击事件
+.mixin_clickNav(@fz:14px,@bg:#666,@pd:0,@ba:#ddd){
+  line-height: @fz;
+  font-size: @fz;
+  background:@ba;
+  color: @bg;
+  padding:@pd;
+  cursor: pointer;
+
+}
+// 阴影
+.mixin_boxShow(@width:12px){
+  box-shadow: 0 2px @width 0  rgba(0, 0, 0, 0.1) !important;
+}
+
+// 过度动画+边框阴影
+.mixin_transitionShow(@time:0.5s,@width:12px,@shad:#409eff){
+  transition: @time;
+  -webkit-transition: @time;
+  box-shadow: 0 2px @width 0  rgba(0, 0, 0, 0.1) !important;
+  -moz-transition: @time;
+  -ms-transition: @time;
+  -o-transition: @time;
+  &:hover{
+    box-shadow: 0 2px @width 0 @shad !important;
+  }
+}
+
+// 3D文字效果
+.mixin_three-d (@cl:#fff){
+  color: @cl;
+  text-shadow: 0 1px 0 #86b1bf,
+               0 2px 0 #7da8b6,
+               0 3px 0 #749fad,
+               0 4px 0 #6b96a4,
+               0 5px 0 #527d8b,
+               0 6px 1px rgba(0, 0, 0, 0.1),
+               0 0 5px rgba(0, 0, 0, 0.1),
+               1px 1px 3px rgba(0, 0, 0, 0.3),
+               3px 3px 5px rgba(0, 0, 0, 0.2),
+               5px 5px 10px rgba(0, 0, 0, 0.25),
+               0 10px 10px rgba(0, 0, 0, 0.2),
+               0 20px 20px rgba(0, 0, 0, 0.15);
+}
+
+.retunbts:hover{
+  background: #ecf5ff!important;
+}
