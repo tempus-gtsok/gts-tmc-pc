@@ -13,7 +13,7 @@
 
 ## 二、使用说明
 
-测试账号： yunying001           密码：888888
+测试账号： yunying001           密码：tempus123
 
 ```
 # web-pc
@@ -75,7 +75,7 @@ For a detailed explanation on how things work, check out the [guide](http://vuej
 
 作者：腾邦国际商业服务集团有限公司
 
-联系方式：QQ:15998251
+QQ 交流群 ：588329775
 
 
 
