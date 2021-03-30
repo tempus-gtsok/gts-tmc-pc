@@ -73,7 +73,7 @@ For a detailed explanation on how things work, check out the [guide](http://vuej
 
 ## 四、关于作者
 
-作者：腾邦国际商业服务集团有限公司
+作者：腾邦国际商业服务集团股份有限公司
 
 QQ 交流群 ：588329775
 
