@@ -8,8 +8,7 @@
 ​    从功能上来说，既包括传统的机票、酒店、火车、用车、保险、MICE等业务模块，又包括企业内部审批、差旅规则定义、成本中心及财务管理等内控模块。
 ​    此外，腾邦商旅服务平台还提供可选的财务结算ERP、预算管理、经营管理、领导驾驶舱、BI、大数据分析实施等增强型工具。配套腾付通和腾邦保险经纪，为用户提供完整的产业链解决方案。
 
-![image-20210326105052245](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20210326105052245.png)
-
+![下载](https://user-images.githubusercontent.com/81606541/113075579-cb64c900-91ff-11eb-86cf-10c917c90879.png)
 
 ## 二、使用说明
 
