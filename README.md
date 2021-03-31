@@ -83,14 +83,37 @@ QQ 交流群 ：588329775
 ### V1.0.0 版本，yyyy-mm-dd
 
 1. 新功能：飞机火车酒店查询下单
+
 ![首页](https://user-images.githubusercontent.com/43610618/112942919-63f93b80-9163-11eb-9e0d-63376ec50d2d.jpg)
-2. 新功能：建立出差申请单
+
+2.新功能：机票查询预定
+
+![d51710189cec56b96caa553c178fc9a](https://user-images.githubusercontent.com/81606541/113079733-33b7a880-9208-11eb-94c1-0f5eea163c30.png)
+
+3.新功能：火车查询预定
+
+![b2fc1cf8d0dac0b569903b4a23a7056](https://user-images.githubusercontent.com/81606541/113079742-374b2f80-9208-11eb-98bb-b946868aa940.png)
+
+4.新功能：酒店查询预定
+
+![6b8337d5574b8b2285721f04dc5d9ab](https://user-images.githubusercontent.com/81606541/113079752-3adeb680-9208-11eb-821e-8a5df9d59ed5.png)
+
+5. 新功能：建立出差申请单
+
 ![出差申请](https://user-images.githubusercontent.com/43610618/112943598-4678a180-9164-11eb-86f8-d7bff92b07f1.jpg)
-3. 新功能：申请单，审批单，意向单，订单，行程单等查询
+
+6. 新功能：申请单，审批单，意向单，订单，行程单等查询
+
 ![我的审批单](https://user-images.githubusercontent.com/43610618/112943682-5f815280-9164-11eb-9bcd-0aafee94fb76.jpg)
-4. 新功能：差旅报告展示
+
+7. 新功能：差旅报告展示
+
 ![差旅报告](https://user-images.githubusercontent.com/43610618/112943844-9bb4b300-9164-11eb-89dd-bb4a95c97f92.jpg)
-5. 新功能：添加企业管理信息
+
+8. 新功能：添加企业管理信息
+
 ![企业管理](https://user-images.githubusercontent.com/43610618/112943952-c0a92600-9164-11eb-883a-9d96c8e4fa8d.jpg)
-6. 新功能：个人中心
+
+9. 新功能：个人中心
+
 ![个人中心](https://user-images.githubusercontent.com/43610618/112944067-e59d9900-9164-11eb-82d1-2f993d87f74c.jpg)
