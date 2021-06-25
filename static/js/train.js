@@ -80,14986 +80,15567 @@ const trains = {
 			"name": "厦门"
 		}
 	],
-	"addressTrainAll": [{
-			"Abbreviation": "msh",
-			"code": "mingshuihe",
-			"name": "明水河"
+	"addressTrainAll": [
+		{
+		  code: "beijingbei",
+		  name: "北京北",
+		  abbreviation: "bjb",
+		},
+		{
+		  code: "beijingdong",
+		  name: "北京东",
+		  abbreviation: "bjd",
+		},
+		{
+		  code: "beijing",
+		  name: "北京",
+		  abbreviation: "bji",
+		},
+		{
+		  code: "beijingnan",
+		  name: "北京南",
+		  abbreviation: "bjn",
+		},
+		{
+		  code: "beijingxi",
+		  name: "北京西",
+		  abbreviation: "bjx",
+		},
+		{
+		  code: "guangzhounan",
+		  name: "广州南",
+		  abbreviation: "gzn",
+		},
+		{
+		  code: "chongqingbei",
+		  name: "重庆北",
+		  abbreviation: "cqb",
+		},
+		{
+		  code: "chongqing",
+		  name: "重庆",
+		  abbreviation: "cqi",
+		},
+		{
+		  code: "chongqingnan",
+		  name: "重庆南",
+		  abbreviation: "cqn",
+		},
+		{
+		  code: "chongqingxi",
+		  name: "重庆西",
+		  abbreviation: "cqx",
+		},
+		{
+		  code: "guangzhoudong",
+		  name: "广州东",
+		  abbreviation: "gzd",
+		},
+		{
+		  code: "shanghai",
+		  name: "上海",
+		  abbreviation: "sha",
+		},
+		{
+		  code: "shanghainan",
+		  name: "上海南",
+		  abbreviation: "shn",
+		},
+		{
+		  code: "shanghaihongqiao",
+		  name: "上海虹桥",
+		  abbreviation: "shq",
+		},
+		{
+		  code: "shanghaixi",
+		  name: "上海西",
+		  abbreviation: "shx",
+		},
+		{
+		  code: "tianjinbei",
+		  name: "天津北",
+		  abbreviation: "tjb",
+		},
+		{
+		  code: "tianjin",
+		  name: "天津",
+		  abbreviation: "tji",
+		},
+		{
+		  code: "tianjinnan",
+		  name: "天津南",
+		  abbreviation: "tjn",
+		},
+		{
+		  code: "tianjinxi",
+		  name: "天津西",
+		  abbreviation: "tjx",
+		},
+		{
+		  code: "hkwestkowloon",
+		  name: "香港西九龙",
+		  abbreviation: "xgl",
+		},
+		{
+		  code: "changchun",
+		  name: "长春",
+		  abbreviation: "cch",
+		},
+		{
+		  code: "changchunnan",
+		  name: "长春南",
+		  abbreviation: "ccn",
+		},
+		{
+		  code: "changchunxi",
+		  name: "长春西",
+		  abbreviation: "ccx",
+		},
+		{
+		  code: "chengdudong",
+		  name: "成都东",
+		  abbreviation: "cdd",
+		},
+		{
+		  code: "chengdunan",
+		  name: "成都南",
+		  abbreviation: "cdn",
+		},
+		{
+		  code: "chengdu",
+		  name: "成都",
+		  abbreviation: "cdu",
+		},
+		{
+		  code: "chengduxi",
+		  name: "成都西",
+		  abbreviation: "cdx",
+		},
+		{
+		  code: "changsha",
+		  name: "长沙",
+		  abbreviation: "csh",
+		},
+		{
+		  code: "changshanan",
+		  name: "长沙南",
+		  abbreviation: "csn",
+		},
+		{
+		  code: "daminghu",
+		  name: "大明湖",
+		  abbreviation: "dmh",
+		},
+		{
+		  code: "fuzhou",
+		  name: "福州",
+		  abbreviation: "fzh",
+		},
+		{
+		  code: "fuzhounan",
+		  name: "福州南",
+		  abbreviation: "fzn",
+		},
+		{
+		  code: "guiyang",
+		  name: "贵阳",
+		  abbreviation: "gya",
+		},
+		{
+		  code: "guangzhou",
+		  name: "广州",
+		  abbreviation: "gzh",
+		},
+		{
+		  code: "guangzhouxi",
+		  name: "广州西",
+		  abbreviation: "gzx",
+		},
+		{
+		  code: "haerbin",
+		  name: "哈尔滨",
+		  abbreviation: "heb",
+		},
+		{
+		  code: "haerbindong",
+		  name: "哈尔滨东",
+		  abbreviation: "hed",
+		},
+		{
+		  code: "haerbinxi",
+		  name: "哈尔滨西",
+		  abbreviation: "hex",
+		},
+		{
+		  code: "hefei",
+		  name: "合肥",
+		  abbreviation: "hfe",
+		},
+		{
+		  code: "huhehaotedong",
+		  name: "呼和浩特东",
+		  abbreviation: "hhd",
+		},
+		{
+		  code: "huhehaote",
+		  name: "呼和浩特",
+		  abbreviation: "hht",
+		},
+		{
+		  code: "haikoudong",
+		  name: "海口东",
+		  abbreviation: "hkd",
+		},
+		{
+		  code: "haikou",
+		  name: "海口",
+		  abbreviation: "hko",
+		},
+		{
+		  code: "hangzhoudong",
+		  name: "杭州东",
+		  abbreviation: "hzd",
+		},
+		{
+		  code: "hangzhou",
+		  name: "杭州",
+		  abbreviation: "hzh",
+		},
+		{
+		  code: "hangzhounan",
+		  name: "杭州南",
+		  abbreviation: "hzn",
+		},
+		{
+		  code: "jinan",
+		  name: "济南",
+		  abbreviation: "jna",
+		},
+		{
+		  code: "jinan",
+		  name: "济  南",
+		  abbreviation: "jna",
+		},
+		{
+		  code: "jinanxi",
+		  name: "济南西",
+		  abbreviation: "jnx",
+		},
+		{
+		  code: "jinanxi",
+		  name: "济  南西",
+		  abbreviation: "jnx",
+		},
+		{
+		  code: "kunming",
+		  name: "昆明",
+		  abbreviation: "kmi",
+		},
+		{
+		  code: "kunmingxi",
+		  name: "昆明西",
+		  abbreviation: "kmx",
+		},
+		{
+		  code: "lasa",
+		  name: "拉萨",
+		  abbreviation: "lsa",
+		},
+		{
+		  code: "lanzhoudong",
+		  name: "兰州东",
+		  abbreviation: "lzd",
+		},
+		{
+		  code: "lanzhou",
+		  name: "兰州",
+		  abbreviation: "lzh",
+		},
+		{
+		  code: "lanzhouxi",
+		  name: "兰州西",
+		  abbreviation: "lzx",
+		},
+		{
+		  code: "nanchang",
+		  name: "南昌",
+		  abbreviation: "nch",
+		},
+		{
+		  code: "nanjing",
+		  name: "南京",
+		  abbreviation: "nji",
+		},
+		{
+		  code: "nanjingnan",
+		  name: "南京南",
+		  abbreviation: "njn",
 		},
 		{
-			"Abbreviation": "ls",
-			"code": "lushan1",
-			"name": "鲁山"
+		  code: "nanning",
+		  name: "南宁",
+		  abbreviation: "nni",
 		},
 		{
-			"Abbreviation": "bql",
-			"code": "baoquanling",
-			"name": "宝泉岭"
+		  code: "shijiazhuangbei",
+		  name: "石家庄北",
+		  abbreviation: "sjb",
 		},
 		{
-			"Abbreviation": "ksn",
-			"code": "kunshannan",
-			"name": "昆山南"
+		  code: "shijiazhuang",
+		  name: "石家庄",
+		  abbreviation: "sjz",
 		},
 		{
-			"Abbreviation": "yc",
-			"code": "yingchun",
-			"name": "迎春"
+		  code: "shushandong",
+		  name: "蜀山东",
+		  abbreviation: "ssd",
 		},
 		{
-			"Abbreviation": "ys",
-			"code": "yunshan",
-			"name": "云山"
+		  code: "shenyang",
+		  name: "沈阳",
+		  abbreviation: "sya",
 		},
 		{
-			"Abbreviation": "ypx",
-			"code": "yuanpingxi",
-			"name": "原平西"
+		  code: "shenyangbei",
+		  name: "沈阳北",
+		  abbreviation: "syb",
 		},
 		{
-			"Abbreviation": "nw",
-			"code": "ningwu",
-			"name": "宁武"
+		  code: "shenyangdong",
+		  name: "沈阳东",
+		  abbreviation: "syd",
 		},
 		{
-			"Abbreviation": "sxz",
-			"code": "shixiazi",
-			"name": "石峡子"
+		  code: "shenyangnan",
+		  name: "沈阳南",
+		  abbreviation: "syn",
 		},
 		{
-			"Abbreviation": "lc",
-			"code": "lincheng",
-			"name": "临城"
+		  code: "taiyuanbei",
+		  name: "太原北",
+		  abbreviation: "tyb",
 		},
 		{
-			"Abbreviation": "yq",
-			"code": "yanqi",
-			"name": "焉耆"
+		  code: "taiyuandong",
+		  name: "太原东",
+		  abbreviation: "tyd",
 		},
 		{
-			"Abbreviation": "hrd",
-			"code": "huarongdong",
-			"name": "华容东"
+		  code: "taiyuan",
+		  name: "太原",
+		  abbreviation: "tyu",
 		},
 		{
-			"Abbreviation": "nch",
-			"code": "niuchehe",
-			"name": "牛车河"
+		  code: "wuhan",
+		  name: "武汉",
+		  abbreviation: "wha",
 		},
 		{
-			"Abbreviation": "lg",
-			"code": "lugu",
-			"name": "麓谷"
+		  code: "wangjiayingxi",
+		  name: "王家营西",
+		  abbreviation: "wjx",
 		},
 		{
-			"Abbreviation": "cxn",
-			"code": "changxingnan",
-			"name": "长兴南"
+		  code: "wulumuqi",
+		  name: "乌鲁木齐",
+		  abbreviation: "wlq",
 		},
 		{
-			"Abbreviation": "gyd",
-			"code": "guiyangdong",
-			"name": "贵阳东"
+		  code: "xianbei",
+		  name: "西安北",
+		  abbreviation: "xab",
 		},
 		{
-			"Abbreviation": "wzz",
-			"code": "weizhangzi",
-			"name": "魏杖子"
+		  code: "xian",
+		  name: "西安",
+		  abbreviation: "xan",
 		},
 		{
-			"Abbreviation": "zs",
-			"code": "zhashui",
-			"name": "柞水"
+		  code: "xiannan",
+		  name: "西安南",
+		  abbreviation: "xan",
 		},
 		{
-			"Abbreviation": "ydh",
-			"code": "yundonghai",
-			"name": "云东海"
+		  code: "xining",
+		  name: "西宁",
+		  abbreviation: "xni",
 		},
 		{
-			"Abbreviation": "yx1",
-			"code": "yangxin1",
-			"name": "阳信"
+		  code: "yinchuan",
+		  name: "银川",
+		  abbreviation: "ych",
 		},
 		{
-			"Abbreviation": "tx",
-			"code": "tongxiang",
-			"name": "桐乡"
+		  code: "zhengzhou",
+		  name: "郑州",
+		  abbreviation: "zzh",
 		},
 		{
-			"Abbreviation": "wx",
-			"code": "weixing",
-			"name": "卫星"
+		  code: "aershan",
+		  name: "阿尔山",
+		  abbreviation: "aes",
 		},
 		{
-			"Abbreviation": "tl",
-			"code": "tieling",
-			"name": "铁岭"
+		  code: "ankang",
+		  name: "安康",
+		  abbreviation: "aka",
 		},
 		{
-			"Abbreviation": "sft",
-			"code": "sifangtai",
-			"name": "四方台"
+		  code: "akesu",
+		  name: "阿克苏",
+		  abbreviation: "aks",
 		},
 		{
-			"Abbreviation": "hs",
-			"code": "hengshan",
-			"name": "衡山"
+		  code: "alihe",
+		  name: "阿里河",
+		  abbreviation: "alh",
 		},
 		{
-			"Abbreviation": "qjz",
-			"code": "qinjiazhuang",
-			"name": "秦家庄"
+		  code: "alashankou",
+		  name: "阿拉山口",
+		  abbreviation: "alk",
 		},
 		{
-			"Abbreviation": "bsj",
-			"code": "baishuijiang",
-			"name": "白水江"
+		  code: "anping",
+		  name: "安平",
+		  abbreviation: "api",
 		},
 		{
-			"Abbreviation": "hl",
-			"code": "huangling",
-			"name": "黄陵"
+		  code: "anqing",
+		  name: "安庆",
+		  abbreviation: "aqi",
 		},
 		{
-			"Abbreviation": "wc",
-			"code": "wuchuan",
-			"name": "吴川"
+		  code: "anshun",
+		  name: "安顺",
+		  abbreviation: "ash",
 		},
 		{
-			"Abbreviation": "na",
-			"code": "ningan",
-			"name": "宁安"
+		  code: "anshan",
+		  name: "鞍山",
+		  abbreviation: "ash",
 		},
 		{
-			"Abbreviation": "bc",
-			"code": "bancheng",
-			"name": "板城"
+		  code: "anyang",
+		  name: "安阳",
+		  abbreviation: "aya",
 		},
 		{
-			"Abbreviation": "sj",
-			"code": "shenjia",
-			"name": "沈家"
+		  code: "beian",
+		  name: "北安",
+		  abbreviation: "ban",
 		},
 		{
-			"Abbreviation": "ly",
-			"code": "longyan",
-			"name": "龙岩"
+		  code: "bengbu",
+		  name: "蚌埠",
+		  abbreviation: "bbu",
 		},
 		{
-			"Abbreviation": "wnb",
-			"code": "weinanbei",
-			"name": "渭南北"
+		  code: "baicheng",
+		  name: "白城",
+		  abbreviation: "bch",
 		},
 		{
-			"Abbreviation": "byb",
-			"code": "baiyunbei",
-			"name": "白云北"
+		  code: "beihai",
+		  name: "北海",
+		  abbreviation: "bha",
 		},
 		{
-			"Abbreviation": "px",
-			"code": "pixian",
-			"name": "郫县"
+		  code: "baihe",
+		  name: "白河",
+		  abbreviation: "bhe",
 		},
 		{
-			"Abbreviation": "sh",
-			"code": "shanghe",
-			"name": "商河"
+		  code: "baoji",
+		  name: "宝鸡",
+		  abbreviation: "bji",
 		},
 		{
-			"Abbreviation": "ngd",
-			"code": "nangongdong",
-			"name": "南宫东"
+		  code: "baijian",
+		  name: "白涧",
+		  abbreviation: "bji",
 		},
 		{
-			"Abbreviation": "hsd",
-			"code": "huangshidong",
-			"name": "黄石东"
+		  code: "binjiang",
+		  name: "滨江",
+		  abbreviation: "bji",
 		},
 		{
-			"Abbreviation": "als",
-			"code": "alongshan",
-			"name": "阿龙山"
+		  code: "boketu",
+		  name: "博克图",
+		  abbreviation: "bkt",
 		},
 		{
-			"Abbreviation": "lh",
-			"code": "liuhe",
-			"name": "六合"
+		  code: "baise",
+		  name: "百色",
+		  abbreviation: "bse",
 		},
 		{
-			"Abbreviation": "slh",
-			"code": "shulehe",
-			"name": "疏勒河"
+		  code: "baishanshi",
+		  name: "白山市",
+		  abbreviation: "bss",
 		},
 		{
-			"Abbreviation": "lg",
-			"code": "longgou",
-			"name": "龙沟"
+		  code: "beitai",
+		  name: "北台",
+		  abbreviation: "bta",
 		},
 		{
-			"Abbreviation": "lyg",
-			"code": "lianyungang",
-			"name": "连云港"
+		  code: "baotoudong",
+		  name: "包头东",
+		  abbreviation: "btd",
 		},
 		{
-			"Abbreviation": "qwt",
-			"code": "qianweitang",
-			"name": "前苇塘"
+		  code: "baotou",
+		  name: "包头",
+		  abbreviation: "bto",
 		},
 		{
-			"Abbreviation": "kmx",
-			"code": "kunmingxi",
-			"name": "昆明西"
+		  code: "beitunshi",
+		  name: "北屯市",
+		  abbreviation: "bts",
 		},
 		{
-			"Abbreviation": "fs",
-			"code": "fengshun",
-			"name": "丰顺"
+		  code: "benxi",
+		  name: "本溪",
+		  abbreviation: "bxi",
 		},
 		{
-			"Abbreviation": "hk",
-			"code": "hukou",
-			"name": "湖口"
+		  code: "baiyunebo",
+		  name: "白云鄂博",
+		  abbreviation: "byb",
 		},
 		{
-			"Abbreviation": "em",
-			"code": "emin",
-			"name": "额敏"
+		  code: "baiyinxi",
+		  name: "白银西",
+		  abbreviation: "byx",
 		},
 		{
-			"Abbreviation": "xz",
-			"code": "xuzhou",
-			"name": "徐州"
+		  code: "bozhou",
+		  name: "亳州",
+		  abbreviation: "bzh",
 		},
 		{
-			"Abbreviation": "lc",
-			"code": "luchuan",
-			"name": "陆川"
+		  code: "chibi",
+		  name: "赤壁",
+		  abbreviation: "cbi",
 		},
 		{
-			"Abbreviation": "zkd",
-			"code": "zhoukoudong",
-			"name": "周口东"
+		  code: "changde",
+		  name: "常德",
+		  abbreviation: "cde",
 		},
 		{
-			"Abbreviation": "jnb",
-			"code": "junanbei",
-			"name": "莒南北"
+		  code: "chengde",
+		  name: "承德",
+		  abbreviation: "cde",
 		},
 		{
-			"Abbreviation": "tl",
-			"code": "tonglu",
-			"name": "桐庐"
+		  code: "changdian",
+		  name: "长甸",
+		  abbreviation: "cdi",
 		},
 		{
-			"Abbreviation": "sz",
-			"code": "shenzhou",
-			"name": "神州"
+		  code: "chifengnan",
+		  name: "赤峰南",
+		  abbreviation: "cfn",
 		},
 		{
-			"Abbreviation": "sn",
-			"code": "suining1",
-			"name": "睢宁"
+		  code: "chaling",
+		  name: "茶陵",
+		  abbreviation: "cli",
 		},
 		{
-			"Abbreviation": "hxl",
-			"code": "hongxinglong",
-			"name": "红兴隆"
+		  code: "cangnan",
+		  name: "苍南",
+		  abbreviation: "cna",
 		},
 		{
-			"Abbreviation": "lzd",
-			"code": "lanzhoudong",
-			"name": "兰州东"
+		  code: "changping",
+		  name: "昌平",
+		  abbreviation: "cpi",
 		},
 		{
-			"Abbreviation": "lc",
-			"code": "longchang",
-			"name": "隆昌"
+		  code: "chongren",
+		  name: "崇仁",
+		  abbreviation: "cre",
 		},
 		{
-			"Abbreviation": "bjs",
-			"code": "bijiashan",
-			"name": "笔架山"
+		  code: "changtu",
+		  name: "昌图",
+		  abbreviation: "ctu",
 		},
 		{
-			"Abbreviation": "hct",
-			"code": "heichongtan",
-			"name": "黑冲滩"
+		  code: "changtingzhen",
+		  name: "长汀镇",
+		  abbreviation: "ctz",
 		},
 		{
-			"Abbreviation": "zb",
-			"code": "zhaobai",
-			"name": "招柏"
+		  code: "caoxian",
+		  name: "曹县",
+		  abbreviation: "cxi",
 		},
 		{
-			"Abbreviation": "hsbb",
-			"code": "hongsibaobei",
-			"name": "红寺堡北"
+		  code: "chuxiongnan",
+		  name: "楚雄南",
+		  abbreviation: "cxn",
 		},
 		{
-			"Abbreviation": "yj",
-			"code": "yanjin",
-			"name": "盐津"
+		  code: "chenxiangtun",
+		  name: "陈相屯",
+		  abbreviation: "cxt",
 		},
 		{
-			"Abbreviation": "czb",
-			"code": "changzhoubei",
-			"name": "常州北"
+		  code: "changzhibei",
+		  name: "长治北",
+		  abbreviation: "czb",
 		},
 		{
-			"Abbreviation": "nj",
-			"code": "ningjia",
-			"name": "宁家"
+		  code: "chizhou",
+		  name: "池州",
+		  abbreviation: "czh",
 		},
 		{
-			"Abbreviation": "py",
-			"code": "pingyao",
-			"name": "平遥"
+		  code: "changzheng",
+		  name: "长征",
+		  abbreviation: "czh",
 		},
 		{
-			"Abbreviation": "ss",
-			"code": "songshu",
-			"name": "松树"
+		  code: "changzhou",
+		  name: "常州",
+		  abbreviation: "czh",
 		},
 		{
-			"Abbreviation": "mc",
-			"code": "macheng",
-			"name": "麻城"
+		  code: "chenzhou",
+		  name: "郴州",
+		  abbreviation: "czh",
 		},
 		{
-			"Abbreviation": "qf",
-			"code": "qingfeng",
-			"name": "庆丰"
+		  code: "changzhi",
+		  name: "长治",
+		  abbreviation: "czh",
 		},
 		{
-			"Abbreviation": "mz",
-			"code": "mengzi",
-			"name": "蒙自"
+		  code: "cangzhou",
+		  name: "沧州",
+		  abbreviation: "czh",
 		},
 		{
-			"Abbreviation": "mc",
-			"code": "mianchi",
-			"name": "渑池"
+		  code: "chongzuo",
+		  name: "崇左",
+		  abbreviation: "czu",
 		},
 		{
-			"Abbreviation": "mmx",
-			"code": "maomingxi",
-			"name": "茂名西"
+		  code: "daanbei",
+		  name: "大安北",
+		  abbreviation: "dab",
 		},
 		{
-			"Abbreviation": "zjn",
-			"code": "zhenjiangnan",
-			"name": "镇江南"
+		  code: "dacheng",
+		  name: "大成",
+		  abbreviation: "dch",
 		},
 		{
-			"Abbreviation": "wnn",
-			"code": "weinannan",
-			"name": "渭南南"
+		  code: "dandong",
+		  name: "丹东",
+		  abbreviation: "ddo",
 		},
 		{
-			"Abbreviation": "nhc",
-			"code": "nanhechuan",
-			"name": "南河川"
+		  code: "dongfanghong",
+		  name: "东方红",
+		  abbreviation: "dfh",
 		},
 		{
-			"Abbreviation": "cdxb",
-			"code": "chengdexianbei",
-			"name": "承德县北"
+		  code: "dongguandong",
+		  name: "东莞东",
+		  abbreviation: "dgd",
 		},
 		{
-			"Abbreviation": "tdb",
-			"code": "tiandongbei",
-			"name": "田东北"
+		  code: "dahushan",
+		  name: "大虎山",
+		  abbreviation: "dhs",
 		},
 		{
-			"Abbreviation": "btd",
-			"code": "baotoudong",
-			"name": "包头东"
+		  code: "dunhua",
+		  name: "敦化",
+		  abbreviation: "dhu",
 		},
 		{
-			"Abbreviation": "gtn",
-			"code": "gaotainan",
-			"name": "高台南"
+		  code: "dunhuang",
+		  name: "敦煌",
+		  abbreviation: "dhu",
 		},
 		{
-			"Abbreviation": "xf1",
-			"code": "xianfeng1",
-			"name": "咸丰"
+		  code: "dehui",
+		  name: "德惠",
+		  abbreviation: "dhu",
 		},
 		{
-			"Abbreviation": "py",
-			"code": "pingyi",
-			"name": "平邑"
+		  code: "dongjingcheng",
+		  name: "东京城",
+		  abbreviation: "djc",
 		},
 		{
-			"Abbreviation": "cyc",
-			"code": "chaoyangchuan",
-			"name": "朝阳川"
+		  code: "dajian",
+		  name: "大涧",
+		  abbreviation: "dji",
 		},
 		{
-			"Abbreviation": "dqs",
-			"code": "duiqingshan",
-			"name": "对青山"
+		  code: "dujiangyan",
+		  name: "都江堰",
+		  abbreviation: "djy",
 		},
 		{
-			"Abbreviation": "jd",
-			"code": "jiangdu",
-			"name": "江都"
+		  code: "dalianbei",
+		  name: "大连北",
+		  abbreviation: "dlb",
 		},
 		{
-			"Abbreviation": "ys",
-			"code": "yushe",
-			"name": "榆社"
+		  code: "dali",
+		  name: "大理",
+		  abbreviation: "dli",
 		},
 		{
-			"Abbreviation": "dyz",
-			"code": "dayingzhen",
-			"name": "大营镇"
+		  code: "dalian",
+		  name: "大连",
+		  abbreviation: "dli",
 		},
 		{
-			"Abbreviation": "zx",
-			"code": "zongxi",
-			"name": "棕溪"
+		  code: "dingnan",
+		  name: "定南",
+		  abbreviation: "dna",
 		},
 		{
-			"Abbreviation": "hyd",
-			"code": "hengyangdong",
-			"name": "衡阳东"
+		  code: "daqing",
+		  name: "大庆",
+		  abbreviation: "dqi",
 		},
 		{
-			"Abbreviation": "tmb",
-			"code": "tumenbei",
-			"name": "图们北"
+		  code: "dongsheng",
+		  name: "东胜",
+		  abbreviation: "dsh",
 		},
 		{
-			"Abbreviation": "hch",
-			"code": "hunchun",
-			"name": "珲春"
+		  code: "dashiqiao",
+		  name: "大石桥",
+		  abbreviation: "dsq",
 		},
 		{
-			"Abbreviation": "lsb",
-			"code": "longshanbei",
-			"name": "龙山北"
+		  code: "datong",
+		  name: "大同",
+		  abbreviation: "dto",
 		},
 		{
-			"Abbreviation": "xc",
-			"code": "xuancheng",
-			"name": "宣城"
+		  code: "dongying",
+		  name: "东营",
+		  abbreviation: "dyi",
 		},
 		{
-			"Abbreviation": "qqhe",
-			"code": "qiqihaer",
-			"name": "齐齐哈尔"
+		  code: "dayangshu",
+		  name: "大杨树",
+		  abbreviation: "dys",
 		},
 		{
-			"Abbreviation": "hl",
-			"code": "hailun",
-			"name": "海伦"
+		  code: "duyun",
+		  name: "都匀",
+		  abbreviation: "dyu",
 		},
 		{
-			"Abbreviation": "hbd",
-			"code": "hebidong",
-			"name": "鹤壁东"
+		  code: "dazhou",
+		  name: "达州",
+		  abbreviation: "dzh",
 		},
 		{
-			"Abbreviation": "fxn",
-			"code": "fuxinnan",
-			"name": "阜新南"
+		  code: "dengzhou",
+		  name: "邓州",
+		  abbreviation: "dzh",
 		},
 		{
-			"Abbreviation": "cy",
-			"code": "changyang",
-			"name": "长阳"
+		  code: "dezhou",
+		  name: "德州",
+		  abbreviation: "dzh",
 		},
 		{
-			"Abbreviation": "bxh",
-			"code": "benxihu",
-			"name": "本溪湖"
+		  code: "ejina",
+		  name: "额济纳",
+		  abbreviation: "ejn",
 		},
 		{
-			"Abbreviation": "st",
-			"code": "songtao",
-			"name": "松桃"
+		  code: "erlian",
+		  name: "二连",
+		  abbreviation: "eli",
 		},
 		{
-			"Abbreviation": "th",
-			"code": "tonghai",
-			"name": "通海"
+		  code: "enshi",
+		  name: "恩施",
+		  abbreviation: "esh",
 		},
 		{
-			"Abbreviation": "fy",
-			"code": "fuyuan1",
-			"name": "抚远"
+		  code: "fuding",
+		  name: "福鼎",
+		  abbreviation: "fdi",
 		},
 		{
-			"Abbreviation": "js",
-			"code": "jiashan",
-			"name": "嘉善"
+		  code: "fenghuangjichang",
+		  name: "凤凰机场",
+		  abbreviation: "fhc",
 		},
 		{
-			"Abbreviation": "xhy",
-			"code": "xiahuayuan",
-			"name": "下花园"
+		  code: "fenglingdu",
+		  name: "风陵渡",
+		  abbreviation: "fld",
 		},
 		{
-			"Abbreviation": "jc",
-			"code": "jingchuan",
-			"name": "泾川"
+		  code: "fuling",
+		  name: "涪陵",
+		  abbreviation: "fli",
 		},
 		{
-			"Abbreviation": "cc",
-			"code": "changchun",
-			"name": "长春"
+		  code: "fulaerji",
+		  name: "富拉尔基",
+		  abbreviation: "flj",
 		},
 		{
-			"Abbreviation": "hm",
-			"code": "hongmei",
-			"name": "洪梅"
+		  code: "fushunbei",
+		  name: "抚顺北",
+		  abbreviation: "fsb",
 		},
 		{
-			"Abbreviation": "hm",
-			"code": "houma",
-			"name": "侯马"
+		  code: "foshan",
+		  name: "佛山",
+		  abbreviation: "fsh",
 		},
 		{
-			"Abbreviation": "ps",
-			"code": "panshan",
-			"name": "盘山"
+		  code: "fuxinnan",
+		  name: "阜新南",
+		  abbreviation: "fxn",
 		},
 		{
-			"Abbreviation": "zj",
-			"code": "zhijiang",
-			"name": "芷江"
+		  code: "fuyang",
+		  name: "阜阳",
+		  abbreviation: "fya",
 		},
 		{
-			"Abbreviation": "th",
-			"code": "tanghai",
-			"name": "棠海"
+		  code: "geermu",
+		  name: "格尔木",
+		  abbreviation: "gem",
 		},
 		{
-			"Abbreviation": "shz",
-			"code": "sanhuizhen",
-			"name": "三汇镇"
+		  code: "guanghan",
+		  name: "广汉",
+		  abbreviation: "gha",
 		},
 		{
-			"Abbreviation": "dht",
-			"code": "dahetang",
-			"name": "大禾塘"
+		  code: "gujiao",
+		  name: "古交",
+		  abbreviation: "gji",
 		},
 		{
-			"Abbreviation": "sl",
-			"code": "shangluo",
-			"name": "商洛"
+		  code: "guilinbei",
+		  name: "桂林北",
+		  abbreviation: "glb",
 		},
 		{
-			"Abbreviation": "tzb",
-			"code": "tongzibei",
-			"name": "桐梓北"
+		  code: "guilin",
+		  name: "桂林",
+		  abbreviation: "gli",
 		},
 		{
-			"Abbreviation": "yyb",
-			"code": "yuyaobei",
-			"name": "余姚北"
+		  code: "gulian",
+		  name: "古莲",
+		  abbreviation: "gli",
 		},
 		{
-			"Abbreviation": "lm",
-			"code": "lumiao",
-			"name": "芦庙"
+		  code: "gushi",
+		  name: "固始",
+		  abbreviation: "gsh",
 		},
 		{
-			"Abbreviation": "sh",
-			"code": "shanghai",
-			"name": "上海"
+		  code: "guangshui",
+		  name: "广水",
+		  abbreviation: "gsh",
 		},
 		{
-			"Abbreviation": "zjt",
-			"code": "zhoujiatun",
-			"name": "周家屯"
+		  code: "gantang",
+		  name: "干塘",
+		  abbreviation: "gta",
 		},
 		{
-			"Abbreviation": "fn",
-			"code": "funan",
-			"name": "阜南"
+		  code: "guangyuan",
+		  name: "广元",
+		  abbreviation: "gyu",
 		},
 		{
-			"Abbreviation": "ft",
-			"code": "fengtun",
-			"name": "冯屯"
+		  code: "guangzhoubei",
+		  name: "广州北",
+		  abbreviation: "gzb",
 		},
 		{
-			"Abbreviation": "gy",
-			"code": "gaoyi",
-			"name": "高邑"
+		  code: "ganzhou",
+		  name: "赣州",
+		  abbreviation: "gzh",
 		},
 		{
-			"Abbreviation": "lyn",
-			"code": "liuyuannan",
-			"name": "柳园南"
+		  code: "gongzhuling",
+		  name: "公主岭",
+		  abbreviation: "gzl",
 		},
 		{
-			"Abbreviation": "yy",
-			"code": "yangyi",
-			"name": "阳邑"
+		  code: "gongzhulingnan",
+		  name: "公主岭南",
+		  abbreviation: "gzn",
 		},
 		{
-			"Abbreviation": "wax",
-			"code": "wananxian",
-			"name": "万安县"
+		  code: "huaian",
+		  name: "淮安",
+		  abbreviation: "han",
 		},
 		{
-			"Abbreviation": "lbb",
-			"code": "laibinbei",
-			"name": "来宾北"
+		  code: "huaibei",
+		  name: "淮北",
+		  abbreviation: "hbe",
 		},
 		{
-			"Abbreviation": "bt",
-			"code": "bantang",
-			"name": "板塘"
+		  code: "hebei",
+		  name: "鹤北",
+		  abbreviation: "hbe",
 		},
 		{
-			"Abbreviation": "qh",
-			"code": "qionghai",
-			"name": "琼海"
+		  code: "huaibin",
+		  name: "淮滨",
+		  abbreviation: "hbi",
 		},
 		{
-			"Abbreviation": "nt",
-			"code": "nantou",
-			"name": "南头"
+		  code: "hebian",
+		  name: "河边",
+		  abbreviation: "hbi",
 		},
 		{
-			"Abbreviation": "hk",
-			"code": "hankou",
-			"name": "汉口"
+		  code: "hancheng",
+		  name: "韩城",
+		  abbreviation: "hch",
 		},
 		{
-			"Abbreviation": "lf",
-			"code": "lufeng",
-			"name": "陆丰"
+		  code: "huangchuan",
+		  name: "潢川",
+		  abbreviation: "hch",
 		},
 		{
-			"Abbreviation": "wz",
-			"code": "wanzhou",
-			"name": "万州"
+		  code: "handan",
+		  name: "邯郸",
+		  abbreviation: "hda",
 		},
 		{
-			"Abbreviation": "dz",
-			"code": "duanzhou",
-			"name": "端州"
+		  code: "hengdaohezi",
+		  name: "横道河子",
+		  abbreviation: "hdz",
 		},
 		{
-			"Abbreviation": "xf",
-			"code": "xiangfang",
-			"name": "香坊"
+		  code: "hegang",
+		  name: "鹤岗",
+		  abbreviation: "hga",
 		},
 		{
-			"Abbreviation": "km",
-			"code": "kunming",
-			"name": "昆明"
+		  code: "huanggutun",
+		  name: "皇姑屯",
+		  abbreviation: "hgt",
 		},
 		{
-			"Abbreviation": "fy",
-			"code": "fengyang",
-			"name": "凤阳"
+		  code: "hongguo",
+		  name: "红果",
+		  abbreviation: "hgu",
 		},
 		{
-			"Abbreviation": "xhb",
-			"code": "xuanhuabei",
-			"name": "宣化北"
+		  code: "heihe",
+		  name: "黑河",
+		  abbreviation: "hhe",
 		},
 		{
-			"Abbreviation": "ylt",
-			"code": "yueliangtian",
-			"name": "月亮田"
+		  code: "huaihua",
+		  name: "怀化",
+		  abbreviation: "hhu",
 		},
 		{
-			"Abbreviation": "gdn",
-			"code": "gediannan",
-			"name": "葛店南"
+		  code: "hankou",
+		  name: "汉口",
+		  abbreviation: "hko",
 		},
 		{
-			"Abbreviation": "lc",
-			"code": "liaocheng",
-			"name": "聊城"
+		  code: "huludao",
+		  name: "葫芦岛",
+		  abbreviation: "hld",
 		},
 		{
-			"Abbreviation": "xs",
-			"code": "xiashi",
-			"name": "夏石"
+		  code: "hailaer",
+		  name: "海拉尔",
+		  abbreviation: "hle",
 		},
 		{
-			"Abbreviation": "qys",
-			"code": "qingyangshan",
-			"name": "庆阳山"
+		  code: "huolinguole",
+		  name: "霍林郭勒",
+		  abbreviation: "hll",
 		},
 		{
-			"Abbreviation": "ly",
-			"code": "linying",
-			"name": "临颍"
+		  code: "hailun",
+		  name: "海伦",
+		  abbreviation: "hlu",
 		},
 		{
-			"Abbreviation": "mx",
-			"code": "meixi",
-			"name": "美溪"
+		  code: "houma",
+		  name: "侯马",
+		  abbreviation: "hma",
 		},
 		{
-			"Abbreviation": "lx",
-			"code": "luxi",
-			"name": "芦溪"
+		  code: "hami",
+		  name: "哈密",
+		  abbreviation: "hmi",
 		},
 		{
-			"Abbreviation": "hsb",
-			"code": "huangshanbei",
-			"name": "黄山北"
+		  code: "huainan",
+		  name: "淮南",
+		  abbreviation: "hna",
 		},
 		{
-			"Abbreviation": "dgb",
-			"code": "donggangbei",
-			"name": "东港北"
+		  code: "huanan",
+		  name: "桦南",
+		  abbreviation: "hna",
 		},
 		{
-			"Abbreviation": "bjn",
-			"code": "baojinan",
-			"name": "宝鸡南"
+		  code: "hainingxi",
+		  name: "海宁西",
+		  abbreviation: "hnx",
 		},
 		{
-			"Abbreviation": "qc",
-			"code": "qingchuan",
-			"name": "青川"
+		  code: "heqing",
+		  name: "鹤庆",
+		  abbreviation: "hqi",
 		},
 		{
-			"Abbreviation": "xz",
-			"code": "xinzhao",
-			"name": "新肇"
+		  code: "huairoubei",
+		  name: "怀柔北",
+		  abbreviation: "hrb",
 		},
 		{
-			"Abbreviation": "yj",
-			"code": "yongjia",
-			"name": "永嘉"
+		  code: "huairou",
+		  name: "怀柔",
+		  abbreviation: "hro",
 		},
 		{
-			"Abbreviation": "lc",
-			"code": "lichuan",
-			"name": "利川"
+		  code: "huangshidong",
+		  name: "黄石东",
+		  abbreviation: "hsd",
 		},
 		{
-			"Abbreviation": "sh",
-			"code": "suihua",
-			"name": "绥化"
+		  code: "huashan",
+		  name: "华山",
+		  abbreviation: "hsh",
 		},
 		{
-			"Abbreviation": "dx",
-			"code": "dingxiang",
-			"name": "定襄"
+		  code: "huangshan",
+		  name: "黄山",
+		  abbreviation: "hsh",
 		},
 		{
-			"Abbreviation": "cd",
-			"code": "chengdu",
-			"name": "成都"
+		  code: "huangshi",
+		  name: "黄石",
+		  abbreviation: "hsh",
 		},
 		{
-			"Abbreviation": "ky",
-			"code": "kunyang",
-			"name": "昆阳"
+		  code: "hengshui",
+		  name: "衡水",
+		  abbreviation: "hsh",
 		},
 		{
-			"Abbreviation": "xyx",
-			"code": "xiangyunxi",
-			"name": "祥云西"
+		  code: "hengyang",
+		  name: "衡阳",
+		  abbreviation: "hya",
 		},
 		{
-			"Abbreviation": "thd",
-			"code": "taihedong",
-			"name": "太和东"
+		  code: "heze",
+		  name: "菏泽",
+		  abbreviation: "hze",
 		},
 		{
-			"Abbreviation": "flt",
-			"code": "fulitun",
-			"name": "福利屯"
+		  code: "hezhou",
+		  name: "贺州",
+		  abbreviation: "hzh",
 		},
 		{
-			"Abbreviation": "hzn",
-			"code": "hangzhounan",
-			"name": "杭州南"
+		  code: "hanzhong",
+		  name: "汉中",
+		  abbreviation: "hzh",
 		},
 		{
-			"Abbreviation": "jy",
-			"code": "juye",
-			"name": "巨野"
+		  code: "huizhou",
+		  name: "惠州",
+		  abbreviation: "hzh",
 		},
 		{
-			"Abbreviation": "szx",
-			"code": "shizhuxian",
-			"name": "石柱县"
+		  code: "jian",
+		  name: "吉安",
+		  abbreviation: "jan",
 		},
 		{
-			"Abbreviation": "zl",
-			"code": "zhenlai",
-			"name": "镇赉"
+		  code: "jian",
+		  name: "集安",
+		  abbreviation: "jan",
 		},
 		{
-			"Abbreviation": "dwp",
-			"code": "diwopu",
-			"name": "低窝铺"
+		  code: "jiangbiancun",
+		  name: "江边村",
+		  abbreviation: "jbc",
 		},
 		{
-			"Abbreviation": "ms",
-			"code": "miaoshan",
-			"name": "庙山"
+		  code: "jincheng",
+		  name: "晋城",
+		  abbreviation: "jch",
 		},
 		{
-			"Abbreviation": "lb",
-			"code": "laibin",
-			"name": "来宾"
+		  code: "jinchengjiang",
+		  name: "金城江",
+		  abbreviation: "jcj",
 		},
 		{
-			"Abbreviation": "nzm",
-			"code": "nanzamu",
-			"name": "南杂木"
+		  code: "jingdezhen",
+		  name: "景德镇",
+		  abbreviation: "jdz",
 		},
 		{
-			"Abbreviation": "ctz",
-			"code": "changtingzhen",
-			"name": "长汀镇"
+		  code: "jiafeng",
+		  name: "嘉峰",
+		  abbreviation: "jfe",
 		},
 		{
-			"Abbreviation": "wds",
-			"code": "wudangshan",
-			"name": "武当山"
+		  code: "jiagedaqi",
+		  name: "加格达奇",
+		  abbreviation: "jgq",
 		},
 		{
-			"Abbreviation": "jz",
-			"code": "jinzhou",
-			"name": "晋州"
+		  code: "jinggangshan",
+		  name: "井冈山",
+		  abbreviation: "jgs",
 		},
 		{
-			"Abbreviation": "bc",
-			"code": "baicheng",
-			"name": "白城"
+		  code: "jiaohe",
+		  name: "蛟河",
+		  abbreviation: "jhe",
 		},
 		{
-			"Abbreviation": "jc2",
-			"code": "jianchang2",
-			"name": "碱厂"
+		  code: "jinhuanan",
+		  name: "金华南",
+		  abbreviation: "jhn",
 		},
 		{
-			"Abbreviation": "bpn",
-			"code": "beipiaonan",
-			"name": "北票南"
+		  code: "jinhua",
+		  name: "金华",
+		  abbreviation: "jhu",
 		},
 		{
-			"Abbreviation": "wlht",
-			"code": "wulanhaote",
-			"name": "乌兰浩特"
+		  code: "jiujiang",
+		  name: "九江",
+		  abbreviation: "jji",
 		},
 		{
-			"Abbreviation": "sx",
-			"code": "shixing",
-			"name": "始兴"
+		  code: "jilin",
+		  name: "吉林",
+		  abbreviation: "jli",
 		},
 		{
-			"Abbreviation": "yh",
-			"code": "yanghe",
-			"name": "洋河"
+		  code: "jingmen",
+		  name: "荆门",
+		  abbreviation: "jme",
 		},
 		{
-			"Abbreviation": "lyd",
-			"code": "luoyangdong",
-			"name": "洛阳东"
+		  code: "jiamusi",
+		  name: "佳木斯",
+		  abbreviation: "jms",
 		},
 		{
-			"Abbreviation": "hsb",
-			"code": "heishanbei",
-			"name": "黑山北"
+		  code: "jining",
+		  name: "济宁",
+		  abbreviation: "jni",
 		},
 		{
-			"Abbreviation": "dkt",
-			"code": "dakoutun",
-			"name": "大口屯"
+		  code: "jiningnan",
+		  name: "集宁南",
+		  abbreviation: "jnn",
 		},
 		{
-			"Abbreviation": "lh",
-			"code": "longhui",
-			"name": "隆回"
+		  code: "jiuquan",
+		  name: "酒泉",
+		  abbreviation: "jqu",
 		},
 		{
-			"Abbreviation": "hsw",
-			"code": "haishiwan",
-			"name": "海石湾"
+		  code: "jiangshan",
+		  name: "江山",
+		  abbreviation: "jsh",
 		},
 		{
-			"Abbreviation": "sjz",
-			"code": "shijiazhuang",
-			"name": "石家庄"
+		  code: "jishou",
+		  name: "吉首",
+		  abbreviation: "jsh",
 		},
 		{
-			"Abbreviation": "xq",
-			"code": "xinqiu",
-			"name": "新邱"
+		  code: "jiutai",
+		  name: "九台",
+		  abbreviation: "jta",
 		},
 		{
-			"Abbreviation": "hl",
-			"code": "hailong",
-			"name": "海龙"
+		  code: "jingtieshan",
+		  name: "镜铁山",
+		  abbreviation: "jts",
 		},
 		{
-			"Abbreviation": "wzt",
-			"code": "wangzhaotun",
-			"name": "王兆屯"
+		  code: "jixi",
+		  name: "鸡西",
+		  abbreviation: "jxi",
 		},
 		{
-			"Abbreviation": "kd",
-			"code": "kuandian",
-			"name": "宽甸"
+		  code: "jixixian",
+		  name: "绩溪县",
+		  abbreviation: "jxx",
 		},
 		{
-			"Abbreviation": "wtz",
-			"code": "wangtuanzhuang",
-			"name": "王团庄"
+		  code: "jiayuguan",
+		  name: "嘉峪关",
+		  abbreviation: "jyg",
 		},
 		{
-			"Abbreviation": "gd",
-			"code": "guangde",
-			"name": "广德"
+		  code: "jiangyou",
+		  name: "江油",
+		  abbreviation: "jyo",
 		},
 		{
-			"Abbreviation": "tz",
-			"code": "tongzhou",
-			"name": "通州"
+		  code: "jizhoubei",
+		  name: "蓟州北",
+		  abbreviation: "jzb",
 		},
 		{
-			"Abbreviation": "ssz",
-			"code": "shuangshuizhen",
-			"name": "双水镇"
+		  code: "jinzhou",
+		  name: "锦州",
+		  abbreviation: "jzh",
 		},
 		{
-			"Abbreviation": "cpl",
-			"code": "changpoling",
-			"name": "长坡岭"
+		  code: "jinzhou",
+		  name: "金州",
+		  abbreviation: "jzh",
 		},
 		{
-			"Abbreviation": "lyd",
-			"code": "lingyuandong",
-			"name": "凌源东"
+		  code: "kuerle",
+		  name: "库尔勒",
+		  abbreviation: "kel",
 		},
 		{
-			"Abbreviation": "qmt",
-			"code": "qianmotou",
-			"name": "前磨头"
+		  code: "kaifeng",
+		  name: "开封",
+		  abbreviation: "kfe",
 		},
 		{
-			"Abbreviation": "pds",
-			"code": "pingdingshan",
-			"name": "平顶山"
+		  code: "kelan",
+		  name: "岢岚",
+		  abbreviation: "kla",
 		},
 		{
-			"Abbreviation": "ssn",
-			"code": "sishuinan",
-			"name": "泗水南"
+		  code: "kaili",
+		  name: "凯里",
+		  abbreviation: "kli",
 		},
 		{
-			"Abbreviation": "hc",
-			"code": "huangcun",
-			"name": "黄村"
+		  code: "kashi",
+		  name: "喀什",
+		  abbreviation: "ksh",
 		},
 		{
-			"Abbreviation": "wl",
-			"code": "wanle",
-			"name": "万乐"
+		  code: "kunshannan",
+		  name: "昆山南",
+		  abbreviation: "ksn",
 		},
 		{
-			"Abbreviation": "hb",
-			"code": "hebei",
-			"name": "鹤北"
+		  code: "kuitun",
+		  name: "奎屯",
+		  abbreviation: "ktu",
 		},
 		{
-			"Abbreviation": "wts",
-			"code": "wutaishan",
-			"name": "五台山"
+		  code: "kaiyuan",
+		  name: "开原",
+		  abbreviation: "kyu",
 		},
 		{
-			"Abbreviation": "ha",
-			"code": "hongan",
-			"name": "红安"
+		  code: "luan",
+		  name: "六安",
+		  abbreviation: "lan",
 		},
 		{
-			"Abbreviation": "qth",
-			"code": "qitaihe",
-			"name": "七台河"
+		  code: "lingbao",
+		  name: "灵宝",
+		  abbreviation: "lba",
 		},
 		{
-			"Abbreviation": "dlh",
-			"code": "delingha",
-			"name": "德令哈"
+		  code: "luchaogang",
+		  name: "芦潮港",
+		  abbreviation: "lcg",
 		},
 		{
-			"Abbreviation": "sf",
-			"code": "shenfang",
-			"name": "绅坊"
+		  code: "luchuan",
+		  name: "陆川",
+		  abbreviation: "lch",
 		},
 		{
-			"Abbreviation": "lyb1",
-			"code": "linyibei1",
-			"name": "临  沂北"
+		  code: "lichuan",
+		  name: "利川",
+		  abbreviation: "lch",
 		},
 		{
-			"Abbreviation": "hgqd",
-			"code": "henggouqiaodong",
-			"name": "横沟桥东"
+		  code: "linchuan",
+		  name: "临川",
+		  abbreviation: "lch",
 		},
 		{
-			"Abbreviation": "zfd",
-			"code": "zhifangdong",
-			"name": "纸坊东"
+		  code: "longchang",
+		  name: "隆昌",
+		  abbreviation: "lch",
 		},
 		{
-			"Abbreviation": "jh",
-			"code": "jinghai",
-			"name": "静海"
+		  code: "lucheng",
+		  name: "潞城",
+		  abbreviation: "lch",
 		},
 		{
-			"Abbreviation": "dx",
-			"code": "dingxi",
-			"name": "定西"
+		  code: "ludao",
+		  name: "鹿道",
+		  abbreviation: "lda",
 		},
 		{
-			"Abbreviation": "mt",
-			"code": "mata",
-			"name": "马踏"
+		  code: "loudi",
+		  name: "娄底",
+		  abbreviation: "ldi",
 		},
 		{
-			"Abbreviation": "sw",
-			"code": "shangwan",
-			"name": "上万"
+		  code: "linfen",
+		  name: "临汾",
+		  abbreviation: "lfe",
 		},
 		{
-			"Abbreviation": "dx",
-			"code": "daixian",
-			"name": "代县"
+		  code: "lianggezhuang",
+		  name: "良各庄",
+		  abbreviation: "lgz",
 		},
 		{
-			"Abbreviation": "tz",
-			"code": "tianzhen",
-			"name": "天镇"
+		  code: "linhe",
+		  name: "临河",
+		  abbreviation: "lhe",
 		},
 		{
-			"Abbreviation": "aky",
-			"code": "ankouyao",
-			"name": "安口窑"
+		  code: "luohe",
+		  name: "漯河",
+		  abbreviation: "lhe",
 		},
 		{
-			"Abbreviation": "hzx",
-			"code": "huizhouxi",
-			"name": "惠州西"
+		  code: "lvhua",
+		  name: "绿化",
+		  abbreviation: "lhu",
 		},
 		{
-			"Abbreviation": "yc",
-			"code": "yanchi",
-			"name": "雁翅"
+		  code: "longhua",
+		  name: "隆化",
+		  abbreviation: "lhu",
 		},
 		{
-			"Abbreviation": "jt",
-			"code": "jiutai",
-			"name": "九台"
+		  code: "longjing",
+		  name: "龙井",
+		  abbreviation: "lji",
 		},
 		{
-			"Abbreviation": "ad",
-			"code": "anding",
-			"name": "安定"
+		  code: "lijiang",
+		  name: "丽江",
+		  abbreviation: "lji",
 		},
 		{
-			"Abbreviation": "ldn",
-			"code": "loudinan",
-			"name": "娄底南"
+		  code: "linjiang",
+		  name: "临江",
+		  abbreviation: "lji",
 		},
 		{
-			"Abbreviation": "xx",
-			"code": "xixian",
-			"name": "息县"
+		  code: "lvliang",
+		  name: "吕梁",
+		  abbreviation: "lli",
 		},
 		{
-			"Abbreviation": "xy",
-			"code": "xiuying",
-			"name": "秀英"
+		  code: "liling",
+		  name: "醴陵",
+		  abbreviation: "lli",
 		},
 		{
-			"Abbreviation": "ml",
-			"code": "miaoling",
-			"name": "庙岭"
+		  code: "liulinnan",
+		  name: "柳林南",
+		  abbreviation: "lln",
 		},
 		{
-			"Abbreviation": "asx",
-			"code": "anshanxi",
-			"name": "鞍山西"
+		  code: "luanping",
+		  name: "滦平",
+		  abbreviation: "lpi",
 		},
 		{
-			"Abbreviation": "bj",
-			"code": "bijie",
-			"name": "毕节"
+		  code: "liupanshui",
+		  name: "六盘水",
+		  abbreviation: "lps",
 		},
 		{
-			"Abbreviation": "sw",
-			"code": "shaowu",
-			"name": "邵武"
+		  code: "lingqiu",
+		  name: "灵丘",
+		  abbreviation: "lqi",
 		},
 		{
-			"Abbreviation": "tw",
-			"code": "tongwei",
-			"name": "通渭"
+		  code: "lvshun",
+		  name: "旅顺",
+		  abbreviation: "lsh",
 		},
 		{
-			"Abbreviation": "wn",
-			"code": "wannian",
-			"name": "万年"
+		  code: "longxi",
+		  name: "陇西",
+		  abbreviation: "lxi",
 		},
 		{
-			"Abbreviation": "xc",
-			"code": "xuchang",
-			"name": "许昌"
+		  code: "lixian",
+		  name: "澧县",
+		  abbreviation: "lxi",
 		},
 		{
-			"Abbreviation": "aj",
-			"code": "anjia",
-			"name": "安家"
+		  code: "lanxi",
+		  name: "兰溪",
+		  abbreviation: "lxi",
 		},
 		{
-			"Abbreviation": "ldgy",
-			"code": "liduigongyuan",
-			"name": "离堆公园"
+		  code: "linxi",
+		  name: "临西",
+		  abbreviation: "lxi",
 		},
 		{
-			"Abbreviation": "dqlh",
-			"code": "daqilaha",
-			"name": "大其拉哈"
+		  code: "longyan",
+		  name: "龙岩",
+		  abbreviation: "lya",
 		},
 		{
-			"Abbreviation": "yc",
-			"code": "yuncheng1",
-			"name": "郓城"
+		  code: "leiyang",
+		  name: "耒阳",
+		  abbreviation: "lya",
 		},
 		{
-			"Abbreviation": "zfp",
-			"code": "zhaofupu",
-			"name": "照福铺"
+		  code: "luoyang",
+		  name: "洛阳",
+		  abbreviation: "lya",
 		},
 		{
-			"Abbreviation": "dy",
-			"code": "dangyang",
-			"name": "当阳"
+		  code: "lianyungangdong",
+		  name: "连云港东",
+		  abbreviation: "lyd",
 		},
 		{
-			"Abbreviation": "zsz",
-			"code": "zhoushuizi",
-			"name": "周水子"
+		  code: "luoyangdong",
+		  name: "洛阳东",
+		  abbreviation: "lyd",
 		},
 		{
-			"Abbreviation": "jz",
-			"code": "jinzhong",
-			"name": "晋中"
+		  code: "linyi",
+		  name: "临沂",
+		  abbreviation: "lyi",
 		},
 		{
-			"Abbreviation": "yd",
-			"code": "yongdeng",
-			"name": "永登"
+		  code: "luoyanglongmen",
+		  name: "洛阳龙门",
+		  abbreviation: "lym",
 		},
 		{
-			"Abbreviation": "xyqd",
-			"code": "xianyangqindu",
-			"name": "咸阳秦都"
+		  code: "lingyuan",
+		  name: "凌源",
+		  abbreviation: "lyu",
 		},
 		{
-			"Abbreviation": "wzz",
-			"code": "weizizhen",
-			"name": "微子镇"
+		  code: "liuyuan",
+		  name: "柳园",
+		  abbreviation: "lyu",
 		},
 		{
-			"Abbreviation": "cgh",
-			"code": "chaganhu",
-			"name": "查干湖"
+		  code: "liaoyuan",
+		  name: "辽源",
+		  abbreviation: "lyu",
 		},
 		{
-			"Abbreviation": "jz",
-			"code": "jingzhou2",
-			"name": "靖州"
+		  code: "liuzhou",
+		  name: "柳州",
+		  abbreviation: "lzh",
 		},
 		{
-			"Abbreviation": "hw",
-			"code": "heiwang",
-			"name": "黑旺"
+		  code: "lizhi",
+		  name: "立志",
+		  abbreviation: "lzh",
 		},
 		{
-			"Abbreviation": "mm",
-			"code": "maoming",
-			"name": "茂名"
+		  code: "liaozhong",
+		  name: "辽中",
+		  abbreviation: "lzh",
 		},
 		{
-			"Abbreviation": "wjc",
-			"code": "wujiachuan",
-			"name": "吴家川"
+		  code: "macheng",
+		  name: "麻城",
+		  abbreviation: "mch",
 		},
 		{
-			"Abbreviation": "wy",
-			"code": "wanyuan",
-			"name": "万源"
+		  code: "mianduhe",
+		  name: "免渡河",
+		  abbreviation: "mdh",
 		},
 		{
-			"Abbreviation": "mcn",
-			"code": "mianchinan",
-			"name": "渑池南"
+		  code: "mudanjiang",
+		  name: "牡丹江",
+		  abbreviation: "mdj",
 		},
 		{
-			"Abbreviation": "yjx",
-			"code": "yanjixi",
-			"name": "延吉西"
+		  code: "moerdaoga",
+		  name: "莫尔道嘎",
+		  abbreviation: "meg",
 		},
 		{
-			"Abbreviation": "fzd",
-			"code": "fuzhoudong",
-			"name": "抚州东"
+		  code: "mangui",
+		  name: "满归",
+		  abbreviation: "mgu",
 		},
 		{
-			"Abbreviation": "gjd",
-			"code": "guojiadian",
-			"name": "郭家店"
+		  code: "mingguang",
+		  name: "明光",
+		  abbreviation: "mgu",
 		},
 		{
-			"Abbreviation": "yny",
-			"code": "yunnanyi",
-			"name": "云南驿"
+		  code: "mohe",
+		  name: "漠河",
+		  abbreviation: "mhe",
 		},
 		{
-			"Abbreviation": "xg",
-			"code": "xiaogan",
-			"name": "孝感"
+		  code: "maoming",
+		  name: "茂名",
+		  abbreviation: "mmi",
 		},
 		{
-			"Abbreviation": "wc",
-			"code": "wenchang",
-			"name": "文昌"
+		  code: "maomingxi",
+		  name: "茂名西",
+		  abbreviation: "mmx",
 		},
 		{
-			"Abbreviation": "pg",
-			"code": "pingguan",
-			"name": "平关"
+		  code: "mishan",
+		  name: "密山",
+		  abbreviation: "msh",
 		},
 		{
-			"Abbreviation": "wdh",
-			"code": "wudaohe",
-			"name": "五道河"
+		  code: "masanjia",
+		  name: "马三家",
+		  abbreviation: "msj",
 		},
 		{
-			"Abbreviation": "ssj",
-			"code": "sanshijia",
-			"name": "三十家"
+		  code: "mawei",
+		  name: "麻尾",
+		  abbreviation: "mwe",
 		},
 		{
-			"Abbreviation": "sz",
-			"code": "shizhuang",
-			"name": "师庄"
+		  code: "mianyang",
+		  name: "绵阳",
+		  abbreviation: "mya",
 		},
 		{
-			"Abbreviation": "zjc",
-			"code": "zhangjiachuan",
-			"name": "张家川"
+		  code: "meizhou",
+		  name: "梅州",
+		  abbreviation: "mzh",
 		},
 		{
-			"Abbreviation": "lc",
-			"code": "longchuan",
-			"name": "龙川"
+		  code: "manzhouli",
+		  name: "满洲里",
+		  abbreviation: "mzl",
 		},
 		{
-			"Abbreviation": "wdg",
-			"code": "wudaogou",
-			"name": "五道沟"
+		  code: "ningbodong",
+		  name: "宁波东",
+		  abbreviation: "nbd",
 		},
 		{
-			"Abbreviation": "fx",
-			"code": "fuxian",
-			"name": "富县"
+		  code: "ningbo",
+		  name: "宁波",
+		  abbreviation: "nbo",
 		},
 		{
-			"Abbreviation": "df",
-			"code": "dafang",
-			"name": "大方"
+		  code: "nanchong",
+		  name: "南充",
+		  abbreviation: "nch",
 		},
 		{
-			"Abbreviation": "tg",
-			"code": "tongguan",
-			"name": "潼关"
+		  code: "nancha",
+		  name: "南岔",
+		  abbreviation: "nch",
 		},
 		{
-			"Abbreviation": "xba",
-			"code": "xinbaoan",
-			"name": "新保安"
+		  code: "nandan",
+		  name: "南丹",
+		  abbreviation: "nda",
 		},
 		{
-			"Abbreviation": "gzx",
-			"code": "gaizhouxi",
-			"name": "盖州西"
+		  code: "nandamiao",
+		  name: "南大庙",
+		  abbreviation: "ndm",
 		},
 		{
-			"Abbreviation": "dfn",
-			"code": "dafangnan",
-			"name": "大方南"
+		  code: "nanfen",
+		  name: "南芬",
+		  abbreviation: "nfe",
 		},
 		{
-			"Abbreviation": "zy",
-			"code": "ziyang1",
-			"name": "资阳"
+		  code: "nehe",
+		  name: "讷河",
+		  abbreviation: "nhe",
 		},
 		{
-			"Abbreviation": "dx",
-			"code": "dianxin",
-			"name": "甸心"
+		  code: "neijiang",
+		  name: "内江",
+		  abbreviation: "nji",
 		},
 		{
-			"Abbreviation": "yes",
-			"code": "yiershi",
-			"name": "伊尔施"
+		  code: "nenjiang",
+		  name: "嫩江",
+		  abbreviation: "nji",
 		},
 		{
-			"Abbreviation": "dgx",
-			"code": "dongguanxi",
-			"name": "东莞西"
+		  code: "nantong",
+		  name: "南通",
+		  abbreviation: "nto",
 		},
 		{
-			"Abbreviation": "gtb",
-			"code": "guangtongbei",
-			"name": "广通北"
+		  code: "nanyang",
+		  name: "南阳",
+		  abbreviation: "nya",
 		},
 		{
-			"Abbreviation": "cdn",
-			"code": "chengdunan",
-			"name": "成都南"
+		  code: "nianzishan",
+		  name: "碾子山",
+		  abbreviation: "nzs",
 		},
 		{
-			"Abbreviation": "hzd",
-			"code": "huozhoudong",
-			"name": "霍州东"
+		  code: "pingdingshan",
+		  name: "平顶山",
+		  abbreviation: "pds",
 		},
 		{
-			"Abbreviation": "nb",
-			"code": "ningbo",
-			"name": "宁波"
+		  code: "panjin",
+		  name: "盘锦",
+		  abbreviation: "pji",
 		},
 		{
-			"Abbreviation": "epg",
-			"code": "epanggong",
-			"name": "阿房宫"
+		  code: "pingliang",
+		  name: "平凉",
+		  abbreviation: "pli",
 		},
 		{
-			"Abbreviation": "sl",
-			"code": "shulan",
-			"name": "舒兰"
+		  code: "pingliangnan",
+		  name: "平凉南",
+		  abbreviation: "pln",
 		},
 		{
-			"Abbreviation": "xbl",
-			"code": "xibali",
-			"name": "西八里"
+		  code: "pingquan",
+		  name: "平泉",
+		  abbreviation: "pqu",
 		},
 		{
-			"Abbreviation": "wf",
-			"code": "weifang",
-			"name": "潍坊"
+		  code: "pingshi",
+		  name: "坪石",
+		  abbreviation: "psh",
 		},
 		{
-			"Abbreviation": "lx",
-			"code": "luanxian",
-			"name": "滦县"
+		  code: "pingxiang",
+		  name: "凭祥",
+		  abbreviation: "pxi",
 		},
 		{
-			"Abbreviation": "yks",
-			"code": "yakeshi",
-			"name": "牙克石"
+		  code: "pingxiang",
+		  name: "萍乡",
+		  abbreviation: "pxi",
 		},
 		{
-			"Abbreviation": "tan",
-			"code": "taiannan",
-			"name": "台安南"
+		  code: "pixianxi",
+		  name: "郫县西",
+		  abbreviation: "pxx",
 		},
 		{
-			"Abbreviation": "sq",
-			"code": "shangqiu",
-			"name": "商丘"
+		  code: "panzhihua",
+		  name: "攀枝花",
+		  abbreviation: "pzh",
 		},
 		{
-			"Abbreviation": "hb",
-			"code": "huangbai",
-			"name": "黄柏"
+		  code: "qichun",
+		  name: "蕲春",
+		  abbreviation: "qch",
 		},
 		{
-			"Abbreviation": "ls",
-			"code": "longshi",
-			"name": "龙市"
+		  code: "qingchengshan",
+		  name: "青城山",
+		  abbreviation: "qcs",
 		},
 		{
-			"Abbreviation": "qyb",
-			"code": "qiyangbei",
-			"name": "祁阳北"
+		  code: "qingdao",
+		  name: "青岛",
+		  abbreviation: "qda",
 		},
 		{
-			"Abbreviation": "mh",
-			"code": "mohe",
-			"name": "漠河"
+		  code: "qinghecheng",
+		  name: "清河城",
+		  abbreviation: "qhc",
 		},
 		{
-			"Abbreviation": "zhb",
-			"code": "zhuhaibei",
-			"name": "珠海北"
+		  code: "qianjiang",
+		  name: "黔江",
+		  abbreviation: "qji",
 		},
 		{
-			"Abbreviation": "lsgn",
-			"code": "loushanguannan",
-			"name": "娄山关南"
+		  code: "qujing",
+		  name: "曲靖",
+		  abbreviation: "qji",
 		},
 		{
-			"Abbreviation": "wq",
-			"code": "weiqing",
-			"name": "威箐"
+		  code: "qianjinzhen",
+		  name: "前进镇",
+		  abbreviation: "qjz",
 		},
 		{
-			"Abbreviation": "jh",
-			"code": "jiaohe",
-			"name": "蛟河"
+		  code: "qiqihaer",
+		  name: "齐齐哈尔",
+		  abbreviation: "qqe",
 		},
 		{
-			"Abbreviation": "lf",
-			"code": "longfeng",
-			"name": "龙丰"
+		  code: "qitaihe",
+		  name: "七台河",
+		  abbreviation: "qth",
 		},
 		{
-			"Abbreviation": "mqb",
-			"code": "minquanbei",
-			"name": "民权北"
+		  code: "qinxian",
+		  name: "沁县",
+		  abbreviation: "qxi",
 		},
 		{
-			"Abbreviation": "lsg",
-			"code": "lianshanguan",
-			"name": "连山关"
+		  code: "quanzhoudong",
+		  name: "泉州东",
+		  abbreviation: "qzd",
 		},
 		{
-			"Abbreviation": "ld",
-			"code": "ludao",
-			"name": "鹿道"
+		  code: "quanzhou",
+		  name: "泉州",
+		  abbreviation: "qzh",
 		},
 		{
-			"Abbreviation": "dlx",
-			"code": "dalianxi",
-			"name": "大连西"
+		  code: "quzhou",
+		  name: "衢州",
+		  abbreviation: "qzh",
 		},
 		{
-			"Abbreviation": "yzw",
-			"code": "yangzhewo",
-			"name": "羊者窝"
+		  code: "rongan",
+		  name: "融安",
+		  abbreviation: "ran",
 		},
 		{
-			"Abbreviation": "qz",
-			"code": "quzhou",
-			"name": "衢州"
+		  code: "rujigou",
+		  name: "汝箕沟",
+		  abbreviation: "rjg",
 		},
 		{
-			"Abbreviation": "ccn",
-			"code": "changchunnan",
-			"name": "长春南"
+		  code: "ruijin",
+		  name: "瑞金",
+		  abbreviation: "rji",
 		},
 		{
-			"Abbreviation": "ly",
-			"code": "longyou",
-			"name": "龙游"
+		  code: "rizhao",
+		  name: "日照",
+		  abbreviation: "rzh",
 		},
 		{
-			"Abbreviation": "syp",
-			"code": "sanyuanpu",
-			"name": "三源浦"
+		  code: "shuangchengpu",
+		  name: "双城堡",
+		  abbreviation: "scp",
 		},
 		{
-			"Abbreviation": "jnxb",
-			"code": "jianningxianbei",
-			"name": "建宁县北"
+		  code: "suifenhe",
+		  name: "绥芬河",
+		  abbreviation: "sfh",
 		},
 		{
-			"Abbreviation": "dy",
-			"code": "duyun",
-			"name": "都匀"
+		  code: "shaoguandong",
+		  name: "韶关东",
+		  abbreviation: "sgd",
 		},
 		{
-			"Abbreviation": "cz",
-			"code": "chongzuo",
-			"name": "崇左"
+		  code: "shanhaiguan",
+		  name: "山海关",
+		  abbreviation: "shg",
 		},
 		{
-			"Abbreviation": "hnd",
-			"code": "huainandong",
-			"name": "淮南东"
+		  code: "suihua",
+		  name: "绥化",
+		  abbreviation: "shu",
 		},
 		{
-			"Abbreviation": "lc",
-			"code": "lechang",
-			"name": "乐昌"
+		  code: "sanjianfang",
+		  name: "三间房",
+		  abbreviation: "sjf",
 		},
 		{
-			"Abbreviation": "sgk",
-			"code": "sanguankou",
-			"name": "三关口"
+		  code: "sujiatun",
+		  name: "苏家屯",
+		  abbreviation: "sjt",
 		},
 		{
-			"Abbreviation": "sy",
-			"code": "sanya",
-			"name": "三亚"
+		  code: "shulan",
+		  name: "舒兰",
+		  abbreviation: "sla",
 		},
 		{
-			"Abbreviation": "jls",
-			"code": "jiulangshan",
-			"name": "九郎山"
+		  code: "shenmunan",
+		  name: "神木南",
+		  abbreviation: "smn",
 		},
 		{
-			"Abbreviation": "dw",
-			"code": "dawang",
-			"name": "大旺"
+		  code: "sanmenxia",
+		  name: "三门峡",
+		  abbreviation: "smx",
 		},
 		{
-			"Abbreviation": "jyn",
-			"code": "jieyangnan",
-			"name": "揭阳南"
+		  code: "shangnan",
+		  name: "商南",
+		  abbreviation: "sna",
 		},
 		{
-			"Abbreviation": "lks",
-			"code": "longkoushi",
-			"name": "龙口市"
+		  code: "suining",
+		  name: "遂宁",
+		  abbreviation: "sni",
 		},
 		{
-			"Abbreviation": "wne",
-			"code": "wunuer",
-			"name": "乌奴耳"
+		  code: "siping",
+		  name: "四平",
+		  abbreviation: "spi",
 		},
 		{
-			"Abbreviation": "cz",
-			"code": "chongzhou",
-			"name": "崇州"
+		  code: "shangqiu",
+		  name: "商丘",
+		  abbreviation: "sqi",
 		},
 		{
-			"Abbreviation": "hs",
-			"code": "huangshi",
-			"name": "黄石"
+		  code: "shangrao",
+		  name: "上饶",
+		  abbreviation: "sra",
 		},
 		{
-			"Abbreviation": "nl",
-			"code": "nailin",
-			"name": "乃林"
+		  code: "shaoshan",
+		  name: "韶山",
+		  abbreviation: "ssh",
 		},
 		{
-			"Abbreviation": "bfs",
-			"code": "bafangshan",
-			"name": "八方山"
+		  code: "susong",
+		  name: "宿松",
+		  abbreviation: "sso",
 		},
 		{
-			"Abbreviation": "pl",
-			"code": "pingliang",
-			"name": "平凉"
+		  code: "shantou",
+		  name: "汕头",
+		  abbreviation: "sto",
 		},
 		{
-			"Abbreviation": "pcd",
-			"code": "puchengdong",
-			"name": "蒲城东"
+		  code: "shaowu",
+		  name: "邵武",
+		  abbreviation: "swu",
 		},
 		{
-			"Abbreviation": "ah",
-			"code": "aohan",
-			"name": "敖汉"
+		  code: "shexian",
+		  name: "涉县",
+		  abbreviation: "sxi",
 		},
 		{
-			"Abbreviation": "lx",
-			"code": "linxi1",
-			"name": "临西"
+		  code: "sanya",
+		  name: "三亚",
+		  abbreviation: "sya",
 		},
 		{
-			"Abbreviation": "xy",
-			"code": "xiangyun",
-			"name": "祥云"
+		  code: "shaoyang",
+		  name: "邵阳",
+		  abbreviation: "sya",
 		},
 		{
-			"Abbreviation": "yqh",
-			"code": "yanqihu",
-			"name": "雁栖湖"
+		  code: "shiyan",
+		  name: "十堰",
+		  abbreviation: "sya",
 		},
 		{
-			"Abbreviation": "sx",
-			"code": "sixian",
-			"name": "泗县"
+		  code: "sanyuanqu",
+		  name: "三元区",
+		  abbreviation: "syq",
 		},
 		{
-			"Abbreviation": "gz",
-			"code": "gaizhou",
-			"name": "盖州"
+		  code: "shuangyashan",
+		  name: "双鸭山",
+		  abbreviation: "sys",
 		},
 		{
-			"Abbreviation": "yts",
-			"code": "yantongshan",
-			"name": "烟筒山"
+		  code: "songyuan",
+		  name: "松原",
+		  abbreviation: "syu",
 		},
 		{
-			"Abbreviation": "csh",
-			"code": "changshouhu",
-			"name": "长寿湖"
+		  code: "suzhou",
+		  name: "宿州",
+		  abbreviation: "szh",
 		},
 		{
-			"Abbreviation": "fld",
-			"code": "fenglingdu",
-			"name": "风陵渡"
+		  code: "suzhou",
+		  name: "苏州",
+		  abbreviation: "szh",
 		},
 		{
-			"Abbreviation": "ybs",
-			"code": "yuanbaoshan",
-			"name": "元宝山"
+		  code: "shenzhen",
+		  name: "深圳",
+		  abbreviation: "szh",
 		},
 		{
-			"Abbreviation": "lf",
-			"code": "langfang",
-			"name": "廊坊"
+		  code: "suizhou",
+		  name: "随州",
+		  abbreviation: "szh",
 		},
 		{
-			"Abbreviation": "ytt",
-			"code": "yantongtun",
-			"name": "烟筒屯"
+		  code: "shuozhou",
+		  name: "朔州",
+		  abbreviation: "szh",
 		},
 		{
-			"Abbreviation": "whx",
-			"code": "weihexi",
-			"name": "苇河西"
+		  code: "shenzhenxi",
+		  name: "深圳西",
+		  abbreviation: "szx",
 		},
 		{
-			"Abbreviation": "sxb",
-			"code": "shexianbei",
-			"name": "歙县北"
+		  code: "tangbao",
+		  name: "塘豹",
+		  abbreviation: "tba",
 		},
 		{
-			"Abbreviation": "qs",
-			"code": "queshan",
-			"name": "确山"
+		  code: "taerqi",
+		  name: "塔尔气",
+		  abbreviation: "teq",
 		},
 		{
-			"Abbreviation": "tsn",
-			"code": "tianshuinan",
-			"name": "天水南"
+		  code: "tongguan",
+		  name: "潼关",
+		  abbreviation: "tgu",
 		},
 		{
-			"Abbreviation": "tm",
-			"code": "tianmen",
-			"name": "天门"
+		  code: "tanggu",
+		  name: "塘沽",
+		  abbreviation: "tgu",
 		},
 		{
-			"Abbreviation": "hh",
-			"code": "huahu",
-			"name": "花湖"
+		  code: "tahe",
+		  name: "塔河",
+		  abbreviation: "the",
 		},
 		{
-			"Abbreviation": "gthz",
-			"code": "gutianhuizhi",
-			"name": "古田会址"
+		  code: "tonghua",
+		  name: "通化",
+		  abbreviation: "thu",
 		},
 		{
-			"Abbreviation": "mgd",
-			"code": "minggangdong",
-			"name": "明港东"
+		  code: "tailai",
+		  name: "泰来",
+		  abbreviation: "tla",
 		},
 		{
-			"Abbreviation": "wd",
-			"code": "wendeng",
-			"name": "文登"
+		  code: "tulufan",
+		  name: "吐鲁番",
+		  abbreviation: "tlf",
 		},
 		{
-			"Abbreviation": "qh",
-			"code": "qianhe",
-			"name": "千河"
+		  code: "tongliao",
+		  name: "通辽",
+		  abbreviation: "tli",
 		},
 		{
-			"Abbreviation": "ytb",
-			"code": "yingtanbei",
-			"name": "鹰潭北"
+		  code: "tieling",
+		  name: "铁岭",
+		  abbreviation: "tli",
 		},
 		{
-			"Abbreviation": "zs",
-			"code": "zhangshu",
-			"name": "樟树"
+		  code: "taolaizhao",
+		  name: "陶赖昭",
+		  abbreviation: "tlz",
 		},
 		{
-			"Abbreviation": "wyt",
-			"code": "wayaotian",
-			"name": "瓦窑田"
+		  code: "tumen",
+		  name: "图们",
+		  abbreviation: "tme",
 		},
 		{
-			"Abbreviation": "dy",
-			"code": "dayang",
-			"name": "大阳"
+		  code: "tongren",
+		  name: "铜仁",
+		  abbreviation: "tre",
 		},
 		{
-			"Abbreviation": "xjk",
-			"code": "xiaojinkou",
-			"name": "小金口"
+		  code: "tangshanbei",
+		  name: "唐山北",
+		  abbreviation: "tsb",
 		},
 		{
-			"Abbreviation": "qs",
-			"code": "qishan",
-			"name": "岐山"
+		  code: "tianshifu",
+		  name: "田师府",
+		  abbreviation: "tsf",
 		},
 		{
-			"Abbreviation": "gj",
-			"code": "geju",
-			"name": "革居"
+		  code: "taishan",
+		  name: "泰山",
+		  abbreviation: "tsh",
 		},
 		{
-			"Abbreviation": "yc",
-			"code": "yuncheng",
-			"name": "运城"
+		  code: "tianshui",
+		  name: "天水",
+		  abbreviation: "tsh",
 		},
 		{
-			"Abbreviation": "qhm",
-			"code": "qinghemen",
-			"name": "清河门"
+		  code: "tangshan",
+		  name: "唐山",
+		  abbreviation: "tsh",
 		},
 		{
-			"Abbreviation": "dc",
-			"code": "dongcha",
-			"name": "东岔"
+		  code: "tongyuanpu",
+		  name: "通远堡",
+		  abbreviation: "typ",
 		},
 		{
-			"Abbreviation": "qsx",
-			"code": "qushuixian",
-			"name": "曲水县"
+		  code: "taiyangsheng",
+		  name: "太阳升",
+		  abbreviation: "tys",
 		},
 		{
-			"Abbreviation": "hj",
-			"code": "hongjiang",
-			"name": "红江"
+		  code: "taizhou",
+		  name: "泰州",
+		  abbreviation: "tzh",
 		},
 		{
-			"Abbreviation": "xn",
-			"code": "xining",
-			"name": "西宁"
+		  code: "tongzhouxi",
+		  name: "通州西",
+		  abbreviation: "tzx",
 		},
 		{
-			"Abbreviation": "llb",
-			"code": "lanlingbei",
-			"name": "兰陵北"
+		  code: "wuchang",
+		  name: "武昌",
+		  abbreviation: "wch",
 		},
 		{
-			"Abbreviation": "fq",
-			"code": "faqi",
-			"name": "法启"
+		  code: "wuchang",
+		  name: "五常",
+		  abbreviation: "wch",
 		},
 		{
-			"Abbreviation": "dwk",
-			"code": "dawukou",
-			"name": "大武口"
+		  code: "wafangdian",
+		  name: "瓦房店",
+		  abbreviation: "wfd",
 		},
 		{
-			"Abbreviation": "xa",
-			"code": "xian",
-			"name": "西安"
+		  code: "weihai",
+		  name: "威海",
+		  abbreviation: "wha",
 		},
 		{
-			"Abbreviation": "dzd",
-			"code": "dengzhoudong",
-			"name": "邓州东"
+		  code: "wuhu",
+		  name: "芜湖",
+		  abbreviation: "whu",
 		},
 		{
-			"Abbreviation": "kde",
-			"code": "kuduer",
-			"name": "库都尔"
+		  code: "wuhaixi",
+		  name: "乌海西",
+		  abbreviation: "whx",
 		},
 		{
-			"Abbreviation": "qjp",
-			"code": "qijiapu",
-			"name": "祁家堡"
+		  code: "wujiatun",
+		  name: "吴家屯",
+		  abbreviation: "wjt",
 		},
 		{
-			"Abbreviation": "wxxq",
-			"code": "wuxixinqu",
-			"name": "无锡新区"
+		  code: "wulumuqinan",
+		  name: "乌鲁木齐南",
+		  abbreviation: "wln",
 		},
 		{
-			"Abbreviation": "hs",
-			"code": "hongshan",
-			"name": "红山"
+		  code: "wulong",
+		  name: "武隆",
+		  abbreviation: "wlo",
 		},
 		{
-			"Abbreviation": "bjb",
-			"code": "beijingbei",
-			"name": "北京北"
+		  code: "wulanhaote",
+		  name: "乌兰浩特",
+		  abbreviation: "wlt",
 		},
 		{
-			"Abbreviation": "tktd",
-			"code": "tuoketuodong",
-			"name": "托克托东"
+		  code: "weinan",
+		  name: "渭南",
+		  abbreviation: "wna",
 		},
 		{
-			"Abbreviation": "flz",
-			"code": "fenglezhen",
-			"name": "丰乐镇"
+		  code: "weishe",
+		  name: "威舍",
+		  abbreviation: "wsh",
 		},
 		{
-			"Abbreviation": "pz",
-			"code": "panzhou",
-			"name": "盘州"
+		  code: "waitoushan",
+		  name: "歪头山",
+		  abbreviation: "wts",
 		},
 		{
-			"Abbreviation": "hmd",
-			"code": "humendong",
-			"name": "虎门东"
+		  code: "wuwei",
+		  name: "武威",
+		  abbreviation: "wwe",
 		},
 		{
-			"Abbreviation": "hjz",
-			"code": "huajiazhuang",
-			"name": "花家庄"
+		  code: "wuweinan",
+		  name: "武威南",
+		  abbreviation: "wwn",
 		},
 		{
-			"Abbreviation": "mqh",
-			"code": "maqiaohe",
-			"name": "马桥河"
+		  code: "wuxi",
+		  name: "无锡",
+		  abbreviation: "wxi",
 		},
 		{
-			"Abbreviation": "lj",
-			"code": "longjing",
-			"name": "龙井"
+		  code: "wuxi",
+		  name: "乌西",
+		  abbreviation: "wxi",
 		},
 		{
-			"Abbreviation": "cpnj",
-			"code": "changpingnan",
-			"name": "常平南"
+		  code: "wuyiling",
+		  name: "乌伊岭",
+		  abbreviation: "wyl",
 		},
 		{
-			"Abbreviation": "wnz",
-			"code": "weinanzhen",
-			"name": "渭南镇"
+		  code: "wuyishan",
+		  name: "武夷山",
+		  abbreviation: "wys",
 		},
 		{
-			"Abbreviation": "jn",
-			"code": "junan",
-			"name": "莒南"
+		  code: "wanyuan",
+		  name: "万源",
+		  abbreviation: "wyu",
 		},
 		{
-			"Abbreviation": "cy",
-			"code": "changyuan",
-			"name": "长垣"
+		  code: "wanzhou",
+		  name: "万州",
+		  abbreviation: "wzh",
 		},
 		{
-			"Abbreviation": "jd",
-			"code": "junde",
-			"name": "峻德"
+		  code: "wuzhou",
+		  name: "梧州",
+		  abbreviation: "wzh",
 		},
 		{
-			"Abbreviation": "bkp",
-			"code": "baikuipu",
-			"name": "白奎堡"
+		  code: "wenzhou",
+		  name: "温州",
+		  abbreviation: "wzh",
 		},
 		{
-			"Abbreviation": "fd",
-			"code": "feidong",
-			"name": "肥东"
+		  code: "wenzhounan",
+		  name: "温州南",
+		  abbreviation: "wzn",
 		},
 		{
-			"Abbreviation": "qxy",
-			"code": "qixiaying",
-			"name": "旗下营"
+		  code: "xichang",
+		  name: "西昌",
+		  abbreviation: "xch",
 		},
 		{
-			"Abbreviation": "lj",
-			"code": "liangjia",
-			"name": "两家"
+		  code: "xuchang",
+		  name: "许昌",
+		  abbreviation: "xch",
 		},
 		{
-			"Abbreviation": "gs",
-			"code": "gushi",
-			"name": "固始"
+		  code: "xichangnan",
+		  name: "西昌南",
+		  abbreviation: "xcn",
 		},
 		{
-			"Abbreviation": "yd",
-			"code": "yindi",
-			"name": "尹地"
+		  code: "xilinhaote",
+		  name: "锡林浩特",
+		  abbreviation: "xlt",
 		},
 		{
-			"Abbreviation": "nh",
-			"code": "ninghai",
-			"name": "宁海"
+		  code: "xiamenbei",
+		  name: "厦门北",
+		  abbreviation: "xmb",
 		},
 		{
-			"Abbreviation": "xdm",
-			"code": "xidamiao",
-			"name": "西大庙"
+		  code: "xiamen",
+		  name: "厦门",
+		  abbreviation: "xme",
 		},
 		{
-			"Abbreviation": "zp",
-			"code": "zhenping",
-			"name": "镇平"
+		  code: "xiamengaoqi",
+		  name: "厦门高崎",
+		  abbreviation: "xmq",
 		},
 		{
-			"Abbreviation": "sjk",
-			"code": "sanjiangkou",
-			"name": "三江口"
+		  code: "xuanwei",
+		  name: "宣威",
+		  abbreviation: "xwe",
 		},
 		{
-			"Abbreviation": "wj",
-			"code": "wuji",
-			"name": "午汲"
+		  code: "xinxiang",
+		  name: "新乡",
+		  abbreviation: "xxi",
 		},
 		{
-			"Abbreviation": "hr",
-			"code": "huarong",
-			"name": "华容"
+		  code: "xinyang",
+		  name: "信阳",
+		  abbreviation: "xya",
 		},
 		{
-			"Abbreviation": "hj",
-			"code": "huajia",
-			"name": "华家"
+		  code: "xianyang",
+		  name: "咸阳",
+		  abbreviation: "xya",
 		},
 		{
-			"Abbreviation": "yg",
-			"code": "yanggang",
-			"name": "杨岗"
+		  code: "xiangyang",
+		  name: "襄阳",
+		  abbreviation: "xya",
 		},
 		{
-			"Abbreviation": "xhz",
-			"code": "xiaohezhen",
-			"name": "小河镇"
+		  code: "xiongyuecheng",
+		  name: "熊岳城",
+		  abbreviation: "xyc",
 		},
 		{
-			"Abbreviation": "wz",
-			"code": "wuzhong",
-			"name": "吴忠"
+		  code: "xinyu",
+		  name: "新余",
+		  abbreviation: "xyu",
 		},
 		{
-			"Abbreviation": "qx",
-			"code": "qingxu",
-			"name": "清徐"
+		  code: "xuzhou",
+		  name: "徐州",
+		  abbreviation: "xzh",
 		},
 		{
-			"Abbreviation": "pf",
-			"code": "pingfang",
-			"name": "平房"
+		  code: "yanan",
+		  name: "延安",
+		  abbreviation: "yan",
 		},
 		{
-			"Abbreviation": "tys",
-			"code": "taiyangshan",
-			"name": "太阳山"
+		  code: "yibin",
+		  name: "宜宾",
+		  abbreviation: "ybi",
 		},
 		{
-			"Abbreviation": "tyy",
-			"code": "tayayi",
-			"name": "塔崖驿"
+		  code: "yabulinan",
+		  name: "亚布力南",
+		  abbreviation: "ybn",
 		},
 		{
-			"Abbreviation": "wc",
-			"code": "wuchang",
-			"name": "五常"
+		  code: "yebaishou",
+		  name: "叶柏寿",
+		  abbreviation: "ybs",
 		},
 		{
-			"Abbreviation": "ht",
-			"code": "hetian",
-			"name": "和田"
+		  code: "yichangdong",
+		  name: "宜昌东",
+		  abbreviation: "ycd",
 		},
 		{
-			"Abbreviation": "mqb",
-			"code": "minqingbei",
-			"name": "闽清北"
+		  code: "yancheng",
+		  name: "盐城",
+		  abbreviation: "ych",
 		},
 		{
-			"Abbreviation": "jjg",
-			"code": "jijiagou",
-			"name": "纪家沟"
+		  code: "yuncheng",
+		  name: "运城",
+		  abbreviation: "ych",
 		},
 		{
-			"Abbreviation": "zcd",
-			"code": "zhenchengdi",
-			"name": "镇城底"
+		  code: "yichun",
+		  name: "伊春",
+		  abbreviation: "ych",
 		},
 		{
-			"Abbreviation": "kfs",
-			"code": "kaifusi",
-			"name": "开福寺"
+		  code: "yichang",
+		  name: "宜昌",
+		  abbreviation: "ych",
 		},
 		{
-			"Abbreviation": "hkd1",
-			"code": "haikoudong1",
-			"name": "海  口东"
+		  code: "yuci",
+		  name: "榆次",
+		  abbreviation: "yci",
 		},
 		{
-			"Abbreviation": "sjx",
-			"code": "sanjiangxian",
-			"name": "三江县"
+		  code: "yangcun",
+		  name: "杨村",
+		  abbreviation: "ycu",
 		},
 		{
-			"Abbreviation": "ws",
-			"code": "wusheng",
-			"name": "武胜"
+		  code: "yichunxi",
+		  name: "宜春西",
+		  abbreviation: "ycx",
 		},
 		{
-			"Abbreviation": "pzh",
-			"code": "panzhihua",
-			"name": "攀枝花"
+		  code: "yiershi",
+		  name: "伊尔施",
+		  abbreviation: "yes",
 		},
 		{
-			"Abbreviation": "lyb",
-			"code": "linyidong",
-			"name": "临沂东"
+		  code: "yangang",
+		  name: "燕岗",
+		  abbreviation: "yga",
 		},
 		{
-			"Abbreviation": "szs",
-			"code": "shizuishan",
-			"name": "石嘴山"
+		  code: "yanji",
+		  name: "延吉",
+		  abbreviation: "yji",
 		},
 		{
-			"Abbreviation": "cc",
-			"code": "changcheng",
-			"name": "长城"
+		  code: "yongji",
+		  name: "永济",
+		  abbreviation: "yji",
 		},
 		{
-			"Abbreviation": "by",
-			"code": "binyang",
-			"name": "宾阳"
+		  code: "yingkou",
+		  name: "营口",
+		  abbreviation: "yko",
 		},
 		{
-			"Abbreviation": "cj",
-			"code": "chajiang",
-			"name": "岔江"
+		  code: "yakeshi",
+		  name: "牙克石",
+		  abbreviation: "yks",
 		},
 		{
-			"Abbreviation": "gcd",
-			"code": "gancaodian",
-			"name": "甘草店"
+		  code: "yulin",
+		  name: "玉林",
+		  abbreviation: "yli",
 		},
 		{
-			"Abbreviation": "bygl",
-			"code": "bayangaole",
-			"name": "巴彦高勒"
+		  code: "yulin",
+		  name: "榆林",
+		  abbreviation: "yli",
 		},
 		{
-			"Abbreviation": "hjd",
-			"code": "hejiadian",
-			"name": "贺家店"
+		  code: "yanliang",
+		  name: "阎良",
+		  abbreviation: "yli",
 		},
 		{
-			"Abbreviation": "szn",
-			"code": "suizhounan",
-			"name": "随州南"
+		  code: "yalongwan",
+		  name: "亚龙湾",
+		  abbreviation: "ylw",
 		},
 		{
-			"Abbreviation": "zjkn",
-			"code": "zhangjiakounan",
-			"name": "张家口南"
+		  code: "yimianpo",
+		  name: "一面坡",
+		  abbreviation: "ymp",
 		},
 		{
-			"Abbreviation": "gg",
-			"code": "guangao",
-			"name": "官高"
+		  code: "yining",
+		  name: "伊宁",
+		  abbreviation: "yni",
 		},
 		{
-			"Abbreviation": "ylb",
-			"code": "yiliangbei",
-			"name": "宜良北"
+		  code: "yangpingguan",
+		  name: "阳平关",
+		  abbreviation: "ypg",
 		},
 		{
-			"Abbreviation": "sjb",
-			"code": "shejiangbei",
-			"name": "畲江北"
+		  code: "yuping",
+		  name: "玉屏",
+		  abbreviation: "ypi",
 		},
 		{
-			"Abbreviation": "yxx",
-			"code": "yangxianxi",
-			"name": "洋县西"
+		  code: "yuanping",
+		  name: "原平",
+		  abbreviation: "ypi",
 		},
 		{
-			"Abbreviation": "hdjc",
-			"code": "hedongjichang",
-			"name": "河东机场"
+		  code: "yanqing",
+		  name: "延庆",
+		  abbreviation: "yqi",
 		},
 		{
-			"Abbreviation": "hm",
-			"code": "huangmei",
-			"name": "黄梅"
+		  code: "yangquanqu",
+		  name: "阳泉曲",
+		  abbreviation: "yqq",
 		},
 		{
-			"Abbreviation": "lt",
-			"code": "luntai",
-			"name": "轮台"
+		  code: "yangquan",
+		  name: "阳泉",
+		  abbreviation: "yqu",
 		},
 		{
-			"Abbreviation": "xhd",
-			"code": "xihudong",
-			"name": "西湖东"
+		  code: "yuquan",
+		  name: "玉泉",
+		  abbreviation: "yqu",
 		},
 		{
-			"Abbreviation": "weqh",
-			"code": "wuerqihan",
-			"name": "乌尔旗汗"
+		  code: "yushan",
+		  name: "玉山",
+		  abbreviation: "ysh",
 		},
 		{
-			"Abbreviation": "yc",
-			"code": "yuci",
-			"name": "榆次"
+		  code: "yingshan",
+		  name: "营山",
+		  abbreviation: "ysh",
 		},
 		{
-			"Abbreviation": "pjb",
-			"code": "panjinbei",
-			"name": "盘锦北"
+		  code: "yanshan",
+		  name: "燕山",
+		  abbreviation: "ysh",
 		},
 		{
-			"Abbreviation": "yt",
-			"code": "yitong",
-			"name": "伊通"
+		  code: "yushu",
+		  name: "榆树",
+		  abbreviation: "ysh",
 		},
 		{
-			"Abbreviation": "blx",
-			"code": "bailixia",
-			"name": "百里峡"
+		  code: "yingtan",
+		  name: "鹰潭",
+		  abbreviation: "yta",
 		},
 		{
-			"Abbreviation": "ptj",
-			"code": "putaojing",
-			"name": "葡萄菁"
+		  code: "yantai",
+		  name: "烟台",
+		  abbreviation: "yta",
 		},
 		{
-			"Abbreviation": "ls",
-			"code": "lishui1",
-			"name": "溧水"
+		  code: "yitulihe",
+		  name: "伊图里河",
+		  abbreviation: "yth",
 		},
 		{
-			"Abbreviation": "smxn",
-			"code": "sanmenxianan",
-			"name": "三门峡南"
+		  code: "yutianxian",
+		  name: "玉田县",
+		  abbreviation: "ytx",
 		},
 		{
-			"Abbreviation": "gbz",
-			"code": "goubangzi",
-			"name": "沟帮子"
+		  code: "yiwu",
+		  name: "义乌",
+		  abbreviation: "ywu",
 		},
 		{
-			"Abbreviation": "nhb",
-			"code": "nanhuabei",
-			"name": "南华北"
+		  code: "yangxin",
+		  name: "阳新",
+		  abbreviation: "yxi",
 		},
 		{
-			"Abbreviation": "zg",
-			"code": "zhaoguang",
-			"name": "赵光"
+		  code: "yixian",
+		  name: "义县",
+		  abbreviation: "yxi",
 		},
 		{
-			"Abbreviation": "gc",
-			"code": "gucheng",
-			"name": "谷城"
+		  code: "yiyang",
+		  name: "益阳",
+		  abbreviation: "yya",
 		},
 		{
-			"Abbreviation": "nm",
-			"code": "nimu",
-			"name": "尼木"
+		  code: "yueyang",
+		  name: "岳阳",
+		  abbreviation: "yya",
 		},
 		{
-			"Abbreviation": "pzn",
-			"code": "pingzhuangnan",
-			"name": "平庄南"
+		  code: "yazhou",
+		  name: "崖州",
+		  abbreviation: "yzh",
 		},
 		{
-			"Abbreviation": "zwt",
-			"code": "zhangweitun",
-			"name": "张维屯"
+		  code: "yangzhou",
+		  name: "扬州",
+		  abbreviation: "yzh",
 		},
 		{
-			"Abbreviation": "dy",
-			"code": "dayan",
-			"name": "大雁"
+		  code: "yongzhou",
+		  name: "永州",
+		  abbreviation: "yzh",
 		},
 		{
-			"Abbreviation": "ngl",
-			"code": "nanguanling",
-			"name": "南关岭"
+		  code: "zibo",
+		  name: "淄博",
+		  abbreviation: "zbo",
 		},
 		{
-			"Abbreviation": "hhn",
-			"code": "huaihuanan",
-			"name": "怀化南"
+		  code: "zhenchengdi",
+		  name: "镇城底",
+		  abbreviation: "zcd",
 		},
 		{
-			"Abbreviation": "hc",
-			"code": "huocheng",
-			"name": "霍城"
+		  code: "zigongbei",
+		  name: "自贡北",
+		  abbreviation: "zgb",
 		},
 		{
-			"Abbreviation": "xl",
-			"code": "xiaoling",
-			"name": "小岭"
+		  code: "zhuhai",
+		  name: "珠海",
+		  abbreviation: "zha",
 		},
 		{
-			"Abbreviation": "zd",
-			"code": "zhangdang",
-			"name": "章党"
+		  code: "zhuhaibei",
+		  name: "珠海北",
+		  abbreviation: "zhb",
 		},
 		{
-			"Abbreviation": "zhm",
-			"code": "zhonghuamen",
-			"name": "中华门"
+		  code: "zhanjiang",
+		  name: "湛江",
+		  abbreviation: "zji",
 		},
 		{
-			"Abbreviation": "xy",
-			"code": "xinyang",
-			"name": "信阳"
+		  code: "zhenjiang",
+		  name: "镇江",
+		  abbreviation: "zji",
 		},
 		{
-			"Abbreviation": "es",
-			"code": "enshi",
-			"name": "恩施"
+		  code: "zhangjiajie",
+		  name: "张家界",
+		  abbreviation: "zjj",
 		},
 		{
-			"Abbreviation": "ls",
-			"code": "lianshui",
-			"name": "涟水"
+		  code: "zhangjiakou",
+		  name: "张家口",
+		  abbreviation: "zjk",
 		},
 		{
-			"Abbreviation": "qy",
-			"code": "qingyuan1",
-			"name": "清远"
+		  code: "zhoukou",
+		  name: "周口",
+		  abbreviation: "zko",
 		},
 		{
-			"Abbreviation": "lfn",
-			"code": "lufengnan",
-			"name": "禄丰南"
+		  code: "zhalantun",
+		  name: "扎兰屯",
+		  abbreviation: "zlt",
 		},
 		{
-			"Abbreviation": "pt",
-			"code": "putian",
-			"name": "莆田"
+		  code: "zhumadian",
+		  name: "驻马店",
+		  abbreviation: "zmd",
 		},
 		{
-			"Abbreviation": "jzz",
-			"code": "jinzhangzi",
-			"name": "金杖子"
+		  code: "zhaoqing",
+		  name: "肇庆",
+		  abbreviation: "zqi",
 		},
 		{
-			"Abbreviation": "jx",
-			"code": "juxian",
-			"name": "莒县"
+		  code: "zhoushuizi",
+		  name: "周水子",
+		  abbreviation: "zsz",
 		},
 		{
-			"Abbreviation": "ct",
-			"code": "changtu",
-			"name": "昌图"
+		  code: "zhaotong",
+		  name: "昭通",
+		  abbreviation: "zto",
 		},
 		{
-			"Abbreviation": "gsd",
-			"code": "ganshuidong",
-			"name": "赶水东"
+		  code: "zhongwei",
+		  name: "中卫",
+		  abbreviation: "zwe",
 		},
 		{
-			"Abbreviation": "lhy",
-			"code": "luanheyan",
-			"name": "滦河沿"
+		  code: "ziyang",
+		  name: "资阳",
+		  abbreviation: "zya",
 		},
 		{
-			"Abbreviation": "dj",
-			"code": "dongjin",
-			"name": "东津"
+		  code: "zunyixi",
+		  name: "遵义西",
+		  abbreviation: "zyx",
 		},
 		{
-			"Abbreviation": "njn",
-			"code": "nanjingnan",
-			"name": "南京南"
+		  code: "zaozhuang",
+		  name: "枣庄",
+		  abbreviation: "zzh",
 		},
 		{
-			"Abbreviation": "wd",
-			"code": "wendi",
-			"name": "文地"
+		  code: "zizhong",
+		  name: "资中",
+		  abbreviation: "zzh",
 		},
 		{
-			"Abbreviation": "zh",
-			"code": "zhaohua",
-			"name": "昭化"
+		  code: "zhuzhou",
+		  name: "株洲",
+		  abbreviation: "zzh",
 		},
 		{
-			"Abbreviation": "el",
-			"code": "erlong",
-			"name": "二龙"
+		  code: "zaozhuangxi",
+		  name: "枣庄西",
+		  abbreviation: "zzx",
 		},
 		{
-			"Abbreviation": "qy",
-			"code": "quanyang",
-			"name": "泉阳"
+		  code: "angangxi",
+		  name: "昂昂溪",
+		  abbreviation: "aax",
 		},
 		{
-			"Abbreviation": "sbc",
-			"code": "shangbancheng",
-			"name": "上板城"
+		  code: "acheng",
+		  name: "阿城",
+		  abbreviation: "ach",
 		},
 		{
-			"Abbreviation": "ww",
-			"code": "wuwu",
-			"name": "五五"
+		  code: "anda",
+		  name: "安达",
+		  abbreviation: "ada",
 		},
 		{
-			"Abbreviation": "tql",
-			"code": "tianqiaoling",
-			"name": "天桥岭"
+		  code: "ande",
+		  name: "安德",
+		  abbreviation: "ade",
 		},
 		{
-			"Abbreviation": "wgt",
-			"code": "wuguantian",
-			"name": "吴官田"
+		  code: "anding",
+		  name: "安定",
+		  abbreviation: "adi",
 		},
 		{
-			"Abbreviation": "tjz",
-			"code": "tongjunzhuang",
-			"name": "统军庄"
+		  code: "anduo",
+		  name: "安多",
+		  abbreviation: "adu",
 		},
 		{
-			"Abbreviation": "xax",
-			"code": "xinanxian",
-			"name": "新安县"
+		  code: "anguang",
+		  name: "安广",
+		  abbreviation: "agu",
 		},
 		{
-			"Abbreviation": "cr",
-			"code": "chongren",
-			"name": "崇仁"
+		  code: "aohan",
+		  name: "敖汉",
+		  abbreviation: "aha",
 		},
 		{
-			"Abbreviation": "sjzd",
-			"code": "shijiazhuangdong",
-			"name": "石家庄东"
+		  code: "aihe",
+		  name: "艾河",
+		  abbreviation: "ahe",
 		},
 		{
-			"Abbreviation": "qx",
-			"code": "qixian",
-			"name": "祁县"
+		  code: "anhua",
+		  name: "安化",
+		  abbreviation: "ahu",
 		},
 		{
-			"Abbreviation": "yc",
-			"code": "yecheng",
-			"name": "叶城"
+		  code: "aijiacun",
+		  name: "艾家村",
+		  abbreviation: "ajc",
 		},
 		{
-			"Abbreviation": "xdj",
-			"code": "xiaodejiang",
-			"name": "小得江"
+		  code: "ajin",
+		  name: "阿金",
+		  abbreviation: "aji",
 		},
 		{
-			"Abbreviation": "jdz",
-			"code": "jingdezhen",
-			"name": "景德镇"
+		  code: "anjing",
+		  name: "安靖",
+		  abbreviation: "aji",
 		},
 		{
-			"Abbreviation": "jw",
-			"code": "jiwen",
-			"name": "吉文"
+		  code: "anjia",
+		  name: "安家",
+		  abbreviation: "aji",
 		},
 		{
-			"Abbreviation": "ql",
-			"code": "qinglong",
-			"name": "青龙"
+		  code: "aketao",
+		  name: "阿克陶",
+		  abbreviation: "akt",
 		},
 		{
-			"Abbreviation": "jy",
-			"code": "jinyun",
-			"name": "缙云"
+		  code: "ankouyao",
+		  name: "安口窑",
+		  abbreviation: "aky",
 		},
 		{
-			"Abbreviation": "msz",
-			"code": "maoshezu",
-			"name": "茂舍祖"
+		  code: "aolibugao",
+		  name: "敖力布告",
+		  abbreviation: "alg",
 		},
 		{
-			"Abbreviation": "xw",
-			"code": "xingwen",
-			"name": "兴文"
+		  code: "anlong",
+		  name: "安龙",
+		  abbreviation: "alo",
 		},
 		{
-			"Abbreviation": "szd",
-			"code": "suzhoudong",
-			"name": "宿州东"
+		  code: "alongshan",
+		  name: "阿龙山",
+		  abbreviation: "als",
 		},
 		{
-			"Abbreviation": "sq",
-			"code": "shenqiu",
-			"name": "沈丘"
+		  code: "anlu",
+		  name: "安陆",
+		  abbreviation: "alu",
 		},
 		{
-			"Abbreviation": "qsy",
-			"code": "qishuyan",
-			"name": "戚墅堰"
+		  code: "amuer",
+		  name: "阿木尔",
+		  abbreviation: "ame",
 		},
 		{
-			"Abbreviation": "qjz",
-			"code": "qianjinzhen",
-			"name": "前进镇"
+		  code: "ananzhuang",
+		  name: "阿南庄",
+		  abbreviation: "anz",
 		},
 		{
-			"Abbreviation": "zge",
-			"code": "zhungeer",
-			"name": "准格尔"
+		  code: "anshanxi",
+		  name: "鞍山西",
+		  abbreviation: "asx",
 		},
 		{
-			"Abbreviation": "zzd",
-			"code": "zhuozidong",
-			"name": "卓资东"
+		  code: "antang",
+		  name: "安塘",
+		  abbreviation: "ata",
 		},
 		{
-			"Abbreviation": "ctn",
-			"code": "chaotiannan",
-			"name": "朝天南"
+		  code: "antingbei",
+		  name: "安亭北",
+		  abbreviation: "atb",
 		},
 		{
-			"Abbreviation": "gqc",
-			"code": "gongqingcheng",
-			"name": "共青城"
+		  code: "atushi",
+		  name: "阿图什",
+		  abbreviation: "ats",
 		},
 		{
-			"Abbreviation": "jd",
-			"code": "jingdian",
-			"name": "井店"
+		  code: "antu",
+		  name: "安图",
+		  abbreviation: "atu",
 		},
 		{
-			"Abbreviation": "ndm",
-			"code": "nandamiao",
-			"name": "南大庙"
+		  code: "anxi",
+		  name: "安溪",
+		  abbreviation: "axi",
 		},
 		{
-			"Abbreviation": "bkt",
-			"code": "boketu",
-			"name": "博克图"
+		  code: "boao",
+		  name: "博鳌",
+		  abbreviation: "bao",
 		},
 		{
-			"Abbreviation": "kjj",
-			"code": "kangjinjing",
-			"name": "康金井"
+		  code: "baibiguan",
+		  name: "白壁关",
+		  abbreviation: "bbg",
 		},
 		{
-			"Abbreviation": "gy",
-			"code": "guangyuan",
-			"name": "广元"
+		  code: "bengbunan",
+		  name: "蚌埠南",
+		  abbreviation: "bbn",
 		},
 		{
-			"Abbreviation": "nd",
-			"code": "ningdong",
-			"name": "宁东"
+		  code: "bachu",
+		  name: "巴楚",
+		  abbreviation: "bch",
 		},
 		{
-			"Abbreviation": "xlz",
-			"code": "xinglongzhen",
-			"name": "兴隆镇"
+		  code: "bancheng",
+		  name: "板城",
+		  abbreviation: "bch",
 		},
 		{
-			"Abbreviation": "th",
-			"code": "tuha",
-			"name": "吐哈"
+		  code: "beidaihe",
+		  name: "北戴河",
+		  abbreviation: "bdh",
 		},
 		{
-			"Abbreviation": "zw",
-			"code": "zhuwo",
-			"name": "珠窝"
+		  code: "baoding",
+		  name: "保定",
+		  abbreviation: "bdi",
 		},
 		{
-			"Abbreviation": "cjp",
-			"code": "caijiapo",
-			"name": "蔡家坡"
+		  code: "baodi",
+		  name: "宝坻",
+		  abbreviation: "bdi",
 		},
 		{
-			"Abbreviation": "fz",
-			"code": "fanzhen",
-			"name": "范镇"
+		  code: "badaling",
+		  name: "八达岭",
+		  abbreviation: "bdl",
 		},
 		{
-			"Abbreviation": "sy2",
-			"code": "shuangyang2",
-			"name": "双洋"
+		  code: "badong",
+		  name: "巴东",
+		  abbreviation: "bdo",
 		},
 		{
-			"Abbreviation": "xw",
-			"code": "xuanwei",
-			"name": "宣威"
+		  code: "baofeng",
+		  name: "宝丰",
+		  abbreviation: "bfe",
 		},
 		{
-			"Abbreviation": "alsk",
-			"code": "alashankou",
-			"name": "阿拉山口"
+		  code: "baiguo",
+		  name: "柏果",
+		  abbreviation: "bgu",
 		},
 		{
-			"Abbreviation": "da",
-			"code": "dean",
-			"name": "德安"
+		  code: "buhai",
+		  name: "布海",
+		  abbreviation: "bha",
 		},
 		{
-			"Abbreviation": "nc",
-			"code": "nanchang2",
-			"name": "南 昌"
+		  code: "baihedong",
+		  name: "白河东",
+		  abbreviation: "bhd",
 		},
 		{
-			"Abbreviation": "cy",
-			"code": "chaoyang",
-			"name": "朝阳"
+		  code: "baohuashan",
+		  name: "宝华山",
+		  abbreviation: "bhs",
 		},
 		{
-			"Abbreviation": "tlh",
-			"code": "tulihe",
-			"name": "图里河"
+		  code: "baihexian",
+		  name: "白河县",
+		  abbreviation: "bhx",
 		},
 		{
-			"Abbreviation": "ml",
-			"code": "malong",
-			"name": "马龙"
+		  code: "baijigou",
+		  name: "白芨沟",
+		  abbreviation: "bjg",
 		},
 		{
-			"Abbreviation": "tjx",
-			"code": "tianjinxi",
-			"name": "天津西"
+		  code: "bijiguan",
+		  name: "碧鸡关",
+		  abbreviation: "bjg",
 		},
 		{
-			"Abbreviation": "ljl",
-			"code": "linjialou",
-			"name": "蔺家楼"
+		  code: "beijiao",
+		  name: "北滘",
+		  abbreviation: "bji",
 		},
 		{
-			"Abbreviation": "lj",
-			"code": "liujiang",
-			"name": "柳江"
+		  code: "bijiang",
+		  name: "碧江",
+		  abbreviation: "bji",
 		},
 		{
-			"Abbreviation": "wwn",
-			"code": "wuweinan1",
-			"name": "武威南"
+		  code: "baijipo",
+		  name: "白鸡坡",
+		  abbreviation: "bjp",
 		},
 		{
-			"Abbreviation": "jh",
-			"code": "jianghua",
-			"name": "江华"
+		  code: "bijiashan",
+		  name: "笔架山",
+		  abbreviation: "bjs",
 		},
 		{
-			"Abbreviation": "bjn",
-			"code": "beijingnan",
-			"name": "北京南"
+		  code: "bajiaotai",
+		  name: "八角台",
+		  abbreviation: "bjt",
 		},
 		{
-			"Abbreviation": "gan",
-			"code": "guangannan",
-			"name": "广安南"
+		  code: "baokang",
+		  name: "保康",
+		  abbreviation: "bka",
 		},
 		{
-			"Abbreviation": "bb",
-			"code": "bengbu",
-			"name": "蚌埠"
+		  code: "baikuipu",
+		  name: "白奎堡",
+		  abbreviation: "bkp",
 		},
 		{
-			"Abbreviation": "bys",
-			"code": "baiyinshi",
-			"name": "白银市"
+		  code: "bailang",
+		  name: "白狼",
+		  abbreviation: "bla",
 		},
 		{
-			"Abbreviation": "mzb",
-			"code": "mengzibei",
-			"name": "蒙自北"
+		  code: "bailang",
+		  name: "百浪",
+		  abbreviation: "bla",
 		},
 		{
-			"Abbreviation": "ejn",
-			"code": "ejina",
-			"name": "额济纳"
+		  code: "bole",
+		  name: "博乐",
+		  abbreviation: "ble",
 		},
 		{
-			"Abbreviation": "gh",
-			"code": "gaohua",
-			"name": "高花"
+		  code: "balin",
+		  name: "巴林",
+		  abbreviation: "bli",
 		},
 		{
-			"Abbreviation": "bhd",
-			"code": "baihedong",
-			"name": "白河东"
+		  code: "beiliu",
+		  name: "北流",
+		  abbreviation: "bli",
 		},
 		{
-			"Abbreviation": "jrx",
-			"code": "jurongxi",
-			"name": "句容西"
+		  code: "boli",
+		  name: "勃利",
+		  abbreviation: "bli",
 		},
 		{
-			"Abbreviation": "dyb",
-			"code": "dayebei",
-			"name": "大冶北"
+		  code: "baolin",
+		  name: "宝林",
+		  abbreviation: "bli",
 		},
 		{
-			"Abbreviation": "yt",
-			"code": "yuantan",
-			"name": "源潭"
+		  code: "buliekai",
+		  name: "布列开",
+		  abbreviation: "blk",
 		},
 		{
-			"Abbreviation": "mdj",
-			"code": "mudanjiang",
-			"name": "牡丹江"
+		  code: "baolongshan",
+		  name: "宝龙山",
+		  abbreviation: "bls",
 		},
 		{
-			"Abbreviation": "ss",
-			"code": "shishan",
-			"name": "石山"
+		  code: "bailixia",
+		  name: "百里峡",
+		  abbreviation: "blx",
 		},
 		{
-			"Abbreviation": "fj",
-			"code": "fujin",
-			"name": "富锦"
+		  code: "bamiancheng",
+		  name: "八面城",
+		  abbreviation: "bmc",
 		},
 		{
-			"Abbreviation": "czb",
-			"code": "chuzhoubei",
-			"name": "滁州北"
+		  code: "banmaoqing",
+		  name: "班猫箐",
+		  abbreviation: "bmq",
 		},
 		{
-			"Abbreviation": "dh",
-			"code": "donghai",
-			"name": "东海"
+		  code: "bamiantong",
+		  name: "八面通",
+		  abbreviation: "bmt",
 		},
 		{
-			"Abbreviation": "lcd",
-			"code": "lechangdong",
-			"name": "乐昌东"
+		  code: "beimaquanzi",
+		  name: "北马圈子",
+		  abbreviation: "bmz",
 		},
 		{
-			"Abbreviation": "xsx",
-			"code": "xiangshuixian",
-			"name": "响水县"
+		  code: "beipiaonan",
+		  name: "北票南",
+		  abbreviation: "bpn",
 		},
 		{
-			"Abbreviation": "dzc",
-			"code": "dazhanchang",
-			"name": "大战场"
+		  code: "baiqi",
+		  name: "白旗",
+		  abbreviation: "bqi",
 		},
 		{
-			"Abbreviation": "lc",
-			"code": "licheng",
-			"name": "黎城"
+		  code: "baoquanling",
+		  name: "宝泉岭",
+		  abbreviation: "bql",
 		},
 		{
-			"Abbreviation": "gzj",
-			"code": "guanzijing",
-			"name": "官字井"
+		  code: "baiquan",
+		  name: "白泉",
+		  abbreviation: "bqu",
 		},
 		{
-			"Abbreviation": "sj",
-			"code": "shangjia",
-			"name": "尚家"
+		  code: "bashan",
+		  name: "巴山",
+		  abbreviation: "bsh",
 		},
 		{
-			"Abbreviation": "pa",
-			"code": "puan",
-			"name": "普安"
+		  code: "baishuijiang",
+		  name: "白水江",
+		  abbreviation: "bsj",
 		},
 		{
-			"Abbreviation": "el",
-			"code": "erlian",
-			"name": "二连"
+		  code: "baishapo",
+		  name: "白沙坡",
+		  abbreviation: "bsp",
 		},
 		{
-			"Abbreviation": "syb",
-			"code": "songyuanbei",
-			"name": "松原北"
+		  code: "baishishan",
+		  name: "白石山",
+		  abbreviation: "bss",
 		},
 		{
-			"Abbreviation": "qdh",
-			"code": "qiandaohu",
-			"name": "千岛湖"
+		  code: "baishuizhen",
+		  name: "白水镇",
+		  abbreviation: "bsz",
 		},
 		{
-			"Abbreviation": "bzx",
-			"code": "bazhouxi",
-			"name": "霸州西"
+		  code: "baotoudong",
+		  name: "包头 东",
+		  abbreviation: "btd",
 		},
 		{
-			"Abbreviation": "lb",
-			"code": "lingbi",
-			"name": "灵璧"
+		  code: "bantian",
+		  name: "坂田",
+		  abbreviation: "bti",
 		},
 		{
-			"Abbreviation": "fzn",
-			"code": "fuzhounan",
-			"name": "福州南"
+		  code: "botou",
+		  name: "泊头",
+		  abbreviation: "bto",
 		},
 		{
-			"Abbreviation": "wh",
-			"code": "weihe",
-			"name": "苇河"
+		  code: "beitun",
+		  name: "北屯",
+		  abbreviation: "btu",
 		},
 		{
-			"Abbreviation": "pn",
-			"code": "puning",
-			"name": "普宁"
+		  code: "benxihu",
+		  name: "本溪湖",
+		  abbreviation: "bxh",
 		},
 		{
-			"Abbreviation": "ljd",
-			"code": "luojiangdong",
-			"name": "罗江东"
+		  code: "boxing",
+		  name: "博兴",
+		  abbreviation: "bxi",
 		},
 		{
-			"Abbreviation": "pd1",
-			"code": "puding",
-			"name": "普定"
+		  code: "baxiantong",
+		  name: "八仙筒",
+		  abbreviation: "bxt",
 		},
 		{
-			"Abbreviation": "ycb",
-			"code": "yongchengbei",
-			"name": "永城北"
+		  code: "baiyinchagan",
+		  name: "白音察干",
+		  abbreviation: "byg",
 		},
 		{
-			"Abbreviation": "mz",
-			"code": "mizhi",
-			"name": "米脂"
+		  code: "beiyinhe",
+		  name: "背荫河",
+		  abbreviation: "byh",
 		},
 		{
-			"Abbreviation": "medg",
-			"code": "moerdaoga",
-			"name": "莫尔道嘎"
+		  code: "beiying",
+		  name: "北营",
+		  abbreviation: "byi",
 		},
 		{
-			"Abbreviation": "hb",
-			"code": "huaibei",
-			"name": "淮北"
+		  code: "bayangaole",
+		  name: "巴彦高勒",
+		  abbreviation: "byl",
 		},
 		{
-			"Abbreviation": "ra",
-			"code": "ruian",
-			"name": "瑞安"
+		  code: "baiyintala",
+		  name: "白音他拉",
+		  abbreviation: "byl",
 		},
 		{
-			"Abbreviation": "fh",
-			"code": "fenghua",
-			"name": "奉化"
+		  code: "bayuquan",
+		  name: "鲅鱼圈",
+		  abbreviation: "byq",
 		},
 		{
-			"Abbreviation": "ctn",
-			"code": "changtingnan",
-			"name": "长汀南"
+		  code: "baiyinshi",
+		  name: "白银市",
+		  abbreviation: "bys",
 		},
 		{
-			"Abbreviation": "hs",
-			"code": "huashan",
-			"name": "华山"
+		  code: "baiyinhushuo",
+		  name: "白音胡硕",
+		  abbreviation: "bys",
 		},
 		{
-			"Abbreviation": "cax",
-			"code": "changanxi",
-			"name": "长安西"
+		  code: "bazhong",
+		  name: "巴中",
+		  abbreviation: "bzh",
 		},
 		{
-			"Abbreviation": "ljh",
-			"code": "liujiahe",
-			"name": "刘家河"
+		  code: "bazhou",
+		  name: "霸州",
+		  abbreviation: "bzh",
 		},
 		{
-			"Abbreviation": "ysp",
-			"code": "yesanpo",
-			"name": "野三坡"
+		  code: "beizhai",
+		  name: "北宅",
+		  abbreviation: "bzh",
 		},
 		{
-			"Abbreviation": "cyc",
-			"code": "chuangyecun",
-			"name": "创业村"
+		  code: "chibibei",
+		  name: "赤壁北",
+		  abbreviation: "cbb",
 		},
 		{
-			"Abbreviation": "lz",
-			"code": "lazha",
-			"name": "拉鲊"
+		  code: "chabuga",
+		  name: "查布嘎",
+		  abbreviation: "cbg",
 		},
 		{
-			"Abbreviation": "sjsn",
-			"code": "shijingshannan",
-			"name": "石景山南"
+		  code: "changcheng",
+		  name: "长城",
+		  abbreviation: "cch",
 		},
 		{
-			"Abbreviation": "tl",
-			"code": "tongliao",
-			"name": "通辽"
+		  code: "changchong",
+		  name: "长冲",
+		  abbreviation: "cch",
 		},
 		{
-			"Abbreviation": "sp",
-			"code": "siping",
-			"name": "四平"
+		  code: "chengdedong",
+		  name: "承德东",
+		  abbreviation: "cdd",
 		},
 		{
-			"Abbreviation": "dyd",
-			"code": "duyundong",
-			"name": "都匀东"
+		  code: "chifeng",
+		  name: "赤峰",
+		  abbreviation: "cfe",
 		},
 		{
-			"Abbreviation": "han",
-			"code": "huaiannan",
-			"name": "淮安南"
+		  code: "cuogang",
+		  name: "嵯岗",
+		  abbreviation: "cga",
 		},
 		{
-			"Abbreviation": "smx",
-			"code": "sanmenxia",
-			"name": "三门峡"
+		  code: "chaigang",
+		  name: "柴岗",
+		  abbreviation: "cga",
 		},
 		{
-			"Abbreviation": "kl",
-			"code": "kulun",
-			"name": "库伦"
+		  code: "changge",
+		  name: "长葛",
+		  abbreviation: "cge",
 		},
 		{
-			"Abbreviation": "jz",
-			"code": "jiaozuo",
-			"name": "焦作"
+		  code: "chaigoupu",
+		  name: "柴沟堡",
+		  abbreviation: "cgp",
 		},
 		{
-			"Abbreviation": "lad",
-			"code": "longandong",
-			"name": "隆安东"
+		  code: "chenggu",
+		  name: "城固",
+		  abbreviation: "cgu",
 		},
 		{
-			"Abbreviation": "mcp",
-			"code": "maocaoping",
-			"name": "茅草坪"
+		  code: "chenguanying",
+		  name: "陈官营",
+		  abbreviation: "cgy",
 		},
 		{
-			"Abbreviation": "pk",
-			"code": "pikou",
-			"name": "皮口"
+		  code: "chenggaozi",
+		  name: "成高子",
+		  abbreviation: "cgz",
 		},
 		{
-			"Abbreviation": "zn",
-			"code": "zhongning",
-			"name": "中宁"
+		  code: "caohai",
+		  name: "草海",
+		  abbreviation: "cha",
 		},
 		{
-			"Abbreviation": "zy",
-			"code": "zaoyang",
-			"name": "枣阳"
+		  code: "ceheng",
+		  name: "册亨",
+		  abbreviation: "che",
 		},
 		{
-			"Abbreviation": "fsc",
-			"code": "fengshuicun",
-			"name": "丰水村"
+		  code: "chaihe",
+		  name: "柴河",
+		  abbreviation: "che",
 		},
 		{
-			"Abbreviation": "dlh",
-			"code": "dalianhe",
-			"name": "达连河"
+		  code: "caohekou",
+		  name: "草河口",
+		  abbreviation: "chk",
 		},
 		{
-			"Abbreviation": "ycb",
-			"code": "yunchengbei",
-			"name": "运城北"
+		  code: "cuihuangkou",
+		  name: "崔黄口",
+		  abbreviation: "chk",
 		},
 		{
-			"Abbreviation": "nn",
-			"code": "nanning",
-			"name": "南宁"
+		  code: "chaohu",
+		  name: "巢湖",
+		  abbreviation: "chu",
 		},
 		{
-			"Abbreviation": "mz",
-			"code": "miaozhuang",
-			"name": "庙庄"
+		  code: "caijiagou",
+		  name: "蔡家沟",
+		  abbreviation: "cjg",
 		},
 		{
-			"Abbreviation": "sshb",
-			"code": "songshanhubei",
-			"name": "松山湖北"
+		  code: "chengjisihan",
+		  name: "成吉思汗",
+		  abbreviation: "cjh",
 		},
 		{
-			"Abbreviation": "jl",
-			"code": "jiangle",
-			"name": "将乐"
+		  code: "chajiang",
+		  name: "岔江",
+		  abbreviation: "cji",
 		},
 		{
-			"Abbreviation": "wfdx",
-			"code": "wafangdianxi",
-			"name": "瓦房店西"
+		  code: "caijiapo",
+		  name: "蔡家坡",
+		  abbreviation: "cjp",
 		},
 		{
-			"Abbreviation": "klq",
-			"code": "kalaqi",
-			"name": "喀喇其"
+		  code: "changle",
+		  name: "昌乐",
+		  abbreviation: "cle",
 		},
 		{
-			"Abbreviation": "hy",
-			"code": "hanyin",
-			"name": "汉阴"
+		  code: "chaolianggou",
+		  name: "超梁沟",
+		  abbreviation: "clg",
 		},
 		{
-			"Abbreviation": "nl",
-			"code": "naluo",
-			"name": "那罗"
+		  code: "cili",
+		  name: "慈利",
+		  abbreviation: "cli",
 		},
 		{
-			"Abbreviation": "fx",
-			"code": "fuxin",
-			"name": "阜新"
+		  code: "changli",
+		  name: "昌黎",
+		  abbreviation: "cli",
 		},
 		{
-			"Abbreviation": "sd",
-			"code": "shidu",
-			"name": "十渡"
+		  code: "changlingzi",
+		  name: "长岭子",
+		  abbreviation: "clz",
 		},
 		{
-			"Abbreviation": "zzs",
-			"code": "zhuozishan",
-			"name": "卓资山"
+		  code: "chenming",
+		  name: "晨明",
+		  abbreviation: "cmi",
 		},
 		{
-			"Abbreviation": "nx",
-			"code": "ningxiang",
-			"name": "宁乡"
+		  code: "changnong",
+		  name: "长农",
+		  abbreviation: "cno",
 		},
 		{
-			"Abbreviation": "sx",
-			"code": "shixian",
-			"name": "石岘"
+		  code: "changpingbei",
+		  name: "昌平北",
+		  abbreviation: "cpb",
 		},
 		{
-			"Abbreviation": "jms",
-			"code": "jiamusi",
-			"name": "佳木斯"
+		  code: "changping",
+		  name: "常平",
+		  abbreviation: "cpi",
 		},
 		{
-			"Abbreviation": "fcd1",
-			"code": "fengchengdong1",
-			"name": "丰城东"
+		  code: "changpoling",
+		  name: "长坡岭",
+		  abbreviation: "cpl",
 		},
 		{
-			"Abbreviation": "lmd",
-			"code": "lamadian",
-			"name": "喇嘛甸"
+		  code: "chenqing",
+		  name: "辰清",
+		  abbreviation: "cqi",
 		},
 		{
-			"Abbreviation": "js",
-			"code": "jianshan",
-			"name": "尖山"
+		  code: "caishan",
+		  name: "蔡山",
+		  abbreviation: "csh",
 		},
 		{
-			"Abbreviation": "cx",
-			"code": "cixian",
-			"name": "磁县"
+		  code: "changshou",
+		  name: "长寿",
+		  abbreviation: "csh",
 		},
 		{
-			"Abbreviation": "syx",
-			"code": "shaoyangxi",
-			"name": "邵阳西"
+		  code: "cishan",
+		  name: "磁山",
+		  abbreviation: "csh",
 		},
 		{
-			"Abbreviation": "hebx",
-			"code": "haerbinxi",
-			"name": "哈尔滨西"
+		  code: "cangshi",
+		  name: "苍石",
+		  abbreviation: "csh",
 		},
 		{
-			"Abbreviation": "hsx",
-			"code": "hongshaxian",
-			"name": "红砂岘"
+		  code: "caoshi",
+		  name: "草市",
+		  abbreviation: "csh",
 		},
 		{
-			"Abbreviation": "sl",
-			"code": "shiling",
-			"name": "石岭"
+		  code: "chushan",
+		  name: "楚山",
+		  abbreviation: "csh",
 		},
 		{
-			"Abbreviation": "jxx",
-			"code": "jixixian",
-			"name": "绩溪县"
+		  code: "chasuqi",
+		  name: "察素齐",
+		  abbreviation: "csq",
 		},
 		{
-			"Abbreviation": "dstn",
-			"code": "dashitounan",
-			"name": "大石头南"
+		  code: "changshantun",
+		  name: "长山屯",
+		  abbreviation: "cst",
 		},
 		{
-			"Abbreviation": "sdx",
-			"code": "sanduxian",
-			"name": "三都县"
+		  code: "changting",
+		  name: "长汀",
+		  abbreviation: "cti",
 		},
 		{
-			"Abbreviation": "db",
-			"code": "daba",
-			"name": "大坝"
+		  code: "chaotiannan",
+		  name: "朝天南",
+		  abbreviation: "ctn",
 		},
 		{
-			"Abbreviation": "hh",
-			"code": "huaihua",
-			"name": "怀化"
+		  code: "changtuxi",
+		  name: "昌图西",
+		  abbreviation: "ctx",
 		},
 		{
-			"Abbreviation": "whb",
-			"code": "weihaibei",
-			"name": "威海北"
+		  code: "chunwan",
+		  name: "春湾",
+		  abbreviation: "cwa",
 		},
 		{
-			"Abbreviation": "hz",
-			"code": "heze",
-			"name": "菏泽"
+		  code: "cenxi",
+		  name: "岑溪",
+		  abbreviation: "cxi",
 		},
 		{
-			"Abbreviation": "hy",
-			"code": "heyang",
-			"name": "合阳"
+		  code: "chenxi",
+		  name: "辰溪",
+		  abbreviation: "cxi",
 		},
 		{
-			"Abbreviation": "ym",
-			"code": "yuanmou",
-			"name": "元谋"
+		  code: "cixian",
+		  name: "磁县",
+		  abbreviation: "cxi",
 		},
 		{
-			"Abbreviation": "hn",
-			"code": "huainan",
-			"name": "淮南"
+		  code: "cixi",
+		  name: "磁西",
+		  abbreviation: "cxi",
 		},
 		{
-			"Abbreviation": "ylw",
-			"code": "yalongwan",
-			"name": "亚龙湾"
+		  code: "changxingnan",
+		  name: "长兴南",
+		  abbreviation: "cxn",
 		},
 		{
-			"Abbreviation": "ys",
-			"code": "yuanshi",
-			"name": "元氏"
+		  code: "ciyao",
+		  name: "磁窑",
+		  abbreviation: "cya",
 		},
 		{
-			"Abbreviation": "sqb",
-			"code": "shenqiubei",
-			"name": "沈丘北"
+		  code: "chunyang",
+		  name: "春阳",
+		  abbreviation: "cya",
 		},
 		{
-			"Abbreviation": "tt",
-			"code": "tongtu",
-			"name": "通途"
+		  code: "chengyang",
+		  name: "城阳",
+		  abbreviation: "cya",
 		},
 		{
-			"Abbreviation": "xlx",
-			"code": "xinglongxian",
-			"name": "兴隆县"
+		  code: "chaoyangchuan",
+		  name: "朝阳川",
+		  abbreviation: "cyc",
 		},
 		{
-			"Abbreviation": "ss",
-			"code": "shaoshan",
-			"name": "韶山"
+		  code: "chuangyecun",
+		  name: "创业村",
+		  abbreviation: "cyc",
 		},
 		{
-			"Abbreviation": "dbc",
-			"code": "dabancheng",
-			"name": "达坂城"
+		  code: "chaoyangdi",
+		  name: "朝阳地",
+		  abbreviation: "cyd",
 		},
 		{
-			"Abbreviation": "lh",
-			"code": "liuhe1",
-			"name": "柳河"
+		  code: "chaoyangnan",
+		  name: "朝阳南",
+		  abbreviation: "cyn",
 		},
 		{
-			"Abbreviation": "cg",
-			"code": "chaigang",
-			"name": "柴岗"
+		  code: "changyuan",
+		  name: "长垣",
+		  abbreviation: "cyu",
 		},
 		{
-			"Abbreviation": "czt",
-			"code": "chengzitan",
-			"name": "城子坦"
+		  code: "chaoyangzhen",
+		  name: "朝阳镇",
+		  abbreviation: "cyz",
 		},
 		{
-			"Abbreviation": "jb",
-			"code": "jingbian",
-			"name": "靖边"
+		  code: "chuzhoubei",
+		  name: "滁州北",
+		  abbreviation: "czb",
 		},
 		{
-			"Abbreviation": "ch",
-			"code": "chaihe",
-			"name": "柴河"
+		  code: "changzhoubei",
+		  name: "常州北",
+		  abbreviation: "czb",
 		},
 		{
-			"Abbreviation": "mzx",
-			"code": "meizhouxi",
-			"name": "梅州西"
+		  code: "chuzhou",
+		  name: "滁州",
+		  abbreviation: "czh",
 		},
 		{
-			"Abbreviation": "db",
-			"code": "daban",
-			"name": "大板"
+		  code: "chaozhou",
+		  name: "潮州",
+		  abbreviation: "czh",
 		},
 		{
-			"Abbreviation": "kpn",
-			"code": "kaipingnan",
-			"name": "开平南"
+		  code: "changzhuang",
+		  name: "常庄",
+		  abbreviation: "czh",
 		},
 		{
-			"Abbreviation": "lhx",
-			"code": "luohexi",
-			"name": "漯河西"
+		  code: "caozili",
+		  name: "曹子里",
+		  abbreviation: "czl",
 		},
 		{
-			"Abbreviation": "ytn",
-			"code": "yantainan",
-			"name": "烟台南"
+		  code: "chezhuanwan",
+		  name: "车转湾",
+		  abbreviation: "czw",
 		},
 		{
-			"Abbreviation": "akt",
-			"code": "aketao",
-			"name": "阿克陶"
+		  code: "chenzhouxi",
+		  name: "郴州西",
+		  abbreviation: "czx",
 		},
 		{
-			"Abbreviation": "st",
-			"code": "shatuo",
-			"name": "沙沱"
+		  code: "cangzhouxi",
+		  name: "沧州西",
+		  abbreviation: "czx",
 		},
 		{
-			"Abbreviation": "sh",
-			"code": "shahe",
-			"name": "沙河"
+		  code: "dean",
+		  name: "德安",
+		  abbreviation: "dan",
 		},
 		{
-			"Abbreviation": "wts",
-			"code": "waitoushan",
-			"name": "歪头山"
+		  code: "daan",
+		  name: "大安",
+		  abbreviation: "dan",
 		},
 		{
-			"Abbreviation": "yq",
-			"code": "yuanqian",
-			"name": "源迁"
+		  code: "daba",
+		  name: "大坝",
+		  abbreviation: "dba",
 		},
 		{
-			"Abbreviation": "yh",
-			"code": "yuhang",
-			"name": "余杭"
+		  code: "dianbai",
+		  name: "电白",
+		  abbreviation: "dba",
 		},
 		{
-			"Abbreviation": "xhyb",
-			"code": "xiahuayuanbei",
-			"name": "下花园北"
+		  code: "daban",
+		  name: "大板",
+		  abbreviation: "dba",
 		},
 		{
-			"Abbreviation": "kc",
-			"code": "kuche",
-			"name": "库车"
+		  code: "daobao",
+		  name: "到保",
+		  abbreviation: "dba",
 		},
 		{
-			"Abbreviation": "sjn",
-			"code": "songjiangnan",
-			"name": "松江南"
+		  code: "daba",
+		  name: "大巴",
+		  abbreviation: "dba",
 		},
 		{
-			"Abbreviation": "jz",
-			"code": "jingzhou3",
-			"name": "荆州"
+		  code: "dabancheng",
+		  name: "达坂城",
+		  abbreviation: "dbc",
 		},
 		{
-			"Abbreviation": "wlmqn",
-			"code": "wulumuqinan",
-			"name": "乌鲁木齐南"
+		  code: "dingbian",
+		  name: "定边",
+		  abbreviation: "dbi",
 		},
 		{
-			"Abbreviation": "js",
-			"code": "jingshan",
-			"name": "京山"
+		  code: "dongbianjing",
+		  name: "东边井",
+		  abbreviation: "dbj",
 		},
 		{
-			"Abbreviation": "dl",
-			"code": "dailing",
-			"name": "带岭"
+		  code: "debosi",
+		  name: "德伯斯",
+		  abbreviation: "dbs",
 		},
 		{
-			"Abbreviation": "wz",
-			"code": "weizhuang",
-			"name": "韦庄"
+		  code: "dachaigou",
+		  name: "打柴沟",
+		  abbreviation: "dcg",
 		},
 		{
-			"Abbreviation": "gzx",
-			"code": "guangzhouxi",
-			"name": "广州西"
+		  code: "dechang",
+		  name: "德昌",
+		  abbreviation: "dch",
 		},
 		{
-			"Abbreviation": "dlt",
-			"code": "dulitun",
-			"name": "独立屯"
+		  code: "didao",
+		  name: "滴道",
+		  abbreviation: "dda",
 		},
 		{
-			"Abbreviation": "zz",
-			"code": "zhongzhai",
-			"name": "中寨"
+		  code: "dadenggou",
+		  name: "大磴沟",
+		  abbreviation: "ddg",
 		},
 		{
-			"Abbreviation": "xx",
-			"code": "xixia",
-			"name": "西峡"
+		  code: "daoerdeng",
+		  name: "刀尔登",
+		  abbreviation: "ded",
 		},
 		{
-			"Abbreviation": "pjd",
-			"code": "panjiadian",
-			"name": "潘家店"
+		  code: "deerbuer",
+		  name: "得耳布尔",
+		  abbreviation: "dee",
 		},
 		{
-			"Abbreviation": "jy",
-			"code": "jingyuan",
-			"name": "靖远"
+		  code: "duerbote",
+		  name: "杜尔伯特",
+		  abbreviation: "det",
 		},
 		{
-			"Abbreviation": "tn",
-			"code": "tongnan",
-			"name": "潼南"
+		  code: "dongfang",
+		  name: "东方",
+		  abbreviation: "dfa",
 		},
 		{
-			"Abbreviation": "txh",
-			"code": "tangxunhu",
-			"name": "汤逊湖"
+		  code: "danfeng",
+		  name: "丹凤",
+		  abbreviation: "dfe",
 		},
 		{
-			"Abbreviation": "lc",
-			"code": "luocheng",
-			"name": "罗城"
+		  code: "dongfeng",
+		  name: "东丰",
+		  abbreviation: "dfe",
 		},
 		{
-			"Abbreviation": "lt",
-			"code": "litang",
-			"name": "黎塘"
+		  code: "duge",
+		  name: "都格",
+		  abbreviation: "dge",
 		},
 		{
-			"Abbreviation": "mcb",
-			"code": "machengbei",
-			"name": "麻城北"
+		  code: "daguantun",
+		  name: "大官屯",
+		  abbreviation: "dgt",
 		},
 		{
-			"Abbreviation": "gcz",
-			"code": "guchengzhen",
-			"name": "古城镇"
+		  code: "daguan",
+		  name: "大关",
+		  abbreviation: "dgu",
 		},
 		{
-			"Abbreviation": "dl",
-			"code": "dalin",
-			"name": "大林"
+		  code: "dongguang",
+		  name: "东光",
+		  abbreviation: "dgu",
 		},
 		{
-			"Abbreviation": "wj",
-			"code": "wenjiang",
-			"name": "温江"
+		  code: "donghai",
+		  name: "东海",
+		  abbreviation: "dha",
 		},
 		{
-			"Abbreviation": "wy",
-			"code": "wuyuan",
-			"name": "婺源"
+		  code: "dahuichang",
+		  name: "大灰厂",
+		  abbreviation: "dhc",
 		},
 		{
-			"Abbreviation": "xmb",
-			"code": "xinminbei",
-			"name": "新民北"
+		  code: "dahongqi",
+		  name: "大红旗",
+		  abbreviation: "dhq",
 		},
 		{
-			"Abbreviation": "szd",
-			"code": "shenzhendong",
-			"name": "深圳东"
+		  code: "shaodong",
+		  name: "大禾塘",
+		  abbreviation: "dht",
 		},
 		{
-			"Abbreviation": "ch",
-			"code": "caohai",
-			"name": "草海"
+		  code: "donghaixian",
+		  name: "东海县",
+		  abbreviation: "dhx",
 		},
 		{
-			"Abbreviation": "aj",
-			"code": "ajin",
-			"name": "阿金"
+		  code: "dehuixi",
+		  name: "德惠西",
+		  abbreviation: "dhx",
 		},
 		{
-			"Abbreviation": "chk",
-			"code": "caohekou",
-			"name": "草河口"
+		  code: "dajiagou",
+		  name: "达家沟",
+		  abbreviation: "djg",
 		},
 		{
-			"Abbreviation": "hyi",
-			"code": "huyi",
-			"name": "鄠邑"
+		  code: "dongjin",
+		  name: "东津",
+		  abbreviation: "dji",
 		},
 		{
-			"Abbreviation": "fp",
-			"code": "foping",
-			"name": "佛坪"
+		  code: "dujia",
+		  name: "杜家",
+		  abbreviation: "dji",
 		},
 		{
-			"Abbreviation": "jmb",
-			"code": "jimobei",
-			"name": "即墨北"
+		  code: "dakoutun",
+		  name: "大口屯",
+		  abbreviation: "dkt",
 		},
 		{
-			"Abbreviation": "jd",
-			"code": "jingde",
-			"name": "旌德"
+		  code: "donglai",
+		  name: "东来",
+		  abbreviation: "dla",
 		},
 		{
-			"Abbreviation": "zy",
-			"code": "zhenyuan",
-			"name": "镇远"
+		  code: "delingha",
+		  name: "德令哈",
+		  abbreviation: "dlh",
 		},
 		{
-			"Abbreviation": "bdd",
-			"code": "baodingdong",
-			"name": "保定东"
+		  code: "dalin",
+		  name: "大林",
+		  abbreviation: "dli",
 		},
 		{
-			"Abbreviation": "lh",
-			"code": "luohe",
-			"name": "漯河"
+		  code: "dailing",
+		  name: "带岭",
+		  abbreviation: "dli",
 		},
 		{
-			"Abbreviation": "xh",
-			"code": "xinhua",
-			"name": "新化"
+		  code: "dalateqi",
+		  name: "达拉特旗",
+		  abbreviation: "dlq",
 		},
 		{
-			"Abbreviation": "td",
-			"code": "tongdao",
-			"name": "通道"
+		  code: "dulitun",
+		  name: "独立屯",
+		  abbreviation: "dlt",
 		},
 		{
-			"Abbreviation": "ljk",
-			"code": "lianjiangkou",
-			"name": "莲江口"
+		  code: "douluo",
+		  name: "豆罗",
+		  abbreviation: "dlu",
 		},
 		{
-			"Abbreviation": "gs",
-			"code": "guosong",
-			"name": "果松"
+		  code: "dalatexi",
+		  name: "达拉特西",
+		  abbreviation: "dlx",
 		},
 		{
-			"Abbreviation": "sn",
-			"code": "suining",
-			"name": "遂宁"
+		  code: "dalianxi",
+		  name: "大连西",
+		  abbreviation: "dlx",
 		},
 		{
-			"Abbreviation": "ym",
-			"code": "yumen",
-			"name": "玉门"
+		  code: "dongmingcun",
+		  name: "东明村",
+		  abbreviation: "dmc",
 		},
 		{
-			"Abbreviation": "jnx",
-			"code": "jinanxi",
-			"name": "济南西"
+		  code: "dongmiaohe",
+		  name: "洞庙河",
+		  abbreviation: "dmh",
 		},
 		{
-			"Abbreviation": "gyz",
-			"code": "gongyingzi",
-			"name": "公营子"
+		  code: "dongmingxian",
+		  name: "东明县",
+		  abbreviation: "dmx",
 		},
 		{
-			"Abbreviation": "qj",
-			"code": "qijiang",
-			"name": "綦江"
+		  code: "dani",
+		  name: "大拟",
+		  abbreviation: "dni",
 		},
 		{
-			"Abbreviation": "sjt",
-			"code": "sujiatun",
-			"name": "苏家屯"
+		  code: "dapingfang",
+		  name: "大平房",
+		  abbreviation: "dpf",
 		},
 		{
-			"Abbreviation": "bjg",
-			"code": "bijiguan",
-			"name": "碧鸡关"
+		  code: "dapanshi",
+		  name: "大盘石",
+		  abbreviation: "dps",
 		},
 		{
-			"Abbreviation": "yz",
-			"code": "yazhou",
-			"name": "崖州"
+		  code: "dapu",
+		  name: "大埔",
+		  abbreviation: "dpu",
 		},
 		{
-			"Abbreviation": "fy",
-			"code": "fuyang",
-			"name": "阜阳"
+		  code: "dapu",
+		  name: "大堡",
+		  abbreviation: "dpu",
 		},
 		{
-			"Abbreviation": "dp",
-			"code": "dapu",
-			"name": "大埔"
+		  code: "daqingdong",
+		  name: "大庆东",
+		  abbreviation: "dqd",
 		},
 		{
-			"Abbreviation": "py",
-			"code": "pingyuan",
-			"name": "平原"
+		  code: "daqilaha",
+		  name: "大其拉哈",
+		  abbreviation: "dqh",
 		},
 		{
-			"Abbreviation": "gsz",
-			"code": "gaoshanzi",
-			"name": "高山子"
+		  code: "daoqing",
+		  name: "道清",
+		  abbreviation: "dqi",
 		},
 		{
-			"Abbreviation": "hsb",
-			"code": "hengshuibei",
-			"name": "衡水北"
+		  code: "duiqingshan",
+		  name: "对青山",
+		  abbreviation: "dqs",
 		},
 		{
-			"Abbreviation": "yblx",
-			"code": "yabulixi",
-			"name": "亚布力西"
+		  code: "deqingxi",
+		  name: "德清西",
+		  abbreviation: "dqx",
 		},
 		{
-			"Abbreviation": "sx",
-			"code": "shexian",
-			"name": "歙县"
+		  code: "daqingxi",
+		  name: "大庆西",
+		  abbreviation: "dqx",
 		},
 		{
-			"Abbreviation": "mc",
-			"code": "mingcheng",
-			"name": "明城"
+		  code: "dongsheng",
+		  name: "东升",
+		  abbreviation: "dsh",
 		},
 		{
-			"Abbreviation": "xmt",
-			"code": "xiamatang",
-			"name": "下马塘"
+		  code: "dangshan",
+		  name: "砀山",
+		  abbreviation: "dsh",
 		},
 		{
-			"Abbreviation": "xn",
-			"code": "xiaonan",
-			"name": "孝南"
+		  code: "dushan",
+		  name: "独山",
+		  abbreviation: "dsh",
 		},
 		{
-			"Abbreviation": "jf",
-			"code": "jianfeng",
-			"name": "尖峰"
+		  code: "dengshahe",
+		  name: "登沙河",
+		  abbreviation: "dsh",
 		},
 		{
-			"Abbreviation": "yax",
-			"code": "yonganxiang",
-			"name": "永安乡"
+		  code: "dushupu",
+		  name: "读书铺",
+		  abbreviation: "dsp",
 		},
 		{
-			"Abbreviation": "ypx",
-			"code": "yanpingxi",
-			"name": "延平西"
+		  code: "dashitou",
+		  name: "大石头",
+		  abbreviation: "dst",
 		},
 		{
-			"Abbreviation": "xh",
-			"code": "xinhua1",
-			"name": "新华"
+		  code: "dongshengxi",
+		  name: "东胜西",
+		  abbreviation: "dsx",
 		},
 		{
-			"Abbreviation": "sjn",
-			"code": "sanjiangnan",
-			"name": "三江南"
+		  code: "dashizhai",
+		  name: "大石寨",
+		  abbreviation: "dsz",
 		},
 		{
-			"Abbreviation": "ss",
-			"code": "susong",
-			"name": "宿松"
+		  code: "dongtai",
+		  name: "东台",
+		  abbreviation: "dta",
 		},
 		{
-			"Abbreviation": "sh",
-			"code": "sihui",
-			"name": "四会"
+		  code: "dingtao",
+		  name: "定陶",
+		  abbreviation: "dta",
 		},
 		{
-			"Abbreviation": "hy",
-			"code": "huaiyin",
-			"name": "槐荫"
+		  code: "dengta",
+		  name: "灯塔",
+		  abbreviation: "dta",
 		},
 		{
-			"Abbreviation": "md",
-			"code": "midu",
-			"name": "弥渡"
+		  code: "datianbian",
+		  name: "大田边",
+		  abbreviation: "dtb",
 		},
 		{
-			"Abbreviation": "tay",
-			"code": "tonganyi",
-			"name": "通安驿"
+		  code: "dongtonghua",
+		  name: "东通化",
+		  abbreviation: "dth",
 		},
 		{
-			"Abbreviation": "pz",
-			"code": "pizhou",
-			"name": "邳州"
+		  code: "dantu",
+		  name: "丹徒",
+		  abbreviation: "dtu",
 		},
 		{
-			"Abbreviation": "zzn",
-			"code": "zhuzhounan",
-			"name": "株洲南"
+		  code: "datun",
+		  name: "大屯",
+		  abbreviation: "dtu",
 		},
 		{
-			"Abbreviation": "df",
-			"code": "dongfeng",
-			"name": "东丰"
+		  code: "dongwan",
+		  name: "东湾",
+		  abbreviation: "dwa",
 		},
 		{
-			"Abbreviation": "wh",
-			"code": "weihai",
-			"name": "威海"
+		  code: "dawukou",
+		  name: "大武口",
+		  abbreviation: "dwk",
 		},
 		{
-			"Abbreviation": "qj",
-			"code": "qujiang",
-			"name": "曲江"
+		  code: "diwopu",
+		  name: "低窝铺",
+		  abbreviation: "dwp",
 		},
 		{
-			"Abbreviation": "rg",
-			"code": "ronggui",
-			"name": "容桂"
+		  code: "dawangtan",
+		  name: "大王滩",
+		  abbreviation: "dwt",
 		},
 		{
-			"Abbreviation": "jhn",
-			"code": "jinghenan",
-			"name": "精河南"
+		  code: "dawanzi",
+		  name: "大湾子",
+		  abbreviation: "dwz",
 		},
 		{
-			"Abbreviation": "db",
-			"code": "daobao",
-			"name": "到保"
+		  code: "daxinggou",
+		  name: "大兴沟",
+		  abbreviation: "dxg",
 		},
 		{
-			"Abbreviation": "pzb",
-			"code": "pingzhuangbei",
-			"name": "平庄北"
+		  code: "dingxi",
+		  name: "定西",
+		  abbreviation: "dxi",
 		},
 		{
-			"Abbreviation": "typx",
-			"code": "tongyuanpuxi",
-			"name": "通远堡西"
+		  code: "dongxiang",
+		  name: "东乡",
+		  abbreviation: "dxi",
 		},
 		{
-			"Abbreviation": "yb",
-			"code": "yibin",
-			"name": "宜宾"
+		  code: "dingxiang",
+		  name: "定襄",
+		  abbreviation: "dxi",
 		},
 		{
-			"Abbreviation": "wl",
-			"code": "wenling",
-			"name": "温岭"
+		  code: "daixian",
+		  name: "代县",
+		  abbreviation: "dxi",
 		},
 		{
-			"Abbreviation": "shs",
-			"code": "shaheshi",
-			"name": "沙河市"
+		  code: "daxing",
+		  name: "大兴",
+		  abbreviation: "dxi",
 		},
 		{
-			"Abbreviation": "ml",
-			"code": "meilan",
-			"name": "美兰"
+		  code: "dianxin",
+		  name: "甸心",
+		  abbreviation: "dxi",
 		},
 		{
-			"Abbreviation": "syd",
-			"code": "shiyandong",
-			"name": "十堰东"
+		  code: "dongxu",
+		  name: "东戌",
+		  abbreviation: "dxu",
 		},
 		{
-			"Abbreviation": "rp",
-			"code": "raoping",
-			"name": "饶平"
+		  code: "dongxinzhuang",
+		  name: "东辛庄",
+		  abbreviation: "dxz",
 		},
 		{
-			"Abbreviation": "bt",
-			"code": "beitai",
-			"name": "北台"
+		  code: "dayan",
+		  name: "大雁",
+		  abbreviation: "dya",
 		},
 		{
-			"Abbreviation": "sbcn",
-			"code": "shangbanchengnan",
-			"name": "上板城南"
+		  code: "deyang",
+		  name: "德阳",
+		  abbreviation: "dya",
 		},
 		{
-			"Abbreviation": "ty",
-			"code": "tangyuan",
-			"name": "汤原"
+		  code: "danyang",
+		  name: "丹阳",
+		  abbreviation: "dya",
 		},
 		{
-			"Abbreviation": "jxz",
-			"code": "jiaxinzi",
-			"name": "夹心子"
+		  code: "dangyang",
+		  name: "当阳",
+		  abbreviation: "dya",
 		},
 		{
-			"Abbreviation": "jxb",
-			"code": "jixibei",
-			"name": "绩溪北"
+		  code: "danyangbei",
+		  name: "丹阳北",
+		  abbreviation: "dyb",
 		},
 		{
-			"Abbreviation": "ylh",
-			"code": "yunlianghe",
-			"name": "运粮河"
+		  code: "dayingdong",
+		  name: "大英东",
+		  abbreviation: "dyd",
 		},
 		{
-			"Abbreviation": "ll",
-			"code": "laolai",
-			"name": "老莱"
+		  code: "dongyudi",
+		  name: "东淤地",
+		  abbreviation: "dyd",
 		},
 		{
-			"Abbreviation": "ga",
-			"code": "guan",
-			"name": "固安"
+		  code: "daying",
+		  name: "大营",
+		  abbreviation: "dyi",
 		},
 		{
-			"Abbreviation": "sml",
-			"code": "shumuling",
-			"name": "树木岭"
+		  code: "dingyuan",
+		  name: "定远",
+		  abbreviation: "dyu",
 		},
 		{
-			"Abbreviation": "cs",
-			"code": "caoshi",
-			"name": "草市"
+		  code: "daiyue",
+		  name: "岱岳",
+		  abbreviation: "dyu",
 		},
 		{
-			"Abbreviation": "pzh",
-			"code": "puzhehei",
-			"name": "普者黑"
+		  code: "dayuan",
+		  name: "大元",
+		  abbreviation: "dyu",
 		},
 		{
-			"Abbreviation": "dx",
-			"code": "dongxiang",
-			"name": "东乡"
+		  code: "dayingzi",
+		  name: "大营子",
+		  abbreviation: "dyz",
 		},
 		{
-			"Abbreviation": "qs",
-			"code": "qianshan",
-			"name": "前山"
+		  code: "dayingzhen",
+		  name: "大营镇",
+		  abbreviation: "dyz",
 		},
 		{
-			"Abbreviation": "db",
-			"code": "dabao",
-			"name": "大堡"
+		  code: "dazhanchang",
+		  name: "大战场",
+		  abbreviation: "dzc",
 		},
 		{
-			"Abbreviation": "ht",
-			"code": "hetang",
-			"name": "荷塘"
+		  code: "dezhoudong",
+		  name: "德州东",
+		  abbreviation: "dzd",
 		},
 		{
-			"Abbreviation": "jdzb",
-			"code": "jingdezhenbei",
-			"name": "景德镇北"
+		  code: "dongzhi",
+		  name: "东至",
+		  abbreviation: "dzh",
 		},
 		{
-			"Abbreviation": "fa",
-			"code": "fuan",
-			"name": "福安"
+		  code: "duizhen",
+		  name: "兑镇",
+		  abbreviation: "dzh",
 		},
 		{
-			"Abbreviation": "pt",
-			"code": "pingtai",
-			"name": "平台"
+		  code: "daozhou",
+		  name: "道州",
+		  abbreviation: "dzh",
 		},
 		{
-			"Abbreviation": "xl",
-			"code": "xianlin",
-			"name": "仙林"
+		  code: "dizhuang",
+		  name: "低庄",
+		  abbreviation: "dzh",
 		},
 		{
-			"Abbreviation": "xs",
-			"code": "xiaoshi",
-			"name": "小市"
+		  code: "dongzhen",
+		  name: "东镇",
+		  abbreviation: "dzh",
 		},
 		{
-			"Abbreviation": "yj",
-			"code": "yanji",
-			"name": "延吉"
+		  code: "dongzhuang",
+		  name: "东庄",
+		  abbreviation: "dzh",
 		},
 		{
-			"Abbreviation": "lz",
-			"code": "liuzhi",
-			"name": "六枝"
+		  code: "dingzhou",
+		  name: "定州",
+		  abbreviation: "dzh",
 		},
 		{
-			"Abbreviation": "zc",
-			"code": "zhicheng",
-			"name": "枝城"
+		  code: "douzhuang",
+		  name: "豆庄",
+		  abbreviation: "dzh",
 		},
 		{
-			"Abbreviation": "smx",
-			"code": "shimenxian",
-			"name": "石门县"
+		  code: "dazhuyuan",
+		  name: "大竹园",
+		  abbreviation: "dzy",
 		},
 		{
-			"Abbreviation": "dz",
-			"code": "dongzhuang",
-			"name": "东庄"
+		  code: "dazhangzi",
+		  name: "大杖子",
+		  abbreviation: "dzz",
 		},
 		{
-			"Abbreviation": "sy",
-			"code": "suiyang",
-			"name": "绥阳"
+		  code: "douzhangzhuang",
+		  name: "豆张庄",
+		  abbreviation: "dzz",
 		},
 		{
-			"Abbreviation": "nj",
-			"code": "nanjiang",
-			"name": "南江"
+		  code: "ebian",
+		  name: "峨边",
+		  abbreviation: "ebi",
 		},
 		{
-			"Abbreviation": "by",
-			"code": "beiying",
-			"name": "北营"
+		  code: "erdaogoumen",
+		  name: "二道沟门",
+		  abbreviation: "edm",
 		},
 		{
-			"Abbreviation": "jp",
-			"code": "jingpeng",
-			"name": "经棚"
+		  code: "erdaowan",
+		  name: "二道湾",
+		  abbreviation: "edw",
 		},
 		{
-			"Abbreviation": "dhx",
-			"code": "dehuixi",
-			"name": "德惠西"
+		  code: "eerduosi",
+		  name: "鄂尔多斯",
+		  abbreviation: "ees",
 		},
 		{
-			"Abbreviation": "xd",
-			"code": "xiaodong1",
-			"name": "小东"
+		  code: "erlong",
+		  name: "二龙",
+		  abbreviation: "elo",
 		},
 		{
-			"Abbreviation": "tcg",
-			"code": "tiechanggou",
-			"name": "铁厂沟"
+		  code: "erlongshantun",
+		  name: "二龙山屯",
+		  abbreviation: "elt",
 		},
 		{
-			"Abbreviation": "slh",
-			"code": "shuanglonghu",
-			"name": "双龙湖"
+		  code: "emei",
+		  name: "峨眉",
+		  abbreviation: "eme",
 		},
 		{
-			"Abbreviation": "sjh",
-			"code": "shenjiahe",
-			"name": "沈家河"
+		  code: "ermihe",
+		  name: "二密河",
+		  abbreviation: "emh",
 		},
 		{
-			"Abbreviation": "fnd",
-			"code": "funingdong",
-			"name": "阜宁东"
+		  code: "enping",
+		  name: "恩平",
+		  abbreviation: "epi",
 		},
 		{
-			"Abbreviation": "ps",
-			"code": "pingshang",
-			"name": "坪上"
+		  code: "erying",
+		  name: "二营",
+		  abbreviation: "eyi",
 		},
 		{
-			"Abbreviation": "qhc",
-			"code": "qinghecheng",
-			"name": "清河城"
+		  code: "ezhou",
+		  name: "鄂州",
+		  abbreviation: "ezh",
 		},
 		{
-			"Abbreviation": "dw",
-			"code": "dongwan",
-			"name": "东湾"
+		  code: "fuan",
+		  name: "福安",
+		  abbreviation: "fan",
 		},
 		{
-			"Abbreviation": "fy",
-			"code": "fuyang2",
-			"name": "富阳"
+		  code: "fengcheng",
+		  name: "丰城",
+		  abbreviation: "fch",
 		},
 		{
-			"Abbreviation": "zs",
-			"code": "zhongshan1",
-			"name": "中山"
+		  code: "fengchengnan",
+		  name: "丰城南",
+		  abbreviation: "fcn",
 		},
 		{
-			"Abbreviation": "sf",
-			"code": "shuangfeng",
-			"name": "双丰"
+		  code: "feidong",
+		  name: "肥东",
+		  abbreviation: "fdo",
 		},
 		{
-			"Abbreviation": "sw",
-			"code": "sunwu",
-			"name": "孙吴"
+		  code: "faer",
+		  name: "发耳",
+		  abbreviation: "fer",
 		},
 		{
-			"Abbreviation": "ddx",
-			"code": "dandongxi",
-			"name": "丹东西"
+		  code: "fuhai",
+		  name: "福海",
+		  abbreviation: "fha",
 		},
 		{
-			"Abbreviation": "sh",
-			"code": "shahai",
-			"name": "沙海"
+		  code: "fuhai",
+		  name: "富海",
+		  abbreviation: "fha",
 		},
 		{
-			"Abbreviation": "xmgq",
-			"code": "xiamengaoqi",
-			"name": "厦门高崎"
+		  code: "fenghuangcheng",
+		  name: "凤凰城",
+		  abbreviation: "fhc",
 		},
 		{
-			"Abbreviation": "wg",
-			"code": "wugong",
-			"name": "武功"
+		  code: "fenhe",
+		  name: "汾河",
+		  abbreviation: "fhe",
 		},
 		{
-			"Abbreviation": "slz",
-			"code": "shenglizhen",
-			"name": "胜利镇"
+		  code: "fenghua",
+		  name: "奉化",
+		  abbreviation: "fhu",
 		},
 		{
-			"Abbreviation": "cyh",
-			"code": "chaoyanghu",
-			"name": "朝阳湖"
+		  code: "fujin",
+		  name: "富锦",
+		  abbreviation: "fji",
 		},
 		{
-			"Abbreviation": "hkd",
-			"code": "haikoudong",
-			"name": "海口东"
+		  code: "fanjiatun",
+		  name: "范家屯",
+		  abbreviation: "fjt",
 		},
 		{
-			"Abbreviation": "lh",
-			"code": "lvhua",
-			"name": "绿化"
+		  code: "fuliqu",
+		  name: "福利区",
+		  abbreviation: "flq",
 		},
 		{
-			"Abbreviation": "qa",
-			"code": "qianan1",
-			"name": "迁安"
+		  code: "fulitun",
+		  name: "福利屯",
+		  abbreviation: "flt",
 		},
 		{
-			"Abbreviation": "csx",
-			"code": "changshaxi",
-			"name": "长沙西"
+		  code: "fenglezhen",
+		  name: "丰乐镇",
+		  abbreviation: "flz",
 		},
 		{
-			"Abbreviation": "szyq",
-			"code": "suzhouyuanqu",
-			"name": "苏州园区"
+		  code: "funan",
+		  name: "阜南",
+		  abbreviation: "fna",
 		},
 		{
-			"Abbreviation": "hdhzd",
-			"code": "hengdaohezidong",
-			"name": "横道河子东"
+		  code: "funing",
+		  name: "阜宁",
+		  abbreviation: "fni",
 		},
 		{
-			"Abbreviation": "yqx",
-			"code": "yangquxi",
-			"name": "阳曲西"
+		  code: "funing",
+		  name: "抚宁",
+		  abbreviation: "fni",
 		},
 		{
-			"Abbreviation": "hyb",
-			"code": "heyangbei",
-			"name": "合阳北"
+		  code: "fuqing",
+		  name: "福清",
+		  abbreviation: "fqi",
 		},
 		{
-			"Abbreviation": "ap",
-			"code": "anping",
-			"name": "安平"
+		  code: "fuquan",
+		  name: "福泉",
+		  abbreviation: "fqu",
 		},
 		{
-			"Abbreviation": "xg",
-			"code": "xingguo",
-			"name": "兴国"
+		  code: "fengshuicun",
+		  name: "丰水村",
+		  abbreviation: "fsc",
 		},
 		{
-			"Abbreviation": "xx",
-			"code": "xinxian",
-			"name": "新县"
+		  code: "fengshun",
+		  name: "丰顺",
+		  abbreviation: "fsh",
 		},
 		{
-			"Abbreviation": "lylm",
-			"code": "luoyanglongmen",
-			"name": "洛阳龙门"
+		  code: "fanshi",
+		  name: "繁峙",
+		  abbreviation: "fsh",
 		},
 		{
-			"Abbreviation": "gyb2",
-			"code": "guiyangbei2",
-			"name": "贵  阳北"
+		  code: "fushun",
+		  name: "抚顺",
+		  abbreviation: "fsh",
 		},
 		{
-			"Abbreviation": "jd",
-			"code": "jidong",
-			"name": "鸡东"
+		  code: "fushankou",
+		  name: "福山口",
+		  abbreviation: "fsk",
 		},
 		{
-			"Abbreviation": "emh",
-			"code": "ermihe",
-			"name": "二密河"
+		  code: "fusui",
+		  name: "扶绥",
+		  abbreviation: "fsu",
 		},
 		{
-			"Abbreviation": "py",
-			"code": "puyang",
-			"name": "濮阳"
+		  code: "fengtun",
+		  name: "冯屯",
+		  abbreviation: "ftu",
 		},
 		{
-			"Abbreviation": "gt",
-			"code": "gaotai",
-			"name": "高台"
+		  code: "futuyu",
+		  name: "浮图峪",
+		  abbreviation: "fty",
 		},
 		{
-			"Abbreviation": "wt",
-			"code": "wutong",
-			"name": "五通"
+		  code: "fuxiandong",
+		  name: "富县东",
+		  abbreviation: "fxd",
 		},
 		{
-			"Abbreviation": "xxd",
-			"code": "xinxiangdong",
-			"name": "新乡东"
+		  code: "fengxian",
+		  name: "凤县",
+		  abbreviation: "fxi",
 		},
 		{
-			"Abbreviation": "pa",
-			"code": "pengan",
-			"name": "蓬安"
+		  code: "feixian",
+		  name: "费县",
+		  abbreviation: "fxi",
 		},
 		{
-			"Abbreviation": "rzx",
-			"code": "rizhaoxi",
-			"name": "日照西"
+		  code: "fuxian",
+		  name: "富县",
+		  abbreviation: "fxi",
 		},
 		{
-			"Abbreviation": "aq",
-			"code": "anqing",
-			"name": "安庆"
+		  code: "feixi",
+		  name: "肥西",
+		  abbreviation: "fxi",
 		},
 		{
-			"Abbreviation": "sd",
-			"code": "shaodong",
-			"name": "邵东"
+		  code: "fenyang",
+		  name: "汾阳",
+		  abbreviation: "fya",
 		},
 		{
-			"Abbreviation": "nc",
-			"code": "nancha",
-			"name": "南岔"
+		  code: "fengyang",
+		  name: "凤阳",
+		  abbreviation: "fya",
 		},
 		{
-			"Abbreviation": "shy",
-			"code": "siheyong",
-			"name": "四合永"
+		  code: "fuyubei",
+		  name: "扶余北",
+		  abbreviation: "fyb",
 		},
 		{
-			"Abbreviation": "sln",
-			"code": "shilinnan",
-			"name": "石林南"
+		  code: "fenyi",
+		  name: "分宜",
+		  abbreviation: "fyi",
 		},
 		{
-			"Abbreviation": "ag",
-			"code": "anguang",
-			"name": "安广"
+		  code: "fuyu",
+		  name: "扶余",
+		  abbreviation: "fyu",
 		},
 		{
-			"Abbreviation": "kh",
-			"code": "kaihua",
-			"name": "开化"
+		  code: "fuyuan",
+		  name: "富源",
+		  abbreviation: "fyu",
 		},
 		{
-			"Abbreviation": "hz",
-			"code": "hangzhou",
-			"name": "杭州"
+		  code: "fuyu",
+		  name: "富裕",
+		  abbreviation: "fyu",
 		},
 		{
-			"Abbreviation": "ls",
-			"code": "liangshan",
-			"name": "梁山"
+		  code: "fuzhoubei",
+		  name: "抚州北",
+		  abbreviation: "fzb",
 		},
 		{
-			"Abbreviation": "ybl",
-			"code": "yabuli",
-			"name": "亚布力"
+		  code: "fengzhen",
+		  name: "丰镇",
+		  abbreviation: "fzh",
 		},
 		{
-			"Abbreviation": "pbn",
-			"code": "pingbanan",
-			"name": "平坝南"
+		  code: "fanzhen",
+		  name: "范镇",
+		  abbreviation: "fzh",
 		},
 		{
-			"Abbreviation": "zc",
-			"code": "zichang",
-			"name": "子长"
+		  code: "fengzhou",
+		  name: "凤州",
+		  abbreviation: "fzh",
 		},
 		{
-			"Abbreviation": "yd",
-			"code": "yudu",
-			"name": "于都"
+		  code: "guangan",
+		  name: "广安",
+		  abbreviation: "gan",
 		},
 		{
-			"Abbreviation": "jz",
-			"code": "jinzhai",
-			"name": "金寨"
+		  code: "guan",
+		  name: "固安",
+		  abbreviation: "gan",
 		},
 		{
-			"Abbreviation": "lwx",
-			"code": "laiwuxi",
-			"name": "莱芜西"
+		  code: "gaobeidian",
+		  name: "高碑店",
+		  abbreviation: "gbd",
 		},
 		{
-			"Abbreviation": "jbt",
-			"code": "jinbaotun",
-			"name": "金宝屯"
+		  code: "goubangzi",
+		  name: "沟帮子",
+		  abbreviation: "gbz",
 		},
 		{
-			"Abbreviation": "dzz",
-			"code": "douzhangzhuang",
-			"name": "豆张庄"
+		  code: "gancaodian",
+		  name: "甘草店",
+		  abbreviation: "gcd",
 		},
 		{
-			"Abbreviation": "sy",
-			"code": "siyang",
-			"name": "泗阳"
+		  code: "gucheng",
+		  name: "谷城",
+		  abbreviation: "gch",
 		},
 		{
-			"Abbreviation": "sld",
-			"code": "shilidian",
-			"name": "什里店"
+		  code: "gaocheng",
+		  name: "藁城",
+		  abbreviation: "gch",
 		},
 		{
-			"Abbreviation": "cx",
-			"code": "cenxi",
-			"name": "岑溪"
+		  code: "gaocun",
+		  name: "高村",
+		  abbreviation: "gcu",
 		},
 		{
-			"Abbreviation": "kl",
-			"code": "kelan",
-			"name": "岢岚"
+		  code: "guchengzhen",
+		  name: "古城镇",
+		  abbreviation: "gcz",
 		},
 		{
-			"Abbreviation": "dmh",
-			"code": "daminghu",
-			"name": "大明湖"
+		  code: "guangde",
+		  name: "广德",
+		  abbreviation: "gde",
 		},
 		{
-			"Abbreviation": "jlh",
-			"code": "jialuhe",
-			"name": "贾鲁河"
+		  code: "guiding",
+		  name: "贵定",
+		  abbreviation: "gdi",
 		},
 		{
-			"Abbreviation": "tj",
-			"code": "tuanjie",
-			"name": "团结"
+		  code: "gudong",
+		  name: "古东",
+		  abbreviation: "gdo",
 		},
 		{
-			"Abbreviation": "sdxy",
-			"code": "shundexueyuan",
-			"name": "顺德学院"
+		  code: "guigang",
+		  name: "贵港",
+		  abbreviation: "gga",
 		},
 		{
-			"Abbreviation": "lc",
-			"code": "lucheng",
-			"name": "潞城"
+		  code: "guangao",
+		  name: "官高",
+		  abbreviation: "gga",
 		},
 		{
-			"Abbreviation": "clz",
-			"code": "changlingzi",
-			"name": "长岭子"
+		  code: "gegenmiao",
+		  name: "葛根庙",
+		  abbreviation: "ggm",
 		},
 		{
-			"Abbreviation": "mp",
-			"code": "mupang",
-			"name": "沐滂"
+		  code: "gangou",
+		  name: "干沟",
+		  abbreviation: "ggo",
 		},
 		{
-			"Abbreviation": "lln",
-			"code": "liulinnan",
-			"name": "柳林南"
+		  code: "gangu",
+		  name: "甘谷",
+		  abbreviation: "ggu",
 		},
 		{
-			"Abbreviation": "gs",
-			"code": "guangshan",
-			"name": "光山"
+		  code: "gaogezhuang",
+		  name: "高各庄",
+		  abbreviation: "ggz",
 		},
 		{
-			"Abbreviation": "xjd",
-			"code": "xujiadian",
-			"name": "徐家店"
+		  code: "genhe",
+		  name: "根河",
+		  abbreviation: "ghe",
 		},
 		{
-			"Abbreviation": "zj",
-			"code": "zhoujia",
-			"name": "周家"
+		  code: "ganhe",
+		  name: "甘河",
+		  abbreviation: "ghe",
 		},
 		{
-			"Abbreviation": "xzjc",
-			"code": "xinzhengjichang",
-			"name": "新郑机场"
+		  code: "guojiadian",
+		  name: "郭家店",
+		  abbreviation: "gjd",
 		},
 		{
-			"Abbreviation": "cq",
-			"code": "chenqing",
-			"name": "辰清"
+		  code: "gujiazi",
+		  name: "孤家子",
+		  abbreviation: "gjz",
 		},
 		{
-			"Abbreviation": "ak",
-			"code": "ankang",
-			"name": "安康"
+		  code: "gulang",
+		  name: "古浪",
+		  abbreviation: "gla",
 		},
 		{
-			"Abbreviation": "hj",
-			"code": "hejing",
-			"name": "和静"
+		  code: "gaolan",
+		  name: "皋兰",
+		  abbreviation: "gla",
 		},
 		{
-			"Abbreviation": "lz",
-			"code": "liuzhou",
-			"name": "柳州"
+		  code: "gaoloufang",
+		  name: "高楼房",
+		  abbreviation: "glf",
 		},
 		{
-			"Abbreviation": "xy",
-			"code": "xiangyang",
-			"name": "向阳"
+		  code: "guiliuhe",
+		  name: "归流河",
+		  abbreviation: "glh",
 		},
 		{
-			"Abbreviation": "cjsh",
-			"code": "chengjisihan",
-			"name": "成吉思汗"
+		  code: "guanlin",
+		  name: "关林",
+		  abbreviation: "gli",
 		},
 		{
-			"Abbreviation": "dxg",
-			"code": "daxinggou",
-			"name": "大兴沟"
+		  code: "ganluo",
+		  name: "甘洛",
+		  abbreviation: "glu",
 		},
 		{
-			"Abbreviation": "ax",
-			"code": "anxi",
-			"name": "安溪"
+		  code: "guoleizhuang",
+		  name: "郭磊庄",
+		  abbreviation: "glz",
 		},
 		{
-			"Abbreviation": "jlcb",
-			"code": "junliangchengbei",
-			"name": "军粮城北"
+		  code: "gaomi",
+		  name: "高密",
+		  abbreviation: "gmi",
 		},
 		{
-			"Abbreviation": "fjt",
-			"code": "fanjiatun",
-			"name": "范家屯"
+		  code: "gongmiaozi",
+		  name: "公庙子",
+		  abbreviation: "gmz",
 		},
 		{
-			"Abbreviation": "ls",
-			"code": "lingshui",
-			"name": "陵水"
+		  code: "gongnonghu",
+		  name: "工农湖",
+		  abbreviation: "gnh",
 		},
 		{
-			"Abbreviation": "yk",
-			"code": "yingkou",
-			"name": "营口"
+		  code: "guangningsinan",
+		  name: "广宁寺南",
+		  abbreviation: "gnn",
 		},
 		{
-			"Abbreviation": "dltq",
-			"code": "dalateqi",
-			"name": "达拉特旗"
+		  code: "guangnanwei",
+		  name: "广南卫",
+		  abbreviation: "gnw",
 		},
 		{
-			"Abbreviation": "zmdx",
-			"code": "zhumadianxi",
-			"name": "驻马店西"
+		  code: "gaoping",
+		  name: "高平",
+		  abbreviation: "gpi",
 		},
 		{
-			"Abbreviation": "ml",
-			"code": "minle",
-			"name": "民乐"
+		  code: "ganquanbei",
+		  name: "甘泉北",
+		  abbreviation: "gqb",
 		},
 		{
-			"Abbreviation": "ar",
-			"code": "anren",
-			"name": "安仁"
+		  code: "gongqingcheng",
+		  name: "共青城",
+		  abbreviation: "gqc",
 		},
 		{
-			"Abbreviation": "ly",
-			"code": "laoying",
-			"name": "老营"
+		  code: "ganqika",
+		  name: "甘旗卡",
+		  abbreviation: "gqk",
 		},
 		{
-			"Abbreviation": "ww1",
-			"code": "wuwei1",
-			"name": "无为"
+		  code: "ganquan",
+		  name: "甘泉",
+		  abbreviation: "gqu",
 		},
 		{
-			"Abbreviation": "dgg",
-			"code": "dongguangang",
-			"name": "东莞港"
+		  code: "gaoqiaozhen",
+		  name: "高桥镇",
+		  abbreviation: "gqz",
 		},
 		{
-			"Abbreviation": "zl",
-			"code": "zaolin",
-			"name": "枣林"
+		  code: "guanshui",
+		  name: "灌水",
+		  abbreviation: "gsh",
 		},
 		{
-			"Abbreviation": "zzd",
-			"code": "zhuozhoudong",
-			"name": "涿州东"
+		  code: "gushankou",
+		  name: "孤山口",
+		  abbreviation: "gsk",
 		},
 		{
-			"Abbreviation": "szxq",
-			"code": "suzhouxinqu",
-			"name": "苏州新区"
+		  code: "guosong",
+		  name: "果松",
+		  abbreviation: "gso",
 		},
 		{
-			"Abbreviation": "pxb",
-			"code": "pingxiangbei",
-			"name": "萍乡北"
+		  code: "gashidianzi",
+		  name: "嘎什甸子",
+		  abbreviation: "gsz",
 		},
 		{
-			"Abbreviation": "nd",
-			"code": "ningde",
-			"name": "宁德"
+		  code: "gaoshanzi",
+		  name: "高山子",
+		  abbreviation: "gsz",
 		},
 		{
-			"Abbreviation": "tyd",
-			"code": "taiyuandong",
-			"name": "太原东"
+		  code: "gaotai",
+		  name: "高台",
+		  abbreviation: "gta",
 		},
 		{
-			"Abbreviation": "gyn",
-			"code": "guangyuannan",
-			"name": "广元南"
+		  code: "gaotan",
+		  name: "高滩",
+		  abbreviation: "gta",
 		},
 		{
-			"Abbreviation": "llb",
-			"code": "lilinbei",
-			"name": "沥林北"
+		  code: "gutian",
+		  name: "古田",
+		  abbreviation: "gti",
 		},
 		{
-			"Abbreviation": "slx",
-			"code": "shuangliuxi",
-			"name": "双流西"
+		  code: "guanting",
+		  name: "官厅",
+		  abbreviation: "gti",
 		},
 		{
-			"Abbreviation": "pdx",
-			"code": "podixia",
-			"name": "坡底下"
+		  code: "guantingxi",
+		  name: "官厅西",
+		  abbreviation: "gtx",
 		},
 		{
-			"Abbreviation": "xx",
-			"code": "xiaoxian",
-			"name": "萧县"
+		  code: "guixi",
+		  name: "贵溪",
+		  abbreviation: "gxi",
 		},
 		{
-			"Abbreviation": "py",
-			"code": "pengyang",
-			"name": "彭阳"
+		  code: "guoyang",
+		  name: "涡阳",
+		  abbreviation: "gya",
 		},
 		{
-			"Abbreviation": "jt",
-			"code": "jingtai",
-			"name": "景泰"
+		  code: "gongyi",
+		  name: "巩义",
+		  abbreviation: "gyi",
 		},
 		{
-			"Abbreviation": "fzb",
-			"code": "fuzhoubei",
-			"name": "抚州北"
+		  code: "gaoyi",
+		  name: "高邑",
+		  abbreviation: "gyi",
 		},
 		{
-			"Abbreviation": "dgd",
-			"code": "dongguandong",
-			"name": "东莞东"
+		  code: "guangyuannan",
+		  name: "广元南",
+		  abbreviation: "gyn",
 		},
 		{
-			"Abbreviation": "jx",
-			"code": "jiaxiang",
-			"name": "嘉祥"
+		  code: "gongyinan",
+		  name: "巩义南",
+		  abbreviation: "gyn",
 		},
 		{
-			"Abbreviation": "zx",
-			"code": "zhangxin",
-			"name": "张辛"
+		  code: "guyuan",
+		  name: "固原",
+		  abbreviation: "gyu",
 		},
 		{
-			"Abbreviation": "ny",
-			"code": "nanyu",
-			"name": "南峪"
+		  code: "guyuan",
+		  name: "菇园",
+		  abbreviation: "gyu",
 		},
 		{
-			"Abbreviation": "jsb",
-			"code": "jinshanbei",
-			"name": "金山北"
+		  code: "gongyingzi",
+		  name: "公营子",
+		  abbreviation: "gyz",
 		},
 		{
-			"Abbreviation": "jmd",
-			"code": "jiangmendong",
-			"name": "江门东"
+		  code: "guangze",
+		  name: "光泽",
+		  abbreviation: "gze",
 		},
 		{
-			"Abbreviation": "xhj",
-			"code": "xiehejian",
-			"name": "斜河涧"
+		  code: "guzhen",
+		  name: "古镇",
+		  abbreviation: "gzh",
 		},
 		{
-			"Abbreviation": "sd",
-			"code": "shangdu",
-			"name": "商都"
+		  code: "guzhen",
+		  name: "固镇",
+		  abbreviation: "gzh",
 		},
 		{
-			"Abbreviation": "ds",
-			"code": "dangshan",
-			"name": "砀山"
+		  code: "guazhou",
+		  name: "瓜州",
+		  abbreviation: "gzh",
 		},
 		{
-			"Abbreviation": "xf",
-			"code": "xifeng1",
-			"name": "西丰"
+		  code: "guozhen",
+		  name: "虢镇",
+		  abbreviation: "gzh",
 		},
 		{
-			"Abbreviation": "teq",
-			"code": "taerqi",
-			"name": "塔尔气"
+		  code: "gaozhou",
+		  name: "高州",
+		  abbreviation: "gzh",
 		},
 		{
-			"Abbreviation": "ykd",
-			"code": "yingkoudong",
-			"name": "营口东"
+		  code: "gaizhou",
+		  name: "盖州",
+		  abbreviation: "gzh",
 		},
 		{
-			"Abbreviation": "clh",
-			"code": "changlinhe",
-			"name": "长临河"
+		  code: "guanzijing",
+		  name: "官字井",
+		  abbreviation: "gzj",
 		},
 		{
-			"Abbreviation": "ljd",
-			"code": "liujiadian",
-			"name": "刘家店"
+		  code: "guanzhaishan",
+		  name: "冠豸山",
+		  abbreviation: "gzs",
 		},
 		{
-			"Abbreviation": "sntzq",
-			"code": "sunitezuoqi",
-			"name": "苏尼特左旗"
+		  code: "gaizhouxi",
+		  name: "盖州西",
+		  abbreviation: "gzx",
 		},
 		{
-			"Abbreviation": "jygn",
-			"code": "jiayuguannan",
-			"name": "嘉峪关南"
+		  code: "haian",
+		  name: "海安",
+		  abbreviation: "han",
 		},
 		{
-			"Abbreviation": "cy2",
-			"code": "chaoyang2",
-			"name": "潮阳"
+		  code: "huaiannan",
+		  name: "淮安南",
+		  abbreviation: "han",
 		},
 		{
-			"Abbreviation": "ks",
-			"code": "keshan",
-			"name": "克山"
+		  code: "hongan",
+		  name: "红安",
+		  abbreviation: "han",
 		},
 		{
-			"Abbreviation": "gz",
-			"code": "guazhou",
-			"name": "瓜州"
+		  code: "honganxi",
+		  name: "红安西",
+		  abbreviation: "hax",
 		},
 		{
-			"Abbreviation": "hb",
-			"code": "haibei",
-			"name": "海北"
+		  code: "huangbai",
+		  name: "黄柏",
+		  abbreviation: "hba",
 		},
 		{
-			"Abbreviation": "gl",
-			"code": "guanlin",
-			"name": "关林"
+		  code: "haibei",
+		  name: "海北",
+		  abbreviation: "hbe",
 		},
 		{
-			"Abbreviation": "tms",
-			"code": "taimushan",
-			"name": "太姥山"
+		  code: "hebi",
+		  name: "鹤壁",
+		  abbreviation: "hbi",
 		},
 		{
-			"Abbreviation": "scb",
-			"code": "shuangchengbei",
-			"name": "双城北"
+		  code: "huichangbei",
+		  name: "会昌北",
+		  abbreviation: "hcb",
 		},
 		{
-			"Abbreviation": "hldb",
-			"code": "huludaobei",
-			"name": "葫芦岛北"
+		  code: "hechuan",
+		  name: "合川",
+		  abbreviation: "hch",
 		},
 		{
-			"Abbreviation": "djc",
-			"code": "dongjingcheng",
-			"name": "东京城"
+		  code: "huacheng",
+		  name: "华城",
+		  abbreviation: "hch",
 		},
 		{
-			"Abbreviation": "nlk",
-			"code": "nileke",
-			"name": "尼勒克"
+		  code: "hechun",
+		  name: "河唇",
+		  abbreviation: "hch",
 		},
 		{
-			"Abbreviation": "xd",
-			"code": "xidu",
-			"name": "西渡"
+		  code: "hanchuan",
+		  name: "汉川",
+		  abbreviation: "hch",
 		},
 		{
-			"Abbreviation": "ky",
-			"code": "kaiyuan",
-			"name": "开原"
+		  code: "haicheng",
+		  name: "海城",
+		  abbreviation: "hch",
 		},
 		{
-			"Abbreviation": "bjdx",
-			"code": "beijingdaxing",
-			"name": "北京大兴"
+		  code: "heichongtan",
+		  name: "黑冲滩",
+		  abbreviation: "hct",
 		},
 		{
-			"Abbreviation": "wj",
-			"code": "weijin",
-			"name": "渭津"
+		  code: "huangcun",
+		  name: "黄村",
+		  abbreviation: "hcu",
 		},
 		{
-			"Abbreviation": "ml",
-			"code": "malan",
-			"name": "马兰"
+		  code: "haichengxi",
+		  name: "海城西",
+		  abbreviation: "hcx",
 		},
 		{
-			"Abbreviation": "xyd",
-			"code": "xiangyangdong",
-			"name": "襄阳东"
+		  code: "huade",
+		  name: "化德",
+		  abbreviation: "hde",
 		},
 		{
-			"Abbreviation": "tsb",
-			"code": "tangshanbei",
-			"name": "唐山北"
+		  code: "hongtong",
+		  name: "洪洞",
+		  abbreviation: "hdo",
 		},
 		{
-			"Abbreviation": "thn",
-			"code": "tanghainan",
-			"name": "唐海南"
+		  code: "huoerguosi",
+		  name: "霍尔果斯",
+		  abbreviation: "hes",
 		},
 		{
-			"Abbreviation": "zp",
-			"code": "zhangpu",
-			"name": "漳浦"
+		  code: "hengfeng",
+		  name: "横峰",
+		  abbreviation: "hfe",
 		},
 		{
-			"Abbreviation": "yws",
-			"code": "yangweishao",
-			"name": "羊尾哨"
+		  code: "hanfuwan",
+		  name: "韩府湾",
+		  abbreviation: "hfw",
 		},
 		{
-			"Abbreviation": "qj",
-			"code": "quanjiao",
-			"name": "全椒"
+		  code: "hangu",
+		  name: "汉沽",
+		  abbreviation: "hgu",
 		},
 		{
-			"Abbreviation": "alh",
-			"code": "alihe",
-			"name": "阿里河"
+		  code: "huangguayuan",
+		  name: "黄瓜园",
+		  abbreviation: "hgy",
 		},
 		{
-			"Abbreviation": "lj",
-			"code": "linjiang",
-			"name": "临江"
+		  code: "hongguangzhen",
+		  name: "红光镇",
+		  abbreviation: "hgz",
 		},
 		{
-			"Abbreviation": "zz",
-			"code": "zhuangzhi",
-			"name": "壮志"
+		  code: "hunhe",
+		  name: "浑河",
+		  abbreviation: "hhe",
 		},
 		{
-			"Abbreviation": "cy",
-			"code": "chunyang",
-			"name": "春阳"
+		  code: "honghuagou",
+		  name: "红花沟",
+		  abbreviation: "hhg",
 		},
 		{
-			"Abbreviation": "ql",
-			"code": "quli",
-			"name": "渠黎"
+		  code: "huanghuatong",
+		  name: "黄花筒",
+		  abbreviation: "hht",
 		},
 		{
-			"Abbreviation": "jl",
-			"code": "jilin",
-			"name": "吉林"
+		  code: "hejiadian",
+		  name: "贺家店",
+		  abbreviation: "hjd",
 		},
 		{
-			"Abbreviation": "sjz",
-			"code": "shenjingzi",
-			"name": "深井子"
+		  code: "hejing",
+		  name: "和静",
+		  abbreviation: "hji",
 		},
 		{
-			"Abbreviation": "qdb",
-			"code": "qidongbei",
-			"name": "祁东北"
+		  code: "hanjiang",
+		  name: "涵江",
+		  abbreviation: "hji",
 		},
 		{
-			"Abbreviation": "sj",
-			"code": "songjiang",
-			"name": "松江"
+		  code: "huojia",
+		  name: "获嘉",
+		  abbreviation: "hji",
 		},
 		{
-			"Abbreviation": "tc",
-			"code": "tancheng",
-			"name": "郯城"
+		  code: "hejin",
+		  name: "河津",
+		  abbreviation: "hji",
 		},
 		{
-			"Abbreviation": "nj",
-			"code": "niujia",
-			"name": "牛家"
+		  code: "heijing",
+		  name: "黑井",
+		  abbreviation: "hji",
 		},
 		{
-			"Abbreviation": "hrb",
-			"code": "huairoubei",
-			"name": "怀柔北"
+		  code: "hongjiang",
+		  name: "红江",
+		  abbreviation: "hji",
 		},
 		{
-			"Abbreviation": "wfb",
-			"code": "weifangbei",
-			"name": "潍坊北"
+		  code: "huajia",
+		  name: "华家",
+		  abbreviation: "hji",
 		},
 		{
-			"Abbreviation": "ba",
-			"code": "boao",
-			"name": "博鳌"
+		  code: "hangjinhouqi",
+		  name: "杭锦后旗",
+		  abbreviation: "hjq",
 		},
 		{
-			"Abbreviation": "wx",
-			"code": "wuxi1",
-			"name": "乌西"
+		  code: "hejianxi",
+		  name: "河间西",
+		  abbreviation: "hjx",
 		},
 		{
-			"Abbreviation": "gyn",
-			"code": "gongyinan",
-			"name": "巩义南"
+		  code: "huajiazhuang",
+		  name: "花家庄",
+		  abbreviation: "hjz",
 		},
 		{
-			"Abbreviation": "zjg",
-			"code": "zijingguan",
-			"name": "紫荆关"
+		  code: "hekounan",
+		  name: "河口南",
+		  abbreviation: "hkn",
 		},
 		{
-			"Abbreviation": "dc",
-			"code": "duchang",
-			"name": "都昌"
+		  code: "huangkou",
+		  name: "黄口",
+		  abbreviation: "hko",
 		},
 		{
-			"Abbreviation": "ly",
-			"code": "laiyuan",
-			"name": "涞源"
+		  code: "hukou",
+		  name: "湖口",
+		  abbreviation: "hko",
 		},
 		{
-			"Abbreviation": "lf",
-			"code": "linfen",
-			"name": "临汾"
+		  code: "hulan",
+		  name: "呼兰",
+		  abbreviation: "hla",
 		},
 		{
-			"Abbreviation": "chk",
-			"code": "cuihuangkou",
-			"name": "崔黄口"
+		  code: "huludaobei",
+		  name: "葫芦岛北",
+		  abbreviation: "hlb",
 		},
 		{
-			"Abbreviation": "hh",
-			"code": "honghe",
-			"name": "洪河"
+		  code: "haolianghe",
+		  name: "浩良河",
+		  abbreviation: "hlh",
 		},
 		{
-			"Abbreviation": "xwq",
-			"code": "xiwuqi",
-			"name": "西乌旗"
+		  code: "halahai",
+		  name: "哈拉海",
+		  abbreviation: "hlh",
 		},
 		{
-			"Abbreviation": "lx",
-			"code": "linxi2",
-			"name": "林西"
+		  code: "huangling",
+		  name: "黄陵",
+		  abbreviation: "hli",
 		},
 		{
-			"Abbreviation": "ml",
-			"code": "maolin",
-			"name": "茂林"
+		  code: "hanling",
+		  name: "寒岭",
+		  abbreviation: "hli",
 		},
 		{
-			"Abbreviation": "xp",
-			"code": "xiping",
-			"name": "西平"
+		  code: "heli",
+		  name: "鹤立",
+		  abbreviation: "hli",
 		},
 		{
-			"Abbreviation": "xhx",
-			"code": "xinhuangxi",
-			"name": "新晃西"
+		  code: "hailin",
+		  name: "海林",
+		  abbreviation: "hli",
 		},
 		{
-			"Abbreviation": "ly",
-			"code": "linyi",
-			"name": "临沂"
+		  code: "hualin",
+		  name: "桦林",
+		  abbreviation: "hli",
 		},
 		{
-			"Abbreviation": "ctx",
-			"code": "changtuxi",
-			"name": "昌图西"
+		  code: "hulin",
+		  name: "虎林",
+		  abbreviation: "hli",
 		},
 		{
-			"Abbreviation": "cbb",
-			"code": "chibibei",
-			"name": "赤壁北"
+		  code: "helong",
+		  name: "和龙",
+		  abbreviation: "hlo",
 		},
 		{
-			"Abbreviation": "qm",
-			"code": "qimen",
-			"name": "祁门"
+		  code: "hailong",
+		  name: "海龙",
+		  abbreviation: "hlo",
 		},
 		{
-			"Abbreviation": "hcg",
-			"code": "hanconggou",
-			"name": "寒葱沟"
+		  code: "halasu",
+		  name: "哈拉苏",
+		  abbreviation: "hls",
 		},
 		{
-			"Abbreviation": "zp",
-			"code": "zouping",
-			"name": "邹平"
+		  code: "hulusitai",
+		  name: "呼鲁斯太",
+		  abbreviation: "hlt",
 		},
 		{
-			"Abbreviation": "jgdq",
-			"code": "jiagedaqi",
-			"name": "加格达奇"
+		  code: "huolianzhai",
+		  name: "火连寨",
+		  abbreviation: "hlz",
 		},
 		{
-			"Abbreviation": "jz",
-			"code": "jizhou",
-			"name": "蓟州"
+		  code: "huangmei",
+		  name: "黄梅",
+		  abbreviation: "hme",
 		},
 		{
-			"Abbreviation": "xc",
-			"code": "xingcheng",
-			"name": "兴城"
+		  code: "hanmaying",
+		  name: "韩麻营",
+		  abbreviation: "hmy",
 		},
 		{
-			"Abbreviation": "xh",
-			"code": "xinhe",
-			"name": "新和"
+		  code: "huangnihe",
+		  name: "黄泥河",
+		  abbreviation: "hnh",
 		},
 		{
-			"Abbreviation": "by",
-			"code": "baiyi",
-			"name": "百宜"
+		  code: "haining",
+		  name: "海宁",
+		  abbreviation: "hni",
 		},
 		{
-			"Abbreviation": "rd",
-			"code": "rudong",
-			"name": "如东"
+		  code: "huaining",
+		  name: "怀宁",
+		  abbreviation: "hni",
 		},
 		{
-			"Abbreviation": "tzs",
-			"code": "tianzhushan",
-			"name": "天柱山"
+		  code: "huinong",
+		  name: "惠农",
+		  abbreviation: "hno",
 		},
 		{
-			"Abbreviation": "xx",
-			"code": "xixiang",
-			"name": "西乡"
+		  code: "heping",
+		  name: "和平",
+		  abbreviation: "hpi",
 		},
 		{
-			"Abbreviation": "zzb",
-			"code": "zizhongbei",
-			"name": "资中北"
+		  code: "huapengzi",
+		  name: "花棚子",
+		  abbreviation: "hpz",
 		},
 		{
-			"Abbreviation": "mzl",
-			"code": "manzhouli",
-			"name": "满洲里"
+		  code: "huaqiao",
+		  name: "花桥",
+		  abbreviation: "hqi",
 		},
 		{
-			"Abbreviation": "rcb",
-			"code": "rongchangbei",
-			"name": "荣昌北"
+		  code: "hongqing",
+		  name: "宏庆",
+		  abbreviation: "hqi",
 		},
 		{
-			"Abbreviation": "wz",
-			"code": "wenzhou",
-			"name": "温州"
+		  code: "huairen",
+		  name: "怀仁",
+		  abbreviation: "hre",
 		},
 		{
-			"Abbreviation": "hq",
-			"code": "hongqing",
-			"name": "宏庆"
+		  code: "huarong",
+		  name: "华容",
+		  abbreviation: "hro",
 		},
 		{
-			"Abbreviation": "ly",
-			"code": "lianyuan",
-			"name": "涟源"
+		  code: "huashanbei",
+		  name: "华山北",
+		  abbreviation: "hsb",
 		},
 		{
-			"Abbreviation": "gz",
-			"code": "guangze",
-			"name": "光泽"
+		  code: "huangsongdian",
+		  name: "黄松甸",
+		  abbreviation: "hsd",
 		},
 		{
-			"Abbreviation": "gnw",
-			"code": "guangnanwei",
-			"name": "广南卫"
+		  code: "heshituoluogai",
+		  name: "和什托洛盖",
+		  abbreviation: "hsg",
 		},
 		{
-			"Abbreviation": "yxx",
-			"code": "yuxixi",
-			"name": "玉溪西"
+		  code: "hanshou",
+		  name: "汉寿",
+		  abbreviation: "hsh",
 		},
 		{
-			"Abbreviation": "alt",
-			"code": "aletai",
-			"name": "阿勒泰"
+		  code: "huishan",
+		  name: "惠山",
+		  abbreviation: "hsh",
 		},
 		{
-			"Abbreviation": "ga",
-			"code": "guian",
-			"name": "贵安"
+		  code: "hengshan",
+		  name: "衡山",
+		  abbreviation: "hsh",
 		},
 		{
-			"Abbreviation": "hgx",
-			"code": "huanggangxi",
-			"name": "黄冈西"
+		  code: "heishui",
+		  name: "黑水",
+		  abbreviation: "hsh",
 		},
 		{
-			"Abbreviation": "nyz",
-			"code": "nanyangzhai",
-			"name": "南阳寨"
+		  code: "hongshan",
+		  name: "红山",
+		  abbreviation: "hsh",
 		},
 		{
-			"Abbreviation": "dxjc",
-			"code": "daxingjichang",
-			"name": "大兴机场"
+		  code: "hushiha",
+		  name: "虎什哈",
+		  abbreviation: "hsh",
 		},
 		{
-			"Abbreviation": "hnn",
-			"code": "huainannan",
-			"name": "淮南南"
+		  code: "hongsipu",
+		  name: "红寺堡",
+		  abbreviation: "hsp",
 		},
 		{
-			"Abbreviation": "cx",
-			"code": "chenxi",
-			"name": "辰溪"
+		  code: "hushitai",
+		  name: "虎石台",
+		  abbreviation: "hst",
 		},
 		{
-			"Abbreviation": "ypg",
-			"code": "yangpingguan",
-			"name": "阳平关"
+		  code: "haishiwan",
+		  name: "海石湾",
+		  abbreviation: "hsw",
 		},
 		{
-			"Abbreviation": "sslp",
-			"code": "sanshilipu",
-			"name": "三十里堡"
+		  code: "hongshaxian",
+		  name: "红砂岘",
+		  abbreviation: "hsx",
 		},
 		{
-			"Abbreviation": "zmt",
-			"code": "zhangmutou",
-			"name": "樟木头"
+		  code: "hengshanxi",
+		  name: "衡山西",
+		  abbreviation: "hsx",
 		},
 		{
-			"Abbreviation": "yc",
-			"code": "yangcao",
-			"name": "羊草"
+		  code: "huantai",
+		  name: "桓台",
+		  abbreviation: "hta",
 		},
 		{
-			"Abbreviation": "mw",
-			"code": "mawei",
-			"name": "麻尾"
+		  code: "heitai",
+		  name: "黑台",
+		  abbreviation: "hta",
 		},
 		{
-			"Abbreviation": "hyk",
-			"code": "huayuankou",
-			"name": "花园口"
+		  code: "hetian",
+		  name: "和田",
+		  abbreviation: "hti",
 		},
 		{
-			"Abbreviation": "jj",
-			"code": "jinjie",
-			"name": "锦界"
+		  code: "huitong",
+		  name: "会同",
+		  abbreviation: "hto",
 		},
 		{
-			"Abbreviation": "yjj",
-			"code": "yuejiajing",
-			"name": "岳家井"
+		  code: "haituozi",
+		  name: "海坨子",
+		  abbreviation: "htz",
 		},
 		{
-			"Abbreviation": "qzs",
-			"code": "qingzhoushi",
-			"name": "青州市"
+		  code: "heiwang",
+		  name: "黑旺",
+		  abbreviation: "hwa",
 		},
 		{
-			"Abbreviation": "lh",
-			"code": "linhe",
-			"name": "临河"
+		  code: "haiwan",
+		  name: "海湾",
+		  abbreviation: "hwa",
 		},
 		{
-			"Abbreviation": "sh",
-			"code": "songhe",
-			"name": "松河"
+		  code: "huixian",
+		  name: "徽县",
+		  abbreviation: "hxi",
 		},
 		{
-			"Abbreviation": "ll",
-			"code": "luliang",
-			"name": "陆良"
+		  code: "hongxing",
+		  name: "红星",
+		  abbreviation: "hxi",
 		},
 		{
-			"Abbreviation": "sz",
-			"code": "suzhou",
-			"name": "苏州"
+		  code: "hongxinglong",
+		  name: "红兴隆",
+		  abbreviation: "hxl",
 		},
 		{
-			"Abbreviation": "ympb",
-			"code": "yimianpobei",
-			"name": "一面坡北"
+		  code: "hongxiantai",
+		  name: "红岘台",
+		  abbreviation: "hxt",
 		},
 		{
-			"Abbreviation": "zjy",
-			"code": "zhujiayao",
-			"name": "朱家窑"
+		  code: "huanxintian",
+		  name: "换新天",
+		  abbreviation: "hxt",
 		},
 		{
-			"Abbreviation": "fzn",
-			"code": "fuzhounan2",
-			"name": "福州 南"
+		  code: "hongyan",
+		  name: "红彦",
+		  abbreviation: "hya",
 		},
 		{
-			"Abbreviation": "sz",
-			"code": "sunzhen",
-			"name": "孙镇"
+		  code: "haiyan",
+		  name: "海晏",
+		  abbreviation: "hya",
 		},
 		{
-			"Abbreviation": "ms",
-			"code": "mashan",
-			"name": "麻山"
+		  code: "heyang",
+		  name: "合阳",
+		  abbreviation: "hya",
 		},
 		{
-			"Abbreviation": "zz",
-			"code": "zhangzhou",
-			"name": "漳州"
+		  code: "hengyangdong",
+		  name: "衡阳东",
+		  abbreviation: "hyd",
 		},
 		{
-			"Abbreviation": "qx",
-			"code": "qianxian",
-			"name": "乾县"
+		  code: "huaying",
+		  name: "华蓥",
+		  abbreviation: "hyi",
 		},
 		{
-			"Abbreviation": "xjn",
-			"code": "xinjinnan",
-			"name": "新津南"
+		  code: "hanyin",
+		  name: "汉阴",
+		  abbreviation: "hyi",
 		},
 		{
-			"Abbreviation": "mds",
-			"code": "modaoshi",
-			"name": "磨刀石"
+		  code: "huangyangtan",
+		  name: "黄羊滩",
+		  abbreviation: "hyt",
 		},
 		{
-			"Abbreviation": "hy",
-			"code": "hongyan",
-			"name": "红彦"
+		  code: "hanyuan",
+		  name: "汉源",
+		  abbreviation: "hyu",
 		},
 		{
-			"Abbreviation": "dz",
-			"code": "dezhou",
-			"name": "德州"
+		  code: "heyuan",
+		  name: "河源",
+		  abbreviation: "hyu",
 		},
 		{
-			"Abbreviation": "xh",
-			"code": "xuanhan",
-			"name": "宣汉"
+		  code: "huayuan",
+		  name: "花园",
+		  abbreviation: "hyu",
 		},
 		{
-			"Abbreviation": "gc",
-			"code": "gongcheng",
-			"name": "恭城"
+		  code: "huangyuan",
+		  name: "湟源",
+		  abbreviation: "hyu",
 		},
 		{
-			"Abbreviation": "bdlcc",
-			"code": "badalingchangcheng",
-			"name": "八达岭长城"
+		  code: "huangyangzhen",
+		  name: "黄羊镇",
+		  abbreviation: "hyz",
 		},
 		{
-			"Abbreviation": "jh",
-			"code": "jinhe",
-			"name": "金河"
+		  code: "huzhou",
+		  name: "湖州",
+		  abbreviation: "hzh",
 		},
 		{
-			"Abbreviation": "px",
-			"code": "pingxiang",
-			"name": "凭祥"
+		  code: "huangzhou",
+		  name: "黄州",
+		  abbreviation: "hzh",
 		},
 		{
-			"Abbreviation": "gd",
-			"code": "guiding",
-			"name": "贵定"
+		  code: "huazhou",
+		  name: "化州",
+		  abbreviation: "hzh",
 		},
 		{
-			"Abbreviation": "qzsb",
-			"code": "qingzhoushibei",
-			"name": "青州市北"
+		  code: "huozhou",
+		  name: "霍州",
+		  abbreviation: "hzh",
 		},
 		{
-			"Abbreviation": "fq",
-			"code": "fuquan",
-			"name": "福泉"
+		  code: "huizhouxi",
+		  name: "惠州西",
+		  abbreviation: "hzx",
 		},
 		{
-			"Abbreviation": "zwn",
-			"code": "zhongweinan",
-			"name": "中卫南"
+		  code: "jubao",
+		  name: "巨宝",
+		  abbreviation: "jba",
 		},
 		{
-			"Abbreviation": "pt",
-			"code": "pingtian",
-			"name": "平田"
+		  code: "jingbian",
+		  name: "靖边",
+		  abbreviation: "jbi",
 		},
 		{
-			"Abbreviation": "lxb",
-			"code": "laixibei",
-			"name": "莱西北"
+		  code: "jinbaotun",
+		  name: "金宝屯",
+		  abbreviation: "jbt",
 		},
 		{
-			"Abbreviation": "ld",
-			"code": "loudi",
-			"name": "娄底"
+		  code: "jinchengbei",
+		  name: "晋城北",
+		  abbreviation: "jcb",
 		},
 		{
-			"Abbreviation": "lq",
-			"code": "linquan",
-			"name": "临泉"
+		  code: "jiaocheng",
+		  name: "交城",
+		  abbreviation: "jch",
 		},
 		{
-			"Abbreviation": "zd",
-			"code": "zhundong",
-			"name": "准东"
+		  code: "jinchang",
+		  name: "金昌",
+		  abbreviation: "jch",
 		},
 		{
-			"Abbreviation": "qy",
-			"code": "qiyang",
-			"name": "祁阳"
+		  code: "jianchang",
+		  name: "建昌",
+		  abbreviation: "jch",
 		},
 		{
-			"Abbreviation": "gyb",
-			"code": "guiyangbei",
-			"name": "贵阳北"
+		  code: "juancheng",
+		  name: "鄄城",
+		  abbreviation: "jch",
 		},
 		{
-			"Abbreviation": "sy",
-			"code": "shunyi",
-			"name": "顺义"
+		  code: "junde",
+		  name: "峻德",
+		  abbreviation: "jde",
 		},
 		{
-			"Abbreviation": "jcb",
-			"code": "jinchengbei",
-			"name": "晋城北"
+		  code: "jingdian",
+		  name: "井店",
+		  abbreviation: "jdi",
 		},
 		{
-			"Abbreviation": "glx",
-			"code": "guilinxi",
-			"name": "桂林西"
+		  code: "jidong",
+		  name: "鸡东",
+		  abbreviation: "jdo",
 		},
 		{
-			"Abbreviation": "yl",
-			"code": "yulin1",
-			"name": "玉林"
+		  code: "jiangdu",
+		  name: "江都",
+		  abbreviation: "jdu",
 		},
 		{
-			"Abbreviation": "lh",
-			"code": "linghai",
-			"name": "凌海"
+		  code: "jiguanshan",
+		  name: "鸡冠山",
+		  abbreviation: "jgs",
 		},
 		{
-			"Abbreviation": "nkq",
-			"code": "nankouqian",
-			"name": "南口前"
+		  code: "jingoutun",
+		  name: "金沟屯",
+		  abbreviation: "jgt",
 		},
 		{
-			"Abbreviation": "dq",
-			"code": "deqing",
-			"name": "德清"
+		  code: "jinghai",
+		  name: "静海",
+		  abbreviation: "jha",
 		},
 		{
-			"Abbreviation": "betl",
-			"code": "boertala",
-			"name": "博尔塔拉"
+		  code: "jinhe",
+		  name: "金河",
+		  abbreviation: "jhe",
 		},
 		{
-			"Abbreviation": "sr",
-			"code": "shiren",
-			"name": "石人"
+		  code: "jinghe",
+		  name: "精河",
+		  abbreviation: "jhe",
 		},
 		{
-			"Abbreviation": "hsb",
-			"code": "huangshibei",
-			"name": "黄石北"
+		  code: "jinhe",
+		  name: "锦河",
+		  abbreviation: "jhe",
 		},
 		{
-			"Abbreviation": "fnn",
-			"code": "funingnan",
-			"name": "阜宁南"
+		  code: "jinghenan",
+		  name: "精河南",
+		  abbreviation: "jhn",
 		},
 		{
-			"Abbreviation": "tpc",
-			"code": "taipingchuan",
-			"name": "太平川"
+		  code: "jianhu",
+		  name: "建湖",
+		  abbreviation: "jhu",
 		},
 		{
-			"Abbreviation": "bhg",
-			"code": "binhaigang",
-			"name": "滨海港"
+		  code: "jianghua",
+		  name: "江华",
+		  abbreviation: "jhu",
 		},
 		{
-			"Abbreviation": "edw",
-			"code": "erdaowan",
-			"name": "二道湾"
+		  code: "jijiagou",
+		  name: "纪家沟",
+		  abbreviation: "jjg",
 		},
 		{
-			"Abbreviation": "cs",
-			"code": "changshan",
-			"name": "常山"
+		  code: "jinjiang",
+		  name: "晋江",
+		  abbreviation: "jji",
 		},
 		{
-			"Abbreviation": "ys",
-			"code": "yanshan1",
-			"name": "燕山"
+		  code: "jinjie",
+		  name: "锦界",
+		  abbreviation: "jji",
 		},
 		{
-			"Abbreviation": "wy",
-			"code": "wangyang",
-			"name": "王杨"
+		  code: "jiangjia",
+		  name: "姜家",
+		  abbreviation: "jji",
 		},
 		{
-			"Abbreviation": "xlt",
-			"code": "xinlitun",
-			"name": "新立屯"
+		  code: "jinkeng",
+		  name: "金坑",
+		  abbreviation: "jke",
 		},
 		{
-			"Abbreviation": "qx",
-			"code": "qianxi",
-			"name": "黔西"
+		  code: "jiling",
+		  name: "芨岭",
+		  abbreviation: "jli",
 		},
 		{
-			"Abbreviation": "ht",
-			"code": "hongtong",
-			"name": "洪洞"
+		  code: "jinmacun",
+		  name: "金马村",
+		  abbreviation: "jmc",
 		},
 		{
-			"Abbreviation": "ssn",
-			"code": "shaoshannan",
-			"name": "韶山南"
+		  code: "jiangmendong",
+		  name: "江门东",
+		  abbreviation: "jmd",
 		},
 		{
-			"Abbreviation": "dj",
-			"code": "dongjing",
-			"name": "洞井"
+		  code: "jiaomei",
+		  name: "角美",
+		  abbreviation: "jme",
 		},
 		{
-			"Abbreviation": "yc",
-			"code": "yucheng",
-			"name": "禹城"
+		  code: "jiangmen",
+		  name: "江门",
+		  abbreviation: "jme",
 		},
 		{
-			"Abbreviation": "al",
-			"code": "anlong",
-			"name": "安龙"
+		  code: "junan",
+		  name: "莒南",
+		  abbreviation: "jna",
 		},
 		{
-			"Abbreviation": "ltb",
-			"code": "longtangba",
-			"name": "龙塘坝"
+		  code: "jingnan",
+		  name: "井南",
+		  abbreviation: "jna",
 		},
 		{
-			"Abbreviation": "jo",
-			"code": "jianou",
-			"name": "建瓯"
+		  code: "jianou",
+		  name: "建瓯",
+		  abbreviation: "jou",
 		},
 		{
-			"Abbreviation": "xpt",
-			"code": "xinpingtian",
-			"name": "新坪田"
+		  code: "jingpeng",
+		  name: "经棚",
+		  abbreviation: "jpe",
 		},
 		{
-			"Abbreviation": "lz",
-			"code": "linze",
-			"name": "临泽"
+		  code: "jinpu",
+		  name: "金普",
+		  abbreviation: "jpu",
 		},
 		{
-			"Abbreviation": "fl",
-			"code": "fenglin",
-			"name": "枫林"
+		  code: "jiangqiao",
+		  name: "江桥",
+		  abbreviation: "jqi",
 		},
 		{
-			"Abbreviation": "ll",
-			"code": "longli",
-			"name": "龙里"
+		  code: "jiusan",
+		  name: "九三",
+		  abbreviation: "jsa",
 		},
 		{
-			"Abbreviation": "hk",
-			"code": "haikou",
-			"name": "海口"
+		  code: "jinshanbei",
+		  name: "金山北",
+		  abbreviation: "jsb",
 		},
 		{
-			"Abbreviation": "xhb",
-			"code": "xinghebei",
-			"name": "兴和北"
+		  code: "jianshi",
+		  name: "建始",
+		  abbreviation: "jsh",
 		},
 		{
-			"Abbreviation": "hs",
-			"code": "heshuo",
-			"name": "和硕"
+		  code: "jiashan",
+		  name: "嘉善",
+		  abbreviation: "jsh",
 		},
 		{
-			"Abbreviation": "jz",
-			"code": "jingzhou",
-			"name": "景州"
+		  code: "jingshan",
+		  name: "京山",
+		  abbreviation: "jsh",
 		},
 		{
-			"Abbreviation": "ad",
-			"code": "ande",
-			"name": "安德"
+		  code: "jishan",
+		  name: "稷山",
+		  abbreviation: "jsh",
 		},
 		{
-			"Abbreviation": "hj",
-			"code": "hanjiang",
-			"name": "涵江"
+		  code: "jishu",
+		  name: "吉舒",
+		  abbreviation: "jsh",
 		},
 		{
-			"Abbreviation": "xyj",
-			"code": "xiaoyuejiu",
-			"name": "小月旧"
+		  code: "jiashan",
+		  name: "甲山",
+		  abbreviation: "jsh",
 		},
 		{
-			"Abbreviation": "ym",
-			"code": "yima",
-			"name": "义马"
+		  code: "jianshe",
+		  name: "建设",
+		  abbreviation: "jsh",
 		},
 		{
-			"Abbreviation": "ncb",
-			"code": "nanchongbei",
-			"name": "南充北"
+		  code: "jiansanjiang",
+		  name: "建三江",
+		  abbreviation: "jsj",
 		},
 		{
-			"Abbreviation": "jzw",
-			"code": "jiuzhuangwo",
-			"name": "旧庄窝"
+		  code: "jiashannan",
+		  name: "嘉善南",
+		  abbreviation: "jsn",
 		},
 		{
-			"Abbreviation": "sqn",
-			"code": "shangqiunan",
-			"name": "商丘南"
+		  code: "jinshantun",
+		  name: "金山屯",
+		  abbreviation: "jst",
 		},
 		{
-			"Abbreviation": "dab",
-			"code": "daanbei",
-			"name": "大安北"
+		  code: "jiangsuotian",
+		  name: "江所田",
+		  abbreviation: "jst",
 		},
 		{
-			"Abbreviation": "xsg",
-			"code": "xiaosigou",
-			"name": "小寺沟"
+		  code: "jingtai",
+		  name: "景泰",
+		  abbreviation: "jta",
 		},
 		{
-			"Abbreviation": "xcd",
-			"code": "xuchangdong",
-			"name": "许昌东"
+		  code: "jiutainan",
+		  name: "九台南",
+		  abbreviation: "jtn",
 		},
 		{
-			"Abbreviation": "pd",
-			"code": "peide",
-			"name": "裴德"
+		  code: "jiwen",
+		  name: "吉文",
+		  abbreviation: "jwe",
 		},
 		{
-			"Abbreviation": "sjz",
-			"code": "songjiangzhen",
-			"name": "松江镇"
+		  code: "jiexiu",
+		  name: "介休",
+		  abbreviation: "jxi",
 		},
 		{
-			"Abbreviation": "xy",
-			"code": "xiuyan",
-			"name": "岫岩"
+		  code: "juxian",
+		  name: "莒县",
+		  abbreviation: "jxi",
 		},
 		{
-			"Abbreviation": "xgz",
-			"code": "xigangzi",
-			"name": "西岗子"
+		  code: "jiaxiang",
+		  name: "嘉祥",
+		  abbreviation: "jxi",
 		},
 		{
-			"Abbreviation": "sth",
-			"code": "suotuhan",
-			"name": "索图罕"
+		  code: "jiaxing",
+		  name: "嘉兴",
+		  abbreviation: "jxi",
 		},
 		{
-			"Abbreviation": "nhd",
-			"code": "nanhudong",
-			"name": "南湖东"
+		  code: "jinxian",
+		  name: "进贤",
+		  abbreviation: "jxi",
 		},
 		{
-			"Abbreviation": "ad",
-			"code": "anda",
-			"name": "安达"
+		  code: "jingxing",
+		  name: "井陉",
+		  abbreviation: "jxi",
 		},
 		{
-			"Abbreviation": "tz",
-			"code": "tianzhu",
-			"name": "天祝"
+		  code: "jiaxingnan",
+		  name: "嘉兴南",
+		  abbreviation: "jxn",
 		},
 		{
-			"Abbreviation": "nzg",
-			"code": "niangziguan",
-			"name": "娘子关"
+		  code: "jiaxinzi",
+		  name: "夹心子",
+		  abbreviation: "jxz",
 		},
 		{
-			"Abbreviation": "gs",
-			"code": "guanshui",
-			"name": "灌水"
+		  code: "jianyang",
+		  name: "建阳",
+		  abbreviation: "jya",
 		},
 		{
-			"Abbreviation": "rj",
-			"code": "rongjiang",
-			"name": "榕江"
+		  code: "jiangyan",
+		  name: "姜堰",
+		  abbreviation: "jya",
 		},
 		{
-			"Abbreviation": "yz",
-			"code": "yuzhong",
-			"name": "榆中"
+		  code: "jianyang",
+		  name: "简阳",
+		  abbreviation: "jya",
 		},
 		{
-			"Abbreviation": "yg",
-			"code": "yangang",
-			"name": "燕岗"
+		  code: "juye",
+		  name: "巨野",
+		  abbreviation: "jye",
 		},
 		{
-			"Abbreviation": "cx",
-			"code": "cangxi",
-			"name": "苍溪"
+		  code: "jieyangnan",
+		  name: "揭阳南",
+		  abbreviation: "jyn",
 		},
 		{
-			"Abbreviation": "tr",
-			"code": "tongren",
-			"name": "铜仁"
+		  code: "jiangyong",
+		  name: "江永",
+		  abbreviation: "jyo",
 		},
 		{
-			"Abbreviation": "gpz",
-			"code": "gongpengzi",
-			"name": "弓棚子"
+		  code: "jinyun",
+		  name: "缙云",
+		  abbreviation: "jyu",
 		},
 		{
-			"Abbreviation": "cdd",
-			"code": "chengdedong",
-			"name": "承德东"
+		  code: "jingyuan",
+		  name: "靖远",
+		  abbreviation: "jyu",
 		},
 		{
-			"Abbreviation": "yl",
-			"code": "yilan",
-			"name": "依兰"
+		  code: "jiangyuan",
+		  name: "江源",
+		  abbreviation: "jyu",
 		},
 		{
-			"Abbreviation": "sl",
-			"code": "shuangliao",
-			"name": "双辽"
+		  code: "jiyuan",
+		  name: "济源",
+		  abbreviation: "jyu",
 		},
 		{
-			"Abbreviation": "ry",
-			"code": "ruyang",
-			"name": "汝阳"
+		  code: "jingyuanxi",
+		  name: "靖远西",
+		  abbreviation: "jyx",
 		},
 		{
-			"Abbreviation": "bwd",
-			"code": "baiwendong",
-			"name": "白文东"
+		  code: "jiaozhoubei",
+		  name: "胶州北",
+		  abbreviation: "jzb",
 		},
 		{
-			"Abbreviation": "wlcb",
-			"code": "wulanchabu",
-			"name": "乌兰察布"
+		  code: "jiaozuodong",
+		  name: "焦作东",
+		  abbreviation: "jzd",
 		},
 		{
-			"Abbreviation": "byhn",
-			"code": "baiyinhuanan",
-			"name": "白音华南"
+		  code: "jinzhai",
+		  name: "金寨",
+		  abbreviation: "jzh",
 		},
 		{
-			"Abbreviation": "xy",
-			"code": "xiangyang1",
-			"name": "襄阳"
+		  code: "jingzhou",
+		  name: "荆州",
+		  abbreviation: "jzh",
 		},
 		{
-			"Abbreviation": "zjb",
-			"code": "zhijinbei",
-			"name": "织金北"
+		  code: "jingzhou",
+		  name: "靖州",
+		  abbreviation: "jzh",
 		},
 		{
-			"Abbreviation": "mdh",
-			"code": "mianduhe",
-			"name": "免渡河"
+		  code: "jiaozhou",
+		  name: "胶州",
+		  abbreviation: "jzh",
 		},
 		{
-			"Abbreviation": "bz",
-			"code": "bozhou",
-			"name": "亳州"
+		  code: "jinzhou",
+		  name: "晋州",
+		  abbreviation: "jzh",
 		},
 		{
-			"Abbreviation": "ys",
-			"code": "yushi",
-			"name": "玉石"
+		  code: "jizhou",
+		  name: "蓟州",
+		  abbreviation: "jzh",
 		},
 		{
-			"Abbreviation": "wt",
-			"code": "wangtong",
-			"name": "王瞳"
+		  code: "jinzhounan",
+		  name: "锦州南",
+		  abbreviation: "jzn",
 		},
 		{
-			"Abbreviation": "byh",
-			"code": "beiyinhe",
-			"name": "背荫河"
+		  code: "jiaozuo",
+		  name: "焦作",
+		  abbreviation: "jzu",
 		},
 		{
-			"Abbreviation": "ss",
-			"code": "shoushan",
-			"name": "首山"
+		  code: "jiuzhuangwo",
+		  name: "旧庄窝",
+		  abbreviation: "jzw",
 		},
 		{
-			"Abbreviation": "lgn",
-			"code": "lingaonan",
-			"name": "临高南"
+		  code: "jinzhangzi",
+		  name: "金杖子",
+		  abbreviation: "jzz",
 		},
 		{
-			"Abbreviation": "ll",
-			"code": "lanling",
-			"name": "兰棱"
+		  code: "kaian",
+		  name: "开安",
+		  abbreviation: "kan",
 		},
 		{
-			"Abbreviation": "yx",
-			"code": "youxian",
-			"name": "攸县"
+		  code: "kuche",
+		  name: "库车",
+		  abbreviation: "kch",
 		},
 		{
-			"Abbreviation": "ra",
-			"code": "rongan",
-			"name": "融安"
+		  code: "kangcheng",
+		  name: "康城",
+		  abbreviation: "kch",
 		},
 		{
-			"Abbreviation": "tlfb",
-			"code": "tulufanbei",
-			"name": "吐鲁番北"
+		  code: "kuduer",
+		  name: "库都尔",
+		  abbreviation: "kde",
 		},
 		{
-			"Abbreviation": "ssb",
-			"code": "shishanbei",
-			"name": "狮山北"
+		  code: "kuandian",
+		  name: "宽甸",
+		  abbreviation: "kdi",
 		},
 		{
-			"Abbreviation": "dz",
-			"code": "dingzhou",
-			"name": "定州"
+		  code: "kedong",
+		  name: "克东",
+		  abbreviation: "kdo",
 		},
 		{
-			"Abbreviation": "th",
-			"code": "taihe",
-			"name": "泰和"
+		  code: "kundulunzhao",
+		  name: "昆都仑召",
+		  abbreviation: "kdz",
 		},
 		{
-			"Abbreviation": "nxt",
-			"code": "niuxintai",
-			"name": "牛心台"
+		  code: "kaijiang",
+		  name: "开江",
+		  abbreviation: "kji",
 		},
 		{
-			"Abbreviation": "ta",
-			"code": "taian",
-			"name": "台安"
+		  code: "kangjinjing",
+		  name: "康金井",
+		  abbreviation: "kjj",
 		},
 		{
-			"Abbreviation": "pg",
-			"code": "panguan",
-			"name": "盘关"
+		  code: "kalaqi",
+		  name: "喀喇其",
+		  abbreviation: "klq",
 		},
 		{
-			"Abbreviation": "ys",
-			"code": "yaoshang",
-			"name": "窑上"
+		  code: "kailu",
+		  name: "开鲁",
+		  abbreviation: "klu",
 		},
 		{
-			"Abbreviation": "yjs",
-			"code": "yingjisha",
-			"name": "英吉沙"
+		  code: "kelamayi",
+		  name: "克拉玛依",
+		  abbreviation: "kly",
 		},
 		{
-			"Abbreviation": "gyjc",
-			"code": "guanyinjichang",
-			"name": "观音机场"
+		  code: "kaipingnan",
+		  name: "开平南",
+		  abbreviation: "kpn",
 		},
 		{
-			"Abbreviation": "jax",
-			"code": "jianxi",
-			"name": "吉安西"
+		  code: "kouqian",
+		  name: "口前",
+		  abbreviation: "kqi",
 		},
 		{
-			"Abbreviation": "zh",
-			"code": "zhuhai",
-			"name": "珠海"
+		  code: "kunshan",
+		  name: "昆山",
+		  abbreviation: "ksh",
 		},
 		{
-			"Abbreviation": "yqht",
-			"code": "yaoqianhutun",
-			"name": "姚千户屯"
+		  code: "kuishan",
+		  name: "奎山",
+		  abbreviation: "ksh",
 		},
 		{
-			"Abbreviation": "ls",
-			"code": "lishui",
-			"name": "丽水"
+		  code: "keshan",
+		  name: "克山",
+		  abbreviation: "ksh",
 		},
 		{
-			"Abbreviation": "wys",
-			"code": "wuyishan",
-			"name": "武夷山"
+		  code: "kangxiling",
+		  name: "康熙岭",
+		  abbreviation: "kxl",
 		},
 		{
-			"Abbreviation": "syx",
-			"code": "shenyangxi",
-			"name": "沈阳西"
+		  code: "kunyang",
+		  name: "昆阳",
+		  abbreviation: "kya",
 		},
 		{
-			"Abbreviation": "ct",
-			"code": "chaotian",
-			"name": "朝天"
+		  code: "keyihe",
+		  name: "克一河",
+		  abbreviation: "kyh",
 		},
 		{
-			"Abbreviation": "xcz",
-			"code": "xiachengzi",
-			"name": "下城子"
+		  code: "kaiyuanxi",
+		  name: "开原西",
+		  abbreviation: "kyx",
 		},
 		{
-			"Abbreviation": "ybln",
-			"code": "yabulinan",
-			"name": "亚布力南"
+		  code: "kangzhuang",
+		  name: "康庄",
+		  abbreviation: "kzh",
 		},
 		{
-			"Abbreviation": "sh",
-			"code": "shuhe",
-			"name": "蜀河"
+		  code: "laibin",
+		  name: "来宾",
+		  abbreviation: "lbi",
 		},
 		{
-			"Abbreviation": "jq",
-			"code": "jiuquan",
-			"name": "酒泉"
+		  code: "laobian",
+		  name: "老边",
+		  abbreviation: "lbi",
 		},
 		{
-			"Abbreviation": "ld",
-			"code": "liangdang",
-			"name": "两当"
+		  code: "lingbaoxi",
+		  name: "灵宝西",
+		  abbreviation: "lbx",
 		},
 		{
-			"Abbreviation": "bt",
-			"code": "botou",
-			"name": "泊头"
+		  code: "luochuandong",
+		  name: "洛川东",
+		  abbreviation: "lcd",
 		},
 		{
-			"Abbreviation": "tl",
-			"code": "tingliang",
-			"name": "亭亮"
+		  code: "longchuan",
+		  name: "龙川",
+		  abbreviation: "lch",
 		},
 		{
-			"Abbreviation": "yy",
-			"code": "yuyao",
-			"name": "余姚"
+		  code: "lechang",
+		  name: "乐昌",
+		  abbreviation: "lch",
 		},
 		{
-			"Abbreviation": "zp",
-			"code": "zhangping",
-			"name": "漳平"
+		  code: "liaocheng",
+		  name: "聊城",
+		  abbreviation: "lch",
 		},
 		{
-			"Abbreviation": "thj",
-			"code": "tianhejie",
-			"name": "天河街"
+		  code: "licheng",
+		  name: "黎城",
+		  abbreviation: "lch",
 		},
 		{
-			"Abbreviation": "nf",
-			"code": "nanfeng",
-			"name": "南丰"
+		  code: "lancun",
+		  name: "蓝村",
+		  abbreviation: "lcu",
 		},
 		{
-			"Abbreviation": "sfb",
-			"code": "shuangfengbei",
-			"name": "双峰北"
+		  code: "liangdang",
+		  name: "两当",
+		  abbreviation: "lda",
 		},
 		{
-			"Abbreviation": "ysl",
-			"code": "yangshuling",
-			"name": "杨树岭"
+		  code: "lindong",
+		  name: "林东",
+		  abbreviation: "ldo",
 		},
 		{
-			"Abbreviation": "cqx2",
-			"code": "chongqingxi2",
-			"name": "重  庆西"
+		  code: "ledu",
+		  name: "乐都",
+		  abbreviation: "ldu",
 		},
 		{
-			"Abbreviation": "acb",
-			"code": "achengbei",
-			"name": "阿城北"
+		  code: "liangdixia",
+		  name: "梁底下",
+		  abbreviation: "ldx",
 		},
 		{
-			"Abbreviation": "my",
-			"code": "menyuan",
-			"name": "门源"
+		  code: "liudaohezi",
+		  name: "六道河子",
+		  abbreviation: "ldz",
 		},
 		{
-			"Abbreviation": "mc",
-			"code": "maochen",
-			"name": "毛陈"
+		  code: "langfang",
+		  name: "廊坊",
+		  abbreviation: "lfa",
 		},
 		{
-			"Abbreviation": "gxb",
-			"code": "ganxianbei",
-			"name": "赣县北"
+		  code: "lufan",
+		  name: "鲁番",
+		  abbreviation: "lfa",
 		},
 		{
-			"Abbreviation": "fh",
-			"code": "fuhai1",
-			"name": "福海"
+		  code: "luofa",
+		  name: "落垡",
+		  abbreviation: "lfa",
 		},
 		{
-			"Abbreviation": "nd",
-			"code": "nandan",
-			"name": "南丹"
+		  code: "langfangbei",
+		  name: "廊坊北",
+		  abbreviation: "lfb",
 		},
 		{
-			"Abbreviation": "dt",
-			"code": "dengta",
-			"name": "灯塔"
+		  code: "laofu",
+		  name: "老府",
+		  abbreviation: "lfu",
 		},
 		{
-			"Abbreviation": "yz",
-			"code": "yizhou",
-			"name": "宜州"
+		  code: "langang",
+		  name: "兰岗",
+		  abbreviation: "lga",
 		},
 		{
-			"Abbreviation": "szb",
-			"code": "suizhongbei",
-			"name": "绥中北"
+		  code: "longgudian",
+		  name: "龙骨甸",
+		  abbreviation: "lgd",
 		},
 		{
-			"Abbreviation": "lh",
-			"code": "linhai1",
-			"name": "临海"
+		  code: "longgou",
+		  name: "龙沟",
+		  abbreviation: "lgo",
 		},
 		{
-			"Abbreviation": "lj",
-			"code": "lijiang",
-			"name": "丽江"
+		  code: "lugou",
+		  name: "芦沟",
+		  abbreviation: "lgo",
 		},
 		{
-			"Abbreviation": "bg",
-			"code": "baigou",
-			"name": "白沟"
+		  code: "lagu",
+		  name: "拉古",
+		  abbreviation: "lgu",
 		},
 		{
-			"Abbreviation": "scl",
-			"code": "songchenglu",
-			"name": "宋城路"
+		  code: "linhai",
+		  name: "临海",
+		  abbreviation: "lha",
 		},
 		{
-			"Abbreviation": "sm",
-			"code": "songming",
-			"name": "嵩明"
+		  code: "linghai",
+		  name: "凌海",
+		  abbreviation: "lha",
 		},
 		{
-			"Abbreviation": "yx",
-			"code": "yangxin",
-			"name": "阳新"
+		  code: "laha",
+		  name: "拉哈",
+		  abbreviation: "lha",
 		},
 		{
-			"Abbreviation": "my",
-			"code": "mianyang",
-			"name": "绵阳"
+		  code: "linhai",
+		  name: "林海",
+		  abbreviation: "lha",
 		},
 		{
-			"Abbreviation": "cw",
-			"code": "changwu",
-			"name": "长武"
+		  code: "liuhe",
+		  name: "柳河",
+		  abbreviation: "lhe",
 		},
 		{
-			"Abbreviation": "lz",
-			"code": "leizhou",
-			"name": "雷州"
+		  code: "liuhe",
+		  name: "六合",
+		  abbreviation: "lhe",
 		},
 		{
-			"Abbreviation": "bh",
-			"code": "baihe",
-			"name": "白河"
+		  code: "longhua",
+		  name: "龙华",
+		  abbreviation: "lhu",
 		},
 		{
-			"Abbreviation": "zzx",
-			"code": "zhengzhouxi",
-			"name": "郑州西"
+		  code: "luanheyan",
+		  name: "滦河沿",
+		  abbreviation: "lhy",
 		},
 		{
-			"Abbreviation": "pw",
-			"code": "puwan",
-			"name": "普湾"
+		  code: "liuhezhen",
+		  name: "六合镇",
+		  abbreviation: "lhz",
 		},
 		{
-			"Abbreviation": "ytlh",
-			"code": "yitulihe",
-			"name": "伊图里河"
+		  code: "liangjiadian",
+		  name: "亮甲店",
+		  abbreviation: "ljd",
 		},
 		{
-			"Abbreviation": "bq",
-			"code": "baiquan",
-			"name": "白泉"
+		  code: "liujiadian",
+		  name: "刘家店",
+		  abbreviation: "ljd",
 		},
 		{
-			"Abbreviation": "ln",
-			"code": "longnan",
-			"name": "陇南"
+		  code: "liujiahe",
+		  name: "刘家河",
+		  abbreviation: "ljh",
 		},
 		{
-			"Abbreviation": "dhyb",
-			"code": "donghuayuanbei",
-			"name": "东花园北"
+		  code: "lianjiang",
+		  name: "廉江",
+		  abbreviation: "lji",
 		},
 		{
-			"Abbreviation": "xzx",
-			"code": "xinzhouxi",
-			"name": "忻州西"
+		  code: "luojiang",
+		  name: "罗江",
+		  abbreviation: "lji",
 		},
 		{
-			"Abbreviation": "tl",
-			"code": "tieli",
-			"name": "铁力"
+		  code: "liangjia",
+		  name: "两家",
+		  abbreviation: "lji",
 		},
 		{
-			"Abbreviation": "dyd",
-			"code": "dayingdong",
-			"name": "大英东"
+		  code: "lijia",
+		  name: "李家",
+		  abbreviation: "lji",
 		},
 		{
-			"Abbreviation": "pw",
-			"code": "pingwang",
-			"name": "平旺"
+		  code: "longjiang",
+		  name: "龙江",
+		  abbreviation: "lji",
 		},
 		{
-			"Abbreviation": "cn",
-			"code": "changning",
-			"name": "长宁"
+		  code: "lianjiang",
+		  name: "连江",
+		  abbreviation: "lji",
 		},
 		{
-			"Abbreviation": "sdw",
-			"code": "sidaowan",
-			"name": "四道湾"
+		  code: "lujiang",
+		  name: "庐江",
+		  abbreviation: "lji",
 		},
 		{
-			"Abbreviation": "ht",
-			"code": "huantai",
-			"name": "桓台"
+		  code: "longjia",
+		  name: "龙嘉",
+		  abbreviation: "lji",
 		},
 		{
-			"Abbreviation": "dz",
-			"code": "dazhou",
-			"name": "达州"
+		  code: "lianjiangkou",
+		  name: "莲江口",
+		  abbreviation: "ljk",
 		},
 		{
-			"Abbreviation": "cqb",
-			"code": "chongqingbei",
-			"name": "重庆北"
+		  code: "linjialou",
+		  name: "蔺家楼",
+		  abbreviation: "ljl",
 		},
 		{
-			"Abbreviation": "pc",
-			"code": "pingchang",
-			"name": "平昌"
+		  code: "lijiaping",
+		  name: "李家坪",
+		  abbreviation: "ljp",
 		},
 		{
-			"Abbreviation": "mz",
-			"code": "meizhou",
-			"name": "梅州"
+		  code: "lankao",
+		  name: "兰考",
+		  abbreviation: "lka",
 		},
 		{
-			"Abbreviation": "ca",
-			"code": "changan",
-			"name": "长安"
+		  code: "linkou",
+		  name: "林口",
+		  abbreviation: "lko",
 		},
 		{
-			"Abbreviation": "sys",
-			"code": "shuangyashan",
-			"name": "双鸭山"
+		  code: "lukoupu",
+		  name: "路口铺",
+		  abbreviation: "lkp",
 		},
 		{
-			"Abbreviation": "lz",
-			"code": "liaozhong",
-			"name": "辽中"
+		  code: "laolai",
+		  name: "老莱",
+		  abbreviation: "lla",
 		},
 		{
-			"Abbreviation": "ysn",
-			"code": "yanshinan",
-			"name": "雁石南"
+		  code: "linli",
+		  name: "临澧",
+		  abbreviation: "lli",
 		},
 		{
-			"Abbreviation": "bq",
-			"code": "baoqing",
-			"name": "宝清"
+		  code: "luliang",
+		  name: "陆良",
+		  abbreviation: "lli",
 		},
 		{
-			"Abbreviation": "dyb",
-			"code": "danyangbei",
-			"name": "丹阳北"
+		  code: "lingling",
+		  name: "零陵",
+		  abbreviation: "lli",
 		},
 		{
-			"Abbreviation": "yc",
-			"code": "yuechi",
-			"name": "岳池"
+		  code: "longli",
+		  name: "龙里",
+		  abbreviation: "lli",
 		},
 		{
-			"Abbreviation": "zjj",
-			"code": "zhangjiajie",
-			"name": "张家界"
+		  code: "lanling",
+		  name: "兰棱",
+		  abbreviation: "lli",
 		},
 		{
-			"Abbreviation": "btd1",
-			"code": "baotoudong1",
-			"name": "包头 东"
+		  code: "lalin",
+		  name: "拉林",
+		  abbreviation: "lli",
 		},
 		{
-			"Abbreviation": "hrd",
-			"code": "huairendong",
-			"name": "怀仁东"
+		  code: "lulong",
+		  name: "卢龙",
+		  abbreviation: "llo",
 		},
 		{
-			"Abbreviation": "sl",
-			"code": "shilong",
-			"name": "石龙"
+		  code: "lamadian",
+		  name: "喇嘛甸",
+		  abbreviation: "lmd",
 		},
 		{
-			"Abbreviation": "dzn",
-			"code": "dazunan",
-			"name": "大足南"
+		  code: "limudian",
+		  name: "里木店",
+		  abbreviation: "lmd",
 		},
 		{
-			"Abbreviation": "wx",
-			"code": "weixin",
-			"name": "威信"
+		  code: "luomen",
+		  name: "洛门",
+		  abbreviation: "lme",
 		},
 		{
-			"Abbreviation": "gl",
-			"code": "gulang",
-			"name": "古浪"
+		  code: "longnan",
+		  name: "龙南",
+		  abbreviation: "lna",
 		},
 		{
-			"Abbreviation": "wy",
-			"code": "weiyuan",
-			"name": "渭源"
+		  code: "liangping",
+		  name: "梁平",
+		  abbreviation: "lpi",
 		},
 		{
-			"Abbreviation": "ypd",
-			"code": "yanpingdong",
-			"name": "延平东"
+		  code: "luoping",
+		  name: "罗平",
+		  abbreviation: "lpi",
 		},
 		{
-			"Abbreviation": "ls",
-			"code": "lingshi",
-			"name": "灵石"
+		  code: "luopoling",
+		  name: "落坡岭",
+		  abbreviation: "lpl",
 		},
 		{
-			"Abbreviation": "ycb",
-			"code": "yanchengbei",
-			"name": "盐城北"
+		  code: "liupanshan",
+		  name: "六盘山",
+		  abbreviation: "lps",
 		},
 		{
-			"Abbreviation": "nxb",
-			"code": "nanxiangbei",
-			"name": "南翔北"
+		  code: "lepingshi",
+		  name: "乐平市",
+		  abbreviation: "lps",
 		},
 		{
-			"Abbreviation": "xgd",
-			"code": "xingandong",
-			"name": "新干东"
+		  code: "linqing",
+		  name: "临清",
+		  abbreviation: "lqi",
 		},
 		{
-			"Abbreviation": "waz",
-			"code": "wanganzhen",
-			"name": "王安镇"
+		  code: "longquansi",
+		  name: "龙泉寺",
+		  abbreviation: "lqs",
 		},
 		{
-			"Abbreviation": "sf",
-			"code": "shuifu",
-			"name": "水富"
+		  code: "leshanbei",
+		  name: "乐山北",
+		  abbreviation: "lsb",
 		},
 		{
-			"Abbreviation": "dfh",
-			"code": "dongfanghong",
-			"name": "东方红"
+		  code: "leshancun",
+		  name: "乐善村",
+		  abbreviation: "lsc",
 		},
 		{
-			"Abbreviation": "bdl",
-			"code": "badaling",
-			"name": "八达岭"
+		  code: "lengshuijiangdong",
+		  name: "冷水江东",
+		  abbreviation: "lsd",
 		},
 		{
-			"Abbreviation": "cz",
-			"code": "cangzhou",
-			"name": "沧州"
+		  code: "lianshanguan",
+		  name: "连山关",
+		  abbreviation: "lsg",
 		},
 		{
-			"Abbreviation": "lt",
-			"code": "lutai",
-			"name": "芦台"
+		  code: "liushuigou",
+		  name: "流水沟",
+		  abbreviation: "lsg",
 		},
 		{
-			"Abbreviation": "xpn",
-			"code": "xupunan",
-			"name": "溆浦南"
+		  code: "lishui",
+		  name: "丽水",
+		  abbreviation: "lsh",
 		},
 		{
-			"Abbreviation": "lzn",
-			"code": "linzenan",
-			"name": "临泽南"
+		  code: "lingshi",
+		  name: "灵石",
+		  abbreviation: "lsh",
 		},
 		{
-			"Abbreviation": "dtd",
-			"code": "dangtudong",
-			"name": "当涂东"
+		  code: "lingshui",
+		  name: "陵水",
+		  abbreviation: "lsh",
 		},
 		{
-			"Abbreviation": "lp",
-			"code": "liangping",
-			"name": "梁平"
+		  code: "luoshan",
+		  name: "罗山",
+		  abbreviation: "lsh",
 		},
 		{
-			"Abbreviation": "lc",
-			"code": "linchuan",
-			"name": "临川"
+		  code: "lushuihe",
+		  name: "露水河",
+		  abbreviation: "lsh",
 		},
 		{
-			"Abbreviation": "xwp",
-			"code": "xinwopu",
-			"name": "新窝铺"
+		  code: "lushan",
+		  name: "鲁山",
+		  abbreviation: "lsh",
 		},
 		{
-			"Abbreviation": "fz",
-			"code": "fuzhou",
-			"name": "福州"
+		  code: "lushan",
+		  name: "庐山",
+		  abbreviation: "lsh",
 		},
 		{
-			"Abbreviation": "mjg",
-			"code": "mengjiagang",
-			"name": "孟家岗"
+		  code: "liangshan",
+		  name: "梁山",
+		  abbreviation: "lsh",
 		},
 		{
-			"Abbreviation": "za",
-			"code": "zhian",
-			"name": "治安"
+		  code: "linshengpu",
+		  name: "林盛堡",
+		  abbreviation: "lsp",
 		},
 		{
-			"Abbreviation": "bt",
-			"code": "bantian",
-			"name": "坂田"
+		  code: "liushutun",
+		  name: "柳树屯",
+		  abbreviation: "lst",
 		},
 		{
-			"Abbreviation": "hkb",
-			"code": "hekoubei",
-			"name": "河口北"
+		  code: "longshanzhen",
+		  name: "龙山镇",
+		  abbreviation: "lsz",
 		},
 		{
-			"Abbreviation": "wk",
-			"code": "woken",
-			"name": "倭肯"
+		  code: "lishuzhen",
+		  name: "梨树镇",
+		  abbreviation: "lsz",
 		},
 		{
-			"Abbreviation": "dy",
-			"code": "daiyue",
-			"name": "岱岳"
+		  code: "lishizhai",
+		  name: "李石寨",
+		  abbreviation: "lsz",
 		},
 		{
-			"Abbreviation": "fsd",
-			"code": "fengshundong",
-			"name": "丰顺东"
+		  code: "luntai",
+		  name: "轮台",
+		  abbreviation: "lta",
 		},
 		{
-			"Abbreviation": "py",
-			"code": "pingyang",
-			"name": "平阳"
+		  code: "litang",
+		  name: "黎塘",
+		  abbreviation: "lta",
 		},
 		{
-			"Abbreviation": "zjw",
-			"code": "zhujiawan",
-			"name": "褚家湾"
+		  code: "lutai",
+		  name: "芦台",
+		  abbreviation: "lta",
 		},
 		{
-			"Abbreviation": "tb",
-			"code": "tongbei",
-			"name": "通北"
+		  code: "longtangba",
+		  name: "龙塘坝",
+		  abbreviation: "ltb",
 		},
 		{
-			"Abbreviation": "th",
-			"code": "tonghua",
-			"name": "通化"
+		  code: "laituan",
+		  name: "濑湍",
+		  abbreviation: "ltu",
 		},
 		{
-			"Abbreviation": "lsz",
-			"code": "longshanzhen",
-			"name": "龙山镇"
+		  code: "luotuoxiang",
+		  name: "骆驼巷",
+		  abbreviation: "ltx",
 		},
 		{
-			"Abbreviation": "spb",
-			"code": "shapingba",
-			"name": "沙坪坝"
+		  code: "liwang",
+		  name: "李旺",
+		  abbreviation: "lwa",
 		},
 		{
-			"Abbreviation": "ys",
-			"code": "yanshi",
-			"name": "偃师"
+		  code: "laiwudong",
+		  name: "莱芜东",
+		  abbreviation: "lwd",
 		},
 		{
-			"Abbreviation": "bj",
-			"code": "baoji",
-			"name": "宝鸡"
+		  code: "langweishan",
+		  name: "狼尾山",
+		  abbreviation: "lws",
 		},
 		{
-			"Abbreviation": "atb",
-			"code": "antingbei",
-			"name": "安亭北"
+		  code: "lingwu",
+		  name: "灵武",
+		  abbreviation: "lwu",
 		},
 		{
-			"Abbreviation": "pl",
-			"code": "pianling",
-			"name": "偏岭"
+		  code: "laiwuxi",
+		  name: "莱芜西",
+		  abbreviation: "lwx",
 		},
 		{
-			"Abbreviation": "zsx",
-			"code": "zhongshanxi",
-			"name": "钟山西"
+		  code: "luxi",
+		  name: "芦溪",
+		  abbreviation: "lxi",
 		},
 		{
-			"Abbreviation": "qy",
-			"code": "qingyuan",
-			"name": "清原"
+		  code: "longxian",
+		  name: "陇县",
+		  abbreviation: "lxi",
 		},
 		{
-			"Abbreviation": "bf",
-			"code": "baofeng",
-			"name": "宝丰"
+		  code: "linxiang",
+		  name: "临湘",
+		  abbreviation: "lxi",
 		},
 		{
-			"Abbreviation": "kd",
-			"code": "kedong",
-			"name": "克东"
+		  code: "linxi",
+		  name: "林西",
+		  abbreviation: "lxi",
 		},
 		{
-			"Abbreviation": "hd",
-			"code": "handan",
-			"name": "邯郸"
+		  code: "luanxian",
+		  name: "滦县",
+		  abbreviation: "lxi",
 		},
 		{
-			"Abbreviation": "bl",
-			"code": "bole",
-			"name": "博乐"
+		  code: "langxiang",
+		  name: "朗乡",
+		  abbreviation: "lxi",
 		},
 		{
-			"Abbreviation": "hs",
-			"code": "huangshan",
-			"name": "黄山"
+		  code: "liangxiang",
+		  name: "良乡",
+		  abbreviation: "lxi",
 		},
 		{
-			"Abbreviation": "nj",
-			"code": "nanjing",
-			"name": "南京"
+		  code: "laixinan",
+		  name: "莱西南",
+		  abbreviation: "lxn",
 		},
 		{
-			"Abbreviation": "jz",
-			"code": "jinzhou1",
-			"name": "金州"
+		  code: "lueyang",
+		  name: "略阳",
+		  abbreviation: "lya",
 		},
 		{
-			"Abbreviation": "yc",
-			"code": "yangchun",
-			"name": "阳春"
+		  code: "laiyang",
+		  name: "莱阳",
+		  abbreviation: "lya",
 		},
 		{
-			"Abbreviation": "sjx",
-			"code": "shajingxi",
-			"name": "沙井西"
+		  code: "liaoyang",
+		  name: "辽阳",
+		  abbreviation: "lya",
 		},
 		{
-			"Abbreviation": "gqk",
-			"code": "ganqika",
-			"name": "甘旗卡"
+		  code: "lingyuandong",
+		  name: "凌源东",
+		  abbreviation: "lyd",
 		},
 		{
-			"Abbreviation": "wyb",
-			"code": "wuyibei",
-			"name": "武义北"
+		  code: "linyidong",
+		  name: "临沂东",
+		  abbreviation: "lyd",
 		},
 		{
-			"Abbreviation": "ds",
-			"code": "dongsheng",
-			"name": "东胜"
+		  code: "lianyungang",
+		  name: "连云港",
+		  abbreviation: "lyg",
 		},
 		{
-			"Abbreviation": "fcn",
-			"code": "fengchengnan",
-			"name": "丰城南"
+		  code: "laoying",
+		  name: "老营",
+		  abbreviation: "lyi",
 		},
 		{
-			"Abbreviation": "lx",
-			"code": "longxian",
-			"name": "陇县"
+		  code: "linying",
+		  name: "临颍",
+		  abbreviation: "lyi",
 		},
 		{
-			"Abbreviation": "xbc",
-			"code": "xiabancheng",
-			"name": "下板城"
+		  code: "longyou",
+		  name: "龙游",
+		  abbreviation: "lyo",
 		},
 		{
-			"Abbreviation": "bjt",
-			"code": "bajiaotai",
-			"name": "八角台"
+		  code: "lianyuan",
+		  name: "涟源",
+		  abbreviation: "lyu",
 		},
 		{
-			"Abbreviation": "lsg",
-			"code": "liushuigou",
-			"name": "流水沟"
+		  code: "laiyuan",
+		  name: "涞源",
+		  abbreviation: "lyu",
 		},
 		{
-			"Abbreviation": "src",
-			"code": "shirencheng",
-			"name": "石人城"
+		  code: "linyuan",
+		  name: "林源",
+		  abbreviation: "lyu",
 		},
 		{
-			"Abbreviation": "sl",
-			"code": "suolun",
-			"name": "索伦"
+		  code: "luoyuan",
+		  name: "罗源",
+		  abbreviation: "lyu",
 		},
 		{
-			"Abbreviation": "cq",
-			"code": "chongqing",
-			"name": "重庆"
+		  code: "leiyangxi",
+		  name: "耒阳西",
+		  abbreviation: "lyx",
 		},
 		{
-			"Abbreviation": "shk",
-			"code": "shahekou",
-			"name": "沙河口"
+		  code: "linze",
+		  name: "临泽",
+		  abbreviation: "lze",
 		},
 		{
-			"Abbreviation": "ly",
-			"code": "lingyuan",
-			"name": "凌源"
+		  code: "longzhuagou",
+		  name: "龙爪沟",
+		  abbreviation: "lzg",
 		},
 		{
-			"Abbreviation": "tlmd",
-			"code": "tuliemaodu",
-			"name": "吐列毛杜"
+		  code: "leizhou",
+		  name: "雷州",
+		  abbreviation: "lzh",
 		},
 		{
-			"Abbreviation": "szb",
-			"code": "shenzhenbei",
-			"name": "深圳北"
+		  code: "laizhou",
+		  name: "来舟",
+		  abbreviation: "lzh",
 		},
 		{
-			"Abbreviation": "ltx",
-			"code": "luotuoxiang",
-			"name": "骆驼巷"
+		  code: "liuzhi",
+		  name: "六枝",
+		  abbreviation: "lzh",
 		},
 		{
-			"Abbreviation": "rs",
-			"code": "rongshui",
-			"name": "融水"
+		  code: "longzhen",
+		  name: "龙镇",
+		  abbreviation: "lzh",
 		},
 		{
-			"Abbreviation": "lq",
-			"code": "linqing",
-			"name": "临清"
+		  code: "lazha",
+		  name: "拉鲊",
+		  abbreviation: "lzh",
 		},
 		{
-			"Abbreviation": "jc",
-			"code": "jianchang",
-			"name": "建昌"
+		  code: "luzhai",
+		  name: "鹿寨",
+		  abbreviation: "lzh",
 		},
 		{
-			"Abbreviation": "fq",
-			"code": "fuqing",
-			"name": "福清"
+		  code: "lanzhouxinqu",
+		  name: "兰州新区",
+		  abbreviation: "lzq",
 		},
 		{
-			"Abbreviation": "nq",
-			"code": "nanqiu",
-			"name": "南仇"
+		  code: "maanshan",
+		  name: "马鞍山",
+		  abbreviation: "mas",
 		},
 		{
-			"Abbreviation": "zl",
-			"code": "zhanglan",
-			"name": "张兰"
+		  code: "maoba",
+		  name: "毛坝",
+		  abbreviation: "mba",
 		},
 		{
-			"Abbreviation": "ya",
-			"code": "yongan",
-			"name": "永安"
+		  code: "maobaguan",
+		  name: "毛坝关",
+		  abbreviation: "mbg",
 		},
 		{
-			"Abbreviation": "ty",
-			"code": "tangyin",
-			"name": "汤阴"
+		  code: "machengbei",
+		  name: "麻城北",
+		  abbreviation: "mcb",
 		},
 		{
-			"Abbreviation": "wnx",
-			"code": "weinanxi",
-			"name": "渭南西"
+		  code: "mianchi",
+		  name: "渑池",
+		  abbreviation: "mch",
 		},
 		{
-			"Abbreviation": "wfd",
-			"code": "wafangdian",
-			"name": "瓦房店"
+		  code: "mingcheng",
+		  name: "明城",
+		  abbreviation: "mch",
 		},
 		{
-			"Abbreviation": "sp",
-			"code": "suiping",
-			"name": "遂平"
+		  code: "miaocheng",
+		  name: "庙城",
+		  abbreviation: "mch",
 		},
 		{
-			"Abbreviation": "hld",
-			"code": "huludao",
-			"name": "葫芦岛"
+		  code: "mianchinan",
+		  name: "渑池南",
+		  abbreviation: "mcn",
 		},
 		{
-			"Abbreviation": "ly",
-			"code": "liaoyuan",
-			"name": "辽源"
+		  code: "maocaoping",
+		  name: "茅草坪",
+		  abbreviation: "mcp",
 		},
 		{
-			"Abbreviation": "wks",
-			"code": "wukeshu",
-			"name": "五棵树"
+		  code: "mengdonghe",
+		  name: "猛洞河",
+		  abbreviation: "mdh",
 		},
 		{
-			"Abbreviation": "gsl",
-			"code": "guanshaling",
-			"name": "观沙岭"
+		  code: "modaoshi",
+		  name: "磨刀石",
+		  abbreviation: "mds",
 		},
 		{
-			"Abbreviation": "shg",
-			"code": "shanhaiguan",
-			"name": "山海关"
+		  code: "midu",
+		  name: "弥渡",
+		  abbreviation: "mdu",
 		},
 		{
-			"Abbreviation": "ys",
-			"code": "yueshan",
-			"name": "月山"
+		  code: "maoershan",
+		  name: "帽儿山",
+		  abbreviation: "mes",
 		},
 		{
-			"Abbreviation": "hkn",
-			"code": "hekounan",
-			"name": "河口南"
+		  code: "minggang",
+		  name: "明港",
+		  abbreviation: "mga",
 		},
 		{
-			"Abbreviation": "zbb",
-			"code": "zibobei",
-			"name": "淄博北"
+		  code: "meihekou",
+		  name: "梅河口",
+		  abbreviation: "mhk",
 		},
 		{
-			"Abbreviation": "spd",
-			"code": "shanpodong",
-			"name": "山坡东"
+		  code: "mahuang",
+		  name: "马皇",
+		  abbreviation: "mhu",
 		},
 		{
-			"Abbreviation": "sgdl",
-			"code": "sanggendalai",
-			"name": "桑根达来"
+		  code: "mengjiagang",
+		  name: "孟家岗",
+		  abbreviation: "mjg",
 		},
 		{
-			"Abbreviation": "xt",
-			"code": "xiangtang",
-			"name": "向塘"
+		  code: "meilan",
+		  name: "美兰",
+		  abbreviation: "mla",
 		},
 		{
-			"Abbreviation": "dyz",
-			"code": "dayingzi",
-			"name": "大营子"
+		  code: "miluodong",
+		  name: "汨罗东",
+		  abbreviation: "mld",
 		},
 		{
-			"Abbreviation": "djk",
-			"code": "danjiangkou",
-			"name": "丹江口"
+		  code: "malianhe",
+		  name: "马莲河",
+		  abbreviation: "mlh",
 		},
 		{
-			"Abbreviation": "yd",
-			"code": "yongding",
-			"name": "永定"
+		  code: "miaoling",
+		  name: "庙岭",
+		  abbreviation: "mli",
 		},
 		{
-			"Abbreviation": "sd",
-			"code": "shunde",
-			"name": "顺德"
+		  code: "maoling",
+		  name: "茅岭",
+		  abbreviation: "mli",
 		},
 		{
-			"Abbreviation": "ynd",
-			"code": "yiningdong",
-			"name": "伊宁东"
+		  code: "maliu",
+		  name: "麻柳",
+		  abbreviation: "mli",
 		},
 		{
-			"Abbreviation": "zpx",
-			"code": "zhangpingxi",
-			"name": "漳平西"
+		  code: "malin",
+		  name: "马林",
+		  abbreviation: "mli",
 		},
 		{
-			"Abbreviation": "cs",
-			"code": "changshou",
-			"name": "长寿"
+		  code: "maolin",
+		  name: "茂林",
+		  abbreviation: "mli",
 		},
 		{
-			"Abbreviation": "jy",
-			"code": "jianyang",
-			"name": "建阳"
+		  code: "muling",
+		  name: "穆棱",
+		  abbreviation: "mli",
 		},
 		{
-			"Abbreviation": "dqx",
-			"code": "daqingxi",
-			"name": "大庆西"
+		  code: "malong",
+		  name: "马龙",
+		  abbreviation: "mlo",
 		},
 		{
-			"Abbreviation": "xwx",
-			"code": "xiuwuxi",
-			"name": "修武西"
+		  code: "mulitu",
+		  name: "木里图",
+		  abbreviation: "mlt",
 		},
 		{
-			"Abbreviation": "fy",
-			"code": "fuyu",
-			"name": "富裕"
+		  code: "miluo",
+		  name: "汨罗",
+		  abbreviation: "mlu",
 		},
 		{
-			"Abbreviation": "ych",
-			"code": "yangchenghu",
-			"name": "阳澄湖"
+		  code: "manasihu",
+		  name: "玛纳斯湖",
+		  abbreviation: "mnh",
 		},
 		{
-			"Abbreviation": "chd",
-			"code": "chaohudong",
-			"name": "巢湖东"
+		  code: "mianning",
+		  name: "冕宁",
+		  abbreviation: "mni",
 		},
 		{
-			"Abbreviation": "ms",
-			"code": "meishan",
-			"name": "眉山"
+		  code: "mupang",
+		  name: "沐滂",
+		  abbreviation: "mpa",
 		},
 		{
-			"Abbreviation": "sqx",
-			"code": "shiquanxian",
-			"name": "石泉县"
+		  code: "maqiaohe",
+		  name: "马桥河",
+		  abbreviation: "mqh",
 		},
 		{
-			"Abbreviation": "yan",
-			"code": "yongannan",
-			"name": "永安南"
+		  code: "minqing",
+		  name: "闽清",
+		  abbreviation: "mqi",
 		},
 		{
-			"Abbreviation": "fe",
-			"code": "faer",
-			"name": "发耳"
+		  code: "minquan",
+		  name: "民权",
+		  abbreviation: "mqu",
 		},
 		{
-			"Abbreviation": "qy",
-			"code": "qiying",
-			"name": "七营"
+		  code: "meishan",
+		  name: "眉山",
+		  abbreviation: "msh",
 		},
 		{
-			"Abbreviation": "ts",
-			"code": "taishan",
-			"name": "台山"
+		  code: "mingshuihe",
+		  name: "明水河",
+		  abbreviation: "msh",
 		},
 		{
-			"Abbreviation": "jx",
-			"code": "jingxian",
-			"name": "泾县"
+		  code: "mashan",
+		  name: "麻山",
+		  abbreviation: "msh",
 		},
 		{
-			"Abbreviation": "hcx",
-			"code": "haichengxi",
-			"name": "海城西"
+		  code: "mishazi",
+		  name: "米沙子",
+		  abbreviation: "msz",
 		},
 		{
-			"Abbreviation": "gsk",
-			"code": "gushankou",
-			"name": "孤山口"
+		  code: "maoshezu",
+		  name: "茂舍祖",
+		  abbreviation: "msz",
 		},
 		{
-			"Abbreviation": "as",
-			"code": "anshan",
-			"name": "鞍山"
+		  code: "mata",
+		  name: "马踏",
+		  abbreviation: "mta",
 		},
 		{
-			"Abbreviation": "xcn",
-			"code": "xichangnan",
-			"name": "西昌南"
+		  code: "mianxian",
+		  name: "勉县",
+		  abbreviation: "mxi",
 		},
 		{
-			"Abbreviation": "ndn",
-			"code": "ningdongnan",
-			"name": "宁东南"
+		  code: "meixi",
+		  name: "美溪",
+		  abbreviation: "mxi",
 		},
 		{
-			"Abbreviation": "jsj",
-			"code": "jiansanjiang",
-			"name": "建三江"
+		  code: "mayang",
+		  name: "麻阳",
+		  abbreviation: "mya",
 		},
 		{
-			"Abbreviation": "xh",
-			"code": "xinhuang",
-			"name": "新晃"
+		  code: "miyunbei",
+		  name: "密云北",
+		  abbreviation: "myb",
 		},
 		{
-			"Abbreviation": "yqb",
-			"code": "yangquanbei",
-			"name": "阳泉北"
+		  code: "miyi",
+		  name: "米易",
+		  abbreviation: "myi",
 		},
 		{
-			"Abbreviation": "bl",
-			"code": "bailang1",
-			"name": "百浪"
+		  code: "moyu",
+		  name: "墨玉",
+		  abbreviation: "myu",
 		},
 		{
-			"Abbreviation": "sl",
-			"code": "suiling",
-			"name": "绥棱"
+		  code: "maiyuan",
+		  name: "麦园",
+		  abbreviation: "myu",
 		},
 		{
-			"Abbreviation": "clg",
-			"code": "chaolianggou",
-			"name": "超梁沟"
+		  code: "miaozhuang",
+		  name: "庙庄",
+		  abbreviation: "mzh",
 		},
 		{
-			"Abbreviation": "dg",
-			"code": "dongguang",
-			"name": "东光"
+		  code: "mizhi",
+		  name: "米脂",
+		  abbreviation: "mzh",
 		},
 		{
-			"Abbreviation": "dwz",
-			"code": "dawanzi",
-			"name": "大湾子"
+		  code: "mingzhu",
+		  name: "明珠",
+		  abbreviation: "mzh",
 		},
 		{
-			"Abbreviation": "ha",
-			"code": "huian",
-			"name": "惠安"
+		  code: "ningan",
+		  name: "宁安",
+		  abbreviation: "nan",
 		},
 		{
-			"Abbreviation": "hyz",
-			"code": "huangyangzhen",
-			"name": "黄羊镇"
+		  code: "nongan",
+		  name: "农安",
+		  abbreviation: "nan",
 		},
 		{
-			"Abbreviation": "kz",
-			"code": "kangzhuang",
-			"name": "康庄"
+		  code: "nanboshan",
+		  name: "南博山",
+		  abbreviation: "nbs",
 		},
 		{
-			"Abbreviation": "js",
-			"code": "jishou",
-			"name": "吉首"
+		  code: "nanqiu",
+		  name: "南仇",
+		  abbreviation: "nch",
 		},
 		{
-			"Abbreviation": "nyd",
-			"code": "nanyangdong",
-			"name": "南阳东"
+		  code: "nanchengsi",
+		  name: "南城司",
+		  abbreviation: "ncs",
 		},
 		{
-			"Abbreviation": "ezd",
-			"code": "ezhoudong",
-			"name": "鄂州东"
+		  code: "ningcun",
+		  name: "宁村",
+		  abbreviation: "ncu",
 		},
 		{
-			"Abbreviation": "lx",
-			"code": "linxiang",
-			"name": "临湘"
+		  code: "ningde",
+		  name: "宁德",
+		  abbreviation: "nde",
 		},
 		{
-			"Abbreviation": "cz",
-			"code": "changzhou",
-			"name": "常州"
+		  code: "nanguancun",
+		  name: "南观村",
+		  abbreviation: "ngc",
 		},
 		{
-			"Abbreviation": "jqn",
-			"code": "jiuquannan",
-			"name": "酒泉南"
+		  code: "nangongdong",
+		  name: "南宫东",
+		  abbreviation: "ngd",
 		},
 		{
-			"Abbreviation": "gd",
-			"code": "gudong",
-			"name": "古东"
+		  code: "nanguanling",
+		  name: "南关岭",
+		  abbreviation: "ngl",
 		},
 		{
-			"Abbreviation": "pet",
-			"code": "piaoertun",
-			"name": "瓢儿屯"
+		  code: "ningguo",
+		  name: "宁国",
+		  abbreviation: "ngu",
 		},
 		{
-			"Abbreviation": "fsk",
-			"code": "fushankou",
-			"name": "福山口"
+		  code: "ninghai",
+		  name: "宁海",
+		  abbreviation: "nha",
 		},
 		{
-			"Abbreviation": "ql",
-			"code": "qinglian",
-			"name": "青莲"
+		  code: "nanhuabei",
+		  name: "南华北",
+		  abbreviation: "nhb",
 		},
 		{
-			"Abbreviation": "ct",
-			"code": "changting",
-			"name": "长汀"
+		  code: "nanhechuan",
+		  name: "南河川",
+		  abbreviation: "nhc",
 		},
 		{
-			"Abbreviation": "fhjc",
-			"code": "fenghuangjichang",
-			"name": "凤凰机场"
+		  code: "nihezi",
+		  name: "泥河子",
+		  abbreviation: "nhz",
 		},
 		{
-			"Abbreviation": "fs",
-			"code": "fanshi",
-			"name": "繁峙"
+		  code: "nanjing",
+		  name: "南靖",
+		  abbreviation: "nji",
 		},
 		{
-			"Abbreviation": "sx",
-			"code": "suixi",
-			"name": "遂溪"
+		  code: "ningjia",
+		  name: "宁家",
+		  abbreviation: "nji",
 		},
 		{
-			"Abbreviation": "gmb",
-			"code": "gaomibei",
-			"name": "高密北"
+		  code: "nengjia",
+		  name: "能家",
+		  abbreviation: "nji",
 		},
 		{
-			"Abbreviation": "lj",
-			"code": "lianjiang",
-			"name": "廉江"
+		  code: "niujia",
+		  name: "牛家",
+		  abbreviation: "nji",
 		},
 		{
-			"Abbreviation": "sy",
-			"code": "sanyuan",
-			"name": "三原"
+		  code: "nankou",
+		  name: "南口",
+		  abbreviation: "nko",
 		},
 		{
-			"Abbreviation": "nm",
-			"code": "naiman",
-			"name": "奈曼"
+		  code: "nankouqian",
+		  name: "南口前",
+		  abbreviation: "nkq",
 		},
 		{
-			"Abbreviation": "qx",
-			"code": "qingxian",
-			"name": "青县"
+		  code: "nanlang",
+		  name: "南朗",
+		  abbreviation: "nla",
 		},
 		{
-			"Abbreviation": "nps",
-			"code": "nanpingshi",
-			"name": "南平市"
+		  code: "nailin",
+		  name: "乃林",
+		  abbreviation: "nli",
 		},
 		{
-			"Abbreviation": "yzb",
-			"code": "yanzibian",
-			"name": "燕子砭"
+		  code: "nileke",
+		  name: "尼勒克",
+		  abbreviation: "nlk",
 		},
 		{
-			"Abbreviation": "bj",
-			"code": "baijian",
-			"name": "白涧"
+		  code: "naluo",
+		  name: "那罗",
+		  abbreviation: "nlu",
 		},
 		{
-			"Abbreviation": "bt",
-			"code": "baotou",
-			"name": "包头"
+		  code: "ninglingxian",
+		  name: "宁陵县",
+		  abbreviation: "nlx",
 		},
 		{
-			"Abbreviation": "lh",
-			"code": "longhua1",
-			"name": "龙华"
+		  code: "naiman",
+		  name: "奈曼",
+		  abbreviation: "nma",
 		},
 		{
-			"Abbreviation": "hj",
-			"code": "huaiji",
-			"name": "怀集"
+		  code: "ningming",
+		  name: "宁明",
+		  abbreviation: "nmi",
 		},
 		{
-			"Abbreviation": "ys",
-			"code": "yongshou",
-			"name": "永寿"
+		  code: "nanmu",
+		  name: "南木",
+		  abbreviation: "nmu",
 		},
 		{
-			"Abbreviation": "tlz",
-			"code": "taolaizhao",
-			"name": "陶赖昭"
+		  code: "napu",
+		  name: "那铺",
+		  abbreviation: "npu",
 		},
 		{
-			"Abbreviation": "ln",
-			"code": "longnan2",
-			"name": "龙南"
+		  code: "nanqiao",
+		  name: "南桥",
+		  abbreviation: "nqi",
 		},
 		{
-			"Abbreviation": "dg",
-			"code": "duge",
-			"name": "都格"
+		  code: "naqu",
+		  name: "那曲",
+		  abbreviation: "nqu",
 		},
 		{
-			"Abbreviation": "hb",
-			"code": "hebi",
-			"name": "鹤壁"
+		  code: "nuanquan",
+		  name: "暖泉",
+		  abbreviation: "nqu",
 		},
 		{
-			"Abbreviation": "xy",
-			"code": "xiangyuan",
-			"name": "襄垣"
+		  code: "nantai",
+		  name: "南台",
+		  abbreviation: "nta",
 		},
 		{
-			"Abbreviation": "tmet",
-			"code": "tumuertai",
-			"name": "土牧尔台"
+		  code: "nantou",
+		  name: "南头",
+		  abbreviation: "nto",
 		},
 		{
-			"Abbreviation": "jnd",
-			"code": "jinandong",
-			"name": "济南东"
+		  code: "ningwu",
+		  name: "宁武",
+		  abbreviation: "nwu",
 		},
 		{
-			"Abbreviation": "wdsx",
-			"code": "wudangshanxi",
-			"name": "武当山西"
+		  code: "nanwanzi",
+		  name: "南湾子",
+		  abbreviation: "nwz",
 		},
 		{
-			"Abbreviation": "sn",
-			"code": "shangnan",
-			"name": "商南"
+		  code: "nanxiangbei",
+		  name: "南翔北",
+		  abbreviation: "nxb",
 		},
 		{
-			"Abbreviation": "xcy",
-			"code": "xinchuoyuan",
-			"name": "新绰源"
+		  code: "neixiang",
+		  name: "内乡",
+		  abbreviation: "nxi",
 		},
 		{
-			"Abbreviation": "dps",
-			"code": "dapanshi",
-			"name": "大盘石"
+		  code: "ningxiang",
+		  name: "宁乡",
+		  abbreviation: "nxi",
 		},
 		{
-			"Abbreviation": "hj",
-			"code": "hejin",
-			"name": "河津"
+		  code: "niuxintai",
+		  name: "牛心台",
+		  abbreviation: "nxt",
 		},
 		{
-			"Abbreviation": "jzn",
-			"code": "jinzhounan",
-			"name": "锦州南"
+		  code: "nanyu",
+		  name: "南峪",
+		  abbreviation: "nyu",
 		},
 		{
-			"Abbreviation": "ggm",
-			"code": "gegenmiao",
-			"name": "葛根庙"
+		  code: "niangziguan",
+		  name: "娘子关",
+		  abbreviation: "nzg",
 		},
 		{
-			"Abbreviation": "bmt",
-			"code": "bamiantong",
-			"name": "八面通"
+		  code: "nanzhao",
+		  name: "南召",
+		  abbreviation: "nzh",
 		},
 		{
-			"Abbreviation": "cs",
-			"code": "changsha",
-			"name": "长沙"
+		  code: "nanzamu",
+		  name: "南杂木",
+		  abbreviation: "nzm",
 		},
 		{
-			"Abbreviation": "tyl",
-			"code": "tuoyaoling",
-			"name": "驼腰岭"
+		  code: "pengan",
+		  name: "蓬安",
+		  abbreviation: "pan",
 		},
 		{
-			"Abbreviation": "qdb",
-			"code": "qingdaobei",
-			"name": "青岛北"
+		  code: "pingan",
+		  name: "平安",
+		  abbreviation: "pan",
 		},
 		{
-			"Abbreviation": "wa",
-			"code": "wenan",
-			"name": "文安"
+		  code: "pinganyi",
+		  name: "平安驿",
+		  abbreviation: "pay",
 		},
 		{
-			"Abbreviation": "hl",
-			"code": "huangliu",
-			"name": "黄流"
+		  code: "pananzhen",
+		  name: "磐安镇",
+		  abbreviation: "paz",
 		},
 		{
-			"Abbreviation": "mb",
-			"code": "maoba",
-			"name": "毛坝"
+		  code: "pinganzhen",
+		  name: "平安镇",
+		  abbreviation: "paz",
 		},
 		{
-			"Abbreviation": "nnx",
-			"code": "nanningxi",
-			"name": "南宁西"
+		  code: "puchengdong",
+		  name: "蒲城东",
+		  abbreviation: "pcd",
 		},
 		{
-			"Abbreviation": "fgn",
-			"code": "fugounan",
-			"name": "扶沟南"
+		  code: "pucheng",
+		  name: "蒲城",
+		  abbreviation: "pch",
 		},
 		{
-			"Abbreviation": "tc",
-			"code": "tiechang",
-			"name": "铁厂"
+		  code: "peide",
+		  name: "裴德",
+		  abbreviation: "pde",
 		},
 		{
-			"Abbreviation": "cyn",
-			"code": "chaoyangnan",
-			"name": "朝阳南"
+		  code: "piandian",
+		  name: "偏店",
+		  abbreviation: "pdi",
 		},
 		{
-			"Abbreviation": "sz",
-			"code": "shangzhi",
-			"name": "尚志"
+		  code: "podixia",
+		  name: "坡底下",
+		  abbreviation: "pdx",
 		},
 		{
-			"Abbreviation": "hmb",
-			"code": "humenbei",
-			"name": "虎门北"
+		  code: "piaoertun",
+		  name: "瓢儿屯",
+		  abbreviation: "pet",
 		},
 		{
-			"Abbreviation": "jn1",
-			"code": "jinan1",
-			"name": "济  南"
+		  code: "pingfang",
+		  name: "平房",
+		  abbreviation: "pfa",
 		},
 		{
-			"Abbreviation": "ck",
-			"code": "chaka",
-			"name": "茶卡"
+		  code: "pinggang",
+		  name: "平岗",
+		  abbreviation: "pga",
 		},
 		{
-			"Abbreviation": "xzd",
-			"code": "xuzhoudong",
-			"name": "徐州东"
+		  code: "pingguo",
+		  name: "平果",
+		  abbreviation: "pgu",
 		},
 		{
-			"Abbreviation": "hhhtd",
-			"code": "huhehaotedong",
-			"name": "呼和浩特东"
+		  code: "pingguan",
+		  name: "平关",
+		  abbreviation: "pgu",
 		},
 		{
-			"Abbreviation": "cgb",
-			"code": "chenggubei",
-			"name": "城固北"
+		  code: "panguan",
+		  name: "盘关",
+		  abbreviation: "pgu",
 		},
 		{
-			"Abbreviation": "th",
-			"code": "taha",
-			"name": "塔哈"
+		  code: "paihuaibei",
+		  name: "徘徊北",
+		  abbreviation: "phb",
 		},
 		{
-			"Abbreviation": "xtx",
-			"code": "xiantaoxi",
-			"name": "仙桃西"
+		  code: "pinghekou",
+		  name: "平河口",
+		  abbreviation: "phk",
 		},
 		{
-			"Abbreviation": "sz",
-			"code": "songzi",
-			"name": "松滋"
+		  code: "pinghu",
+		  name: "平湖",
+		  abbreviation: "phu",
 		},
 		{
-			"Abbreviation": "ll",
-			"code": "lvliang",
-			"name": "吕梁"
+		  code: "panjinbei",
+		  name: "盘锦北",
+		  abbreviation: "pjb",
 		},
 		{
-			"Abbreviation": "hn",
-			"code": "hengnan",
-			"name": "衡南"
+		  code: "panjiadian",
+		  name: "潘家店",
+		  abbreviation: "pjd",
 		},
 		{
-			"Abbreviation": "whx",
-			"code": "wuhaixi",
-			"name": "乌海西"
+		  code: "pikounan",
+		  name: "皮口南",
+		  abbreviation: "pkn",
 		},
 		{
-			"Abbreviation": "xm",
-			"code": "xiamen",
-			"name": "厦门"
+		  code: "pulandian",
+		  name: "普兰店",
+		  abbreviation: "pld",
 		},
 		{
-			"Abbreviation": "dd",
-			"code": "dandong",
-			"name": "丹东"
+		  code: "pianling",
+		  name: "偏岭",
+		  abbreviation: "pli",
 		},
 		{
-			"Abbreviation": "ds",
-			"code": "dushan",
-			"name": "独山"
+		  code: "pengshan",
+		  name: "彭山",
+		  abbreviation: "psh",
 		},
 		{
-			"Abbreviation": "gs",
-			"code": "gushan",
-			"name": "谷山"
+		  code: "pishan",
+		  name: "皮山",
+		  abbreviation: "psh",
 		},
 		{
-			"Abbreviation": "yx",
-			"code": "youxi1",
-			"name": "尤溪"
+		  code: "pengshui",
+		  name: "彭水",
+		  abbreviation: "psh",
 		},
 		{
-			"Abbreviation": "db",
-			"code": "debao",
-			"name": "德保"
+		  code: "pingshe",
+		  name: "平社",
+		  abbreviation: "psh",
 		},
 		{
-			"Abbreviation": "ty",
-			"code": "tianyang",
-			"name": "田阳"
+		  code: "panshi",
+		  name: "磐石",
+		  abbreviation: "psh",
 		},
 		{
-			"Abbreviation": "yq",
-			"code": "yangqu",
-			"name": "阳曲"
+		  code: "pingshan",
+		  name: "平山",
+		  abbreviation: "psh",
 		},
 		{
-			"Abbreviation": "cz",
-			"code": "changzhi",
-			"name": "长治"
+		  code: "pingtai",
+		  name: "平台",
+		  abbreviation: "pta",
 		},
 		{
-			"Abbreviation": "ys",
-			"code": "yingshang",
-			"name": "颍上"
+		  code: "putian",
+		  name: "莆田",
+		  abbreviation: "pti",
 		},
 		{
-			"Abbreviation": "zsd",
-			"code": "zhangshudong",
-			"name": "樟树东"
+		  code: "pingtian",
+		  name: "平田",
+		  abbreviation: "pti",
 		},
 		{
-			"Abbreviation": "fcx",
-			"code": "fanchangxi",
-			"name": "繁昌西"
+		  code: "putaojing",
+		  name: "葡萄菁",
+		  abbreviation: "ptq",
 		},
 		{
-			"Abbreviation": "ey",
-			"code": "erying",
-			"name": "二营"
+		  code: "pingwang",
+		  name: "平旺",
+		  abbreviation: "pwa",
 		},
 		{
-			"Abbreviation": "lf",
-			"code": "laifeng",
-			"name": "来凤"
+		  code: "pingxingguan",
+		  name: "平型关",
+		  abbreviation: "pxg",
 		},
 		{
-			"Abbreviation": "zjg",
-			"code": "zhujiagou",
-			"name": "朱家沟"
+		  code: "pengxi",
+		  name: "蓬溪",
+		  abbreviation: "pxi",
 		},
 		{
-			"Abbreviation": "xfx",
-			"code": "xiangfenxi",
-			"name": "襄汾西"
+		  code: "puxiong",
+		  name: "普雄",
+		  abbreviation: "pxi",
 		},
 		{
-			"Abbreviation": "sq",
-			"code": "shuiquan",
-			"name": "水泉"
+		  code: "pixian",
+		  name: "郫县",
+		  abbreviation: "pxi",
 		},
 		{
-			"Abbreviation": "yn",
-			"code": "yinan",
-			"name": "沂南"
+		  code: "pingyao",
+		  name: "平遥",
+		  abbreviation: "pya",
 		},
 		{
-			"Abbreviation": "yst",
-			"code": "yushutun",
-			"name": "榆树屯"
+		  code: "pengyang",
+		  name: "彭阳",
+		  abbreviation: "pya",
 		},
 		{
-			"Abbreviation": "thx",
-			"code": "tonghuaxian",
-			"name": "通化县"
+		  code: "pingyang",
+		  name: "平阳",
+		  abbreviation: "pya",
 		},
 		{
-			"Abbreviation": "dzy",
-			"code": "dazhuyuan",
-			"name": "大竹园"
+		  code: "pingyang",
+		  name: "平洋",
+		  abbreviation: "pya",
 		},
 		{
-			"Abbreviation": "xjt",
-			"code": "xujiatun",
-			"name": "许家屯"
+		  code: "pingyi",
+		  name: "平邑",
+		  abbreviation: "pyi",
 		},
 		{
-			"Abbreviation": "yl",
-			"code": "yinlang",
-			"name": "银浪"
+		  code: "pingyuanpu",
+		  name: "平原堡",
+		  abbreviation: "pyp",
 		},
 		{
-			"Abbreviation": "csq",
-			"code": "chasuqi",
-			"name": "察素齐"
+		  code: "pingyuan",
+		  name: "平原",
+		  abbreviation: "pyu",
 		},
 		{
-			"Abbreviation": "ks",
-			"code": "kunshan",
-			"name": "昆山"
+		  code: "pingyu",
+		  name: "平峪",
+		  abbreviation: "pyu",
 		},
 		{
-			"Abbreviation": "em",
-			"code": "emei",
-			"name": "峨眉"
+		  code: "pingzhuangbei",
+		  name: "平庄北",
+		  abbreviation: "pzb",
 		},
 		{
-			"Abbreviation": "hst",
-			"code": "hushitai",
-			"name": "虎石台"
+		  code: "pengze",
+		  name: "彭泽",
+		  abbreviation: "pze",
 		},
 		{
-			"Abbreviation": "ysg",
-			"code": "yushugou",
-			"name": "榆树沟"
+		  code: "pizhou",
+		  name: "邳州",
+		  abbreviation: "pzh",
 		},
 		{
-			"Abbreviation": "px",
-			"code": "pengxi",
-			"name": "蓬溪"
+		  code: "paozi",
+		  name: "泡子",
+		  abbreviation: "pzi",
 		},
 		{
-			"Abbreviation": "cp",
-			"code": "changping1",
-			"name": "常平"
+		  code: "pingzhuangnan",
+		  name: "平庄南",
+		  abbreviation: "pzn",
 		},
 		{
-			"Abbreviation": "cz",
-			"code": "chuzhou",
-			"name": "滁州"
+		  code: "qianan",
+		  name: "乾安",
+		  abbreviation: "qan",
 		},
 		{
-			"Abbreviation": "sy",
-			"code": "sanying",
-			"name": "三营"
+		  code: "qianan",
+		  name: "迁安",
+		  abbreviation: "qan",
 		},
 		{
-			"Abbreviation": "zz",
-			"code": "zhengzhou",
-			"name": "郑州"
+		  code: "qingan",
+		  name: "庆安",
+		  abbreviation: "qan",
 		},
 		{
-			"Abbreviation": "ky",
-			"code": "kaiyang",
-			"name": "开阳"
+		  code: "qidongbei",
+		  name: "祁东北",
+		  abbreviation: "qdb",
 		},
 		{
-			"Abbreviation": "dsh",
-			"code": "dengshahe",
-			"name": "登沙河"
+		  code: "qidian",
+		  name: "七甸",
+		  abbreviation: "qdi",
 		},
 		{
-			"Abbreviation": "yz",
-			"code": "yanzhou",
-			"name": "兖州"
+		  code: "qufudong",
+		  name: "曲阜东",
+		  abbreviation: "qfd",
 		},
 		{
-			"Abbreviation": "gem",
-			"code": "geermu",
-			"name": "格尔木"
+		  code: "qingfeng",
+		  name: "庆丰",
+		  abbreviation: "qfe",
 		},
 		{
-			"Abbreviation": "wdd",
-			"code": "wendengdong",
-			"name": "文登东"
+		  code: "qifengta",
+		  name: "奇峰塔",
+		  abbreviation: "qft",
 		},
 		{
-			"Abbreviation": "thjc",
-			"code": "tianhejichang",
-			"name": "天河机场"
+		  code: "qufu",
+		  name: "曲阜",
+		  abbreviation: "qfu",
 		},
 		{
-			"Abbreviation": "kfb",
-			"code": "kaifengbei",
-			"name": "开封北"
+		  code: "qionghai",
+		  name: "琼海",
+		  abbreviation: "qha",
 		},
 		{
-			"Abbreviation": "cz",
-			"code": "changzhuang",
-			"name": "常庄"
+		  code: "qinhuangdao",
+		  name: "秦皇岛",
+		  abbreviation: "qhd",
 		},
 		{
-			"Abbreviation": "da",
-			"code": "daan",
-			"name": "大安"
+		  code: "qianhe",
+		  name: "千河",
+		  abbreviation: "qhe",
 		},
 		{
-			"Abbreviation": "gj",
-			"code": "gujiao",
-			"name": "古交"
+		  code: "qinghe",
+		  name: "清河",
+		  abbreviation: "qhe",
 		},
 		{
-			"Abbreviation": "sljc",
-			"code": "shuangliujichang",
-			"name": "双流机场"
+		  code: "qinghemen",
+		  name: "清河门",
+		  abbreviation: "qhm",
 		},
 		{
-			"Abbreviation": "zyn",
-			"code": "zunyinan",
-			"name": "遵义南"
+		  code: "qinghuayuan",
+		  name: "清华园",
+		  abbreviation: "qhy",
 		},
 		{
-			"Abbreviation": "ss",
-			"code": "shishan1",
-			"name": "狮山"
+		  code: "quanjiao",
+		  name: "全椒",
+		  abbreviation: "qji",
 		},
 		{
-			"Abbreviation": "hfw",
-			"code": "hanfuwan",
-			"name": "韩府湾"
+		  code: "qujiu",
+		  name: "渠旧",
+		  abbreviation: "qji",
 		},
 		{
-			"Abbreviation": "mbg",
-			"code": "maobaguan",
-			"name": "毛坝关"
+		  code: "qianjiang",
+		  name: "潜江",
+		  abbreviation: "qji",
 		},
 		{
-			"Abbreviation": "bb",
-			"code": "babu",
-			"name": "八步"
+		  code: "qinjia",
+		  name: "秦家",
+		  abbreviation: "qji",
 		},
 		{
-			"Abbreviation": "fd",
-			"code": "fuding",
-			"name": "福鼎"
+		  code: "qijiapu",
+		  name: "祁家堡",
+		  abbreviation: "qjp",
 		},
 		{
-			"Abbreviation": "jsn",
-			"code": "jiashannan",
-			"name": "嘉善南"
+		  code: "qingjianxian",
+		  name: "清涧县",
+		  abbreviation: "qjx",
 		},
 		{
-			"Abbreviation": "qx",
-			"code": "qinxian",
-			"name": "沁县"
+		  code: "qinjiazhuang",
+		  name: "秦家庄",
+		  abbreviation: "qjz",
 		},
 		{
-			"Abbreviation": "ys",
-			"code": "yangshuo",
-			"name": "阳朔"
+		  code: "qilihe",
+		  name: "七里河",
+		  abbreviation: "qlh",
 		},
 		{
-			"Abbreviation": "db",
-			"code": "dingbian",
-			"name": "定边"
+		  code: "quli",
+		  name: "渠黎",
+		  abbreviation: "qli",
 		},
 		{
-			"Abbreviation": "bd",
-			"code": "baoding",
-			"name": "保定"
+		  code: "qinling",
+		  name: "秦岭",
+		  abbreviation: "qli",
 		},
 		{
-			"Abbreviation": "lz",
-			"code": "laizhou",
-			"name": "来舟"
+		  code: "qinglong",
+		  name: "青龙",
+		  abbreviation: "qlo",
 		},
 		{
-			"Abbreviation": "cj",
-			"code": "congjiang",
-			"name": "从江"
+		  code: "qinglongshan",
+		  name: "青龙山",
+		  abbreviation: "qls",
 		},
 		{
-			"Abbreviation": "lhn",
-			"code": "luohuangnan",
-			"name": "珞璜南"
+		  code: "qimen",
+		  name: "祁门",
+		  abbreviation: "qme",
 		},
 		{
-			"Abbreviation": "sy",
-			"code": "shuiyang",
-			"name": "水洋"
+		  code: "qianmotou",
+		  name: "前磨头",
+		  abbreviation: "qmt",
 		},
 		{
-			"Abbreviation": "sx",
-			"code": "shexian1",
-			"name": "涉县"
+		  code: "qingshui",
+		  name: "清水",
+		  abbreviation: "qsh",
 		},
 		{
-			"Abbreviation": "jc",
-			"code": "juancheng",
-			"name": "鄄城"
+		  code: "qianshan",
+		  name: "前山",
+		  abbreviation: "qsh",
 		},
 		{
-			"Abbreviation": "hm",
-			"code": "haimen",
-			"name": "海门"
+		  code: "queshan",
+		  name: "确山",
+		  abbreviation: "qsh",
 		},
 		{
-			"Abbreviation": "dz",
-			"code": "dongzhi",
-			"name": "东至"
+		  code: "qingshan",
+		  name: "青山",
+		  abbreviation: "qsh",
 		},
 		{
-			"Abbreviation": "tc",
-			"code": "taocun",
-			"name": "桃村"
+		  code: "qishuyan",
+		  name: "戚墅堰",
+		  abbreviation: "qsy",
 		},
 		{
-			"Abbreviation": "aes",
-			"code": "aershan",
-			"name": "阿尔山"
+		  code: "qingtian",
+		  name: "青田",
+		  abbreviation: "qti",
 		},
 		{
-			"Abbreviation": "mes",
-			"code": "maoershan",
-			"name": "帽儿山"
+		  code: "qiaotou",
+		  name: "桥头",
+		  abbreviation: "qto",
 		},
 		{
-			"Abbreviation": "ml",
-			"code": "muling",
-			"name": "穆棱"
+		  code: "qingtongxia",
+		  name: "青铜峡",
+		  abbreviation: "qtx",
 		},
 		{
-			"Abbreviation": "zjb",
-			"code": "zhijiangbei",
-			"name": "枝江北"
+		  code: "qianwei",
+		  name: "前卫",
+		  abbreviation: "qwe",
 		},
 		{
-			"Abbreviation": "sd",
-			"code": "shuidong",
-			"name": "水洞"
+		  code: "qianweitang",
+		  name: "前苇塘",
+		  abbreviation: "qwt",
 		},
 		{
-			"Abbreviation": "lf",
-			"code": "loufan",
-			"name": "娄烦"
+		  code: "qixian",
+		  name: "祁县",
+		  abbreviation: "qxi",
 		},
 		{
-			"Abbreviation": "hl",
-			"code": "huailai",
-			"name": "怀来"
+		  code: "quxian",
+		  name: "渠县",
+		  abbreviation: "qxi",
 		},
 		{
-			"Abbreviation": "gnx",
-			"code": "guangnanxian",
-			"name": "广南县"
+		  code: "qingxian",
+		  name: "青县",
+		  abbreviation: "qxi",
 		},
 		{
-			"Abbreviation": "gc",
-			"code": "gaocun",
-			"name": "高村"
+		  code: "qiaoxi",
+		  name: "桥西",
+		  abbreviation: "qxi",
 		},
 		{
-			"Abbreviation": "jn",
-			"code": "jingnan",
-			"name": "井南"
+		  code: "qingxu",
+		  name: "清徐",
+		  abbreviation: "qxu",
 		},
 		{
-			"Abbreviation": "rb",
-			"code": "renbu",
-			"name": "仁布"
+		  code: "qixiaying",
+		  name: "旗下营",
+		  abbreviation: "qxy",
 		},
 		{
-			"Abbreviation": "wc",
-			"code": "wuchang2",
-			"name": "武昌"
+		  code: "quanyang",
+		  name: "泉阳",
+		  abbreviation: "qya",
 		},
 		{
-			"Abbreviation": "djk",
-			"code": "dongjiakou",
-			"name": "董家口"
+		  code: "qianyang",
+		  name: "千阳",
+		  abbreviation: "qya",
 		},
 		{
-			"Abbreviation": "nwz",
-			"code": "nanwanzi",
-			"name": "南湾子"
+		  code: "qinyang",
+		  name: "沁阳",
+		  abbreviation: "qya",
 		},
 		{
-			"Abbreviation": "sz",
-			"code": "shenzhen",
-			"name": "深圳"
+		  code: "qiyangbei",
+		  name: "祁阳北",
+		  abbreviation: "qyb",
 		},
 		{
-			"Abbreviation": "qh",
-			"code": "qihe",
-			"name": "齐河"
+		  code: "qiying",
+		  name: "七营",
+		  abbreviation: "qyi",
 		},
 		{
-			"Abbreviation": "sqz",
-			"code": "shiqiaozi",
-			"name": "石桥子"
+		  code: "qingyangshan",
+		  name: "庆阳山",
+		  abbreviation: "qys",
 		},
 		{
-			"Abbreviation": "typ",
-			"code": "tongyuanpu",
-			"name": "通远堡"
+		  code: "qingyuan",
+		  name: "清远",
+		  abbreviation: "qyu",
 		},
 		{
-			"Abbreviation": "jgt",
-			"code": "jingoutun",
-			"name": "金沟屯"
+		  code: "qingyuan",
+		  name: "清原",
+		  abbreviation: "qyu",
 		},
 		{
-			"Abbreviation": "st",
-			"code": "shantou",
-			"name": "汕头"
+		  code: "qinzhoudong",
+		  name: "钦州东",
+		  abbreviation: "qzd",
 		},
 		{
-			"Abbreviation": "bsp",
-			"code": "baishapu",
-			"name": "白沙铺"
+		  code: "qinzhou",
+		  name: "钦州",
+		  abbreviation: "qzh",
 		},
 		{
-			"Abbreviation": "ftn",
-			"code": "fengtainan",
-			"name": "凤台南"
+		  code: "qingzhoushi",
+		  name: "青州市",
+		  abbreviation: "qzs",
 		},
 		{
-			"Abbreviation": "pyp",
-			"code": "pingyuanpu",
-			"name": "平原堡"
+		  code: "ruian",
+		  name: "瑞安",
+		  abbreviation: "ran",
 		},
 		{
-			"Abbreviation": "dx",
-			"code": "dongxu",
-			"name": "东戌"
+		  code: "ruichang",
+		  name: "瑞昌",
+		  abbreviation: "rch",
 		},
 		{
-			"Abbreviation": "xcz",
-			"code": "xinchengzi",
-			"name": "新城子"
+		  code: "rugao",
+		  name: "如皋",
+		  abbreviation: "rga",
 		},
 		{
-			"Abbreviation": "elst",
-			"code": "erlongshantun",
-			"name": "二龙山屯"
+		  code: "ronggui",
+		  name: "容桂",
+		  abbreviation: "rgu",
 		},
 		{
-			"Abbreviation": "zjk",
-			"code": "zhangjiakou",
-			"name": "张家口"
+		  code: "renqiu",
+		  name: "任丘",
+		  abbreviation: "rqi",
 		},
 		{
-			"Abbreviation": "jnn",
-			"code": "jiningnan",
-			"name": "集宁南"
+		  code: "rongshui",
+		  name: "融水",
+		  abbreviation: "rsh",
 		},
 		{
-			"Abbreviation": "gmz",
-			"code": "gongmiaozi",
-			"name": "公庙子"
+		  code: "rushan",
+		  name: "乳山",
+		  abbreviation: "rsh",
 		},
 		{
-			"Abbreviation": "ws",
-			"code": "wenshui",
-			"name": "文水"
+		  code: "reshui",
+		  name: "热水",
+		  abbreviation: "rsh",
 		},
 		{
-			"Abbreviation": "wy1",
-			"code": "wuyuan1",
-			"name": "五原"
+		  code: "rongxian",
+		  name: "容县",
+		  abbreviation: "rxi",
 		},
 		{
-			"Abbreviation": "dhq",
-			"code": "dahongqi",
-			"name": "大红旗"
+		  code: "raoyang",
+		  name: "饶阳",
+		  abbreviation: "rya",
 		},
 		{
-			"Abbreviation": "pg",
-			"code": "pingguo",
-			"name": "平果"
+		  code: "ruyang",
+		  name: "汝阳",
+		  abbreviation: "rya",
 		},
 		{
-			"Abbreviation": "dy",
-			"code": "dingyuan",
-			"name": "定远"
+		  code: "raoyanghe",
+		  name: "绕阳河",
+		  abbreviation: "ryh",
 		},
 		{
-			"Abbreviation": "hz",
-			"code": "huangzhou",
-			"name": "黄州"
+		  code: "ruzhou",
+		  name: "汝州",
+		  abbreviation: "rzh",
 		},
 		{
-			"Abbreviation": "sjz",
-			"code": "sanjiazhai",
-			"name": "三家寨"
+		  code: "shiba",
+		  name: "石坝",
+		  abbreviation: "sba",
 		},
 		{
-			"Abbreviation": "gg",
-			"code": "guigang",
-			"name": "贵港"
+		  code: "shangbancheng",
+		  name: "上板城",
+		  abbreviation: "sbc",
 		},
 		{
-			"Abbreviation": "ym",
-			"code": "yimin",
-			"name": "伊敏"
+		  code: "shibing",
+		  name: "施秉",
+		  abbreviation: "sbi",
 		},
 		{
-			"Abbreviation": "hs",
-			"code": "heishui",
-			"name": "黑水"
+		  code: "shangbanchengnan",
+		  name: "上板城南",
+		  abbreviation: "sbn",
 		},
 		{
-			"Abbreviation": "xl",
-			"code": "xinli",
-			"name": "新李"
+		  code: "shiboyuan",
+		  name: "世博园",
+		  abbreviation: "sby",
 		},
 		{
-			"Abbreviation": "yjs",
-			"code": "yunjusi",
-			"name": "云居寺"
+		  code: "shuangchengbei",
+		  name: "双城北",
+		  abbreviation: "scb",
 		},
 		{
-			"Abbreviation": "wl",
-			"code": "wulian",
-			"name": "五莲"
+		  code: "shucheng",
+		  name: "舒城",
+		  abbreviation: "sch",
 		},
 		{
-			"Abbreviation": "gl",
-			"code": "guilin",
-			"name": "桂林"
+		  code: "shache",
+		  name: "莎车",
+		  abbreviation: "sch",
 		},
 		{
-			"Abbreviation": "yh",
-			"code": "yanhui",
-			"name": "岩会"
+		  code: "shangcheng",
+		  name: "商城",
+		  abbreviation: "sch",
 		},
 		{
-			"Abbreviation": "cpb",
-			"code": "changpingbei",
-			"name": "昌平北"
+		  code: "shunchang",
+		  name: "顺昌",
+		  abbreviation: "sch",
 		},
 		{
-			"Abbreviation": "qd",
-			"code": "qidian",
-			"name": "七甸"
+		  code: "shenchi",
+		  name: "神池",
+		  abbreviation: "sch",
 		},
 		{
-			"Abbreviation": "hs",
-			"code": "huishan",
-			"name": "惠山"
+		  code: "shacheng",
+		  name: "沙城",
+		  abbreviation: "sch",
 		},
 		{
-			"Abbreviation": "xst",
-			"code": "xingshutun",
-			"name": "杏树屯"
+		  code: "shicheng",
+		  name: "石城",
+		  abbreviation: "sch",
 		},
 		{
-			"Abbreviation": "xt",
-			"code": "xingtai",
-			"name": "邢台"
+		  code: "shanchengzhen",
+		  name: "山城镇",
+		  abbreviation: "scz",
 		},
 		{
-			"Abbreviation": "yx",
-			"code": "yingxian",
-			"name": "应县"
+		  code: "shandan",
+		  name: "山丹",
+		  abbreviation: "sda",
 		},
 		{
-			"Abbreviation": "tm",
-			"code": "tumen",
-			"name": "图们"
+		  code: "suide",
+		  name: "绥德",
+		  abbreviation: "sde",
 		},
 		{
-			"Abbreviation": "mas",
-			"code": "maanshan",
-			"name": "马鞍山"
+		  code: "shunde",
+		  name: "顺德",
+		  abbreviation: "sde",
 		},
 		{
-			"Abbreviation": "nt",
-			"code": "nantong",
-			"name": "南通"
+		  code: "shuidong",
+		  name: "水洞",
+		  abbreviation: "sdo",
 		},
 		{
-			"Abbreviation": "yl",
-			"code": "yanling",
-			"name": "炎陵"
+		  code: "shangdu",
+		  name: "商都",
+		  abbreviation: "sdu",
 		},
 		{
-			"Abbreviation": "xgx",
-			"code": "xingguoxi",
-			"name": "兴国西"
+		  code: "shidu",
+		  name: "十渡",
+		  abbreviation: "sdu",
 		},
 		{
-			"Abbreviation": "zjpz",
-			"code": "zengjiapingzi",
-			"name": "曾家坪子"
+		  code: "sidaowan",
+		  name: "四道湾",
+		  abbreviation: "sdw",
 		},
 		{
-			"Abbreviation": "sx",
-			"code": "shouxian",
-			"name": "寿县"
+		  code: "shundexueyuan",
+		  name: "顺德学院",
+		  abbreviation: "sdy",
 		},
 		{
-			"Abbreviation": "xq",
-			"code": "xinqing",
-			"name": "新青"
+		  code: "shenfang",
+		  name: "绅坊",
+		  abbreviation: "sfa",
 		},
 		{
-			"Abbreviation": "cdx",
-			"code": "chengduxi",
-			"name": "成都西"
+		  code: "shuangfeng",
+		  name: "双丰",
+		  abbreviation: "sfe",
 		},
 		{
-			"Abbreviation": "cl",
-			"code": "changliu",
-			"name": "长流"
+		  code: "sifangtai",
+		  name: "四方台",
+		  abbreviation: "sft",
 		},
 		{
-			"Abbreviation": "gmc",
-			"code": "guangmingcheng",
-			"name": "光明城"
+		  code: "shuifu",
+		  name: "水富",
+		  abbreviation: "sfu",
 		},
 		{
-			"Abbreviation": "wz",
-			"code": "wuzhi",
-			"name": "武陟"
+		  code: "sanguankou",
+		  name: "三关口",
+		  abbreviation: "sgk",
 		},
 		{
-			"Abbreviation": "yt",
-			"code": "yongtai",
-			"name": "永泰"
+		  code: "sanggendalai",
+		  name: "桑根达来",
+		  abbreviation: "sgl",
 		},
 		{
-			"Abbreviation": "hy",
-			"code": "haiyan",
-			"name": "海晏"
+		  code: "shaoguan",
+		  name: "韶关",
+		  abbreviation: "sgu",
 		},
 		{
-			"Abbreviation": "yc",
-			"code": "yinchuan",
-			"name": "银川"
+		  code: "shanggaozhen",
+		  name: "上高镇",
+		  abbreviation: "sgz",
 		},
 		{
-			"Abbreviation": "la",
-			"code": "luan",
-			"name": "六安"
+		  code: "shahai",
+		  name: "沙海",
+		  abbreviation: "sha",
 		},
 		{
-			"Abbreviation": "jh",
-			"code": "jinghe",
-			"name": "精河"
+		  code: "shanghang",
+		  name: "上杭",
+		  abbreviation: "sha",
 		},
 		{
-			"Abbreviation": "mq",
-			"code": "minqing",
-			"name": "闽清"
+		  code: "shuhe",
+		  name: "蜀河",
+		  abbreviation: "she",
 		},
 		{
-			"Abbreviation": "dmx",
-			"code": "dongmingxian",
-			"name": "东明县"
+		  code: "songhe",
+		  name: "松河",
+		  abbreviation: "she",
 		},
 		{
-			"Abbreviation": "hn",
-			"code": "huanan",
-			"name": "桦南"
+		  code: "shahe",
+		  name: "沙河",
+		  abbreviation: "she",
 		},
 		{
-			"Abbreviation": "zxbq",
-			"code": "zhengxiangbaiqi",
-			"name": "正镶白旗"
+		  code: "shahekou",
+		  name: "沙河口",
+		  abbreviation: "shk",
 		},
 		{
-			"Abbreviation": "wltqq",
-			"code": "wulateqianqi",
-			"name": "乌拉特前旗"
+		  code: "saihantala",
+		  name: "赛汗塔拉",
+		  abbreviation: "shl",
 		},
 		{
-			"Abbreviation": "flb",
-			"code": "fulingbei",
-			"name": "涪陵北"
+		  code: "shahousuo",
+		  name: "沙后所",
+		  abbreviation: "shs",
 		},
 		{
-			"Abbreviation": "hrn",
-			"code": "huarongnan",
-			"name": "华容南"
+		  code: "shaheshi",
+		  name: "沙河市",
+		  abbreviation: "shs",
 		},
 		{
-			"Abbreviation": "gy",
-			"code": "guanyun",
-			"name": "灌云"
+		  code: "shanhetun",
+		  name: "山河屯",
+		  abbreviation: "sht",
 		},
 		{
-			"Abbreviation": "bl",
-			"code": "boli",
-			"name": "勃利"
+		  code: "sanhexian",
+		  name: "三河县",
+		  abbreviation: "shx",
 		},
 		{
-			"Abbreviation": "cb",
-			"code": "chibi",
-			"name": "赤壁"
+		  code: "siheyong",
+		  name: "四合永",
+		  abbreviation: "shy",
 		},
 		{
-			"Abbreviation": "nh",
-			"code": "nehe",
-			"name": "讷河"
+		  code: "shihezi",
+		  name: "石河子",
+		  abbreviation: "shz",
 		},
 		{
-			"Abbreviation": "lqs",
-			"code": "longquansi",
-			"name": "龙泉寺"
+		  code: "shuanghezhen",
+		  name: "双河镇",
+		  abbreviation: "shz",
 		},
 		{
-			"Abbreviation": "zzx",
-			"code": "zaozhuangxi",
-			"name": "枣庄西"
+		  code: "sanhuizhen",
+		  name: "三汇镇",
+		  abbreviation: "shz",
 		},
 		{
-			"Abbreviation": "xy",
-			"code": "xinyi1",
-			"name": "信宜"
+		  code: "sanhezhuang",
+		  name: "三合庄",
+		  abbreviation: "shz",
 		},
 		{
-			"Abbreviation": "gzd",
-			"code": "guangzhoudong",
-			"name": "广州东"
+		  code: "sanjiadian",
+		  name: "三家店",
+		  abbreviation: "sjd",
 		},
 		{
-			"Abbreviation": "jh",
-			"code": "jinhai",
-			"name": "近海"
+		  code: "songjianghe",
+		  name: "松江河",
+		  abbreviation: "sjh",
 		},
 		{
-			"Abbreviation": "hr",
-			"code": "huairou",
-			"name": "怀柔"
+		  code: "shenjiahe",
+		  name: "沈家河",
+		  abbreviation: "sjh",
 		},
 		{
-			"Abbreviation": "zmtd",
-			"code": "zhangmutoudong",
-			"name": "樟木头东"
+		  code: "shuijiahu",
+		  name: "水家湖",
+		  abbreviation: "sjh",
 		},
 		{
-			"Abbreviation": "hlh",
-			"code": "halahai",
-			"name": "哈拉海"
+		  code: "shuangji",
+		  name: "双吉",
+		  abbreviation: "sji",
 		},
 		{
-			"Abbreviation": "xgc",
-			"code": "xigucheng",
-			"name": "西固城"
+		  code: "shangjia",
+		  name: "尚家",
+		  abbreviation: "sji",
 		},
 		{
-			"Abbreviation": "xdd",
-			"code": "xindudong",
-			"name": "新都东"
+		  code: "songjiang",
+		  name: "松江",
+		  abbreviation: "sji",
 		},
 		{
-			"Abbreviation": "aax",
-			"code": "angangxi",
-			"name": "昂昂溪"
+		  code: "sunjia",
+		  name: "孙家",
+		  abbreviation: "sji",
 		},
 		{
-			"Abbreviation": "njb",
-			"code": "neijiangbei",
-			"name": "内江北"
+		  code: "shenjia",
+		  name: "沈家",
+		  abbreviation: "sji",
 		},
 		{
-			"Abbreviation": "tz",
-			"code": "taizhou1",
-			"name": "台州"
+		  code: "sanjiangkou",
+		  name: "三江口",
+		  abbreviation: "sjk",
 		},
 		{
-			"Abbreviation": "db",
-			"code": "dianbai",
-			"name": "电白"
+		  code: "sijialing",
+		  name: "司家岭",
+		  abbreviation: "sjl",
 		},
 		{
-			"Abbreviation": "lj",
-			"code": "luojiang",
-			"name": "罗江"
+		  code: "songjiangnan",
+		  name: "松江南",
+		  abbreviation: "sjn",
 		},
 		{
-			"Abbreviation": "sy",
-			"code": "shanyin",
-			"name": "山阴"
+		  code: "shijingshannan",
+		  name: "石景山南",
+		  abbreviation: "sjn",
 		},
 		{
-			"Abbreviation": "bzd",
-			"code": "bazhongdong",
-			"name": "巴中东"
+		  code: "shaojiatang",
+		  name: "邵家堂",
+		  abbreviation: "sjt",
 		},
 		{
-			"Abbreviation": "yc",
-			"code": "yangcheng",
-			"name": "阳城"
+		  code: "sanjiangxian",
+		  name: "三江县",
+		  abbreviation: "sjx",
 		},
 		{
-			"Abbreviation": "xl",
-			"code": "xinlin",
-			"name": "新林"
+		  code: "songjiangzhen",
+		  name: "松江镇",
+		  abbreviation: "sjz",
 		},
 		{
-			"Abbreviation": "jq",
-			"code": "jiangqiao",
-			"name": "江桥"
+		  code: "sanjiazhai",
+		  name: "三家寨",
+		  abbreviation: "sjz",
 		},
 		{
-			"Abbreviation": "czx",
-			"code": "cangzhouxi",
-			"name": "沧州西"
+		  code: "shijiazi",
+		  name: "十家子",
+		  abbreviation: "sjz",
 		},
 		{
-			"Abbreviation": "thb",
-			"code": "taihebei",
-			"name": "太和北"
+		  code: "shenjingzi",
+		  name: "深井子",
+		  abbreviation: "sjz",
 		},
 		{
-			"Abbreviation": "sc",
-			"code": "shucheng",
-			"name": "舒城"
+		  code: "shijiazui",
+		  name: "施家嘴",
+		  abbreviation: "sjz",
 		},
 		{
-			"Abbreviation": "wl",
-			"code": "wulong",
-			"name": "武隆"
+		  code: "shilidian",
+		  name: "什里店",
+		  abbreviation: "sld",
 		},
 		{
-			"Abbreviation": "wjw",
-			"code": "wangjiawan",
-			"name": "王家湾"
+		  code: "shule",
+		  name: "疏勒",
+		  abbreviation: "sle",
 		},
 		{
-			"Abbreviation": "xyg",
-			"code": "xiaoyugu",
-			"name": "小雨谷"
+		  code: "shelihu",
+		  name: "舍力虎",
+		  abbreviation: "slh",
 		},
 		{
-			"Abbreviation": "zz",
-			"code": "zhuozhou",
-			"name": "涿州"
+		  code: "shulehe",
+		  name: "疏勒河",
+		  abbreviation: "slh",
 		},
 		{
-			"Abbreviation": "ls",
-			"code": "luoshan",
-			"name": "罗山"
+		  code: "shuangliao",
+		  name: "双辽",
+		  abbreviation: "sli",
 		},
 		{
-			"Abbreviation": "hz",
-			"code": "hezhou",
-			"name": "贺州"
+		  code: "shiling",
+		  name: "石岭",
+		  abbreviation: "sli",
 		},
 		{
-			"Abbreviation": "tq",
-			"code": "tuqiang",
-			"name": "图强"
+		  code: "shilin",
+		  name: "石磷",
+		  abbreviation: "sli",
 		},
 		{
-			"Abbreviation": "mns",
-			"code": "manasi",
-			"name": "玛纳斯"
+		  code: "suiling",
+		  name: "绥棱",
+		  abbreviation: "sli",
 		},
 		{
-			"Abbreviation": "hj",
-			"code": "houjie",
-			"name": "厚街"
+		  code: "shilin",
+		  name: "石林",
+		  abbreviation: "sli",
 		},
 		{
-			"Abbreviation": "ll",
-			"code": "linli",
-			"name": "临澧"
+		  code: "shilinnan",
+		  name: "石林南",
+		  abbreviation: "sln",
 		},
 		{
-			"Abbreviation": "ljn",
-			"code": "lijinnan",
-			"name": "利津南"
+		  code: "shilong",
+		  name: "石龙",
+		  abbreviation: "slo",
 		},
 		{
-			"Abbreviation": "dxb",
-			"code": "dingxibei",
-			"name": "定西北"
+		  code: "salaqi",
+		  name: "萨拉齐",
+		  abbreviation: "slq",
 		},
 		{
-			"Abbreviation": "mp",
-			"code": "muping",
-			"name": "牟平"
+		  code: "shangluo",
+		  name: "商洛",
+		  abbreviation: "slu",
 		},
 		{
-			"Abbreviation": "dz",
-			"code": "daozhou",
-			"name": "道州"
+		  code: "suolun",
+		  name: "索伦",
+		  abbreviation: "slu",
 		},
 		{
-			"Abbreviation": "xyx",
-			"code": "xiayixian",
-			"name": "夏邑县"
+		  code: "shalingzi",
+		  name: "沙岭子",
+		  abbreviation: "slz",
 		},
 		{
-			"Abbreviation": "jn",
-			"code": "jining",
-			"name": "济宁"
+		  code: "shimenxianbei",
+		  name: "石门县北",
+		  abbreviation: "smb",
 		},
 		{
-			"Abbreviation": "yn",
-			"code": "yinai",
-			"name": "宜耐"
+		  code: "sanmenxianan",
+		  name: "三门峡南",
+		  abbreviation: "smn",
 		},
 		{
-			"Abbreviation": "jyx",
-			"code": "jinyunxi",
-			"name": "缙云西"
+		  code: "sanmenxian",
+		  name: "三门县",
+		  abbreviation: "smx",
 		},
 		{
-			"Abbreviation": "xjn",
-			"code": "xinjinan",
-			"name": "辛集南"
+		  code: "shimenxian",
+		  name: "石门县",
+		  abbreviation: "smx",
 		},
 		{
-			"Abbreviation": "dh",
-			"code": "dehui",
-			"name": "德惠"
+		  code: "shenmuxi",
+		  name: "神木西",
+		  abbreviation: "smx",
 		},
 		{
-			"Abbreviation": "dq",
-			"code": "daoqing",
-			"name": "道清"
+		  code: "sanmenxiaxi",
+		  name: "三门峡西",
+		  abbreviation: "smx",
 		},
 		{
-			"Abbreviation": "gx",
-			"code": "guixi",
-			"name": "贵溪"
+		  code: "suning",
+		  name: "肃宁",
+		  abbreviation: "sni",
 		},
 		{
-			"Abbreviation": "kyh",
-			"code": "keyihe",
-			"name": "克一河"
+		  code: "song",
+		  name: "宋",
+		  abbreviation: "son",
 		},
 		{
-			"Abbreviation": "jxd",
-			"code": "jiexiudong",
-			"name": "介休东"
+		  code: "shuangpai",
+		  name: "双牌",
+		  abbreviation: "spa",
 		},
 		{
-			"Abbreviation": "sp",
-			"code": "shuangpai",
-			"name": "双牌"
+		  code: "shapingba",
+		  name: "沙坪坝",
+		  abbreviation: "spb",
 		},
 		{
-			"Abbreviation": "cgz",
-			"code": "chenggaozi",
-			"name": "成高子"
+		  code: "sipingdong",
+		  name: "四平东",
+		  abbreviation: "spd",
 		},
 		{
-			"Abbreviation": "hf",
-			"code": "hengfeng",
-			"name": "横峰"
+		  code: "suiping",
+		  name: "遂平",
+		  abbreviation: "spi",
 		},
 		{
-			"Abbreviation": "qt",
-			"code": "qingtian",
-			"name": "青田"
+		  code: "shapotou",
+		  name: "沙坡头",
+		  abbreviation: "spt",
 		},
 		{
-			"Abbreviation": "jf",
-			"code": "jiafeng",
-			"name": "嘉峰"
+		  code: "shaqiao",
+		  name: "沙桥",
+		  abbreviation: "sqi",
 		},
 		{
-			"Abbreviation": "xtb",
-			"code": "xiangtanbei",
-			"name": "湘潭北"
+		  code: "shangqiunan",
+		  name: "商丘南",
+		  abbreviation: "sqn",
 		},
 		{
-			"Abbreviation": "yyz",
-			"code": "yuanyangzhen",
-			"name": "鸳鸯镇"
+		  code: "shuiquan",
+		  name: "水泉",
+		  abbreviation: "squ",
 		},
 		{
-			"Abbreviation": "jgs",
-			"code": "jinggangshan",
-			"name": "井冈山"
+		  code: "shiquanxian",
+		  name: "石泉县",
+		  abbreviation: "sqx",
 		},
 		{
-			"Abbreviation": "my",
-			"code": "miyi",
-			"name": "米易"
+		  code: "shiqiaozi",
+		  name: "石桥子",
+		  abbreviation: "sqz",
 		},
 		{
-			"Abbreviation": "rcx",
-			"code": "ruichangxi",
-			"name": "瑞昌西"
+		  code: "shirencheng",
+		  name: "石人城",
+		  abbreviation: "src",
 		},
 		{
-			"Abbreviation": "hfn",
-			"code": "hefeinan",
-			"name": "合肥南"
+		  code: "shiren",
+		  name: "石人",
+		  abbreviation: "sre",
 		},
 		{
-			"Abbreviation": "hh",
-			"code": "heihe",
-			"name": "黑河"
+		  code: "shanshan",
+		  name: "鄯善",
+		  abbreviation: "ssh",
 		},
 		{
-			"Abbreviation": "slh",
-			"code": "shelihu",
-			"name": "舍力虎"
+		  code: "sanshui",
+		  name: "三水",
+		  abbreviation: "ssh",
 		},
 		{
-			"Abbreviation": "ytp",
-			"code": "yatunpu",
-			"name": "牙屯堡"
+		  code: "sishui",
+		  name: "泗水",
+		  abbreviation: "ssh",
 		},
 		{
-			"Abbreviation": "pzn",
-			"code": "pengzhounan",
-			"name": "彭州南"
+		  code: "songshu",
+		  name: "松树",
+		  abbreviation: "ssh",
 		},
 		{
-			"Abbreviation": "ytx",
-			"code": "yutianxian",
-			"name": "玉田县"
+		  code: "shanshi",
+		  name: "山市",
+		  abbreviation: "ssh",
 		},
 		{
-			"Abbreviation": "qj",
-			"code": "qianjiang",
-			"name": "黔江"
+		  code: "shenshu",
+		  name: "神树",
+		  abbreviation: "ssh",
 		},
 		{
-			"Abbreviation": "ykn",
-			"code": "yongkangnan",
-			"name": "永康南"
+		  code: "shishan",
+		  name: "石山",
+		  abbreviation: "ssh",
 		},
 		{
-			"Abbreviation": "syj",
-			"code": "sanyijing",
-			"name": "三义井"
+		  code: "shoushan",
+		  name: "首山",
+		  abbreviation: "ssh",
 		},
 		{
-			"Abbreviation": "wy",
-			"code": "wuying",
-			"name": "五营"
+		  code: "sanshijia",
+		  name: "三十家",
+		  abbreviation: "ssj",
 		},
 		{
-			"Abbreviation": "wd",
-			"code": "weidong",
-			"name": "卫东"
+		  code: "sanshilipu",
+		  name: "三十里堡",
+		  abbreviation: "ssp",
 		},
 		{
-			"Abbreviation": "ems",
-			"code": "emeishan",
-			"name": "峨眉山"
+		  code: "shuangshuizhen",
+		  name: "双水镇",
+		  abbreviation: "ssz",
 		},
 		{
-			"Abbreviation": "yj",
-			"code": "yongji",
-			"name": "永济"
+		  code: "songshuzhen",
+		  name: "松树镇",
+		  abbreviation: "ssz",
 		},
 		{
-			"Abbreviation": "ts",
-			"code": "tianshui",
-			"name": "天水"
+		  code: "songtao",
+		  name: "松桃",
+		  abbreviation: "sta",
 		},
 		{
-			"Abbreviation": "pd",
-			"code": "piandian",
-			"name": "偏店"
+		  code: "suotuhan",
+		  name: "索图罕",
+		  abbreviation: "sth",
 		},
 		{
-			"Abbreviation": "zdjc",
-			"code": "zhengdingjichang",
-			"name": "正定机场"
+		  code: "santangji",
+		  name: "三堂集",
+		  abbreviation: "stj",
 		},
 		{
-			"Abbreviation": "dt",
-			"code": "datun",
-			"name": "大屯"
+		  code: "shentou",
+		  name: "神头",
+		  abbreviation: "sto",
 		},
 		{
-			"Abbreviation": "qjd",
-			"code": "qijiangdong",
-			"name": "綦江东"
+		  code: "shitou",
+		  name: "石头",
+		  abbreviation: "sto",
 		},
 		{
-			"Abbreviation": "ws",
-			"code": "weishe",
-			"name": "威舍"
+		  code: "shatuo",
+		  name: "沙沱",
+		  abbreviation: "stu",
 		},
 		{
-			"Abbreviation": "ls",
-			"code": "leshan",
-			"name": "乐山"
+		  code: "shangwan",
+		  name: "上万",
+		  abbreviation: "swa",
 		},
 		{
-			"Abbreviation": "alx",
-			"code": "anluxi",
-			"name": "安陆西"
+		  code: "sunwu",
+		  name: "孙吴",
+		  abbreviation: "swu",
 		},
 		{
-			"Abbreviation": "bl",
-			"code": "balin",
-			"name": "巴林"
+		  code: "shawanxian",
+		  name: "沙湾县",
+		  abbreviation: "swx",
 		},
 		{
-			"Abbreviation": "fs",
-			"code": "fusong",
-			"name": "抚松"
+		  code: "suixi",
+		  name: "遂溪",
+		  abbreviation: "sxi",
 		},
 		{
-			"Abbreviation": "yj",
-			"code": "yujiang",
-			"name": "余江"
+		  code: "shixian",
+		  name: "石岘",
+		  abbreviation: "sxi",
 		},
 		{
-			"Abbreviation": "gt",
-			"code": "gantang",
-			"name": "干塘"
+		  code: "shaxian",
+		  name: "沙县",
+		  abbreviation: "sxi",
 		},
 		{
-			"Abbreviation": "fxb",
-			"code": "feixianbei",
-			"name": "费县北"
+		  code: "shaoxing",
+		  name: "绍兴",
+		  abbreviation: "sxi",
 		},
 		{
-			"Abbreviation": "cy",
-			"code": "chengyang",
-			"name": "城阳"
+		  code: "shexian",
+		  name: "歙县",
+		  abbreviation: "sxi",
 		},
 		{
-			"Abbreviation": "rz",
-			"code": "rizhao",
-			"name": "日照"
+		  code: "shangxipu",
+		  name: "上西铺",
+		  abbreviation: "sxp",
 		},
 		{
-			"Abbreviation": "zz",
-			"code": "zhazi",
-			"name": "咋子"
+		  code: "shixiazi",
+		  name: "石峡子",
+		  abbreviation: "sxz",
 		},
 		{
-			"Abbreviation": "lsx",
-			"code": "lanshanxi",
-			"name": "岚山西"
+		  code: "shuyang",
+		  name: "沭阳",
+		  abbreviation: "sya",
 		},
 		{
-			"Abbreviation": "sg",
-			"code": "shaoguan",
-			"name": "韶关"
+		  code: "shouyang",
+		  name: "寿阳",
+		  abbreviation: "sya",
 		},
 		{
-			"Abbreviation": "hy",
-			"code": "heyuan",
-			"name": "河源"
+		  code: "suiyang",
+		  name: "绥阳",
+		  abbreviation: "sya",
 		},
 		{
-			"Abbreviation": "xxfb",
-			"code": "xinxiangfangbei",
-			"name": "新香坊北"
+		  code: "shuiyang",
+		  name: "水洋",
+		  abbreviation: "sya",
 		},
 		{
-			"Abbreviation": "jyw",
-			"code": "jinyuewan",
-			"name": "金月湾"
+		  code: "sanyangchuan",
+		  name: "三阳川",
+		  abbreviation: "syc",
 		},
 		{
-			"Abbreviation": "tzd",
-			"code": "tengzhoudong",
-			"name": "滕州东"
+		  code: "shangyaodun",
+		  name: "上腰墩",
+		  abbreviation: "syd",
 		},
 		{
-			"Abbreviation": "lfb",
-			"code": "langfangbei",
-			"name": "廊坊北"
+		  code: "sanying",
+		  name: "三营",
+		  abbreviation: "syi",
 		},
 		{
-			"Abbreviation": "xnd",
-			"code": "xianningdong",
-			"name": "咸宁东"
+		  code: "shunyi",
+		  name: "顺义",
+		  abbreviation: "syi",
 		},
 		{
-			"Abbreviation": "ht",
-			"code": "huitong",
-			"name": "会同"
+		  code: "sanyijing",
+		  name: "三义井",
+		  abbreviation: "syj",
 		},
 		{
-			"Abbreviation": "ats",
-			"code": "atushi",
-			"name": "阿图什"
+		  code: "sanyuanpu",
+		  name: "三源浦",
+		  abbreviation: "syp",
 		},
 		{
-			"Abbreviation": "nlg",
-			"code": "nailingao",
-			"name": "奈林皋"
+		  code: "shangyuan",
+		  name: "上园",
+		  abbreviation: "syu",
 		},
 		{
-			"Abbreviation": "cdn",
-			"code": "chengdenan",
-			"name": "承德南"
+		  code: "shangyu",
+		  name: "上虞",
+		  abbreviation: "syu",
 		},
 		{
-			"Abbreviation": "yfn",
-			"code": "yongfunan",
-			"name": "永福南"
+		  code: "sanyuan",
+		  name: "三原",
+		  abbreviation: "syu",
 		},
 		{
-			"Abbreviation": "tg",
-			"code": "taigu",
-			"name": "太谷"
+		  code: "shuiyuan",
+		  name: "水源",
+		  abbreviation: "syu",
 		},
 		{
-			"Abbreviation": "ml",
-			"code": "mile",
-			"name": "弥勒"
+		  code: "sangyuanzi",
+		  name: "桑园子",
+		  abbreviation: "syz",
 		},
 		{
-			"Abbreviation": "smxx",
-			"code": "sanmenxiaxi",
-			"name": "三门峡西"
+		  code: "suizhongbei",
+		  name: "绥中北",
+		  abbreviation: "szb",
 		},
 		{
-			"Abbreviation": "dys",
-			"code": "dayangshu",
-			"name": "大杨树"
+		  code: "suzhoubei",
+		  name: "苏州北",
+		  abbreviation: "szb",
 		},
 		{
-			"Abbreviation": "hdhz",
-			"code": "hengdaohezi",
-			"name": "横道河子"
+		  code: "suzhoudong",
+		  name: "宿州东",
+		  abbreviation: "szd",
 		},
 		{
-			"Abbreviation": "lj",
-			"code": "lianjiang1",
-			"name": "连江"
+		  code: "shenzhendong",
+		  name: "深圳东",
+		  abbreviation: "szd",
 		},
 		{
-			"Abbreviation": "yc",
-			"code": "yichun",
-			"name": "伊春"
+		  code: "sunzhen",
+		  name: "孙镇",
+		  abbreviation: "szh",
 		},
 		{
-			"Abbreviation": "dxz",
-			"code": "dongxinzhuang",
-			"name": "东辛庄"
+		  code: "suizhong",
+		  name: "绥中",
+		  abbreviation: "szh",
 		},
 		{
-			"Abbreviation": "hnh",
-			"code": "huangnihe",
-			"name": "黄泥河"
+		  code: "shenzhou",
+		  name: "深州",
+		  abbreviation: "szh",
 		},
 		{
-			"Abbreviation": "jzd",
-			"code": "jiaozuodong",
-			"name": "焦作东"
+		  code: "shizhuang",
+		  name: "师庄",
+		  abbreviation: "szh",
 		},
 		{
-			"Abbreviation": "czw",
-			"code": "chezhuanwan",
-			"name": "车转湾"
+		  code: "shangzhi",
+		  name: "尚志",
+		  abbreviation: "szh",
 		},
 		{
-			"Abbreviation": "tlf",
-			"code": "tulufan",
-			"name": "吐鲁番"
+		  code: "songzi",
+		  name: "松滋",
+		  abbreviation: "szi",
 		},
 		{
-			"Abbreviation": "sjd",
-			"code": "sanjiadian",
-			"name": "三家店"
+		  code: "shizong",
+		  name: "师宗",
+		  abbreviation: "szo",
 		},
 		{
-			"Abbreviation": "qzd",
-			"code": "qiaozhuangdong",
-			"name": "乔庄东"
+		  code: "suzhouyuanqu",
+		  name: "苏州园区",
+		  abbreviation: "szq",
 		},
 		{
-			"Abbreviation": "xxz",
-			"code": "xiaoxizhuang",
-			"name": "小西庄"
+		  code: "suzhouxinqu",
+		  name: "苏州新区",
+		  abbreviation: "szq",
 		},
 		{
-			"Abbreviation": "pls",
-			"code": "penglaishi",
-			"name": "蓬莱市"
+		  code: "taian",
+		  name: "泰安",
+		  abbreviation: "tan",
 		},
 		{
-			"Abbreviation": "lw",
-			"code": "liwang",
-			"name": "李旺"
+		  code: "taian",
+		  name: "台安",
+		  abbreviation: "tan",
 		},
 		{
-			"Abbreviation": "aqx",
-			"code": "anqingxi",
-			"name": "安庆西"
+		  code: "tonganyi",
+		  name: "通安驿",
+		  abbreviation: "tay",
 		},
 		{
-			"Abbreviation": "hz",
-			"code": "huozhou",
-			"name": "霍州"
+		  code: "tongbai",
+		  name: "桐柏",
+		  abbreviation: "tba",
 		},
 		{
-			"Abbreviation": "lkn",
-			"code": "lankaonan",
-			"name": "兰考南"
+		  code: "tongbei",
+		  name: "通北",
+		  abbreviation: "tbe",
 		},
 		{
-			"Abbreviation": "blk",
-			"code": "buliekai",
-			"name": "布列开"
+		  code: "tongcheng",
+		  name: "桐城",
+		  abbreviation: "tch",
 		},
 		{
-			"Abbreviation": "xw",
-			"code": "xuwen",
-			"name": "徐闻"
+		  code: "tancheng",
+		  name: "郯城",
+		  abbreviation: "tch",
 		},
 		{
-			"Abbreviation": "zg",
-			"code": "zigong",
-			"name": "自贡"
+		  code: "tiechang",
+		  name: "铁厂",
+		  abbreviation: "tch",
 		},
 		{
-			"Abbreviation": "bb",
-			"code": "beibei",
-			"name": "北碚"
+		  code: "tangchi",
+		  name: "汤池",
+		  abbreviation: "tch",
 		},
 		{
-			"Abbreviation": "tl",
-			"code": "tianlin",
-			"name": "田林"
+		  code: "taocun",
+		  name: "桃村",
+		  abbreviation: "tcu",
 		},
 		{
-			"Abbreviation": "kz",
-			"code": "kazuo",
-			"name": "喀左"
+		  code: "tongdao",
+		  name: "通道",
+		  abbreviation: "tda",
 		},
 		{
-			"Abbreviation": "dxd",
-			"code": "dexingdong",
-			"name": "德兴东"
+		  code: "tiandong",
+		  name: "田东",
+		  abbreviation: "tdo",
 		},
 		{
-			"Abbreviation": "hsp",
-			"code": "hongsipu",
-			"name": "红寺堡"
+		  code: "tiangang",
+		  name: "天岗",
+		  abbreviation: "tga",
 		},
 		{
-			"Abbreviation": "wzb",
-			"code": "wanzhoubei",
-			"name": "万州北"
+		  code: "tuguiwula",
+		  name: "土贵乌拉",
+		  abbreviation: "tgl",
 		},
 		{
-			"Abbreviation": "dt",
-			"code": "dantu",
-			"name": "丹徒"
+		  code: "tonggou",
+		  name: "通沟",
+		  abbreviation: "tgo",
 		},
 		{
-			"Abbreviation": "fz",
-			"code": "fengzhou",
-			"name": "凤州"
+		  code: "taigu",
+		  name: "太谷",
+		  abbreviation: "tgu",
 		},
 		{
-			"Abbreviation": "xy",
-			"code": "xianyang",
-			"name": "咸阳"
+		  code: "taha",
+		  name: "塔哈",
+		  abbreviation: "tha",
 		},
 		{
-			"Abbreviation": "ly",
-			"code": "leiyang",
-			"name": "耒阳"
+		  code: "tanghai",
+		  name: "棠海",
+		  abbreviation: "tha",
 		},
 		{
-			"Abbreviation": "hnx",
-			"code": "hainingxi",
-			"name": "海宁西"
+		  code: "taihe",
+		  name: "泰和",
+		  abbreviation: "the",
 		},
 		{
-			"Abbreviation": "nhl",
-			"code": "niuheliang",
-			"name": "牛河梁"
+		  code: "tanghe",
+		  name: "唐河",
+		  abbreviation: "the",
 		},
 		{
-			"Abbreviation": "cd",
-			"code": "changde",
-			"name": "常德"
+		  code: "taihu",
+		  name: "太湖",
+		  abbreviation: "thu",
 		},
 		{
-			"Abbreviation": "tl",
-			"code": "tailai",
-			"name": "泰来"
+		  code: "tuanjie",
+		  name: "团结",
+		  abbreviation: "tji",
 		},
 		{
-			"Abbreviation": "nb",
-			"code": "nanbu",
-			"name": "南部"
+		  code: "tanjiajing",
+		  name: "谭家井",
+		  abbreviation: "tjj",
 		},
 		{
-			"Abbreviation": "dzd",
-			"code": "dingzhoudong",
-			"name": "定州东"
+		  code: "taojiatun",
+		  name: "陶家屯",
+		  abbreviation: "tjt",
 		},
 		{
-			"Abbreviation": "ll",
-			"code": "lulong",
-			"name": "卢龙"
+		  code: "tangjiawan",
+		  name: "唐家湾",
+		  abbreviation: "tjw",
 		},
 		{
-			"Abbreviation": "zy",
-			"code": "zhangye",
-			"name": "张掖"
+		  code: "tongjunzhuang",
+		  name: "统军庄",
+		  abbreviation: "tjz",
 		},
 		{
-			"Abbreviation": "fs",
-			"code": "foshan",
-			"name": "佛山"
+		  code: "tuliemaodu",
+		  name: "吐列毛杜",
+		  abbreviation: "tld",
 		},
 		{
-			"Abbreviation": "wlt",
-			"code": "wolitun",
-			"name": "卧里屯"
+		  code: "tulihe",
+		  name: "图里河",
+		  abbreviation: "tlh",
 		},
 		{
-			"Abbreviation": "qls",
-			"code": "qinglongshan",
-			"name": "青龙山"
+		  code: "tongling",
+		  name: "铜陵",
+		  abbreviation: "tli",
 		},
 		{
-			"Abbreviation": "bsx",
-			"code": "baishuixian",
-			"name": "白水县"
+		  code: "tingliang",
+		  name: "亭亮",
+		  abbreviation: "tli",
 		},
 		{
-			"Abbreviation": "sks",
-			"code": "sikeshu",
-			"name": "四棵树"
+		  code: "tianlin",
+		  name: "田林",
+		  abbreviation: "tli",
 		},
 		{
-			"Abbreviation": "yy1",
-			"code": "yiyang1",
-			"name": "弋阳"
+		  code: "tieli",
+		  name: "铁力",
+		  abbreviation: "tli",
 		},
 		{
-			"Abbreviation": "tg",
-			"code": "tiangang",
-			"name": "天岗"
+		  code: "tielingxi",
+		  name: "铁岭西",
+		  abbreviation: "tlx",
 		},
 		{
-			"Abbreviation": "xn",
-			"code": "xingning",
-			"name": "兴宁"
+		  code: "tumenbei",
+		  name: "图们北",
+		  abbreviation: "tmb",
 		},
 		{
-			"Abbreviation": "dzd",
-			"code": "dezhoudong",
-			"name": "德州东"
+		  code: "tianmen",
+		  name: "天门",
+		  abbreviation: "tme",
 		},
 		{
-			"Abbreviation": "syb",
-			"code": "shaoyangbei",
-			"name": "邵阳北"
+		  code: "tianmennan",
+		  name: "天门南",
+		  abbreviation: "tmn",
 		},
 		{
-			"Abbreviation": "mnsh",
-			"code": "manasihu",
-			"name": "玛纳斯湖"
+		  code: "taimushan",
+		  name: "太姥山",
+		  abbreviation: "tms",
 		},
 		{
-			"Abbreviation": "hhjq",
-			"code": "huanghejingqu",
-			"name": "黄河景区"
+		  code: "tumuertai",
+		  name: "土牧尔台",
+		  abbreviation: "tmt",
 		},
 		{
-			"Abbreviation": "wzn",
-			"code": "wenzhounan",
-			"name": "温州南"
+		  code: "tumenzi",
+		  name: "土门子",
+		  abbreviation: "tmz",
 		},
 		{
-			"Abbreviation": "qj",
-			"code": "qianjiang1",
-			"name": "潜江"
+		  code: "tongnan",
+		  name: "潼南",
+		  abbreviation: "tna",
 		},
 		{
-			"Abbreviation": "lt",
-			"code": "laituan",
-			"name": "濑湍"
+		  code: "taonan",
+		  name: "洮南",
+		  abbreviation: "tna",
 		},
 		{
-			"Abbreviation": "gy",
-			"code": "ganyu",
-			"name": "赣榆"
+		  code: "taipingchuan",
+		  name: "太平川",
+		  abbreviation: "tpc",
 		},
 		{
-			"Abbreviation": "wsq",
-			"code": "wushenqi",
-			"name": "乌审旗"
+		  code: "taipingzhen",
+		  name: "太平镇",
+		  abbreviation: "tpz",
 		},
 		{
-			"Abbreviation": "dx",
-			"code": "dexing",
-			"name": "德兴"
+		  code: "taiqian",
+		  name: "台前",
+		  abbreviation: "tqi",
 		},
 		{
-			"Abbreviation": "bj",
-			"code": "bijiang",
-			"name": "碧江"
+		  code: "tuqiang",
+		  name: "图强",
+		  abbreviation: "tqi",
 		},
 		{
-			"Abbreviation": "znd",
-			"code": "zhongningdong",
-			"name": "中宁东"
+		  code: "tianqiaoling",
+		  name: "天桥岭",
+		  abbreviation: "tql",
 		},
 		{
-			"Abbreviation": "flej",
-			"code": "fulaerji",
-			"name": "富拉尔基"
+		  code: "tuqiaozi",
+		  name: "土桥子",
+		  abbreviation: "tqz",
 		},
 		{
-			"Abbreviation": "msw",
-			"code": "manshuiwan",
-			"name": "漫水湾"
+		  code: "tangshancheng",
+		  name: "汤山城",
+		  abbreviation: "tsc",
 		},
 		{
-			"Abbreviation": "xa",
-			"code": "xingan",
-			"name": "兴安"
+		  code: "taishan",
+		  name: "台山",
+		  abbreviation: "tsh",
 		},
 		{
-			"Abbreviation": "jq",
-			"code": "jianqiao",
-			"name": "建桥"
+		  code: "taoshan",
+		  name: "桃山",
+		  abbreviation: "tsh",
 		},
 		{
-			"Abbreviation": "yt",
-			"code": "yintan",
-			"name": "银滩"
+		  code: "tashizui",
+		  name: "塔石嘴",
+		  abbreviation: "tsz",
 		},
 		{
-			"Abbreviation": "ds",
-			"code": "dongsheng1",
-			"name": "东升"
+		  code: "tongtu",
+		  name: "通途",
+		  abbreviation: "ttu",
 		},
 		{
-			"Abbreviation": "wh",
-			"code": "wuhai",
-			"name": "乌海"
+		  code: "tangwanghe",
+		  name: "汤旺河",
+		  abbreviation: "twh",
 		},
 		{
-			"Abbreviation": "wxx",
-			"code": "wenxixi",
-			"name": "闻喜西"
+		  code: "tongxin",
+		  name: "同心",
+		  abbreviation: "txi",
 		},
 		{
-			"Abbreviation": "np",
-			"code": "napu",
-			"name": "那铺"
+		  code: "tongxiang",
+		  name: "桐乡",
+		  abbreviation: "txi",
 		},
 		{
-			"Abbreviation": "ah",
-			"code": "anhua",
-			"name": "安化"
+		  code: "tuxi",
+		  name: "土溪",
+		  abbreviation: "txi",
 		},
 		{
-			"Abbreviation": "cx",
-			"code": "chuxiong",
-			"name": "楚雄"
+		  code: "tianyang",
+		  name: "田阳",
+		  abbreviation: "tya",
 		},
 		{
-			"Abbreviation": "yy",
-			"code": "yiyang",
-			"name": "益阳"
+		  code: "tangyin",
+		  name: "汤阴",
+		  abbreviation: "tyi",
 		},
 		{
-			"Abbreviation": "yc",
-			"code": "yongchuan",
-			"name": "永川"
+		  code: "tianyi",
+		  name: "天义",
+		  abbreviation: "tyi",
 		},
 		{
-			"Abbreviation": "ja",
-			"code": "jian",
-			"name": "吉安"
+		  code: "tuoyaoling",
+		  name: "驼腰岭",
+		  abbreviation: "tyl",
 		},
 		{
-			"Abbreviation": "dh",
-			"code": "dunhuang",
-			"name": "敦煌"
+		  code: "taiyangshan",
+		  name: "太阳山",
+		  abbreviation: "tys",
 		},
 		{
-			"Abbreviation": "trn",
-			"code": "tongrennan",
-			"name": "铜仁南"
+		  code: "tongyu",
+		  name: "通榆",
+		  abbreviation: "tyu",
 		},
 		{
-			"Abbreviation": "yz",
-			"code": "yongzhou",
-			"name": "永州"
+		  code: "tangyuan",
+		  name: "汤原",
+		  abbreviation: "tyu",
 		},
 		{
-			"Abbreviation": "sjt",
-			"code": "shaojiatang",
-			"name": "邵家堂"
+		  code: "tayayi",
+		  name: "塔崖驿",
+		  abbreviation: "tyy",
 		},
 		{
-			"Abbreviation": "ly",
-			"code": "laiyang",
-			"name": "莱阳"
+		  code: "tengzhoudong",
+		  name: "滕州东",
+		  abbreviation: "tzd",
 		},
 		{
-			"Abbreviation": "jss",
-			"code": "jieshoushi",
-			"name": "界首市"
+		  code: "taizhou",
+		  name: "台州",
+		  abbreviation: "tzh",
 		},
 		{
-			"Abbreviation": "zx",
-			"code": "zhongxiang",
-			"name": "钟祥"
+		  code: "tengzhou",
+		  name: "滕州",
+		  abbreviation: "tzh",
 		},
 		{
-			"Abbreviation": "jx",
-			"code": "jinxian",
-			"name": "进贤"
+		  code: "tianzhu",
+		  name: "天祝",
+		  abbreviation: "tzh",
 		},
 		{
-			"Abbreviation": "sfh",
-			"code": "suifenhe",
-			"name": "绥芬河"
+		  code: "tianzhen",
+		  name: "天镇",
+		  abbreviation: "tzh",
 		},
 		{
-			"Abbreviation": "dml",
-			"code": "demoli",
-			"name": "得莫利"
+		  code: "tongzilin",
+		  name: "桐子林",
+		  abbreviation: "tzl",
 		},
 		{
-			"Abbreviation": "hlz",
-			"code": "huolianzhai",
-			"name": "火连寨"
+		  code: "tianzhushan",
+		  name: "天柱山",
+		  abbreviation: "tzs",
 		},
 		{
-			"Abbreviation": "yj",
-			"code": "yingjie",
-			"name": "营街"
+		  code: "wuan",
+		  name: "武安",
+		  abbreviation: "wan",
 		},
 		{
-			"Abbreviation": "xms",
-			"code": "ximashan",
-			"name": "西麻山"
+		  code: "wenan",
+		  name: "文安",
+		  abbreviation: "wan",
 		},
 		{
-			"Abbreviation": "nc",
-			"code": "nanchong",
-			"name": "南充"
+		  code: "wanganzhen",
+		  name: "王安镇",
+		  abbreviation: "waz",
 		},
 		{
-			"Abbreviation": "cyz",
-			"code": "chaoyangzhen",
-			"name": "朝阳镇"
+		  code: "wubu",
+		  name: "吴堡",
+		  abbreviation: "wbu",
 		},
 		{
-			"Abbreviation": "bhb",
-			"code": "binhaibei",
-			"name": "滨海北"
+		  code: "wangcang",
+		  name: "旺苍",
+		  abbreviation: "wca",
 		},
 		{
-			"Abbreviation": "fd",
-			"code": "fengdu",
-			"name": "丰都"
+		  code: "wuchagou",
+		  name: "五叉沟",
+		  abbreviation: "wcg",
 		},
 		{
-			"Abbreviation": "cc",
-			"code": "chengcheng",
-			"name": "澄城"
+		  code: "wenchang",
+		  name: "文昌",
+		  abbreviation: "wch",
 		},
 		{
-			"Abbreviation": "cln",
-			"code": "chalingnan",
-			"name": "茶陵南"
+		  code: "wenchun",
+		  name: "温春",
+		  abbreviation: "wch",
 		},
 		{
-			"Abbreviation": "tlx",
-			"code": "tielingxi",
-			"name": "铁岭西"
+		  code: "wudalianchi",
+		  name: "五大连池",
+		  abbreviation: "wdc",
 		},
 		{
-			"Abbreviation": "lh",
-			"code": "linhai",
-			"name": "林海"
+		  code: "wendeng",
+		  name: "文登",
+		  abbreviation: "wde",
 		},
 		{
-			"Abbreviation": "lld",
-			"code": "lilingdong",
-			"name": "醴陵东"
+		  code: "wudaogou",
+		  name: "五道沟",
+		  abbreviation: "wdg",
 		},
 		{
-			"Abbreviation": "sy",
-			"code": "shuiyuan",
-			"name": "水源"
+		  code: "wudaohe",
+		  name: "五道河",
+		  abbreviation: "wdh",
 		},
 		{
-			"Abbreviation": "cx",
-			"code": "cixi",
-			"name": "磁西"
+		  code: "wendi",
+		  name: "文地",
+		  abbreviation: "wdi",
 		},
 		{
-			"Abbreviation": "xyd",
-			"code": "xinyangdong",
-			"name": "信阳东"
+		  code: "weidong",
+		  name: "卫东",
+		  abbreviation: "wdo",
 		},
 		{
-			"Abbreviation": "ly1",
-			"code": "linyi1",
-			"name": "临邑"
+		  code: "wudangshan",
+		  name: "武当山",
+		  abbreviation: "wds",
 		},
 		{
-			"Abbreviation": "hs",
-			"code": "hanshou",
-			"name": "汉寿"
+		  code: "wangdu",
+		  name: "望都",
+		  abbreviation: "wdu",
 		},
 		{
-			"Abbreviation": "jyg",
-			"code": "jiayuguan",
-			"name": "嘉峪关"
+		  code: "wuerqihan",
+		  name: "乌尔旗汗",
+		  abbreviation: "weh",
 		},
 		{
-			"Abbreviation": "jsx",
-			"code": "jishuixi",
-			"name": "吉水西"
+		  code: "weifang",
+		  name: "潍坊",
+		  abbreviation: "wfa",
 		},
 		{
-			"Abbreviation": "lz",
-			"code": "longzhen",
-			"name": "龙镇"
+		  code: "wanfatun",
+		  name: "万发屯",
+		  abbreviation: "wft",
 		},
 		{
-			"Abbreviation": "cg",
-			"code": "chenggu",
-			"name": "城固"
+		  code: "wangfu",
+		  name: "王府",
+		  abbreviation: "wfu",
 		},
 		{
-			"Abbreviation": "zc",
-			"code": "zhaocheng",
-			"name": "赵城"
+		  code: "wafangdianxi",
+		  name: "瓦房店西",
+		  abbreviation: "wfx",
 		},
 		{
-			"Abbreviation": "rs",
-			"code": "reshui",
-			"name": "热水"
+		  code: "wanggang",
+		  name: "王岗",
+		  abbreviation: "wga",
 		},
 		{
-			"Abbreviation": "dltx",
-			"code": "dalatexi",
-			"name": "达拉特西"
+		  code: "wangou",
+		  name: "湾沟",
+		  abbreviation: "wgo",
 		},
 		{
-			"Abbreviation": "bjx",
-			"code": "beijingxi",
-			"name": "北京西"
+		  code: "wugong",
+		  name: "武功",
+		  abbreviation: "wgo",
 		},
 		{
-			"Abbreviation": "gzln",
-			"code": "gongzhulingnan",
-			"name": "公主岭南"
+		  code: "wuguantian",
+		  name: "吴官田",
+		  abbreviation: "wgt",
 		},
 		{
-			"Abbreviation": "gbdd",
-			"code": "gaobeidiandong",
-			"name": "高碑店东"
+		  code: "wuhai",
+		  name: "乌海",
+		  abbreviation: "wha",
 		},
 		{
-			"Abbreviation": "bsp",
-			"code": "baishapo",
-			"name": "白沙坡"
+		  code: "weihe",
+		  name: "苇河",
+		  abbreviation: "whe",
 		},
 		{
-			"Abbreviation": "hz",
-			"code": "huizhou",
-			"name": "惠州"
+		  code: "weihui",
+		  name: "卫辉",
+		  abbreviation: "whu",
 		},
 		{
-			"Abbreviation": "dj",
-			"code": "daojiao",
-			"name": "道滘"
+		  code: "wujiachuan",
+		  name: "吴家川",
+		  abbreviation: "wjc",
 		},
 		{
-			"Abbreviation": "hl",
-			"code": "heli",
-			"name": "鹤立"
+		  code: "weiqing",
+		  name: "威箐",
+		  abbreviation: "wji",
 		},
 		{
-			"Abbreviation": "lx",
-			"code": "lixian",
-			"name": "澧县"
+		  code: "wuji",
+		  name: "午汲",
+		  abbreviation: "wji",
 		},
 		{
-			"Abbreviation": "lz",
-			"code": "langzhong",
-			"name": "阆中"
+		  code: "weijin",
+		  name: "渭津",
+		  abbreviation: "wji",
 		},
 		{
-			"Abbreviation": "ycd",
-			"code": "yangcaodi",
-			"name": "秧草地"
+		  code: "wujia",
+		  name: "五家",
+		  abbreviation: "wji",
 		},
 		{
-			"Abbreviation": "fn",
-			"code": "funing1",
-			"name": "阜宁"
+		  code: "wangjiawan",
+		  name: "王家湾",
+		  abbreviation: "wjw",
 		},
 		{
-			"Abbreviation": "tcb",
-			"code": "taocunbei",
-			"name": "桃村北"
+		  code: "woken",
+		  name: "倭肯",
+		  abbreviation: "wke",
 		},
 		{
-			"Abbreviation": "jyt",
-			"code": "jinyintan",
-			"name": "金银潭"
+		  code: "wukeshu",
+		  name: "五棵树",
+		  abbreviation: "wks",
 		},
 		{
-			"Abbreviation": "yz",
-			"code": "yangzhou",
-			"name": "扬州"
+		  code: "wulongbei",
+		  name: "五龙背",
+		  abbreviation: "wlb",
 		},
 		{
-			"Abbreviation": "twh",
-			"code": "tangwanghe",
-			"name": "汤旺河"
+		  code: "wanle",
+		  name: "万乐",
+		  abbreviation: "wle",
 		},
 		{
-			"Abbreviation": "cjy",
-			"code": "caijiaya",
-			"name": "蔡家崖"
+		  code: "walagan",
+		  name: "瓦拉干",
+		  abbreviation: "wlg",
 		},
 		{
-			"Abbreviation": "dz",
-			"code": "dizhuang",
-			"name": "低庄"
+		  code: "wenling",
+		  name: "温岭",
+		  abbreviation: "wli",
 		},
 		{
-			"Abbreviation": "nq",
-			"code": "nuanquan",
-			"name": "暖泉"
+		  code: "wulian",
+		  name: "五莲",
+		  abbreviation: "wli",
 		},
 		{
-			"Abbreviation": "zjc",
-			"code": "zhongjiacun",
-			"name": "钟家村"
+		  code: "wulateqianqi",
+		  name: "乌拉特前旗",
+		  abbreviation: "wlq",
 		},
 		{
-			"Abbreviation": "lbx",
-			"code": "lingbaoxi",
-			"name": "灵宝西"
+		  code: "wolitun",
+		  name: "卧里屯",
+		  abbreviation: "wlt",
 		},
 		{
-			"Abbreviation": "hgd",
-			"code": "huanggangdong",
-			"name": "黄冈东"
+		  code: "weinanbei",
+		  name: "渭南北",
+		  abbreviation: "wnb",
 		},
 		{
-			"Abbreviation": "bbn",
-			"code": "bengbunan",
-			"name": "蚌埠南"
+		  code: "wunuer",
+		  name: "乌奴耳",
+		  abbreviation: "wne",
 		},
 		{
-			"Abbreviation": "xyb",
-			"code": "xinyubei",
-			"name": "新余北"
+		  code: "wanning",
+		  name: "万宁",
+		  abbreviation: "wni",
 		},
 		{
-			"Abbreviation": "dg",
-			"code": "dongguan",
-			"name": "东莞"
+		  code: "wannian",
+		  name: "万年",
+		  abbreviation: "wni",
 		},
 		{
-			"Abbreviation": "lmd",
-			"code": "limudian",
-			"name": "里木店"
+		  code: "weinannan",
+		  name: "渭南南",
+		  abbreviation: "wnn",
 		},
 		{
-			"Abbreviation": "pln",
-			"code": "pingliangnan",
-			"name": "平凉南"
+		  code: "weinanzhen",
+		  name: "渭南镇",
+		  abbreviation: "wnz",
 		},
 		{
-			"Abbreviation": "xz",
-			"code": "xizi",
-			"name": "汐子"
+		  code: "wopi",
+		  name: "沃皮",
+		  abbreviation: "wpi",
 		},
 		{
-			"Abbreviation": "hl",
-			"code": "hailin",
-			"name": "海林"
+		  code: "wangqing",
+		  name: "汪清",
+		  abbreviation: "wqi",
 		},
 		{
-			"Abbreviation": "yc",
-			"code": "yanchuan",
-			"name": "砚川"
+		  code: "wuqiao",
+		  name: "吴桥",
+		  abbreviation: "wqi",
 		},
 		{
-			"Abbreviation": "lps",
-			"code": "lepingshi",
-			"name": "乐平市"
+		  code: "wuqing",
+		  name: "武清",
+		  abbreviation: "wqi",
 		},
 		{
-			"Abbreviation": "fsz",
-			"code": "fushanzhen",
-			"name": "福山镇"
+		  code: "wenshui",
+		  name: "文水",
+		  abbreviation: "wsh",
 		},
 		{
-			"Abbreviation": "js",
-			"code": "jishan",
-			"name": "稷山"
+		  code: "wushan",
+		  name: "武山",
+		  abbreviation: "wsh",
 		},
 		{
-			"Abbreviation": "tj",
-			"code": "tianjin",
-			"name": "天津"
+		  code: "weishanzhuang",
+		  name: "魏善庄",
+		  abbreviation: "wsz",
 		},
 		{
-			"Abbreviation": "sdh",
-			"code": "sandaohu",
-			"name": "三道湖"
+		  code: "wangtong",
+		  name: "王瞳",
+		  abbreviation: "wto",
 		},
 		{
-			"Abbreviation": "lf",
-			"code": "lufan",
-			"name": "鲁番"
+		  code: "wutaishan",
+		  name: "五台山",
+		  abbreviation: "wts",
 		},
 		{
-			"Abbreviation": "zp",
-			"code": "zepu",
-			"name": "泽普"
+		  code: "wangtuanzhuang",
+		  name: "王团庄",
+		  abbreviation: "wtz",
 		},
 		{
-			"Abbreviation": "ytx",
-			"code": "yantaixi",
-			"name": "烟台西"
+		  code: "wuwu",
+		  name: "五五",
+		  abbreviation: "wwu",
 		},
 		{
-			"Abbreviation": "qs",
-			"code": "qingsheng",
-			"name": "庆盛"
+		  code: "wuxidong",
+		  name: "无锡东",
+		  abbreviation: "wxd",
 		},
 		{
-			"Abbreviation": "ps",
-			"code": "pingshe",
-			"name": "平社"
+		  code: "wuxiangdong",
+		  name: "武乡东",
+		  abbreviation: "wxd",
 		},
 		{
-			"Abbreviation": "hj",
-			"code": "huojia",
-			"name": "获嘉"
+		  code: "wenxi",
+		  name: "闻喜",
+		  abbreviation: "wxi",
 		},
 		{
-			"Abbreviation": "ddh",
-			"code": "dongdaihe",
-			"name": "东戴河"
+		  code: "weixing",
+		  name: "卫星",
+		  abbreviation: "wxi",
 		},
 		{
-			"Abbreviation": "yw",
-			"code": "yiwu",
-			"name": "义乌"
+		  code: "wuxixinqu",
+		  name: "无锡新区",
+		  abbreviation: "wxq",
 		},
 		{
-			"Abbreviation": "pygc",
-			"code": "pingyaogucheng",
-			"name": "平遥古城"
+		  code: "wuxue",
+		  name: "武穴",
+		  abbreviation: "wxu",
 		},
 		{
-			"Abbreviation": "wjyx",
-			"code": "wangjiayingxi",
-			"name": "王家营西"
+		  code: "wuxu",
+		  name: "吴圩",
+		  abbreviation: "wxu",
 		},
 		{
-			"Abbreviation": "sm",
-			"code": "sanming",
-			"name": "三明"
+		  code: "wangyang",
+		  name: "王杨",
+		  abbreviation: "wya",
 		},
 		{
-			"Abbreviation": "fs",
-			"code": "fushun",
-			"name": "抚顺"
+		  code: "wuyi",
+		  name: "武义",
+		  abbreviation: "wyi",
 		},
 		{
-			"Abbreviation": "ps",
-			"code": "panshi",
-			"name": "磐石"
+		  code: "wuying",
+		  name: "五营",
+		  abbreviation: "wyi",
 		},
 		{
-			"Abbreviation": "lg",
-			"code": "langang",
-			"name": "兰岗"
+		  code: "wayaotian",
+		  name: "瓦窑田",
+		  abbreviation: "wyt",
 		},
 		{
-			"Abbreviation": "hd",
-			"code": "huidong",
-			"name": "惠东"
+		  code: "wuyuan",
+		  name: "五原",
+		  abbreviation: "wyu",
 		},
 		{
-			"Abbreviation": "xyc",
-			"code": "xiongyuecheng",
-			"name": "熊岳城"
+		  code: "weizigou",
+		  name: "苇子沟",
+		  abbreviation: "wzg",
 		},
 		{
-			"Abbreviation": "wjq",
-			"code": "weijiaquan",
-			"name": "魏家泉"
+		  code: "weizhuang",
+		  name: "韦庄",
+		  abbreviation: "wzh",
 		},
 		{
-			"Abbreviation": "xw",
-			"code": "xiuwu",
-			"name": "修武"
+		  code: "wuzhai",
+		  name: "五寨",
+		  abbreviation: "wzh",
 		},
 		{
-			"Abbreviation": "shs",
-			"code": "shuangheshi",
-			"name": "双河市"
+		  code: "wangzhaotun",
+		  name: "王兆屯",
+		  abbreviation: "wzt",
 		},
 		{
-			"Abbreviation": "sjh",
-			"code": "shuijiahu",
-			"name": "水家湖"
+		  code: "weizhangzi",
+		  name: "魏杖子",
+		  abbreviation: "wzz",
 		},
 		{
-			"Abbreviation": "hgy",
-			"code": "huangguayuan",
-			"name": "黄瓜园"
+		  code: "weizizhen",
+		  name: "微子镇",
+		  abbreviation: "wzz",
 		},
 		{
-			"Abbreviation": "fc",
-			"code": "fangcheng",
-			"name": "方城"
+		  code: "xinan",
+		  name: "新安",
+		  abbreviation: "xan",
 		},
 		{
-			"Abbreviation": "linyibei2",
-			"code": "linyibei2",
-			"name": "临沂北"
+		  code: "xingan",
+		  name: "兴安",
+		  abbreviation: "xan",
 		},
 		{
-			"Abbreviation": "hc",
-			"code": "haicheng",
-			"name": "海城"
+		  code: "xinanxian",
+		  name: "新安县",
+		  abbreviation: "xax",
 		},
 		{
-			"Abbreviation": "bp",
-			"code": "beipiao",
-			"name": "北票"
+		  code: "xinbaoan",
+		  name: "新保安",
+		  abbreviation: "xba",
 		},
 		{
-			"Abbreviation": "rj",
-			"code": "ruijin",
-			"name": "瑞金"
+		  code: "xiabancheng",
+		  name: "下板城",
+		  abbreviation: "xbc",
 		},
 		{
-			"Abbreviation": "sz",
-			"code": "suizhou",
-			"name": "随州"
+		  code: "xibali",
+		  name: "西八里",
+		  abbreviation: "xbl",
 		},
 		{
-			"Abbreviation": "bls",
-			"code": "baolongshan",
-			"name": "宝龙山"
+		  code: "xuancheng",
+		  name: "宣城",
+		  abbreviation: "xch",
 		},
 		{
-			"Abbreviation": "fn3",
-			"code": "funing3",
-			"name": "富宁"
+		  code: "xingcheng",
+		  name: "兴城",
+		  abbreviation: "xch",
 		},
 		{
-			"Abbreviation": "sy",
-			"code": "sanyang",
-			"name": "三阳"
+		  code: "xiaocun",
+		  name: "小村",
+		  abbreviation: "xcu",
 		},
 		{
-			"Abbreviation": "mhk",
-			"code": "meihekou",
-			"name": "梅河口"
+		  code: "xinchuoyuan",
+		  name: "新绰源",
+		  abbreviation: "xcy",
 		},
 		{
-			"Abbreviation": "pj",
-			"code": "panjin",
-			"name": "盘锦"
+		  code: "xiachengzi",
+		  name: "下城子",
+		  abbreviation: "xcz",
 		},
 		{
-			"Abbreviation": "mesx",
-			"code": "mershanxi",
-			"name": "帽儿山西"
+		  code: "xinchengzi",
+		  name: "新城子",
+		  abbreviation: "xcz",
 		},
 		{
-			"Abbreviation": "sz",
-			"code": "shuozhou",
-			"name": "朔州"
+		  code: "xide",
+		  name: "喜德",
+		  abbreviation: "xde",
 		},
 		{
-			"Abbreviation": "ks",
-			"code": "kashi",
-			"name": "喀什"
+		  code: "xiaodejiang",
+		  name: "小得江",
+		  abbreviation: "xdj",
 		},
 		{
-			"Abbreviation": "hm",
-			"code": "humen",
-			"name": "虎门"
+		  code: "xidamiao",
+		  name: "西大庙",
+		  abbreviation: "xdm",
 		},
 		{
-			"Abbreviation": "pc",
-			"code": "pucheng",
-			"name": "蒲城"
+		  code: "xiaodong",
+		  name: "小董",
+		  abbreviation: "xdo",
 		},
 		{
-			"Abbreviation": "bjp",
-			"code": "baijipo",
-			"name": "白鸡坡"
+		  code: "xiaodong",
+		  name: "小东",
+		  abbreviation: "xdo",
 		},
 		{
-			"Abbreviation": "bx",
-			"code": "boxing",
-			"name": "博兴"
+		  code: "xiangfang",
+		  name: "香坊",
+		  abbreviation: "xfa",
 		},
 		{
-			"Abbreviation": "yx",
-			"code": "yixing",
-			"name": "宜兴"
+		  code: "xinfeng",
+		  name: "信丰",
+		  abbreviation: "xfe",
 		},
 		{
-			"Abbreviation": "heb",
-			"code": "haerbin",
-			"name": "哈尔滨"
+		  code: "xiangfen",
+		  name: "襄汾",
+		  abbreviation: "xfe",
 		},
 		{
-			"Abbreviation": "qdx",
-			"code": "qingdaoxi",
-			"name": "青岛西"
+		  code: "xifeng",
+		  name: "息烽",
+		  abbreviation: "xfe",
 		},
 		{
-			"Abbreviation": "zlnex",
-			"code": "zhalainuoerxi",
-			"name": "扎赉诺尔西"
+		  code: "xingan",
+		  name: "新干",
+		  abbreviation: "xga",
 		},
 		{
-			"Abbreviation": "dt",
-			"code": "dongtai",
-			"name": "东台"
+		  code: "xiaogan",
+		  name: "孝感",
+		  abbreviation: "xga",
 		},
 		{
-			"Abbreviation": "pzhn",
-			"code": "panzhihuanan",
-			"name": "攀枝花南"
+		  code: "xuangang",
+		  name: "轩岗",
+		  abbreviation: "xga",
 		},
 		{
-			"Abbreviation": "msd",
-			"code": "meishandong",
-			"name": "眉山东"
+		  code: "xigucheng",
+		  name: "西固城",
+		  abbreviation: "xgc",
 		},
 		{
-			"Abbreviation": "hsd",
-			"code": "huangsongdian",
-			"name": "黄松甸"
+		  code: "xingguo",
+		  name: "兴国",
+		  abbreviation: "xgu",
 		},
 		{
-			"Abbreviation": "ms",
-			"code": "mishan",
-			"name": "密山"
+		  code: "xigu",
+		  name: "西固",
+		  abbreviation: "xgu",
 		},
 		{
-			"Abbreviation": "jxn",
-			"code": "jiaxingnan",
-			"name": "嘉兴南"
+		  code: "xiaguanying",
+		  name: "夏官营",
+		  abbreviation: "xgy",
 		},
 		{
-			"Abbreviation": "bhx",
-			"code": "baihexian",
-			"name": "白河县"
+		  code: "xigangzi",
+		  name: "西岗子",
+		  abbreviation: "xgz",
 		},
 		{
-			"Abbreviation": "qjb",
-			"code": "qujingbei",
-			"name": "曲靖北"
+		  code: "xuanhan",
+		  name: "宣汉",
+		  abbreviation: "xha",
 		},
 		{
-			"Abbreviation": "ld",
-			"code": "lindong",
-			"name": "林东"
+		  code: "xinhe",
+		  name: "新和",
+		  abbreviation: "xhe",
 		},
 		{
-			"Abbreviation": "zj",
-			"code": "zhanjiang",
-			"name": "湛江"
+		  code: "xuanhe",
+		  name: "宣和",
+		  abbreviation: "xhe",
 		},
 		{
-			"Abbreviation": "ts",
-			"code": "tangshan",
-			"name": "唐山"
+		  code: "xianghe",
+		  name: "襄河",
+		  abbreviation: "xhe",
 		},
 		{
-			"Abbreviation": "dj",
-			"code": "dajian",
-			"name": "大涧"
+		  code: "xiehejian",
+		  name: "斜河涧",
+		  abbreviation: "xhj",
 		},
 		{
-			"Abbreviation": "hb",
-			"code": "hebian",
-			"name": "河边"
+		  code: "xinhuatun",
+		  name: "新华屯",
+		  abbreviation: "xht",
 		},
 		{
-			"Abbreviation": "dtx",
-			"code": "datongxi",
-			"name": "大通西"
+		  code: "xinhui",
+		  name: "新会",
+		  abbreviation: "xhu",
 		},
 		{
-			"Abbreviation": "hlgl",
-			"code": "huolinguole",
-			"name": "霍林郭勒"
+		  code: "xinhua",
+		  name: "新华",
+		  abbreviation: "xhu",
 		},
 		{
-			"Abbreviation": "tc",
-			"code": "tongcheng",
-			"name": "桐城"
+		  code: "xinhua",
+		  name: "新化",
+		  abbreviation: "xhu",
 		},
 		{
-			"Abbreviation": "tb",
-			"code": "tongbai",
-			"name": "桐柏"
+		  code: "xinhuang",
+		  name: "新晃",
+		  abbreviation: "xhu",
 		},
 		{
-			"Abbreviation": "yk",
-			"code": "yongkang",
-			"name": "永康"
+		  code: "xuanhua",
+		  name: "宣化",
+		  abbreviation: "xhu",
 		},
 		{
-			"Abbreviation": "wh",
-			"code": "weihui",
-			"name": "卫辉"
+		  code: "xinghexi",
+		  name: "兴和西",
+		  abbreviation: "xhx",
 		},
 		{
-			"Abbreviation": "cjg",
-			"code": "caijiagou",
-			"name": "蔡家沟"
+		  code: "xiaoheyan",
+		  name: "小河沿",
+		  abbreviation: "xhy",
 		},
 		{
-			"Abbreviation": "jhn",
-			"code": "jinhuanan",
-			"name": "金华南"
+		  code: "xiahuayuan",
+		  name: "下花园",
+		  abbreviation: "xhy",
 		},
 		{
-			"Abbreviation": "shn",
-			"code": "shanghainan",
-			"name": "上海南"
+		  code: "xiaohezhen",
+		  name: "小河镇",
+		  abbreviation: "xhz",
 		},
 		{
-			"Abbreviation": "dwt",
-			"code": "dawangtan",
-			"name": "大王滩"
+		  code: "xujiadian",
+		  name: "徐家店",
+		  abbreviation: "xjd",
 		},
 		{
-			"Abbreviation": "fy",
-			"code": "fenyang",
-			"name": "汾阳"
+		  code: "xiajiang",
+		  name: "峡江",
+		  abbreviation: "xji",
 		},
 		{
-			"Abbreviation": "syd",
-			"code": "shenyangdong",
-			"name": "沈阳东"
+		  code: "xinjiang",
+		  name: "新绛",
+		  abbreviation: "xji",
 		},
 		{
-			"Abbreviation": "zz",
-			"code": "zizhong",
-			"name": "资中"
+		  code: "xinjiang",
+		  name: "新江",
+		  abbreviation: "xji",
 		},
 		{
-			"Abbreviation": "czx",
-			"code": "chenzhouxi",
-			"name": "郴州西"
+		  code: "xinji",
+		  name: "辛集",
+		  abbreviation: "xji",
 		},
 		{
-			"Abbreviation": "yln",
-			"code": "yanglingnan",
-			"name": "杨陵南"
+		  code: "xujia",
+		  name: "徐家",
+		  abbreviation: "xji",
 		},
 		{
-			"Abbreviation": "ac",
-			"code": "acheng",
-			"name": "阿城"
+		  code: "xijiekou",
+		  name: "西街口",
+		  abbreviation: "xjk",
 		},
 		{
-			"Abbreviation": "wx",
-			"code": "wuxu",
-			"name": "吴圩"
+		  code: "xujiatun",
+		  name: "许家屯",
+		  abbreviation: "xjt",
 		},
 		{
-			"Abbreviation": "xz",
-			"code": "xuanzhong",
-			"name": "悬钟"
+		  code: "xujiatai",
+		  name: "许家台",
+		  abbreviation: "xjt",
 		},
 		{
-			"Abbreviation": "dy",
-			"code": "dongying",
-			"name": "东营"
+		  code: "xiejiazhen",
+		  name: "谢家镇",
+		  abbreviation: "xjz",
 		},
 		{
-			"Abbreviation": "yl2",
-			"code": "yanling2",
-			"name": "鄢陵"
+		  code: "xingkai",
+		  name: "兴凯",
+		  abbreviation: "xka",
 		},
 		{
-			"Abbreviation": "lj",
-			"code": "longjia",
-			"name": "龙嘉"
+		  code: "xiaolan",
+		  name: "小榄",
+		  abbreviation: "xla",
 		},
 		{
-			"Abbreviation": "yr",
-			"code": "yongren",
-			"name": "永仁"
+		  code: "xianglan",
+		  name: "香兰",
+		  abbreviation: "xla",
 		},
 		{
-			"Abbreviation": "sm",
-			"code": "shenmu",
-			"name": "神木"
+		  code: "xinglongdian",
+		  name: "兴隆店",
+		  abbreviation: "xld",
 		},
 		{
-			"Abbreviation": "ycl",
-			"code": "yuncailing",
-			"name": "云彩岭"
+		  code: "xinle",
+		  name: "新乐",
+		  abbreviation: "xle",
 		},
 		{
-			"Abbreviation": "kt",
-			"code": "kuitan",
-			"name": "葵潭"
+		  code: "xinli",
+		  name: "新李",
+		  abbreviation: "xli",
 		},
 		{
-			"Abbreviation": "mh",
-			"code": "mahuang",
-			"name": "马皇"
+		  code: "xiliu",
+		  name: "西柳",
+		  abbreviation: "xli",
 		},
 		{
-			"Abbreviation": "bts",
-			"code": "beitunshi",
-			"name": "北屯市"
+		  code: "xilin",
+		  name: "西林",
+		  abbreviation: "xli",
 		},
 		{
-			"Abbreviation": "hebb",
-			"code": "haerbinbei",
-			"name": "哈尔滨北"
+		  code: "xinlin",
+		  name: "新林",
+		  abbreviation: "xli",
 		},
 		{
-			"Abbreviation": "za",
-			"code": "zhaoan",
-			"name": "诏安"
+		  code: "xianlin",
+		  name: "仙林",
+		  abbreviation: "xli",
 		},
 		{
-			"Abbreviation": "wdlc",
-			"code": "wudalianchi",
-			"name": "五大连池"
+		  code: "xiaoling",
+		  name: "小岭",
+		  abbreviation: "xli",
 		},
 		{
-			"Abbreviation": "myb",
-			"code": "miyunbei",
-			"name": "密云北"
+		  code: "xinlitun",
+		  name: "新立屯",
+		  abbreviation: "xlt",
 		},
 		{
-			"Abbreviation": "hh",
-			"code": "hunhe",
-			"name": "浑河"
+		  code: "xinglongxian",
+		  name: "兴隆县",
+		  abbreviation: "xlx",
 		},
 		{
-			"Abbreviation": "gl",
-			"code": "guanling",
-			"name": "关岭"
+		  code: "xinlizhen",
+		  name: "新立镇",
+		  abbreviation: "xlz",
 		},
 		{
-			"Abbreviation": "qx",
-			"code": "quxian",
-			"name": "渠县"
+		  code: "xinglongzhen",
+		  name: "兴隆镇",
+		  abbreviation: "xlz",
 		},
 		{
-			"Abbreviation": "gl",
-			"code": "gaoleng",
-			"name": "高楞"
+		  code: "xinmin",
+		  name: "新民",
+		  abbreviation: "xmi",
 		},
 		{
-			"Abbreviation": "pxg",
-			"code": "pingxingguan",
-			"name": "平型关"
+		  code: "ximashan",
+		  name: "西麻山",
+		  abbreviation: "xms",
 		},
 		{
-			"Abbreviation": "xgd",
-			"code": "xiaogandong",
-			"name": "孝感东"
+		  code: "xiamatang",
+		  name: "下马塘",
+		  abbreviation: "xmt",
 		},
 		{
-			"Abbreviation": "hg",
-			"code": "hangu",
-			"name": "汉沽"
+		  code: "xiaonan",
+		  name: "孝南",
+		  abbreviation: "xna",
 		},
 		{
-			"Abbreviation": "cgb",
-			"code": "changgebei",
-			"name": "长葛北"
+		  code: "xianningbei",
+		  name: "咸宁北",
+		  abbreviation: "xnb",
 		},
 		{
-			"Abbreviation": "yj",
-			"code": "yanjiao",
-			"name": "燕郊"
+		  code: "xingning",
+		  name: "兴宁",
+		  abbreviation: "xni",
 		},
 		{
-			"Abbreviation": "qzn",
-			"code": "quanzhounan",
-			"name": "全州南"
+		  code: "xianning",
+		  name: "咸宁",
+		  abbreviation: "xni",
 		},
 		{
-			"Abbreviation": "hxt",
-			"code": "hongxiantai",
-			"name": "红岘台"
+		  code: "xipudong",
+		  name: "犀浦东",
+		  abbreviation: "xpd",
 		},
 		{
-			"Abbreviation": "sy",
-			"code": "shangyu",
-			"name": "上虞"
+		  code: "xingping",
+		  name: "兴平",
+		  abbreviation: "xpi",
 		},
 		{
-			"Abbreviation": "lw",
-			"code": "lingwu",
-			"name": "灵武"
+		  code: "xiping",
+		  name: "西平",
+		  abbreviation: "xpi",
 		},
 		{
-			"Abbreviation": "wzg",
-			"code": "weizigou",
-			"name": "苇子沟"
+		  code: "xinpingtian",
+		  name: "新坪田",
+		  abbreviation: "xpt",
 		},
 		{
-			"Abbreviation": "bg",
-			"code": "baiguo",
-			"name": "柏果"
+		  code: "xiapu",
+		  name: "霞浦",
+		  abbreviation: "xpu",
 		},
 		{
-			"Abbreviation": "zj",
-			"code": "zhuji",
-			"name": "诸暨"
+		  code: "xupu",
+		  name: "溆浦",
+		  abbreviation: "xpu",
 		},
 		{
-			"Abbreviation": "zzx",
-			"code": "zhuzhouxi",
-			"name": "株洲西"
+		  code: "xipu",
+		  name: "犀浦",
+		  abbreviation: "xpu",
 		},
 		{
-			"Abbreviation": "zyx",
-			"code": "zunyixi",
-			"name": "遵义西"
+		  code: "xinqiu",
+		  name: "新邱",
+		  abbreviation: "xqi",
 		},
 		{
-			"Abbreviation": "csn",
-			"code": "changshanan",
-			"name": "长沙南"
+		  code: "xinqing",
+		  name: "新青",
+		  abbreviation: "xqi",
 		},
 		{
-			"Abbreviation": "tz",
-			"code": "tengzhou",
-			"name": "滕州"
+		  code: "xingquanbu",
+		  name: "兴泉堡",
+		  abbreviation: "xqp",
 		},
 		{
-			"Abbreviation": "db",
-			"code": "daba1",
-			"name": "大巴"
+		  code: "xianrenqiao",
+		  name: "仙人桥",
+		  abbreviation: "xrq",
 		},
 		{
-			"Abbreviation": "th",
-			"code": "tanghe",
-			"name": "唐河"
+		  code: "xiaosigou",
+		  name: "小寺沟",
+		  abbreviation: "xsg",
 		},
 		{
-			"Abbreviation": "jj",
-			"code": "jiujiang",
-			"name": "九江"
+		  code: "xishui",
+		  name: "浠水",
+		  abbreviation: "xsh",
 		},
 		{
-			"Abbreviation": "sks",
-			"code": "balidianzi",
-			"name": "八里甸子"
+		  code: "xiushan",
+		  name: "秀山",
+		  abbreviation: "xsh",
 		},
 		{
-			"Abbreviation": "dgs",
-			"code": "dagushan",
-			"name": "大孤山"
+		  code: "xingshu",
+		  name: "杏树",
+		  abbreviation: "xsh",
 		},
 		{
-			"Abbreviation": "jx",
-			"code": "jiexiu",
-			"name": "介休"
+		  code: "xiashi",
+		  name: "夏石",
+		  abbreviation: "xsh",
 		},
 		{
-			"Abbreviation": "kyx",
-			"code": "kaiyuanxi",
-			"name": "开原西"
+		  code: "xiashe",
+		  name: "下社",
+		  abbreviation: "xsh",
 		},
 		{
-			"Abbreviation": "shtl",
-			"code": "saihantala",
-			"name": "赛汗塔拉"
+		  code: "xushui",
+		  name: "徐水",
+		  abbreviation: "xsh",
 		},
 		{
-			"Abbreviation": "jtn",
-			"code": "jiutainan",
-			"name": "九台南"
+		  code: "xiaoshi",
+		  name: "小市",
+		  abbreviation: "xsh",
 		},
 		{
-			"Abbreviation": "ymd",
-			"code": "yunmengdong",
-			"name": "云梦东"
+		  code: "xiaoshao",
+		  name: "小哨",
+		  abbreviation: "xsh",
 		},
 		{
-			"Abbreviation": "gnh",
-			"code": "gongnonghu",
-			"name": "工农湖"
+		  code: "xinsongpu",
+		  name: "新松浦",
+		  abbreviation: "xsp",
 		},
 		{
-			"Abbreviation": "sj",
-			"code": "shuangji",
-			"name": "双吉"
+		  code: "xingshutun",
+		  name: "杏树屯",
+		  abbreviation: "xst",
 		},
 		{
-			"Abbreviation": "kdlz",
-			"code": "kundulunzhao",
-			"name": "昆都仑召"
+		  code: "xusanwan",
+		  name: "许三湾",
+		  abbreviation: "xsw",
 		},
 		{
-			"Abbreviation": "lkp",
-			"code": "lukoupu",
-			"name": "路口铺"
+		  code: "xiangtan",
+		  name: "湘潭",
+		  abbreviation: "xta",
 		},
 		{
-			"Abbreviation": "yq",
-			"code": "yueqing",
-			"name": "乐清"
+		  code: "xingtai",
+		  name: "邢台",
+		  abbreviation: "xta",
 		},
 		{
-			"Abbreviation": "yx",
-			"code": "yangxi",
-			"name": "阳西"
+		  code: "xiangtang",
+		  name: "向塘",
+		  abbreviation: "xta",
 		},
 		{
-			"Abbreviation": "xh",
-			"code": "xihua",
-			"name": "西华"
+		  code: "xiantaoxi",
+		  name: "仙桃西",
+		  abbreviation: "xtx",
 		},
 		{
-			"Abbreviation": "jmc",
-			"code": "jinmacun",
-			"name": "金马村"
+		  code: "xiataizi",
+		  name: "下台子",
+		  abbreviation: "xtz",
 		},
 		{
-			"Abbreviation": "sgz",
-			"code": "shanggaozhen",
-			"name": "上高镇"
+		  code: "xuwen",
+		  name: "徐闻",
+		  abbreviation: "xwe",
 		},
 		{
-			"Abbreviation": "yl",
-			"code": "yilin",
-			"name": "伊林"
+		  code: "xinwopu",
+		  name: "新窝铺",
+		  abbreviation: "xwp",
 		},
 		{
-			"Abbreviation": "ld",
-			"code": "ledong",
-			"name": "乐东"
+		  code: "xiuwu",
+		  name: "修武",
+		  abbreviation: "xwu",
 		},
 		{
-			"Abbreviation": "lb",
-			"code": "lingbao",
-			"name": "灵宝"
+		  code: "xiaoxi",
+		  name: "孝西",
+		  abbreviation: "xxi",
 		},
 		{
-			"Abbreviation": "cl",
-			"code": "changle",
-			"name": "昌乐"
+		  code: "xinxian",
+		  name: "新县",
+		  abbreviation: "xxi",
 		},
 		{
-			"Abbreviation": "xx",
-			"code": "xiaoxi",
-			"name": "孝西"
+		  code: "xixian",
+		  name: "息县",
+		  abbreviation: "xxi",
 		},
 		{
-			"Abbreviation": "fcd",
-			"code": "fengchengdong",
-			"name": "凤城东"
+		  code: "xixiang",
+		  name: "西乡",
+		  abbreviation: "xxi",
 		},
 		{
-			"Abbreviation": "hpz",
-			"code": "huapengzi",
-			"name": "花棚子"
+		  code: "xiangxiang",
+		  name: "湘乡",
+		  abbreviation: "xxi",
 		},
 		{
-			"Abbreviation": "lcb",
-			"code": "longchangbei",
-			"name": "隆昌北"
+		  code: "xixia",
+		  name: "西峡",
+		  abbreviation: "xxi",
 		},
 		{
-			"Abbreviation": "flq",
-			"code": "fuliqu",
-			"name": "福利区"
+		  code: "xiaoxinjie",
+		  name: "小新街",
+		  abbreviation: "xxj",
 		},
 		{
-			"Abbreviation": "xqb",
-			"code": "xingquanbu",
-			"name": "兴泉堡"
+		  code: "xinxingxian",
+		  name: "新兴县",
+		  abbreviation: "xxx",
 		},
 		{
-			"Abbreviation": "hfbc",
-			"code": "hefeibeicheng",
-			"name": "合肥北城"
+		  code: "xixiaozhao",
+		  name: "西小召",
+		  abbreviation: "xxz",
 		},
 		{
-			"Abbreviation": "ly",
-			"code": "linyuan",
-			"name": "林源"
+		  code: "xiaoxizhuang",
+		  name: "小西庄",
+		  abbreviation: "xxz",
 		},
 		{
-			"Abbreviation": "yp",
-			"code": "yangpu",
-			"name": "羊堡"
+		  code: "xunyang",
+		  name: "旬阳",
+		  abbreviation: "xya",
 		},
 		{
-			"Abbreviation": "tj",
-			"code": "tongjiang",
-			"name": "同江"
+		  code: "xiangyang",
+		  name: "向阳",
+		  abbreviation: "xya",
 		},
 		{
-			"Abbreviation": "gzs",
-			"code": "guanzhaishan",
-			"name": "冠豸山"
+		  code: "xunyangbei",
+		  name: "旬阳北",
+		  abbreviation: "xyb",
 		},
 		{
-			"Abbreviation": "zm",
-			"code": "zhongmu",
-			"name": "中牟"
+		  code: "xingye",
+		  name: "兴业",
+		  abbreviation: "xye",
 		},
 		{
-			"Abbreviation": "gjz",
-			"code": "gujiazi",
-			"name": "孤家子"
+		  code: "xiaoyugu",
+		  name: "小雨谷",
+		  abbreviation: "xyg",
 		},
 		{
-			"Abbreviation": "jy",
-			"code": "jiangyan",
-			"name": "姜堰"
+		  code: "xingyi",
+		  name: "兴义",
+		  abbreviation: "xyi",
 		},
 		{
-			"Abbreviation": "yld",
-			"code": "yongledian",
-			"name": "永乐店"
+		  code: "xinyi",
+		  name: "新沂",
+		  abbreviation: "xyi",
 		},
 		{
-			"Abbreviation": "qy",
-			"code": "qinyang",
-			"name": "沁阳"
+		  code: "xinyi",
+		  name: "信宜",
+		  abbreviation: "xyi",
 		},
 		{
-			"Abbreviation": "xzz",
-			"code": "xinzhangzi",
-			"name": "新杖子"
+		  code: "xiaoyuejiu",
+		  name: "小月旧",
+		  abbreviation: "xyj",
 		},
 		{
-			"Abbreviation": "df",
-			"code": "dafeng",
-			"name": "大丰"
+		  code: "xiaoyangqi",
+		  name: "小扬气",
+		  abbreviation: "xyq",
 		},
 		{
-			"Abbreviation": "hy",
-			"code": "hengyang",
-			"name": "衡阳"
+		  code: "xiangyuan",
+		  name: "襄垣",
+		  abbreviation: "xyu",
 		},
 		{
-			"Abbreviation": "ah",
-			"code": "aihe1",
-			"name": "艾河"
+		  code: "xiangyunxi",
+		  name: "祥云西",
+		  abbreviation: "xyx",
 		},
 		{
-			"Abbreviation": "yp",
-			"code": "yuping",
-			"name": "玉屏"
+		  code: "xiayixian",
+		  name: "夏邑县",
+		  abbreviation: "xyx",
 		},
 		{
-			"Abbreviation": "xjz",
-			"code": "xiejiazhen",
-			"name": "谢家镇"
+		  code: "xinyouyi",
+		  name: "新友谊",
+		  abbreviation: "xyy",
 		},
 		{
-			"Abbreviation": "bz",
-			"code": "binzhou",
-			"name": "宾州"
+		  code: "xinyangzhen",
+		  name: "新阳镇",
+		  abbreviation: "xyz",
 		},
 		{
-			"Abbreviation": "cp",
-			"code": "changping",
-			"name": "昌平"
+		  code: "xuzhoudong",
+		  name: "徐州东",
+		  abbreviation: "xzd",
 		},
 		{
-			"Abbreviation": "wlg",
-			"code": "walagan",
-			"name": "瓦拉干"
+		  code: "xinzhangfang",
+		  name: "新帐房",
+		  abbreviation: "xzf",
 		},
 		{
-			"Abbreviation": "bc",
-			"code": "bachu",
-			"name": "巴楚"
+		  code: "xiangzhou",
+		  name: "襄州",
+		  abbreviation: "xzh",
 		},
 		{
-			"Abbreviation": "cl",
-			"code": "cili",
-			"name": "慈利"
+		  code: "xinzhou",
+		  name: "忻州",
+		  abbreviation: "xzh",
 		},
 		{
-			"Abbreviation": "mg",
-			"code": "minggang",
-			"name": "明港"
+		  code: "xinzhao",
+		  name: "新肇",
+		  abbreviation: "xzh",
 		},
 		{
-			"Abbreviation": "npb",
-			"code": "nanpubei",
-			"name": "南堡北"
+		  code: "xuanzhong",
+		  name: "悬钟",
+		  abbreviation: "xzh",
 		},
 		{
-			"Abbreviation": "spt",
-			"code": "shapotou",
-			"name": "沙坡头"
+		  code: "xizi",
+		  name: "汐子",
+		  abbreviation: "xzi",
 		},
 		{
-			"Abbreviation": "cl",
-			"code": "chaling",
-			"name": "茶陵"
+		  code: "xizhelimu",
+		  name: "西哲里木",
+		  abbreviation: "xzm",
 		},
 		{
-			"Abbreviation": "cz",
-			"code": "changzheng",
-			"name": "长征"
+		  code: "xinzhangzi",
+		  name: "新杖子",
+		  abbreviation: "xzz",
 		},
 		{
-			"Abbreviation": "tc",
-			"code": "tacheng",
-			"name": "塔城"
+		  code: "yian",
+		  name: "依安",
+		  abbreviation: "yan",
 		},
 		{
-			"Abbreviation": "yz",
-			"code": "yizi",
-			"name": "迤资"
+		  code: "yaoan",
+		  name: "姚安",
+		  abbreviation: "yan",
 		},
 		{
-			"Abbreviation": "bjz",
-			"code": "beijingzi",
-			"name": "北井子"
+		  code: "yongan",
+		  name: "永安",
+		  abbreviation: "yan",
 		},
 		{
-			"Abbreviation": "lp",
-			"code": "luoping",
-			"name": "罗平"
+		  code: "yonganxiang",
+		  name: "永安乡",
+		  abbreviation: "yax",
 		},
 		{
-			"Abbreviation": "sz",
-			"code": "suzhou1",
-			"name": "宿州"
+		  code: "yabuli",
+		  name: "亚布力",
+		  abbreviation: "ybl",
 		},
 		{
-			"Abbreviation": "syd",
-			"code": "shangyaodun",
-			"name": "上腰墩"
+		  code: "yuanbaoshan",
+		  name: "元宝山",
+		  abbreviation: "ybs",
 		},
 		{
-			"Abbreviation": "zx",
-			"code": "zixi",
-			"name": "资溪"
+		  code: "yangcao",
+		  name: "羊草",
+		  abbreviation: "yca",
 		},
 		{
-			"Abbreviation": "hj",
-			"code": "heijing",
-			"name": "黑井"
+		  code: "yangcaodi",
+		  name: "秧草地",
+		  abbreviation: "ycd",
 		},
 		{
-			"Abbreviation": "zw",
-			"code": "zhangwu",
-			"name": "彰武"
+		  code: "yecheng",
+		  name: "叶城",
+		  abbreviation: "ych",
 		},
 		{
-			"Abbreviation": "frn",
-			"code": "furongnan",
-			"name": "芙蓉南"
+		  code: "yanchi",
+		  name: "盐池",
+		  abbreviation: "ych",
 		},
 		{
-			"Abbreviation": "pnn",
-			"code": "pingnannan",
-			"name": "平南南"
+		  code: "yanchuan",
+		  name: "砚川",
+		  abbreviation: "ych",
 		},
 		{
-			"Abbreviation": "paz",
-			"code": "pinganzhen",
-			"name": "平安镇"
+		  code: "yangchun",
+		  name: "阳春",
+		  abbreviation: "ych",
 		},
 		{
-			"Abbreviation": "cy",
-			"code": "ciyao",
-			"name": "磁窑"
+		  code: "yangchenghu",
+		  name: "阳澄湖",
+		  abbreviation: "ych",
 		},
 		{
-			"Abbreviation": "kmn",
-			"code": "kunmingnan",
-			"name": "昆明南"
+		  code: "yingcheng",
+		  name: "应城",
+		  abbreviation: "ych",
 		},
 		{
-			"Abbreviation": "ys",
-			"code": "yushan",
-			"name": "玉山"
+		  code: "yicheng",
+		  name: "宜城",
+		  abbreviation: "ych",
 		},
 		{
-			"Abbreviation": "psh2",
-			"code": "pingshan2",
-			"name": "屏山"
+		  code: "yuncheng",
+		  name: "郓城",
+		  abbreviation: "ych",
 		},
 		{
-			"Abbreviation": "dedh",
-			"code": "dongerdaohe",
-			"name": "东二道河"
+		  code: "yancheng",
+		  name: "晏城",
+		  abbreviation: "ych",
 		},
 		{
-			"Abbreviation": "dsx",
-			"code": "dongshengxi",
-			"name": "东胜西"
+		  code: "yucheng",
+		  name: "禹城",
+		  abbreviation: "ych",
 		},
 		{
-			"Abbreviation": "lsd",
-			"code": "lingshidong",
-			"name": "灵石东"
+		  code: "yangcha",
+		  name: "阳岔",
+		  abbreviation: "ych",
 		},
 		{
-			"Abbreviation": "jyjc",
-			"code": "jieyangjichang",
-			"name": "揭阳机场"
+		  code: "yingchun",
+		  name: "迎春",
+		  abbreviation: "ych",
 		},
 		{
-			"Abbreviation": "scz",
-			"code": "shanchengzhen",
-			"name": "山城镇"
+		  code: "yangcheng",
+		  name: "阳城",
+		  abbreviation: "ych",
 		},
 		{
-			"Abbreviation": "mdh",
-			"code": "mengdonghe",
-			"name": "猛洞河"
+		  code: "yanchi",
+		  name: "雁翅",
+		  abbreviation: "ych",
 		},
 		{
-			"Abbreviation": "ms",
-			"code": "mingshan",
-			"name": "名山"
+		  code: "yuncailing",
+		  name: "云彩岭",
+		  abbreviation: "ycl",
 		},
 		{
-			"Abbreviation": "gg",
-			"code": "gangu",
-			"name": "甘谷"
+		  code: "yuchengxian",
+		  name: "虞城县",
+		  abbreviation: "ycx",
 		},
 		{
-			"Abbreviation": "xyq",
-			"code": "xiaoyangqi",
-			"name": "小扬气"
+		  code: "yingchengzi",
+		  name: "营城子",
+		  abbreviation: "ycz",
 		},
 		{
-			"Abbreviation": "ymx",
-			"code": "yuanmouxi",
-			"name": "元谋西"
+		  code: "yingde",
+		  name: "英德",
+		  abbreviation: "yde",
 		},
 		{
-			"Abbreviation": "dhs",
-			"code": "dahushan",
-			"name": "大虎山"
+		  code: "yongdeng",
+		  name: "永登",
+		  abbreviation: "yde",
 		},
 		{
-			"Abbreviation": "lwb",
-			"code": "lingwubei",
-			"name": "灵武北"
+		  code: "yongding",
+		  name: "永定",
+		  abbreviation: "ydi",
 		},
 		{
-			"Abbreviation": "ly",
-			"code": "luoyuan",
-			"name": "罗源"
+		  code: "yindi",
+		  name: "尹地",
+		  abbreviation: "ydi",
 		},
 		{
-			"Abbreviation": "qjx",
-			"code": "qingjianxian",
-			"name": "清涧县"
+		  code: "yangdong",
+		  name: "阳东",
+		  abbreviation: "ydo",
 		},
 		{
-			"Abbreviation": "js",
-			"code": "jianshi",
-			"name": "建始"
+		  code: "yandangshan",
+		  name: "雁荡山",
+		  abbreviation: "yds",
 		},
 		{
-			"Abbreviation": "wz",
-			"code": "wuzhou",
-			"name": "梧州"
+		  code: "yudu",
+		  name: "于都",
+		  abbreviation: "ydu",
 		},
 		{
-			"Abbreviation": "gzx",
-			"code": "ganzhouxi",
-			"name": "赣州西"
+		  code: "yuandun",
+		  name: "园墩",
+		  abbreviation: "ydu",
 		},
 		{
-			"Abbreviation": "xp",
-			"code": "xiapu",
-			"name": "霞浦"
+		  code: "yingdexi",
+		  name: "英德西",
+		  abbreviation: "ydx",
 		},
 		{
-			"Abbreviation": "mx",
-			"code": "mianxian",
-			"name": "勉县"
+		  code: "yongfengying",
+		  name: "永丰营",
+		  abbreviation: "yfy",
 		},
 		{
-			"Abbreviation": "dj",
-			"code": "dianjiang",
-			"name": "垫江"
+		  code: "yanggao",
+		  name: "阳高",
+		  abbreviation: "yga",
 		},
 		{
-			"Abbreviation": "sy",
-			"code": "shouyang",
-			"name": "寿阳"
+		  code: "yanggang",
+		  name: "杨岗",
+		  abbreviation: "yga",
 		},
 		{
-			"Abbreviation": "bhs",
-			"code": "baohuashan",
-			"name": "宝华山"
+		  code: "yanggu",
+		  name: "阳谷",
+		  abbreviation: "ygu",
 		},
 		{
-			"Abbreviation": "ss",
-			"code": "shanshan",
-			"name": "鄯善"
+		  code: "youhao",
+		  name: "友好",
+		  abbreviation: "yha",
 		},
 		{
-			"Abbreviation": "lx",
-			"code": "langxiang",
-			"name": "朗乡"
+		  code: "yuhang",
+		  name: "余杭",
+		  abbreviation: "yha",
 		},
 		{
-			"Abbreviation": "wft",
-			"code": "wanfatun",
-			"name": "万发屯"
+		  code: "yanhecheng",
+		  name: "沿河城",
+		  abbreviation: "yhc",
 		},
 		{
-			"Abbreviation": "sy",
-			"code": "shangyuan",
-			"name": "上园"
+		  code: "yanhui",
+		  name: "岩会",
+		  abbreviation: "yhu",
 		},
 		{
-			"Abbreviation": "bycg",
-			"code": "baiyinchagan",
-			"name": "白音察干"
+		  code: "yangjiuhe",
+		  name: "羊臼河",
+		  abbreviation: "yjh",
 		},
 		{
-			"Abbreviation": "jst",
-			"code": "jiangsuotian",
-			"name": "江所田"
+		  code: "yanjin",
+		  name: "盐津",
+		  abbreviation: "yji",
 		},
 		{
-			"Abbreviation": "tjt",
-			"code": "taojiatun",
-			"name": "陶家屯"
+		  code: "yangjiang",
+		  name: "阳江",
+		  abbreviation: "yji",
 		},
 		{
-			"Abbreviation": "ss",
-			"code": "sishui",
-			"name": "泗水"
+		  code: "yongjia",
+		  name: "永嘉",
+		  abbreviation: "yji",
 		},
 		{
-			"Abbreviation": "cqn",
-			"code": "chongqingnan",
-			"name": "重庆南"
+		  code: "yujiang",
+		  name: "余江",
+		  abbreviation: "yji",
 		},
 		{
-			"Abbreviation": "sjz",
-			"code": "shijiazui",
-			"name": "施家嘴"
+		  code: "yanjiao",
+		  name: "燕郊",
+		  abbreviation: "yji",
 		},
 		{
-			"Abbreviation": "phk",
-			"code": "pinghekou",
-			"name": "平河口"
+		  code: "yingjie",
+		  name: "营街",
+		  abbreviation: "yji",
 		},
 		{
-			"Abbreviation": "dq",
-			"code": "daqing",
-			"name": "大庆"
+		  code: "yaojia",
+		  name: "姚家",
+		  abbreviation: "yji",
 		},
 		{
-			"Abbreviation": "slx",
-			"code": "shilinxi",
-			"name": "石林西"
+		  code: "yuejiajing",
+		  name: "岳家井",
+		  abbreviation: "yjj",
 		},
 		{
-			"Abbreviation": "gns",
-			"code": "guangningsi",
-			"name": "广宁寺"
+		  code: "yijianpu",
+		  name: "一间堡",
+		  abbreviation: "yjp",
 		},
 		{
-			"Abbreviation": "lg",
-			"code": "lagu",
-			"name": "拉古"
+		  code: "yingjisha",
+		  name: "英吉沙",
+		  abbreviation: "yjs",
 		},
 		{
-			"Abbreviation": "qz",
-			"code": "quanzhou",
-			"name": "泉州"
+		  code: "yunjusi",
+		  name: "云居寺",
+		  abbreviation: "yjs",
 		},
 		{
-			"Abbreviation": "cn",
-			"code": "cangnan",
-			"name": "苍南"
+		  code: "yanjiazhuang",
+		  name: "燕家庄",
+		  abbreviation: "yjz",
 		},
 		{
-			"Abbreviation": "gc",
-			"code": "gaocheng",
-			"name": "藁城"
+		  code: "yongkang",
+		  name: "永康",
+		  abbreviation: "yka",
 		},
 		{
-			"Abbreviation": "nf",
-			"code": "nanfen",
-			"name": "南芬"
+		  code: "yingkoudong",
+		  name: "营口东",
+		  abbreviation: "ykd",
 		},
 		{
-			"Abbreviation": "xd",
-			"code": "xiaodong",
-			"name": "小董"
+		  code: "yonglang",
+		  name: "永郎",
+		  abbreviation: "yla",
 		},
 		{
-			"Abbreviation": "nlx",
-			"code": "ninglingxian",
-			"name": "宁陵县"
+		  code: "yinlang",
+		  name: "银浪",
+		  abbreviation: "yla",
 		},
 		{
-			"Abbreviation": "zz",
-			"code": "zhuzhou",
-			"name": "株洲"
+		  code: "yiliangbei",
+		  name: "宜良北",
+		  abbreviation: "ylb",
 		},
 		{
-			"Abbreviation": "hz",
-			"code": "huzhou",
-			"name": "湖州"
+		  code: "yongledian",
+		  name: "永乐店",
+		  abbreviation: "yld",
 		},
 		{
-			"Abbreviation": "ty",
-			"code": "tianyi",
-			"name": "天义"
+		  code: "yilaha",
+		  name: "伊拉哈",
+		  abbreviation: "ylh",
 		},
 		{
-			"Abbreviation": "sx",
-			"code": "shaxian",
-			"name": "沙县"
+		  code: "yangling",
+		  name: "杨陵",
+		  abbreviation: "yli",
 		},
 		{
-			"Abbreviation": "tx",
-			"code": "tengxian",
-			"name": "藤县"
+		  code: "yilin",
+		  name: "伊林",
+		  abbreviation: "yli",
 		},
 		{
-			"Abbreviation": "hy",
-			"code": "huayuan",
-			"name": "花园"
+		  code: "yanglin",
+		  name: "杨林",
+		  abbreviation: "yli",
 		},
 		{
-			"Abbreviation": "llb",
-			"code": "longlibei",
-			"name": "龙里北"
+		  code: "yuliangpu",
+		  name: "余粮堡",
+		  abbreviation: "ylp",
 		},
 		{
-			"Abbreviation": "cl",
-			"code": "changli",
-			"name": "昌黎"
+		  code: "yangliuqing",
+		  name: "杨柳青",
+		  abbreviation: "ylq",
 		},
 		{
-			"Abbreviation": "tz",
-			"code": "tongzi",
-			"name": "桐梓"
+		  code: "yueliangtian",
+		  name: "月亮田",
+		  abbreviation: "ylt",
 		},
 		{
-			"Abbreviation": "mlt",
-			"code": "mulitu",
-			"name": "木里图"
+		  code: "yima",
+		  name: "义马",
+		  abbreviation: "yma",
 		},
 		{
-			"Abbreviation": "zx",
-			"code": "zhenxiong",
-			"name": "镇雄"
+		  code: "yangmingbu",
+		  name: "阳明堡",
+		  abbreviation: "ymb",
 		},
 		{
-			"Abbreviation": "hp",
-			"code": "hepu",
-			"name": "合浦"
+		  code: "yumen",
+		  name: "玉门",
+		  abbreviation: "yme",
 		},
 		{
-			"Abbreviation": "lws",
-			"code": "langweishan",
-			"name": "狼尾山"
+		  code: "yunmeng",
+		  name: "云梦",
+		  abbreviation: "yme",
 		},
 		{
-			"Abbreviation": "dst",
-			"code": "dashitou",
-			"name": "大石头"
+		  code: "yuanmou",
+		  name: "元谋",
+		  abbreviation: "ymo",
 		},
 		{
-			"Abbreviation": "nj",
-			"code": "nengjia",
-			"name": "能家"
+		  code: "yimianshan",
+		  name: "一面山",
+		  abbreviation: "yms",
 		},
 		{
-			"Abbreviation": "ml",
-			"code": "maoling",
-			"name": "茅岭"
+		  code: "yinan",
+		  name: "沂南",
+		  abbreviation: "yna",
 		},
 		{
-			"Abbreviation": "byeb",
-			"code": "baiyunebo",
-			"name": "白云鄂博"
+		  code: "yinai",
+		  name: "宜耐",
+		  abbreviation: "yna",
 		},
 		{
-			"Abbreviation": "kxl",
-			"code": "kangxiling",
-			"name": "康熙岭"
+		  code: "yiningdong",
+		  name: "伊宁东",
+		  abbreviation: "ynd",
 		},
 		{
-			"Abbreviation": "fy",
-			"code": "fenyi",
-			"name": "分宜"
+		  code: "yingpanshui",
+		  name: "营盘水",
+		  abbreviation: "yps",
 		},
 		{
-			"Abbreviation": "jx",
-			"code": "jingxing",
-			"name": "井陉"
+		  code: "yangpu",
+		  name: "羊堡",
+		  abbreviation: "ypu",
 		},
 		{
-			"Abbreviation": "xg",
-			"code": "xuangang",
-			"name": "轩岗"
+		  code: "yangquanbei",
+		  name: "阳泉北",
+		  abbreviation: "yqb",
 		},
 		{
-			"Abbreviation": "wg",
-			"code": "wanggang",
-			"name": "王岗"
+		  code: "yanqi",
+		  name: "焉耆",
+		  abbreviation: "yqi",
 		},
 		{
-			"Abbreviation": "lz",
-			"code": "lanzhou",
-			"name": "兰州"
+		  code: "yueqing",
+		  name: "乐清",
+		  abbreviation: "yqi",
 		},
 		{
-			"Abbreviation": "szps",
-			"code": "shenzhenpingshan",
-			"name": "深圳坪山"
+		  code: "yuanqian",
+		  name: "源迁",
+		  abbreviation: "yqi",
 		},
 		{
-			"Abbreviation": "xf",
-			"code": "xinfeng",
-			"name": "信丰"
+		  code: "yaoqianhutun",
+		  name: "姚千户屯",
+		  abbreviation: "yqt",
 		},
 		{
-			"Abbreviation": "wb",
-			"code": "wubu",
-			"name": "吴堡"
+		  code: "yangqu",
+		  name: "阳曲",
+		  abbreviation: "yqu",
 		},
 		{
-			"Abbreviation": "th",
-			"code": "taihu",
-			"name": "太湖"
+		  code: "yushugou",
+		  name: "榆树沟",
+		  abbreviation: "ysg",
 		},
 		{
-			"Abbreviation": "xtd",
-			"code": "xingtaidong",
-			"name": "邢台东"
+		  code: "yushe",
+		  name: "榆社",
+		  abbreviation: "ysh",
 		},
 		{
-			"Abbreviation": "bytl",
-			"code": "baiyintala",
-			"name": "白音他拉"
+		  code: "yushi",
+		  name: "玉石",
+		  abbreviation: "ysh",
 		},
 		{
-			"Abbreviation": "abgq",
-			"code": "abagaqi",
-			"name": "阿巴嘎旗"
+		  code: "yanshi",
+		  name: "偃师",
+		  abbreviation: "ysh",
 		},
 		{
-			"Abbreviation": "shz",
-			"code": "sanhezhuang",
-			"name": "三合庄"
+		  code: "yueshan",
+		  name: "月山",
+		  abbreviation: "ysh",
 		},
 		{
-			"Abbreviation": "fxd",
-			"code": "fuxiandong",
-			"name": "富县东"
+		  code: "yingshang",
+		  name: "颍上",
+		  abbreviation: "ysh",
 		},
 		{
-			"Abbreviation": "zq",
-			"code": "zhuangqiao",
-			"name": "庄桥"
+		  code: "yishui",
+		  name: "沂水",
+		  abbreviation: "ysh",
 		},
 		{
-			"Abbreviation": "ps",
-			"code": "pengshui",
-			"name": "彭水"
+		  code: "yushe",
+		  name: "玉舍",
+		  abbreviation: "ysh",
 		},
 		{
-			"Abbreviation": "lx",
-			"code": "lanxian",
-			"name": "岚县"
+		  code: "yaoshang",
+		  name: "窑上",
+		  abbreviation: "ysh",
 		},
 		{
-			"Abbreviation": "yq",
-			"code": "yuquan",
-			"name": "玉泉"
+		  code: "yuanshi",
+		  name: "元氏",
+		  abbreviation: "ysh",
 		},
 		{
-			"Abbreviation": "bk",
-			"code": "baokang",
-			"name": "保康"
+		  code: "yangshuling",
+		  name: "杨树岭",
+		  abbreviation: "ysl",
 		},
 		{
-			"Abbreviation": "hhht",
-			"code": "huhehaote",
-			"name": "呼和浩特"
+		  code: "yesanpo",
+		  name: "野三坡",
+		  abbreviation: "ysp",
 		},
 		{
-			"Abbreviation": "ls",
-			"code": "lasa",
-			"name": "拉萨"
+		  code: "yushutun",
+		  name: "榆树屯",
+		  abbreviation: "yst",
 		},
 		{
-			"Abbreviation": "xy",
-			"code": "xianyou",
-			"name": "仙游"
+		  code: "yushutai",
+		  name: "榆树台",
+		  abbreviation: "yst",
 		},
 		{
-			"Abbreviation": "bj",
-			"code": "binjiang1",
-			"name": "滨江"
+		  code: "yingshouyingzi",
+		  name: "鹰手营子",
+		  abbreviation: "ysz",
 		},
 		{
-			"Abbreviation": "dh",
-			"code": "dunhua",
-			"name": "敦化"
+		  code: "yuantan",
+		  name: "源潭",
+		  abbreviation: "yta",
 		},
 		{
-			"Abbreviation": "ss",
-			"code": "shenshu",
-			"name": "神树"
+		  code: "yatunpu",
+		  name: "牙屯堡",
+		  abbreviation: "ytp",
 		},
 		{
-			"Abbreviation": "lh",
-			"code": "luanhe",
-			"name": "滦河"
+		  code: "yantongshan",
+		  name: "烟筒山",
+		  abbreviation: "yts",
 		},
 		{
-			"Abbreviation": "cbg",
-			"code": "chabuga",
-			"name": "查布嘎"
+		  code: "yantongtun",
+		  name: "烟筒屯",
+		  abbreviation: "ytt",
 		},
 		{
-			"Abbreviation": "xfl",
-			"code": "xiangfulu",
-			"name": "湘府路"
+		  code: "yangweishao",
+		  name: "羊尾哨",
+		  abbreviation: "yws",
 		},
 		{
-			"Abbreviation": "pz",
-			"code": "paozi",
-			"name": "泡子"
+		  code: "yangxi",
+		  name: "阳西",
+		  abbreviation: "yxi",
 		},
 		{
-			"Abbreviation": "zsb",
-			"code": "zhongshanbei",
-			"name": "中山北"
+		  code: "yuexi",
+		  name: "越西",
+		  abbreviation: "yxi",
 		},
 		{
-			"Abbreviation": "tpz",
-			"code": "taipingzhen",
-			"name": "太平镇"
+		  code: "youxian",
+		  name: "攸县",
+		  abbreviation: "yxi",
 		},
 		{
-			"Abbreviation": "sw",
-			"code": "shanwei",
-			"name": "汕尾"
+		  code: "yongxiu",
+		  name: "永修",
+		  abbreviation: "yxi",
 		},
 		{
-			"Abbreviation": "wp",
-			"code": "wopi",
-			"name": "沃皮"
+		  code: "yuxixi",
+		  name: "玉溪西",
+		  abbreviation: "yxx",
 		},
 		{
-			"Abbreviation": "dk",
-			"code": "dongkou",
-			"name": "洞口"
+		  code: "yiyang",
+		  name: "弋阳",
+		  abbreviation: "yya",
 		},
 		{
-			"Abbreviation": "glz",
-			"code": "guoleizhuang",
-			"name": "郭磊庄"
+		  code: "youyang",
+		  name: "酉阳",
+		  abbreviation: "yya",
 		},
 		{
-			"Abbreviation": "csb",
-			"code": "changshoubei",
-			"name": "长寿北"
+		  code: "yuyao",
+		  name: "余姚",
+		  abbreviation: "yya",
 		},
 		{
-			"Abbreviation": "smxb",
-			"code": "shimenxianbei",
-			"name": "石门县北"
+		  code: "yueyangdong",
+		  name: "岳阳东",
+		  abbreviation: "yyd",
 		},
 		{
-			"Abbreviation": "fyx",
-			"code": "fuyangxi",
-			"name": "阜阳西"
+		  code: "yangyi",
+		  name: "阳邑",
+		  abbreviation: "yyi",
 		},
 		{
-			"Abbreviation": "gh",
-			"code": "ganhe",
-			"name": "甘河"
+		  code: "yayuan",
+		  name: "鸭园",
+		  abbreviation: "yyu",
 		},
 		{
-			"Abbreviation": "gzn",
-			"code": "guangzhounan",
-			"name": "广州南"
+		  code: "yuanyangzhen",
+		  name: "鸳鸯镇",
+		  abbreviation: "yyz",
 		},
 		{
-			"Abbreviation": "yx",
-			"code": "yunxiao",
-			"name": "云霄"
+		  code: "yanzibian",
+		  name: "燕子砭",
+		  abbreviation: "yzb",
 		},
 		{
-			"Abbreviation": "xj",
-			"code": "xinji",
-			"name": "辛集"
+		  code: "yizhou",
+		  name: "宜州",
+		  abbreviation: "yzh",
 		},
 		{
-			"Abbreviation": "szn",
-			"code": "shangzhinan",
-			"name": "尚志南"
+		  code: "yizheng",
+		  name: "仪征",
+		  abbreviation: "yzh",
 		},
 		{
-			"Abbreviation": "hg",
-			"code": "hegang",
-			"name": "鹤岗"
+		  code: "yanzhou",
+		  name: "兖州",
+		  abbreviation: "yzh",
 		},
 		{
-			"Abbreviation": "dz",
-			"code": "dongzhen",
-			"name": "东镇"
+		  code: "yizi",
+		  name: "迤资",
+		  abbreviation: "yzi",
 		},
 		{
-			"Abbreviation": "hls",
-			"code": "halasu",
-			"name": "哈拉苏"
+		  code: "yangzhewo",
+		  name: "羊者窝",
+		  abbreviation: "yzw",
 		},
 		{
-			"Abbreviation": "sy",
-			"code": "sheyang",
-			"name": "射阳"
+		  code: "yangzhangzi",
+		  name: "杨杖子",
+		  abbreviation: "yzz",
 		},
 		{
-			"Abbreviation": "hgz",
-			"code": "hongguangzhen",
-			"name": "红光镇"
+		  code: "zhenan",
+		  name: "镇安",
+		  abbreviation: "zan",
 		},
 		{
-			"Abbreviation": "nm",
-			"code": "ningming",
-			"name": "宁明"
+		  code: "zhian",
+		  name: "治安",
+		  abbreviation: "zan",
 		},
 		{
-			"Abbreviation": "sy",
-			"code": "shenyang",
-			"name": "沈阳"
+		  code: "zhaobai",
+		  name: "招柏",
+		  abbreviation: "zba",
 		},
 		{
-			"Abbreviation": "yn",
-			"code": "yunan",
-			"name": "郁南"
+		  code: "zhangbaiwan",
+		  name: "张百湾",
+		  abbreviation: "zbw",
 		},
 		{
-			"Abbreviation": "sh",
-			"code": "shanghang",
-			"name": "上杭"
+		  code: "zhongchuanjichang",
+		  name: "中川机场",
+		  abbreviation: "zcc",
 		},
 		{
-			"Abbreviation": "cs",
-			"code": "chaoshan",
-			"name": "潮汕"
+		  code: "zichang",
+		  name: "子长",
+		  abbreviation: "zch",
 		},
 		{
-			"Abbreviation": "dtb",
-			"code": "datianbian",
-			"name": "大田边"
+		  code: "zhicheng",
+		  name: "枝城",
+		  abbreviation: "zch",
 		},
 		{
-			"Abbreviation": "xs",
-			"code": "xingshu",
-			"name": "杏树"
+		  code: "zoucheng",
+		  name: "邹城",
+		  abbreviation: "zch",
 		},
 		{
-			"Abbreviation": "ydx",
-			"code": "yingdexi",
-			"name": "英德西"
+		  code: "zhucheng",
+		  name: "诸城",
+		  abbreviation: "zch",
 		},
 		{
-			"Abbreviation": "ps",
-			"code": "pengshan",
-			"name": "彭山"
+		  code: "zhaocheng",
+		  name: "赵城",
+		  abbreviation: "zch",
 		},
 		{
-			"Abbreviation": "fyb",
-			"code": "fuyubei",
-			"name": "扶余北"
+		  code: "zhangdang",
+		  name: "章党",
+		  abbreviation: "zda",
 		},
 		{
-			"Abbreviation": "cyd",
-			"code": "chaoyangdi",
-			"name": "朝阳地"
+		  code: "zhengding",
+		  name: "正定",
+		  abbreviation: "zdi",
 		},
 		{
-			"Abbreviation": "xs",
-			"code": "xiaoshao",
-			"name": "小哨"
+		  code: "zhaodong",
+		  name: "肇东",
+		  abbreviation: "zdo",
 		},
 		{
-			"Abbreviation": "anz",
-			"code": "ananzhuang",
-			"name": "阿南庄"
+		  code: "zhaofupu",
+		  name: "照福铺",
+		  abbreviation: "zfp",
 		},
 		{
-			"Abbreviation": "qw",
-			"code": "qianwei",
-			"name": "前卫"
+		  code: "zhanggutai",
+		  name: "章古台",
+		  abbreviation: "zgt",
 		},
 		{
-			"Abbreviation": "ygn",
-			"code": "yanggaonan",
-			"name": "阳高南"
+		  code: "zhaoguang",
+		  name: "赵光",
+		  abbreviation: "zgu",
 		},
 		{
-			"Abbreviation": "ylq",
-			"code": "yangliuqing",
-			"name": "杨柳青"
+		  code: "zhonghe",
+		  name: "中和",
+		  abbreviation: "zhe",
 		},
 		{
-			"Abbreviation": "hc",
-			"code": "huangchuan",
-			"name": "潢川"
+		  code: "zhonghuamen",
+		  name: "中华门",
+		  abbreviation: "zhm",
 		},
 		{
-			"Abbreviation": "ml",
-			"code": "malin",
-			"name": "马林"
+		  code: "zhijiangbei",
+		  name: "枝江北",
+		  abbreviation: "zjb",
 		},
 		{
-			"Abbreviation": "hc",
-			"code": "hanchuan",
-			"name": "汉川"
+		  code: "zhongjiacun",
+		  name: "钟家村",
+		  abbreviation: "zjc",
 		},
 		{
-			"Abbreviation": "wcg",
-			"code": "wuchagou",
-			"name": "五叉沟"
+		  code: "zhujiagou",
+		  name: "朱家沟",
+		  abbreviation: "zjg",
 		},
 		{
-			"Abbreviation": "wq",
-			"code": "wuqiao",
-			"name": "吴桥"
+		  code: "zijingguan",
+		  name: "紫荆关",
+		  abbreviation: "zjg",
 		},
 		{
-			"Abbreviation": "yx",
-			"code": "yongxiu",
-			"name": "永修"
+		  code: "zhuji",
+		  name: "诸暨",
+		  abbreviation: "zji",
 		},
 		{
-			"Abbreviation": "jy",
-			"code": "jianyang1",
-			"name": "简阳"
+		  code: "zhoujia",
+		  name: "周家",
+		  abbreviation: "zji",
 		},
 		{
-			"Abbreviation": "xwx",
-			"code": "xiuwenxian",
-			"name": "修文县"
+		  code: "zhenjiangnan",
+		  name: "镇江南",
+		  abbreviation: "zjn",
 		},
 		{
-			"Abbreviation": "jb",
-			"code": "jubao",
-			"name": "巨宝"
+		  code: "zhoujiatun",
+		  name: "周家屯",
+		  abbreviation: "zjt",
 		},
 		{
-			"Abbreviation": "xs",
-			"code": "xiushan",
-			"name": "秀山"
+		  code: "zhujiawan",
+		  name: "褚家湾",
+		  abbreviation: "zjw",
 		},
 		{
-			"Abbreviation": "nq",
-			"code": "naqu",
-			"name": "那曲"
+		  code: "zhanjiangxi",
+		  name: "湛江西",
+		  abbreviation: "zjx",
 		},
 		{
-			"Abbreviation": "gq",
-			"code": "ganquan",
-			"name": "甘泉"
+		  code: "zhujiayao",
+		  name: "朱家窑",
+		  abbreviation: "zjy",
 		},
 		{
-			"Abbreviation": "kq",
-			"code": "kouqian",
-			"name": "口前"
+		  code: "zhanglan",
+		  name: "张兰",
+		  abbreviation: "zla",
 		},
 		{
-			"Abbreviation": "df",
-			"code": "danfeng",
-			"name": "丹凤"
+		  code: "zhenlai",
+		  name: "镇赉",
+		  abbreviation: "zla",
 		},
 		{
-			"Abbreviation": "xyy",
-			"code": "xinyouyi",
-			"name": "新友谊"
+		  code: "zaolin",
+		  name: "枣林",
+		  abbreviation: "zli",
 		},
 		{
-			"Abbreviation": "wn",
-			"code": "weinan",
-			"name": "渭南"
+		  code: "zhalute",
+		  name: "扎鲁特",
+		  abbreviation: "zlt",
 		},
 		{
-			"Abbreviation": "zc",
-			"code": "zhucheng",
-			"name": "诸城"
+		  code: "zhalainuoerxi",
+		  name: "扎赉诺尔西",
+		  abbreviation: "zlx",
 		},
 		{
-			"Abbreviation": "sz",
-			"code": "sangzhi",
-			"name": "桑植"
+		  code: "zhangmutou",
+		  name: "樟木头",
+		  abbreviation: "zmt",
 		},
 		{
-			"Abbreviation": "tzx",
-			"code": "tongzhouxi",
-			"name": "通州西"
+		  code: "zhongmu",
+		  name: "中牟",
+		  abbreviation: "zmu",
 		},
 		{
-			"Abbreviation": "xm",
-			"code": "xiamen2",
-			"name": "厦 门"
+		  code: "zhongningdong",
+		  name: "中宁东",
+		  abbreviation: "znd",
 		},
 		{
-			"Abbreviation": "hsh",
-			"code": "hushiha",
-			"name": "虎什哈"
+		  code: "zhongning",
+		  name: "中宁",
+		  abbreviation: "zni",
 		},
 		{
-			"Abbreviation": "cfn",
-			"code": "chifengnan",
-			"name": "赤峰南"
+		  code: "zhongningnan",
+		  name: "中宁南",
+		  abbreviation: "znn",
 		},
 		{
-			"Abbreviation": "gzb",
-			"code": "guangzhoubei",
-			"name": "广州北"
+		  code: "zhenping",
+		  name: "镇平",
+		  abbreviation: "zpi",
 		},
 		{
-			"Abbreviation": "zw",
-			"code": "zhongwei",
-			"name": "中卫"
+		  code: "zhangping",
+		  name: "漳平",
+		  abbreviation: "zpi",
 		},
 		{
-			"Abbreviation": "xs",
-			"code": "xishui",
-			"name": "浠水"
+		  code: "zepu",
+		  name: "泽普",
+		  abbreviation: "zpu",
 		},
 		{
-			"Abbreviation": "smn",
-			"code": "shenmunan",
-			"name": "神木南"
+		  code: "zhangqiao",
+		  name: "张桥",
+		  abbreviation: "zqi",
 		},
 		{
-			"Abbreviation": "nh",
-			"code": "nanhua",
-			"name": "南华"
+		  code: "zaoqiang",
+		  name: "枣强",
+		  abbreviation: "zqi",
 		},
 		{
-			"Abbreviation": "hc",
-			"code": "hechuan",
-			"name": "合川"
+		  code: "zhangqiu",
+		  name: "章丘",
+		  abbreviation: "zqi",
 		},
 		{
-			"Abbreviation": "zx",
-			"code": "zhangxian",
-			"name": "漳县"
+		  code: "zhurihe",
+		  name: "朱日和",
+		  abbreviation: "zrh",
 		},
 		{
-			"Abbreviation": "xl",
-			"code": "xianglan",
-			"name": "香兰"
+		  code: "zerunli",
+		  name: "泽润里",
+		  abbreviation: "zrl",
 		},
 		{
-			"Abbreviation": "gt",
-			"code": "guanting",
-			"name": "官厅"
+		  code: "zhongshanbei",
+		  name: "中山北",
+		  abbreviation: "zsb",
 		},
 		{
-			"Abbreviation": "qd",
-			"code": "qingdui",
-			"name": "青堆"
+		  code: "zhangshudong",
+		  name: "樟树东",
+		  abbreviation: "zsd",
 		},
 		{
-			"Abbreviation": "tdtd",
-			"code": "tuditangdong",
-			"name": "土地堂东"
+		  code: "zhashui",
+		  name: "柞水",
+		  abbreviation: "zsh",
 		},
 		{
-			"Abbreviation": "dqd",
-			"code": "daqingdong",
-			"name": "大庆东"
+		  code: "zhongshan",
+		  name: "中山",
+		  abbreviation: "zsh",
 		},
 		{
-			"Abbreviation": "xp",
-			"code": "xipu",
-			"name": "犀浦"
+		  code: "zhangshu",
+		  name: "樟树",
+		  abbreviation: "zsh",
 		},
 		{
-			"Abbreviation": "ms",
-			"code": "mengshan",
-			"name": "蒙山"
+		  code: "zhusihua",
+		  name: "珠斯花",
+		  abbreviation: "zsh",
 		},
 		{
-			"Abbreviation": "jgs",
-			"code": "jiguanshan",
-			"name": "鸡冠山"
+		  code: "zhongshan",
+		  name: "钟山",
+		  abbreviation: "zsh",
 		},
 		{
-			"Abbreviation": "jc",
-			"code": "jincheng",
-			"name": "晋城"
+		  code: "zhuwo",
+		  name: "珠窝",
+		  abbreviation: "zwo",
 		},
 		{
-			"Abbreviation": "dz",
-			"code": "douzhuang",
-			"name": "豆庄"
+		  code: "zhangweitun",
+		  name: "张维屯",
+		  abbreviation: "zwt",
 		},
 		{
-			"Abbreviation": "yc",
-			"code": "yancheng1",
-			"name": "盐城"
+		  code: "zhangwu",
+		  name: "彰武",
+		  abbreviation: "zwu",
 		},
 		{
-			"Abbreviation": "zqd",
-			"code": "zhaoqingdong",
-			"name": "肇庆东"
+		  code: "zixi",
+		  name: "资溪",
+		  abbreviation: "zxi",
 		},
 		{
-			"Abbreviation": "dn",
-			"code": "dingnan",
-			"name": "定南"
+		  code: "zhongxiang",
+		  name: "钟祥",
+		  abbreviation: "zxi",
 		},
 		{
-			"Abbreviation": "yd",
-			"code": "yingde",
-			"name": "英德"
+		  code: "zhenxi",
+		  name: "镇西",
+		  abbreviation: "zxi",
 		},
 		{
-			"Abbreviation": "ayd",
-			"code": "anyangdong",
-			"name": "安阳东"
+		  code: "zongxi",
+		  name: "棕溪",
+		  abbreviation: "zxi",
 		},
 		{
-			"Abbreviation": "yqq",
-			"code": "yangquanqu",
-			"name": "阳泉曲"
+		  code: "zhangxin",
+		  name: "张辛",
+		  abbreviation: "zxi",
 		},
 		{
-			"Abbreviation": "cxt",
-			"code": "chenxiangtun",
-			"name": "陈相屯"
+		  code: "zhengxiangbaiqi",
+		  name: "正镶白旗",
+		  abbreviation: "zxq",
 		},
 		{
-			"Abbreviation": "wyl",
-			"code": "wuyiling",
-			"name": "乌伊岭"
+		  code: "ziyang",
+		  name: "紫阳",
+		  abbreviation: "zya",
 		},
 		{
-			"Abbreviation": "dlb",
-			"code": "dalianbei",
-			"name": "大连北"
+		  code: "zaoyang",
+		  name: "枣阳",
+		  abbreviation: "zya",
 		},
 		{
-			"Abbreviation": "lq",
-			"code": "liquan",
-			"name": "礼泉"
+		  code: "zhuyuanba",
+		  name: "竹园坝",
+		  abbreviation: "zyb",
 		},
 		{
-			"Abbreviation": "tzl",
-			"code": "tongzilin",
-			"name": "桐子林"
+		  code: "zhangye",
+		  name: "张掖",
+		  abbreviation: "zye",
 		},
 		{
-			"Abbreviation": "xx",
-			"code": "xiangxiang",
-			"name": "湘乡"
+		  code: "zhenyuan",
+		  name: "镇远",
+		  abbreviation: "zyu",
 		},
 		{
-			"Abbreviation": "zrl",
-			"code": "zerunli",
-			"name": "泽润里"
+		  code: "zhangzhoudong",
+		  name: "漳州东",
+		  abbreviation: "zzd",
 		},
 		{
-			"Abbreviation": "ymb",
-			"code": "yangmingbu",
-			"name": "阳明堡"
+		  code: "zhangzhou",
+		  name: "漳州",
+		  abbreviation: "zzh",
 		},
 		{
-			"Abbreviation": "tsf",
-			"code": "tianshifu",
-			"name": "田师府"
+		  code: "zizhou",
+		  name: "子洲",
+		  abbreviation: "zzh",
 		},
 		{
-			"Abbreviation": "ymp",
-			"code": "yimianpo",
-			"name": "一面坡"
+		  code: "zhuozhou",
+		  name: "涿州",
+		  abbreviation: "zzh",
 		},
 		{
-			"Abbreviation": "zqb",
-			"code": "zhangqiubei",
-			"name": "章丘北"
+		  code: "zhongzhai",
+		  name: "中寨",
+		  abbreviation: "zzh",
 		},
 		{
-			"Abbreviation": "hz",
-			"code": "hanzhong",
-			"name": "汉中"
+		  code: "zhuangzhi",
+		  name: "壮志",
+		  abbreviation: "zzh",
 		},
 		{
-			"Abbreviation": "wlbd",
-			"code": "wulongbeidong",
-			"name": "五龙背东"
+		  code: "zhazi",
+		  name: "咋子",
+		  abbreviation: "zzi",
 		},
 		{
-			"Abbreviation": "gl",
-			"code": "ganluo",
-			"name": "甘洛"
+		  code: "zhuozishan",
+		  name: "卓资山",
+		  abbreviation: "zzs",
 		},
 		{
-			"Abbreviation": "syq",
-			"code": "sanyuanqu",
-			"name": "三元区"
+		  code: "zhuzhouxi",
+		  name: "株洲西",
+		  abbreviation: "zzx",
 		},
 		{
-			"Abbreviation": "jn",
-			"code": "jiangning",
-			"name": "江宁"
+		  code: "zhengzhouxi",
+		  name: "郑州西",
+		  abbreviation: "zzx",
 		},
 		{
-			"Abbreviation": "jy",
-			"code": "jiyuan",
-			"name": "济源"
+		  code: "abagaqi",
+		  name: "阿巴嘎旗",
+		  abbreviation: "abq",
 		},
 		{
-			"Abbreviation": "byq",
-			"code": "bayuquan",
-			"name": "鲅鱼圈"
+		  code: "achengbei",
+		  name: "阿城北",
+		  abbreviation: "acb",
 		},
 		{
-			"Abbreviation": "hl",
-			"code": "hanling",
-			"name": "寒岭"
+		  code: "aershanbei",
+		  name: "阿尔山北",
+		  abbreviation: "aeb",
 		},
 		{
-			"Abbreviation": "lcz",
-			"code": "laochengzhen",
-			"name": "老城镇"
+		  code: "anjiangdong",
+		  name: "安江东",
+		  abbreviation: "ajd",
 		},
 		{
-			"Abbreviation": "bdh",
-			"code": "beidaihe",
-			"name": "北戴河"
+		  code: "anji",
+		  name: "安吉",
+		  abbreviation: "aji",
 		},
 		{
-			"Abbreviation": "lh",
-			"code": "laha",
-			"name": "拉哈"
+		  code: "anjiang",
+		  name: "安匠",
+		  abbreviation: "aji",
 		},
 		{
-			"Abbreviation": "df",
-			"code": "dongfang",
-			"name": "东方"
+		  code: "akesai",
+		  name: "阿克塞",
+		  abbreviation: "aks",
 		},
 		{
-			"Abbreviation": "lf",
-			"code": "luofa",
-			"name": "落垡"
+		  code: "aletai",
+		  name: "阿勒泰",
+		  abbreviation: "alt",
 		},
 		{
-			"Abbreviation": "glh",
-			"code": "guiliuhe",
-			"name": "归流河"
+		  code: "anluxi",
+		  name: "安陆西",
+		  abbreviation: "alx",
 		},
 		{
-			"Abbreviation": "yg",
-			"code": "yanggao",
-			"name": "阳高"
+		  code: "anren",
+		  name: "安仁",
+		  abbreviation: "are",
 		},
 		{
-			"Abbreviation": "dy",
-			"code": "dayu",
-			"name": "大余"
+		  code: "anshunxi",
+		  name: "安顺西",
+		  abbreviation: "asx",
 		},
 		{
-			"Abbreviation": "hl",
-			"code": "hulin",
-			"name": "虎林"
+		  code: "antuxi",
+		  name: "安图西",
+		  abbreviation: "atx",
 		},
 		{
-			"Abbreviation": "bsz",
-			"code": "baishuizhen",
-			"name": "白水镇"
+		  code: "antingxi",
+		  name: "安亭西",
+		  abbreviation: "atx",
 		},
 		{
-			"Abbreviation": "tyn",
-			"code": "taiyuannan",
-			"name": "太原南"
+		  code: "anyangdong",
+		  name: "安阳东",
+		  abbreviation: "ayd",
 		},
 		{
-			"Abbreviation": "rc",
-			"code": "rongcheng",
-			"name": "荣成"
+		  code: "bobai",
+		  name: "博白",
+		  abbreviation: "bba",
 		},
 		{
-			"Abbreviation": "hlst",
-			"code": "hulusitai",
-			"name": "呼鲁斯太"
+		  code: "babu",
+		  name: "八步",
+		  abbreviation: "bbu",
 		},
 		{
-			"Abbreviation": "fh",
-			"code": "fuhai",
-			"name": "富海"
+		  code: "bencha",
+		  name: "栟茶",
+		  abbreviation: "bch",
 		},
 		{
-			"Abbreviation": "hln",
-			"code": "huanglingnan",
-			"name": "黄陵南"
+		  code: "badalingchangcheng",
+		  name: "八达岭长城",
+		  abbreviation: "bdc",
 		},
 		{
-			"Abbreviation": "fs",
-			"code": "fusui",
-			"name": "扶绥"
+		  code: "baodingdong",
+		  name: "保定东",
+		  abbreviation: "bdd",
 		},
 		{
-			"Abbreviation": "qzd",
-			"code": "quanzhoudong",
-			"name": "泉州东"
+		  code: "boertala",
+		  name: "博尔塔拉",
+		  abbreviation: "bel",
 		},
 		{
-			"Abbreviation": "sht",
-			"code": "shanhetun",
-			"name": "山河屯"
+		  code: "bafangshan",
+		  name: "八方山",
+		  abbreviation: "bfs",
 		},
 		{
-			"Abbreviation": "dbs",
-			"code": "debosi",
-			"name": "德伯斯"
+		  code: "baigou",
+		  name: "白沟",
+		  abbreviation: "bgo",
 		},
 		{
-			"Abbreviation": "ep",
-			"code": "enping",
-			"name": "恩平"
+		  code: "binhai",
+		  name: "滨海",
+		  abbreviation: "bha",
 		},
 		{
-			"Abbreviation": "bss",
-			"code": "baishanshi",
-			"name": "白山市"
+		  code: "binhaibei",
+		  name: "滨海北",
+		  abbreviation: "bhb",
 		},
 		{
-			"Abbreviation": "jmsx",
-			"code": "jiamusixi",
-			"name": "佳木斯西"
+		  code: "binhaigang",
+		  name: "滨海港",
+		  abbreviation: "bhg",
 		},
 		{
-			"Abbreviation": "xy",
-			"code": "xingye",
-			"name": "兴业"
+		  code: "binhaixi",
+		  name: "滨海西",
+		  abbreviation: "bhx",
 		},
 		{
-			"Abbreviation": "dmc",
-			"code": "dongmingcun",
-			"name": "东明村"
+		  code: "bijie",
+		  name: "毕节",
+		  abbreviation: "bji",
 		},
 		{
-			"Abbreviation": "lx",
-			"code": "lanxi",
-			"name": "兰溪"
+		  code: "baojinan",
+		  name: "宝鸡南",
+		  abbreviation: "bjn",
 		},
 		{
-			"Abbreviation": "py",
-			"code": "poyang",
-			"name": "鄱阳"
+		  code: "beijingdaxing",
+		  name: "北京大兴",
+		  abbreviation: "bjx",
 		},
 		{
-			"Abbreviation": "zmd",
-			"code": "zhumadian",
-			"name": "驻马店"
+		  code: "beijingchaoyang",
+		  name: "北京朝阳",
+		  abbreviation: "bjy",
 		},
 		{
-			"Abbreviation": "gz",
-			"code": "guozhen",
-			"name": "虢镇"
+		  code: "beijingzi",
+		  name: "北井子",
+		  abbreviation: "bjz",
 		},
 		{
-			"Abbreviation": "zhb",
-			"code": "zhuanghebei",
-			"name": "庄河北"
+		  code: "balidianzi",
+		  name: "八里甸子",
+		  abbreviation: "blz",
 		},
 		{
-			"Abbreviation": "pz",
-			"code": "pengze",
-			"name": "彭泽"
+		  code: "baimajing",
+		  name: "白马井",
+		  abbreviation: "bmj",
 		},
 		{
-			"Abbreviation": "debt",
-			"code": "duerbote",
-			"name": "杜尔伯特"
+		  code: "beipiao",
+		  name: "北票",
+		  abbreviation: "bpi",
 		},
 		{
-			"Abbreviation": "sh",
-			"code": "sihong",
-			"name": "泗洪"
+		  code: "baoqing",
+		  name: "宝清",
+		  abbreviation: "bqi",
 		},
 		{
-			"Abbreviation": "hdx",
-			"code": "haidongxi",
-			"name": "海东西"
+		  code: "bishan",
+		  name: "璧山",
+		  abbreviation: "bsh",
 		},
 		{
-			"Abbreviation": "sc",
-			"code": "shangcheng",
-			"name": "商城"
+		  code: "baishapu",
+		  name: "白沙铺",
+		  abbreviation: "bsp",
 		},
 		{
-			"Abbreviation": "htd",
-			"code": "huangtudian",
-			"name": "黄土店"
+		  code: "baishuixian",
+		  name: "白水县",
+		  abbreviation: "bsx",
 		},
 		{
-			"Abbreviation": "bz",
-			"code": "beizhai",
-			"name": "北宅"
+		  code: "bantang",
+		  name: "板塘",
+		  abbreviation: "bta",
 		},
 		{
-			"Abbreviation": "js",
-			"code": "jiusan",
-			"name": "九三"
+		  code: "baiwendong",
+		  name: "白文东",
+		  abbreviation: "bwd",
 		},
 		{
-			"Abbreviation": "yz",
-			"code": "yuzhou",
-			"name": "禹州"
+		  code: "binxibei",
+		  name: "宾西北",
+		  abbreviation: "bxb",
 		},
 		{
-			"Abbreviation": "wx",
-			"code": "wuxi",
-			"name": "无锡"
+		  code: "benxixincheng",
+		  name: "本溪新城",
+		  abbreviation: "bxc",
 		},
 		{
-			"Abbreviation": "zz",
-			"code": "zaozhuang",
-			"name": "枣庄"
+		  code: "buxingjie",
+		  name: "步行街",
+		  abbreviation: "bxj",
 		},
 		{
-			"Abbreviation": "cdd",
-			"code": "chengdudong",
-			"name": "成都东"
+		  code: "binyang",
+		  name: "宾阳",
+		  abbreviation: "bya",
 		},
 		{
-			"Abbreviation": "sn",
-			"code": "suning",
-			"name": "肃宁"
+		  code: "baiyunbei",
+		  name: "白云北",
+		  abbreviation: "byb",
 		},
 		{
-			"Abbreviation": "yyd",
-			"code": "yueyangdong",
-			"name": "岳阳东"
+		  code: "baiyunjichangbei",
+		  name: "白云机场北",
+		  abbreviation: "byb",
 		},
 		{
-			"Abbreviation": "yc",
-			"code": "yancheng",
-			"name": "晏城"
+		  code: "baiyangdian",
+		  name: "白洋淀",
+		  abbreviation: "byd",
 		},
 		{
-			"Abbreviation": "syb",
-			"code": "shaoxingdong",
-			"name": "绍兴东"
+		  code: "baoying",
+		  name: "宝应",
+		  abbreviation: "byi",
 		},
 		{
-			"Abbreviation": "ll",
-			"code": "liling",
-			"name": "醴陵"
+		  code: "baiyi",
+		  name: "百宜",
+		  abbreviation: "byi",
 		},
 		{
-			"Abbreviation": "ww",
-			"code": "wuwei",
-			"name": "武威"
+		  code: "baiyinhuanan",
+		  name: "白音华南",
+		  abbreviation: "byn",
 		},
 		{
-			"Abbreviation": "ha",
-			"code": "huaian",
-			"name": "淮安"
+		  code: "bazhoubei",
+		  name: "霸州北",
+		  abbreviation: "bzb",
 		},
 		{
-			"Abbreviation": "hq",
-			"code": "huoqiu",
-			"name": "霍邱"
+		  code: "bazhongdong",
+		  name: "巴中东",
+		  abbreviation: "bzd",
 		},
 		{
-			"Abbreviation": "hg",
-			"code": "huanggang",
-			"name": "黄冈"
+		  code: "binzhoudong",
+		  name: "彬州东",
+		  abbreviation: "bzd",
 		},
 		{
-			"Abbreviation": "ba",
-			"code": "beian",
-			"name": "北安"
+		  code: "binzhou",
+		  name: "滨州",
+		  abbreviation: "bzh",
 		},
 		{
-			"Abbreviation": "ya",
-			"code": "yanan",
-			"name": "延安"
+		  code: "binzhou",
+		  name: "彬州",
+		  abbreviation: "bzh",
 		},
 		{
-			"Abbreviation": "ls",
-			"code": "lvshun",
-			"name": "旅顺"
+		  code: "binzhou",
+		  name: "宾州",
+		  abbreviation: "bzh",
 		},
 		{
-			"Abbreviation": "qy",
-			"code": "qianyang",
-			"name": "千阳"
+		  code: "bozhounan",
+		  name: "亳州南",
+		  abbreviation: "bzn",
 		},
 		{
-			"Abbreviation": "tyb",
-			"code": "taiyuanbei",
-			"name": "太原北"
+		  code: "bazhouxi",
+		  name: "霸州西",
+		  abbreviation: "bzx",
 		},
 		{
-			"Abbreviation": "hy",
-			"code": "huaying",
-			"name": "华蓥"
+		  code: "changan",
+		  name: "长安",
+		  abbreviation: "can",
 		},
 		{
-			"Abbreviation": "gsdz",
-			"code": "gashidianzi",
-			"name": "嘎什甸子"
+		  code: "changanxi",
+		  name: "长安西",
+		  abbreviation: "cax",
 		},
 		{
-			"Abbreviation": "xy",
-			"code": "xingyi",
-			"name": "兴义"
+		  code: "chengcheng",
+		  name: "澄城",
+		  abbreviation: "cch",
 		},
 		{
-			"Abbreviation": "tlb1",
-			"code": "tonglingbei",
-			"name": "铜陵北"
+		  code: "chengdexianbei",
+		  name: "承德县北",
+		  abbreviation: "cdb",
 		},
 		{
-			"Abbreviation": "cs",
-			"code": "caishan",
-			"name": "蔡山"
+		  code: "chengdudong",
+		  name: "成  都东",
+		  abbreviation: "cdd",
 		},
 		{
-			"Abbreviation": "ysyz",
-			"code": "yingshouyingzi",
-			"name": "鹰手营子"
+		  code: "chengdenan",
+		  name: "承德南",
+		  abbreviation: "cdn",
 		},
 		{
-			"Abbreviation": "tx",
-			"code": "tuxi",
-			"name": "土溪"
+		  code: "caofeidiandong",
+		  name: "曹妃甸东",
+		  abbreviation: "cfd",
 		},
 		{
-			"Abbreviation": "dsq",
-			"code": "dashiqiao",
-			"name": "大石桥"
+		  code: "caofeidiangang",
+		  name: "曹妃甸港",
+		  abbreviation: "cfg",
 		},
 		{
-			"Abbreviation": "dqx",
-			"code": "deqingxi",
-			"name": "德清西"
+		  code: "chenggubei",
+		  name: "城固北",
+		  abbreviation: "cgb",
 		},
 		{
-			"Abbreviation": "nk",
-			"code": "nankou",
-			"name": "南口"
+		  code: "changgebei",
+		  name: "长葛北",
+		  abbreviation: "cgb",
 		},
 		{
-			"Abbreviation": "hy",
-			"code": "hanyuan",
-			"name": "汉源"
+		  code: "chaganhu",
+		  name: "查干湖",
+		  abbreviation: "cgh",
 		},
 		{
-			"Abbreviation": "wxd",
-			"code": "wuxidong",
-			"name": "无锡东"
+		  code: "chaohudong",
+		  name: "巢湖东",
+		  abbreviation: "chd",
 		},
 		{
-			"Abbreviation": "zzd",
-			"code": "zaozhuangdong",
-			"name": "枣庄东"
+		  code: "congjiang",
+		  name: "从江",
+		  abbreviation: "cji",
 		},
 		{
-			"Abbreviation": "htx",
-			"code": "hongtongxi",
-			"name": "洪洞西"
+		  code: "caijiaya",
+		  name: "蔡家崖",
+		  abbreviation: "cjy",
 		},
 		{
-			"Abbreviation": "hp",
-			"code": "heping",
-			"name": "和平"
+		  code: "chaka",
+		  name: "茶卡",
+		  abbreviation: "cka",
 		},
 		{
-			"Abbreviation": "hzn",
-			"code": "huizhounan",
-			"name": "惠州南"
+		  code: "changledong",
+		  name: "长乐东",
+		  abbreviation: "cld",
 		},
 		{
-			"Abbreviation": "ry",
-			"code": "raoyang",
-			"name": "饶阳"
+		  code: "changle",
+		  name: "长乐",
+		  abbreviation: "cle",
 		},
 		{
-			"Abbreviation": "nj",
-			"code": "neijiang",
-			"name": "内江"
+		  code: "changlinhe",
+		  name: "长临河",
+		  abbreviation: "clh",
 		},
 		{
-			"Abbreviation": "jm",
-			"code": "jingmen",
-			"name": "荆门"
+		  code: "changliu",
+		  name: "长流",
+		  abbreviation: "cli",
 		},
 		{
-			"Abbreviation": "nt",
-			"code": "nantai",
-			"name": "南台"
+		  code: "chalingnan",
+		  name: "茶陵南",
+		  abbreviation: "cln",
 		},
 		{
-			"Abbreviation": "xp",
-			"code": "xingping",
-			"name": "兴平"
+		  code: "changlenan",
+		  name: "长乐南",
+		  abbreviation: "cln",
 		},
 		{
-			"Abbreviation": "spd",
-			"code": "sipingdong",
-			"name": "四平东"
+		  code: "changning",
+		  name: "长宁",
+		  abbreviation: "cni",
 		},
 		{
-			"Abbreviation": "sj",
-			"code": "sunjia",
-			"name": "孙家"
+		  code: "changpingdong",
+		  name: "常平东",
+		  abbreviation: "cpd",
 		},
 		{
-			"Abbreviation": "qcs",
-			"code": "qingchengshan",
-			"name": "青城山"
+		  code: "changpingnan",
+		  name: "常平南",
+		  abbreviation: "cpn",
 		},
 		{
-			"Abbreviation": "cx",
-			"code": "chengxi",
-			"name": "城西"
+		  code: "changqing",
+		  name: "长箐",
+		  abbreviation: "cqi",
 		},
 		{
-			"Abbreviation": "dzz",
-			"code": "dazhangzi",
-			"name": "大杖子"
+		  code: "changqingqiao",
+		  name: "长庆桥",
+		  abbreviation: "cqq",
 		},
 		{
-			"Abbreviation": "cz",
-			"code": "chenzhou",
-			"name": "郴州"
+		  code: "chongqingxi",
+		  name: "重  庆西",
+		  abbreviation: "cqx",
 		},
 		{
-			"Abbreviation": "pa",
-			"code": "pingan",
-			"name": "平安"
+		  code: "changshoubei",
+		  name: "长寿北",
+		  abbreviation: "csb",
 		},
 		{
-			"Abbreviation": "ybx",
-			"code": "yibinxi",
-			"name": "宜宾西"
+		  code: "changshouhu",
+		  name: "长寿湖",
+		  abbreviation: "csh",
 		},
 		{
-			"Abbreviation": "bxt",
-			"code": "baxiantong",
-			"name": "八仙筒"
+		  code: "chaoshan",
+		  name: "潮汕",
+		  abbreviation: "csh",
 		},
 		{
-			"Abbreviation": "nz",
-			"code": "nanzhao",
-			"name": "南召"
+		  code: "changshan",
+		  name: "常山",
+		  abbreviation: "csh",
 		},
 		{
-			"Abbreviation": "tys",
-			"code": "taiyangsheng",
-			"name": "太阳升"
+		  code: "changshu",
+		  name: "常熟",
+		  abbreviation: "csh",
 		},
 		{
-			"Abbreviation": "ha2",
-			"code": "huaian2",
-			"name": "怀安"
+		  code: "changshaxi",
+		  name: "长沙西",
+		  abbreviation: "csx",
 		},
 		{
-			"Abbreviation": "bh",
-			"code": "binhai",
-			"name": "滨海"
+		  code: "chaotian",
+		  name: "朝天",
+		  abbreviation: "cti",
 		},
 		{
-			"Abbreviation": "ajd",
-			"code": "anjiangdong",
-			"name": "安江东"
+		  code: "changtingnan",
+		  name: "长汀南",
+		  abbreviation: "ctn",
 		},
 		{
-			"Abbreviation": "lps",
-			"code": "liupanshan",
-			"name": "六盘山"
+		  code: "changwu",
+		  name: "长武",
+		  abbreviation: "cwu",
 		},
 		{
-			"Abbreviation": "syz",
-			"code": "sangyuanzi",
-			"name": "桑园子"
+		  code: "changxing",
+		  name: "长兴",
+		  abbreviation: "cxi",
 		},
 		{
-			"Abbreviation": "ccx",
-			"code": "changchunxi",
-			"name": "长春西"
+		  code: "chuxiong",
+		  name: "楚雄",
+		  abbreviation: "cxi",
 		},
 		{
-			"Abbreviation": "s",
-			"code": "song",
-			"name": "宋"
+		  code: "cangxi",
+		  name: "苍溪",
+		  abbreviation: "cxi",
 		},
 		{
-			"Abbreviation": "zl",
-			"code": "zuoling",
-			"name": "左岭"
+		  code: "chengxi",
+		  name: "城西",
+		  abbreviation: "cxi",
 		},
 		{
-			"Abbreviation": "jh",
-			"code": "jinhua",
-			"name": "金华"
+		  code: "chaoyang",
+		  name: "潮阳",
+		  abbreviation: "cya",
 		},
 		{
-			"Abbreviation": "yfy",
-			"code": "yongfengying",
-			"name": "永丰营"
+		  code: "changyang",
+		  name: "长阳",
+		  abbreviation: "cya",
 		},
 		{
-			"Abbreviation": "ps",
-			"code": "pishan",
-			"name": "皮山"
+		  code: "chaoyanghu",
+		  name: "朝阳湖",
+		  abbreviation: "cyh",
 		},
 		{
-			"Abbreviation": "lwd",
-			"code": "laiwudong",
-			"name": "莱芜东"
+		  code: "changyi",
+		  name: "昌邑",
+		  abbreviation: "cyi",
 		},
 		{
-			"Abbreviation": "lpl",
-			"code": "luopoling",
-			"name": "落坡岭"
+		  code: "changzhidong",
+		  name: "长治东",
+		  abbreviation: "czd",
 		},
 		{
-			"Abbreviation": "dqg",
-			"code": "daqinggou",
-			"name": "大青沟"
+		  code: "chenzhuang",
+		  name: "陈庄",
+		  abbreviation: "czh",
 		},
 		{
-			"Abbreviation": "xj",
-			"code": "xiajiang",
-			"name": "峡江"
+		  code: "chongzhou",
+		  name: "崇州",
+		  abbreviation: "czh",
 		},
 		{
-			"Abbreviation": "yjz",
-			"code": "yanjiazhuang",
-			"name": "燕家庄"
+		  code: "changzhinan",
+		  name: "长治南",
+		  abbreviation: "czn",
 		},
 		{
-			"Abbreviation": "smx",
-			"code": "sanmenxian",
-			"name": "三门县"
+		  code: "chengzitan",
+		  name: "城子坦",
+		  abbreviation: "czt",
 		},
 		{
-			"Abbreviation": "ng",
-			"code": "ningguo",
-			"name": "宁国"
+		  code: "dongandong",
+		  name: "东安东",
+		  abbreviation: "dad",
 		},
 		{
-			"Abbreviation": "gh",
-			"code": "genhe",
-			"name": "根河"
+		  code: "debao",
+		  name: "德保",
+		  abbreviation: "dba",
 		},
 		{
-			"Abbreviation": "jox",
-			"code": "jianouxi",
-			"name": "建瓯西"
+		  code: "dongcha",
+		  name: "东岔",
+		  abbreviation: "dch",
 		},
 		{
-			"Abbreviation": "st",
-			"code": "shentou",
-			"name": "神头"
+		  code: "duchang",
+		  name: "都昌",
+		  abbreviation: "dch",
 		},
 		{
-			"Abbreviation": "scp",
-			"code": "shuangchengpu",
-			"name": "双城堡"
+		  code: "dongchengnan",
+		  name: "东城南",
+		  abbreviation: "dcn",
 		},
 		{
-			"Abbreviation": "fc",
-			"code": "fuchuan",
-			"name": "富川"
+		  code: "dongdaihe",
+		  name: "东戴河",
+		  abbreviation: "ddh",
 		},
 		{
-			"Abbreviation": "yl",
-			"code": "yonglang",
-			"name": "永郎"
+		  code: "dandongxi",
+		  name: "丹东西",
+		  abbreviation: "ddx",
 		},
 		{
-			"Abbreviation": "ryh",
-			"code": "raoyanghe",
-			"name": "绕阳河"
+		  code: "dongerdaohe",
+		  name: "东二道河",
+		  abbreviation: "deh",
 		},
 		{
-			"Abbreviation": "dl",
-			"code": "dalian",
-			"name": "大连"
+		  code: "dafang",
+		  name: "大方",
+		  abbreviation: "dfa",
 		},
 		{
-			"Abbreviation": "sb",
-			"code": "shibing",
-			"name": "施秉"
+		  code: "dafeng",
+		  name: "大丰",
+		  abbreviation: "dfe",
 		},
 		{
-			"Abbreviation": "zs",
-			"code": "zhongshan",
-			"name": "钟山"
+		  code: "dafangnan",
+		  name: "大方南",
+		  abbreviation: "dfn",
 		},
 		{
-			"Abbreviation": "ga",
-			"code": "gaoan",
-			"name": "高安"
+		  code: "donggangbei",
+		  name: "东港北",
+		  abbreviation: "dgb",
 		},
 		{
-			"Abbreviation": "sjf",
-			"code": "sanjianfang",
-			"name": "三间房"
+		  code: "dongguangang",
+		  name: "东莞港",
+		  abbreviation: "dgg",
 		},
 		{
-			"Abbreviation": "jz",
-			"code": "jiaozhou",
-			"name": "胶州"
+		  code: "dagangnan",
+		  name: "大港南",
+		  abbreviation: "dgn",
 		},
 		{
-			"Abbreviation": "zrh",
-			"code": "zhurihe",
-			"name": "朱日和"
+		  code: "dagushan",
+		  name: "大孤山",
+		  abbreviation: "dgs",
 		},
 		{
-			"Abbreviation": "hx",
-			"code": "huixian",
-			"name": "徽县"
+		  code: "dongguan",
+		  name: "东莞",
+		  abbreviation: "dgu",
 		},
 		{
-			"Abbreviation": "xf",
-			"code": "xiangfen",
-			"name": "襄汾"
+		  code: "dongguanxi",
+		  name: "东莞西",
+		  abbreviation: "dgx",
 		},
 		{
-			"Abbreviation": "fy",
-			"code": "fuyu1",
-			"name": "扶余"
+		  code: "donghuayuanbei",
+		  name: "东花园北",
+		  abbreviation: "dhb",
 		},
 		{
-			"Abbreviation": "hlb",
-			"code": "hailinbei",
-			"name": "海林北"
+		  code: "dinghudong",
+		  name: "鼎湖东",
+		  abbreviation: "dhd",
 		},
 		{
-			"Abbreviation": "yc",
-			"code": "yingcheng",
-			"name": "应城"
+		  code: "dinghushan",
+		  name: "鼎湖山",
+		  abbreviation: "dhs",
 		},
 		{
-			"Abbreviation": "tgx",
-			"code": "taiguxi",
-			"name": "太谷西"
+		  code: "dianjiang",
+		  name: "垫江",
+		  abbreviation: "dji",
 		},
 		{
-			"Abbreviation": "hx",
-			"code": "hongxing",
-			"name": "红星"
+		  code: "daojiao",
+		  name: "道滘",
+		  abbreviation: "dji",
 		},
 		{
-			"Abbreviation": "bmq",
-			"code": "banmaoqing",
-			"name": "班猫箐"
+		  code: "dongjing",
+		  name: "洞井",
+		  abbreviation: "dji",
 		},
 		{
-			"Abbreviation": "jy",
-			"code": "jiangyong",
-			"name": "江永"
+		  code: "danjiangkou",
+		  name: "丹江口",
+		  abbreviation: "djk",
 		},
 		{
-			"Abbreviation": "wwn",
-			"code": "wuweinan",
-			"name": "无为南"
+		  code: "dongjiakou",
+		  name: "董家口",
+		  abbreviation: "djk",
 		},
 		{
-			"Abbreviation": "ycd",
-			"code": "yongchuandong",
-			"name": "永川东"
+		  code: "daju",
+		  name: "大苴",
+		  abbreviation: "dju",
 		},
 		{
-			"Abbreviation": "gcd",
-			"code": "guchengdong",
-			"name": "古城东"
+		  code: "dongkou",
+		  name: "洞口",
+		  abbreviation: "dko",
 		},
 		{
-			"Abbreviation": "bs",
-			"code": "baise",
-			"name": "百色"
+		  code: "dalianhe",
+		  name: "达连河",
+		  abbreviation: "dlh",
 		},
 		{
-			"Abbreviation": "tqz",
-			"code": "tuqiaozi",
-			"name": "土桥子"
+		  code: "dali",
+		  name: "大荔",
+		  abbreviation: "dli",
 		},
 		{
-			"Abbreviation": "wns",
-			"code": "wunvshan",
-			"name": "五女山"
+		  code: "dalangzhen",
+		  name: "大朗镇",
+		  abbreviation: "dlz",
 		},
 		{
-			"Abbreviation": "dl",
-			"code": "douluo",
-			"name": "豆罗"
+		  code: "demoli",
+		  name: "得莫利",
+		  abbreviation: "dml",
 		},
 		{
-			"Abbreviation": "ay",
-			"code": "anyang",
-			"name": "安阳"
+		  code: "daqinggou",
+		  name: "大青沟",
+		  abbreviation: "dqg",
 		},
 		{
-			"Abbreviation": "wx",
-			"code": "wuxue",
-			"name": "武穴"
+		  code: "deqing",
+		  name: "德清",
+		  abbreviation: "dqi",
 		},
 		{
-			"Abbreviation": "ja",
-			"code": "jianan",
-			"name": "建安"
+		  code: "dongshengdong",
+		  name: "东胜东",
+		  abbreviation: "dsd",
 		},
 		{
-			"Abbreviation": "hq",
-			"code": "huaqiao",
-			"name": "花桥"
+		  code: "dashitounan",
+		  name: "大石头南",
+		  abbreviation: "dsn",
 		},
 		{
-			"Abbreviation": "tgwl",
-			"code": "tuguiwula",
-			"name": "土贵乌拉"
+		  code: "dangshannan",
+		  name: "砀山南",
+		  abbreviation: "dsn",
 		},
 		{
-			"Abbreviation": "cgp",
-			"code": "chaigoupu",
-			"name": "柴沟堡"
+		  code: "dangtudong",
+		  name: "当涂东",
+		  abbreviation: "dtd",
 		},
 		{
-			"Abbreviation": "cx",
-			"code": "changxing",
-			"name": "长兴"
+		  code: "datongnan",
+		  name: "大同南",
+		  abbreviation: "dtn",
 		},
 		{
-			"Abbreviation": "lps",
-			"code": "liupanshui",
-			"name": "六盘水"
+		  code: "datongxi",
+		  name: "大通西",
+		  abbreviation: "dtx",
 		},
 		{
-			"Abbreviation": "qj",
-			"code": "qujiu",
-			"name": "渠旧"
+		  code: "dawang",
+		  name: "大旺",
+		  abbreviation: "dwa",
 		},
 		{
-			"Abbreviation": "tjw",
-			"code": "tangjiawan",
-			"name": "唐家湾"
+		  code: "dingxibei",
+		  name: "定西北",
+		  abbreviation: "dxb",
 		},
 		{
-			"Abbreviation": "xa",
-			"code": "xinan",
-			"name": "新安"
+		  code: "daxingjichang",
+		  name: "大兴机场",
+		  abbreviation: "dxc",
 		},
 		{
-			"Abbreviation": "al",
-			"code": "anlu",
-			"name": "安陆"
+		  code: "dexingdong",
+		  name: "德兴东",
+		  abbreviation: "dxd",
 		},
 		{
-			"Abbreviation": "xh",
-			"code": "xuanhua",
-			"name": "宣化"
+		  code: "dexing",
+		  name: "德兴",
+		  abbreviation: "dxi",
 		},
 		{
-			"Abbreviation": "whlb",
-			"code": "weihulingbei",
-			"name": "威虎岭北"
+		  code: "danxiashan",
+		  name: "丹霞山",
+		  abbreviation: "dxs",
 		},
 		{
-			"Abbreviation": "dyn",
-			"code": "dongyingnan",
-			"name": "东营南"
+		  code: "dayang",
+		  name: "大阳",
+		  abbreviation: "dya",
 		},
 		{
-			"Abbreviation": "wfs",
-			"code": "wufushan",
-			"name": "五府山"
+		  code: "dayebei",
+		  name: "大冶北",
+		  abbreviation: "dyb",
 		},
 		{
-			"Abbreviation": "xhx",
-			"code": "xinghexi",
-			"name": "兴和西"
+		  code: "duyundong",
+		  name: "都匀东",
+		  abbreviation: "dyd",
 		},
 		{
-			"Abbreviation": "jmg",
-			"code": "jianmenguan",
-			"name": "剑门关"
+		  code: "dayi",
+		  name: "大邑",
+		  abbreviation: "dyi",
 		},
 		{
-			"Abbreviation": "xhy",
-			"code": "xiaoheyan",
-			"name": "小河沿"
+		  code: "dongyingnan",
+		  name: "东营南",
+		  abbreviation: "dyn",
 		},
 		{
-			"Abbreviation": "zzd",
-			"code": "zhangzhoudong",
-			"name": "漳州东"
+		  code: "dayu",
+		  name: "大余",
+		  abbreviation: "dyu",
 		},
 		{
-			"Abbreviation": "ghb",
-			"code": "guanghanbei",
-			"name": "广汉北"
+		  code: "dengzhoudong",
+		  name: "邓州东",
+		  abbreviation: "dzd",
 		},
 		{
-			"Abbreviation": "cs",
-			"code": "cishan",
-			"name": "磁山"
+		  code: "dingzhoudong",
+		  name: "定州东",
+		  abbreviation: "dzd",
 		},
 		{
-			"Abbreviation": "yhc",
-			"code": "yanhecheng",
-			"name": "沿河城"
+		  code: "duanzhou",
+		  name: "端州",
+		  abbreviation: "dzh",
 		},
 		{
-			"Abbreviation": "tss",
-			"code": "tieshashan",
-			"name": "铁刹山"
+		  code: "dazunan",
+		  name: "大足南",
+		  abbreviation: "dzn",
 		},
 		{
-			"Abbreviation": "tn",
-			"code": "taonan",
-			"name": "洮南"
+		  code: "emin",
+		  name: "额敏",
+		  abbreviation: "emi",
 		},
 		{
-			"Abbreviation": "px",
-			"code": "pingxiang1",
-			"name": "萍乡"
+		  code: "emeishan",
+		  name: "峨眉山",
+		  abbreviation: "ems",
 		},
 		{
-			"Abbreviation": "zj",
-			"code": "zhijin",
-			"name": "织金"
+		  code: "epanggong",
+		  name: "阿房宫",
+		  abbreviation: "epg",
 		},
 		{
-			"Abbreviation": "ljd",
-			"code": "liangjiadian",
-			"name": "亮甲店"
+		  code: "ezhoudong",
+		  name: "鄂州东",
+		  abbreviation: "ezd",
 		},
 		{
-			"Abbreviation": "pdsx",
-			"code": "pingdingshanxi",
-			"name": "平顶山西"
+		  code: "fangchenggangbei",
+		  name: "防城港北",
+		  abbreviation: "fcb",
 		},
 		{
-			"Abbreviation": "jz",
-			"code": "jizhoubei",
-			"name": "蓟州北"
+		  code: "fengchengdong",
+		  name: "丰城东",
+		  abbreviation: "fcd",
 		},
 		{
-			"Abbreviation": "sz",
-			"code": "suizhong",
-			"name": "绥中"
+		  code: "fengchengdong",
+		  name: "凤城东",
+		  abbreviation: "fcd",
 		},
 		{
-			"Abbreviation": "zs",
-			"code": "zhaoshan",
-			"name": "昭山"
+		  code: "fuchuan",
+		  name: "富川",
+		  abbreviation: "fch",
 		},
 		{
-			"Abbreviation": "zz",
-			"code": "zizhou",
-			"name": "子洲"
+		  code: "fangcheng",
+		  name: "方城",
+		  abbreviation: "fch",
 		},
 		{
-			"Abbreviation": "sq",
-			"code": "suqian",
-			"name": "宿迁"
+		  code: "fanchangxi",
+		  name: "繁昌西",
+		  abbreviation: "fcx",
 		},
 		{
-			"Abbreviation": "shs",
-			"code": "shahousuo",
-			"name": "沙后所"
+		  code: "fengdu",
+		  name: "丰都",
+		  abbreviation: "fdu",
 		},
 		{
-			"Abbreviation": "cx",
-			"code": "caoxian",
-			"name": "曹县"
+		  code: "fugounan",
+		  name: "扶沟南",
+		  abbreviation: "fgn",
 		},
 		{
-			"Abbreviation": "sy",
-			"code": "shuangyang",
-			"name": "双阳"
+		  code: "fuhaixi",
+		  name: "福海西",
+		  abbreviation: "fhx",
 		},
 		{
-			"Abbreviation": "sy",
-			"code": "songyuan",
-			"name": "松原"
+		  code: "fulingbei",
+		  name: "涪陵北",
+		  abbreviation: "flb",
 		},
 		{
-			"Abbreviation": "lsp",
-			"code": "linshengpu",
-			"name": "林盛堡"
+		  code: "fenglin",
+		  name: "枫林",
+		  abbreviation: "fli",
 		},
 		{
-			"Abbreviation": "gy",
-			"code": "guyuan1",
-			"name": "固原"
+		  code: "funingdong",
+		  name: "阜宁东",
+		  abbreviation: "fnd",
 		},
 		{
-			"Abbreviation": "cn",
-			"code": "changnong",
-			"name": "长农"
+		  code: "funing",
+		  name: "富宁",
+		  abbreviation: "fni",
 		},
 		{
-			"Abbreviation": "ysn",
-			"code": "yushannan",
-			"name": "玉山南"
+		  code: "funingnan",
+		  name: "阜宁南",
+		  abbreviation: "fnn",
 		},
 		{
-			"Abbreviation": "lsh",
-			"code": "lushuihe",
-			"name": "露水河"
+		  code: "foping",
+		  name: "佛坪",
+		  abbreviation: "fpi",
 		},
 		{
-			"Abbreviation": "lby",
-			"code": "lvboyuan",
-			"name": "绿博园"
+		  code: "faqi",
+		  name: "法启",
+		  abbreviation: "fqi",
 		},
 		{
-			"Abbreviation": "zh",
-			"code": "zhonghe",
-			"name": "中和"
+		  code: "furongnan",
+		  name: "芙蓉南",
+		  abbreviation: "frn",
 		},
 		{
-			"Abbreviation": "bz",
-			"code": "binzhou1",
-			"name": "彬州"
+		  code: "fengshundong",
+		  name: "丰顺东",
+		  abbreviation: "fsd",
 		},
 		{
-			"Abbreviation": "bjg",
-			"code": "baijigou",
-			"name": "白芨沟"
+		  code: "fusheng",
+		  name: "复盛",
+		  abbreviation: "fsh",
 		},
 		{
-			"Abbreviation": "nc",
-			"code": "ningcun",
-			"name": "宁村"
+		  code: "fusong",
+		  name: "抚松",
+		  abbreviation: "fso",
 		},
 		{
-			"Abbreviation": "zq",
-			"code": "zaoqiang",
-			"name": "枣强"
+		  code: "foshanxi",
+		  name: "佛山西",
+		  abbreviation: "fsx",
 		},
 		{
-			"Abbreviation": "bz",
-			"code": "binzhou2",
-			"name": "滨州"
+		  code: "fushanzhen",
+		  name: "福山镇",
+		  abbreviation: "fsz",
 		},
 		{
-			"Abbreviation": "xxx",
-			"code": "xinxingxian",
-			"name": "新兴县"
+		  code: "futian",
+		  name: "福田",
+		  abbreviation: "fti",
 		},
 		{
-			"Abbreviation": "hl",
-			"code": "hualin",
-			"name": "桦林"
+		  code: "fengtainan",
+		  name: "凤台南",
+		  abbreviation: "ftn",
 		},
 		{
-			"Abbreviation": "nqn",
-			"code": "ningqiangnan",
-			"name": "宁强南"
+		  code: "feixianbei",
+		  name: "费县北",
+		  abbreviation: "fxb",
 		},
 		{
-			"Abbreviation": "gm",
-			"code": "gaomi",
-			"name": "高密"
+		  code: "fuxin",
+		  name: "阜新",
+		  abbreviation: "fxi",
 		},
 		{
-			"Abbreviation": "lx",
-			"code": "laixi",
-			"name": "莱西"
+		  code: "fuyang",
+		  name: "富阳",
+		  abbreviation: "fya",
 		},
 		{
-			"Abbreviation": "xh",
-			"code": "xianghe",
-			"name": "襄河"
+		  code: "fuyuanbei",
+		  name: "富源北",
+		  abbreviation: "fyb",
 		},
 		{
-			"Abbreviation": "dad",
-			"code": "dongandong",
-			"name": "东安东"
+		  code: "fuyun",
+		  name: "富蕴",
+		  abbreviation: "fyu",
 		},
 		{
-			"Abbreviation": "js",
-			"code": "jiangshan",
-			"name": "江山"
+		  code: "fuyuan",
+		  name: "抚远",
+		  abbreviation: "fyu",
 		},
 		{
-			"Abbreviation": "lq",
-			"code": "longqiao",
-			"name": "龙桥"
+		  code: "fuyangxi",
+		  name: "阜阳西",
+		  abbreviation: "fyx",
 		},
 		{
-			"Abbreviation": "yl",
-			"code": "yangling",
-			"name": "杨陵"
+		  code: "fuzhoudong",
+		  name: "抚州东",
+		  abbreviation: "fzd",
 		},
 		{
-			"Abbreviation": "hyt",
-			"code": "huangyangtan",
-			"name": "黄羊滩"
+		  code: "fuzhou",
+		  name: "抚州",
+		  abbreviation: "fzh",
 		},
 		{
-			"Abbreviation": "xld",
-			"code": "xinglongdian",
-			"name": "兴隆店"
+		  code: "fangzheng",
+		  name: "方正",
+		  abbreviation: "fzh",
 		},
 		{
-			"Abbreviation": "xlz",
-			"code": "xinlizhen",
-			"name": "新立镇"
+		  code: "fuzhounan",
+		  name: "福州 南",
+		  abbreviation: "fzn",
 		},
 		{
-			"Abbreviation": "cc",
-			"code": "changchong",
-			"name": "长冲"
+		  code: "guandong",
+		  name: "固安东",
+		  abbreviation: "gad",
 		},
 		{
-			"Abbreviation": "hh",
-			"code": "houhu",
-			"name": "后湖"
+		  code: "gaoan",
+		  name: "高安",
+		  abbreviation: "gan",
 		},
 		{
-			"Abbreviation": "shx",
-			"code": "sanhexian",
-			"name": "三河县"
+		  code: "guangannan",
+		  name: "广安南",
+		  abbreviation: "gan",
 		},
 		{
-			"Abbreviation": "js",
-			"code": "jianshe",
-			"name": "建设"
+		  code: "guian",
+		  name: "贵安",
+		  abbreviation: "gan",
 		},
 		{
-			"Abbreviation": "gqz",
-			"code": "gaoqiaozhen",
-			"name": "高桥镇"
+		  code: "gaobeidiandong",
+		  name: "高碑店东",
+		  abbreviation: "gbd",
 		},
 		{
-			"Abbreviation": "lzxq",
-			"code": "lanzhouxinqu",
-			"name": "兰州新区"
+		  code: "gubeikou",
+		  name: "古北口",
+		  abbreviation: "gbk",
 		},
 		{
-			"Abbreviation": "lx",
-			"code": "longxi",
-			"name": "陇西"
+		  code: "guchengbei",
+		  name: "谷城北",
+		  abbreviation: "gcb",
 		},
 		{
-			"Abbreviation": "sy",
-			"code": "shaoyang",
-			"name": "邵阳"
+		  code: "guchengdong",
+		  name: "古城东",
+		  abbreviation: "gcd",
 		},
 		{
-			"Abbreviation": "bl",
-			"code": "bailang",
-			"name": "白狼"
+		  code: "gongcheng",
+		  name: "恭城",
+		  abbreviation: "gch",
 		},
 		{
-			"Abbreviation": "gy",
-			"code": "guyuan2",
-			"name": "菇园"
+		  code: "gaochengnan",
+		  name: "藁城南",
+		  abbreviation: "gcn",
 		},
 		{
-			"Abbreviation": "sjz",
-			"code": "shijiazi",
-			"name": "十家子"
+		  code: "guidingbei",
+		  name: "贵定北",
+		  abbreviation: "gdb",
 		},
 		{
-			"Abbreviation": "xt",
-			"code": "xiangtan",
-			"name": "湘潭"
+		  code: "guangdenan",
+		  name: "广德南",
+		  abbreviation: "gdn",
 		},
 		{
-			"Abbreviation": "ybl",
-			"code": "yingbinlu",
-			"name": "迎宾路"
+		  code: "gediannan",
+		  name: "葛店南",
+		  abbreviation: "gdn",
 		},
 		{
-			"Abbreviation": "pz",
-			"code": "pengzhou",
-			"name": "彭州"
+		  code: "guidingxian",
+		  name: "贵定县",
+		  abbreviation: "gdx",
 		},
 		{
-			"Abbreviation": "hy",
-			"code": "huangyuan",
-			"name": "湟源"
+		  code: "guanghanbei",
+		  name: "广汉北",
+		  abbreviation: "ghb",
 		},
 		{
-			"Abbreviation": "cf",
-			"code": "chifeng",
-			"name": "赤峰"
+		  code: "gaohua",
+		  name: "高花",
+		  abbreviation: "ghu",
 		},
 		{
-			"Abbreviation": "qtx",
-			"code": "qingtongxia",
-			"name": "青铜峡"
+		  code: "gejiu",
+		  name: "个旧",
+		  abbreviation: "gji",
 		},
 		{
-			"Abbreviation": "ssb",
-			"code": "sanshuibei",
-			"name": "三水北"
+		  code: "geju",
+		  name: "革居",
+		  abbreviation: "gju",
 		},
 		{
-			"Abbreviation": "xab",
-			"code": "xinganbei",
-			"name": "兴安北"
+		  code: "gaoleng",
+		  name: "高楞",
+		  abbreviation: "gle",
 		},
 		{
-			"Abbreviation": "wc",
-			"code": "wangcang",
-			"name": "旺苍"
+		  code: "guanling",
+		  name: "关岭",
+		  abbreviation: "gli",
 		},
 		{
-			"Abbreviation": "lm",
-			"code": "luomen",
-			"name": "洛门"
+		  code: "guilinxi",
+		  name: "桂林西",
+		  abbreviation: "glx",
 		},
 		{
-			"Abbreviation": "zsgz",
-			"code": "zhushaguzhen",
-			"name": "朱砂古镇"
+		  code: "gaomibei",
+		  name: "高密北",
+		  abbreviation: "gmb",
 		},
 		{
-			"Abbreviation": "lst",
-			"code": "liushutun",
-			"name": "柳树屯"
+		  code: "guangmingcheng",
+		  name: "光明城",
+		  abbreviation: "gmc",
 		},
 		{
-			"Abbreviation": "tjb",
-			"code": "tianjinbei",
-			"name": "天津北"
+		  code: "guannan",
+		  name: "灌南",
+		  abbreviation: "gna",
 		},
 		{
-			"Abbreviation": "fn2",
-			"code": "funing2",
-			"name": "抚宁"
+		  code: "guangning",
+		  name: "广宁",
+		  abbreviation: "gni",
 		},
 		{
-			"Abbreviation": "dbj",
-			"code": "dongbianjing",
-			"name": "东边井"
+		  code: "guangningsi",
+		  name: "广宁寺",
+		  abbreviation: "gns",
 		},
 		{
-			"Abbreviation": "bt",
-			"code": "beitun",
-			"name": "北屯"
+		  code: "guangnanxian",
+		  name: "广南县",
+		  abbreviation: "gnx",
 		},
 		{
-			"Abbreviation": "ym",
-			"code": "yangma",
-			"name": "羊马"
+		  code: "gaopingdong",
+		  name: "高平东",
+		  abbreviation: "gpd",
 		},
 		{
-			"Abbreviation": "dxs",
-			"code": "danxiashan",
-			"name": "丹霞山"
+		  code: "guiping",
+		  name: "桂平",
+		  abbreviation: "gpi",
 		},
 		{
-			"Abbreviation": "jy",
-			"code": "jiangyou",
-			"name": "江油"
+		  code: "gaoping",
+		  name: "高坪",
+		  abbreviation: "gpi",
 		},
 		{
-			"Abbreviation": "lwsj",
-			"code": "luowansanjiang",
-			"name": "洛湾三江"
+		  code: "guangping",
+		  name: "广平",
+		  abbreviation: "gpi",
 		},
 		{
-			"Abbreviation": "tmn",
-			"code": "tianmennan",
-			"name": "天门南"
+		  code: "gongpengzi",
+		  name: "弓棚子",
+		  abbreviation: "gpz",
 		},
 		{
-			"Abbreviation": "ym",
-			"code": "yunmeng",
-			"name": "云梦"
+		  code: "ganshuidong",
+		  name: "赶水东",
+		  abbreviation: "gsd",
 		},
 		{
-			"Abbreviation": "cz",
-			"code": "chaozhou",
-			"name": "潮州"
+		  code: "guangshan",
+		  name: "光山",
+		  abbreviation: "gsh",
 		},
 		{
-			"Abbreviation": "hmy",
-			"code": "hanmaying",
-			"name": "韩麻营"
+		  code: "gushan",
+		  name: "谷山",
+		  abbreviation: "gsh",
 		},
 		{
-			"Abbreviation": "qqhen",
-			"code": "qiqihaernan",
-			"name": "齐齐哈尔南"
+		  code: "guanshaling",
+		  name: "观沙岭",
+		  abbreviation: "gsl",
 		},
 		{
-			"Abbreviation": "lp",
-			"code": "luanping",
-			"name": "滦平"
+		  code: "gutianbei",
+		  name: "古田北",
+		  abbreviation: "gtb",
 		},
 		{
-			"Abbreviation": "dy",
-			"code": "dayi",
-			"name": "大邑"
+		  code: "guangtongbei",
+		  name: "广通北",
+		  abbreviation: "gtb",
 		},
 		{
-			"Abbreviation": "hm",
-			"code": "houmen",
-			"name": "鲘门"
+		  code: "gaotainan",
+		  name: "高台南",
+		  abbreviation: "gtn",
 		},
 		{
-			"Abbreviation": "gl",
-			"code": "gulian",
-			"name": "古莲"
+		  code: "gutianhuizhi",
+		  name: "古田会址",
+		  abbreviation: "gtz",
 		},
 		{
-			"Abbreviation": "sx",
-			"code": "shaoxing",
-			"name": "绍兴"
+		  code: "ganxianbei",
+		  name: "赣县北",
+		  abbreviation: "gxb",
 		},
 		{
-			"Abbreviation": "gl",
-			"code": "gaolan",
-			"name": "皋兰"
+		  code: "gaoxing",
+		  name: "高兴",
+		  abbreviation: "gxi",
 		},
 		{
-			"Abbreviation": "jhx",
-			"code": "jiaohexi",
-			"name": "蛟河西"
+		  code: "gaoyoubei",
+		  name: "高邮北",
+		  abbreviation: "gyb",
 		},
 		{
-			"Abbreviation": "hgt",
-			"code": "huanggutun",
-			"name": "皇姑屯"
+		  code: "guiyangbei",
+		  name: "贵  阳北",
+		  abbreviation: "gyb",
 		},
 		{
-			"Abbreviation": "lq",
-			"code": "lingqiu",
-			"name": "灵丘"
+		  code: "guiyangbei",
+		  name: "贵阳北",
+		  abbreviation: "gyb",
 		},
 		{
-			"Abbreviation": "fy",
-			"code": "fuyuan",
-			"name": "富源"
+		  code: "guanyinjichang",
+		  name: "观音机场",
+		  abbreviation: "gyc",
 		},
 		{
-			"Abbreviation": "yx",
-			"code": "yuxi",
-			"name": "玉溪"
+		  code: "guiyangdong",
+		  name: "贵阳东",
+		  abbreviation: "gyd",
 		},
 		{
-			"Abbreviation": "pqb",
-			"code": "pingquanbei",
-			"name": "平泉北"
+		  code: "gaoyou",
+		  name: "高邮",
+		  abbreviation: "gyo",
 		},
 		{
-			"Abbreviation": "qf",
-			"code": "qianfeng",
-			"name": "前锋"
+		  code: "ganyu",
+		  name: "赣榆",
+		  abbreviation: "gyu",
 		},
 		{
-			"Abbreviation": "hjx",
-			"code": "hejianxi",
-			"name": "河间西"
+		  code: "guanyun",
+		  name: "灌云",
+		  abbreviation: "gyu",
 		},
 		{
-			"Abbreviation": "ps",
-			"code": "pingshan",
-			"name": "平山"
+		  code: "gaoyixi",
+		  name: "高邑西",
+		  abbreviation: "gyx",
 		},
 		{
-			"Abbreviation": "rs",
-			"code": "rushan",
-			"name": "乳山"
+		  code: "ganzhouxi",
+		  name: "赣州西",
+		  abbreviation: "gzx",
 		},
 		{
-			"Abbreviation": "tq",
-			"code": "taiqian",
-			"name": "台前"
+		  code: "huaiandong",
+		  name: "淮安东",
+		  abbreviation: "had",
 		},
 		{
-			"Abbreviation": "lgz",
-			"code": "lianggezhuang",
-			"name": "良各庄"
+		  code: "huian",
+		  name: "惠安",
+		  abbreviation: "han",
 		},
 		{
-			"Abbreviation": "hyn",
-			"code": "huaiyangnan",
-			"name": "淮阳南"
+		  code: "huaian",
+		  name: "怀安",
+		  abbreviation: "han",
 		},
 		{
-			"Abbreviation": "zl",
-			"code": "zhulin",
-			"name": "珠琳"
+		  code: "huianpu",
+		  name: "惠安堡",
+		  abbreviation: "hap",
 		},
 		{
-			"Abbreviation": "ssn",
-			"code": "sanshuinan",
-			"name": "三水南"
+		  code: "huaibeibei",
+		  name: "淮北北",
+		  abbreviation: "hbb",
 		},
 		{
-			"Abbreviation": "mc",
-			"code": "miaocheng",
-			"name": "庙城"
+		  code: "hebidong",
+		  name: "鹤壁东",
+		  abbreviation: "hbd",
 		},
 		{
-			"Abbreviation": "qs",
-			"code": "qingshen",
-			"name": "青神"
+		  code: "huaboshan",
+		  name: "花博山",
+		  abbreviation: "hbs",
 		},
 		{
-			"Abbreviation": "lcg",
-			"code": "luchaogang",
-			"name": "芦潮港"
+		  code: "hanconggou",
+		  name: "寒葱沟",
+		  abbreviation: "hcg",
 		},
 		{
-			"Abbreviation": "jh",
-			"code": "jinhe2",
-			"name": "锦河"
+		  code: "hunchun",
+		  name: "珲春",
+		  abbreviation: "hch",
 		},
 		{
-			"Abbreviation": "ly",
-			"code": "liyang",
-			"name": "溧阳"
+		  code: "huocheng",
+		  name: "霍城",
+		  abbreviation: "hch",
 		},
 		{
-			"Abbreviation": "yjb",
-			"code": "yongjibei",
-			"name": "永济北"
+		  code: "huachengjie",
+		  name: "花城街",
+		  abbreviation: "hcj",
 		},
 		{
-			"Abbreviation": "xab",
-			"code": "xianbei",
-			"name": "西安北"
+		  code: "hedongjichang",
+		  name: "河东机场",
+		  abbreviation: "hdc",
 		},
 		{
-			"Abbreviation": "syb",
-			"code": "shenyangbei",
-			"name": "沈阳北"
+		  code: "handandong",
+		  name: "邯郸东",
+		  abbreviation: "hdd",
 		},
 		{
-			"Abbreviation": "xxb",
-			"code": "xiaoxianbei",
-			"name": "萧县北"
+		  code: "hengdaohezidong",
+		  name: "横道河子东",
+		  abbreviation: "hdd",
 		},
 		{
-			"Abbreviation": "zy",
-			"code": "zunyi",
-			"name": "遵义"
+		  code: "haidong",
+		  name: "海东",
+		  abbreviation: "hdo",
 		},
 		{
-			"Abbreviation": "zcjc",
-			"code": "zhongchuanjichang",
-			"name": "中川机场"
+		  code: "huidong",
+		  name: "惠东",
+		  abbreviation: "hdo",
 		},
 		{
-			"Abbreviation": "gg",
-			"code": "gangou",
-			"name": "干沟"
+		  code: "hadapu",
+		  name: "哈达铺",
+		  abbreviation: "hdp",
 		},
 		{
-			"Abbreviation": "qfd",
-			"code": "qufudong",
-			"name": "曲阜东"
+		  code: "huadu",
+		  name: "花都",
+		  abbreviation: "hdu",
 		},
 		{
-			"Abbreviation": "lsz",
-			"code": "lishuzhen",
-			"name": "梨树镇"
+		  code: "haidongxi",
+		  name: "海东西",
+		  abbreviation: "hdx",
 		},
 		{
-			"Abbreviation": "cqx",
-			"code": "chongqingxi",
-			"name": "重庆西"
+		  code: "hongtongxi",
+		  name: "洪洞西",
+		  abbreviation: "hdx",
 		},
 		{
-			"Abbreviation": "msz",
-			"code": "mishazi",
-			"name": "米沙子"
+		  code: "haerbinbei",
+		  name: "哈尔滨北",
+		  abbreviation: "heb",
 		},
 		{
-			"Abbreviation": "hegs",
-			"code": "huoerguosi",
-			"name": "霍尔果斯"
+		  code: "hefeibeicheng",
+		  name: "合肥北城",
+		  abbreviation: "hfc",
 		},
 		{
-			"Abbreviation": "zjjx",
-			"code": "zhangjiajiexi",
-			"name": "张家界西"
+		  code: "hefeinan",
+		  name: "合肥南",
+		  abbreviation: "hfn",
 		},
 		{
-			"Abbreviation": "xm",
-			"code": "xinmin",
-			"name": "新民"
+		  code: "hefeinan",
+		  name: "合肥 南",
+		  abbreviation: "hfn",
 		},
 		{
-			"Abbreviation": "dth",
-			"code": "dongtonghua",
-			"name": "东通化"
+		  code: "huanggang",
+		  name: "黄冈",
+		  abbreviation: "hga",
 		},
 		{
-			"Abbreviation": "jts",
-			"code": "jingtieshan",
-			"name": "镜铁山"
+		  code: "huanggangdong",
+		  name: "黄冈东",
+		  abbreviation: "hgd",
 		},
 		{
-			"Abbreviation": "zk",
-			"code": "zhoukou",
-			"name": "周口"
+		  code: "henggouqiaodong",
+		  name: "横沟桥东",
+		  abbreviation: "hgd",
 		},
 		{
-			"Abbreviation": "js",
-			"code": "jianshui",
-			"name": "建水"
+		  code: "huanggangxi",
+		  name: "黄冈西",
+		  abbreviation: "hgx",
 		},
 		{
-			"Abbreviation": "tc",
-			"code": "tangchi",
-			"name": "汤池"
+		  code: "honghe",
+		  name: "洪河",
+		  abbreviation: "hhe",
 		},
 		{
-			"Abbreviation": "tzc",
-			"code": "taizicheng",
-			"name": "太子城"
+		  code: "huaihuanan",
+		  name: "怀化南",
+		  abbreviation: "hhn",
 		},
 		{
-			"Abbreviation": "qzx",
-			"code": "qingzhenxi",
-			"name": "清镇西"
+		  code: "huanghejingqu",
+		  name: "黄河景区",
+		  abbreviation: "hhq",
 		},
 		{
-			"Abbreviation": "fsb",
-			"code": "fushunbei",
-			"name": "抚顺北"
+		  code: "huihuan",
+		  name: "惠环",
+		  abbreviation: "hhu",
 		},
 		{
-			"Abbreviation": "msj",
-			"code": "masanjia",
-			"name": "马三家"
+		  code: "huahu",
+		  name: "花湖",
+		  abbreviation: "hhu",
 		},
 		{
-			"Abbreviation": "ly",
-			"code": "luoyang",
-			"name": "洛阳"
+		  code: "houhu",
+		  name: "后湖",
+		  abbreviation: "hhu",
 		},
 		{
-			"Abbreviation": "yg",
-			"code": "yanggu",
-			"name": "阳谷"
+		  code: "huaiji",
+		  name: "怀集",
+		  abbreviation: "hji",
 		},
 		{
-			"Abbreviation": "dhd",
-			"code": "dinghudong",
-			"name": "鼎湖东"
+		  code: "houjie",
+		  name: "厚街",
+		  abbreviation: "hji",
 		},
 		{
-			"Abbreviation": "xc",
-			"code": "xichang",
-			"name": "西昌"
+		  code: "hekoubei",
+		  name: "河口北",
+		  abbreviation: "hkb",
 		},
 		{
-			"Abbreviation": "hl",
-			"code": "hulan",
-			"name": "呼兰"
+		  code: "hongkeli",
+		  name: "宏克力",
+		  abbreviation: "hkl",
 		},
 		{
-			"Abbreviation": "kln",
-			"code": "kailinan",
-			"name": "凯里南"
+		  code: "huailai",
+		  name: "怀来",
+		  abbreviation: "hla",
 		},
 		{
-			"Abbreviation": "wf",
-			"code": "wangfu",
-			"name": "王府"
+		  code: "hailinbei",
+		  name: "海林北",
+		  abbreviation: "hlb",
 		},
 		{
-			"Abbreviation": "jx",
-			"code": "jiaxing",
-			"name": "嘉兴"
+		  code: "huangliu",
+		  name: "黄流",
+		  abbreviation: "hli",
 		},
 		{
-			"Abbreviation": "ka",
-			"code": "kaian",
-			"name": "开安"
+		  code: "huanglingnan",
+		  name: "黄陵南",
+		  abbreviation: "hln",
 		},
 		{
-			"Abbreviation": "ts",
-			"code": "taoshan",
-			"name": "桃山"
+		  code: "humenbei",
+		  name: "虎门北",
+		  abbreviation: "hmb",
 		},
 		{
-			"Abbreviation": "mn",
-			"code": "mianning",
-			"name": "冕宁"
+		  code: "humendong",
+		  name: "虎门东",
+		  abbreviation: "hmd",
 		},
 		{
-			"Abbreviation": "gn",
-			"code": "guannan",
-			"name": "灌南"
+		  code: "houmen",
+		  name: "鲘门",
+		  abbreviation: "hme",
 		},
 		{
-			"Abbreviation": "hl",
-			"code": "helong",
-			"name": "和龙"
+		  code: "haimen",
+		  name: "海门",
+		  abbreviation: "hme",
 		},
 		{
-			"Abbreviation": "hk",
-			"code": "hongkan",
-			"name": "九龙(红磡)"
+		  code: "humen",
+		  name: "虎门",
+		  abbreviation: "hme",
 		},
 		{
-			"Abbreviation": "aesb",
-			"code": "aershanbei",
-			"name": "阿尔山北"
+		  code: "hongmei",
+		  name: "洪梅",
+		  abbreviation: "hme",
 		},
 		{
-			"Abbreviation": "pg",
-			"code": "pinggang",
-			"name": "平岗"
+		  code: "houmaxi",
+		  name: "侯马西",
+		  abbreviation: "hmx",
 		},
 		{
-			"Abbreviation": "ta",
-			"code": "taian1",
-			"name": "泰安"
+		  code: "hengnan",
+		  name: "衡南",
+		  abbreviation: "hna",
 		},
 		{
-			"Abbreviation": "tjj",
-			"code": "tanjiajing",
-			"name": "谭家井"
+		  code: "huainandong",
+		  name: "淮南东",
+		  abbreviation: "hnd",
 		},
 		{
-			"Abbreviation": "xgb",
-			"code": "xiaoganbei",
-			"name": "孝感北"
+		  code: "huainannan",
+		  name: "淮南南",
+		  abbreviation: "hnn",
 		},
 		{
-			"Abbreviation": "byd",
-			"code": "baiyangdian",
-			"name": "白洋淀"
+		  code: "hepu",
+		  name: "合浦",
+		  abbreviation: "hpu",
 		},
 		{
-			"Abbreviation": "yxx",
-			"code": "yixianxi",
-			"name": "义县西"
+		  code: "hengqinbei",
+		  name: "横琴北",
+		  abbreviation: "hqb",
 		},
 		{
-			"Abbreviation": "lk",
-			"code": "lankao",
-			"name": "兰考"
+		  code: "huoqiu",
+		  name: "霍邱",
+		  abbreviation: "hqi",
 		},
 		{
-			"Abbreviation": "xs",
-			"code": "xiashe",
-			"name": "下社"
+		  code: "hengqin",
+		  name: "横琴",
+		  abbreviation: "hqi",
 		},
 		{
-			"Abbreviation": "zd",
-			"code": "zhengding",
-			"name": "正定"
+		  code: "huarongdong",
+		  name: "华容东",
+		  abbreviation: "hrd",
 		},
 		{
-			"Abbreviation": "qlh",
-			"code": "qilihe",
-			"name": "七里河"
+		  code: "huairendong",
+		  name: "怀仁东",
+		  abbreviation: "hrd",
 		},
 		{
-			"Abbreviation": "tn",
-			"code": "taining",
-			"name": "泰宁"
+		  code: "huarongnan",
+		  name: "华容南",
+		  abbreviation: "hrn",
 		},
 		{
-			"Abbreviation": "mg",
-			"code": "mangui",
-			"name": "满归"
+		  code: "huairounan",
+		  name: "怀柔南",
+		  abbreviation: "hrn",
 		},
 		{
-			"Abbreviation": "tmz",
-			"code": "tumenzi",
-			"name": "土门子"
+		  code: "hongsibaobei",
+		  name: "红寺堡北",
+		  abbreviation: "hsb",
 		},
 		{
-			"Abbreviation": "at",
-			"code": "antu",
-			"name": "安图"
+		  code: "huangshanbei",
+		  name: "黄山北",
+		  abbreviation: "hsb",
 		},
 		{
-			"Abbreviation": "yj",
-			"code": "yangjiang",
-			"name": "阳江"
+		  code: "huangshibei",
+		  name: "黄石北",
+		  abbreviation: "hsb",
 		},
 		{
-			"Abbreviation": "xan",
-			"code": "xiannan",
-			"name": "西安南"
+		  code: "hengshuibei",
+		  name: "衡水北",
+		  abbreviation: "hsb",
 		},
 		{
-			"Abbreviation": "xj",
-			"code": "xinjiang",
-			"name": "新江"
+		  code: "heishanbei",
+		  name: "黑山北",
+		  abbreviation: "hsb",
 		},
 		{
-			"Abbreviation": "bs",
-			"code": "bishan",
-			"name": "璧山"
+		  code: "heshengqiaodong",
+		  name: "贺胜桥东",
+		  abbreviation: "hsd",
 		},
 		{
-			"Abbreviation": "sr",
-			"code": "shangrao",
-			"name": "上饶"
+		  code: "heshuo",
+		  name: "和硕",
+		  abbreviation: "hsh",
 		},
 		{
-			"Abbreviation": "ld",
-			"code": "ledu",
-			"name": "乐都"
+		  code: "hanshannan",
+		  name: "含山南",
+		  abbreviation: "hsn",
 		},
 		{
-			"Abbreviation": "pay",
-			"code": "pinganyi",
-			"name": "平安驿"
+		  code: "huashannan",
+		  name: "花山南",
+		  abbreviation: "hsn",
 		},
 		{
-			"Abbreviation": "zk",
-			"code": "zengkou",
-			"name": "曾口"
+		  code: "heishansi",
+		  name: "黑山寺",
+		  abbreviation: "hss",
 		},
 		{
-			"Abbreviation": "cm",
-			"code": "chenming",
-			"name": "晨明"
+		  code: "huashanzhen",
+		  name: "花山镇",
+		  abbreviation: "hsz",
 		},
 		{
-			"Abbreviation": "jj",
-			"code": "jiangjin",
-			"name": "江津"
+		  code: "hetang",
+		  name: "荷塘",
+		  abbreviation: "hta",
 		},
 		{
-			"Abbreviation": "wlmt",
-			"code": "wulanmutu",
-			"name": "乌兰木图"
+		  code: "huangtongbei",
+		  name: "黄桶北",
+		  abbreviation: "htb",
 		},
 		{
-			"Abbreviation": "ajc",
-			"code": "aijiacun",
-			"name": "艾家村"
+		  code: "huangtudian",
+		  name: "黄土店",
+		  abbreviation: "htd",
 		},
 		{
-			"Abbreviation": "nbs",
-			"code": "nanboshan",
-			"name": "南博山"
+		  code: "huatugou",
+		  name: "花土沟",
+		  abbreviation: "htg",
 		},
 		{
-			"Abbreviation": "gdb",
-			"code": "guidingbei",
-			"name": "贵定北"
+		  code: "huanxian",
+		  name: "环县",
+		  abbreviation: "hxi",
 		},
 		{
-			"Abbreviation": "hn",
-			"code": "huinong",
-			"name": "惠农"
+		  code: "heyangbei",
+		  name: "合阳北",
+		  abbreviation: "hyb",
 		},
 		{
-			"Abbreviation": "lzb",
-			"code": "luzhaibei",
-			"name": "鹿寨北"
+		  code: "haiyangbei",
+		  name: "海阳北",
+		  abbreviation: "hyb",
 		},
 		{
-			"Abbreviation": "hq",
-			"code": "heqing",
-			"name": "鹤庆"
+		  code: "huaiyin",
+		  name: "槐荫",
+		  abbreviation: "hyi",
 		},
 		{
-			"Abbreviation": "jyx",
-			"code": "jingyuanxi",
-			"name": "靖远西"
+		  code: "huyi",
+		  name: "鄠邑",
+		  abbreviation: "hyi",
 		},
 		{
-			"Abbreviation": "xrq",
-			"code": "xianrenqiao",
-			"name": "仙人桥"
+		  code: "huayuankou",
+		  name: "花园口",
+		  abbreviation: "hyk",
 		},
 		{
-			"Abbreviation": "klmy",
-			"code": "kelamayi",
-			"name": "克拉玛依"
+		  code: "huaiyangnan",
+		  name: "淮阳南",
+		  abbreviation: "hyn",
 		},
 		{
-			"Abbreviation": "rkz",
-			"code": "rikaze",
-			"name": "日喀则"
+		  code: "huozhoudong",
+		  name: "霍州东",
+		  abbreviation: "hzd",
 		},
 		{
-			"Abbreviation": "czl",
-			"code": "caozili",
-			"name": "曹子里"
+		  code: "huizhounan",
+		  name: "惠州南",
+		  abbreviation: "hzn",
 		},
 		{
-			"Abbreviation": "pq",
-			"code": "pingquan",
-			"name": "平泉"
+		  code: "jianan",
+		  name: "建安",
+		  abbreviation: "jan",
 		},
 		{
-			"Abbreviation": "ty",
-			"code": "tongyu",
-			"name": "通榆"
+		  code: "jianxi",
+		  name: "吉安西",
+		  abbreviation: "jax",
 		},
 		{
-			"Abbreviation": "ch",
-			"code": "chaohu",
-			"name": "巢湖"
+		  code: "jinchengdong",
+		  name: "晋城东",
+		  abbreviation: "jcd",
 		},
 		{
-			"Abbreviation": "gy",
-			"code": "guoyang",
-			"name": "涡阳"
+		  code: "jingchuan",
+		  name: "泾川",
+		  abbreviation: "jch",
 		},
 		{
-			"Abbreviation": "dl",
-			"code": "donglai",
-			"name": "东来"
+		  code: "jianchang",
+		  name: "碱厂",
+		  abbreviation: "jch",
 		},
 		{
-			"Abbreviation": "sc",
-			"code": "shunchang",
-			"name": "顺昌"
+		  code: "jingdezhenbei",
+		  name: "景德镇北",
+		  abbreviation: "jdb",
 		},
 		{
-			"Abbreviation": "jx",
-			"code": "jiaxian",
-			"name": "郏县"
+		  code: "jingde",
+		  name: "旌德",
+		  abbreviation: "jde",
 		},
 		{
-			"Abbreviation": "qa",
-			"code": "qianan",
-			"name": "乾安"
+		  code: "jiande",
+		  name: "建德",
+		  abbreviation: "jde",
 		},
 		{
-			"Abbreviation": "lfx",
-			"code": "linfenxi",
-			"name": "临汾西"
+		  code: "jianfeng",
+		  name: "尖峰",
+		  abbreviation: "jfe",
 		},
 		{
-			"Abbreviation": "fz",
-			"code": "fangzheng",
-			"name": "方正"
+		  code: "jinhai",
+		  name: "近海",
+		  abbreviation: "jha",
 		},
 		{
-			"Abbreviation": "xf",
-			"code": "xianfeng",
-			"name": "先锋"
+		  code: "jiaohexi",
+		  name: "蛟河西",
+		  abbreviation: "jhx",
 		},
 		{
-			"Abbreviation": "dpf",
-			"code": "dapingfang",
-			"name": "大平房"
+		  code: "junliangchengbei",
+		  name: "军粮城北",
+		  abbreviation: "jlb",
 		},
 		{
-			"Abbreviation": "gz",
-			"code": "ganzhou",
-			"name": "赣州"
+		  code: "jiangle",
+		  name: "将乐",
+		  abbreviation: "jle",
 		},
 		{
-			"Abbreviation": "dsn",
-			"code": "dangshannan",
-			"name": "砀山南"
+		  code: "jialuhe",
+		  name: "贾鲁河",
+		  abbreviation: "jlh",
 		},
 		{
-			"Abbreviation": "gcn",
-			"code": "gaochengnan",
-			"name": "藁城南"
+		  code: "jiulangshan",
+		  name: "九郎山",
+		  abbreviation: "jls",
 		},
 		{
-			"Abbreviation": "lyx",
-			"code": "leiyangxi",
-			"name": "耒阳西"
+		  code: "jimobei",
+		  name: "即墨北",
+		  abbreviation: "jmb",
 		},
 		{
-			"Abbreviation": "cdd2",
-			"code": "chengdudong2",
-			"name": "成  都东"
+		  code: "jianmenguan",
+		  name: "剑门关",
+		  abbreviation: "jmg",
 		},
 		{
-			"Abbreviation": "ddg",
-			"code": "dadenggou",
-			"name": "大磴沟"
+		  code: "jiamusixi",
+		  name: "佳木斯西",
+		  abbreviation: "jmx",
 		},
 		{
-			"Abbreviation": "yc",
-			"code": "yangcha",
-			"name": "阳岔"
+		  code: "jianningxianbei",
+		  name: "建宁县北",
+		  abbreviation: "jnb",
 		},
 		{
-			"Abbreviation": "py",
-			"code": "pingyu",
-			"name": "平峪"
+		  code: "junanbei",
+		  name: "莒南北",
+		  abbreviation: "jnb",
 		},
 		{
-			"Abbreviation": "wlb",
-			"code": "wulongbei",
-			"name": "五龙背"
+		  code: "jinandong",
+		  name: "济南东",
+		  abbreviation: "jnd",
 		},
 		{
-			"Abbreviation": "xy",
-			"code": "xinyi",
-			"name": "新沂"
+		  code: "jiangning",
+		  name: "江宁",
+		  abbreviation: "jni",
 		},
 		{
-			"Abbreviation": "hax",
-			"code": "honganxi",
-			"name": "红安西"
+		  code: "jiangningxi",
+		  name: "江宁西",
+		  abbreviation: "jnx",
 		},
 		{
-			"Abbreviation": "bxb",
-			"code": "binxibei",
-			"name": "宾西北"
+		  code: "jianoudong",
+		  name: "建瓯东",
+		  abbreviation: "jod",
 		},
 		{
-			"Abbreviation": "dsz",
-			"code": "dashizhai",
-			"name": "大石寨"
+		  code: "jianouxi",
+		  name: "建瓯西",
+		  abbreviation: "jox",
 		},
 		{
-			"Abbreviation": "ga",
-			"code": "guangan",
-			"name": "广安"
+		  code: "jianping",
+		  name: "建平",
+		  abbreviation: "jpi",
 		},
 		{
-			"Abbreviation": "syc",
-			"code": "sanyangchuan",
-			"name": "三阳川"
+		  code: "jianqiao",
+		  name: "建桥",
+		  abbreviation: "jqi",
 		},
 		{
-			"Abbreviation": "ya",
-			"code": "yaoan",
-			"name": "姚安"
+		  code: "jiuquannan",
+		  name: "酒泉南",
+		  abbreviation: "jqn",
 		},
 		{
-			"Abbreviation": "asx",
-			"code": "anshunxi",
-			"name": "安顺西"
+		  code: "jurongxi",
+		  name: "句容西",
+		  abbreviation: "jrx",
 		},
 		{
-			"Abbreviation": "yq",
-			"code": "yangquan",
-			"name": "阳泉"
+		  code: "jianshui",
+		  name: "建水",
+		  abbreviation: "jsh",
 		},
 		{
-			"Abbreviation": "yc",
-			"code": "yangcun",
-			"name": "杨村"
+		  code: "jianshan",
+		  name: "尖山",
+		  abbreviation: "jsh",
 		},
 		{
-			"Abbreviation": "aj",
-			"code": "anjing",
-			"name": "安靖"
+		  code: "jieshounan",
+		  name: "界首南",
+		  abbreviation: "jsn",
 		},
 		{
-			"Abbreviation": "tjn",
-			"code": "tianjinnan",
-			"name": "天津南"
+		  code: "jieshoushi",
+		  name: "界首市",
+		  abbreviation: "jss",
 		},
 		{
-			"Abbreviation": "hn",
-			"code": "haining",
-			"name": "海宁"
+		  code: "jishuixi",
+		  name: "吉水西",
+		  abbreviation: "jsx",
 		},
 		{
-			"Abbreviation": "ks",
-			"code": "kuishan",
-			"name": "奎山"
+		  code: "jixibei",
+		  name: "绩溪北",
+		  abbreviation: "jxb",
 		},
 		{
-			"Abbreviation": "sjl",
-			"code": "sijialing",
-			"name": "司家岭"
+		  code: "jiexiudong",
+		  name: "介休东",
+		  abbreviation: "jxd",
 		},
 		{
-			"Abbreviation": "gn",
-			"code": "guangning",
-			"name": "广宁"
+		  code: "jingxian",
+		  name: "泾县",
+		  abbreviation: "jxi",
 		},
 		{
-			"Abbreviation": "hbb",
-			"code": "huaibeibei",
-			"name": "淮北北"
+		  code: "jingxi",
+		  name: "靖西",
+		  abbreviation: "jxi",
 		},
 		{
-			"Abbreviation": "kt",
-			"code": "kuitun",
-			"name": "奎屯"
+		  code: "jiaxian",
+		  name: "郏县",
+		  abbreviation: "jxi",
 		},
 		{
-			"Abbreviation": "wa",
-			"code": "wuan",
-			"name": "武安"
+		  code: "jinxiannan",
+		  name: "进贤南",
+		  abbreviation: "jxn",
 		},
 		{
-			"Abbreviation": "gdn",
-			"code": "guidingnan",
-			"name": "贵定南"
+		  code: "jieyang",
+		  name: "揭阳",
+		  abbreviation: "jya",
 		},
 		{
-			"Abbreviation": "bx",
-			"code": "benxi",
-			"name": "本溪"
+		  code: "jiangyoubei",
+		  name: "江油北",
+		  abbreviation: "jyb",
 		},
 		{
-			"Abbreviation": "py",
-			"code": "pingyang2",
-			"name": "平洋"
+		  code: "jieyangjichang",
+		  name: "揭阳机场",
+		  abbreviation: "jyc",
 		},
 		{
-			"Abbreviation": "cw",
-			"code": "chunwan",
-			"name": "春湾"
+		  code: "jiayuguannan",
+		  name: "嘉峪关南",
+		  abbreviation: "jyn",
 		},
 		{
-			"Abbreviation": "qd2",
-			"code": "qidong2",
-			"name": "祁东"
+		  code: "jianyangnan",
+		  name: "简阳南",
+		  abbreviation: "jyn",
 		},
 		{
-			"Abbreviation": "bs",
-			"code": "bashan",
-			"name": "巴山"
+		  code: "jinyintan",
+		  name: "金银潭",
+		  abbreviation: "jyt",
 		},
 		{
-			"Abbreviation": "dy",
-			"code": "dayuan",
-			"name": "大元"
+		  code: "jingyu",
+		  name: "靖宇",
+		  abbreviation: "jyu",
 		},
 		{
-			"Abbreviation": "mg",
-			"code": "mingguang",
-			"name": "明光"
+		  code: "jinyuewan",
+		  name: "金月湾",
+		  abbreviation: "jyw",
 		},
 		{
-			"Abbreviation": "mlh",
-			"code": "malianhe",
-			"name": "马莲河"
+		  code: "jinyunxi",
+		  name: "缙云西",
+		  abbreviation: "jyx",
 		},
 		{
-			"Abbreviation": "jx",
-			"code": "jingxi",
-			"name": "靖西"
+		  code: "jinzhong",
+		  name: "晋中",
+		  abbreviation: "jzh",
 		},
 		{
-			"Abbreviation": "ys",
-			"code": "yingshan",
-			"name": "营山"
+		  code: "jingzhou",
+		  name: "景州",
+		  abbreviation: "jzh",
 		},
 		{
-			"Abbreviation": "ha",
-			"code": "haian",
-			"name": "海安"
+		  code: "jiaozuoxi",
+		  name: "焦作西",
+		  abbreviation: "jzx",
 		},
 		{
-			"Abbreviation": "bl",
-			"code": "beiliu",
-			"name": "北流"
+		  code: "kuermuyi",
+		  name: "库尔木依",
+		  abbreviation: "key",
 		},
 		{
-			"Abbreviation": "cg",
-			"code": "cuogang",
-			"name": "嵯岗"
+		  code: "kaifengbei",
+		  name: "开封北",
+		  abbreviation: "kfb",
 		},
 		{
-			"Abbreviation": "nhz",
-			"code": "nihezi",
-			"name": "泥河子"
+		  code: "kaifusi",
+		  name: "开福寺",
+		  abbreviation: "kfs",
 		},
 		{
-			"Abbreviation": "gzl",
-			"code": "gongzhuling",
-			"name": "公主岭"
+		  code: "kaihua",
+		  name: "开化",
+		  abbreviation: "khu",
 		},
 		{
-			"Abbreviation": "sy",
-			"code": "shiyan",
-			"name": "十堰"
+		  code: "kailinan",
+		  name: "凯里南",
+		  abbreviation: "kln",
 		},
 		{
-			"Abbreviation": "kf",
-			"code": "kaifeng",
-			"name": "开封"
+		  code: "kulun",
+		  name: "库伦",
+		  abbreviation: "klu",
 		},
 		{
-			"Abbreviation": "xz",
-			"code": "xiangzhou",
-			"name": "襄州"
+		  code: "kunmingnan",
+		  name: "昆明南",
+		  abbreviation: "kmn",
 		},
 		{
-			"Abbreviation": "zx",
-			"code": "zhenxi1",
-			"name": "镇西"
+		  code: "kuitan",
+		  name: "葵潭",
+		  abbreviation: "kta",
 		},
 		{
-			"Abbreviation": "tl",
-			"code": "tongling",
-			"name": "铜陵"
+		  code: "kaiyang",
+		  name: "开阳",
+		  abbreviation: "kya",
 		},
 		{
-			"Abbreviation": "ez",
-			"code": "ezhou",
-			"name": "鄂州"
+		  code: "kunyu",
+		  name: "昆玉",
+		  abbreviation: "kyu",
 		},
 		{
-			"Abbreviation": "bxxc",
-			"code": "benxixincheng",
-			"name": "本溪新城"
+		  code: "kazuo",
+		  name: "喀左",
+		  abbreviation: "kzu",
 		},
 		{
-			"Abbreviation": "wc",
-			"code": "wenchun",
-			"name": "温春"
+		  code: "longandong",
+		  name: "隆安东",
+		  abbreviation: "lad",
 		},
 		{
-			"Abbreviation": "cd",
-			"code": "chengde",
-			"name": "承德"
+		  code: "lengba",
+		  name: "冷坝",
+		  abbreviation: "lba",
 		},
 		{
-			"Abbreviation": "my",
-			"code": "maiyuan",
-			"name": "麦园"
+		  code: "laibinbei",
+		  name: "来宾北",
+		  abbreviation: "lbb",
 		},
 		{
-			"Abbreviation": "nnd",
-			"code": "nanningdong",
-			"name": "南宁东"
+		  code: "lingbi",
+		  name: "灵璧",
+		  abbreviation: "lbi",
 		},
 		{
-			"Abbreviation": "yj",
-			"code": "yaojia",
-			"name": "姚家"
+		  code: "liaobu",
+		  name: "寮步",
+		  abbreviation: "lbu",
 		},
 		{
-			"Abbreviation": "hc",
-			"code": "hancheng",
-			"name": "韩城"
+		  code: "lvboyuan",
+		  name: "绿博园",
+		  abbreviation: "lby",
 		},
 		{
-			"Abbreviation": "xmb",
-			"code": "xiamenbei",
-			"name": "厦门北"
+		  code: "lincang",
+		  name: "临沧",
+		  abbreviation: "lca",
 		},
 		{
-			"Abbreviation": "xht",
-			"code": "xinhuatun",
-			"name": "新华屯"
+		  code: "longchangbei",
+		  name: "隆昌北",
+		  abbreviation: "lcb",
 		},
 		{
-			"Abbreviation": "lygd",
-			"code": "lianyungangdong",
-			"name": "连云港东"
+		  code: "lechangdong",
+		  name: "乐昌东",
+		  abbreviation: "lcd",
 		},
 		{
-			"Abbreviation": "fz",
-			"code": "fengzhen",
-			"name": "丰镇"
+		  code: "luocheng",
+		  name: "罗城",
+		  abbreviation: "lch",
 		},
 		{
-			"Abbreviation": "qzd",
-			"code": "qinzhoudong",
-			"name": "钦州东"
+		  code: "lingcheng",
+		  name: "陵城",
+		  abbreviation: "lch",
 		},
 		{
-			"Abbreviation": "yl",
-			"code": "yanglin",
-			"name": "杨林"
+		  code: "lincheng",
+		  name: "临城",
+		  abbreviation: "lch",
 		},
 		{
-			"Abbreviation": "yx",
-			"code": "yuexi",
-			"name": "越西"
+		  code: "laochengzhen",
+		  name: "老城镇",
+		  abbreviation: "lcz",
 		},
 		{
-			"Abbreviation": "dhc",
-			"code": "dahuichang",
-			"name": "大灰厂"
+		  code: "longdongbao",
+		  name: "龙洞堡",
+		  abbreviation: "ldb",
 		},
 		{
-			"Abbreviation": "dx",
-			"code": "daxing",
-			"name": "大兴"
+		  code: "loudinan",
+		  name: "娄底南",
+		  abbreviation: "ldn",
 		},
 		{
-			"Abbreviation": "dg",
-			"code": "daguan",
-			"name": "大关"
+		  code: "ledong",
+		  name: "乐东",
+		  abbreviation: "ldo",
 		},
 		{
-			"Abbreviation": "xc",
-			"code": "xiaocun",
-			"name": "小村"
+		  code: "liduigongyuan",
+		  name: "离堆公园",
+		  abbreviation: "ldy",
 		},
 		{
-			"Abbreviation": "bmj",
-			"code": "baimajing",
-			"name": "白马井"
+		  code: "loufan",
+		  name: "娄烦",
+		  abbreviation: "lfa",
 		},
 		{
-			"Abbreviation": "dlz",
-			"code": "dalangzhen",
-			"name": "大朗镇"
+		  code: "lufeng",
+		  name: "陆丰",
+		  abbreviation: "lfe",
 		},
 		{
-			"Abbreviation": "rz",
-			"code": "ruzhou",
-			"name": "汝州"
+		  code: "laifeng",
+		  name: "来凤",
+		  abbreviation: "lfe",
 		},
 		{
-			"Abbreviation": "wws",
-			"code": "wawushan",
-			"name": "瓦屋山"
+		  code: "longfeng",
+		  name: "龙丰",
+		  abbreviation: "lfe",
 		},
 		{
-			"Abbreviation": "zjx",
-			"code": "zhanjiangxi",
-			"name": "湛江西"
+		  code: "lufengnan",
+		  name: "禄丰南",
+		  abbreviation: "lfn",
 		},
 		{
-			"Abbreviation": "hg",
-			"code": "hongguo",
-			"name": "红果"
+		  code: "linfenxi",
+		  name: "临汾西",
+		  abbreviation: "lfx",
 		},
 		{
-			"Abbreviation": "xhn",
-			"code": "xinhuanan",
-			"name": "新化南"
+		  code: "lingaonan",
+		  name: "临高南",
+		  abbreviation: "lgn",
 		},
 		{
-			"Abbreviation": "htz",
-			"code": "haituozi",
-			"name": "海坨子"
+		  code: "lugu",
+		  name: "麓谷",
+		  abbreviation: "lgu",
 		},
 		{
-			"Abbreviation": "wysb",
-			"code": "wuyishanbei",
-			"name": "武夷山北"
+		  code: "luanhe",
+		  name: "滦河",
+		  abbreviation: "lhe",
 		},
 		{
-			"Abbreviation": "xpx",
-			"code": "xipingxi",
-			"name": "西平西"
+		  code: "luohuangnan",
+		  name: "珞璜南",
+		  abbreviation: "lhn",
 		},
 		{
-			"Abbreviation": "lb",
-			"code": "liaobu",
-			"name": "寮步"
+		  code: "longhui",
+		  name: "隆回",
+		  abbreviation: "lhu",
 		},
 		{
-			"Abbreviation": "tx",
-			"code": "tongxin",
-			"name": "同心"
+		  code: "luohexi",
+		  name: "漯河西",
+		  abbreviation: "lhx",
 		},
 		{
-			"Abbreviation": "dc",
-			"code": "dechang",
-			"name": "德昌"
+		  code: "luojiangdong",
+		  name: "罗江东",
+		  abbreviation: "ljd",
 		},
 		{
-			"Abbreviation": "pb",
-			"code": "pingbian",
-			"name": "屏边"
+		  code: "liujiang",
+		  name: "柳江",
+		  abbreviation: "lji",
 		},
 		{
-			"Abbreviation": "rg",
-			"code": "rugao",
-			"name": "如皋"
+		  code: "lijinnan",
+		  name: "利津南",
+		  abbreviation: "ljn",
 		},
 		{
-			"Abbreviation": "xh",
-			"code": "xuanhe",
-			"name": "宣和"
+		  code: "lujiangxi",
+		  name: "庐江西",
+		  abbreviation: "ljx",
 		},
 		{
-			"Abbreviation": "lh",
-			"code": "longhua",
-			"name": "隆化"
+		  code: "lijiazhai",
+		  name: "厉家寨",
+		  abbreviation: "ljz",
 		},
 		{
-			"Abbreviation": "tsc",
-			"code": "tangshancheng",
-			"name": "汤山城"
+		  code: "lankaonan",
+		  name: "兰考南",
+		  abbreviation: "lkn",
 		},
 		{
-			"Abbreviation": "qw2",
-			"code": "qianwei2",
-			"name": "犍为"
+		  code: "longkoushi",
+		  name: "龙口市",
+		  abbreviation: "lks",
 		},
 		{
-			"Abbreviation": "hsx",
-			"code": "hengshanxi",
-			"name": "衡山西"
+		  code: "longlibei",
+		  name: "龙里北",
+		  abbreviation: "llb",
 		},
 		{
-			"Abbreviation": "xzl",
-			"code": "xiangzhanglu",
-			"name": "香樟路"
+		  code: "lilinbei",
+		  name: "沥林北",
+		  abbreviation: "llb",
 		},
 		{
-			"Abbreviation": "czb",
-			"code": "changzhibei",
-			"name": "长治北"
+		  code: "lanlingbei",
+		  name: "兰陵北",
+		  abbreviation: "llb",
 		},
 		{
-			"Abbreviation": "sf",
-			"code": "shengfang",
-			"name": "胜芳"
+		  code: "lilingdong",
+		  name: "醴陵东",
+		  abbreviation: "lld",
 		},
 		{
-			"Abbreviation": "gdx",
-			"code": "guidingxian",
-			"name": "贵定县"
+		  code: "lumiao",
+		  name: "芦庙",
+		  abbreviation: "lmi",
 		},
 		{
-			"Abbreviation": "xz",
-			"code": "xinzhou",
-			"name": "忻州"
+		  code: "longnan",
+		  name: "陇南",
+		  abbreviation: "lna",
 		},
 		{
-			"Abbreviation": "bh",
-			"code": "beihai",
-			"name": "北海"
+		  code: "liaoningchaoyang",
+		  name: "辽宁朝阳",
+		  abbreviation: "lny",
 		},
 		{
-			"Abbreviation": "xg",
-			"code": "xigu",
-			"name": "西固"
+		  code: "liupanshuidong",
+		  name: "六盘水东",
+		  abbreviation: "lpd",
 		},
 		{
-			"Abbreviation": "zq",
-			"code": "zhangqiao",
-			"name": "张桥"
+		  code: "liangpingnan",
+		  name: "梁平南",
+		  abbreviation: "lpn",
 		},
 		{
-			"Abbreviation": "wd",
-			"code": "wangdu",
-			"name": "望都"
+		  code: "longqiao",
+		  name: "龙桥",
+		  abbreviation: "lqi",
 		},
 		{
-			"Abbreviation": "lhz",
-			"code": "liuhezhen",
-			"name": "六合镇"
+		  code: "liquannan",
+		  name: "礼泉南",
+		  abbreviation: "lqn",
 		},
 		{
-			"Abbreviation": "gtx",
-			"code": "guantingxi",
-			"name": "官厅西"
+		  code: "longquanshi",
+		  name: "龙泉市",
+		  abbreviation: "lqs",
 		},
 		{
-			"Abbreviation": "dy",
-			"code": "deyang",
-			"name": "德阳"
+		  code: "liquan",
+		  name: "礼泉",
+		  abbreviation: "lqu",
 		},
 		{
-			"Abbreviation": "jj",
-			"code": "jiangjia",
-			"name": "姜家"
+		  code: "linquan",
+		  name: "临泉",
+		  abbreviation: "lqu",
 		},
 		{
-			"Abbreviation": "kj",
-			"code": "kaijiang",
-			"name": "开江"
+		  code: "longshanbei",
+		  name: "龙山北",
+		  abbreviation: "lsb",
 		},
 		{
-			"Abbreviation": "dcn",
-			"code": "dongchengnan",
-			"name": "东城南"
+		  code: "lingshidong",
+		  name: "灵石东",
+		  abbreviation: "lsd",
 		},
 		{
-			"Abbreviation": "ly",
-			"code": "liuyuan",
-			"name": "柳园"
+		  code: "leshan",
+		  name: "乐山",
+		  abbreviation: "lsh",
 		},
 		{
-			"Abbreviation": "lz",
-			"code": "luzhai",
-			"name": "鹿寨"
+		  code: "longshi",
+		  name: "龙市",
+		  abbreviation: "lsh",
 		},
 		{
-			"Abbreviation": "xsw",
-			"code": "xusanwan",
-			"name": "许三湾"
+		  code: "lianshui",
+		  name: "涟水",
+		  abbreviation: "lsh",
 		},
 		{
-			"Abbreviation": "mq",
-			"code": "minquan",
-			"name": "民权"
+		  code: "lishui",
+		  name: "溧水",
+		  abbreviation: "lsh",
 		},
 		{
-			"Abbreviation": "rc",
-			"code": "ruichang",
-			"name": "瑞昌"
+		  code: "loushanguannan",
+		  name: "娄山关南",
+		  abbreviation: "lsn",
 		},
 		{
-			"Abbreviation": "ly",
-			"code": "lueyang",
-			"name": "略阳"
+		  code: "lanshanxi",
+		  name: "岚山西",
+		  abbreviation: "lsx",
 		},
 		{
-			"Abbreviation": "rjg",
-			"code": "rujigou",
-			"name": "汝箕沟"
+		  code: "letong",
+		  name: "乐同",
+		  abbreviation: "lto",
 		},
 		{
-			"Abbreviation": "fhx",
-			"code": "fuhaixi",
-			"name": "福海西"
+		  code: "longtangzhen",
+		  name: "龙塘镇",
+		  abbreviation: "ltz",
 		},
 		{
-			"Abbreviation": "zlt",
-			"code": "zhalute",
-			"name": "扎鲁特"
+		  code: "lingwubei",
+		  name: "灵武北",
+		  abbreviation: "lwb",
 		},
 		{
-			"Abbreviation": "qt",
-			"code": "qiaotou",
-			"name": "桥头"
+		  code: "luowansanjiang",
+		  name: "洛湾三江",
+		  abbreviation: "lwj",
 		},
 		{
-			"Abbreviation": "ss",
-			"code": "sansui",
-			"name": "三穗"
+		  code: "lanxian",
+		  name: "岚县",
+		  abbreviation: "lxi",
 		},
 		{
-			"Abbreviation": "na",
-			"code": "nongan",
-			"name": "农安"
+		  code: "laixi",
+		  name: "莱西",
+		  abbreviation: "lxi",
 		},
 		{
-			"Abbreviation": "qf",
-			"code": "qufu",
-			"name": "曲阜"
+		  code: "langxinan",
+		  name: "郎溪南",
+		  abbreviation: "lxn",
 		},
 		{
-			"Abbreviation": "jz",
-			"code": "jinzhou2",
-			"name": "锦州"
+		  code: "liyang",
+		  name: "溧阳",
+		  abbreviation: "lya",
 		},
 		{
-			"Abbreviation": "dtn",
-			"code": "datongnan",
-			"name": "大同南"
+		  code: "linyibei",
+		  name: "临沂北",
+		  abbreviation: "lyb",
 		},
 		{
-			"Abbreviation": "szjc",
-			"code": "shenzhenjichang",
-			"name": "深圳机场"
+		  code: "linyibei",
+		  name: "临  沂北",
+		  abbreviation: "lyb",
 		},
 		{
-			"Abbreviation": "gs",
-			"code": "ganshui",
-			"name": "赶水"
+		  code: "linyi",
+		  name: "临邑",
+		  abbreviation: "lyi",
 		},
 		{
-			"Abbreviation": "js",
-			"code": "jiashan1",
-			"name": "甲山"
+		  code: "liuyuannan",
+		  name: "柳园南",
+		  abbreviation: "lyn",
 		},
 		{
-			"Abbreviation": "lsjd",
-			"code": "lengshuijiangdong",
-			"name": "冷水江东"
+		  code: "longyounan",
+		  name: "龙游南",
+		  abbreviation: "lyn",
 		},
 		{
-			"Abbreviation": "cz",
-			"code": "chizhou",
-			"name": "池州"
+		  code: "luzhaibei",
+		  name: "鹿寨北",
+		  abbreviation: "lzb",
 		},
 		{
-			"Abbreviation": "xxz",
-			"code": "xixiaozhao",
-			"name": "西小召"
+		  code: "linzibei",
+		  name: "临淄北",
+		  abbreviation: "lzb",
 		},
 		{
-			"Abbreviation": "dhx",
-			"code": "donghaixian",
-			"name": "东海县"
+		  code: "langzhong",
+		  name: "阆中",
+		  abbreviation: "lzh",
 		},
 		{
-			"Abbreviation": "nx",
-			"code": "neixiang",
-			"name": "内乡"
+		  code: "linzenan",
+		  name: "临泽南",
+		  abbreviation: "lzn",
 		},
 		{
-			"Abbreviation": "ya",
-			"code": "yaan",
-			"name": "雅安"
+		  code: "liuzhinan",
+		  name: "六枝南",
+		  abbreviation: "lzn",
 		},
 		{
-			"Abbreviation": "xj",
-			"code": "xinjin",
-			"name": "新津"
+		  code: "maanshandong",
+		  name: "马鞍山东",
+		  abbreviation: "mad",
 		},
 		{
-			"Abbreviation": "pyd",
-			"code": "pingyuandong",
-			"name": "平原东"
+		  code: "maochen",
+		  name: "毛陈",
+		  abbreviation: "mch",
 		},
 		{
-			"Abbreviation": "ldn",
-			"code": "ledunan",
-			"name": "乐都南"
+		  code: "mershanxi",
+		  name: "帽儿山西",
+		  abbreviation: "mex",
 		},
 		{
-			"Abbreviation": "sd",
-			"code": "suide",
-			"name": "绥德"
+		  code: "minggangdong",
+		  name: "明港东",
+		  abbreviation: "mgd",
 		},
 		{
-			"Abbreviation": "ljz",
-			"code": "lijiazhai",
-			"name": "厉家寨"
+		  code: "minhenan",
+		  name: "民和南",
+		  abbreviation: "mhn",
 		},
 		{
-			"Abbreviation": "jzb",
-			"code": "jiaozhoubei",
-			"name": "胶州北"
+		  code: "minji",
+		  name: "闵集",
+		  abbreviation: "mji",
 		},
 		{
-			"Abbreviation": "jst",
-			"code": "jinshantun",
-			"name": "金山屯"
+		  code: "malan",
+		  name: "马兰",
+		  abbreviation: "mla",
 		},
 		{
-			"Abbreviation": "hz",
-			"code": "huazhou",
-			"name": "化州"
+		  code: "milan",
+		  name: "米兰",
+		  abbreviation: "mla",
 		},
 		{
-			"Abbreviation": "psb",
-			"code": "pengshanbei",
-			"name": "彭山北"
+		  code: "mile",
+		  name: "弥勒",
+		  abbreviation: "mle",
 		},
 		{
-			"Abbreviation": "xtz",
-			"code": "xiataizi",
-			"name": "下台子"
+		  code: "minle",
+		  name: "民乐",
+		  abbreviation: "mle",
 		},
 		{
-			"Abbreviation": "xgy",
-			"code": "xiaguanying",
-			"name": "夏官营"
+		  code: "manasi",
+		  name: "玛纳斯",
+		  abbreviation: "mns",
 		},
 		{
-			"Abbreviation": "gz",
-			"code": "guzhen",
-			"name": "固镇"
+		  code: "muping",
+		  name: "牟平",
+		  abbreviation: "mpi",
 		},
 		{
-			"Abbreviation": "sc",
-			"code": "shache",
-			"name": "莎车"
+		  code: "minquanbei",
+		  name: "民权北",
+		  abbreviation: "mqb",
 		},
 		{
-			"Abbreviation": "hstlg",
-			"code": "heshituoluogai",
-			"name": "和什托洛盖"
+		  code: "minqingbei",
+		  name: "闽清北",
+		  abbreviation: "mqb",
 		},
 		{
-			"Abbreviation": "yfd",
-			"code": "yunfudong",
-			"name": "云浮东"
+		  code: "meishandong",
+		  name: "眉山东",
+		  abbreviation: "msd",
 		},
 		{
-			"Abbreviation": "gy",
-			"code": "gongyi",
-			"name": "巩义"
+		  code: "mingshan",
+		  name: "名山",
+		  abbreviation: "msh",
 		},
 		{
-			"Abbreviation": "ts",
-			"code": "taishan2",
-			"name": "泰山"
+		  code: "mengshan",
+		  name: "蒙山",
+		  abbreviation: "msh",
 		},
 		{
-			"Abbreviation": "hk",
-			"code": "huangkou",
-			"name": "黄口"
+		  code: "miaoshan",
+		  name: "庙山",
+		  abbreviation: "msh",
 		},
 		{
-			"Abbreviation": "kl",
-			"code": "kailu",
-			"name": "开鲁"
+		  code: "minxian",
+		  name: "岷县",
+		  abbreviation: "mxi",
 		},
 		{
-			"Abbreviation": "ft",
-			"code": "futian",
-			"name": "福田"
+		  code: "miyidong",
+		  name: "米易东",
+		  abbreviation: "myd",
 		},
 		{
-			"Abbreviation": "nzs",
-			"code": "nianzishan",
-			"name": "碾子山"
+		  code: "menyuan",
+		  name: "门源",
+		  abbreviation: "myu",
 		},
 		{
-			"Abbreviation": "xxj",
-			"code": "xiaoxinjie",
-			"name": "小新街"
+		  code: "muyun",
+		  name: "暮云",
+		  abbreviation: "myu",
 		},
 		{
-			"Abbreviation": "xd",
-			"code": "xide",
-			"name": "喜德"
+		  code: "miyun",
+		  name: "密云",
+		  abbreviation: "myu",
 		},
 		{
-			"Abbreviation": "ja",
-			"code": "jian1",
-			"name": "集安"
+		  code: "mengzibei",
+		  name: "蒙自北",
+		  abbreviation: "mzb",
 		},
 		{
-			"Abbreviation": "hf",
-			"code": "hefei",
-			"name": "合肥"
+		  code: "mengzhuang",
+		  name: "孟庄",
+		  abbreviation: "mzh",
 		},
 		{
-			"Abbreviation": "ggz",
-			"code": "gaogezhuang",
-			"name": "高各庄"
+		  code: "mengzi",
+		  name: "蒙自",
+		  abbreviation: "mzi",
 		},
 		{
-			"Abbreviation": "gcb",
-			"code": "guchengbei",
-			"name": "谷城北"
+		  code: "meizhouxi",
+		  name: "梅州西",
+		  abbreviation: "mzx",
 		},
 		{
-			"Abbreviation": "hjhq",
-			"code": "hangjinhouqi",
-			"name": "杭锦后旗"
+		  code: "nanbu",
+		  name: "南部",
+		  abbreviation: "nbu",
 		},
 		{
-			"Abbreviation": "sjzb",
-			"code": "shijiazhuangbei",
-			"name": "石家庄北"
+		  code: "nancao",
+		  name: "南曹",
+		  abbreviation: "nca",
 		},
 		{
-			"Abbreviation": "gs",
-			"code": "guangshui",
-			"name": "广水"
+		  code: "nanchongbei",
+		  name: "南充北",
+		  abbreviation: "ncb",
 		},
 		{
-			"Abbreviation": "nc",
-			"code": "nanchang",
-			"name": "南昌"
+		  code: "niuchehe",
+		  name: "牛车河",
+		  abbreviation: "nch",
 		},
 		{
-			"Abbreviation": "sjh",
-			"code": "songjianghe",
-			"name": "松江河"
+		  code: "nancheng",
+		  name: "南城",
+		  abbreviation: "nch",
 		},
 		{
-			"Abbreviation": "gh",
-			"code": "guanghan",
-			"name": "广汉"
+		  code: "ningcheng",
+		  name: "宁城",
+		  abbreviation: "nch",
 		},
 		{
-			"Abbreviation": "jc",
-			"code": "jiaocheng",
-			"name": "交城"
+		  code: "nanchang",
+		  name: "南 昌",
+		  abbreviation: "nch",
 		},
 		{
-			"Abbreviation": "hzd",
-			"code": "hangzhoudong",
-			"name": "杭州东"
+		  code: "nanchangxi",
+		  name: "南昌西",
+		  abbreviation: "ncx",
 		},
 		{
-			"Abbreviation": "ssb",
-			"code": "shanshanbei",
-			"name": "鄯善北"
+		  code: "ningdongnan",
+		  name: "宁东南",
+		  abbreviation: "ndn",
 		},
 		{
-			"Abbreviation": "mld",
-			"code": "miluodong",
-			"name": "汨罗东"
+		  code: "ningdong",
+		  name: "宁东",
+		  abbreviation: "ndo",
 		},
 		{
-			"Abbreviation": "zyb",
-			"code": "ziyangbei",
-			"name": "资阳北"
+		  code: "nanfenbei",
+		  name: "南芬北",
+		  abbreviation: "nfb",
 		},
 		{
-			"Abbreviation": "lsc",
-			"code": "leshancun",
-			"name": "乐善村"
+		  code: "nanfeng",
+		  name: "南丰",
+		  abbreviation: "nfe",
 		},
 		{
-			"Abbreviation": "tzd",
-			"code": "tongzidong",
-			"name": "桐梓东"
+		  code: "nanhudong",
+		  name: "南湖东",
+		  abbreviation: "nhd",
 		},
 		{
-			"Abbreviation": "wh",
-			"code": "wuhan",
-			"name": "武汉"
+		  code: "niuheliang",
+		  name: "牛河梁",
+		  abbreviation: "nhl",
 		},
 		{
-			"Abbreviation": "my",
-			"code": "muyun",
-			"name": "暮云"
+		  code: "nanhua",
+		  name: "南华",
+		  abbreviation: "nhu",
 		},
 		{
-			"Abbreviation": "qft",
-			"code": "qifengta",
-			"name": "奇峰塔"
+		  code: "neijiangbei",
+		  name: "内江北",
+		  abbreviation: "njb",
 		},
 		{
-			"Abbreviation": "gyx",
-			"code": "gaoyixi",
-			"name": "高邑西"
+		  code: "nanjiang",
+		  name: "南江",
+		  abbreviation: "nji",
 		},
 		{
-			"Abbreviation": "yzz",
-			"code": "yangzhangzi",
-			"name": "杨杖子"
+		  code: "nanjiangkou",
+		  name: "南江口",
+		  abbreviation: "njk",
 		},
 		{
-			"Abbreviation": "wzn",
-			"code": "wuzhounan",
-			"name": "梧州南"
+		  code: "nailingao",
+		  name: "奈林皋",
+		  abbreviation: "nlg",
 		},
 		{
-			"Abbreviation": "bz",
-			"code": "bazhou",
-			"name": "霸州"
+		  code: "nanling",
+		  name: "南陵",
+		  abbreviation: "nli",
 		},
 		{
-			"Abbreviation": "ny",
-			"code": "nanyang",
-			"name": "南阳"
+		  code: "niulanshan",
+		  name: "牛栏山",
+		  abbreviation: "nls",
 		},
 		{
-			"Abbreviation": "kl",
-			"code": "kaili",
-			"name": "凯里"
+		  code: "nimu",
+		  name: "尼木",
+		  abbreviation: "nmu",
 		},
 		{
-			"Abbreviation": "qx",
-			"code": "qiaoxi",
-			"name": "桥西"
+		  code: "nanningdong",
+		  name: "南宁东",
+		  abbreviation: "nnd",
 		},
 		{
-			"Abbreviation": "fx",
-			"code": "feixian",
-			"name": "费县"
+		  code: "nanningxi",
+		  name: "南宁西",
+		  abbreviation: "nnx",
 		},
 		{
-			"Abbreviation": "hmx",
-			"code": "houmaxi",
-			"name": "侯马西"
+		  code: "nanpubei",
+		  name: "南堡北",
+		  abbreviation: "npb",
 		},
 		{
-			"Abbreviation": "mhn",
-			"code": "minhenan",
-			"name": "民和南"
+		  code: "nanpingshi",
+		  name: "南平市",
+		  abbreviation: "nps",
 		},
 		{
-			"Abbreviation": "njk",
-			"code": "nanjiangkou",
-			"name": "南江口"
+		  code: "ningqiangnan",
+		  name: "宁强南",
+		  abbreviation: "nqn",
 		},
 		{
-			"Abbreviation": "yn",
-			"code": "yining",
-			"name": "伊宁"
+		  code: "nantongxi",
+		  name: "南通西",
+		  abbreviation: "ntx",
 		},
 		{
-			"Abbreviation": "dcg",
-			"code": "dachaigou",
-			"name": "打柴沟"
+		  code: "ningxian",
+		  name: "宁县",
+		  abbreviation: "nxi",
 		},
 		{
-			"Abbreviation": "djg",
-			"code": "dajiagou",
-			"name": "达家沟"
+		  code: "nixi",
+		  name: "泥溪",
+		  abbreviation: "nxi",
 		},
 		{
-			"Abbreviation": "ps",
-			"code": "pingshi",
-			"name": "坪石"
+		  code: "nanxiong",
+		  name: "南雄",
+		  abbreviation: "nxi",
 		},
 		{
-			"Abbreviation": "dc",
-			"code": "dacheng",
-			"name": "大成"
+		  code: "nanyangdong",
+		  name: "南阳东",
+		  abbreviation: "nyd",
 		},
 		{
-			"Abbreviation": "xn",
-			"code": "xianning",
-			"name": "咸宁"
+		  code: "nayong",
+		  name: "纳雍",
+		  abbreviation: "nyo",
 		},
 		{
-			"Abbreviation": "sb",
-			"code": "shiba",
-			"name": "石坝"
+		  code: "nanyangzhai",
+		  name: "南阳寨",
+		  abbreviation: "nyz",
 		},
 		{
-			"Abbreviation": "gt",
-			"code": "gutian",
-			"name": "古田"
+		  code: "puan",
+		  name: "普安",
+		  abbreviation: "pan",
 		},
 		{
-			"Abbreviation": "ws",
-			"code": "wushan",
-			"name": "武山"
+		  code: "puanxian",
+		  name: "普安县",
+		  abbreviation: "pax",
 		},
 		{
-			"Abbreviation": "qa",
-			"code": "qingan",
-			"name": "庆安"
+		  code: "pingbian",
+		  name: "屏边",
+		  abbreviation: "pbi",
 		},
 		{
-			"Abbreviation": "bbg",
-			"code": "baibiguan",
-			"name": "白壁关"
+		  code: "pingbanan",
+		  name: "平坝南",
+		  abbreviation: "pbn",
 		},
 		{
-			"Abbreviation": "xy",
-			"code": "xunyang",
-			"name": "旬阳"
+		  code: "pingchang",
+		  name: "平昌",
+		  abbreviation: "pch",
 		},
 		{
-			"Abbreviation": "jcj",
-			"code": "jinchengjiang",
-			"name": "金城江"
+		  code: "puding",
+		  name: "普定",
+		  abbreviation: "pdi",
 		},
 		{
-			"Abbreviation": "ybs",
-			"code": "yebaishou",
-			"name": "叶柏寿"
+		  code: "pingdu",
+		  name: "平度",
+		  abbreviation: "pdu",
 		},
 		{
-			"Abbreviation": "pax",
-			"code": "puanxian",
-			"name": "普安县"
+		  code: "pingdingshanxi",
+		  name: "平顶山西",
+		  abbreviation: "pdx",
 		},
 		{
-			"Abbreviation": "hsb",
-			"code": "huashanbei",
-			"name": "华山北"
+		  code: "pingduxi",
+		  name: "平度西",
+		  abbreviation: "pdx",
 		},
 		{
-			"Abbreviation": "xl",
-			"code": "xilai",
-			"name": "西来"
+		  code: "pujiang",
+		  name: "蒲江",
+		  abbreviation: "pji",
 		},
 		{
-			"Abbreviation": "dyd",
-			"code": "dongyudi",
-			"name": "东淤地"
+		  code: "pikou",
+		  name: "皮口",
+		  abbreviation: "pko",
 		},
 		{
-			"Abbreviation": "hxt",
-			"code": "huanxintian",
-			"name": "换新天"
+		  code: "panlongcheng",
+		  name: "盘龙城",
+		  abbreviation: "plc",
 		},
 		{
-			"Abbreviation": "ycz",
-			"code": "yingchengzi",
-			"name": "营城子"
+		  code: "penglaishi",
+		  name: "蓬莱市",
+		  abbreviation: "pls",
 		},
 		{
-			"Abbreviation": "ysb",
-			"code": "yingshangbei",
-			"name": "颍上北"
+		  code: "pingnan",
+		  name: "屏南",
+		  abbreviation: "pna",
 		},
 		{
-			"Abbreviation": "yz",
-			"code": "yizheng",
-			"name": "仪征"
+		  code: "puning",
+		  name: "普宁",
+		  abbreviation: "pni",
 		},
 		{
-			"Abbreviation": "nbd",
-			"code": "ningbodong",
-			"name": "宁波东"
+		  code: "pingnannan",
+		  name: "平南南",
+		  abbreviation: "pnn",
 		},
 		{
-			"Abbreviation": "pxx",
-			"code": "pixianxi",
-			"name": "郫县西"
+		  code: "pingquanbei",
+		  name: "平泉北",
+		  abbreviation: "pqb",
 		},
 		{
-			"Abbreviation": "cst",
-			"code": "changshantun",
-			"name": "长山屯"
+		  code: "pengshanbei",
+		  name: "彭山北",
+		  abbreviation: "psb",
 		},
 		{
-			"Abbreviation": "ll",
-			"code": "lalin",
-			"name": "拉林"
+		  code: "pushi",
+		  name: "蒲石",
+		  abbreviation: "psh",
 		},
 		{
-			"Abbreviation": "mx",
-			"code": "minxian",
-			"name": "岷县"
+		  code: "pingshan",
+		  name: "屏山",
+		  abbreviation: "psh",
 		},
 		{
-			"Abbreviation": "jxn",
-			"code": "jinxiannan",
-			"name": "进贤南"
+		  code: "pingshang",
+		  name: "坪上",
+		  abbreviation: "psh",
 		},
 		{
-			"Abbreviation": "at",
-			"code": "antang",
-			"name": "安塘"
+		  code: "panshan",
+		  name: "盘山",
+		  abbreviation: "psh",
 		},
 		{
-			"Abbreviation": "eeds",
-			"code": "eerduosi",
-			"name": "鄂尔多斯"
+		  code: "pingtan",
+		  name: "平潭",
+		  abbreviation: "pta",
 		},
 		{
-			"Abbreviation": "gz",
-			"code": "guzhen1",
-			"name": "古镇"
+		  code: "pingxiangbei",
+		  name: "萍乡北",
+		  abbreviation: "pxb",
 		},
 		{
-			"Abbreviation": "xl",
-			"code": "xilin",
-			"name": "西林"
+		  code: "puyang",
+		  name: "濮阳",
+		  abbreviation: "pya",
 		},
 		{
-			"Abbreviation": "qz",
-			"code": "qinzhou",
-			"name": "钦州"
+		  code: "poyang",
+		  name: "鄱阳",
+		  abbreviation: "pya",
 		},
 		{
-			"Abbreviation": "cgy",
-			"code": "chenguanying",
-			"name": "陈官营"
+		  code: "pingyaogucheng",
+		  name: "平遥古城",
+		  abbreviation: "pyc",
 		},
 		{
-			"Abbreviation": "lzx",
-			"code": "lanzhouxi",
-			"name": "兰州西"
+		  code: "pingyuandong",
+		  name: "平原东",
+		  abbreviation: "pyd",
 		},
 		{
-			"Abbreviation": "wg",
-			"code": "wangou",
-			"name": "湾沟"
+		  code: "pizhoudong",
+		  name: "邳州东",
+		  abbreviation: "pzd",
 		},
 		{
-			"Abbreviation": "yq",
-			"code": "yangqiao",
-			"name": "杨桥"
+		  code: "puzhehei",
+		  name: "普者黑",
+		  abbreviation: "pzh",
 		},
 		{
-			"Abbreviation": "ycx",
-			"code": "yichunxi",
-			"name": "宜春西"
+		  code: "panzhou",
+		  name: "盘州",
+		  abbreviation: "pzh",
 		},
 		{
-			"Abbreviation": "nl",
-			"code": "nanling",
-			"name": "南陵"
+		  code: "pingzhuang",
+		  name: "平庄",
+		  abbreviation: "pzh",
 		},
 		{
-			"Abbreviation": "yds",
-			"code": "yandangshan",
-			"name": "雁荡山"
+		  code: "pengzhou",
+		  name: "彭州",
+		  abbreviation: "pzh",
 		},
 		{
-			"Abbreviation": "yc",
-			"code": "yichang",
-			"name": "宜昌"
+		  code: "panzhihuanan",
+		  name: "攀枝花南",
+		  abbreviation: "pzn",
 		},
 		{
-			"Abbreviation": "plc",
-			"code": "panlongcheng",
-			"name": "盘龙城"
+		  code: "pengzhounan",
+		  name: "彭州南",
+		  abbreviation: "pzn",
 		},
 		{
-			"Abbreviation": "pj",
-			"code": "pujiang",
-			"name": "蒲江"
+		  code: "qinan",
+		  name: "秦安",
+		  abbreviation: "qan",
 		},
 		{
-			"Abbreviation": "szb",
-			"code": "suzhoubei",
-			"name": "苏州北"
+		  code: "qingbaijiangdong",
+		  name: "青白江东",
+		  abbreviation: "qbd",
 		},
 		{
-			"Abbreviation": "fhc",
-			"code": "fenghuangcheng",
-			"name": "凤凰城"
+		  code: "qingcheng",
+		  name: "庆城",
+		  abbreviation: "qch",
 		},
 		{
-			"Abbreviation": "shz",
-			"code": "shihezi",
-			"name": "石河子"
+		  code: "qingcheng",
+		  name: "清城",
+		  abbreviation: "qch",
 		},
 		{
-			"Abbreviation": "sz",
-			"code": "shenzhou1",
-			"name": "深州"
+		  code: "qingchuan",
+		  name: "青川",
+		  abbreviation: "qch",
 		},
 		{
-			"Abbreviation": "yc",
-			"code": "yichun1",
-			"name": "宜春"
+		  code: "qingdaobei",
+		  name: "青岛北",
+		  abbreviation: "qdb",
 		},
 		{
-			"Abbreviation": "lc",
-			"code": "lancun",
-			"name": "蓝村"
+		  code: "qingdaobei",
+		  name: "青  岛北",
+		  abbreviation: "qdb",
 		},
 		{
-			"Abbreviation": "fl",
-			"code": "fuling",
-			"name": "涪陵"
+		  code: "qiandaohu",
+		  name: "千岛湖",
+		  abbreviation: "qdh",
 		},
 		{
-			"Abbreviation": "ly",
-			"code": "liaoyang",
-			"name": "辽阳"
+		  code: "qidong",
+		  name: "启东",
+		  abbreviation: "qdo",
 		},
 		{
-			"Abbreviation": "sjz",
-			"code": "sanjingzi",
-			"name": "三井子"
+		  code: "qidong",
+		  name: "祁东",
+		  abbreviation: "qdo",
 		},
 		{
-			"Abbreviation": "ws",
-			"code": "wusu",
-			"name": "乌苏"
+		  code: "qingdui",
+		  name: "青堆",
+		  abbreviation: "qdu",
 		},
 		{
-			"Abbreviation": "sl",
-			"code": "shilin",
-			"name": "石林"
+		  code: "qingdaoxi",
+		  name: "青岛西",
+		  abbreviation: "qdx",
 		},
 		{
-			"Abbreviation": "dhs",
-			"code": "dinghushan",
-			"name": "鼎湖山"
+		  code: "qianfeng",
+		  name: "前锋",
+		  abbreviation: "qfe",
 		},
 		{
-			"Abbreviation": "hcb",
-			"code": "huichangbei",
-			"name": "会昌北"
+		  code: "qinghemenbei",
+		  name: "清河门北",
+		  abbreviation: "qhb",
 		},
 		{
-			"Abbreviation": "lpn",
-			"code": "liangpingnan",
-			"name": "梁平南"
+		  code: "qihe",
+		  name: "齐河",
+		  abbreviation: "qhe",
 		},
 		{
-			"Abbreviation": "bmc",
-			"code": "bamiancheng",
-			"name": "八面城"
+		  code: "qujingbei",
+		  name: "曲靖北",
+		  abbreviation: "qjb",
 		},
 		{
-			"Abbreviation": "bxj",
-			"code": "buxingjie",
-			"name": "步行街"
+		  code: "qijiangdong",
+		  name: "綦江东",
+		  abbreviation: "qjd",
 		},
 		{
-			"Abbreviation": "gz",
-			"code": "gaozhou",
-			"name": "高州"
+		  code: "qujiang",
+		  name: "曲江",
+		  abbreviation: "qji",
 		},
 		{
-			"Abbreviation": "dt",
-			"code": "dingtao",
-			"name": "定陶"
+		  code: "qionglai",
+		  name: "邛崃",
+		  abbreviation: "qla",
 		},
 		{
-			"Abbreviation": "yy",
-			"code": "youyang",
-			"name": "酉阳"
+		  code: "qinglian",
+		  name: "青莲",
+		  abbreviation: "qli",
 		},
 		{
-			"Abbreviation": "as",
-			"code": "anshun",
-			"name": "安顺"
+		  code: "qiqihaernan",
+		  name: "齐齐哈尔南",
+		  abbreviation: "qqn",
 		},
 		{
-			"Abbreviation": "px",
-			"code": "puxiong",
-			"name": "普雄"
+		  code: "qingshuibei",
+		  name: "清水北",
+		  abbreviation: "qsb",
 		},
 		{
-			"Abbreviation": "xlht",
-			"code": "xilinhaote",
-			"name": "锡林浩特"
+		  code: "qingshen",
+		  name: "青神",
+		  abbreviation: "qsh",
 		},
 		{
-			"Abbreviation": "zb",
-			"code": "zibo",
-			"name": "淄博"
+		  code: "qishan",
+		  name: "岐山",
+		  abbreviation: "qsh",
 		},
 		{
-			"Abbreviation": "dz",
-			"code": "duizhen",
-			"name": "兑镇"
+		  code: "qingsheng",
+		  name: "庆盛",
+		  abbreviation: "qsh",
 		},
 		{
-			"Abbreviation": "jy",
-			"code": "jiangyuan",
-			"name": "江源"
+		  code: "qingshuixian",
+		  name: "清水县",
+		  abbreviation: "qsx",
 		},
 		{
-			"Abbreviation": "bzn",
-			"code": "bozhounan",
-			"name": "亳州南"
+		  code: "qushuixian",
+		  name: "曲水县",
+		  abbreviation: "qsx",
 		},
 		{
-			"Abbreviation": "lj",
-			"code": "lijia",
-			"name": "李家"
+		  code: "qianwei",
+		  name: "犍为",
+		  abbreviation: "qwe",
 		},
 		{
-			"Abbreviation": "zc",
-			"code": "zoucheng",
-			"name": "邹城"
+		  code: "qixiandong",
+		  name: "祁县东",
+		  abbreviation: "qxd",
 		},
 		{
-			"Abbreviation": "lsb",
-			"code": "leshanbei",
-			"name": "乐山北"
+		  code: "qianxi",
+		  name: "黔西",
+		  abbreviation: "qxi",
 		},
 		{
-			"Abbreviation": "xtn",
-			"code": "xintangnan",
-			"name": "新塘南"
+		  code: "qianxian",
+		  name: "乾县",
+		  abbreviation: "qxi",
 		},
 		{
-			"Abbreviation": "txd",
-			"code": "tianxindong",
-			"name": "田心东"
+		  code: "qixiayingnan",
+		  name: "旗下营南",
+		  abbreviation: "qxn",
 		},
 		{
-			"Abbreviation": "ame",
-			"code": "amuer",
-			"name": "阿木尔"
+		  code: "qingyang",
+		  name: "庆阳",
+		  abbreviation: "qya",
 		},
 		{
-			"Abbreviation": "xj",
-			"code": "xujia",
-			"name": "徐家"
+		  code: "qiyang",
+		  name: "祁阳",
+		  abbreviation: "qya",
 		},
 		{
-			"Abbreviation": "ll",
-			"code": "lingling",
-			"name": "零陵"
+		  code: "qingyuan",
+		  name: "庆元",
+		  abbreviation: "qyu",
 		},
 		{
-			"Abbreviation": "bmqz",
-			"code": "beimaquanzi",
-			"name": "北马圈子"
+		  code: "qingzhoushibei",
+		  name: "青州市北",
+		  abbreviation: "qzb",
 		},
 		{
-			"Abbreviation": "ngc",
-			"code": "nanguancun",
-			"name": "南观村"
+		  code: "qiaozhuangdong",
+		  name: "乔庄东",
+		  abbreviation: "qzd",
 		},
 		{
-			"Abbreviation": "slq",
-			"code": "salaqi",
-			"name": "萨拉齐"
+		  code: "quzi",
+		  name: "曲子",
+		  abbreviation: "qzi",
 		},
 		{
-			"Abbreviation": "yl",
-			"code": "yanliang",
-			"name": "阎良"
+		  code: "quanzhounan",
+		  name: "全州南",
+		  abbreviation: "qzn",
 		},
 		{
-			"Abbreviation": "lzb",
-			"code": "linzibei",
-			"name": "临淄北"
+		  code: "qiziwan",
+		  name: "棋子湾",
+		  abbreviation: "qzw",
 		},
 		{
-			"Abbreviation": "fyb",
-			"code": "fuyuanbei",
-			"name": "富源北"
+		  code: "qingzhenxi",
+		  name: "清镇西",
+		  abbreviation: "qzx",
 		},
 		{
-			"Abbreviation": "sc",
-			"code": "shicheng",
-			"name": "石城"
+		  code: "renbu",
+		  name: "仁布",
+		  abbreviation: "rbu",
 		},
 		{
-			"Abbreviation": "yp",
-			"code": "yanping",
-			"name": "延平"
+		  code: "rongchangbei",
+		  name: "荣昌北",
+		  abbreviation: "rcb",
 		},
 		{
-			"Abbreviation": "fcgb",
-			"code": "fangchenggangbei",
-			"name": "防城港北"
+		  code: "rongcheng",
+		  name: "荣成",
+		  abbreviation: "rch",
 		},
 		{
-			"Abbreviation": "albg",
-			"code": "aolibugao",
-			"name": "敖力布告"
+		  code: "ruichangxi",
+		  name: "瑞昌西",
+		  abbreviation: "rcx",
 		},
 		{
-			"Abbreviation": "fty",
-			"code": "futuyu",
-			"name": "浮图峪"
+		  code: "rudong",
+		  name: "如东",
+		  abbreviation: "rdo",
 		},
 		{
-			"Abbreviation": "xjk",
-			"code": "xijiekou",
-			"name": "西街口"
+		  code: "rugaonan",
+		  name: "如皋南",
+		  abbreviation: "rgn",
 		},
 		{
-			"Abbreviation": "xl",
-			"code": "xiliu",
-			"name": "西柳"
+		  code: "rongjiang",
+		  name: "榕江",
+		  abbreviation: "rji",
 		},
 		{
-			"Abbreviation": "sby",
-			"code": "shiboyuan",
-			"name": "世博园"
+		  code: "rikaze",
+		  name: "日喀则",
+		  abbreviation: "rkz",
 		},
 		{
-			"Abbreviation": "yg",
-			"code": "yuge",
-			"name": "雨格"
+		  code: "raoping",
+		  name: "饶平",
+		  abbreviation: "rpi",
 		},
 		{
-			"Abbreviation": "nx",
-			"code": "nanxiong",
-			"name": "南雄"
+		  code: "ruoqiang",
+		  name: "若羌",
+		  abbreviation: "rqi",
 		},
 		{
-			"Abbreviation": "ph",
-			"code": "pinghu",
-			"name": "平湖"
+		  code: "rizhaoxi",
+		  name: "日照西",
+		  abbreviation: "rzx",
 		},
 		{
-			"Abbreviation": "jc",
-			"code": "jinchang",
-			"name": "金昌"
+		  code: "subei",
+		  name: "肃北",
+		  abbreviation: "sbe",
 		},
 		{
-			"Abbreviation": "hc",
-			"code": "huacheng",
-			"name": "华城"
+		  code: "shuchengdong",
+		  name: "舒城东",
+		  abbreviation: "scd",
 		},
 		{
-			"Abbreviation": "xgz",
-			"code": "xiagezhuang",
-			"name": "夏格庄"
+		  code: "suichang",
+		  name: "遂昌",
+		  abbreviation: "sch",
 		},
 		{
-			"Abbreviation": "xpd",
-			"code": "xipudong",
-			"name": "犀浦东"
+		  code: "songchenglu",
+		  name: "宋城路",
+		  abbreviation: "scl",
 		},
 		{
-			"Abbreviation": "ky",
-			"code": "kunyu",
-			"name": "昆玉"
+		  code: "sandaohu",
+		  name: "三道湖",
+		  abbreviation: "sdh",
 		},
 		{
-			"Abbreviation": "qhmb",
-			"code": "qinghemenbei",
-			"name": "清河门北"
+		  code: "shaodong",
+		  name: "邵东",
+		  abbreviation: "sdo",
 		},
 		{
-			"Abbreviation": "fx",
-			"code": "fengxian",
-			"name": "凤县"
+		  code: "sanduxian",
+		  name: "三都县",
+		  abbreviation: "sdx",
 		},
 		{
-			"Abbreviation": "wn",
-			"code": "wanning",
-			"name": "万宁"
+		  code: "shengfang",
+		  name: "胜芳",
+		  abbreviation: "sfa",
 		},
 		{
-			"Abbreviation": "ycd",
-			"code": "yuchengdong",
-			"name": "禹城东"
+		  code: "shuangfengbei",
+		  name: "双峰北",
+		  abbreviation: "sfb",
 		},
 		{
-			"Abbreviation": "xzf",
-			"code": "xinzhangfang",
-			"name": "新帐房"
+		  code: "shanghe",
+		  name: "商河",
+		  abbreviation: "she",
 		},
 		{
-			"Abbreviation": "sxb",
-			"code": "shaoxingbei",
-			"name": "绍兴北"
+		  code: "sihong",
+		  name: "泗洪",
+		  abbreviation: "sho",
 		},
 		{
-			"Abbreviation": "sc",
-			"code": "shacheng",
-			"name": "沙城"
+		  code: "shuangheshi",
+		  name: "双河市",
+		  abbreviation: "shs",
 		},
 		{
-			"Abbreviation": "cs",
-			"code": "chushan",
-			"name": "楚山"
+		  code: "sihui",
+		  name: "四会",
+		  abbreviation: "shu",
 		},
 		{
-			"Abbreviation": "xcb",
-			"code": "xucangbei",
-			"name": "许昌北"
+		  code: "shejiangbei",
+		  name: "畲江北",
+		  abbreviation: "sjb",
 		},
 		{
-			"Abbreviation": "masd",
-			"code": "maanshandong",
-			"name": "马鞍山东"
+		  code: "shijiazhuangdong",
+		  name: "石家庄东",
+		  abbreviation: "sjd",
 		},
 		{
-			"Abbreviation": "yq",
-			"code": "yanqing",
-			"name": "延庆"
+		  code: "sanjiangnan",
+		  name: "三江南",
+		  abbreviation: "sjn",
 		},
 		{
-			"Abbreviation": "yd",
-			"code": "yangdong",
-			"name": "阳东"
+		  code: "shajingxi",
+		  name: "沙井西",
+		  abbreviation: "sjx",
 		},
 		{
-			"Abbreviation": "xf",
-			"code": "xifeng",
-			"name": "息烽"
+		  code: "sanjingzi",
+		  name: "三井子",
+		  abbreviation: "sjz",
 		},
 		{
-			"Abbreviation": "lz",
-			"code": "lizhi",
-			"name": "立志"
+		  code: "sikeshu",
+		  name: "四棵树",
+		  abbreviation: "sks",
 		},
 		{
-			"Abbreviation": "cqq",
-			"code": "changqingqiao",
-			"name": "长庆桥"
+		  code: "shuangliujichang",
+		  name: "双流机场",
+		  abbreviation: "slc",
 		},
 		{
-			"Abbreviation": "dgt",
-			"code": "daguantun",
-			"name": "大官屯"
+		  code: "shuanglonghu",
+		  name: "双龙湖",
+		  abbreviation: "slh",
 		},
 		{
-			"Abbreviation": "hss",
-			"code": "heishansi",
-			"name": "黑山寺"
+		  code: "shiling",
+		  name: "狮岭",
+		  abbreviation: "sli",
 		},
 		{
-			"Abbreviation": "qxn",
-			"code": "qixiayingnan",
-			"name": "旗下营南"
+		  code: "shilinxi",
+		  name: "石林西",
+		  abbreviation: "slx",
 		},
 		{
-			"Abbreviation": "zy",
-			"code": "ziyang",
-			"name": "紫阳"
+		  code: "shuangliuxi",
+		  name: "双流西",
+		  abbreviation: "slx",
 		},
 		{
-			"Abbreviation": "xc",
-			"code": "xiangcheng",
-			"name": "项城"
+		  code: "shenglizhen",
+		  name: "胜利镇",
+		  abbreviation: "slz",
 		},
 		{
-			"Abbreviation": "nxi",
-			"code": "nixi",
-			"name": "泥溪"
+		  code: "sanmingbei",
+		  name: "三明北",
+		  abbreviation: "smb",
 		},
 		{
-			"Abbreviation": "bb",
-			"code": "bobai",
-			"name": "博白"
+		  code: "sanming",
+		  name: "三明",
+		  abbreviation: "smi",
 		},
 		{
-			"Abbreviation": "qa",
-			"code": "qinan",
-			"name": "秦安"
+		  code: "songming",
+		  name: "嵩明",
+		  abbreviation: "smi",
 		},
 		{
-			"Abbreviation": "wlmq",
-			"code": "wulumuqi",
-			"name": "乌鲁木齐"
+		  code: "shumuling",
+		  name: "树木岭",
+		  abbreviation: "sml",
 		},
 		{
-			"Abbreviation": "hebd",
-			"code": "haerbindong",
-			"name": "哈尔滨东"
+		  code: "shenmu",
+		  name: "神木",
+		  abbreviation: "smu",
 		},
 		{
-			"Abbreviation": "cxn",
-			"code": "chuxiongnan",
-			"name": "楚雄南"
+		  code: "suining",
+		  name: "睢宁",
+		  abbreviation: "sni",
 		},
 		{
-			"Abbreviation": "yy",
-			"code": "yayuan",
-			"name": "鸭园"
+		  code: "sunitezuoqi",
+		  name: "苏尼特左旗",
+		  abbreviation: "snq",
 		},
 		{
-			"Abbreviation": "rq",
-			"code": "renqiu",
-			"name": "任丘"
+		  code: "shipai",
+		  name: "石牌",
+		  abbreviation: "spa",
 		},
 		{
-			"Abbreviation": "ny",
-			"code": "nayong",
-			"name": "纳雍"
+		  code: "shanpodong",
+		  name: "山坡东",
+		  abbreviation: "spd",
 		},
 		{
-			"Abbreviation": "yms",
-			"code": "yimianshan",
-			"name": "一面山"
+		  code: "shenqiubei",
+		  name: "沈丘北",
+		  abbreviation: "sqb",
 		},
 		{
-			"Abbreviation": "ldb",
-			"code": "longdongbao",
-			"name": "龙洞堡"
+		  code: "shangqiudong",
+		  name: "商丘东",
+		  abbreviation: "sqd",
 		},
 		{
-			"Abbreviation": "zd",
-			"code": "zhaodong",
-			"name": "肇东"
+		  code: "suqian",
+		  name: "宿迁",
+		  abbreviation: "sqi",
 		},
 		{
-			"Abbreviation": "gp",
-			"code": "guiping",
-			"name": "桂平"
+		  code: "shiqiao",
+		  name: "石桥",
+		  abbreviation: "sqi",
 		},
 		{
-			"Abbreviation": "bhx",
-			"code": "binhaixi",
-			"name": "滨海西"
+		  code: "shenqiu",
+		  name: "沈丘",
+		  abbreviation: "sqi",
 		},
 		{
-			"Abbreviation": "bj",
-			"code": "beijing",
-			"name": "北京"
+		  code: "shanshanbei",
+		  name: "鄯善北",
+		  abbreviation: "ssb",
 		},
 		{
-			"Abbreviation": "kel",
-			"code": "kuerle",
-			"name": "库尔勒"
+		  code: "shishanbei",
+		  name: "狮山北",
+		  abbreviation: "ssb",
 		},
 		{
-			"Abbreviation": "paz",
-			"code": "pananzhen",
-			"name": "磐安镇"
+		  code: "sanshuibei",
+		  name: "三水北",
+		  abbreviation: "ssb",
 		},
 		{
-			"Abbreviation": "hsn",
-			"code": "huashannan",
-			"name": "花山南"
+		  code: "songshanhubei",
+		  name: "松山湖北",
+		  abbreviation: "ssb",
 		},
 		{
-			"Abbreviation": "qhd",
-			"code": "qinhuangdao",
-			"name": "秦皇岛"
+		  code: "shishan",
+		  name: "狮山",
+		  abbreviation: "ssh",
 		},
 		{
-			"Abbreviation": "lgd",
-			"code": "longgudian",
-			"name": "龙骨甸"
+		  code: "sanshuinan",
+		  name: "三水南",
+		  abbreviation: "ssn",
 		},
 		{
-			"Abbreviation": "sz",
-			"code": "shizong",
-			"name": "师宗"
+		  code: "shaoshannan",
+		  name: "韶山南",
+		  abbreviation: "ssn",
 		},
 		{
-			"Abbreviation": "nc",
-			"code": "nancao",
-			"name": "南曹"
+		  code: "sishuinan",
+		  name: "泗水南",
+		  abbreviation: "ssn",
 		},
 		{
-			"Abbreviation": "shz",
-			"code": "shuanghezhen",
-			"name": "双河镇"
+		  code: "sansui",
+		  name: "三穗",
+		  abbreviation: "ssu",
 		},
 		{
-			"Abbreviation": "fz",
-			"code": "fuzhou1",
-			"name": "抚州"
+		  code: "shiti",
+		  name: "石梯",
+		  abbreviation: "sti",
 		},
 		{
-			"Abbreviation": "gp",
-			"code": "gaoping",
-			"name": "高平"
+		  code: "shanwei",
+		  name: "汕尾",
+		  abbreviation: "swe",
 		},
 		{
-			"Abbreviation": "ycx",
-			"code": "yuchengxian",
-			"name": "虞城县"
+		  code: "shaoxingbei",
+		  name: "绍兴北",
+		  abbreviation: "sxb",
 		},
 		{
-			"Abbreviation": "dn",
-			"code": "dani",
-			"name": "大拟"
+		  code: "shexianbei",
+		  name: "歙县北",
+		  abbreviation: "sxb",
 		},
 		{
-			"Abbreviation": "hdp",
-			"code": "hadapu",
-			"name": "哈达铺"
+		  code: "shaoxingdong",
+		  name: "绍兴东",
+		  abbreviation: "sxd",
 		},
 		{
-			"Abbreviation": "ch",
-			"code": "ceheng",
-			"name": "册亨"
+		  code: "songxi",
+		  name: "松溪",
+		  abbreviation: "sxi",
 		},
 		{
-			"Abbreviation": "jh",
-			"code": "jianhu",
-			"name": "建湖"
+		  code: "shouxian",
+		  name: "寿县",
+		  abbreviation: "sxi",
 		},
 		{
-			"Abbreviation": "pd",
-			"code": "pingdu",
-			"name": "平度"
+		  code: "sixian",
+		  name: "泗县",
+		  abbreviation: "sxi",
 		},
 		{
-			"Abbreviation": "dsp",
-			"code": "dushupu",
-			"name": "读书铺"
+		  code: "shixing",
+		  name: "始兴",
+		  abbreviation: "sxi",
 		},
 		{
-			"Abbreviation": "hsqd",
-			"code": "heshengqiaodong",
-			"name": "贺胜桥东"
+		  code: "suixian",
+		  name: "随县",
+		  abbreviation: "sxi",
 		},
 		{
-			"Abbreviation": "ylh",
-			"code": "yilaha",
-			"name": "伊拉哈"
+		  code: "siyang",
+		  name: "泗阳",
+		  abbreviation: "sya",
 		},
 		{
-			"Abbreviation": "nj",
-			"code": "nenjiang",
-			"name": "嫩江"
+		  code: "songyang",
+		  name: "松阳",
+		  abbreviation: "sya",
 		},
 		{
-			"Abbreviation": "yx",
-			"code": "yixian",
-			"name": "义县"
+		  code: "shuangyang",
+		  name: "双洋",
+		  abbreviation: "sya",
 		},
 		{
-			"Abbreviation": "qj",
-			"code": "qinjia",
-			"name": "秦家"
+		  code: "sanyang",
+		  name: "三阳",
+		  abbreviation: "sya",
 		},
 		{
-			"Abbreviation": "ty",
-			"code": "taoyuan",
-			"name": "桃源"
+		  code: "sheyang",
+		  name: "射阳",
+		  abbreviation: "sya",
 		},
 		{
-			"Abbreviation": "bd",
-			"code": "badong",
-			"name": "巴东"
+		  code: "shuangyang",
+		  name: "双阳",
+		  abbreviation: "sya",
 		},
 		{
-			"Abbreviation": "zzd",
-			"code": "zhengzhoudong",
-			"name": "郑州东"
+		  code: "shaoyangbei",
+		  name: "邵阳北",
+		  abbreviation: "syb",
 		},
 		{
-			"Abbreviation": "xjt",
-			"code": "xujiatai",
-			"name": "许家台"
+		  code: "songyuanbei",
+		  name: "松原北",
+		  abbreviation: "syb",
 		},
 		{
-			"Abbreviation": "dj",
-			"code": "daju",
-			"name": "大苴"
+		  code: "shiyandong",
+		  name: "十堰东",
+		  abbreviation: "syd",
 		},
 		{
-			"Abbreviation": "gns",
-			"code": "guangningsinan",
-			"name": "广宁寺南"
+		  code: "shanyin",
+		  name: "山阴",
+		  abbreviation: "syi",
 		},
 		{
-			"Abbreviation": "qj",
-			"code": "qujing",
-			"name": "曲靖"
+		  code: "shaoyangxi",
+		  name: "邵阳西",
+		  abbreviation: "syx",
 		},
 		{
-			"Abbreviation": "lg",
-			"code": "lugou",
-			"name": "芦沟"
+		  code: "shunyixi",
+		  name: "顺义西",
+		  abbreviation: "syx",
 		},
 		{
-			"Abbreviation": "nl",
-			"code": "nanlang",
-			"name": "南朗"
+		  code: "shenyangxi",
+		  name: "沈阳西",
+		  abbreviation: "syx",
 		},
 		{
-			"Abbreviation": "gbd",
-			"code": "gaobeidian",
-			"name": "高碑店"
+		  code: "shenzhenjichangbei",
+		  name: "深圳机场北",
+		  abbreviation: "szb",
 		},
 		{
-			"Abbreviation": "bj",
-			"code": "beijiao",
-			"name": "北滘"
+		  code: "shenzhenbei",
+		  name: "深圳北",
+		  abbreviation: "szb",
 		},
 		{
-			"Abbreviation": "xl",
-			"code": "xinle",
-			"name": "新乐"
+		  code: "shenzhenjichang",
+		  name: "深圳机场",
+		  abbreviation: "szc",
 		},
 		{
-			"Abbreviation": "qzw",
-			"code": "qiziwan",
-			"name": "棋子湾"
+		  code: "shenzhou",
+		  name: "神州",
+		  abbreviation: "szh",
 		},
 		{
-			"Abbreviation": "cg",
-			"code": "changge",
-			"name": "长葛"
+		  code: "sangzhi",
+		  name: "桑植",
+		  abbreviation: "szh",
 		},
 		{
-			"Abbreviation": "tsz",
-			"code": "tashizui",
-			"name": "塔石嘴"
+		  code: "shizimen",
+		  name: "十字门",
+		  abbreviation: "szm",
 		},
 		{
-			"Abbreviation": "xs",
-			"code": "xushui",
-			"name": "徐水"
+		  code: "suizhounan",
+		  name: "随州南",
+		  abbreviation: "szn",
 		},
 		{
-			"Abbreviation": "yjh",
-			"code": "yangjiuhe",
-			"name": "羊臼河"
+		  code: "shangzhinan",
+		  name: "尚志南",
+		  abbreviation: "szn",
 		},
 		{
-			"Abbreviation": "bz",
-			"code": "bazhong",
-			"name": "巴中"
+		  code: "shizuishan",
+		  name: "石嘴山",
+		  abbreviation: "szs",
 		},
 		{
-			"Abbreviation": "xyz",
-			"code": "xinyangzhen",
-			"name": "新阳镇"
+		  code: "shenzhenpingshan",
+		  name: "深圳坪山",
+		  abbreviation: "szs",
 		},
 		{
-			"Abbreviation": "lf",
-			"code": "laofu",
-			"name": "老府"
+		  code: "shizhuxian",
+		  name: "石柱县",
+		  abbreviation: "szx",
 		},
 		{
-			"Abbreviation": "zlt",
-			"code": "zhalantun",
-			"name": "扎兰屯"
+		  code: "taiannan",
+		  name: "台安南",
+		  abbreviation: "tan",
 		},
 		{
-			"Abbreviation": "hb",
-			"code": "huaibin",
-			"name": "淮滨"
+		  code: "taicang",
+		  name: "太仓",
+		  abbreviation: "tca",
 		},
 		{
-			"Abbreviation": "zyx",
-			"code": "zhangyexi",
-			"name": "张掖西"
+		  code: "taocunbei",
+		  name: "桃村北",
+		  abbreviation: "tcb",
 		},
 		{
-			"Abbreviation": "hc",
-			"code": "hechun",
-			"name": "河唇"
+		  code: "tongchengdong",
+		  name: "桐城东",
+		  abbreviation: "tcd",
 		},
 		{
-			"Abbreviation": "ad",
-			"code": "anduo",
-			"name": "安多"
+		  code: "tiechanggou",
+		  name: "铁厂沟",
+		  abbreviation: "tcg",
 		},
 		{
-			"Abbreviation": "nm",
-			"code": "nanmu",
-			"name": "南木"
+		  code: "tacheng",
+		  name: "塔城",
+		  abbreviation: "tch",
 		},
 		{
-			"Abbreviation": "zgt",
-			"code": "zhanggutai",
-			"name": "章古台"
+		  code: "tongchengnan",
+		  name: "桐城南",
+		  abbreviation: "tcn",
 		},
 		{
-			"Abbreviation": "xx",
-			"code": "xinxiang",
-			"name": "新乡"
+		  code: "taicangnan",
+		  name: "太仓南",
+		  abbreviation: "tcn",
 		},
 		{
-			"Abbreviation": "yp",
-			"code": "yuanping",
-			"name": "原平"
+		  code: "tiechashan",
+		  name: "铁刹山",
+		  abbreviation: "tcs",
 		},
 		{
-			"Abbreviation": "yl",
-			"code": "yiliang",
-			"name": "彝良"
+		  code: "tiandongbei",
+		  name: "田东北",
+		  abbreviation: "tdb",
 		},
 		{
-			"Abbreviation": "xzlm",
-			"code": "xizhelimu",
-			"name": "西哲里木"
+		  code: "tuditangdong",
+		  name: "土地堂东",
+		  abbreviation: "tdd",
 		},
 		{
-			"Abbreviation": "yj2",
-			"code": "yijiang",
-			"name": "弋江"
+		  code: "taigudong",
+		  name: "太谷东",
+		  abbreviation: "tgd",
 		},
 		{
-			"Abbreviation": "yps",
-			"code": "yingpanshui",
-			"name": "营盘水"
+		  code: "tieganlike",
+		  name: "铁干里克",
+		  abbreviation: "tgk",
 		},
 		{
-			"Abbreviation": "ncs",
-			"code": "nanchengsi",
-			"name": "南城司"
+		  code: "taiguxi",
+		  name: "太谷西",
+		  abbreviation: "tgx",
 		},
 		{
-			"Abbreviation": "qs",
-			"code": "qingshui",
-			"name": "清水"
+		  code: "tuha",
+		  name: "吐哈",
+		  abbreviation: "tha",
 		},
 		{
-			"Abbreviation": "hh",
-			"code": "huihuan",
-			"name": "惠环"
+		  code: "tonghai",
+		  name: "通海",
+		  abbreviation: "tha",
 		},
 		{
-			"Abbreviation": "ssz",
-			"code": "songshuzhen",
-			"name": "松树镇"
+		  code: "taihebei",
+		  name: "太和北",
+		  abbreviation: "thb",
 		},
 		{
-			"Abbreviation": "pkn",
-			"code": "pikounan",
-			"name": "皮口南"
+		  code: "tianhejichang",
+		  name: "天河机场",
+		  abbreviation: "thc",
 		},
 		{
-			"Abbreviation": "wlqn",
-			"code": "wulongquannan",
-			"name": "乌龙泉南"
+		  code: "taihedong",
+		  name: "太和东",
+		  abbreviation: "thd",
 		},
 		{
-			"Abbreviation": "hfx",
-			"code": "hefeixi",
-			"name": "合肥西"
+		  code: "tianhejie",
+		  name: "天河街",
+		  abbreviation: "thj",
 		},
 		{
-			"Abbreviation": "nfb",
-			"code": "nanfenbei",
-			"name": "南芬北"
+		  code: "tanghainan",
+		  name: "唐海南",
+		  abbreviation: "thn",
 		},
 		{
-			"Abbreviation": "hr",
-			"code": "huairen",
-			"name": "怀仁"
+		  code: "tonghuaxian",
+		  name: "通化县",
+		  abbreviation: "thx",
 		},
 		{
-			"Abbreviation": "my",
-			"code": "mayang",
-			"name": "麻阳"
+		  code: "tongjiang",
+		  name: "同江",
+		  abbreviation: "tji",
 		},
 		{
-			"Abbreviation": "sc",
-			"code": "shenchi",
-			"name": "神池"
+		  code: "tuoketuodong",
+		  name: "托克托东",
+		  abbreviation: "tkd",
 		},
 		{
-			"Abbreviation": "xg",
-			"code": "xingan1",
-			"name": "新干"
+		  code: "tonglingbei",
+		  name: "铜陵北",
+		  abbreviation: "tlb",
 		},
 		{
-			"Abbreviation": "zq",
-			"code": "zhaoqing",
-			"name": "肇庆"
+		  code: "tulufanbei",
+		  name: "吐鲁番北",
+		  abbreviation: "tlb",
 		},
 		{
-			"Abbreviation": "xsp",
-			"code": "xinsongpu",
-			"name": "新松浦"
+		  code: "tonglu",
+		  name: "桐庐",
+		  abbreviation: "tlu",
 		},
 		{
-			"Abbreviation": "yp",
-			"code": "yinping",
-			"name": "银瓶"
+		  code: "tumushuke",
+		  name: "图木舒克",
+		  abbreviation: "tmk",
 		},
 		{
-			"Abbreviation": "th",
-			"code": "tahe",
-			"name": "塔河"
+		  code: "taining",
+		  name: "泰宁",
+		  abbreviation: "tni",
 		},
 		{
-			"Abbreviation": "nj",
-			"code": "nanjing1",
-			"name": "南靖"
+		  code: "tongrennan",
+		  name: "铜仁南",
+		  abbreviation: "trn",
 		},
 		{
-			"Abbreviation": "wq",
-			"code": "wangqing",
-			"name": "汪清"
+		  code: "tianshuibu",
+		  name: "甜水堡",
+		  abbreviation: "tsb",
 		},
 		{
-			"Abbreviation": "cs",
-			"code": "cangshi",
-			"name": "苍石"
+		  code: "tianshuinan",
+		  name: "天水南",
+		  abbreviation: "tsn",
 		},
 		{
-			"Abbreviation": "qbjd",
-			"code": "qingbaijiangdong",
-			"name": "青白江东"
+		  code: "tongwei",
+		  name: "通渭",
+		  abbreviation: "twe",
 		},
 		{
-			"Abbreviation": "yl",
-			"code": "yulin",
-			"name": "榆林"
+		  code: "tianxindong",
+		  name: "田心东",
+		  abbreviation: "txd",
 		},
 		{
-			"Abbreviation": "sq",
-			"code": "shiqiao",
-			"name": "石桥"
+		  code: "tangxunhu",
+		  name: "汤逊湖",
+		  abbreviation: "txh",
 		},
 		{
-			"Abbreviation": "sq",
-			"code": "shaqiao",
-			"name": "沙桥"
+		  code: "tengxian",
+		  name: "藤县",
+		  abbreviation: "txi",
 		},
 		{
-			"Abbreviation": "hht",
-			"code": "huanghuatong",
-			"name": "黄花筒"
+		  code: "taiyuannan",
+		  name: "太原南",
+		  abbreviation: "tyn",
 		},
 		{
-			"Abbreviation": "td",
-			"code": "tiandong",
-			"name": "田东"
+		  code: "taoyuan",
+		  name: "桃源",
+		  abbreviation: "tyu",
 		},
 		{
-			"Abbreviation": "tz",
-			"code": "taizhou",
-			"name": "泰州"
+		  code: "tongyuanpuxi",
+		  name: "通远堡西",
+		  abbreviation: "tyx",
 		},
 		{
-			"Abbreviation": "qc",
-			"code": "qichun",
-			"name": "蕲春"
+		  code: "tongzibei",
+		  name: "桐梓北",
+		  abbreviation: "tzb",
 		},
 		{
-			"Abbreviation": "jy",
-			"code": "jingyu",
-			"name": "靖宇"
+		  code: "taizicheng",
+		  name: "太子城",
+		  abbreviation: "tzc",
 		},
 		{
-			"Abbreviation": "jyn",
-			"code": "jianyangnan",
-			"name": "简阳南"
+		  code: "tongzidong",
+		  name: "桐梓东",
+		  abbreviation: "tzd",
 		},
 		{
-			"Abbreviation": "hlh",
-			"code": "haolianghe",
-			"name": "浩良河"
+		  code: "tongzhou",
+		  name: "通州",
+		  abbreviation: "tzh",
 		},
 		{
-			"Abbreviation": "atx",
-			"code": "antuxi",
-			"name": "安图西"
+		  code: "wananxian",
+		  name: "万安县",
+		  abbreviation: "wax",
 		},
 		{
-			"Abbreviation": "dsd",
-			"code": "dongshengdong",
-			"name": "东胜东"
+		  code: "wuchuan",
+		  name: "吴川",
+		  abbreviation: "wch",
 		},
 		{
-			"Abbreviation": "yt",
-			"code": "yingtan",
-			"name": "鹰潭"
+		  code: "wendengdong",
+		  name: "文登东",
+		  abbreviation: "wdd",
 		},
 		{
-			"Abbreviation": "qxd",
-			"code": "qixiandong",
-			"name": "祁县东"
+		  code: "wudangshanxi",
+		  name: "武当山西",
+		  abbreviation: "wdx",
 		},
 		{
-			"Abbreviation": "xk",
-			"code": "xingkai",
-			"name": "兴凯"
+		  code: "weifangbei",
+		  name: "潍坊北",
+		  abbreviation: "wfb",
 		},
 		{
-			"Abbreviation": "bq",
-			"code": "baiqi",
-			"name": "白旗"
+		  code: "wufushan",
+		  name: "五府山",
+		  abbreviation: "wfs",
 		},
 		{
-			"Abbreviation": "bc",
-			"code": "bencha",
-			"name": "栟茶"
+		  code: "weihulingbei",
+		  name: "威虎岭北",
+		  abbreviation: "whb",
 		},
 		{
-			"Abbreviation": "fsx",
-			"code": "foshanxi",
-			"name": "佛山西"
+		  code: "wuhubei",
+		  name: "芜湖北",
+		  abbreviation: "whb",
 		},
 		{
-			"Abbreviation": "yt",
-			"code": "yantai",
-			"name": "烟台"
+		  code: "weihaibei",
+		  name: "威海北",
+		  abbreviation: "whb",
 		},
 		{
-			"Abbreviation": "jbc",
-			"code": "jiangbiancun",
-			"name": "江边村"
+		  code: "wuhunan",
+		  name: "芜湖南",
+		  abbreviation: "whn",
 		},
 		{
-			"Abbreviation": "swx",
-			"code": "shawanxian",
-			"name": "沙湾县"
+		  code: "weihexi",
+		  name: "苇河西",
+		  abbreviation: "whx",
 		},
 		{
-			"Abbreviation": "sx",
-			"code": "suixian",
-			"name": "随县"
+		  code: "wenjiang",
+		  name: "温江",
+		  abbreviation: "wji",
 		},
 		{
-			"Abbreviation": "gt",
-			"code": "gaotan",
-			"name": "高滩"
+		  code: "weijiaquan",
+		  name: "魏家泉",
+		  abbreviation: "wjq",
 		},
 		{
-			"Abbreviation": "bjd",
-			"code": "beijingdong",
-			"name": "北京东"
+		  code: "wulanchabu",
+		  name: "乌兰察布",
+		  abbreviation: "wlb",
 		},
 		{
-			"Abbreviation": "dl",
-			"code": "dali1",
-			"name": "大荔"
+		  code: "wulongbeidong",
+		  name: "五龙背东",
+		  abbreviation: "wld",
 		},
 		{
-			"Abbreviation": "jsn",
-			"code": "jieshounan",
-			"name": "界首南"
+		  code: "wulongquannan",
+		  name: "乌龙泉南",
+		  abbreviation: "wln",
 		},
 		{
-			"Abbreviation": "cfdg",
-			"code": "caofeidiangang",
-			"name": "曹妃甸港"
+		  code: "wulanmutu",
+		  name: "乌兰木图",
+		  abbreviation: "wlt",
 		},
 		{
-			"Abbreviation": "byhs",
-			"code": "baiyinhushuo",
-			"name": "白音胡硕"
+		  code: "wangniudun",
+		  name: "望牛墩",
+		  abbreviation: "wnd",
 		},
 		{
-			"Abbreviation": "mz",
-			"code": "mengzhuang",
-			"name": "孟庄"
+		  code: "wunvshan",
+		  name: "五女山",
+		  abbreviation: "wns",
 		},
 		{
-			"Abbreviation": "dy",
-			"code": "danyang",
-			"name": "丹阳"
+		  code: "weinanxi",
+		  name: "渭南西",
+		  abbreviation: "wnx",
 		},
 		{
-			"Abbreviation": "zyb",
-			"code": "zhuyuanba",
-			"name": "竹园坝"
+		  code: "weishan",
+		  name: "巍山",
+		  abbreviation: "wsh",
 		},
 		{
-			"Abbreviation": "st",
-			"code": "shiti",
-			"name": "石梯"
+		  code: "wusheng",
+		  name: "武胜",
+		  abbreviation: "wsh",
 		},
 		{
-			"Abbreviation": "wx",
-			"code": "wenxi",
-			"name": "闻喜"
+		  code: "wushenqi",
+		  name: "乌审旗",
+		  abbreviation: "wsq",
 		},
 		{
-			"Abbreviation": "jl",
-			"code": "jiling",
-			"name": "芨岭"
+		  code: "wusu",
+		  name: "乌苏",
+		  abbreviation: "wsu",
 		},
 		{
-			"Abbreviation": "phb",
-			"code": "paihuaibei",
-			"name": "徘徊北"
+		  code: "wutong",
+		  name: "五通",
+		  abbreviation: "wto",
 		},
 		{
-			"Abbreviation": "yh",
-			"code": "youhao",
-			"name": "友好"
+		  code: "wuwei",
+		  name: "无为",
+		  abbreviation: "wwe",
 		},
 		{
-			"Abbreviation": "rc",
-			"code": "rongchang",
-			"name": "荣昌"
+		  code: "wuweinan",
+		  name: "无为南",
+		  abbreviation: "wwn",
 		},
 		{
-			"Abbreviation": "hkl",
-			"code": "hongkeli",
-			"name": "宏克力"
+		  code: "wawushan",
+		  name: "瓦屋山",
+		  abbreviation: "wws",
 		},
 		{
-			"Abbreviation": "jnx1",
-			"code": "jiangningxi",
-			"name": "江宁西"
+		  code: "weixin",
+		  name: "威信",
+		  abbreviation: "wxi",
 		},
 		{
-			"Abbreviation": "lk",
-			"code": "linkou",
-			"name": "林口"
+		  code: "wuxiang",
+		  name: "武乡",
+		  abbreviation: "wxi",
 		},
 		{
-			"Abbreviation": "js",
-			"code": "jishu",
-			"name": "吉舒"
+		  code: "wenxixi",
+		  name: "闻喜西",
+		  abbreviation: "wxx",
 		},
 		{
-			"Abbreviation": "cfdd",
-			"code": "caofeidiandong",
-			"name": "曹妃甸东"
+		  code: "wuyishanbei",
+		  name: "武夷山北",
+		  abbreviation: "wyb",
 		},
 		{
-			"Abbreviation": "hdd",
-			"code": "handandong",
-			"name": "邯郸东"
+		  code: "wuyibei",
+		  name: "武义北",
+		  abbreviation: "wyb",
 		},
 		{
-			"Abbreviation": "xnb",
-			"code": "xianningbei",
-			"name": "咸宁北"
+		  code: "wuyuan",
+		  name: "婺源",
+		  abbreviation: "wyu",
 		},
 		{
-			"Abbreviation": "xj",
-			"code": "xinjiang1",
-			"name": "新绛"
+		  code: "weiyuan",
+		  name: "渭源",
+		  abbreviation: "wyu",
 		},
 		{
-			"Abbreviation": "tb",
-			"code": "tangbao",
-			"name": "塘豹"
+		  code: "wanzai",
+		  name: "湾仔",
+		  abbreviation: "wza",
 		},
 		{
-			"Abbreviation": "wh",
-			"code": "wuhu",
-			"name": "芜湖"
+		  code: "wanzhoubei",
+		  name: "万州北",
+		  abbreviation: "wzb",
 		},
 		{
-			"Abbreviation": "sy",
-			"code": "shuyang",
-			"name": "沭阳"
+		  code: "wanzaibei",
+		  name: "湾仔北",
+		  abbreviation: "wzb",
 		},
 		{
-			"Abbreviation": "xyc",
-			"code": "xiyangcun",
-			"name": "西阳村"
+		  code: "wuzhong",
+		  name: "吴忠",
+		  abbreviation: "wzh",
 		},
 		{
-			"Abbreviation": "cpd",
-			"code": "changpingdong",
-			"name": "常平东"
+		  code: "wuzhi",
+		  name: "武陟",
+		  abbreviation: "wzh",
 		},
 		{
-			"Abbreviation": "ht",
-			"code": "heitai",
-			"name": "黑台"
+		  code: "wuzhounan",
+		  name: "梧州南",
+		  abbreviation: "wzn",
 		},
 		{
-			"Abbreviation": "ldhz",
-			"code": "liudaohezi",
-			"name": "六道河子"
+		  code: "wanzhinan",
+		  name: "湾沚南",
+		  abbreviation: "wzn",
 		},
 		{
-			"Abbreviation": "rx",
-			"code": "rongxian",
-			"name": "容县"
+		  code: "xinganbei",
+		  name: "兴安北",
+		  abbreviation: "xab",
 		},
 		{
-			"Abbreviation": "sl",
-			"code": "shule",
-			"name": "疏勒"
+		  code: "xiongan",
+		  name: "雄安",
+		  abbreviation: "xan",
 		},
 		{
-			"Abbreviation": "jnx1",
-			"code": "jinanxi1",
-			"name": "济  南西"
+		  code: "xuchangbei",
+		  name: "许昌北",
+		  abbreviation: "xcb",
 		},
 		{
-			"Abbreviation": "za",
-			"code": "zhenan",
-			"name": "镇安"
+		  code: "xuchangdong",
+		  name: "许昌东",
+		  abbreviation: "xcd",
 		},
 		{
-			"Abbreviation": "gz",
-			"code": "guangzhou",
-			"name": "广州"
+		  code: "xiangcheng",
+		  name: "项城",
+		  abbreviation: "xch",
 		},
 		{
-			"Abbreviation": "yxn",
-			"code": "youxiannan",
-			"name": "攸县南"
+		  code: "xindudong",
+		  name: "新都东",
+		  abbreviation: "xdd",
 		},
 		{
-			"Abbreviation": "zq",
-			"code": "zhangqiu",
-			"name": "章丘"
+		  code: "xidu",
+		  name: "西渡",
+		  abbreviation: "xdu",
 		},
 		{
-			"Abbreviation": "sgd",
-			"code": "shaoguandong",
-			"name": "韶关东"
+		  code: "xianfeng",
+		  name: "咸丰",
+		  abbreviation: "xfe",
 		},
 		{
-			"Abbreviation": "hbs",
-			"code": "huaboshan",
-			"name": "花博山"
+		  code: "xifeng",
+		  name: "西丰",
+		  abbreviation: "xfe",
 		},
 		{
-			"Abbreviation": "slz",
-			"code": "shalingzi",
-			"name": "沙岭子"
+		  code: "xianfeng",
+		  name: "先锋",
+		  abbreviation: "xfe",
 		},
 		{
-			"Abbreviation": "shx",
-			"code": "shanghaixi",
-			"name": "上海西"
+		  code: "xiangfulu",
+		  name: "湘府路",
+		  abbreviation: "xfl",
 		},
 		{
-			"Abbreviation": "ss",
-			"code": "sanshui",
-			"name": "三水"
+		  code: "xiangfenxi",
+		  name: "襄汾西",
+		  abbreviation: "xfx",
 		},
 		{
-			"Abbreviation": "szjcb",
-			"code": "shenzhenjichangbei",
-			"name": "深圳机场北"
+		  code: "xiaoganbei",
+		  name: "孝感北",
+		  abbreviation: "xgb",
 		},
 		{
-			"Abbreviation": "qh",
-			"code": "qinghe",
-			"name": "清河"
+		  code: "xingandong",
+		  name: "新干东",
+		  abbreviation: "xgd",
 		},
 		{
-			"Abbreviation": "gqb",
-			"code": "ganquanbei",
-			"name": "甘泉北"
+		  code: "xiaogandong",
+		  name: "孝感东",
+		  abbreviation: "xgd",
 		},
 		{
-			"Abbreviation": "djy",
-			"code": "dujiangyan",
-			"name": "都江堰"
+		  code: "xingguoxi",
+		  name: "兴国西",
+		  abbreviation: "xgx",
 		},
 		{
-			"Abbreviation": "ys",
-			"code": "yushu",
-			"name": "榆树"
+		  code: "xiagezhuang",
+		  name: "夏格庄",
+		  abbreviation: "xgz",
 		},
 		{
-			"Abbreviation": "ycd",
-			"code": "yichangdong",
-			"name": "宜昌东"
+		  code: "xinghebei",
+		  name: "兴和北",
+		  abbreviation: "xhb",
 		},
 		{
-			"Abbreviation": "byx",
-			"code": "baiyinxi",
-			"name": "白银西"
+		  code: "xuanhuabei",
+		  name: "宣化北",
+		  abbreviation: "xhb",
 		},
 		{
-			"Abbreviation": "glf",
-			"code": "gaoloufang",
-			"name": "高楼房"
+		  code: "xiahuayuanbei",
+		  name: "下花园北",
+		  abbreviation: "xhb",
 		},
 		{
-			"Abbreviation": "qs",
-			"code": "qingshan",
-			"name": "青山"
+		  code: "xihudong",
+		  name: "西湖东",
+		  abbreviation: "xhd",
 		},
 		{
-			"Abbreviation": "edgm",
-			"code": "erdaogoumen",
-			"name": "二道沟门"
+		  code: "xinhuanan",
+		  name: "新化南",
+		  abbreviation: "xhn",
 		},
 		{
-			"Abbreviation": "wq",
-			"code": "wuqing",
-			"name": "武清"
+		  code: "xihua",
+		  name: "西华",
+		  abbreviation: "xhu",
 		},
 		{
-			"Abbreviation": "yd",
-			"code": "yuandun",
-			"name": "园墩"
+		  code: "xinhuangxi",
+		  name: "新晃西",
+		  abbreviation: "xhx",
 		},
 		{
-			"Abbreviation": "hyb",
-			"code": "haiyangbei",
-			"name": "海阳北"
+		  code: "xinjin",
+		  name: "新津",
+		  abbreviation: "xji",
 		},
 		{
-			"Abbreviation": "shhq",
-			"code": "shanghaihongqiao",
-			"name": "上海虹桥"
+		  code: "xiaojinkou",
+		  name: "小金口",
+		  abbreviation: "xjk",
 		},
 		{
-			"Abbreviation": "nc",
-			"code": "nancheng",
-			"name": "南城"
+		  code: "xinjinnan",
+		  name: "新津南",
+		  abbreviation: "xjn",
 		},
 		{
-			"Abbreviation": "aks",
-			"code": "akesu",
-			"name": "阿克苏"
+		  code: "xinjinan",
+		  name: "辛集南",
+		  abbreviation: "xjn",
 		},
 		{
-			"Abbreviation": "xl",
-			"code": "xiaolan",
-			"name": "小榄"
+		  code: "xilai",
+		  name: "西来",
+		  abbreviation: "xla",
 		},
 		{
-			"Abbreviation": "wsz",
-			"code": "weishanzhuang",
-			"name": "魏善庄"
+		  code: "xilongxianxi",
+		  name: "兴隆县西",
+		  abbreviation: "xlx",
 		},
 		{
-			"Abbreviation": "mj",
-			"code": "minji",
-			"name": "闵集"
+		  code: "xinminbei",
+		  name: "新民北",
+		  abbreviation: "xmb",
 		},
 		{
-			"Abbreviation": "fs",
-			"code": "fusheng",
-			"name": "复盛"
+		  code: "xiamen",
+		  name: "厦 门",
+		  abbreviation: "xme",
 		},
 		{
-			"Abbreviation": "xh",
-			"code": "xinhui",
-			"name": "新会"
+		  code: "xianningdong",
+		  name: "咸宁东",
+		  abbreviation: "xnd",
 		},
 		{
-			"Abbreviation": "sl",
-			"code": "shilin1",
-			"name": "石磷"
+		  code: "xianningnan",
+		  name: "咸宁南",
+		  abbreviation: "xnn",
 		},
 		{
-			"Abbreviation": "hd",
-			"code": "huade",
-			"name": "化德"
+		  code: "xupunan",
+		  name: "溆浦南",
+		  abbreviation: "xpn",
 		},
 		{
-			"Abbreviation": "lzg",
-			"code": "longzhuagou",
-			"name": "龙爪沟"
+		  code: "xipingxi",
+		  name: "西平西",
+		  abbreviation: "xpx",
 		},
 		{
-			"Abbreviation": "jx",
-			"code": "jixi",
-			"name": "鸡西"
+		  code: "xiangshuixian",
+		  name: "响水县",
+		  abbreviation: "xsx",
 		},
 		{
-			"Abbreviation": "tg",
-			"code": "tanggu",
-			"name": "塘沽"
+		  code: "xiantao",
+		  name: "仙桃",
+		  abbreviation: "xta",
 		},
 		{
-			"Abbreviation": "ylp",
-			"code": "yuliangpu",
-			"name": "余粮堡"
+		  code: "xiangtanbei",
+		  name: "湘潭北",
+		  abbreviation: "xtb",
 		},
 		{
-			"Abbreviation": "bc",
-			"code": "baodi",
-			"name": "宝坻"
+		  code: "xingtaidong",
+		  name: "邢台东",
+		  abbreviation: "xtd",
 		},
 		{
-			"Abbreviation": "jj",
-			"code": "jinjiang",
-			"name": "晋江"
+		  code: "xintangnan",
+		  name: "新塘南",
+		  abbreviation: "xtn",
 		},
 		{
-			"Abbreviation": "qsx",
-			"code": "qingshuixian",
-			"name": "清水县"
+		  code: "xingwen",
+		  name: "兴文",
+		  abbreviation: "xwe",
 		},
 		{
-			"Abbreviation": "zt",
-			"code": "zhongtang",
-			"name": "中堂"
+		  code: "xiwuqi",
+		  name: "西乌旗",
+		  abbreviation: "xwq",
 		},
 		{
-			"Abbreviation": "dmh",
-			"code": "dongmiaohe",
-			"name": "洞庙河"
+		  code: "xiuwuxi",
+		  name: "修武西",
+		  abbreviation: "xwx",
 		},
 		{
-			"Abbreviation": "zsh",
-			"code": "zhusihua",
-			"name": "珠斯花"
+		  code: "xiuwenxian",
+		  name: "修文县",
+		  abbreviation: "xwx",
 		},
 		{
-			"Abbreviation": "zt",
-			"code": "zhaotong",
-			"name": "昭通"
+		  code: "xiaoxianbei",
+		  name: "萧县北",
+		  abbreviation: "xxb",
 		},
 		{
-			"Abbreviation": "gtb",
-			"code": "gutianbei",
-			"name": "古田北"
+		  code: "xinxiangfangbei",
+		  name: "新香坊北",
+		  abbreviation: "xxb",
 		},
 		{
-			"Abbreviation": "qsb",
-			"code": "qingshuibei",
-			"name": "清水北"
+		  code: "xinxiangdong",
+		  name: "新乡东",
+		  abbreviation: "xxd",
 		},
 		{
-			"Abbreviation": "sqd",
-			"code": "shangqiudong",
-			"name": "商丘东"
+		  code: "xiaoxian",
+		  name: "萧县",
+		  abbreviation: "xxi",
 		},
 		{
-			"Abbreviation": "qhy",
-			"code": "qinghuayuan",
-			"name": "清华园"
+		  code: "xiuyan",
+		  name: "岫岩",
+		  abbreviation: "xya",
 		},
 		{
-			"Abbreviation": "ya",
-			"code": "yian",
-			"name": "依安"
+		  code: "xinyubei",
+		  name: "新余北",
+		  abbreviation: "xyb",
 		},
 		{
-			"Abbreviation": "hle",
-			"code": "hailaer",
-			"name": "海拉尔"
+		  code: "xianyangbei",
+		  name: "咸阳北",
+		  abbreviation: "xyb",
 		},
 		{
-			"Abbreviation": "ql",
-			"code": "qinling",
-			"name": "秦岭"
+		  code: "xiyangcun",
+		  name: "西阳村",
+		  abbreviation: "xyc",
 		},
 		{
-			"Abbreviation": "had",
-			"code": "huaiandong",
-			"name": "淮安东"
+		  code: "xinyangdong",
+		  name: "信阳东",
+		  abbreviation: "xyd",
 		},
 		{
-			"Abbreviation": "cd",
-			"code": "changdian",
-			"name": "长甸"
+		  code: "xianyangqindu",
+		  name: "咸阳秦都",
+		  abbreviation: "xyd",
 		},
 		{
-			"Abbreviation": "yd",
-			"code": "yaodu",
-			"name": "姚渡"
+		  code: "xiangyangdong",
+		  name: "襄阳东",
+		  abbreviation: "xyd",
 		},
 		{
-			"Abbreviation": "debe",
-			"code": "deerbuer",
-			"name": "得耳布尔"
+		  code: "xiangyuandong",
+		  name: "襄垣东",
+		  abbreviation: "xyd",
 		},
 		{
-			"Abbreviation": "gy",
-			"code": "guiyang",
-			"name": "贵阳"
+		  code: "xiuying",
+		  name: "秀英",
+		  abbreviation: "xyi",
 		},
 		{
-			"Abbreviation": "bl",
-			"code": "baolin",
-			"name": "宝林"
+		  code: "xinyinan",
+		  name: "新沂南",
+		  abbreviation: "xyn",
 		},
 		{
-			"Abbreviation": "zbw",
-			"code": "zhangbaiwan",
-			"name": "张百湾"
+		  code: "xianyou",
+		  name: "仙游",
+		  abbreviation: "xyo",
 		},
 		{
-			"Abbreviation": "fc",
-			"code": "fengcheng",
-			"name": "丰城"
+		  code: "xiangyun",
+		  name: "祥云",
+		  abbreviation: "xyu",
 		},
 		{
-			"Abbreviation": "wnd",
-			"code": "wangniudun",
-			"name": "望牛墩"
+		  code: "xinzhengjichang",
+		  name: "新郑机场",
+		  abbreviation: "xzc",
 		},
 		{
-			"Abbreviation": "yjp",
-			"code": "yijianpu",
-			"name": "一间堡"
+		  code: "xiangzhanglu",
+		  name: "香樟路",
+		  abbreviation: "xzl",
 		},
 		{
-			"Abbreviation": "qd",
-			"code": "qingdao",
-			"name": "青岛"
+		  code: "xinzhouxi",
+		  name: "忻州西",
+		  abbreviation: "xzx",
 		},
 		{
-			"Abbreviation": "yst",
-			"code": "yushutai",
-			"name": "榆树台"
+		  code: "yaan",
+		  name: "雅安",
+		  abbreviation: "yan",
 		},
 		{
-			"Abbreviation": "mz",
-			"code": "mingzhu",
-			"name": "明珠"
+		  code: "yongannan",
+		  name: "永安南",
+		  abbreviation: "yan",
 		},
 		{
-			"Abbreviation": "yc",
-			"code": "yanchi1",
-			"name": "盐池"
+		  code: "yanbian",
+		  name: "盐边",
+		  abbreviation: "ybi",
 		},
 		{
-			"Abbreviation": "pld",
-			"code": "pulandian",
-			"name": "普兰店"
+		  code: "yingbinlu",
+		  name: "迎宾路",
+		  abbreviation: "ybl",
 		},
 		{
-			"Abbreviation": "xyb",
-			"code": "xunyangbei",
-			"name": "旬阳北"
+		  code: "yibinxi",
+		  name: "宜宾西",
+		  abbreviation: "ybx",
 		},
 		{
-			"Abbreviation": "smb",
-			"code": "sanmingbei",
-			"name": "三明北"
+		  code: "yabulixi",
+		  name: "亚布力西",
+		  abbreviation: "ybx",
 		},
 		{
-			"Abbreviation": "xy",
-			"code": "xinyu",
-			"name": "新余"
+		  code: "yongchengbei",
+		  name: "永城北",
+		  abbreviation: "ycb",
 		},
 		{
-			"Abbreviation": "syn",
-			"code": "shenyangnan",
-			"name": "沈阳南"
+		  code: "yanchengbei",
+		  name: "盐城北",
+		  abbreviation: "ycb",
 		},
 		{
-			"Abbreviation": "ys",
-			"code": "yushe1",
-			"name": "玉舍"
+		  code: "yunchengbei",
+		  name: "运城北",
+		  abbreviation: "ycb",
 		},
 		{
-			"Abbreviation": "wj",
-			"code": "wujia",
-			"name": "五家"
+		  code: "yongchuandong",
+		  name: "永川东",
+		  abbreviation: "ycd",
 		},
 		{
-			"Abbreviation": "xp",
-			"code": "xupu",
-			"name": "溆浦"
+		  code: "yuchengdong",
+		  name: "禹城东",
+		  abbreviation: "ycd",
 		},
 		{
-			"Abbreviation": "wy",
-			"code": "wuyi",
-			"name": "武义"
+		  code: "yanchengdafeng",
+		  name: "盐城大丰",
+		  abbreviation: "ycf",
 		},
 		{
-			"Abbreviation": "st",
-			"code": "shitou",
-			"name": "石头"
+		  code: "yichun",
+		  name: "宜春",
+		  abbreviation: "ych",
 		},
 		{
-			"Abbreviation": "lsz",
-			"code": "lishizhai",
-			"name": "李石寨"
+		  code: "yuechi",
+		  name: "岳池",
+		  abbreviation: "ych",
 		},
 		{
-			"Abbreviation": "jk",
-			"code": "jinkeng",
-			"name": "金坑"
+		  code: "yundonghai",
+		  name: "云东海",
+		  abbreviation: "ydh",
 		},
 		{
-			"Abbreviation": "dl",
-			"code": "dali",
-			"name": "大理"
+		  code: "yaodu",
+		  name: "姚渡",
+		  abbreviation: "ydu",
 		},
 		{
-			"Abbreviation": "glb",
-			"code": "guilinbei",
-			"name": "桂林北"
+		  code: "yunfudong",
+		  name: "云浮东",
+		  abbreviation: "yfd",
 		},
 		{
-			"Abbreviation": "wx",
-			"code": "wuxiang",
-			"name": "武乡"
+		  code: "yongfunan",
+		  name: "永福南",
+		  abbreviation: "yfn",
 		},
 		{
-			"Abbreviation": "yc",
-			"code": "yicheng",
-			"name": "宜城"
+		  code: "yuge",
+		  name: "雨格",
+		  abbreviation: "yge",
 		},
 		{
-			"Abbreviation": "jyb",
-			"code": "jiangyoubei",
-			"name": "江油北"
+		  code: "yanggaonan",
+		  name: "阳高南",
+		  abbreviation: "ygn",
 		},
 		{
-			"Abbreviation": "xgxjl",
-			"code": "hkwestkowloon",
-			"name": "香港西九龙"
+		  code: "yanghe",
+		  name: "洋河",
+		  abbreviation: "yhe",
 		},
 		{
-			"Abbreviation": "ss",
-			"code": "shanshi",
-			"name": "山市"
+		  code: "yongjibei",
+		  name: "永济北",
+		  abbreviation: "yjb",
 		},
 		{
-			"Abbreviation": "dz",
-			"code": "dengzhou",
-			"name": "邓州"
+		  code: "yanjixi",
+		  name: "延吉西",
+		  abbreviation: "yjx",
 		},
 		{
-			"Abbreviation": "ty",
-			"code": "taiyuan",
-			"name": "太原"
+		  code: "yinfkule",
+		  name: "英库勒",
+		  abbreviation: "ykl",
 		},
 		{
-			"Abbreviation": "zk",
-			"code": "zhongkai",
-			"name": "仲恺"
+		  code: "yongkangnan",
+		  name: "永康南",
+		  abbreviation: "ykn",
 		},
 		{
-			"Abbreviation": "ldx",
-			"code": "liangdixia",
-			"name": "梁底下"
+		  code: "yilan",
+		  name: "依兰",
+		  abbreviation: "yla",
 		},
 		{
-			"Abbreviation": "lj",
-			"code": "lujiang",
-			"name": "庐江"
+		  code: "yunlianghe",
+		  name: "运粮河",
+		  abbreviation: "ylh",
 		},
 		{
-			"Abbreviation": "jn",
-			"code": "jinan",
-			"name": "济南"
+		  code: "yuli",
+		  name: "尉犁",
+		  abbreviation: "yli",
 		},
 		{
-			"Abbreviation": "qd",
-			"code": "qidong",
-			"name": "启东"
+		  code: "yanling",
+		  name: "炎陵",
+		  abbreviation: "yli",
 		},
 		{
-			"Abbreviation": "lb",
-			"code": "laobian",
-			"name": "老边"
+		  code: "yanling",
+		  name: "鄢陵",
+		  abbreviation: "yli",
 		},
 		{
-			"Abbreviation": "ljp",
-			"code": "lijiaping",
-			"name": "李家坪"
+		  code: "yanglingnan",
+		  name: "杨陵南",
+		  abbreviation: "yln",
 		},
 		{
-			"Abbreviation": "dt",
-			"code": "datong",
-			"name": "大同"
+		  code: "yangma",
+		  name: "羊马",
+		  abbreviation: "yma",
 		},
 		{
-			"Abbreviation": "ncx",
-			"code": "nanchangxi",
-			"name": "南昌西"
+		  code: "yimianpobei",
+		  name: "一面坡北",
+		  abbreviation: "ymb",
 		},
 		{
-			"Abbreviation": "bss",
-			"code": "baishishan",
-			"name": "白石山"
+		  code: "yunmengdong",
+		  name: "云梦东",
+		  abbreviation: "ymd",
 		},
 		{
-			"Abbreviation": "dd",
-			"code": "didao",
-			"name": "滴道"
+		  code: "yimin",
+		  name: "伊敏",
+		  abbreviation: "ymi",
 		},
 		{
-			"Abbreviation": "sxp",
-			"code": "shangxipu",
-			"name": "上西铺"
+		  code: "yuanmouxi",
+		  name: "元谋西",
+		  abbreviation: "ymx",
 		},
 		{
-			"Abbreviation": "znn",
-			"code": "zhongningnan",
-			"name": "中宁南"
+		  code: "yunan",
+		  name: "郁南",
+		  abbreviation: "yna",
 		},
 		{
-			"Abbreviation": "tg",
-			"code": "tonggou",
-			"name": "通沟"
+		  code: "yunnanyi",
+		  name: "云南驿",
+		  abbreviation: "yny",
 		},
 		{
-			"Abbreviation": "gbk",
-			"code": "gubeikou",
-			"name": "古北口"
+		  code: "yanpingdong",
+		  name: "延平东",
+		  abbreviation: "ypd",
 		},
 		{
-			"Abbreviation": "dy",
-			"code": "daying1",
-			"name": "大营"
+		  code: "yanping",
+		  name: "延平",
+		  abbreviation: "ypi",
 		},
 		{
-			"Abbreviation": "dj",
-			"code": "dujia",
-			"name": "杜家"
+		  code: "yinping",
+		  name: "银瓶",
+		  abbreviation: "ypi",
 		},
 		{
-			"Abbreviation": "ded",
-			"code": "daoerdeng",
-			"name": "刀尔登"
+		  code: "yanpingxi",
+		  name: "延平西",
+		  abbreviation: "ypx",
 		},
 		{
-			"Abbreviation": "ql",
-			"code": "qionglai",
-			"name": "邛崃"
+		  code: "yuanpingxi",
+		  name: "原平西",
+		  abbreviation: "ypx",
 		},
 		{
-			"Abbreviation": "eb",
-			"code": "ebian",
-			"name": "峨边"
+		  code: "yangquandong",
+		  name: "阳泉东",
+		  abbreviation: "yqd",
 		},
 		{
-			"Abbreviation": "hhg",
-			"code": "honghuagou",
-			"name": "红花沟"
+		  code: "yanqihu",
+		  name: "雁栖湖",
+		  abbreviation: "yqh",
 		},
 		{
-			"Abbreviation": "wz",
-			"code": "wuzhai",
-			"name": "五寨"
+		  code: "yangqiao",
+		  name: "杨桥",
+		  abbreviation: "yqi",
 		},
 		{
-			"Abbreviation": "bh",
-			"code": "buhai",
-			"name": "布海"
+		  code: "yangquxi",
+		  name: "阳曲西",
+		  abbreviation: "yqx",
 		},
 		{
-			"Abbreviation": "ml",
-			"code": "miluo",
-			"name": "汨罗"
+		  code: "yongren",
+		  name: "永仁",
+		  abbreviation: "yre",
 		},
 		{
-			"Abbreviation": "sd",
-			"code": "shandan",
-			"name": "山丹"
+		  code: "yingshangbei",
+		  name: "颍上北",
+		  abbreviation: "ysb",
 		},
 		{
-			"Abbreviation": "hs",
-			"code": "hengshui",
-			"name": "衡水"
+		  code: "yongshou",
+		  name: "永寿",
+		  abbreviation: "ysh",
 		},
 		{
-			"Abbreviation": "nq",
-			"code": "nanqiao",
-			"name": "南桥"
+		  code: "yangshuo",
+		  name: "阳朔",
+		  abbreviation: "ysh",
 		},
 		{
-			"Abbreviation": "xnn",
-			"code": "xianningnan",
-			"name": "咸宁南"
+		  code: "yunshan",
+		  name: "云山",
+		  abbreviation: "ysh",
 		},
 		{
-			"Abbreviation": "wjt",
-			"code": "wujiatun",
-			"name": "吴家屯"
+		  code: "yushannan",
+		  name: "玉山南",
+		  abbreviation: "ysn",
 		},
 		{
-			"Abbreviation": "my",
-			"code": "moyu",
-			"name": "墨玉"
+		  code: "yanshinan",
+		  name: "雁石南",
+		  abbreviation: "ysn",
 		},
 		{
-			"Abbreviation": "ls",
-			"code": "lushan",
-			"name": "庐山"
+		  code: "yushexi",
+		  name: "榆社西",
+		  abbreviation: "ysx",
 		},
 		{
-			"Abbreviation": "jy",
-			"code": "jieyang",
-			"name": "揭阳"
+		  code: "yongshouxi",
+		  name: "永寿西",
+		  abbreviation: "ysx",
 		},
 		{
-			"Abbreviation": "hw",
-			"code": "haiwan",
-			"name": "海湾"
+		  code: "yintan",
+		  name: "银滩",
+		  abbreviation: "yta",
 		},
 		{
-			"Abbreviation": "zj",
-			"code": "zhenjiang",
-			"name": "镇江"
+		  code: "yongtai",
+		  name: "永泰",
+		  abbreviation: "yta",
 		},
 		{
-			"Abbreviation": "yy",
-			"code": "yueyang",
-			"name": "岳阳"
+		  code: "yingtanbei",
+		  name: "鹰潭北",
+		  abbreviation: "ytb",
 		},
 		{
-			"Abbreviation": "lc",
-			"code": "lingcheng",
-			"name": "陵城"
+		  code: "yitunbulake",
+		  name: "依吞布拉克",
+		  abbreviation: "ytk",
 		},
 		{
-			"Abbreviation": "jm",
-			"code": "jiaomei",
-			"name": "角美"
+		  code: "yantainan",
+		  name: "烟台南",
+		  abbreviation: "ytn",
 		},
 		{
-			"Abbreviation": "hm",
-			"code": "hami",
-			"name": "哈密"
+		  code: "yitong",
+		  name: "伊通",
+		  abbreviation: "yto",
 		},
 		{
-			"Abbreviation": "lj",
-			"code": "longjiang",
-			"name": "龙江"
+		  code: "yantaixi",
+		  name: "烟台西",
+		  abbreviation: "ytx",
 		},
 		{
-			"Abbreviation": "jd",
-			"code": "jiande",
-			"name": "建德"
+		  code: "yunxiao",
+		  name: "云霄",
+		  abbreviation: "yxi",
 		},
 		{
-			"Abbreviation": "fh",
-			"code": "fenhe",
-			"name": "汾河"
+		  code: "yunxian",
+		  name: "云县",
+		  abbreviation: "yxi",
 		},
 		{
-			"Abbreviation": "szx",
-			"code": "shenzhenxi",
-			"name": "深圳西"
+		  code: "yuxi",
+		  name: "玉溪",
+		  abbreviation: "yxi",
 		},
 		{
-			"Abbreviation": "kc",
-			"code": "kangcheng",
-			"name": "康城"
+		  code: "yangxin",
+		  name: "阳信",
+		  abbreviation: "yxi",
 		},
 		{
-			"Abbreviation": "stj",
-			"code": "santangji",
-			"name": "三堂集"
+		  code: "youxi",
+		  name: "尤溪",
+		  abbreviation: "yxi",
 		},
 		{
-			"Abbreviation": "ys",
-			"code": "yishui",
-			"name": "沂水"
+		  code: "yixing",
+		  name: "宜兴",
+		  abbreviation: "yxi",
 		},
 		{
-			"Abbreviation": "xsbn",
-			"code": "xishuangbannadaizuzizhizhou",
-			"name": "西双版纳傣族自治州"
-		}
-	]
-}
+		  code: "yingxian",
+		  name: "应县",
+		  abbreviation: "yxi",
+		},
+		{
+		  code: "youxiannan",
+		  name: "攸县南",
+		  abbreviation: "yxn",
+		},
+		{
+		  code: "yangxianxi",
+		  name: "洋县西",
+		  abbreviation: "yxx",
+		},
+		{
+		  code: "yixianxi",
+		  name: "义县西",
+		  abbreviation: "yxx",
+		},
+		{
+		  code: "yuyaobei",
+		  name: "余姚北",
+		  abbreviation: "yyb",
+		},
+		{
+		  code: "yangzhoudong",
+		  name: "扬州东",
+		  abbreviation: "yzd",
+		},
+		{
+		  code: "yinzhan",
+		  name: "银盏",
+		  abbreviation: "yzh",
+		},
+		{
+		  code: "yuzhou",
+		  name: "禹州",
+		  abbreviation: "yzh",
+		},
+		{
+		  code: "yuzhong",
+		  name: "榆中",
+		  abbreviation: "yzh",
+		},
+		{
+		  code: "zhaoan",
+		  name: "诏安",
+		  abbreviation: "zan",
+		},
+		{
+		  code: "zibobei",
+		  name: "淄博北",
+		  abbreviation: "zbb",
+		},
+		{
+		  code: "zhengdingjichang",
+		  name: "正定机场",
+		  abbreviation: "zdc",
+		},
+		{
+		  code: "zhundong",
+		  name: "准东",
+		  abbreviation: "zdo",
+		},
+		{
+		  code: "zhifangdong",
+		  name: "纸坊东",
+		  abbreviation: "zfd",
+		},
+		{
+		  code: "zhegao",
+		  name: "柘皋",
+		  abbreviation: "zga",
+		},
+		{
+		  code: "zhungeer",
+		  name: "准格尔",
+		  abbreviation: "zge",
+		},
+		{
+		  code: "zhuanghebei",
+		  name: "庄河北",
+		  abbreviation: "zhb",
+		},
+		{
+		  code: "zhenghe",
+		  name: "政和",
+		  abbreviation: "zhe",
+		},
+		{
+		  code: "zhuhaichanglong",
+		  name: "珠海长隆",
+		  abbreviation: "zhl",
+		},
+		{
+		  code: "zhaohua",
+		  name: "昭化",
+		  abbreviation: "zhu",
+		},
+		{
+		  code: "zhijinbei",
+		  name: "织金北",
+		  abbreviation: "zjb",
+		},
+		{
+		  code: "zhangjiachuan",
+		  name: "张家川",
+		  abbreviation: "zjc",
+		},
+		{
+		  code: "zhangjiagang",
+		  name: "张家港",
+		  abbreviation: "zjg",
+		},
+		{
+		  code: "zhijin",
+		  name: "织金",
+		  abbreviation: "zji",
+		},
+		{
+		  code: "zhijiang",
+		  name: "芷江",
+		  abbreviation: "zji",
+		},
+		{
+		  code: "zhangjiakounan",
+		  name: "张家口南",
+		  abbreviation: "zjn",
+		},
+		{
+		  code: "zhangjiajiexi",
+		  name: "张家界西",
+		  abbreviation: "zjx",
+		},
+		{
+		  code: "zhongkai",
+		  name: "仲恺",
+		  abbreviation: "zka",
+		},
+		{
+		  code: "zhoukoudong",
+		  name: "周口东",
+		  abbreviation: "zkd",
+		},
+		{
+		  code: "zengkou",
+		  name: "曾口",
+		  abbreviation: "zko",
+		},
+		{
+		  code: "zhulin",
+		  name: "珠琳",
+		  abbreviation: "zli",
+		},
+		{
+		  code: "zuoling",
+		  name: "左岭",
+		  abbreviation: "zli",
+		},
+		{
+		  code: "zhangmutoudong",
+		  name: "樟木头东",
+		  abbreviation: "zmd",
+		},
+		{
+		  code: "zhumadianxi",
+		  name: "驻马店西",
+		  abbreviation: "zmx",
+		},
+		{
+		  code: "zhouning",
+		  name: "周宁",
+		  abbreviation: "zni",
+		},
+		{
+		  code: "zouping",
+		  name: "邹平",
+		  abbreviation: "zpi",
+		},
+		{
+		  code: "zhangpu",
+		  name: "漳浦",
+		  abbreviation: "zpu",
+		},
+		{
+		  code: "zhangpingxi",
+		  name: "漳平西",
+		  abbreviation: "zpx",
+		},
+		{
+		  code: "zhangqiubei",
+		  name: "章丘北",
+		  abbreviation: "zqb",
+		},
+		{
+		  code: "zhaoqingdong",
+		  name: "肇庆东",
+		  abbreviation: "zqd",
+		},
+		{
+		  code: "zhuangqiao",
+		  name: "庄桥",
+		  abbreviation: "zqi",
+		},
+		{
+		  code: "zhaoshan",
+		  name: "昭山",
+		  abbreviation: "zsh",
+		},
+		{
+		  code: "zhongshanxi",
+		  name: "钟山西",
+		  abbreviation: "zsx",
+		},
+		{
+		  code: "zhushaguzhen",
+		  name: "朱砂古镇",
+		  abbreviation: "zsz",
+		},
+		{
+		  code: "zhongtang",
+		  name: "中堂",
+		  abbreviation: "zta",
+		},
+		{
+		  code: "zhitishan",
+		  name: "支提山",
+		  abbreviation: "zts",
+		},
+		{
+		  code: "zhongweinan",
+		  name: "中卫南",
+		  abbreviation: "zwn",
+		},
+		{
+		  code: "zhangxian",
+		  name: "漳县",
+		  abbreviation: "zxi",
+		},
+		{
+		  code: "zhenxiong",
+		  name: "镇雄",
+		  abbreviation: "zxi",
+		},
+		{
+		  code: "ziyangbei",
+		  name: "资阳北",
+		  abbreviation: "zyb",
+		},
+		{
+		  code: "zunyi",
+		  name: "遵义",
+		  abbreviation: "zyi",
+		},
+		{
+		  code: "zunyinan",
+		  name: "遵义南",
+		  abbreviation: "zyn",
+		},
+		{
+		  code: "zhangyexi",
+		  name: "张掖西",
+		  abbreviation: "zyx",
+		},
+		{
+		  code: "zizhongbei",
+		  name: "资中北",
+		  abbreviation: "zzb",
+		},
+		{
+		  code: "zhuozidong",
+		  name: "卓资东",
+		  abbreviation: "zzd",
+		},
+		{
+		  code: "zaozhuangdong",
+		  name: "枣庄东",
+		  abbreviation: "zzd",
+		},
+		{
+		  code: "zhuozhoudong",
+		  name: "涿州东",
+		  abbreviation: "zzd",
+		},
+		{
+		  code: "zhengzhoudong",
+		  name: "郑州东",
+		  abbreviation: "zzd",
+		},
+		{
+		  code: "zhuzhounan",
+		  name: "株洲南",
+		  abbreviation: "zzn",
+		},
+	  ],
+	}
 export default trains

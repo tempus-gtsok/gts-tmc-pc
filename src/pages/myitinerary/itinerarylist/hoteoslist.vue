@@ -1,4 +1,5 @@
 <template>
+<!-- 我的行程->酒店->详情页 -->
 	<div class="mian" v-if="userlist">
 		<div class="mian_top" >
 			<div class="top_left">
@@ -26,17 +27,17 @@
 			    联系人：
 			    <span>{{ userlist.contactName }}</span>
 				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;联系电话：
-				<span>{{ userlist.contactNumber }}</span>
+				<span>{{ userlist.contactNumber.replace(/(.{3}).*(.{4})/, "$1******$2") }}</span>
 			  </div>
 			  <div style="color: red;">取消规则：{{ userlist.dbCancelRule }}</div>
 			</div>
 			<div class="hotbox" style="padding-top: 40px;">
 			  <div class="lefbox">支付信息</div>
-			  <div v-if="userlist.saleOrder&&userlist.saleOrder.payStatus">支付状态：{{ pustatus(userlist.saleOrder.payStatus) }}</div>
+			  <div v-if="userlist.saleOrder&&userlist.saleOrder.payStatus">支付状态：{{ userlist.saleOrder.payStatus | pustatus }}</div>
 			</div>
 			<div class="hotbox" style="padding-top: 40px;">
 			  <div class="lefbox">订单信息</div>
-			  <div v-if="userlist.saleOrder&&userlist.saleOrder.payStatus">订单状态：{{ userstatus(userlist.orderStatus) }}</div>
+			  <div v-if="userlist.saleOrder&&userlist.saleOrder.payStatus">订单状态：{{ userlist.orderStatus | hotellUserName }}</div>
 			</div>
 		<div class="mian_bottom">
 			<div class="boxbtn">
@@ -47,69 +48,74 @@
 </template>
 
 <script>
+  import { pustatus , hotellUserName } from "@/utils/common-filters";
 	export default{
+		filters:{
+			pustatus , hotellUserName
+		},
 		data(){
 			return {
 				userlist:{},
 				weeks:['一','二','三','四','五','六','日'],
 			};
 		},
+
 		mounted() {
 			this.userlist = JSON.parse(this.$route.query.data); //获取上个页面传入的参数
 		},
 		methods:{
-			pustatus(ty){//支付状态
-				if(ty == 1){
-					return '待支付'
-				} else if(ty == 2){
-					return '支付中'
-				} else if(ty == 3){
-					return '已支付'
-				} else if(ty == 4){
-					return '为挂帐支付'
-				}
-			},
-			userstatus(ite){//订单状态
-				let arr = [{
-					name: '待审核',
-					id:650
-				},{
-					name: '处理中',
-					id:100,
-				},{
-					name: '拒单',
-					id:600,
-				},{
-					name: '审批拒绝',
-					id:121,
-				},{
-					name: '占房成功',
-					id:122,
-				},{
-					name: '申请',
-					id:117,
-				},{
-					name: '待处理',
-					id:115,
-				},{
-					name: '预定成功',
-					id:101,
-				},{
-					name: '下单失败',
-					id:102,
-				},{
-					name: '取消中',
-					id:400
-				},{
-					name: '取消成功',
-					id:401
-				}]
-				for(let i in arr){
-					if(arr[i].id == ite){
-						return arr[i].name
-					}
-				}
-			},
+			// pustatus(ty){//支付状态
+			// 	if(ty == 1){
+			// 		return '待支付'
+			// 	} else if(ty == 2){
+			// 		return '支付中'
+			// 	} else if(ty == 3){
+			// 		return '已支付'
+			// 	} else if(ty == 4){
+			// 		return '为挂帐支付'
+			// 	}
+			// },
+			// userstatus(ite){//订单状态
+			// 	let arr = [{
+			// 		name: '待审核',
+			// 		id:650
+			// 	},{
+			// 		name: '处理中',
+			// 		id:100,
+			// 	},{
+			// 		name: '拒单',
+			// 		id:600,
+			// 	},{
+			// 		name: '审批拒绝',
+			// 		id:121,
+			// 	},{
+			// 		name: '占房成功',
+			// 		id:122,
+			// 	},{
+			// 		name: '申请',
+			// 		id:117,
+			// 	},{
+			// 		name: '待处理',
+			// 		id:115,
+			// 	},{
+			// 		name: '预定成功',
+			// 		id:101,
+			// 	},{
+			// 		name: '下单失败',
+			// 		id:102,
+			// 	},{
+			// 		name: '取消中',
+			// 		id:400
+			// 	},{
+			// 		name: '取消成功',
+			// 		id:401
+			// 	}]
+			// 	for(let i in arr){
+			// 		if(arr[i].id == ite){
+			// 			return arr[i].name
+			// 		}
+			// 	}
+			// },
 			count(ti, ts) {
 			  //计算两个日期多少天
 			  let date1 = new Date(ti);

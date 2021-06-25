@@ -1,4 +1,5 @@
 <template>
+<!-- 我的行程->飞机票->详情页 -->
 	<div class="mian" v-if="userlist">
 		<div class="mian_top">
 			<div class="top_left">
@@ -70,14 +71,14 @@
 			</div>
 			<div class="username">
 				<ul class="username_left">
-					<li>{{catype(userlist.cardType)}}</li>
-					<li>{{userlist.cardNo}}</li>
+					<li>{{userlist.cardType | catypeEn}}</li>
+					<li>{{userlist.cardNo | numberPapers}}</li>
 				</ul>
 			</div>
 			<div class="username">
 				<ul class="username_left">
 					<li>手机号</li>
-					<li>{{userlist.phone}}</li>
+					<li>{{userlist.phone.replace(/(.{3}).*(.{4})/, "$1******$2")}}</li>
 				</ul>
 			</div>
 		</div>
@@ -86,7 +87,7 @@
 				<ul class="relation_usernames" v-if="userlist.sale">
 					<li style="font-size: 16px;text-indent: 20px;">联系信息</li>
 					<li style="text-indent: 20px;" >{{userlist.sale.contacts}}</li>
-					<li>{{userlist.sale.contactPhone}}</li>
+					<li>{{userlist.sale.contactPhone.replace(/(.{3}).*(.{4})/, "$1******$2")}}</li>
 				</ul>
 			</div>
 			<div class="boxbtn">
@@ -97,7 +98,11 @@
 </template>
 
 <script>
-	export default{
+import { catypeEn,numberPapers } from "@/utils/common-filters";
+export default {
+		filters:{
+			catypeEn,numberPapers
+		},
 		data(){
 			return {
 				userlist:{},
@@ -135,21 +140,21 @@
 					return hours + '时'
 				}
 			},
-			catype(it){//返回证件类型
-				if(it == 'NI'){
-					return '身份证'
-				} else if(it == 'PP'){
-					return '护照'
-				} else if(it == 'TB'){
-					return '台胞证'
-				} else if(it == 'GA'){
-					return '港澳通行证'
-				} else if(it == 'HX'){
-					return '回乡证'
-				} else if(it == 'OS'){
-					return '其他证件'
-				}
-			},
+			// catype(it){//返回证件类型
+			// 	if(it == 'NI'){
+			// 		return '身份证'
+			// 	} else if(it == 'PP'){
+			// 		return '护照'
+			// 	} else if(it == 'TB'){
+			// 		return '台胞证'
+			// 	} else if(it == 'GA'){
+			// 		return '港澳通行证'
+			// 	} else if(it == 'HX'){
+			// 		return '回乡证'
+			// 	} else if(it == 'OS'){
+			// 		return '其他证件'
+			// 	}
+			// },
 			retuns() {
 				this.$router.go(-1); //返回上一页
 			},

@@ -1,4 +1,5 @@
 <template>
+<!-- 我的行程 -->
   <div class="header_myorder" v-if="shomlist" v-loading="loading">
     <div class="fexibtns">
 
@@ -116,7 +117,7 @@
                   <img :src="item.ims" mode="" style="width: 24px;height: 22px;"></img>
                 </div>
                 <div><span
-                    style="font-size: 14px;font-weight:bolder;#333">{{ company(item.airline) }}{{ item.flightNo }}</span>
+                    style="font-size: 14px;font-weight:bolder;">{{ item.fName }}{{ item.flightNo }}</span>
                 </div>
                 <div style="font-size: 14px;">{{ item.flightNo }}</div>
               </div>
@@ -151,9 +152,13 @@
 <script>
 import airports from '../../../static/js/airports.js'
 import NoData from "@/components/common/noData";
-
+import { company } from "@/utils/common";
+import { arrType,hotellStatusTow,cityName } from "@/utils/common-filters";
 export default {
   components: {NoData},
+		filters:{
+			arrType,hotellStatusTow,cityName
+		},
   data() {
     return {
       disablet: false, //是否有状态类型
@@ -199,102 +204,102 @@ export default {
       }],
       activeIndex: '1',
       actives: '1',
-      trainstaus: [{ //火车正常票订单状态
-        name: '不限',
-        id: 0
-      }, {
-        name: '占座中',
-        id: 1,
-        url: '../../../static/image/home/In-seat.png'
-      }, {
-        name: '待支付',
-        id: 2,
-        url: '../../../static/image/home/unpaid.png'
-      }, {
-        name: '出票中',
-        id: 3,
-        url: '../../../static/image/home/ticket.png'
-      }, {
-        name: '已出票',
-        id: 4,
-        url: '../../../static/image/home/check.png'
-      }, {
-        name: '退票中',
-        id: 5,
-        url: '../../../static/image/home/Return-ticket.png'
-      }, {
-        name: '改签中',
-        id: 6,
-        url: '../../../static/image/home/Change-central.png'
-      }, {
-        name: '部分退废',
-        id: 7,
-        url: '../../../static/image/home/Part-retirement.png'
-      }, {
-        name: '部分改签',
-        id: 8,
-        url: '../../../static/image/home/Part-change.png'
-      }, {
-        name: '已退',
-        id: 9,
-        url: '../../../static/image/home/Order-returned.png'
-      }, {
-        name: '订单已废弃',
-        id: 10,
-        url: '../../../static/image/home/Order-abandoned.png'
-      }, {
-        name: '已改签',
-        id: 11,
-        url: '../../../static/image/home/Order-changed.png'
-      }, {
-        name: '占座失败',
-        id: 12,
-        url: '../../../static/image/home/Of-failure.png'
-      }, {
-        name: '出票失败',
-        id: 13,
-        url: '../../../static/image/home/Ticket-failure.png'
-      }],
-      hotelstaus: [{ //酒店订单状态
-        name: '不限',
-        id: 0
-      }, {
-        name: '待审核',
-        id: 650,
-        url: '../../../static/image/home/To-audit.png'
-      }, {
-        name: '处理中',
-        id: 100,
-        url: '../../../static/image/home/processing.png'
-      }, {
-        name: '待处理',
-        id: 115,
-        url: '../../../static/image/home/Pending.png'
-      }, {
-        name: '预定成功',
-        id: 101,
-        url: '../../../static/image/home/book-successfully.png'
-      }, {
-        name: '下单失败',
-        id: 102,
-        url: '../../../static/image/home/Order-failed.png'
-      }, {
-        name: '取消中',
-        id: 400,
-        url: '../../../static/image/home/Cancelled.png'
-      }, {
-        name: '取消成功',
-        id: 401,
-        url: '../../../static/image/home/Canceled.png'
-      }, {
-        name: '审批拒绝',
-        id: 121,
-        url: '../../../static/image/home/Approval-refused.png'
-      }, {
-        name: '占房成功',
-        id: 122,
-        url: '../../../static/image/home/Building-successful.png'
-      }],
+      // trainstaus: [{ //火车正常票订单状态
+      //   name: '不限',
+      //   id: 0
+      // }, {
+      //   name: '占座中',
+      //   id: 1,
+      //   url: '../../../static/image/home/In-seat.png'
+      // }, {
+      //   name: '待支付',
+      //   id: 2,
+      //   url: '../../../static/image/home/unpaid.png'
+      // }, {
+      //   name: '出票中',
+      //   id: 3,
+      //   url: '../../../static/image/home/ticket.png'
+      // }, {
+      //   name: '已出票',
+      //   id: 4,
+      //   url: '../../../static/image/home/check.png'
+      // }, {
+      //   name: '退票中',
+      //   id: 5,
+      //   url: '../../../static/image/home/Return-ticket.png'
+      // }, {
+      //   name: '改签中',
+      //   id: 6,
+      //   url: '../../../static/image/home/Change-central.png'
+      // }, {
+      //   name: '部分退废',
+      //   id: 7,
+      //   url: '../../../static/image/home/Part-retirement.png'
+      // }, {
+      //   name: '部分改签',
+      //   id: 8,
+      //   url: '../../../static/image/home/Part-change.png'
+      // }, {
+      //   name: '已退',
+      //   id: 9,
+      //   url: '../../../static/image/home/Order-returned.png'
+      // }, {
+      //   name: '订单已废弃',
+      //   id: 10,
+      //   url: '../../../static/image/home/Order-abandoned.png'
+      // }, {
+      //   name: '已改签',
+      //   id: 11,
+      //   url: '../../../static/image/home/Order-changed.png'
+      // }, {
+      //   name: '占座失败',
+      //   id: 12,
+      //   url: '../../../static/image/home/Of-failure.png'
+      // }, {
+      //   name: '出票失败',
+      //   id: 13,
+      //   url: '../../../static/image/home/Ticket-failure.png'
+      // }],
+      // hotelstaus: [{ //酒店订单状态
+      //   name: '不限',
+      //   id: 0
+      // }, {
+      //   name: '待审核',
+      //   id: 650,
+      //   url: '../../../static/image/home/To-audit.png'
+      // }, {
+      //   name: '处理中',
+      //   id: 100,
+      //   url: '../../../static/image/home/processing.png'
+      // }, {
+      //   name: '待处理',
+      //   id: 115,
+      //   url: '../../../static/image/home/Pending.png'
+      // }, {
+      //   name: '预定成功',
+      //   id: 101,
+      //   url: '../../../static/image/home/book-successfully.png'
+      // }, {
+      //   name: '下单失败',
+      //   id: 102,
+      //   url: '../../../static/image/home/Order-failed.png'
+      // }, {
+      //   name: '取消中',
+      //   id: 400,
+      //   url: '../../../static/image/home/Cancelled.png'
+      // }, {
+      //   name: '取消成功',
+      //   id: 401,
+      //   url: '../../../static/image/home/Canceled.png'
+      // }, {
+      //   name: '审批拒绝',
+      //   id: 121,
+      //   url: '../../../static/image/home/Approval-refused.png'
+      // }, {
+      //   name: '占房成功',
+      //   id: 122,
+      //   url: '../../../static/image/home/Building-successful.png'
+      // }],
       planestaus: [{ //国内机票订单状态
         name: '不限',
         id: 0,
@@ -322,7 +327,6 @@ export default {
   mounted() {
     this.datast();
     this.queryAirlineList(); //飞机国内航司查询
-
     let actid = sessionStorage.getItem('actinsts');
     if (actid != null && actid != undefined) {
       this.acks(actid)
@@ -395,14 +399,14 @@ export default {
         return (state.value.toLowerCase().indexOf(queryString.toLowerCase()) === 0);
       };
     },
-    cityname(name) { //城市名称
-      let that = this;
-      for (let j = 0; j < that.predaddress.length; j++) {
-        if (name == that.predaddress[j].airportCode) {
-          return that.predaddress[j].cityCName;
-        }
-      }
-    },
+    // cityname(name) { //城市名称
+    //   let that = this;
+    //   for (let j = 0; j < that.predaddress.length; j++) {
+    //     if (name == that.predaddress[j].airportCode) {
+    //       return that.predaddress[j].cityCName;
+    //     }
+    //   }
+    // },
     queryAirlineList() { //获取机场名称
       let _this = this;
       _this.$api.order.queryAirlineList().then((res) => {
@@ -459,13 +463,16 @@ export default {
               if (that.actinst == 1) {
                 for (let k in that.shomlist) {
                   //转换城市名
+                this.$set(that.shomlist[k],'fName', company(that.shomlist[k].airline,this.hang))
                   that.shomlist[k]['ims'] = 'http://file.feiren.com/00/02/' + that.shomlist[k].airline + '.png';
-                  that.shomlist[k]['companys'] = that.company(that.shomlist[k].airline);
-                  that.shomlist[k]['citynames'] = that.cityname(that.shomlist[k].depart);
-                  that.shomlist[k]['citynamey'] = that.cityname(that.shomlist[k].arrive);
+                  that.shomlist[k]['companys'] = company(that.shomlist[k].airline,this.hang);
+                  that.shomlist[k]['citynames'] = cityName(that.shomlist[k].depart);
+                  that.shomlist[k]['citynamey'] = cityName(that.shomlist[k].arrive);
+                
                 }
               }
             } else {
+              
             }
           } else {
             this.loading = true;
@@ -516,10 +523,11 @@ export default {
               that.shomlist = res.data.rows;
               if (that.actinst == 1) {
                 for (let k in that.shomlist) { //转换城市名
+                  this.$set(that.shomlist[k],'fName', company(that.shomlist[k].airline,this.hang))
                   that.shomlist[k]['ims'] = 'http://file.feiren.com/00/02/' + that.shomlist[k].airline + '.png';
-                  that.shomlist[k]['companys'] = that.company(that.shomlist[k].airline);
-                  that.shomlist[k]['citynames'] = that.cityname(that.shomlist[k].depart);
-                  that.shomlist[k]['citynamey'] = that.cityname(that.shomlist[k].arrive);
+                  that.shomlist[k]['companys'] = company(that.shomlist[k].airline,this.hang);
+                  that.shomlist[k]['citynames'] = cityName(that.shomlist[k].depart);
+                  that.shomlist[k]['citynamey'] = cityName(that.shomlist[k].arrive);
                 }
               }
             }
@@ -552,14 +560,14 @@ export default {
         console.log(e);
       }
     },
-    company(ie) { //飞机航司名称
-      for (let s in this.hang) {
-        if (ie == s) {
-          ie = this.hang[s];
-          return ie;
-        }
-      }
-    },
+    // company(ie) { //飞机航司名称
+    //   for (let s in this.hang) {
+    //     if (ie == s) {
+    //       ie = this.hang[s];
+    //       return ie;
+    //     }
+    //   }
+    // },
     search() { //点击查询
       this.queryOrders(); //订单查询
     },
@@ -573,6 +581,7 @@ export default {
       this.actives = key;
       this.ordernumber = ''
       this.queryOrders(); //订单查询
+      
     },
     opstlist(va) {
       this.page = 1; //几页
@@ -584,7 +593,7 @@ export default {
         if (this.actinst == 1) {
           this.orderstatuselist = this.planestaust; //展示国内机票状态
         } else if (this.actinst == 'tra') {
-          this.orderstatuselist = this.trainstaus; //展示火车票状态
+          this.orderstatuselist = arrType; //展示火车票状态
         }
         this.queryOrders()
       }
@@ -596,10 +605,10 @@ export default {
       if (it == 1 || it == '1') {
         this.orderstatuselist = this.planestaus; //展示国内机票状态
       } else if (it == 'tra') {
-        this.orderstatuselist = this.trainstaus; //展示火车票状态
+        this.orderstatuselist = arrType; //展示火车票状态
       } else if (it == 4 || it == '4') {
         this.disablet = true;
-        this.orderstatuselist = this.hotelstaus; //展示酒店状态
+        this.orderstatuselist = hotellStatusTow; //展示酒店状态
       }
       this.page = 1; //几页
       this.currentPage3 = 1;

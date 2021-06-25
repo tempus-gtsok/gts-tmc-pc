@@ -45,7 +45,7 @@ export default new Router({
                     name: 'trainlist',
                     component: resolve => require(['@/pages/home/trainlist/trainlist.vue'], resolve),
                     meta: {
-                        title: '火车预定列表',
+                        title: '火车票预定列表',
                         requireAuth: true
                     },
                 },
@@ -54,7 +54,7 @@ export default new Router({
                     name: 'trainadd',
                     component: resolve => require(['@/pages/home/trainlist/trainadd.vue'], resolve),
                     meta: {
-                        title: '火车提交页面',
+                        title: '火车票提交页面',
                         requireAuth: true
                     },
                 }, {
@@ -62,7 +62,7 @@ export default new Router({
                     name: 'traindefray',
                     component: resolve => require(['@/pages/defray/traindefray'], resolve),
                     meta: {
-                        title: '火车支付页面',
+                        title: '火车票支付页面',
                         requireAuth: true
                     }
                 },
@@ -89,7 +89,7 @@ export default new Router({
                     name: 'trainreport',
                     component: resolve => require(['@/pages/travel_report/trainreport.vue'], resolve),
                     meta: {
-                        title: '火车报表',
+                        title: '火车票报表',
                         requireAuth: true
                     }
                 },
@@ -160,7 +160,7 @@ export default new Router({
                     path: '/ticketcationform',
                     component: resolve => require(['@/pages/home/ticketinquiry/ticketcationform.vue'], resolve),
                     meta: {
-                        title: '飞机预定列表',
+                        title: '飞机票预定列表',
                         requireAuth: true
                     }
                 },
@@ -168,7 +168,15 @@ export default new Router({
                     path: '/ticketcationadd',
                     component: resolve => require(['@/pages/home/ticketinquiry/ticketcationadd.vue'], resolve),
                     meta: {
-                        title: '飞机提交页面',
+                        title: '飞机票提交页面',
+                        requireAuth: true
+                    }
+                },
+                {
+                    path: '/carservice',
+                    component: resolve => require(['@/pages/home/carservice/carservice.vue'], resolve),
+                    meta: {
+                        title: '用车预定列表',
                         requireAuth: true
                     }
                 },
@@ -176,7 +184,15 @@ export default new Router({
                     path: '/planeorderlist',
                     component: resolve => require(['@/pages/myorder/orderlist/planeorder/planeorderlist'], resolve),
                     meta: {
-                        title: '飞机订单详情',
+                        title: '飞机票订单详情',
+                        requireAuth: true
+                    }
+                },
+                {
+                    path: '/planeorderlist2',
+                    component: resolve => require(['@/pages/myorder/orderlist/planeorder/planeorderlist2'], resolve),
+                    meta: {
+                        title: '飞机票订单详情',
                         requireAuth: true
                     }
                 },
@@ -184,7 +200,7 @@ export default new Router({
                     path: '/chargebackdetailsl',
                     component: resolve => require(['@/pages/myorder/orderlist/planeorder/chargebackdetailsl'], resolve),
                     meta: {
-                        title: '飞机订单退票详情',
+                        title: '飞机票订单退票详情',
                         requireAuth: true
                     }
                 },
@@ -192,7 +208,7 @@ export default new Router({
                     path: '/planchange',
                     component: resolve => require(['@/pages/myorder/orderlist/planeorder/planchange'], resolve),
                     meta: {
-                        title: '飞机订单改签详情',
+                        title: '飞机票订单改签详情',
                         requireAuth: true
                     }
                 },
@@ -213,6 +229,14 @@ export default new Router({
                     }
                 },
                 {
+                    path: '/myorder2',
+                    component: resolve => require(['@/pages/myorder/myorder2'], resolve),
+                    meta: {
+                        title: '我的订单',
+                        requireAuth: true
+                    }
+                },
+                {
                     path: '/hoteorderlist',
                     component: resolve => require(['@/pages/myorder/orderlist/hoteorder/hoteorderlist'], resolve),
                     meta: {
@@ -224,7 +248,15 @@ export default new Router({
                     path: '/trainorderlist',
                     component: resolve => require(['@/pages/myorder/orderlist/trainorder/trainorderlist'], resolve),
                     meta: {
-                        title: '退改单详情',
+                        title: '火车票票订单详情',
+                        requireAuth: true
+                    }
+                },
+                {
+                    path: '/trainorderlist2',
+                    component: resolve => require(['@/pages/myorder/orderlist/trainorder/trainorderlist2'], resolve),
+                    meta: {
+                        title: '火车票订单详情',
                         requireAuth: true
                     }
                 },
@@ -232,7 +264,7 @@ export default new Router({
                     path: '/clorderlist',
                     component: resolve => require(['@/pages/myorder/orderlist/trainorder/clorderlist'], resolve),
                     meta: {
-                        title: '火车票订单详情',
+                        title: '退改单详情',
                         requireAuth: true
                     }
                 },
@@ -356,7 +388,7 @@ export default new Router({
                     path: '/planelist',
                     component: resolve => require(['@/pages/myitinerary/itinerarylist/planelist'], resolve),
                     meta: {
-                        title: '飞机行程详情',
+                        title: '飞机票行程详情',
                         requireAuth: true
                     }
                 },
@@ -364,7 +396,7 @@ export default new Router({
                     path: '/trainslist',
                     component: resolve => require(['@/pages/myitinerary/itinerarylist/trainslist'], resolve),
                     meta: {
-                        title: '火车行程详情',
+                        title: '火车票行程详情',
                         requireAuth: true
                     }
                 },

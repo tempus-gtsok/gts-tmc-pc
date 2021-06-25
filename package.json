@@ -24,7 +24,6 @@
     "qrcodejs2": "^0.0.2",
     "sass-resources-loader": "^2.1.1",
     "vue": "^2.5.2",
-    "vue-amap": "^0.5.10",
     "vue-json-excel": "^0.3.0",
     "vue-router": "^3.0.1",
     "vue-xlsx-table": "^1.2.8",

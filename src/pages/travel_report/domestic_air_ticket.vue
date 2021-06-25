@@ -1,4 +1,5 @@
 <template>
+<!-- 差旅报告->国内飞机 -->
   <div>
     <div class="travelbox">
       <travel_report :tarlist_ids="tarlist_id"></travel_report>
@@ -242,6 +243,7 @@
 <script>
 import Travel_report from "./travel_report";
 import citysearch from "@/components/common/citycomponents.vue";
+import { formatDate } from "@/utils/common";
 export default {
   name: "domestic_air_ticket",
   components: {
@@ -310,26 +312,26 @@ export default {
       this.loading = true;
       this.trainreport();
     },
-    formatDate(value) {
-      //时间转换
-      if (value != null && value != "") {
-        let date = new Date(value);
-        let y = date.getFullYear();
-        let MM = date.getMonth() + 1;
-        MM = MM < 10 ? "0" + MM : MM;
-        let d = date.getDate();
-        d = d < 10 ? "0" + d : d;
-        let h = date.getHours();
-        h = h < 10 ? "0" + h : h;
-        let m = date.getMinutes();
-        m = m < 10 ? "0" + m : m;
-        let s = date.getSeconds();
-        s = s < 10 ? "0" + s : s;
-        return y + "-" + MM + "-" + d;
-      } else {
-        return value;
-      }
-    },
+    // formatDate(value) {
+    //   //时间转换
+    //   if (value != null && value != "") {
+    //     let date = new Date(value);
+    //     let y = date.getFullYear();
+    //     let MM = date.getMonth() + 1;
+    //     MM = MM < 10 ? "0" + MM : MM;
+    //     let d = date.getDate();
+    //     d = d < 10 ? "0" + d : d;
+    //     let h = date.getHours();
+    //     h = h < 10 ? "0" + h : h;
+    //     let m = date.getMinutes();
+    //     m = m < 10 ? "0" + m : m;
+    //     let s = date.getSeconds();
+    //     s = s < 10 ? "0" + s : s;
+    //     return y + "-" + MM + "-" + d;
+    //   } else {
+    //     return value;
+    //   }
+    // },
     async trainreport() {
       //查询国内机票报表详情
       if (this.cityslists != "" && this.cityslists != null) {
@@ -347,10 +349,10 @@ export default {
             airTicketVO: {
               root: this.root,
               saleNo: this.search.singleNumber,
-              appointmentTime: this.formatDate(this.search.scheduledDate[0]),
-              overTime: this.formatDate(this.search.scheduledDate[1]),
-              beginTime: this.formatDate(this.search.departuedate[0]),
-              endTime: this.formatDate(this.search.departuedate[1]),
+              appointmentTime: formatDate(this.search.scheduledDate[0]),
+              overTime: formatDate(this.search.scheduledDate[1]),
+              beginTime: formatDate(this.search.departuedate[0]) ,
+              endTime: formatDate(this.search.departuedate[1]),
               departName: this.cityslists[0].name,
               arriveName: this.cityslists[1].name,
               pName: this.search.travelerName,
@@ -384,8 +386,8 @@ export default {
             airTicketVO: {
               root: this.root,
               saleNo: this.search.singleNumber,
-              appointmentTime: this.formatDate(this.search.scheduledDate[0]),
-              overTime: this.formatDate(this.search.scheduledDate[1]),
+              appointmentTime: formatDate(this.search.scheduledDate[0]),
+              overTime: formatDate(this.search.scheduledDate[1]),
               departName: this.cityslists[0].name,
               arriveName: this.cityslists[1].name,
               pName: this.search.traveler,
@@ -419,8 +421,8 @@ export default {
             airTicketVO: {
               root: this.root,
               saleNo: this.search.singleNumber,
-              beginTime: this.formatDate(this.search.departuedate[0]),
-              endTime: this.formatDate(this.search.departuedate[1]),
+              beginTime: formatDate(this.search.departuedate[0]),
+              endTime: formatDate(this.search.departuedate[1]),
               pName: this.search.traveler,
               departName: this.cityslists[0].name,
               arriveName: this.cityslists[1].name,
@@ -494,10 +496,10 @@ export default {
             airTicketVO: {
               root: this.root,
               saleNo: this.search.singleNumber,
-              appointmentTime: this.formatDate(this.search.scheduledDate[0]),
-              overTime: this.formatDate(this.search.scheduledDate[1]),
-              beginTime: this.formatDate(this.search.departuedate[0]),
-              endTime: this.formatDate(this.search.departuedate[1]),
+              appointmentTime: formatDate(this.search.scheduledDate[0]),
+              overTime: formatDate(this.search.scheduledDate[1]),
+              beginTime: formatDate(this.search.departuedate[0]),
+              endTime: formatDate(this.search.departuedate[1]),
               pName: this.search.traveler,
               createName: this.search.travelerName,
               department: this.search.department,
@@ -529,8 +531,8 @@ export default {
             airTicketVO: {
               root: this.root,
               saleNo: this.search.singleNumber,
-              appointmentTime: this.formatDate(this.search.scheduledDate[0]),
-              overTime: this.formatDate(this.search.scheduledDate[1]),
+              appointmentTime: formatDate(this.search.scheduledDate[0]),
+              overTime: formatDate(this.search.scheduledDate[1]),
               pName: this.search.traveler,
               createName: this.search.travelerName,
               department: this.search.department,
@@ -562,8 +564,8 @@ export default {
             airTicketVO: {
               root: this.root,
               saleNo: this.search.singleNumber,
-              beginTime: this.formatDate(this.search.departuedate[0]),
-              endTime: this.formatDate(this.search.departuedate[1]),
+              beginTime: formatDate(this.search.departuedate[0]),
+              endTime: formatDate(this.search.departuedate[1]),
               pName: this.search.traveler,
               createName: this.search.travelerName,
               department: this.search.department,

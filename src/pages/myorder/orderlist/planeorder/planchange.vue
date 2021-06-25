@@ -1,4 +1,5 @@
 <template>
+<!-- 我的订单->机票订单->改签单 -->
 	<div class="hoteorder">
 		<div class="hotboxs">
 			<div class="hotboxe">
@@ -14,7 +15,7 @@
 		</div>
 		<div class="hotbox" style="padding-top: 40px;">
 			<div v-for="(item,index) in orderDetailListy" :key="index" style="width: 100%;border-bottom: 1px solid #f2f2f2;display: flex;align-items: center;">
-				<div class="" style="width: 50%;">
+				<div   style="width: 50%;">
 					<div style="display: flex;">
 						<div v-if="index == 0" style="width: 5%;"><img src="../../../../../static/image/home/go.png"/></div>
 						<div v-if="index == 1" style="width: 5%;"><img src="../../../../../static/image/home/return.png"/></div>
@@ -24,7 +25,7 @@
 				</div>
 					
 				<div style="width: 50%;display: flex;align-items: center;">
-					<div class="" style="font-size: 15px;width: 25%;line-height: 120px;text-align: center;">
+					<div   style="font-size: 15px;width: 25%;line-height: 120px;text-align: center;">
 						<span style="">{{item.origDeparts}}</span>
 					</div>
 					<div style="width: 50%;text-align: center;text-align: center;">
@@ -45,10 +46,10 @@
 				
 			</div>
 			<div style="width: 100%;background: #f2f2f2;color: #333333;font-size: 14px;font-weight: bolder;text-indent: 10px;">乘机人信息</div>
-			<div v-for="(item,index) in newuserlist" :key="index" style="width: 100%;color: #333333;text-indent: 96px;margin-top: 20px;font-size: 14px;">
+			<div v-for="(item,index) in newuserlist" :key="'init-'+index" style="width: 100%;color: #333333;margin-top: 20px;font-size: 14px;">
 				<span style="width: 20%;">{{item.itd.name}}</span>
-				<span style="width: 30%;">{{catype(item.itd.origCardType)}}：{{item.itd.cardNo}}</span>
-				<span>手机号：{{item.itd.phone}}</span>
+				<span style="width: 30%;">{{item.itd.origCardType | catypeEn}}：{{item.itd.cardNo | numberPapers}}</span>
+				<span>手机号：{{item.itd.phone.replace(/(.{3}).*(.{4})/, "$1******$2")}}</span>
 				<span>出差事由：{{Reason}}</span>
 				<span style=" color: #007AFF;" v-if="item.itd">往:{{item.itd.statusname}}</span>
 				<span style=" color: #007AFF;" v-if="item.isd">返:{{item.isd.statusname}}</span>
@@ -71,18 +72,18 @@
 						<el-checkbox :label="item.passengerId">
 							<p style="color: #000000;">
 								<span style="width: 20%;">{{item.name}}</span>
-								<span style="width: 30%;">{{catype(item.cardType)}}：{{item.cardNo}}</span>
-								<span>手机号：{{item.phone}}</span>
+								<span style="width: 30%;">{{item.cardType | catypeEn}}：{{item.cardNo | numberPapers}}</span>
+								<span>手机号：{{item.phone.replace(/(.{3}).*(.{4})/, "$1******$2")}}</span>
 							</p>
 						</el-checkbox>
 					</div>
 				</el-checkbox-group>
 			</div>
 			<div class="boxbtn">
-				<div class="" v-if="typename == 1 && orderStatus== 3">
+				<div   v-if="typename == 1 && orderStatus== 3">
 					<div class="tkbts">待审核</div>
 				</div>
-				<div class="" v-if="dtolist.status == 7" >
+				<div   v-if="dtolist.status == 7" >
 					<div class="tkbts">运营处理中..</div>
 				</div>
 			</div>
@@ -210,8 +211,13 @@
 <script>
 	import airports from '../../../../../static/js/airports.js'
   import Defray from "@/components/common/defray";
+  import { companys , catypeEn , userstatus,cityName,numberPapers } from "@/utils/common-filters";
+//   import { company } from "@/utils/common";
 	export default {
-    components: {Defray},
+	components: {Defray},
+	filters:{
+		companys,catypeEn,userstatus,cityName,numberPapers
+	},
     data() {
 			return {
 				tokens: '',
@@ -367,11 +373,11 @@
 							phone:userli[i].itd.phone,
 							city: {
 								id:userli[i].itd.origDepart,
-								name: this.citys(userli[i].itd.origDepart)
+								name: cityName(userli[i].itd.origDepart)
 							}, 
 							citys: {
 								id:userli[i].itd.origArrive,
-								name: this.citys(userli[i].itd.origArrive)
+								name: cityName(userli[i].itd.origArrive)
 							}, 
 							departTime:  userli[i].itd.departTime.substring(0,10),
 							cardNo: userli[i].itd.origCardNo,
@@ -459,11 +465,11 @@
 							phone:list.passengers[i].phone,
 							city: {
 								id:list.passengers[i].voyages[0].depart,
-								name: this.citys(list.passengers[i].voyages[0].depart)
+								name: cityName(list.passengers[i].voyages[0].depart)
 							}, 
 							citys: {
 								id:list.passengers[i].voyages[0].arrive,
-								name: this.citys(list.passengers[i].voyages[0].arrive)
+								name: cityName(list.passengers[i].voyages[0].arrive)
 							}, 
 							departTime: list.passengers[i].voyages[0].departTime.substring(0,10),
 							departTimes: list.passengers[i].voyages[1].departTime.substring(0,10),
@@ -511,11 +517,11 @@
 								phone:userli[i].itd.phone,
 								city: {
 									id:userli[i].itd.origDepart,
-									name: this.citys(userli[i].itd.origDepart)
+									name: cityName(userli[i].itd.origDepart)
 								}, 
 								citys: {
 									id:userli[i].itd.origArrive,
-									name: this.citys(userli[i].itd.origArrive)
+									name: cityName(userli[i].itd.origArrive)
 								}, 
 								departTime:  userli[i].itd.departTime.substring(0,10),
 								cardNo: userli[i].itd.origCardNo,
@@ -532,11 +538,11 @@
 							this.usersnamelist.push({
 								city: {
 									id:userli[i].isd.origDepart,
-									name: this.citys(userli[i].isd.origDepart)
+									name: cityName(userli[i].isd.origDepart)
 								}, 
 								citys: {
 									id:userli[i].isd.origArrive,
-									name: this.citys(userli[i].isd.origArrive)
+									name: cityName(userli[i].isd.origArrive)
 								}, 
 								departTime:  userli[i].isd.departTime.substring(0,10),
 								cardNo: userli[i].isd.origCardNo,
@@ -582,21 +588,21 @@
 					return hours + '时'
 				}
 			},
-			company(ie) {
-				for (let s in this.hang) {
-					if (ie == s) {
-						ie = this.hang[s];
-						return ie;
-					}
-				}
-			},
-			citys(its){//回显城市
-				for (let j = 0; j < this.address.length; j++) {  //循环城市
-					if(this.address[j].airportCode == its){
-						return this.address[j].cityCName
-					}
-				}
-			},
+			// company(ie) {
+			// 	for (let s in this.hang) {
+			// 		if (ie == s) {
+			// 			ie = this.hang[s];
+			// 			return ie;
+			// 		}
+			// 	}
+			// },
+			// citys(its){//回显城市
+			// 	for (let j = 0; j < this.address.length; j++) {  //循环城市
+			// 		if(this.address[j].airportCode == its){
+			// 			return this.address[j].cityCName
+			// 		}
+			// 	}
+			// },
 			phonei_click() {
 				this.phone_click = true;
 				this.companyi_click = true;
@@ -654,7 +660,7 @@
 				} else if(i == 8){
 					return '../../../static/image/home/finished.png'
 				} else if(i == 9){
-					return '../../../static/image/home/订单-客户审批.png'
+					return '../../../static/image/home/customer-approval.png'
 				} else if(i == 10){
 					return '../../../static/image/home/customer-rejected.png'
 				}
@@ -676,7 +682,7 @@
 						userlist.push({
 							phone:this.usersnamelist[i].phone,
 							certNo: this.usersnamelist[i].cardNo,//证件号码
-							certType: this.catype(this.usersnamelist[i].cardType),//证件类型
+							certType: catypeEn(this.usersnamelist[i].cardType),//证件类型
 							name:this.usersnamelist[i].name,//名字
 						});
 						names.push(this.usersnamelist[i].name)
@@ -764,31 +770,31 @@
 				} else { //退票
 				}
 			},
-			catype(it) { //返回证件类型
-				if (it == 'NI') {
-					return '身份证'
-				} else if (it == 'PP') {
-					return '护照'
-				} else if (it == 'TB') {
-					return '台胞证'
-				} else if (it == 'GA') {
-					return '港澳通行证'
-				} else if (it == 'HX') {
-					return '回乡证'
-				} else if (it == 'OS') {
-					return '其他证件'
-				}
-			},
-			companys(ie) {
-				if (ie == 'F') {
-					ie = '头等舱'
-				} else if (ie == 'C') {
-					ie = '商务舱'
-				} else if (ie == 'Y') {
-					ie = '经济舱'
-				}
-				return ie;
-			},
+			// catypeEn(it) { //返回证件类型
+			// 	if (it == 'NI') {
+			// 		return '身份证'
+			// 	} else if (it == 'PP') {
+			// 		return '护照'
+			// 	} else if (it == 'TB') {
+			// 		return '台胞证'
+			// 	} else if (it == 'GA') {
+			// 		return '港澳通行证'
+			// 	} else if (it == 'HX') {
+			// 		return '回乡证'
+			// 	} else if (it == 'OS') {
+			// 		return '其他证件'
+			// 	}
+			// },
+			// companys(ie) {
+			// 	if (ie == 'F') {
+			// 		ie = '头等舱'
+			// 	} else if (ie == 'C') {
+			// 		ie = '商务舱'
+			// 	} else if (ie == 'Y') {
+			// 		ie = '经济舱'
+			// 	}
+			// 	return ie;
+			// },
 			clearsks(){//取消改签
 			  this.$confirm('将取消订单，是否继续?', '提示', {
 			    confirmButtonText: '确定',
@@ -938,13 +944,13 @@
 				this.TravelDepartlist = [];
 				this.appswlist(); //重新获取部门和成本中心审批人
 			},
-			citys(its) { //回显城市
-				for (let j = 0; j < this.address.length; j++) { //循环城市
-					if (this.address[j].airportCode == its) {
-						return this.address[j].cityCName
-					}
-				}
-			},
+			// citys(its) { //回显城市
+			// 	for (let j = 0; j < this.address.length; j++) { //循环城市
+			// 		if (this.address[j].airportCode == its) {
+			// 			return this.address[j].cityCName
+			// 		}
+			// 	}
+			// },
 			async appswlist() { //选获取部门和成本审批人信息
 				let that = this;
 				let res;
@@ -1078,29 +1084,29 @@
 					console.log(err)
 				})
 			},
-			pustatus(ty) {
-				//支付状态
-				if (ty == 1) {
-					return '待支付';
-				} else if (ty == 2) {
-					return '支付中';
-				} else if (ty == 3) {
-					return '已支付';
-				} else if (ty == 4) {
-					return '为挂帐支付';
-				}
-			},
-			userstatus(it) { //乘客当前状态
-				if (it == 0) {
-					return '已取消'
-				} else if (it == 1) {
-					return '正常'
-				} else if (it == 2) {
-					return '改签'
-				} else if (it == 3) {
-					return '废退'
-				}
-			},
+			// pustatus(ty) {
+			// 	//支付状态
+			// 	if (ty == 1) {
+			// 		return '待支付';
+			// 	} else if (ty == 2) {
+			// 		return '支付中';
+			// 	} else if (ty == 3) {
+			// 		return '已支付';
+			// 	} else if (ty == 4) {
+			// 		return '为挂帐支付';
+			// 	}
+			// },
+			// userstatus(it) { //乘客当前状态
+			// 	if (it == 0) {
+			// 		return '已取消'
+			// 	} else if (it == 1) {
+			// 		return '正常'
+			// 	} else if (it == 2) {
+			// 		return '改签'
+			// 	} else if (it == 3) {
+			// 		return '废退'
+			// 	}
+			// },
 			searchhoter(tradeNo) { //查询机票详情
 				if (tradeNo != null) {
 					this.codes = tradeNo
@@ -1221,11 +1227,11 @@
 							}
 							for (let k in that.userlist) {
 								if (that.userlist[k].icke == 1) {
-									that.userlist[k].itd['statusname'] = that.userstatus(that.userlist[k].itd.status);
+									that.userlist[k].itd['statusname'] = userstatus(that.userlist[k].itd.status);
 								}
 								if (that.userlist[k].icke == 3) {
-									that.userlist[k].itd['statusname'] = that.userstatus(that.userlist[k].itd.status);
-									that.userlist[k].isd['statusname'] = that.userstatus(that.userlist[k].isd.status);
+									that.userlist[k].itd['statusname'] = userstatus(that.userlist[k].itd.status);
+									that.userlist[k].isd['statusname'] = userstatus(that.userlist[k].isd.status);
 								}
 							}
 							this.ists = false;
@@ -1242,21 +1248,21 @@
 						console.log(e);
 					});
 			},
-			catypes(it) { //返回证件类型
-				if (it == '身份证') {
-					return 'NI'
-				} else if (it == '护照') {
-					return 'PP'
-				} else if (it == '台胞证') {
-					return 'TB'
-				} else if (it == '港澳通行证') {
-					return 'GA'
-				} else if (it == '回乡证') {
-					return 'HX'
-				} else if (it == '其他证件') {
-					return 'OS'
-				}
-			},
+			// catypeEns(it) { //返回证件类型
+			// 	if (it == '身份证') {
+			// 		return 'NI'
+			// 	} else if (it == '护照') {
+			// 		return 'PP'
+			// 	} else if (it == '台胞证') {
+			// 		return 'TB'
+			// 	} else if (it == '港澳通行证') {
+			// 		return 'GA'
+			// 	} else if (it == '回乡证') {
+			// 		return 'HX'
+			// 	} else if (it == '其他证件') {
+			// 		return 'OS'
+			// 	}
+			// },
 			async updapp() { //确定
 				let that = this;
 				let orderDetailList = that.orderDetailList; //所有信息
@@ -1673,7 +1679,7 @@
 							that.loading = false;
 							that.tiltext = '改签单详情';
 							if(rea.data.apprvTask != undefined){
-								that.Reason = rea.data.apprvTask.reason; //出差事由
+								that.Reason =  rea.data.apprvTask.reason; //出差事由
 							}
 							that.dtolist = rea.data.dto;//改签单信息
 							that.hang = ret.data.airlineDds; //航空公司名
@@ -1701,7 +1707,7 @@
 									this.newuserlist.push({
 										itd: userlists[i],//去
 									})
-									this.newuserlist[i].itd['statusname'] = that.userstatus(that.newuserlist[i].itd.status);
+									this.newuserlist[i].itd['statusname'] = userstatus(that.newuserlist[i].itd.status);
 								}
 								
 							} else {//往返
@@ -1711,19 +1717,19 @@
 										itd: userlists[i],//去
 										isd: userlists[i + sit],//返
 									})
-									this.newuserlist[i].itd['statusname'] = that.userstatus(that.newuserlist[i].itd.status);
-									this.newuserlist[i].isd['statusname'] = that.userstatus(that.newuserlist[i].isd.status);
+									this.newuserlist[i].itd['statusname'] = userstatus(that.newuserlist[i].itd.status);
+									this.newuserlist[i].isd['statusname'] = userstatus(that.newuserlist[i].isd.status);
 								}
 							}
 							for (let k in forshowlist) {
 								forshowlist[k]['statuss'] = this.yeada(forshowlist[k].departTime,1);
 								forshowlist[k]['departTimes'] = this.yeada(forshowlist[k].departTime,1);
-								forshowlist[k]['airlines'] = this.company(forshowlist[k].airline);
+								// forshowlist[k]['airlines'] = company(forshowlist[k].airline , this.hang);
 								forshowlist[k]['departTimer'] = this.yeada(forshowlist[k].departTime,0);
 								forshowlist[k]['arriveTimes'] = this.yeada(forshowlist[k].arriveTime,0);
-								forshowlist[k]['origDeparts'] = this.citys(forshowlist[k].origDepart);
+								forshowlist[k]['origDeparts'] = cityName(forshowlist[k].origDepart);
 								forshowlist[k]['arriveTimer'] = this.busdate(forshowlist[k].departTime,forshowlist[k].arriveTime);
-								forshowlist[k]['origArrives'] = this.citys(forshowlist[k].origArrive);
+								forshowlist[k]['origArrives'] = cityName(forshowlist[k].origArrive);
 								forshowlist[k]['ims'] = 'http://file.feiren.com/00/02/' + forshowlist[k].airline + '.png'  //航空公司图标
 							}
 							if(forshowlist.length == 1){ //判断单程里是否有用户能改签或者退票

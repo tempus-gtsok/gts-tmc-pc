@@ -1,4 +1,5 @@
 <template>
+<!-- 企业管理->员工信息 -->
   <div class="employ">
     <div class="empids" v-if="empid == 1" v-loading="lodings">
       <div class="emptops">
@@ -34,7 +35,7 @@
         </el-table-column>
         <el-table-column label="证件信息" width="200px" show-overflow-tooltip>
           <template slot-scope="scope" v-if="scope.row.certificateList != null">
-            {{ catype(scope.row.certificateList[0].cardType) }}:{{ scope.row.certificateList[0].cardNo }}
+            {{ scope.row.certificateList[0].cardType | catypeEn }}:{{ scope.row.certificateList[0].cardNo }}
           </template>
         </el-table-column>
         <el-table-column label="部门" show-overflow-tooltip>
@@ -172,7 +173,6 @@
             <el-cascader style="width: 100%" ref="cascader" v-model="departmentid" :show-all-levels="false"
                          @change="handleChange"
                          :props='bots' :options="departments"></el-cascader>
-            </el-select>
           </div>
         </div>
         <div class="folists">
@@ -337,7 +337,11 @@ let hometown = /^[a-zA-Z]\d{8}$|^\d{15}$|^\d{17}(\d|x|X)$/; //回乡证
 let ip_test = /^[1][3456789][0-9]{9}$/; //电话号码正则
 let em_test = /^([a-zA-Z]|[0-9])(\w|\-)+@[a-zA-Z0-9]+\.([a-zA-Z]{2,4})$/ //邮箱正则
 let name_zh = /^[\u4E00-\u9FA5]{1,5}$/; //中文正则
+import { catypeEn } from "@/utils/common-filters";
 export default {
+		filters:{
+			catypeEn
+		},
   data() {
     return {
       tokens: JSON.parse(sessionStorage.getItem('userinfo')).token,
@@ -559,79 +563,104 @@ export default {
           type: 'warning'
         })
         this.loadBut = false
-      } else if (usertypes == '') {
+        return
+      }
+      if (usertypes == '') {
         this.$message({
           message: '用户类型不能为空!',
           type: 'warning'
         })
         this.loadBut = false
-      } else if (zhfirstname == '') {
+        return
+      }
+      if (zhfirstname == '') {
         this.$message({
           message: '中文姓不能为空!',
           type: 'warning'
         })
         this.loadBut = false
-      } else if (zhlastname == '') {
+        return
+      }
+      if (zhlastname == '') {
         this.$message({
           message: '中文名不能为空!',
           type: 'warning'
         })
         this.loadBut = false
-      } else if (enfirstname == '') {
+        return
+      }
+      if (enfirstname == '') {
         this.$message({
           message: '英文姓不能为空!',
           type: 'warning'
         })
         this.loadBut = false
-      } else if (enlastname == '') {
+        return
+      }
+      if (enlastname == '') {
         this.$message({
           message: '英文名不能为空!',
           type: 'warning'
         })
         this.loadBut = false
-      } else if (usergender == '请选择') {
+        return
+      }
+      if (usergender == '请选择') {
         this.$message({
           message: '性别不能为空!',
           type: 'warning'
         })
         this.loadBut = false
-      } else if (birthdays == '') {
+        return
+      }
+      if (birthdays == '') {
         this.$message({
           message: '生日不能为空!',
           type: 'warning'
         })
         this.loadBut = false
-      } else if (phone == '' || !ip_test.test(phone)) {
+        return
+      }
+      if (phone == '' || !ip_test.test(phone)) {
         this.$message({
           message: '请输入正确的手机号！',
           type: 'warning'
         })
         this.loadBut = false
-      } else if ((userstatus == 1 || userstatus == '使用中') && roleLists == '') {
+        return
+      }
+      if ((userstatus == 1 || userstatus == '使用中') && roleLists == '') {
         this.$message({
           message: '角色不能为空!',
           type: 'warning'
         })
         this.loadBut = false
-      } else if (departmentid == '') {
+        return
+      }
+      if (departmentid == '') {
         this.$message({
           message: '所属部门不能为空!',
           type: 'warning'
         })
         this.loadBut = false
-      } else if (comitnsid == '') {
+        return
+      }
+      if (comitnsid == '') {
         this.$message({
           message: '所属成本中心不能为空!',
           type: 'warning'
         })
         this.loadBut = false
-      } else if (email != "" && !em_test.test(email)) {
+        return
+      }
+      if (email != "" && !em_test.test(email)) {
         this.$message({
           message: '邮箱格式不正确!',
           type: 'warning'
         })
         this.loadBut = false
-      } else {
+        return
+      }
         if ((userstatus != 1 && userstatus != '使用中')) {
           roleLists = '';//不为使用中则清空角色
         }
@@ -653,28 +682,32 @@ export default {
             })
             this.loadBut = false
             return
-          } else if (caruserlist[k].cartype == 'PP' && !passport.test(caruserlist[k].carno)) {
+          }
+          if (caruserlist[k].cartype == 'PP' && !passport.test(caruserlist[k].carno)) {
             this.$message({
               message: '护照格式不正确!',
               type: 'warning'
             })
             this.loadBut = false
             return
-          } else if (caruserlist[k].cartype == 'TB' && !taiwan.test(caruserlist[k].carno)) {
+          }
+          if (caruserlist[k].cartype == 'TB' && !taiwan.test(caruserlist[k].carno)) {
             this.$message({
               message: '台胞证格式不正确!',
               type: 'warning'
             })
             this.loadBut = false
             return
-          } else if (caruserlist[k].cartype == 'GA' && !hongkongcard.test(caruserlist[k].carno)) {
+          }
+          if (caruserlist[k].cartype == 'GA' && !hongkongcard.test(caruserlist[k].carno)) {
             this.$message({
               message: '港澳通行证格式不正确!',
               type: 'warning'
             })
             this.loadBut = false
             return
-          } else if (caruserlist[k].cartype == 'HX' && !hometown.test(caruserlist[k].carno)) {
+          }
+          if (caruserlist[k].cartype == 'HX' && !hometown.test(caruserlist[k].carno)) {
             this.$message({
               message: '回乡证格式不正确!',
               type: 'warning'
@@ -691,7 +724,7 @@ export default {
             firstName: caruserlist[k].carfirstame,
             lastName: caruserlist[k].carlastName,
           })
-        }
+        
         let stlist = [];
         for (let i = 0; i < carlist.length; i++) {
           stlist.push(carlist[i].cardType)
@@ -953,21 +986,21 @@ export default {
         return '禁用中'
       }
     },
-    catype(it) { //返回证件类型
-      if (it == 'NI') {
-        return '身份证'
-      } else if (it == 'PP') {
-        return '护照'
-      } else if (it == 'TB') {
-        return '台胞证'
-      } else if (it == 'GA') {
-        return '港澳通行证'
-      } else if (it == 'HX') {
-        return '回乡证'
-      } else if (it == 'OS') {
-        return '其他证件'
-      }
-    },
+    // catype(it) { //返回证件类型
+    //   if (it == 'NI') {
+    //     return '身份证'
+    //   } else if (it == 'PP') {
+    //     return '护照'
+    //   } else if (it == 'TB') {
+    //     return '台胞证'
+    //   } else if (it == 'GA') {
+    //     return '港澳通行证'
+    //   } else if (it == 'HX') {
+    //     return '回乡证'
+    //   } else if (it == 'OS') {
+    //     return '其他证件'
+    //   }
+    // },
     handleEdit(index, row) { //修改
       this.addpassid = row.id;
       this.delete_list = [];
@@ -1035,7 +1068,6 @@ export default {
   }
 }
 </script>
-
 <style scoped lang="less">
 .addempts:hover {
   opacity: 0.8;
@@ -1072,11 +1104,9 @@ export default {
         margin-left: 10px;
 
         .avatar-uploader .el-upload {
-          border: 0;
+          border: none;
           position: relative;
           overflow: hidden;
-          width: 0px;
-          height: 0px;
         }
 
         .avatar-uploader .el-upload:hover {
@@ -1084,6 +1114,7 @@ export default {
         }
 
         .avatar-uploader /deep/ .el-upload--text {
+          border: none;
           width: 100%;
           height: 100%;
         }
@@ -1126,7 +1157,6 @@ export default {
       align-items: center;
 
       .avatar-uploader .el-upload {
-        border: 1px dashed #d9d9d9;
         border-radius: 6px;
         cursor: pointer;
         position: relative;

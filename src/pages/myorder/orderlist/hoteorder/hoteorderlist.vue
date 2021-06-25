@@ -1,12 +1,15 @@
 <template>
+<!-- 我的订单->酒店->详情页 -->
 	<div class="hoteorder" v-loading="loading" v-if="plsitsti.hotelOrder != null && plsitsti.hotelOrder != undefined">
 		<div class="hotboxs">
 			<img src="../../../../../static/image/left.png" alt="">
 			<div class="hot_lefts">
-				<div>单号：{{ codes }}</div>
+				<div>预订单号：{{ codes }}</div>
+				<div v-if="headtravelNo">出差单号：{{ headtravelNo }}</div>
+
 				<div>出行人：{{ plsitsti.hotelOrder.guestName }}</div>
 			</div>
-			<img :src="userstatus(orderStatus)" alt="">
+			<img :src="orderStatus | hotellUserstatus" alt="">
 		</div>
 		<div style="padding: 11px;background-color: #FFFFFF;border-radius: 4px;">
 			<div class="hotbox hotData" style="line-height: 30px;">
@@ -43,9 +46,13 @@
 					<span>房间单价(均价)：</span>
 					<span style="color: #F48F00;">￥{{ plsitsti.hotelOrder.eachNightPrice }}</span>
 				</div>
-				<div>
+				<div v-if="plsitsti.hotelOrder.serviceFee">
 					<span>服务费：</span>
 					<span style="color: #F48F00;">￥{{ plsitsti.hotelOrder.serviceFee }}</span>
+				</div>
+				<div v-if="plsitsti.hotelOrder.specialRequirements">
+                    <span>特殊需求：</span>
+                    <span>{{ plsitsti.hotelOrder.specialRequirements }}</span>
 				</div>
 				<div style="color: red;">
 					<span>取消规则：</span>
@@ -83,10 +90,10 @@
 			<div class="hotbox orderPay">
 				<div class="lefbox">支付信息</div>
 				<div class="payData">
-				<div class="tlement">支付方式：{{ settlement(plsitsti.transationorderExtend.settlement) }}
+				<div class="tlement">支付方式：{{ plsitsti.transationorderExtend.settlement | settlement }}
 					<div class="payStatus">		
 					<span style="margin-left: 40px"> 订单总额：<p>￥</p><p>{{ plsitsti.hotelOrder.totalPrice }}</p></span>
-					<span style="margin-left: 40px">支付状态：{{this.pustatus(this.payStatus)}}</span>
+					<span style="margin-left: 40px">支付状态：{{this.payStatus | pustatus}}</span>
 				</div>
 				</div>
 			</div>
@@ -155,12 +162,17 @@
 
 <script>
 	import Defray from "@/components/common/defray";
+	import { settlement , pustatus,hotellUserstatus } from "@/utils/common-filters";
 	export default {
 		components: {
 			Defray
 		},
+		filters:{
+			settlement,pustatus,hotellUserstatus
+		},
 		data() {
 			return {
+				headtravelNo:'',//头部出差单号
 				drawelist: [],
 				apprvCost: [],
 				drawer: false,
@@ -199,6 +211,7 @@
 				dbCancelRules: '', //取消规则
 				typename: '',
 				EntryMethod: '',
+				msgErr:'',
 			};
 		},
 		mounted() {
@@ -225,25 +238,36 @@
 				let TravelCostCenlist = that.TravelCostCenlist; //成本审批人
 				let TravelDepartlist = that.TravelDepartlist; //部门审批人
 				let NameCenter = that.NameCenter; //成本中心
+				let msgErr = this.msgErr; //成本中心校验是否通过
 				if (NameCenter.id == '') {
 					this.$message({
 						message: '请选择成本中心！',
 						type: 'warning'
 					})
 					return
-				} else if (TravelCostCenlist.length == 0 && this.CostCi == true) {
+				}
+				if (TravelCostCenlist.length == 0 && this.CostCi == true) {
 					this.$message({
 						message: '请选择成本审批人！',
 						type: 'warning'
 					})
 					return
-				} else if (TravelDepartlist.length == 0 && this.CostCis == true) {
+				}
+				if (TravelDepartlist.length == 0 && this.CostCis == true) {
 					this.$message({
 						message: '请选择部门审批人！',
 						type: 'warning'
 					})
 					return
 				}
+				if(msgErr){
+					that.$message({
+					message: msgErr,
+					type: 'warning'
+					});
+					return;
+				}
+
 				let apprvTaskStaffts = []; //审核人员
 				for (var i = 0; i < TravelCostCenlist.length; i++) { //成本中心审批人
 					apprvTaskStaffts.push({
@@ -269,7 +293,7 @@
 					apprvTask: {
 						apprvTaskStaffs: apprvTaskStaffts,
 						taskType: 5, //1为事前2为事中，4为改签 5为退票
-						beforeMiddle: 5, //1为事前2为事中 4为改签 5为退票
+						beforeMiddle: 2, //1为事前2为事中 4为改签 5为退票
 						costId: NameCenter.id, //成本中心id
 						costName: NameCenter.name, //成本中心名称
 					}
@@ -309,7 +333,7 @@
 						this.clearsks();
 					} else {
 						let userlistnos = [];
-						let userlis = this.plsitsti.hotelOrder.guestName.split(',');
+						let userlis = this.plsitsti.hotelOrder.guestName.split('，');
 						this.$api.order.getStaffByTravelNoAndNames({
 							travelNo: this.plsitsti.transationorderExtend.travelNo,
 							names: userlis
@@ -359,7 +383,7 @@
 					this.loading = false;
 					if (res.code == 200) {
 						this.$message({
-							message: '取消成功！',
+							message: res.message,
 							type: 'success'
 						})
 						this.searchhoter();
@@ -419,8 +443,12 @@
 							that.CostCi = true;
 							that.CostCenterlist = res.data.costStaffs; //成本审批人
 						}
+						this.msgErr = ''
+					}else{
+						this.msgErr =res.message?res.message:'系统错误'
 					}
 				} catch (e) {
+					this.msgErr =res.message?res.message:'系统错误'
 					console.log(e)
 				}
 			},
@@ -499,13 +527,13 @@
 				//返回日期前10位
 				return tiem.substring(0, 10);
 			},
-			settlement(it) {
-				if (it == 1) {
-					return '现结';
-				} else {
-					return '预付月结';
-				}
-			},
+			// settlement(it) {
+			// 	if (it == 1) {
+			// 		return '现结';
+			// 	} else {
+			// 		return '预付月结';
+			// 	}
+			// },
 			async getRuleMainSetting() { //查询当前用户退房是否需要审核
 				this.$api.order.ruleMainSetting().then((res) => {
 					if (res.code == 200) {
@@ -531,94 +559,94 @@
 					console.log(err)
 				})
 			},
-			pustatus(ty) {
-				//支付状态
-				if (ty == 1) {
-					return '待支付';
-				} else if (ty == 2) {
-					return '支付中';
-				} else if (ty == 3) {
-					return '已支付';
-				} else if (ty == 4) {
-					return '为挂帐支付';
-				}
-			},
-			userstatus(ite) {
-				//订单状态
-				let arr = [{
-						name: '待审核',
-						id: 650,
-						url: '../../../static/image/home/To-audit.png'
-					},
-					{
-						name: '处理中',
-						id: 100,
-						url: '../../../static/image/home/processing.png'
-					},
-					{
-						name: '拒单',
-						id: 600,
-						url: '../../../static/image/home/From-single.png'
-					},
-					{
-						name: '审批拒绝',
-						id: 121,
-						url: '../../../static/image/home/Approval-refused.png'
-					},
-					{
-						name: '占房成功',
-						id: 122,
-						url: '../../../static/image/home/Building-successful.png'
-					},
-					{
-						name: '申请中',
-						id: 117,
-						url: '../../../static/image/home/processing.png'
-					},
-					{
-						name: '待处理',
-						id: 115,
-						url: '../../../static/image/home/Pending.png'
-					},
-					{
-						name: '预定成功',
-						id: 101,
-						url: '../../../static/image/home/book-successfully.png'
-					},
-					{
-						name: '下单失败',
-						id: 102,
-						url: '../../../static/image/home/Order-failed.png'
-					},
-					{
-						name: '取消中',
-						id: 400,
-						url: '../../../static/image/home/Cancelled.png'
-					},
-					{
-						name: '取消成功',
-						id: 401,
-						url: '../../../static/image/home/Canceled.png'
-					}
-				];
-				for (let i in arr) {
-					if (arr[i].id == ite) {
-						return arr[i].url;
-					}
-				}
-			},
-			catype(it) {
-				//返回证件类型
-				if (it == 1) {
-					return '身份证'; //NI
-				} else if (it == 2) {
-					return '护照'; //PP
-				} else if (it == 3) {
-					return '台胞证'; //TB
-				} else if (it == 4) {
-					return '港澳通行证'; //GA
-				}
-			},
+			// pustatus(ty) {
+			// 	//支付状态
+			// 	if (ty == 1) {
+			// 		return '待支付';
+			// 	} else if (ty == 2) {
+			// 		return '支付中';
+			// 	} else if (ty == 3) {
+			// 		return '已支付';
+			// 	} else if (ty == 4) {
+			// 		return '为挂帐支付';
+			// 	}
+			// },
+			// userstatus(ite) {
+			// 	//订单状态
+			// 	let arr = [{
+			// 			name: '待审核',
+			// 			id: 650,
+			// 			url: '../../../static/image/home/To-audit.png'
+			// 		},
+			// 		{
+			// 			name: '处理中',
+			// 			id: 100,
+			// 			url: '../../../static/image/home/processing.png'
+			// 		},
+			// 		{
+			// 			name: '拒单',
+			// 			id: 600,
+			// 			url: '../../../static/image/home/From-single.png'
+			// 		},
+			// 		{
+			// 			name: '审批拒绝',
+			// 			id: 121,
+			// 			url: '../../../static/image/home/Approval-refused.png'
+			// 		},
+			// 		{
+			// 			name: '占房成功',
+			// 			id: 122,
+			// 			url: '../../../static/image/home/Building-successful.png'
+			// 		},
+			// 		{
+			// 			name: '申请中',
+			// 			id: 117,
+			// 			url: '../../../static/image/home/processing.png'
+			// 		},
+			// 		{
+			// 			name: '待处理',
+			// 			id: 115,
+			// 			url: '../../../static/image/home/Pending.png'
+			// 		},
+			// 		{
+			// 			name: '预定成功',
+			// 			id: 101,
+			// 			url: '../../../static/image/home/book-successfully.png'
+			// 		},
+			// 		{
+			// 			name: '下单失败',
+			// 			id: 102,
+			// 			url: '../../../static/image/home/Order-failed.png'
+			// 		},
+			// 		{
+			// 			name: '取消中',
+			// 			id: 400,
+			// 			url: '../../../static/image/home/Cancelled.png'
+			// 		},
+			// 		{
+			// 			name: '取消成功',
+			// 			id: 401,
+			// 			url: '../../../static/image/home/Canceled.png'
+			// 		}
+			// 	];
+			// 	for (let i in arr) {
+			// 		if (arr[i].id == ite) {
+			// 			return arr[i].url;
+			// 		}
+			// 	}
+			// },
+			// catype(it) {
+			// 	//返回证件类型
+			// 	if (it == 1) {
+			// 		return '身份证'; //NI
+			// 	} else if (it == 2) {
+			// 		return '护照'; //PP
+			// 	} else if (it == 3) {
+			// 		return '台胞证'; //TB
+			// 	} else if (it == 4) {
+			// 		return '港澳通行证'; //GA
+			// 	}
+			// },
 			searchhoter() {
 				//查询酒店详情
 				let that = this;
@@ -631,6 +659,7 @@
 						that.loading = false;
 						if (res.code == 200) {
 							that.plsitsti = res.data;
+							that.headtravelNo = res.data.transationorderExtend.travelNo
 							that.apprvTaskReason = res.data.apprvTaskReason;
 							let costsp = res.data.costApprvTask; //成本审批
 							let depsp = res.data.deptApprvTask; //部门审批

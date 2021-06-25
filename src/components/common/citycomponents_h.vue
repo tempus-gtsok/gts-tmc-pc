@@ -46,7 +46,8 @@
 		</div>
 		<div @mouseover="isctyslts = true" @mouseleave="isctyslts = false" :class="[opencity ? 'searchsleft' : 'searchsright', 'searchs']" v-if="mostcitys">
 			<div class="searlist" v-for="(item, index) in searlist" @click="searck(item)" :key="index">
-				<div>{{ item.name }}</div><div>{{ item.id }}</div>
+				<div>{{ item.address }}</div>
+				<!-- <div>{{ item.id }}</div> -->
 			</div>
 		</div>
 	</div>
@@ -130,6 +131,7 @@ export default {
 		if (ct.length > 0) {
 			this.cityleft = ct[0];
 		}
+		
 	},
 	watch: {
 		ctiys(item) {
@@ -188,7 +190,7 @@ export default {
 				}
 			}
 		},
-		inpu(it) {
+		async inpu(it) {
 			//输入框值发生变化
 			this.mostcity = false;
 			let va = '';
@@ -201,16 +203,19 @@ export default {
 					return;
 				}
 			}
-			let address = citys.addressTrainAll; //所有城市
-			this.searlist = [];
-			for (let i in address) {
-				if (address[i].name.indexOf(va) != -1) {
-					this.searlist.push({
-						id: address[i].code,
-						name: address[i].name
-					});
-				}
-			}
+			//let address = citys.addressTrainAll; //所有城市
+
+			const res = await this.$api.home.getCityName({cityName:this.cityleft.name})
+			this.searlist = res.data
+			// this.searlist = [];
+			// for (let i in address) {
+			// 	if (address[i].name.indexOf(va) != -1) {
+			// 		this.searlist.push({
+			// 			id: address[i].code,
+			// 			name: address[i].name
+			// 		});
+			// 	}
+			// }
 			if (this.searlist.length > 0) {
 				this.oldcitylist = [];
 				this.oldcitylist.push(this.searlist[0]);

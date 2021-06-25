@@ -1,6 +1,6 @@
 <template>
 	<div class="citycom">
-		<div class="citcom_left">
+		<div class="citcom_left" v-if="cityleft">
 			<el-input
 				:disabled="citylefts"
 				v-model="cityleft.name"
@@ -14,7 +14,7 @@
 			></el-input>
 		</div>
 		<div class="citzt"><i @click="exchange" class="iconfont" style="font-size:22px;color: #828282;cursor: pointer;">&#xe6f7;</i></div>
-		<div class="citcom_left">
+		<div class="citcom_left" v-if="cityright">
 			<el-input
 				:disabled="cityrights"
 				v-model="cityright.name"
@@ -28,12 +28,12 @@
 			></el-input>
 		</div>
 		<div @mouseover="isctyslt = true" @mouseleave="isctyslt = false" :class="[opencity ? 'openleft' : 'openright', 'openst']" v-if="mostcity">
-			<div class="open_tar">
+			<div class="open_tar" v-if="citylist">
 				<div class="opne_lis" @mouseover="selectStyle(item)" :class="citcheck == item.id ? 'opne_liskd' : ''" v-for="(item, index) in citylist" :key="index">
 					{{ item.name }}
 				</div>
 			</div>
-			<div class="cihotsy" v-if="citcheck == 'rot'">
+			<div class="cihotsy" v-if="citcheck == 'rot' && hotCitys">
 				<div class="cihots" @click="okcitys(item)" v-for="(item, index) in hotCitys" :key="index">{{ item.name }}</div>
 			</div>
 			<div class="cist" v-if="citcheck != 'rot'">
@@ -45,7 +45,7 @@
 				</div>
 			</div>
 		</div>
-		<div @mouseover="isctyslts = true" @mouseleave="isctyslts = false" :class="[opencity ? 'searchsleft' : 'searchsright', 'searchs']" v-if="mostcitys">
+		<div @mouseover="isctyslts = true" @mouseleave="isctyslts = false" :class="[opencity ? 'searchsleft' : 'searchsright', 'searchs']" v-if="mostcitys && searlist">
 			<div class="searlist" v-for="(item, index) in searlist" @click="searck(item)" :key="index">
 				<div>{{ item.name }}</div><div>{{ item.id }}</div>
 			</div>

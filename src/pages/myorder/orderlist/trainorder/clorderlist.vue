@@ -1,9 +1,10 @@
 <template>
+<!-- 我的订单->火车票->退票 改签详情页 -->
 	<div class="hoteorder" v-loading="loading" v-if="plsitsti.orderExt != null && plsitsti.orderExt != undefined">
 		<div class="hotboxs">
 			<div class="hot_lefts" style="width: 60%;">
 				<div>订单单号：{{ codes }}</div>
-				<div>取票号：{{ plsitsti.orderExt.ticketNo }}</div>
+				<div v-if="plsitsti.orderExt.ticketNo">取票号：{{ plsitsti.orderExt.ticketNo }}</div>
 			</div>
 			<img :src="userstatus(orderStatus)" alt="">
 		</div>
@@ -35,7 +36,7 @@
 			</div>
 			<div class="hotbox">
 				<div class="lefbox">支付信息</div>
-				<div style="padding-left: 30px;">支付方式：{{ settlement(tlement) }}</div>
+				<div style="padding-left: 30px;">支付方式：{{ tlement | settlement }}</div>
 			</div>
 			<div class="hotbox">
 				<div class="lefbox">订单金额</div>
@@ -134,7 +135,11 @@
 </template>
 
 <script>
+	import { settlement , catypeNum,numberPapers } from "@/utils/common-filters";
 	export default {
+		filters:{
+			settlement , catypeNum,numberPapers
+		},
 		data() {
 			return {
 				vid: 0, //改签还是退票  9为退票 11 为退票
@@ -229,7 +234,7 @@
 						sus = item[i];
 					}
 				}
-				return sus.traPassenger.certNo;
+				return numberPapers(sus.traPassenger.certNo);
 			},
 			updatas(num) { //申请改签或退票
 				if (this.checkList.length == 0) {
@@ -260,17 +265,17 @@
 
 				})
 			},
-			catypes(it){//返回证件类型
-				if(it == 1){
-					return '身份证'//NI
-				} else if(it == 2){
-					return '护照'//PP
-				} else if(it == 3){
-					return '台胞证'//TB
-				} else if(it == 4){
-					return '港澳通行证'//GA
-				}
-			},
+			// catypes(it){//返回证件类型
+			// 	if(it == 1){
+			// 		return '身份证'//NI
+			// 	} else if(it == 2){
+			// 		return '护照'//PP
+			// 	} else if(it == 3){
+			// 		return '台胞证'//TB
+			// 	} else if(it == 4){
+			// 		return '港澳通行证'//GA
+			// 	}
+			// },
 			async checks() {
 				let uslist = this.checkList; //选中的人
 				let isnum = this.isnum;
@@ -281,7 +286,7 @@
 					for (let i in this.usersnamelist) {
 						userlist.push({
 							certNo: this.usersnamelist[i].saleOrderDetailList[i].traPassenger.certNo,//证件号码
-							certType: this.catypes(this.usersnamelist[i].saleOrderDetailList[i].traPassenger.certType),//证件类型
+							certType: catypeNum(this.usersnamelist[i].saleOrderDetailList[i].traPassenger.certType),//证件类型
 							name:this.usersnamelist[i].saleOrderDetailList[i].traPassenger.name,//名字
 						});
 						for(let k in this.usersnamelist[0].saleOrderDetailList){
@@ -705,13 +710,13 @@
 				//返回日期前10位
 				return tiem.substring(0, 10);
 			},
-			settlement(it) {
-				if (it == 1) {
-					return '现结';
-				} else {
-					return '预付月结';
-				}
-			},
+			// settlement(it) {
+			// 	if (it == 1) {
+			// 		return '现结';
+			// 	} else {
+			// 		return '预付月结';
+			// 	}
+			// },
 			async getRuleMainSetting() { //查询当前用户退房是否需要审核
 				this.$api.order.ruleMainSetting().then((res) => {
 					if (res.code == 200) {
@@ -737,18 +742,18 @@
 					console.log(err)
 				})
 			},
-			pustatus(ty) {
-				//支付状态
-				if (ty == 1) {
-					return '待支付';
-				} else if (ty == 2) {
-					return '支付中';
-				} else if (ty == 3) {
-					return '已支付';
-				} else if (ty == 4) {
-					return '为挂帐支付';
-				}
-			},
+			// pustatus(ty) {
+			// 	//支付状态
+			// 	if (ty == 1) {
+			// 		return '待支付';
+			// 	} else if (ty == 2) {
+			// 		return '支付中';
+			// 	} else if (ty == 3) {
+			// 		return '已支付';
+			// 	} else if (ty == 4) {
+			// 		return '为挂帐支付';
+			// 	}
+			// },
 			async searchhoter() {
 				//查询火车详情
 				let that = this;

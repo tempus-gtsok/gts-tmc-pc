@@ -1,4 +1,5 @@
 <template>
+<!-- 差旅报告-> 火车票 -->
   <div>
     <div class="travelbox">
       <travel_report :tarlist_ids="tarlist_id"></travel_report>
@@ -196,7 +197,7 @@
 <script>
 import Travel_report from "./travel_report";
 import citysearchs from "../../components/common/citycomponents_t";
-
+import { formatDate } from "@/utils/common";
 export default {
   name: "Trainreport",
   components: { citysearchs, Travel_report },
@@ -262,26 +263,26 @@ export default {
       this.loading = true;
       this.trainreport();
     },
-    formatDate(value) {
-      //时间转换
-      if (value != null && value != "") {
-        let date = new Date(value);
-        let y = date.getFullYear();
-        let MM = date.getMonth() + 1;
-        MM = MM < 10 ? "0" + MM : MM;
-        let d = date.getDate();
-        d = d < 10 ? "0" + d : d;
-        let h = date.getHours();
-        h = h < 10 ? "0" + h : h;
-        let m = date.getMinutes();
-        m = m < 10 ? "0" + m : m;
-        let s = date.getSeconds();
-        s = s < 10 ? "0" + s : s;
-        return y + "-" + MM + "-" + d + " " + h + ":" + m + ":" + s;
-      } else {
-        return value;
-      }
-    },
+    // formatDate(value) {
+    //   //时间转换
+    //   if (value != null && value != "") {
+    //     let date = new Date(value);
+    //     let y = date.getFullYear();
+    //     let MM = date.getMonth() + 1;
+    //     MM = MM < 10 ? "0" + MM : MM;
+    //     let d = date.getDate();
+    //     d = d < 10 ? "0" + d : d;
+    //     let h = date.getHours();
+    //     h = h < 10 ? "0" + h : h;
+    //     let m = date.getMinutes();
+    //     m = m < 10 ? "0" + m : m;
+    //     let s = date.getSeconds();
+    //     s = s < 10 ? "0" + s : s;
+    //     return y + "-" + MM + "-" + d + " " + h + ":" + m + ":" + s;
+    //   } else {
+    //     return value;
+    //   }
+    // },
     async trainreport() {
       let pageVo = {
         curPage: this.curPage,
@@ -298,10 +299,10 @@ export default {
           dat = {
             root: this.root,
             saleOrderNo: this.search.singleNumber,
-            beginTime: this.formatDate(this.search.scheduledDate[0]),
-            endTime: this.formatDate(this.search.scheduledDate[1]),
-            beginDepartureTime: this.formatDate(this.search.departuedate[0]),
-            endDepartureTime: this.formatDate(this.search.departuedate[1]),
+            beginTime: formatDate(this.search.scheduledDate[0]),
+            endTime: formatDate(this.search.scheduledDate[1]),
+            beginDepartureTime: formatDate(this.search.departuedate[0]),
+            endDepartureTime: formatDate(this.search.departuedate[1]),
             beginSite: this.cityslist[0].name,
             endSite: this.cityslist[1].name,
             applyer: this.search.traveler,
@@ -317,8 +318,8 @@ export default {
           dat = {
             root: this.root,
             saleOrderNo: this.search.singleNumber,
-            beginDepartureTime: this.formatDate(this.search.departuedate[0]),
-            endDepartureTime: this.formatDate(this.search.departuedate[1]),
+            beginDepartureTime: formatDate(this.search.departuedate[0]),
+            endDepartureTime: formatDate(this.search.departuedate[1]),
             beginSite: this.cityslist[0].name,
             endSite: this.cityslist[1].name,
             applyer: this.search.traveler,
@@ -334,8 +335,8 @@ export default {
           dat = {
             root: this.root,
             saleOrderNo: this.search.singleNumber,
-            beginTime: this.formatDate(this.search.scheduledDate[0]),
-            endTime: this.formatDate(this.search.scheduledDate[1]),
+            beginTime: formatDate(this.search.scheduledDate[0]),
+            endTime: formatDate(this.search.scheduledDate[1]),
             beginSite: this.cityslist[0].name,
             endSite: this.cityslist[1].name,
             applyer: this.search.traveler,
@@ -368,10 +369,10 @@ export default {
           dat = {
             root: this.root,
             saleOrderNo: this.search.singleNumber,
-            beginTime: this.formatDate(this.search.scheduledDate[0]),
-            endTime: this.formatDate(this.search.scheduledDate[1]),
-            beginDepartureTime: this.formatDate(this.search.departuedate[0]),
-            endDepartureTime: this.formatDate(this.search.departuedate[1]),
+            beginTime: formatDate(this.search.scheduledDate[0]),
+            endTime: formatDate(this.search.scheduledDate[1]),
+            beginDepartureTime: formatDate(this.search.departuedate[0]),
+            endDepartureTime: formatDate(this.search.departuedate[1]),
             applyer: this.search.traveler,
             travelerName: this.search.travelerName,
             travelerDept: this.search.department,
@@ -385,8 +386,8 @@ export default {
           dat = {
             root: this.root,
             saleOrderNo: this.search.singleNumber,
-            beginTime: this.formatDate(this.search.scheduledDate[0]),
-            endTime: this.formatDate(this.search.scheduledDate[1]),
+            beginTime: formatDate(this.search.scheduledDate[0]),
+            endTime: formatDate(this.search.scheduledDate[1]),
             applyer: this.search.traveler,
             travelerName: this.search.travelerName,
             travelerDept: this.search.department,
@@ -400,8 +401,8 @@ export default {
           dat = {
             root: this.root,
             saleOrderNo: this.search.singleNumber,
-            beginDepartureTime: this.formatDate(this.search.departuedate[0]),
-            endDepartureTime: this.formatDate(this.search.departuedate[1]),
+            beginDepartureTime: formatDate(this.search.departuedate[0]),
+            endDepartureTime: formatDate(this.search.departuedate[1]),
             applyer: this.search.traveler,
             travelerName: this.search.travelerName,
             travelerDept: this.search.department,

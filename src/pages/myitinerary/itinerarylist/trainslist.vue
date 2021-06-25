@@ -1,9 +1,10 @@
 <template>
+<!-- 我的行程->火车票->详情页 -->
 	<div class="mian">
 		<div class="mian_top">
 			<div class="hotboxs" v-if="userlist && userlist.saleOrder">
 			  <div >订单号：{{userlist.saleOrder.transationOrderNo}}</div>
-			  <div class="statusx">{{ userstatus(userlist.saleOrder.orderStatus) }}</div>
+			  <div class="statusx">{{ userlist.saleOrder.orderStatus | orderStatusId }}</div>
 			</div>
 		</div>
 			<div class="hotbox" style="padding-top: 40px;"  v-if="userlist && userlist.traPassenger">
@@ -13,8 +14,8 @@
 			  <div>车次：{{ userlist.trainno }} &nbsp;&nbsp;&nbsp;出发日期：{{userlist.departureTime}}&nbsp;&nbsp;&nbsp;到达日期：{{userlist.arrivalTime}}</div>
 			  <div>出行人：</div>
 			  <div>
-			    &nbsp;&nbsp;&nbsp;&nbsp;{{userlist.traPassenger.name}}&nbsp;&nbsp;&nbsp;&nbsp;{{userlist.seatNo}}&nbsp;&nbsp;&nbsp;&nbsp;{{userlist.seatclass}}&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #f48f00;">￥{{userlist.salePrice}}</span>&nbsp;&nbsp;&nbsp;&nbsp;{{catype(userlist.traPassenger.certType)}}
-			    ：{{userlist.traPassenger.certNo}} &nbsp;&nbsp;&nbsp;&nbsp;票号：{{userlist.ticketNo}} &nbsp;&nbsp;&nbsp;&nbsp;<span style=" color: #007AFF;">{{userstatus(userlist.status)}}</span>
+			    &nbsp;&nbsp;&nbsp;&nbsp;{{userlist.traPassenger.name}}&nbsp;&nbsp;&nbsp;&nbsp;{{userlist.seatNo}}&nbsp;&nbsp;&nbsp;&nbsp;{{userlist.seatclass}}&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #f48f00;">￥{{userlist.salePrice}}</span>&nbsp;&nbsp;&nbsp;&nbsp;{{userlist.traPassenger.certType | catypeNum}}
+			    ：{{userlist.traPassenger.certNo | numberPapers}} &nbsp;&nbsp;&nbsp;&nbsp;票号：{{userlist.ticketNo}} &nbsp;&nbsp;&nbsp;&nbsp;<span style=" color: #007AFF;">{{userlist.status | orderStatusId}}</span>
 			  </div>
 			</div>
 		<div class="mian_bottom">
@@ -26,7 +27,11 @@
 </template>
 
 <script>
+	import {  orderStatusId , catypeNum,numberPapers } from "@/utils/common-filters";
 	export default{
+		filters:{
+			orderStatusId , catypeNum,numberPapers
+		},
 		data(){
 			return {
 				userlist:{},
@@ -62,90 +67,90 @@
 					return hours + '时'
 				}
 			},
-			catype(it){//返回证件类型
-				if(it == 1){
-					return '身份证'//NI
-				} else if(it == 2){
-					return '护照'//PP
-				} else if(it == 3){
-					return '台胞证'//TB
-				} else if(it == 4){
-					return '港澳通行证'//GA
-				}
-			},
-			userstatus(it){//乘客当前状态
-				if(it == 2){
-					return '占座成功'
-				} else if(it == 3){
-					return '出票中'
-				} else if(it == 4){
-					return '已出票'
-				} else if(it == 5){
-					return '退票中'
-				} else if(it == 6){
-					return '改签中'
-				} else if(it == 7){
-					return '已退票'
-				} else if(it == 8){
-					return '已废弃'
-				} else if(it == 9){
-					return '已改签'
-				} else if(it == 10){
-					return '占座失败'
-				} else if(it == 11){
-					return '出票失败'
-				}
-			},
-			userstatus(ite) {
-			  //订单状态
-			  let arr = [
-			    {
-			      name: '占座中',
-			      id:1
-			    },{
-			      name: '占座成功',
-			      id:2
-			    },{
-			      name: '出票中',
-			      id:3,
-			    },{
-			      name: '已出票',
-			      id:4
-			    },{
-			      name: '退票中',
-			      id:5
-			    },{
-			      name: '改签中',
-			      id:6
-			    },{
-			      name: '部分退废',
-			      id:7
-			    },{
-			      name: '部分改签',
-			      id:8
-			    },{
-			      name: '已退',
-			      id:9
-			    },{
-			      name: '订单已废弃',
-			      id:10
-			    },{
-			      name: '已改签',
-			      id:11
-			    },{
-			      name: '占座失败',
-			      id:12
-			    },{
-			      name: '出票失败',
-			      id:13
-			    }
-			  ];
-			  for (let i in arr) {
-			    if (arr[i].id == ite) {
-			      return arr[i].name;
-			    }
-			  }
-			},
+			// catype(it){//返回证件类型
+			// 	if(it == 1){
+			// 		return '身份证'//NI
+			// 	} else if(it == 2){
+			// 		return '护照'//PP
+			// 	} else if(it == 3){
+			// 		return '台胞证'//TB
+			// 	} else if(it == 4){
+			// 		return '港澳通行证'//GA
+			// 	}
+			// },
+			// userstatus(it){//乘客当前状态
+			// 	if(it == 2){
+			// 		return '占座成功'
+			// 	} else if(it == 3){
+			// 		return '出票中'
+			// 	} else if(it == 4){
+			// 		return '已出票111'
+			// 	} else if(it == 5){
+			// 		return '退票中'
+			// 	} else if(it == 6){
+			// 		return '改签中'
+			// 	} else if(it == 7){
+			// 		return '已退票'
+			// 	} else if(it == 8){
+			// 		return '已废弃'
+			// 	} else if(it == 9){
+			// 		return '已改签'
+			// 	} else if(it == 10){
+			// 		return '占座失败'
+			// 	} else if(it == 11){
+			// 		return '出票失败'
+			// 	}
+			// },
+			// userstatus(ite) {
+			//   //订单状态
+			//   let arr = [
+			//     {
+			//       name: '占座中',
+			//       id:1
+			//     },{
+			//       name: '占座成功',
+			//       id:2
+			//     },{
+			//       name: '出票中',
+			//       id:3,
+			//     },{
+			//       name: '已出票222',
+			//       id:4
+			//     },{
+			//       name: '退票中',
+			//       id:5
+			//     },{
+			//       name: '改签中',
+			//       id:6
+			//     },{
+			//       name: '部分退废',
+			//       id:7
+			//     },{
+			//       name: '部分改签',
+			//       id:8
+			//     },{
+			//       name: '已退',
+			//       id:9
+			//     },{
+			//       name: '订单已废弃',
+			//       id:10
+			//     },{
+			//       name: '已改签',
+			//       id:11
+			//     },{
+			//       name: '占座失败',
+			//       id:12
+			//     },{
+			//       name: '出票失败',
+			//       id:13
+			//     }
+			//   ];
+			//   for (let i in arr) {
+			//     if (arr[i].id == ite) {
+			//       return arr[i].name;
+			//     }
+			//   }
+			// },
 			retuns() {
 				this.$router.go(-1); //返回上一页
 			},

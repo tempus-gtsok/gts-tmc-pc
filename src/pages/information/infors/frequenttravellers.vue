@@ -13,11 +13,14 @@
           <li>操作</li>
         </ul>
       </div>
-      <div class="message_top" v-for="(item,index) in messagesList" v-if="rotes('tms:pas:list')">
+      <div class="message_top" v-for="(item,index) in messagesList" v-if="rotes('tms:pas:list') ">
         <ul>
           <li>{{ item.name }}</li>
-          <li>{{ item.phone }}</li>
-          <li>{{ is_CD(item.certificateList[0].cardType) }}&nbsp;&nbsp;{{ item.certificateList[0].cardNo }}</li>
+          <li>{{ item.phone.replace(/(.{3}).*(.{4})/, "$1******$2")  }}</li>
+          <li>
+            <span v-if="item.certificateList">{{ is_CD(item.certificateList[0].cardType) }}&nbsp;&nbsp;{{ item.certificateList[0].cardNo | numberPapers }}</span>
+            <span style="color:#ccc" v-else>暂无</span>
+          </li>
           <li><span style="margin-right: 20px;" v-if="rotes('tms:pas:update')" @click="cover(item)">编辑</span>
             <span>
 				<el-button size="mini" type="danger" v-if="rotes('tms:pas:delete')" @click="handleDelete(item)">删除</el-button>
@@ -43,7 +46,7 @@
       <div class="title" v-else>修改常用旅客</div>
       <div class="Cover_name">
         <div class="Cover_names">手机号码</div>
-        <div class="Cover_nams"><input type="text" v-model="phonenumbe_list" class="input_css" maxlength="11"
+        <div class="Cover_nams"><input type="text" v-model="phonenumbe_list_rag" @focus="phoneFocus(1)" class="input_css" maxlength="11"
                                        placeholder="输入手机号"/>
         </div>
       </div>
@@ -77,7 +80,7 @@
             </el-option>
           </el-select>
         </div>
-        <div class="Cover_nams"><input type="text" v-model="item.value" class="input_css" placeholder="输入证件号"/></div>
+        <div class="Cover_nams"><input type="text" v-model="item.valueFag" @focus="idFock(index,item.valueFag)" class="input_css" placeholder="输入证件号"/></div>
         <div class="frop_right">
           <div class="rig_delt" v-if="index > 0" @click="de_icd(item, index)" style="cursor: pointer;">删除</div>
         </div>
@@ -114,7 +117,7 @@
       </div>
     </div>
 
-    <div class="covers" v-if="covers" @click="">
+    <div class="covers" v-if="covers">
 
     </div>
     <no-data class="noData" v-if="messagesList.length === 0 && loding === false"></no-data>
@@ -132,10 +135,15 @@ let ip_test = /^[1][3456789][0-9]{9}$/; //电话号码正则
 let name_zh = /^[\u4E00-\u9FA5]{1,5}$/; //中文正则
 import area from '../../../../static/js/area.js'
 import py from "../../../../static/js/vue-py.js"
-
+import { numberPapers} from "@/utils/common-filters";
 export default {
   name: 'Cselect',
   components: {NoData},
+    filters: {
+   numberPapers
+  },
+
+  props:['isTraveler'],
   data() {
     return {
       options: [{
@@ -178,6 +186,7 @@ export default {
       engs_list: '', //英文名
       gender_list: '', //性别
       dateofbirth_lsit: '', //出生日期
+      passengerNo:'',//更新时传
       nameId: null,
       userlist: [{
         name: '龙宗毅',
@@ -206,7 +215,9 @@ export default {
       passengerId: null,
       covesr: false,
       covers: false,
-      loding: false
+      loding: false,
+      delete_list:[],
+      phonenumbe_list_rag:'',
     }
   },
   mounted() {
@@ -244,9 +255,10 @@ export default {
       this.covesr = true;
       this.covers = true;
       this.zeng = false;
-      this.isadd == false
+      this.isadd = false;
       let _this = this;
       let sex = '';
+      _this.phonenumbe_list_rag = item.phone.replace(/(.{3}).*(.{4})/, "$1******$2"); //电话号码
       _this.phonenumbe_list = item.phone; //电话号码
       _this.firstNameZh_list = item.firstNameZh; //中文姓
       _this.lastNameZh_list = item.lastNameZh;//中文名
@@ -255,6 +267,7 @@ export default {
       _this.dateofbirth_lsit = item.birthdateStr;//出生日期
       _this.newdata = false;
       _this.passengerId = item.id;//获取旅客id
+      _this.passengerNo = item.passengerNo;
       if (item.gender == 'M') {
         sex = '男'
       } else {
@@ -263,6 +276,7 @@ export default {
       _this.gender_list = sex;//性别
 
       this.id_list = this.carlist; //获取证件列表
+  
       this.englishname_list = this.depd_d(item.certificateList, "certi"); //证件照1
     },
     deleta(item) {
@@ -320,6 +334,7 @@ export default {
       }
     },
     async add() {
+      if(this.isTraveler == 0)  return   this.$message({message: "未开通常旅客权限，请联系管理员添加!", type: 'warning'});
       this.zeng = true;
       this.covesr = true;
       this.covers = true;
@@ -330,6 +345,7 @@ export default {
       this.englishsurname_lsit = ''; //英文姓
       this.engs_list = ''; //英文名
       this.passengerId = null;//id
+      this.passengerNo = null;
       this.englishname_list = [{
         t_name: "englishname",
         name: "身份证",
@@ -351,15 +367,19 @@ export default {
       this.detailed = ''; //详细地址
       this.postcode = ''; //邮编
     },
+    phoneFocus(){
+      this.phonenumbe_list_rag = this.phonenumbe_list_rag[5] == "*" ? '':this.phonenumbe_list_rag
+    },
     async save() {
       let _this = this;
       let sex = '';
-      let phonenumbe = _this.phonenumbe_list; //电话号码
+      let phonenumbe =_this.phonenumbe_list_rag[5] =='*'?_this.phonenumbe_list:_this.phonenumbe_list_rag; //电话号码
       let firstNameZh = _this.firstNameZh_list; //中文姓
       let lastNameZh = _this.lastNameZh_list; //中文名
       let englishsurname = _this.englishsurname_lsit; //英文姓
       let engs = _this.engs_list; //英文名
       let englishname = _this.englishname_list; //证件照1
+      
       if (_this.gender_list == '男') {
         sex = 'M'
       } else {
@@ -390,6 +410,7 @@ export default {
       } else {
         let cdlist = [];
         for (let i = 0; i < englishname.length; i++) {
+         englishname[i].value = englishname[i].valueFag[3] == "*"? englishname[i].value : englishname[i].valueFag
           if (englishname[i].value == "") {
             _this.$message({
               message: "证件信息不能为空!",
@@ -456,7 +477,8 @@ export default {
                 id: englishname[i].id
               })
             }
-            newdata = cdlist.concat(_this.delete_list)
+            newdata = cdlist.concat(_this.delete_list) //连接
+            
           } else {
             newdata = cdlist
           }
@@ -470,6 +492,7 @@ export default {
             birthdateStr: dateofbirth, //生日
             gender: gender, //性别
             id: _this.passengerId,
+            passengerNo:_this.passengerNo
           }
           try {
             let datw = await _this.$api.mymessage.saveTemporary(daw);
@@ -494,6 +517,11 @@ export default {
           }
         }
       }
+    },
+    idFock(index,val){
+       // 判断输入传给后台的值是否带星号
+      this.englishname_list[index].value = this.englishname_list[index].valueFag[3] == '*'?this.englishname_list[index].valueFag = '':this.englishname_list[index].valueFag
+     
     },
     depd_d(id, name) { //修改页面显示
       let _this = this;
@@ -520,6 +548,7 @@ export default {
                 t_name: "englishname",
                 name: _this.id_list[i].name,
                 plahth: "请确保姓名和证件号码与证件一致",
+                valueFag: numberPapers(id[k].cardNo),
                 value: id[k].cardNo,
                 val: id[k].cardType
               })
@@ -529,13 +558,12 @@ export default {
         return datas
       }
     },
-    async getuserlist() { //查询所有
+    async getuserlist() { //查询所有    
       let _this = this;
       try {
         _this.loding = true;
         const res = await this.$api.mymessage.getPassengerList();
         if (res.code == 200) {
-
           _this.messagesList = res.data.passList;
           _this.carlist = res.data.cardTypeList;
           _this.id_list = _this.carlist; //获取证件列表

@@ -17,7 +17,7 @@
       <div class="message_top" v-for="(item,index) in messagesList">
         <ul>
           <li>{{ item.name }}</li>
-          <li>{{ item.phone }}</li>
+          <li>{{ item.phone.replace(/(.{3}).*(.{4})/, "$1******$2")  }}</li>
           <li>{{ item.province }}</li>
           <li>{{ item.address }}</li>
           <li><span style="margin-right: 20px;" v-if="rotes('tms:per:usu:modify')" @click="cover(item)">编辑</span>
@@ -45,7 +45,7 @@
       </div>
       <div class="Cover_name">
         <div class="Cover_names">手机号</div>
-        <div class="Cover_nams"><input type="text" v-model="phone_number" maxlength="11" class="input_css"
+        <div class="Cover_nams"><input type="text" v-model="phonenumbe_list_rag" @focus="phoneFocus" maxlength="11" class="input_css"
                                        placeholder="输入手机号"/></div>
       </div>
       <div class="Cover_name">
@@ -113,6 +113,7 @@ export default {
       zeng: true,
       recipient: '', //收件人
       phone_number: '', //手机号
+      phonenumbe_list_rag:'',
       labels: '',
       detailed: '', //详细地址
       postcode: '', //邮编
@@ -180,6 +181,7 @@ export default {
       this.zeng = false;
       this.recipient = item.name; //收件人
       this.phone_number = item.phone; //手机号
+      this.phonenumbe_list_rag = item.phone.replace(/(.{3}).*(.{4})/, "$1******$2"); //电话号码
       this.prov = item.province;
       this.detailed = item.address; //详细地址
       this.nameId = item.id; //详细地址
@@ -246,6 +248,7 @@ export default {
       this.nameId = null; //id
       this.recipient = ''; //收件人
       this.phone_number = ''; //手机号
+      this.phonenumbe_list_rag = ''
       this.detailed = ''; //详细地址
       this.postcode = ''; //邮编
     },
@@ -254,13 +257,18 @@ export default {
       this.covers = false;
       this.recipient = ''; //收件人
       this.phone_number = ''; //手机号
+      this.phonenumbe_list_rag = ''
       this.detailed = ''; //详细地址
       this.postcode = ''; //邮编
     },
+    phoneFocus(){
+      this.phonenumbe_list_rag = this.phonenumbe_list_rag[5] == "*" ? '':this.phonenumbe_list_rag
+    },
+
     async save() {
       let _this = this;
       let recipientss = _this.recipient; //收件人
-      let phone_numbers = _this.phone_number; //手机号
+      let phone_numbers =_this.phonenumbe_list_rag[5] =='*'? _this.phone_number:_this.phonenumbe_list_rag; //手机号
       let province = _this.prov; //所在地
       let city = _this.city; //地区
       let detaileds = _this.detailed; //详细地址

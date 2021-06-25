@@ -25,6 +25,7 @@ import api from './api/config/index'
 import store from '../store/index.js'
 import vueXlsxTable from 'vue-xlsx-table'
 import resetMessage from './utils/resetMessage';
+import utils from './utils/utils.js'
 Vue.component('downloadExcel', JsonExcel)
 Vue.use(travel_report)
 Vue.use(defray)
@@ -37,10 +38,7 @@ Vue.use(api)
 Vue.prototype.$ele = ElementUI
 Vue.config.productionTip = false
 Vue.prototype.$message = resetMessage;
-import AMap from 'vue-amap';
-
-Vue.use(AMap);
-
+Vue.prototype.$utils = utils;
 // 设置浏览器标题
 Vue.directive('title', {
     inserted: function (el, binding) {
@@ -48,23 +46,7 @@ Vue.directive('title', {
     }
 })
 
-// 初始化vue-amap
-AMap.initAMapApiLoader({
-    // 高德key
-    key: '8b1226549250b8461d5e3d43df702f83',
-    // 插件集合 （插件按需引入）
-    plugin: [
-        "AMap.Autocomplete", //输入提示插件
-        "AMap.PlaceSearch", //POI搜索插件
-        "AMap.Scale", //右下角缩略图插件 比例尺
-        "AMap.OverView", //地图鹰眼插件
-        "AMap.ToolBar", //地图工具条
-        "AMap.MapType", //类别切换控件，实现默认图层与卫星图、实施交通图层之间切换的控制
-        "AMap.PolyEditor", //编辑 折线多，边形
-        "AMap.CircleEditor", //圆形编辑器插件
-        "AMap.Geolocation" //定位控件，用来获取和展示用户主机所在的经纬度位置
-    ]
-});
+
 router.beforeEach((to, from, next) => {
     window.scrollTo(0, 0);
     // chrome

@@ -1,10 +1,19 @@
 <template>
+  <!-- 我的审批 我的申请单->详情页 -->
   <div>
-    <div class="hoteorder" v-loading="loading" v-if="plsitsti.apprvTask != null && plsitsti.apprvTask != undefined">
+    <div
+      class="hoteorder"
+      v-loading="loading"
+      v-if="plsitsti.apprvTask != null && plsitsti.apprvTask != undefined"
+    >
       <div class="hotbox">
         <div class="aptops">
-          <div class="apfirst" @click="routens" v-if="types == 'left'">我的申请单列表</div>
-          <div class="apfirst" @click="routens" v-if="types == 'right'">我的审批单列表</div>
+          <div class="apfirst" @click="routens" v-if="types == 'left'">
+            我的申请单列表
+          </div>
+          <div class="apfirst" @click="routens" v-if="types == 'right'">
+            我的审批单列表
+          </div>
           &nbsp;&nbsp;→&nbsp;&nbsp;
           <div v-if="types == 'left'">申请单详情</div>
           <div v-if="types == 'right'">申批单详情</div>
@@ -14,7 +23,9 @@
         <div class="lefbox">出差信息</div>
         <div class="bot_userList">
           <div>
-            <span v-if="taskType != 4 && taskType != 5" class="bot_SpanLi">出差事由：</span>
+            <span v-if="taskType != 4 && taskType != 5" class="bot_SpanLi"
+              >出差事由：</span
+            >
             <span v-if="taskType == 4" class="bot_SpanLi">改签事由：</span>
             <span v-if="taskType == 5" class="bot_SpanLi">退票事由：</span>
             <span class="teright">{{ userreason }}</span>
@@ -27,21 +38,34 @@
             <span class="bot_SpanLi">所属部门：</span>
             <span class="teright">{{ talattribution }}</span>
           </div>
-          <div>
+          <div class="costPercent" :class="{beforeMiddleFix:plsitsti.apprvTask.beforeMiddle == 1}" v-if="userName.length > 0 && userName[0].costName != null">
             <span class="bot_SpanLi">成本中心：</span>
-            <span class="teright">{{ costattribution }}</span>
+            <span class="teright" v-if="plsitsti.apprvTask.beforeMiddle == 1"></span>
+           <div class="beforeMiddle" v-for="(item , index) in userName" :key="index" v-if="plsitsti.apprvTask.beforeMiddle == 1  && item.costName != null" :class="{beforeMiddleOne:index == 0}">
+             <span>{{item.costName}}</span>
+             <span>{{item.userName}}({{item.costPercent}}%)</span>
+             <span>￥{{(totalBudget * (item.costPercent * 0.01)).toFixed(2)}}</span>
+           </div>
+            <span class="teright" v-else>{{ costattribution }}</span>
           </div>
-          <div v-if="(taskType == 2 || taskType == 4 || taskType == 5) && price !=null && price > 0">
+          <div
+            v-if="
+              (taskType == 2 ||
+                or_tasktype == 7 ||
+                taskType == 4 ||taskType == 8 ||
+                taskType == 5) &&
+              price != null &&
+              price > 0
+            "
+          >
             <span v-if="taskType == 4">改签费用：</span>
             <span v-if="taskType == 5">应退金额：</span>
-            <span class="bot_SpanLi" v-if="taskType != 5 && taskType != 4">费&emsp;&emsp;用：</span>
+            <span class="bot_SpanLi" v-if="taskType != 5 && taskType != 4"
+              >费&emsp;&emsp;用：</span
+            >
             <span class="prcies">￥{{ price }}</span>
           </div>
-          <div v-if="or_type == 1 && or_tasktype == 4">
-            <span >改签费用：</span>
-            <span class="prcies">￥{{plane_tw.changeFee}}</span>
-          </div>
-          <div v-if="taskType == 1 && totalBudget > 0 && totalBudget != null ">
+          <div v-if="taskType == 1 && totalBudget > 0 && totalBudget != null">
             <span class="bot_SpanLi">预估费用：</span>
             <span class="prcies">￥{{ totalBudget }}</span>
           </div>
@@ -51,185 +75,402 @@
           </div>
           <div v-if="traveldetails != null && traveldetails != ''">
             <span class="bot_SpanLi">详细说明：</span>
-            <span @click="opclist" class="teright" style="color: red;cursor: pointer;"
-                  v-if="taskType == 2 || taskType == 4 || taskType == 5">{{ detaail(trafals) }}</span>
+            <span
+              @click="opclist"
+              class="teright"
+              style="color: red; cursor: pointer"
+              v-if="
+                taskType == 2 || taskType == 7 || taskType == 4 || taskType == 5|| taskType == 3|| taskType == 8
+              "
+              >{{ detaail(trafals) }}</span
+            >
             <span v-else class="teright">{{ traveldetails }}</span>
+          </div>
+          <div class="cancel" v-if="taskType == 1">
+            <span>取消原因：</span>
+            <span> {{ plsitsti.apprvTask.cancelApplication }}</span>
           </div>
         </div>
       </div>
-      <div class="hotbox" v-if="or_type == 1 && or_tasktype == 2">
+      <div
+        class="hotbox"
+        v-if="or_type == 1 && (or_tasktype == 3 ||or_tasktype == 2 || or_tasktype == 7) && plane_tw &&plane_tw.orderDetailList.length> 0"
+      >
         <div class="lefbox">机票</div>
-        <div class="bot_plane" v-for="(item, index) in plane_tw.orderDetailList" :key="index">
+        <div
+          class="bot_plane"
+          v-for="(item, index) in plane_tw.orderDetailList"
+          :key="index"
+          v-if=" plane_tw.orderDetailList.length==2 || (plane_tw.orderDetailList.length == 1 && plane_tw.orderDetailList[0].voyages.length == 1)"
+        >
           <div class="bot_Terminal">
-            <span class="bot_vo">出发：{{ citysname(item.voyages[0].depart) }}{{
-                item.voyages[0].departTerminal
-              }}</span>
-            <span class="bot_vo">到达：{{ citysname(item.voyages[0].arrive) }}{{
-                item.voyages[0].arriveTerminal
-              }}</span>
+            <span class="bot_vo"
+              >出发：{{ item.voyages[0].depart | cityName
+              }}{{ item.voyages[0].departTerminal }}</span
+            >
+            <span class="bot_vo"
+              >到达：{{ item.voyages[0].arrive | cityName
+              }}{{ item.voyages[0].arriveTerminal }}</span
+            >
             <span class="bot_vo">日期：{{ item.voyages[0].departTime }}</span>
-            <span class="bot_flighNo">航班：{{ item.voyages[0].flightNo }}</span>
+            <span class="bot_flighNo"
+              >航班：{{ item.voyages[0].flightNo }}</span
+            >
           </div>
-          <div class="hb_span" v-if="index === 0 && nlowPriceFlight !== '' && nlowPrice !== '' && nlowPriceTime !== ''">
-            <span>两小时最低航班/价格/时间：{{ nlowPriceFlight }}/￥{{ nlowPrice }}/{{ nlowPriceTime }}</span>
+          <div
+            class="hb_span"
+            v-if="
+              index === 0 &&
+              nlowPriceFlight !== '' &&
+              nlowPrice !== '' &&
+              nlowPriceTime !== ''
+            "
+          >
+            <span
+              >两小时最低航班/价格/时间：{{ nlowPriceFlight }}/￥{{
+                nlowPrice
+              }}/{{ nlowPriceTime }}</span
+            >
           </div>
-          <div class="hb_span"
-               v-if="index === 1 && twoNLowPriceFlight !== '' && twoNLowPrice !== '' && twoNLowPriceTime !== ''">
-            <span>两小时最低航班/价格/时间：{{ twoNLowPriceFlight }}/￥{{ twoNLowPrice }}/{{ twoNLowPriceTime }}</span>
+          <div
+            class="hb_span"
+            v-if="
+              index === 1 &&
+              twoNLowPriceFlight !== '' &&
+              twoNLowPrice !== '' &&
+              twoNLowPriceTime !== ''
+            "
+          >
+            <span
+              >两小时最低航班/价格/时间：{{ twoNLowPriceFlight }}/￥{{
+                twoNLowPrice
+              }}/{{ twoNLowPriceTime }}</span
+            >
           </div>
           <div class="bot_can">
-            <span class="bot_vo">舱位：公务舱{{ item.voyages[0].discount }}折</span>
-            <span class="bot_vo">机建￥{{ item.passengers[0].fareInfos[0].taxFee }} X {{ userlist.length }}</span>
-            <span>票价￥{{ item.voyages[0].adtCabinPrice }} X {{ userlist.length }}</span>
+            <span class="bot_vo"
+              >舱位：公务舱{{ item.voyages[0].discount  }}折</span
+            >
+            <span class="bot_vo"
+              >机建￥{{ item.taxFee }} X
+              {{ userlist.length }}</span
+            >
+            <span
+              >票价￥{{ item.voyages[0].adtCabinPrice }} X
+              {{ userlist.length }}</span
+            >
           </div>
         </div>
+        <div
+          class="bot_plane"
+          v-for="(item, index) in airData"
+          :key="index"
+          v-if=" airData"
+        >
+        <div class="bot_Terminal">
+            <span class="bot_vo"
+              >出发：{{ item.depart | cityName
+              }}{{ item.departTerminal }}</span
+            >
+            <span class="bot_vo"
+              >到达：{{ item.arrive | cityName
+              }}{{ item.arriveTerminal }}</span
+            >
+            <span class="bot_vo">日期：{{ item.departTime }}</span>
+            <span class="bot_flighNo"
+              >航班：{{ item.flightNo }}</span
+            >
+          </div>
+          <div
+            class="hb_span"
+            v-if="
+              index === 0 &&
+              nlowPriceFlight !== '' &&
+              nlowPrice !== '' &&
+              nlowPriceTime !== ''
+            "
+          >
+            <span
+              >两小时最低航班/价格/时间：{{ nlowPriceFlight }}/￥{{
+                nlowPrice
+              }}/{{ nlowPriceTime }}</span
+            >
+          </div>
+          <div
+            class="hb_span"
+            v-if="
+              index === 1 &&
+              twoNLowPriceFlight !== '' &&
+              twoNLowPrice !== '' &&
+              twoNLowPriceTime !== ''
+            "
+          >
+            <span
+              >两小时最低航班/价格/时间：{{ twoNLowPriceFlight }}/￥{{
+                twoNLowPrice
+              }}/{{ twoNLowPriceTime }}</span
+            >
+          </div>
+          <div class="bot_can">
+            <span class="bot_vo"
+              >舱位：公务舱{{ item.discount*10 }}折</span
+            >
+            <span class="bot_vo"
+              >机建￥{{ item.fareInfo.taxFee }} X
+              {{ userlist.length }}</span
+            >
+            <span
+              >票价￥{{ item.fareInfo.salePrice }} X
+              {{ userlist.length }}</span
+            >
+          </div> 
+        </div>
+
         <div class="b_uesr">乘机人：</div>
         <div>
-          <div class="b_list" v-for="(item,index) in userlist" :key="index">
-            <img src="../../../static/image/chengjiren.png">
+          <div class="b_list" v-for="(item, index) in userlist" :key="index">
+            <img src="../../../static/image/chengjiren.png" />
             <div class="b_userlist">
               <span>{{ item.name }}</span>
-              <span>{{ catypes(item.cardType) }}：{{ item.cardNo }}</span>
-              <span>手机号：{{ item.phone }}</span>
+              <span>{{ item.cardType | catypeEn }}：{{ item.cardNo | numberPapers }}</span>
+              <span>手机号：{{ item.phone.replace(/(.{3}).*(.{4})/, "$1******$2") }}</span>
             </div>
           </div>
         </div>
         <div v-if="plane_tw != null && plane_tw != ''">
-          <div class="bot_amount" v-if="plane_tw.orderDetailList.length == 1 ">
-            金额合计：基建￥{{
-              (plane_tw.orderDetailList[0].passengers[0].fareInfos[0].taxFee + plane_tw.orderDetailList[0].passengers[0].fareInfos[0].fuelFee) * userlist.length
+          <div class="bot_amount"  v-if="plane_tw.orderDetailList && plane_tw.orderDetailList.length == 1">
+            金额合计：
+            <div v-for="(it , indexs) in plane_tw.orderDetailList[0].passengers[0].voyages" :key="indexs">
+              <span v-if="indexs == 0"> 去程：</span>
+              <span v-if="indexs == 1"> 回程：</span>
+            基建￥{{
+              it.fareInfo.taxFee*userlist.length
+             
             }}
-            +
-            票价￥{{ plane_tw.orderDetailList[0].voyages[0].adtCabinPrice * userlist.length }}
+            + 票价￥{{
+             it.fareInfo.salePrice *
+              userlist.length
+            }}
             + 保险￥{{ totalPremium }} = ￥{{
-              plane_tw.orderDetailList[0].passengers[0].fareInfos[0].taxFee * userlist.length + plane_tw.orderDetailList[0].voyages[0].adtCabinPrice * userlist.length + totalPremium
+             it.fareInfo.taxFee *
+                userlist.length +
+             it.fareInfo.salePrice *
+                userlist.length +
+              totalPremium
             }}
+            </div>
           </div>
           <div class="bot_amount" v-if="plane_tw.orderDetailList.length == 2">
             金额合计：基建￥{{
               (plane_tw.orderDetailList[0].passengers[0].fareInfos[0].taxFee +
-                  plane_tw.orderDetailList[0].passengers[0].fareInfos[0].fuelFee) * userlist.length +
+                plane_tw.orderDetailList[0].passengers[0].fareInfos[0]
+                  .fuelFee) *
+                userlist.length +
               (plane_tw.orderDetailList[1].passengers[0].fareInfos[0].taxFee +
-                  plane_tw.orderDetailList[0].passengers[0].fareInfos[0].fuelFee) * userlist.length
+                plane_tw.orderDetailList[0].passengers[0].fareInfos[0]
+                  .fuelFee) *
+                userlist.length
             }}
             + 票价￥{{
-              plane_tw.orderDetailList[0].voyages[0].adtCabinPrice * userlist.length + plane_tw.orderDetailList[1].voyages[0].adtCabinPrice * userlist.length
+              plane_tw.orderDetailList[0].voyages[0].adtCabinPrice *
+                userlist.length +
+              plane_tw.orderDetailList[1].voyages[0].adtCabinPrice *
+                userlist.length
             }}
-            + 保险￥{{ totalPremium }}
-            = ￥{{
+            + 保险￥{{ totalPremium }} = ￥{{
               (plane_tw.orderDetailList[0].passengers[0].fareInfos[0].taxFee +
-                  plane_tw.orderDetailList[1].passengers[0].fareInfos[0].fuelFee) * userlist.length +
+                plane_tw.orderDetailList[1].passengers[0].fareInfos[0]
+                  .fuelFee) *
+                userlist.length +
               (plane_tw.orderDetailList[1].passengers[0].fareInfos[0].taxFee +
-                  plane_tw.orderDetailList[1].passengers[0].fareInfos[0].fuelFee) * userlist.length +
-              plane_tw.orderDetailList[0].voyages[0].adtCabinPrice * userlist.length +
-              plane_tw.orderDetailList[1].voyages[0].adtCabinPrice * userlist.length + totalPremium
+                plane_tw.orderDetailList[1].passengers[0].fareInfos[0]
+                  .fuelFee) *
+                userlist.length +
+              plane_tw.orderDetailList[0].voyages[0].adtCabinPrice *
+                userlist.length +
+              plane_tw.orderDetailList[1].voyages[0].adtCabinPrice *
+                userlist.length +
+              totalPremium
             }}
           </div>
         </div>
       </div>
-      <div class="hotbox" v-if="or_type == 1 && or_tasktype == 4">
+      <div class="hotbox" v-if="or_type == 1 && (or_tasktype == 4 || taskType == 8)">
         <div class="lefbox">机票(改签)</div>
-        <div class="bot_plane" v-for="(item, index) in plmesagelist" :key="index">
+        <div
+          class="bot_plane"
+          v-for="(item, index) in plmesagelist"
+          :key="index"
+        >
           <div class="bot_Terminal">
-            <span class="bot_vo">出发：{{ citysname(item.deptCityCode) }}</span>
-            <span class="bot_vo">到达：{{ citysname(item.arrivCityCode) }}</span>
+            <span class="bot_vo">出发：{{ item.deptCityCode | cityName }}</span>
+            <span class="bot_vo"
+              >到达：{{ item.arrivCityCode | cityName }}</span
+            >
             <span class="bot_vo">日期：{{ item.deptDate }}</span>
             <span class="bot_flighNo">航班：{{ item.flightNo }}</span>
           </div>
         </div>
         <div class="b_uesr">乘机人：</div>
         <div>
-          <div class="b_list" :class="index == plane_tw.items.length - 1 ? 'b_list b_list_bottom' : 'b_list'" v-for="(item,index) in plane_tw.items" :key="index">
-            <img src="../../../static/image/chengjiren.png">
+          <div
+            class="b_list"
+            :class="
+              index == plane_tw.items.length - 1
+                ? 'b_list b_list_bottom'
+                : 'b_list'
+            "
+            v-for="(item, index) in plane_tw.items"
+            :key="index"
+          >
+            <img src="../../../static/image/chengjiren.png" />
             <div class="b_userlist">
               <span>{{ item.name }}</span>
-              <span>证件号：{{ item.cardNo }}</span>
+              <span>证件号：{{ item.cardNo | numberPapers }}</span>
             </div>
           </div>
         </div>
       </div>
       <div class="hotbox" v-if="or_type == 1 && or_tasktype == 5">
         <div class="lefbox">机票(退票)</div>
-        <div class="bot_plane" v-for="(item, index) in plmesagelist" :key="index" style="width: 100%;">
+        <div
+          class="bot_plane"
+          v-for="(item, index) in plmesagelist"
+          :key="index"
+          style="width: 100%"
+        >
           <div class="bot_Terminal">
-            <span class="bot_vo">出发：{{ citysname(item.deptCityCode) }}</span>
-            <span class="bot_vo">到达：{{ citysname(item.arrivCityCode) }}</span>
+            <span class="bot_vo">出发：{{ item.deptCityCode | cityName }}</span>
+            <span class="bot_vo"
+              >到达：{{ item.arrivCityCode | cityName }}</span
+            >
             <span class="bot_vo">日期：{{ item.deptDate }}</span>
             <span class="bot_flighNo">航班：{{ item.flightNo }}</span>
           </div>
         </div>
         <div class="b_uesr">乘机人：</div>
         <div>
-          <div class="b_list" v-for="(item,index) in plane_tw.items" :key="index">
-            <img src="../../../static/image/chengjiren.png">
+          <div
+            class="b_list"
+            v-for="(item, index) in plane_tw.items"
+            :key="index"
+          >
+            <img src="../../../static/image/chengjiren.png" />
             <div class="b_userlist">
               <span>{{ item.name }}</span>
-              <span>证件号：{{ item.cardNo }}</span>
+              <span>证件号：{{ item.cardNo | numberPapers }}</span>
             </div>
           </div>
         </div>
       </div>
-      <div class="hotbox" v-if="or_type == 2 && or_tasktype == 2 && train_tw != null">
+      <div
+        class="hotbox"
+        v-if="
+          or_type == 2 &&
+          (or_tasktype == 2 || or_tasktype == 7) &&
+          train_tw != null
+        "
+      >
         <div class="lefbox"><span>火车预定</span></div>
-        <div class="bot_userList hot_trainList" v-if="train_tw.saleOrderDetailList&&train_tw.saleOrderDetailList[0]">
+        <div
+          class="bot_userList hot_trainList"
+          v-if="train_tw.saleOrderDetailList && train_tw.saleOrderDetailList[0]"
+        >
           <div class="hot_sale">
-            <img src="../../../static/image/sqd_hc.png" alt="">
+            <img src="../../../static/image/sqd_hc.png" alt="" />
             <span class="hot_form">
-            {{ train_tw.saleOrderDetailList[0].fromstation }}&nbsp;-&nbsp;
-            {{ train_tw.saleOrderDetailList[0].tostation }}
-            &emsp;{{ train_tw.saleOrderDetailList[0].trainno }}
+              {{ train_tw.saleOrderDetailList[0].fromstation }}&nbsp;-&nbsp;
+              {{ train_tw.saleOrderDetailList[0].tostation }}
+              &emsp;{{ train_tw.saleOrderDetailList[0].trainno }}
             </span>
           </div>
-          <div class="hot_Time">{{ train_tw.saleOrderDetailList[0].departureTime }}</div>
-          <div class="hot_user">出行人：<span>{{ userN(userName) }}</span></div>
+          <div class="hot_Time">
+            {{ train_tw.saleOrderDetailList[0].departureTime }}
+          </div>
+          <div class="hot_user">
+            出行人：<span>{{ userN(userName) }}</span>
+          </div>
         </div>
       </div>
-      <div class="hotbox" v-if="or_type == 2 && (or_tasktype == 4 || or_tasktype == 5) && train_tw != null">
+      <div
+        class="hotbox"
+        v-if="
+          or_type == 2 &&
+          (or_tasktype == 4 || or_tasktype == 5) &&
+          train_tw != null
+        "
+      >
         <div class="lefbox">
           火车
           <span v-if="or_tasktype == 4">改签</span>
           <span v-else>退票</span>
         </div>
-        <div class="bot_userList hot_trainList" v-if="train_tw.traSaleChangeDetailList">
+        <div
+          class="bot_userList hot_trainList"
+          v-if="train_tw.traSaleChangeDetailList"
+        >
           <div class="hot_sale">
-            <img src="../../../static/image/sqd_hc.png" alt="">
-              <span class="hot_form">
-                {{ train_tw.traSaleChangeDetailList[0].changeFromStation }}&nbsp;-&nbsp;
-                {{ train_tw.traSaleChangeDetailList[0].changeToStation }}
-                &nbsp;{{ train_tw.traSaleChangeDetailList[0].changeTrainNo }}
-              </span>
-
+            <img src="../../../static/image/sqd_hc.png" alt="" />
+            <span class="hot_form">
+              {{
+                train_tw.traSaleChangeDetailList[0].changeFromStation
+              }}&nbsp;-&nbsp;
+              {{ train_tw.traSaleChangeDetailList[0].changeToStation }}
+              &nbsp;{{ train_tw.traSaleChangeDetailList[0].changeTrainNo }}
+            </span>
           </div>
-          <div class="hot_Time" v-if="train_tw.traSaleChangeDetailList[0].passenagerTicketNo != null">
+          <div
+            class="hot_Time"
+            v-if="
+              train_tw.traSaleChangeDetailList[0].passenagerTicketNo != null
+            "
+          >
             {{ train_tw.traSaleChangeDetailList[0].departTime }}
           </div>
           <div class="hot_TicketNo">
             票号：{{ train_tw.traSaleChangeDetailList[0].passenagerTicketNo }}
           </div>
-          <div class="hot_user user_N">退改人员：<span>{{ userN(userName) }}</span></div>
+          <div class="hot_user user_N">
+            退改人员：<span>{{ userN(userName) }}</span>
+          </div>
         </div>
       </div>
-      <div class="hotbox"
-           v-if="or_type == 101 && (or_tasktype == 2 || or_tasktype == 4 || or_tasktype == 5) && hotel_tw != null">
+      <div
+        class="hotbox"
+        v-if="
+          or_type == 101 &&
+          (or_tasktype == 2 ||
+            or_tasktype == 7 || or_tasktype == 3 ||
+            or_tasktype == 4 ||
+            or_tasktype == 5) &&
+          hotel_tw != null
+        "
+      >
         <div class="lefbox">
           酒店
-          <span v-if="or_tasktype == 2">预定</span>
+          <span v-if="or_tasktype == 2 || or_tasktype == 7 || or_tasktype == 3">预定</span>
           <span v-else>退房</span>
         </div>
         <div class="bot_hotelList">
           <div class="bot_hotelTitle">
-            <img src="../../../static/image/order/order_hotel.png" alt="">
+            <img src="../../../static/image/order/order_hotel.png" alt="" />
             <div class="bot_hotelName">{{ hotel_tw.hotelName }}</div>
           </div>
           <div class="bot_hotelPo">
             <div><span>地址：</span>{{ hotel_tw.hotelAddress }}</div>
-            <div v-if="hotel_tw.bedTypeName != null"><span>房型：</span><span>{{ hotel_tw.bedTypeName }}</span>
+            <div v-if="hotel_tw.bedTypeName != null">
+              <span>房型：</span><span>{{ hotel_tw.bedTypeName }}</span>
             </div>
-            <div >
+            <div>
               <span>时间：</span>
-              <span v-if="hotel_tw.arrivalDate">{{ subtime(hotel_tw.arrivalDate) }} 至 {{ subtime(hotel_tw.departureDate) }}
-                （共{{ count(subtime(hotel_tw.arrivalDate), subtime(hotel_tw.departureDate)) }}晚)
-								{{ hotel_tw.bookCount }}间
+              <span v-if="hotel_tw.arrivalDate"
+                >{{ subtime(hotel_tw.arrivalDate) }} 至
+                {{ subtime(hotel_tw.departureDate) }} （共{{
+                  count(
+                    subtime(hotel_tw.arrivalDate),
+                    subtime(hotel_tw.departureDate)
+                  )
+                }}晚) {{ hotel_tw.bookCount }}间
               </span>
             </div>
             <div>
@@ -238,13 +479,14 @@
             </div>
             <div>
               <span>入住人：</span>
-              <span>{{ hotel_tw.guestName }}
-              </span>
+              <span>{{ hotel_tw.guestName }} </span>
             </div>
             <div class="bot_hotelAmount">
               <div>
                 <span>房间单价(均价)：</span>
-                <span class="bot_eachNightPrice">￥{{ hotel_tw.eachNightPrice }}</span>
+                <span class="bot_eachNightPrice"
+                  >￥{{ hotel_tw.eachNightPrice }}</span
+                >
               </div>
               <div>
                 <span>服务费：</span>
@@ -257,10 +499,14 @@
       <div class="hotbox" v-if="taskType == 1">
         <div class="lefbox">出差行程</div>
         <div class="bot_plane bot_plane_btom">
-          <div class="bot_Terminal bot_Terminal_tas" v-for="(item, index) in taslist" :key="index">
-            <span class="bot_vo">{{typename(item.vehicle)}}</span>
-            <span class="bot_vo bot_vo_w ">{{cityname(item)}}</span>
-            <span class="bot_vo bot_vm">{{newdata(item)}}</span>
+          <div
+            class="bot_Terminal bot_Terminal_tas"
+            v-for="(item, index) in taslist"
+            :key="index"
+          >
+            <span class="bot_vo">{{ item.vehicle | newicname }}</span>
+            <span class="bot_vo bot_vo_w">{{ cityname(item) }}</span>
+            <span class="bot_vo bot_vm">{{ newdata(item) }}</span>
           </div>
         </div>
       </div>
@@ -274,8 +520,14 @@
           <div>审批方式</div>
           <div>备注信息</div>
         </div>
-        <div class="soclass " :style="index == splog.length-1 ? 'borderBottom:1px solid #f9e6d0' : ''"
-             v-for="(item, index) in splog" :key="index">
+        <div
+          class="soclass"
+          :style="
+            index == splog.length - 1 ? 'borderBottom:1px solid #f9e6d0' : ''
+          "
+          v-for="(item, index) in splog"
+          :key="index"
+        >
           <div class="solist">{{ index + 1 }}</div>
           <div class="solist">
             <span v-if="item.modifyTime != null">{{ item.modifyTime }}</span>
@@ -283,8 +535,8 @@
           <div class="solist">{{ item.staffName }}</div>
           <div class="solist">
             <span v-if="item.status == 0">待审批</span>
-            <span v-if="item.status == 1" style="color: #409EFF;">审批通过</span>
-            <span v-if="item.status == 3" style="color: red;">审批驳回</span>
+            <span v-if="item.status == 1" style="color: #409eff">审批通过</span>
+            <span v-if="item.status == 3" style="color: red">审批驳回</span>
           </div>
           <div class="solist">
             <span v-if="item.stplis == 1">成本审批</span>
@@ -303,7 +555,7 @@
               <div class="setlist" v-for="(items, index) in item.list">
                 <div class="setbod">
                   <div class="styul">
-                    <div class="styli_top">{{ isname(items.is) }}</div>
+                    <div class="styli_top" v-if="items.is == 5">{{ isname(items.is) }}</div>
                     <div class="stulis">
                       <div class="styli_left">超规人员:</div>
                       <div class="styli_right">{{ items.name }}</div>
@@ -323,22 +575,61 @@
       </div>
 
       <div class="boxbtn">
-        <div class="tkbts" v-if="types == 'left' && (status == 0 || status == 1) && rotes('tms:myi:withdraw')"
-             @click="clearsks">撤回
+        <div
+          class="tkbts"
+          v-if="
+            types == 'left' &&
+            (status == 0 || status == 1) &&
+            rotes('tms:myi:withdraw')
+          "
+          @click="clearsks"
+        >
+          撤回
         </div>
-        <div class="nobts" v-if="types == 'right' && stk && rotes('tms:exa:adopt')" @click="pkclearsks(1)">通过</div>
-        <div class="tkbts" v-if="types == 'right' && stk && rotes('tms:exa:reject')" @click="pkclearsks(3)">驳回</div>
+
+        <div
+          class="tkbts"
+          v-if="
+            types == 'left' &&
+            status == 2 &&
+            rotes('tms:myi:withdraw') &&
+            taskType == 1
+          "
+          @click="cancelapplication"
+        >
+          取消申请
+        </div>
+
+        <div
+          class="nobts"
+          v-if="types == 'right' && stk && rotes('tms:exa:adopt')"
+          @click="pkclearsks(1)"
+        >
+          通过
+        </div>
+        <div
+          class="tkbts"
+          v-if="types == 'right' && stk && rotes('tms:exa:reject')"
+          @click="pkclearsks(3)"
+        >
+          驳回
+        </div>
         <div class="retunbts" @click="routens">返回</div>
       </div>
     </div>
-
   </div>
 </template>
 
 <script>
-import citys from '../../../static/js/airports.js';
-
+import citys from "../../../static/js/airports.js";
+import { newicname, catypeEn, cityName ,numberPapers} from "@/utils/common-filters";
+	import reasonApi from "@/utils/reasonApi";
 export default {
+  filters: {
+    newicname,
+    catypeEn,
+    cityName,numberPapers
+  },
   data() {
     return {
       totalBudget: 0, //预估费用
@@ -348,37 +639,38 @@ export default {
       staleve: false, //是否显示违规信息
       loading: false,
       trafals: false, //是否有超规信息
-      traveldetails: '', //出差详情
+      traveldetails: "", //出差详情
       splog: [], //审批日志
-      codes: '', //申请单id
+      codes: "", //申请单id
       plsitsti: {}, //申请单详情
-      createTimes: '', //申请日期
+      createTimes: "", //申请日期
       userName: [], //出差人员
       userdata: [], //出差时间
-      userreason: '', //理由
-      price: '', //总费用
-      talattribution: '', //部门名称
-      costattribution: '', //成本中心名称
-      taskType: '', //审批单类型
+      userreason: "", //理由
+      price: "", //总费用
+      talattribution: "", //部门名称
+      costattribution: "", //成本中心名称
+      taskType: "", //审批单类型
       taslist: [], //行程
-      status: '',
-      types: 'left',
+      status: "", //0-待审批，1-审批中 2-通过，3-驳回，4-撤回, 5-免审， 9-无效
+      types: "left",
       remsk: [], //违规信息
       or_type: 0, //类型
       or_tasktype: 0, //状态
       train_tw: {}, //事中火车单
       hotel_tw: {}, //酒店订单
-      plane_tw: '', //飞机订单
+      plane_tw: "", //飞机订单
       address: [],
       userlist: [],
       car_tw: {}, //用车订单
-      nlowPrice: '', //往程 最低价
-      nlowPriceFlight: '', // 往程  最低价航班
-      nlowPriceTime: '', // 往程 航班出发时间
-      twoNLowPrice: '', // 返程  最低价
-      twoNLowPriceFlight: '', // 返程 最低价航班
-      twoNLowPriceTime: '', // 返程 航班出发时间
-      totalPremium: '' //保险价格
+      nlowPrice: "", //往程 最低价
+      nlowPriceFlight: "", // 往程  最低价航班
+      nlowPriceTime: "", // 往程 航班出发时间
+      twoNLowPrice: "", // 返程  最低价
+      twoNLowPriceFlight: "", // 返程 最低价航班
+      twoNLowPriceTime: "", // 返程 航班出发时间
+      totalPremium: "", //保险价格
+      airData:[],// 飞机航班信息
     };
   },
   mounted() {
@@ -390,13 +682,13 @@ export default {
     opclist() {
       this.staleve = true;
     },
-    citysname(its) { //回显城市
-      for (let j = 0; j < this.address.length; j++) { //循环城市
-        if (this.address[j].airportCode == its) {
-          return this.address[j].cityCName
-        }
-      }
-    },
+    // citysname(its) { //回显城市
+    //   for (let j = 0; j < this.address.length; j++) { //循环城市
+    //     if (this.address[j].airportCode == its) {
+    //       return this.address[j].cityCName
+    //     }
+    //   }
+    // },
     async getApprvOrderInfos(dat, type, tasktype) {
       //type 1机票 2火车 5用车 101酒店
       //tasktype 审批单类型 1事前 2事中 4改签 5退票
@@ -414,12 +706,42 @@ export default {
           } else if (type == 1) {
             this.address = citys.addressAirportAll; //航空名字
             this.plane_tw = res.data;
-            this.userlist = res.data.orderDetailList[0].passengers;
+            this.userlist = res.data.orderDetailList ? res.data.orderDetailList[0].passengers : '';
+            // 假往返 或只有往 
+           if( this.plane_tw.orderDetailList.length> 1 || (this.plane_tw.orderDetailList.length == 1 && this.plane_tw.orderDetailList[0].voyages.length == 1)){
+             for (let i = 0; i < this.plane_tw.orderDetailList.length; i++) {
+               this.plane_tw.orderDetailList[i]["taxFee"] =this.plane_tw.orderDetailList[i].passengers[0].fareInfos[0].taxFee
+             }
+             if(this.plane_tw.orderDetailList.length> 1){ //假往返 
+               if( this.plsitsti.insOrders.length == 2){ // 每个行程一个保险
+                  this.totalPremium = this.plsitsti.insOrders[0].totalPremium
+               }else if(this.plsitsti.insOrders.length == 4){ //每个行程两个保险
+                  this.totalPremium = this.plsitsti.insOrders[0].totalPremium + this.plsitsti.insOrders[1].totalPremium
+               }
+             }else{
+               if( this.plsitsti.insOrders.length == 2){
+                  this.totalPremium = this.plsitsti.insOrders[0].totalPremium + this.plsitsti.insOrders[1].totalPremium
+               }else{
+                  this.totalPremium = this.plsitsti.insOrders[0].totalPremium
+               }
+             }
+           }else{   
+            //  真往返
+              this.airData = this.plane_tw.orderDetailList[0].passengers[0].voyages
+                for (let i = 0; i < this.plane_tw.orderDetailList[0].voyages.length; i++) {
+                     this.airData[i]["discount"] = this.plane_tw.orderDetailList[0].voyages[i].discount
+                }
+               if( this.plsitsti.insOrders.length == 2){ // 每个行程一个保险
+                  this.totalPremium = this.plsitsti.insOrders[0].totalPremium
+               }else if(this.plsitsti.insOrders.length == 4){ //每个行程两个保险
+                  this.totalPremium = this.plsitsti.insOrders[0].totalPremium + this.plsitsti.insOrders[1].totalPremium
+               }
+           }
           }
         } else {
           this.$message({
             message: res.message,
-            type: 'warning'
+            type: "warning",
           });
         }
       } catch (e) {
@@ -429,26 +751,23 @@ export default {
     },
     pkclearsks(it) {
       //审批
-      let tile = '';
+      let tile = "";
       if (it == 1) {
-        tile = '通过';
+        tile = "通过";
       } else {
-        tile = '驳回';
+        tile = "驳回";
       }
-      this.$prompt('请输入' + tile + '意见', '提示', {
-        confirmButtonText: '确定',
-        cancelButtonText: '取消'
+      this.$prompt("请输入" + tile + "意见", "提示", {
+        confirmButtonText: "确定",
+        cancelButtonText: "取消",
       })
-          .then(({
-                   value
-                 }) => {
-            if (value == null) {
-              value = '';
-            }
-            this.task(value, it);
-          })
-          .catch(() => {
-          });
+        .then(({ value }) => {
+          if (value == null) {
+            value = "";
+          }
+          this.task(value, it);
+        })
+        .catch(() => {});
     },
     async task(val, it) {
       this.loading = true;
@@ -456,20 +775,20 @@ export default {
         let dats = {
           taskId: this.codes,
           status: it,
-          remark: val
+          remark: val,
         };
         let res = await this.$api.applicat.apprvTask(dats);
         this.loading = false;
         if (res.code == 200) {
           this.$message({
-            message: '审批成功',
-            type: 'success'
+            message: "审批成功",
+            type: "success",
           });
           this.searchhoter();
         } else {
           this.$message({
             message: res.message,
-            type: 'warning'
+            type: "warning",
           });
         }
       } catch (e) {
@@ -478,123 +797,156 @@ export default {
         //TODO handle the exception
       }
     },
-    typename(tm) {
-      //回显类型
-      if (tm == 1) {
-        return '[机票]';
-      } else if (tm == 2) {
-        return '[火车]';
-      } else if (tm == 5) {
-        return '[用车]';
-      } else {
-        return '[酒店]';
-      }
+    cancelapplication() {
+      this.$prompt("请输入取消原因", "提示", {
+        confirmButtonText: "确定",
+        cancelButtonText: "取消",
+      })
+        .then(async ({ value }) => {
+          let param = {
+            id: this.codes,
+            cancelMsg: value == null ? "" : value,
+          };
+          const resp = await this.$api.applicat.cancelApplication(param);
+          if (resp.code == 200) {
+            this.searchhoter();
+            this.$message({
+              type: "success",
+              message: "取消成功 ",
+            });
+          }else{
+            this.$message({
+              type: "error",
+              message: resp.message,
+            });
+          }
+        })
+        .catch(() => {
+          // this.$message({
+          //   type: 'info',
+          //   message: '取消输入'
+          // });
+        });
     },
-    userstatus(ite) {
-      //订单状态
-      let arr = [{
-        name: '占座中',
-        id: 1
-      },
-        {
-          name: '占座成功',
-          id: 2
-        },
-        {
-          name: '出票中',
-          id: 3
-        },
-        {
-          name: '已出票',
-          id: 4
-        },
-        {
-          name: '退票中',
-          id: 5
-        },
-        {
-          name: '改签中',
-          id: 6
-        },
-        {
-          name: '部分退废',
-          id: 7
-        },
-        {
-          name: '部分改签',
-          id: 8
-        },
-        {
-          name: '已退',
-          id: 9
-        },
-        {
-          name: '订单已废弃',
-          id: 10
-        },
-        {
-          name: '已改签',
-          id: 11
-        },
-        {
-          name: '占座失败',
-          id: 12
-        },
-        {
-          name: '出票失败',
-          id: 13
-        }
-      ];
-      for (let i in arr) {
-        if (arr[i].id == ite) {
-          return arr[i].name;
-        }
-      }
-    },
+    // typename(tm) {
+    //   //回显类型
+    //   if (tm == 1) {
+    //     return '[机票]';
+    //   } else if (tm == 2) {
+    //     return '[火车]';
+    //   } else if (tm == 5) {
+    //     return '[用车]';
+    //   } else {
+    //     return '[酒店]';
+    //   }
+    // },
+    // userstatus(ite) {
+    //   //订单状态
+    //   let arr = [{
+    //     name: '占座中',
+    //     id: 1
+    //   },
+    //     {
+    //       name: '占座成功',
+    //       id: 2
+    //     },
+    //     {
+    //       name: '出票中',
+    //       id: 3
+    //     },
+    //     {
+    //       name: '已出票',
+    //       id: 4
+    //     },
+    //     {
+    //       name: '退票中',
+    //       id: 5
+    //     },
+    //     {
+    //       name: '改签中',
+    //       id: 6
+    //     },
+    //     {
+    //       name: '部分退废',
+    //       id: 7
+    //     },
+    //     {
+    //       name: '部分改签',
+    //       id: 8
+    //     },
+    //     {
+    //       name: '已退',
+    //       id: 9
+    //     },
+    //     {
+    //       name: '订单已废弃',
+    //       id: 10
+    //     },
+    //     {
+    //       name: '已改签',
+    //       id: 11
+    //     },
+    //     {
+    //       name: '占座失败',
+    //       id: 12
+    //     },
+    //     {
+    //       name: '出票失败',
+    //       id: 13
+    //     }
+    //   ];
+    //   for (let i in arr) {
+    //     if (arr[i].id == ite) {
+    //       return arr[i].name;
+    //     }
+    //   }
+    // },
     isname(is) {
       if (is == 1) {
-        return '只记录';
+        return "只记录";
       } else if (is == 2) {
-        return '记录并提示';
+        return "记录并提示";
       } else if (is == 3) {
-        return '记录并选择原因';
+        return "记录并选择原因";
       } else if (is == 7) {
-        return '不管控';
+        return "不管控";
       } else if (is == 8) {
-        return '记录并选择原因';
+        return "记录并选择原因";
       } else if (is == 5) {
-        return '记录并重新审核';
+        return "记录并重新审核";
       }
     },
     detaail(item) {
       if (item) {
-        return '违反差旅规则，点击查看';
+        return "违反差旅规则，点击查看";
       } else {
         if (
-            this.traveldetails != null &&
-            this.traveldetails != '' &&
-            this.traveldetails != '{}' &&
-            this.traveldetails != '{"information":[{}]}' &&
-            this.traveldetails != '{"information":[]}'
+          this.traveldetails != null &&
+          this.traveldetails != "" &&
+          this.traveldetails != "{}" &&
+
+          this.traveldetails != '{"information":[{}]}' &&
+          this.traveldetails != '{"information":[]}'
         ) {
           return this.traveldetails;
         } else {
-          return '';
+          return "";
         }
       }
+    
     },
     cityname(tm) {
       //回显城市名称
       if (tm.vehicle == 1) {
-        let deptname = this.citname(tm.deptCityCode);
-        let arrivname = this.citname(tm.arrivCityCode);
-        return deptname + ' - ' + arrivname
+        let deptname = cityName(tm.deptCityCode);
+        let arrivname = cityName(tm.arrivCityCode);
+        return deptname + " - " + arrivname;
       } else if (tm.vehicle == 2) {
-        return tm.deptCityName + ' - ' + tm.arrivCityName
+        return tm.deptCityName + " - " + tm.arrivCityName;
       } else if (tm.vehicle == 5) {
-        return tm.deptCityName + ' - ' + tm.arrivCityName
+        return tm.deptCityName + " - " + tm.arrivCityName;
       } else {
-        return tm.cityName + "　" + tm.remark
+        return tm.cityName + "　" + tm.remark;
       }
     },
     userN(usr) {
@@ -602,22 +954,22 @@ export default {
       for (let k in usr) {
         us.push(usr[k].userName);
       }
-      return us.join(',');
+      return us.join(",");
     },
-    citname(code) {
-      let datcy = citys.addressAirportAll;
-      for (let i = 0; i < datcy.length; i++) {
-        if (datcy[i].airportCode == code) {
-          return datcy[i].cityCName;
-        }
-      }
-    },
+    // citname(code) {
+    //   let datcy = citys.addressAirportAll;
+    //   for (let i = 0; i < datcy.length; i++) {
+    //     if (datcy[i].airportCode == code) {
+    //       return datcy[i].cityCName;
+    //     }
+    //   }
+    // },
     async searchhoter() {
       let that = this;
       that.loading = true;
       try {
         let res = await that.$api.applicat.detailApply({
-          id: that.codes
+          id: that.codes,
         });
         that.loading = false;
         if (res.code == 200) {
@@ -627,9 +979,12 @@ export default {
           that.userName = datw.tmsGssLink.applyStaffs; //出差人员
           that.userdata = [datw.apprvTask.startDate, datw.apprvTask.endDate]; //出差时间
           that.userreason = datw.apprvTask.reason; //理由
-          that.price = parseInt(datw.apprvTask.totalMoney);
+          // that.price = parseInt(datw.apprvTask.totalMoney);
+          that.price = datw.apprvTask.totalMoney;
           that.stk = datw.isAgree;
-          that.totalPremium = datw.insOrders.length > 0 ? datw.insOrders[0].totalPremium : 0;
+          // that.totalPremium =
+          //   datw.insOrders.length == 1 ? datw.insOrders[0].totalPremium : datw.insOrders.length == 2 ? datw.insOrders[0].totalPremium + datw.insOrders[1].totalPremium : 0;
+
           that.refundOtherFee = datw.apprvTask.refundOtherFee; //手续费
           that.talattribution = datw.apprvTask.deptName; //部门名称
           that.costattribution = datw.apprvTask.costName; //成本中心名称
@@ -640,18 +995,25 @@ export default {
             that.nlowPriceFlight = datw.tmsDpsSaleExtra[0].nlowPriceFlight;
             that.nlowPriceTime = datw.tmsDpsSaleExtra[0].nlowPriceTime;
             that.twoNLowPrice = datw.tmsDpsSaleExtra[0].twoNLowPrice;
-            that.twoNLowPriceFlight = datw.tmsDpsSaleExtra[0].twoNLowPriceFlight;
+            that.twoNLowPriceFlight =
+              datw.tmsDpsSaleExtra[0].twoNLowPriceFlight;
             that.twoNLowPriceTime = datw.tmsDpsSaleExtra[0].twoNLowPriceTime;
           }
           let applivalist = [];
           let appflks = datw.tmsGssLink.applyVehicles;
           for (let k = 0; k < appflks.length; k++) {
-            if (appflks[k].goBackGroup == null || appflks[k].goBackGroup == undefined) {
-              applivalist.push(appflks[k])
+            if (
+              appflks[k].goBackGroup == null ||
+              appflks[k].goBackGroup == undefined
+            ) {
+              applivalist.push(appflks[k]);
             } else {
               let nums = 0;
               for (let p in applivalist) {
-                if (applivalist[p].goBackGroup != null && appflks[k].goBackGroup != undefined) {
+                if (
+                  applivalist[p].goBackGroup != null &&
+                  appflks[k].goBackGroup != undefined
+                ) {
                   if (applivalist[p].goBackGroup == appflks[k].goBackGroup) {
                     nums = 1;
                   }
@@ -659,7 +1021,7 @@ export default {
               }
               if (nums == 0) {
                 appflks[k].deptDates = appflks[k + 1].deptDate;
-                applivalist.push(appflks[k])
+                applivalist.push(appflks[k]);
               }
             }
           }
@@ -669,6 +1031,116 @@ export default {
           that.traveldetails = datw.apprvTask.remark; //超规原因
           let is = that.taskType;
           let item = that.traveldetails;
+          if (
+            item != null &&
+            item != "" &&
+            item != "{}" &&
+            item != '{"information":[{}]}' &&
+            item != '{"information":[]}'
+          ) {
+            let sts = {};
+            let st = JSON.parse(item).information;
+            let list = st[0];
+            this.remsk = [];
+            if ((is == 1 || is == 2 || is == 4 || is == 3 || is == 5|| is == 8) && list) {
+              //判断预定或者改签 才有超规信息
+              for (let k in list) {
+                sts[k] = {
+                  list: [],
+                };
+                for (let p in list[k]) {
+                  let names = "";
+                  if (k == "highLimit") {
+                    names = "高价超规";
+                  } else if (k == "lowLimit") {
+                    names = "低价政策";
+                  } else if (k == "agreementFlightLimit") {
+                    names = "限定协议航班政策";
+                  } else if (k == "reserveLimit") {
+                    names = "提前预定规则政策";
+                  } else if (k == "positionLimit") {
+                    names = "仓位限制规则政策";
+                  } else if (k == "discountLimit") {
+                    names = "折扣限制规则政策";
+                  } else if (k == "accNumberLimit") {
+                    names = "同行人数限制规则政策";
+                  } else if (k == "nativeTrainRules") {
+                    names = "座位等级超规";
+                  } else if (k == "starLevelLimit") {
+                    names = "星级超规";
+                  } else if (k == "repeatBookingLimit") {
+                    names = "重复预定超规";
+                  } else if (k == "platformLimit") {
+                    names = "平台限制超规";
+                  } else if (k == "carGroupLimit") {
+                    names = "车型限制超规";
+                  } else if (k == "eachTimePriceLimit") {
+                    names = "金额每次限制超规";
+                  } else if (k == "eachDayPriceLimit") {
+                    names = "金额每天限制超规";
+                  } else if (k == "eachMonthPriceLimit") {
+                    names = "金额每月限制超规";
+                  }
+                  if (p == 2) {
+                    sts[k].list.push({
+                      is: 2,
+                      name: list[k][p],
+                      nametype: names,
+                      type: k,
+                    });
+                  }
+                  if (p == 3) {
+                    sts[k].list.push({
+                      is: 3,
+                      name: list[k][p].usernames ? list[k][p].usernames : list[k][p],
+                      nametype: names,
+                      type: k,
+                      seratis: list[k].reasons? list[k].reasons : list[k][p].reasons,
+                    });
+                  }
+                  if (p == 1) {
+                    sts[k].list.push({
+                      is: 1,
+                      name: list[k][p],
+                      nametype: names,
+                      type: k,
+                    });
+                  }
+                  if (p == 5) {
+                    sts[k].list.push({
+                      is: 5,
+                      name: list[k][p],
+                      nametype: names,
+                      type: k,
+                    });
+                  }
+                  if (p == 7) {
+                    sts[k].list.push({
+                      is: 7,
+                      name: list[k][p],
+                      nametype: names,
+                      type: k,
+                    });
+                  }
+                  if (p == 8) {
+                    sts[k].list.push({
+                      is: 8,
+                      name: list[k][p].usernames,
+                      nametype: names,
+                      type: k,
+                      seratis: list[k][p].reasons,
+                    });
+                  }
+                }
+              }
+              this.remsk = sts;
+              that.trafals = true;
+            } else {
+              that.trafals = false;
+            }
+          } else {
+            that.trafals = false;
+          }
           if (this.taskType != 1) {
             let ordtyp = 0;
             if (datw.tmsGssLink.applyVehicles.length > 0) {
@@ -684,118 +1156,18 @@ export default {
               taskType: this.taskType,
               travelNo: this.taslist[0].travelNo, //出差单号
               orderNo: this.taslist[0].orderId, // 订单单号
-              tradeNo: this.taslist[0].tradeNo //销售单号
+              tradeNo: this.taslist[0].tradeNo, //销售单号
             };
             this.getApprvOrderInfos(orddat, ordtyp, this.taskType);
           }
-          if (item != null && item != '' && item != '{}' && item != '{"information":[{}]}' && item != '{"information":[]}') {
-            let sts = {};
-            let st = JSON.parse(item).information;
-            let list = st[0];
-            this.remsk = [];
-            if (is == 2 || is == 4 || is == 5) {
-              //判断预定或者改签 才有超规信息
-              for (let k in list) {
-                sts[k] = {
-                  list: []
-                };
-                for (let p in list[k]) {
-                  let names = '';
-                  if (k == 'highLimit') {
-                    names = '高价超规';
-                  } else if (k == 'lowLimit') {
-                    names = '低价政策';
-                  } else if (k == 'agreementFlightLimit') {
-                    names = '限定协议航班政策';
-                  } else if (k == 'reserveLimit') {
-                    names = '提前预定规则政策';
-                  } else if (k == 'positionLimit') {
-                    names = '仓位限制规则政策';
-                  } else if (k == 'discountLimit') {
-                    names = '折扣限制规则政策';
-                  } else if (k == 'accNumberLimit') {
-                    names = '同行人数限制规则政策';
-                  } else if (k == 'nativeTrainRules') {
-                    names = '座位等级超规';
-                  } else if (k == 'starLevelLimit') {
-                    names = '星级超规';
-                  } else if (k == 'repeatBookingLimit') {
-                    names = '重复预定超规';
-                  } else if (k == 'platformLimit') {
-                    names = '平台限制超规';
-                  } else if (k == 'carGroupLimit') {
-                    names = '车型限制超规';
-                  } else if (k == 'eachTimePriceLimit') {
-                    names = '金额每次限制超规';
-                  } else if (k == 'eachDayPriceLimit') {
-                    names = '金额每天限制超规';
-                  } else if (k == 'eachMonthPriceLimit') {
-                    names = '金额每月限制超规';
-                  }
-                  if (p == 2) {
-                    sts[k].list.push({
-                      is: 2,
-                      name: list[k][p],
-                      nametype: names,
-                      type: k
-                    });
-                  }
-                  if (p == 3) {
-                    sts[k].list.push({
-                      is: 3,
-                      name: list[k][p].usernames,
-                      nametype: names,
-                      type: k,
-                      seratis: list[k][p].reasons
-                    });
-                  }
-                  if (p == 1) {
-                    sts[k].list.push({
-                      is: 1,
-                      name: list[k][p],
-                      nametype: names,
-                      type: k
-                    });
-                  }
-                  if (p == 5) {
-                    sts[k].list.push({
-                      is: 5,
-                      name: list[k][p],
-                      nametype: names,
-                      type: k
-                    });
-                  }
-                  if (p == 7) {
-                    sts[k].list.push({
-                      is: 7,
-                      name: list[k][p],
-                      nametype: names,
-                      type: k
-                    });
-                  }
-                  if (p == 8) {
-                    sts[k].list.push({
-                      is: 8,
-                      name: list[k][p].usernames,
-                      nametype: names,
-                      type: k,
-                      seratis: list[k][p].reasons
-                    });
-                  }
-                }
-              }
-              this.remsk = sts;
-              that.trafals = true;
-            } else {
-              that.trafals = false;
-            }
-          } else {
-            that.trafals = false;
+           if(this.taskType != 4 && this.taskType != 5){
+              var reason = await reasonApi.reason_api()
+              this.userreason = reason.filter(item=> item.id ==  datw.apprvTask.reason)[0].reason
           }
         } else {
           this.$message({
             message: res.message,
-            type: 'warning'
+            type: "warning",
           });
         }
       } catch (e) {
@@ -806,42 +1178,67 @@ export default {
     newdata(tm) {
       //回显时间
       if (tm.vehicle == 5) {
-        return tm.createTime
+        return tm.createTime;
       } else {
-        let sta = '';
-        let stamon = '';
-        let stadta = '';
-        let end = '';
-        let endmon = '';
-        let enddta = '';
+        let sta = "";
+        let stamon = "";
+        let stadta = "";
+        let end = "";
+        let endmon = "";
+        let enddta = "";
         if (tm.deptDate) {
           if (tm.deptDates) {
-            end = new Date(tm.deptDates.replace(/-/g, '/')); //出发日期
+            end = new Date(tm.deptDates.replace(/-/g, "/")); //出发日期
             endmon = this.dats(end.getMonth() + 1);
             enddta = this.dats(end.getDate());
           }
-          sta = new Date(tm.deptDate.replace(/-/g, '/')); //出发日期
+          sta = new Date(tm.deptDate.replace(/-/g, "/")); //出发日期
           stamon = this.dats(sta.getMonth() + 1);
           stadta = this.dats(sta.getDate());
         } else {
-          sta = new Date(tm.inDate.replace(/-/g, '/')); //出发日期
+          if(tm.inDate){
+          sta = new Date(tm.inDate.replace(/-/g, "/")); //出发日期
           stamon = this.dats(sta.getMonth() + 1);
           stadta = this.dats(sta.getDate());
-          end = new Date(tm.outDate.replace(/-/g, '/')); //出发日期
+          end = new Date(tm.outDate.replace(/-/g, "/")); //出发日期
           endmon = this.dats(end.getMonth() + 1);
           enddta = this.dats(end.getDate());
-          return stamon + '月' + stadta + '日' + '　入住　' + endmon + '月' + enddta + '日' + ' 离店'
+            return (
+            stamon +
+            "月" +
+            stadta +
+            "日" +
+            "　入住　" +
+            endmon +
+            "月" +
+            enddta +
+            "日" +
+            " 离店"
+          );
+          }
+        
         }
         if (tm.deptDates) {
-          return stamon + '月' + stadta + '日' + '　出发　' + endmon + '月' + enddta + '日' + ' 返回'
+          return (
+            stamon +
+            "月" +
+            stadta +
+            "日" +
+            "　出发　" +
+            endmon +
+            "月" +
+            enddta +
+            "日" +
+            " 返回"
+          );
         } else {
-          return stamon + '月' + stadta + '日' + '  出发'
+          return stamon + "月" + stadta + "日" + "  出发";
         }
       }
     },
     dats(it) {
       if (it < 10) {
-        return '0' + it;
+        return "0" + it;
       } else {
         return it;
       }
@@ -852,10 +1249,10 @@ export default {
     },
     clearsks() {
       //取消订单
-      this.$confirm('将撤回申请单，是否继续?', '提示', {
-        confirmButtonText: '确定',
-        cancelButtonText: '取消',
-        type: 'warning'
+      this.$confirm("将撤回申请单，是否继续?", "提示", {
+        confirmButtonText: "确定",
+        cancelButtonText: "取消",
+        type: "warning",
       }).then(() => {
         this.opclose(); //撤回申请单
       });
@@ -863,86 +1260,87 @@ export default {
     opclose() {
       this.loading = true;
       this.$api.applicat
-          .cancelTask({
-            id: this.codes
-          })
-          .then(res => {
-            this.loading = false;
-            if (res.code == 200) {
-              this.$message({
-                message: '取消成功！',
-                type: 'success'
-              });
-              this.searchhoter();
-            } else {
-              this.$message({
-                message: res.message,
-                type: 'warning'
-              });
-            }
-          })
-          .catch(error => {
-            this.loading = false;
-            console.log(error);
-          });
+        .cancelTask({
+          id: this.codes,
+        })
+        .then((res) => {
+          this.loading = false;
+          if (res.code == 200) {
+            this.$message({
+              message: "取消成功！",
+              type: "success",
+            });
+            this.searchhoter();
+          } else {
+            this.$message({
+              message: res.message,
+              type: "warning",
+            });
+          }
+        })
+        .catch((error) => {
+          this.loading = false;
+          console.log(error);
+        });
     },
     count(ti, ts) {
       //计算两个日期多少天
       let date1 = new Date(ti);
       let date2 = new Date(ts);
-      let date = (date2.getTime() - date1.getTime()) / (1000 * 60 * 60 * 24); /*不用考虑闰年否*/
+      let date =
+        (date2.getTime() - date1.getTime()) /
+        (1000 * 60 * 60 * 24); /*不用考虑闰年否*/
       return date;
     },
     subtime(tiem) {
       //返回日期前10位
       return tiem.substring(0, 10);
     },
-    settlement(it) {
-      if (it == 1) {
-        return '现结';
-      } else {
-        return '预付月结';
-      }
-    },
-    catype(it) {
-      //返回证件类型
-      if (it == 1) {
-        return '身份证'; //NI
-      } else if (it == 2) {
-        return '护照'; //PP
-      } else if (it == 3) {
-        return '台胞证'; //TB
-      } else if (it == 4) {
-        return '港澳通行证'; //GA
-      }
-    },
-    catypes(it) { //返回证件类型
-      if (it == 'NI') {
-        return '身份证'
-      } else if (it == 'PP') {
-        return '护照'
-      } else if (it == 'TB') {
-        return '台胞证'
-      } else if (it == 'GA') {
-        return '港澳通行证'
-      } else if (it == 'HX') {
-        return '回乡证'
-      } else if (it == 'OS') {
-        return '其他证件'
-      }
-    },
-  }
+    // settlement(it) {
+    //   if (it == 1) {
+    //     return '现结';
+    //   } else {
+    //     return '预付月结';
+    //   }
+    // },
+    // catype(it) {
+    //   //返回证件类型
+    //   if (it == 1) {
+    //     return '身份证'; //NI
+    //   } else if (it == 2) {
+    //     return '护照'; //PP
+    //   } else if (it == 3) {
+    //     return '台胞证'; //TB
+    //   } else if (it == 4) {
+    //     return '港澳通行证'; //GA
+    //   }
+    // },
+    // catypes(it) { //返回证件类型
+    //   if (it == 'NI') {
+    //     return '身份证'
+    //   } else if (it == 'PP') {
+    //     return '护照'
+    //   } else if (it == 'TB') {
+    //     return '台胞证'
+    //   } else if (it == 'GA') {
+    //     return '港澳通行证'
+    //   } else if (it == 'HX') {
+    //     return '回乡证'
+    //   } else if (it == 'OS') {
+    //     return '其他证件'
+    //   }
+    // },
+  },
 };
 </script>
 
 <style scoped lang="less">
-
 .hoteorder {
   width: 1158px;
   margin: 20px auto;
-  background-color: #FFFFFF;
+  background-color: #ffffff;
   padding: 0 10px;
-  border: 1px solid #E6E6E6;
+  border: 1px solid #e6e6e6;
   border-radius: 4px;
 
   .staleve {
@@ -1034,7 +1432,6 @@ export default {
     }
   }
 
-
   .hotbox {
     width: calc(100% - 30px);
     background-color: #ffffff;
@@ -1047,6 +1444,12 @@ export default {
       padding-top: 27px;
       padding-bottom: 24px;
       padding-left: 58px;
+      &>div{
+        margin-top: 10px;
+        &>span{
+          margin-right: 10px;
+        }
+      }
     }
 
     .bot_hotelList {
@@ -1087,14 +1490,13 @@ export default {
         }
 
         & > div > span:nth-child(2) {
-          color: #F48F00;
+          color: #f48f00;
         }
 
         .bot_eachNightPrice {
           margin-right: 20px;
         }
       }
-
     }
 
     .aptops {
@@ -1120,7 +1522,7 @@ export default {
     }
 
     .lefbox {
-      background-color: #F2F2F2;
+      background-color: #f2f2f2;
       width: 100%;
       line-height: 34px;
       font-weight: 600;
@@ -1154,8 +1556,7 @@ export default {
       }
     }
 
-
-    .b_list_bottom{
+    .b_list_bottom {
       padding-bottom: 24px !important;
     }
 
@@ -1165,22 +1566,22 @@ export default {
 
     .bot_plane {
       width: 1118px;
-      background: #F9F9F9;
+      background: #f9f9f9;
       margin-top: 14px;
       margin-left: 20px;
       padding-bottom: 23px;
 
       .bot_vo {
-        width: 204px
+        width: 204px;
       }
-      .bot_vo_w{
+      .bot_vo_w {
         width: 50%;
       }
       .bot_flighNo {
         justify-content: flex-end;
         width: 150px;
         align-items: flex-end;
-        text-align: right
+        text-align: right;
       }
 
       .bot_Terminal {
@@ -1213,7 +1614,6 @@ export default {
         font-size: 14px;
         line-height: 14px;
         padding: 24px 0 0 43px;
-
       }
     }
 
@@ -1259,11 +1659,11 @@ export default {
         color: #666666;
         line-height: 14px;
       }
-      .user_N{
+      .user_N {
         margin-top: 10px !important;
       }
 
-      .hot_TicketNo{
+      .hot_TicketNo {
         margin-bottom: 0;
         margin-top: 22px;
         margin-left: 48px;
@@ -1370,12 +1770,12 @@ export default {
 
   .retunbts {
     background-color: #ffffff;
-    color: #3C85FD;
-    border: 1px solid #3C85FD;
+    color: #3c85fd;
+    border: 1px solid #3c85fd;
     border-radius: 2px;
   }
-  
-   .tkbts:hover {
+
+  .tkbts:hover {
     opacity: 0.8;
   }
 
@@ -1391,5 +1791,44 @@ export default {
     border: 1px solid #d55e5e;
     border-radius: 2px;
   }
+}
+.cancel {
+  display: flex;
+  & > span:nth-child(1) {
+    width: 70px;
+  }
+  & > span:nth-child(2) {
+    flex: 1;
+  }
+}
+.costPercent{
+  display: flex;
+  .beforeMiddle{
+    border: 1px solid #ddd;
+    border-top: 0;
+    display: flex;
+    width: max-content;
+    &>span{
+    border-right: 1px solid #ddd;
+    width: 120px;
+    text-align: center;
+    font-size: 12px;
+    height: 24px;
+    line-height: 24px;
+    }
+    &>span:last-child{
+    border-right:0;
+    color: #ff6600;
+    }
+    
+  }
+  .beforeMiddleOne{
+    border-top: 1px solid #ddd;
+    margin-top: 10px;
+  }
+}
+.beforeMiddleFix{
+  display: flex;
+  flex-direction: column;
 }
 </style>

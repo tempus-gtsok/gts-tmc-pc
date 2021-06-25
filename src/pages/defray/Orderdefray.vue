@@ -1,9 +1,10 @@
 <template>
+	<!-- 飞机票支付页面 -->
 	<div class="hoteorder" v-loading="loading">
 		<div class="hotboxs" v-if="userslist.tr">
       <div class="trbtend">
         <div class="statusx">
-          <img :src="conpan(orderStatus)" alt="">
+          <img :src="orderStatus | planeConpan" alt="">
         </div>
       </div>
 
@@ -86,10 +87,13 @@
 <script>
 	import airports from '../../../static/js/airports.js'
 	import Defray from "@/components/common/defray";
-
+	import { userstatus , planeConpan,cityName } from "@/utils/common-filters";
 	export default {
 		components: {
 			Defray
+		},
+		filters:{
+			userstatus , planeConpan,cityName
 		},
 		data() {
 			return {
@@ -175,14 +179,14 @@
 							phone: this.orderDetailListy[0].passengers[i].phone,
 							city: [{ //出发城市
 								id: this.orderDetailListy[0].passengers[i].voyages[0].depart,
-								name: this.citys(this.orderDetailListy[0].passengers[i].voyages[0].depart)
+								name: cityName(this.orderDetailListy[0].passengers[i].voyages[0].depart)
 							}, { //到达城市
 								id: this.orderDetailListy[0].passengers[i].voyages[0].arrive,
-								name: this.citys(this.orderDetailListy[0].passengers[i].voyages[0].arrive)
+								name: cityName(this.orderDetailListy[0].passengers[i].voyages[0].arrive)
 							}],
 							citys: {
 								id: this.orderDetailListy[0].passengers[i].voyages[0].arrive,
-								name: this.citys(this.orderDetailListy[0].passengers[i].voyages[0].arrive)
+								name: cityName(this.orderDetailListy[0].passengers[i].voyages[0].arrive)
 							},
 							departTime: this.orderDetailListy[0].passengers[i].voyages[0].departTime.substring(0, 10),
 							cardNo: this.orderDetailListy[0].passengers[i].cardNo, //证件类型
@@ -199,14 +203,14 @@
 							phone: this.orderDetailListy[0].passengers[i].phone,
 							city: [{ //出发城市
 								id: this.orderDetailListy[0].passengers[i].voyages[1].depart,
-								name: this.citys(this.orderDetailListy[0].passengers[i].voyages[1].depart)
+								name: cityName(this.orderDetailListy[0].passengers[i].voyages[1].depart)
 							}, { //到达城市
 								id: this.orderDetailListy[0].passengers[i].voyages[1].arrive,
-								name: this.citys(this.orderDetailListy[0].passengers[i].voyages[1].arrive)
+								name: cityName(this.orderDetailListy[0].passengers[i].voyages[1].arrive)
 							}],
 							citys: {
 								id: this.orderDetailListy[0].passengers[i].voyages[1].arrive,
-								name: this.citys(this.orderDetailListy[0].passengers[i].voyages[1].arrive)
+								name: cityName(this.orderDetailListy[0].passengers[i].voyages[1].arrive)
 							},
 							departTime: this.orderDetailListy[0].passengers[i].voyages[1].departTime.substring(0, 10),
 							cardNo: this.orderDetailListy[0].passengers[i].cardNo, //证件类型
@@ -223,14 +227,14 @@
 							phone: this.orderDetailListy[1].passengers[i].phone,
 							city: [{ //出发城市
 								id: this.orderDetailListy[1].passengers[i].voyages[0].depart,
-								name: this.citys(this.orderDetailListy[1].passengers[i].voyages[0].depart)
+								name: cityName(this.orderDetailListy[1].passengers[i].voyages[0].depart)
 							}, { //到达城市
 								id: this.orderDetailListy[1].passengers[i].voyages[0].arrive,
-								name: this.citys(this.orderDetailListy[1].passengers[i].voyages[0].arrive)
+								name: cityName(this.orderDetailListy[1].passengers[i].voyages[0].arrive)
 							}],
 							citys: {
 								id: this.orderDetailListy[1].passengers[i].voyages[0].arrive,
-								name: this.citys(this.orderDetailListy[1].passengers[i].voyages[0].arrive)
+								name: cityName(this.orderDetailListy[1].passengers[i].voyages[0].arrive)
 							},
 							departTime: this.orderDetailListy[1].passengers[i].voyages[0].departTime.substring(0, 10),
 							cardNo: this.orderDetailListy[1].passengers[i].cardNo, //证件类型
@@ -253,13 +257,13 @@
 			retuns() {
 				this.$router.go(-1); //返回上一页
 			},
-			citys(its) { //回显城市
-				for (let j = 0; j < this.address.length; j++) { //循环城市
-					if (this.address[j].airportCode == its) {
-						return this.address[j].cityCName
-					}
-				}
-			},
+			// citys(its) { //回显城市
+			// 	for (let j = 0; j < this.address.length; j++) { //循环城市
+			// 		if (this.address[j].airportCode == its) {
+			// 			return this.address[j].cityCName
+			// 		}
+			// 	}
+			// },
 			count(ti, ts) {
 				//计算两个日期多少天
 				let date1 = new Date(ti);
@@ -267,81 +271,81 @@
 				let date = (date2.getTime() - date1.getTime()) / (1000 * 60 * 60 * 24); /*不用考虑闰年否*/
 				return date;
 			},
-			pustatus(ty) {
-				//支付状态
-				if (ty == 1) {
-					return '待支付';
-				} else if (ty == 2) {
-					return '支付中';
-				} else if (ty == 3) {
-					return '已支付';
-				} else if (ty == 4) {
-					return '为挂帐支付';
-				}
-			},
-			conpan(ie) {
-				let arr = [{
-						name: '预订中',
-						id: 1,
-						url: '../../../static/image/home/book.png'
-					}, {
-						name: '待审核',
-						id: 2,
-						url: '../../../static/image/home/To-audit.png'
-					},
-					{
-						name: '待提交',
-						id: 3,
-						url: '../../../static/image/home/To-submit.png'
-					},
-					{
-						name: '出票中',
-						id: 4,
-						url: '../../../static/image/home/ticket.png'
-					},
-					{
-						name: '已出票',
-						id: 5,
-						url: '../../../static/image/home/check.png'
-					}, {
-						name: '已取消',
-						id: 6,
-						url: '../../../static/image/home/Canceled.png'
-					}, {
-						name: '已拒单',
-						id: 7,
-						url: '../../../static/image/home/订单-订单拒绝.png'
-					}, {
-						name: '待支付',
-						id: 8,
-						url: '../../../static/image/home/unpaid.png'
-					}, {
-						name: '待审批',
-						id: 9,
-						url: '../../../static/image/home/Approval-Pending.png'
-					}, {
-						name: '已登账',
-						id: 10,
-						url: '../../../static/image/home/Has-been-booked.png'
-					}
-				]
-				for (let i in arr) {
-					if (arr[i].id == ie) {
-						return arr[i].url
-					}
-				}
-			},
-			userstatus(it) { //乘客当前状态
-				if (it == 0) {
-					return '已取消'
-				} else if (it == 1) {
-					return '正常'
-				} else if (it == 2) {
-					return '改签'
-				} else if (it == 3) {
-					return '废退'
-				}
-			},
+			// pustatus(ty) {
+			// 	//支付状态
+			// 	if (ty == 1) {
+			// 		return '待支付';
+			// 	} else if (ty == 2) {
+			// 		return '支付中';
+			// 	} else if (ty == 3) {
+			// 		return '已支付';
+			// 	} else if (ty == 4) {
+			// 		return '为挂帐支付';
+			// 	}
+			// },
+			// conpan(ie) {
+			// 	let arr = [{
+			// 			name: '预订中',
+			// 			id: 1,
+			// 			url: '../../../static/image/home/book.png'
+			// 		}, {
+			// 			name: '待审核',
+			// 			id: 2,
+			// 			url: '../../../static/image/home/To-audit.png'
+			// 		},
+			// 		{
+			// 			name: '待提交',
+			// 			id: 3,
+			// 			url: '../../../static/image/home/To-submit.png'
+			// 		},
+			// 		{
+			// 			name: '出票中',
+			// 			id: 4,
+			// 			url: '../../../static/image/home/ticket.png'
+			// 		},
+			// 		{
+			// 			name: '已出票',
+			// 			id: 5,
+			// 			url: '../../../static/image/home/check.png'
+			// 		}, {
+			// 			name: '已取消',
+			// 			id: 6,
+			// 			url: '../../../static/image/home/Canceled.png'
+			// 		}, {
+			// 			name: '已拒单',
+			// 			id: 7,
+			// 			url: '../../../static/image/home/订单-订单拒绝.png'
+			// 		}, {
+			// 			name: '待支付',
+			// 			id: 8,
+			// 			url: '../../../static/image/home/unpaid.png'
+			// 		}, {
+			// 			name: '待审批',
+			// 			id: 9,
+			// 			url: '../../../static/image/home/Approval-Pending.png'
+			// 		}, {
+			// 			name: '已登账',
+			// 			id: 10,
+			// 			url: '../../../static/image/home/Has-been-booked.png'
+			// 		}
+			// 	]
+			// 	for (let i in arr) {
+			// 		if (arr[i].id == ie) {
+			// 			return arr[i].url
+			// 		}
+			// 	}
+			// },
+			// userstatus(it) { //乘客当前状态
+			// 	if (it == 0) {
+			// 		return '已取消'
+			// 	} else if (it == 1) {
+			// 		return '正常'
+			// 	} else if (it == 2) {
+			// 		return '改签'
+			// 	} else if (it == 3) {
+			// 		return '废退'
+			// 	}
+			// },
 			queryAirlineList() { //获取机场名称
 				let _this = this;
 				_this.$api.order.queryAirlineList().then((res) => {
@@ -455,11 +459,11 @@
 							}
 							for (let k in that.userlist) {
 								if (that.userlist[k].icke == 1) {
-									that.userlist[k].itd['statusname'] = that.userstatus(that.userlist[k].itd.status);
-								}
+									that.userlist[k].itd['statusname'] = userstatus(that.userlist[k].itd.status);
+							}
 								if (that.userlist[k].icke == 3) {
-									that.userlist[k].itd['statusname'] = that.userstatus(that.userlist[k].itd.status);
-									that.userlist[k].isd['statusname'] = that.userstatus(that.userlist[k].isd.status);
+									that.userlist[k].itd['statusname'] = userstatus(that.userlist[k].itd.status);
+									that.userlist[k].isd['statusname'] = userstatus(that.userlist[k].isd.status);
 								}
 							}
 							this.passlist();

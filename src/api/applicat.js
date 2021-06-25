@@ -42,7 +42,12 @@ const cancelTask = data => {//申请单撤回
     data: data
   })
 }
-
+const cancelApplication = data => {//申请单通过后取消
+  return http.Get({
+    api: '/tms/api/apprv/cancelApplication',
+    data: data
+  })
+}
 const apprvTask = data => {//进行审批操作
   return http.Post({
     api: '/tms/api/apprv/apprvTask',
@@ -57,5 +62,6 @@ export default {
   getApprvList,
   getApprvOrderInfo,
   cancelTask,
+  cancelApplication,
   apprvTask
 }

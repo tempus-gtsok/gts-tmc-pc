@@ -98,7 +98,7 @@
         deptis:[],
         userlist:{},//用户个人信息
         tableData:[],//当前部门信息
-        deptid:0,//当前点击的部门id
+        deptid:'1',//当前点击的部门id
         deptlist:{
           children: 'children',
           label: 'text'
@@ -113,16 +113,15 @@
       adddept(){//新增成本
 
         this.deptids = 0;
-		this.codes = "";
+        this.codes = "";
         this.costresion = "";
         this.costname = "";
         this.deptitle = "新增成本";
         this.dialogVisible = true;
       },
       async okcloseplase(){
-              if (this.loadBut) return
-			this.loadBut = true
-
+        if (this.loadBut) return
+        this.loadBut = true
         let costresion = this.costresion;//备注
         let costname = this.costname;//名称
         let codes = this.codes;//编码
@@ -205,10 +204,11 @@
       },
       async handleEdit(inx,item){ //修改
         this.deptids = item.id;//当前修改的部门id
-        this.loading = true;
+        // this.loading = true;
+        	this.loadBut = false
         try{
          let res = await this.$api.business.costDetail({id:item.id});
-         this.loading = false;
+        //  this.loading = false;
          if(res.code == 200){
           this.costresion = res.data.remarks;
           this.costname = res.data.name;
@@ -287,6 +287,7 @@
               children:res.data
             }]
           }
+          this.deptid = this.deptis[0].children[0].id
           if(this.deptid == 0){
              this.tableData = res.data;
           } else{

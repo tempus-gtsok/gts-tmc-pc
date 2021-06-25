@@ -2,6 +2,7 @@
        author: I won’t leave my name, for fear of being beaten by someone who takes over
 -->
 <template>
+<!-- 我的意向单->国内机票->详情页 -->
   <div class="hoteorder" v-loading="loading" v-if="ticketdetails != null && ticketdetails != undefined">
     <div class="hotboxs">
       <el-drawer :visible.sync="drawer" :with-header="false">
@@ -27,7 +28,7 @@
       <div class="hot_lefts" style="display: flex">
         <img src="../../../static/image/left.png">
         <span>机票意向单单号：{{ no }}</span>
-        <div class="" v-if="orderStatus === 1">
+        <div   v-if="orderStatus === 1">
           <img src="../../../static/image/home/Approval-Pending.png" alt="">
         </div>
         <div class=" " v-if="orderStatus === 2">
@@ -39,7 +40,7 @@
         <div class=" " v-if="orderStatus === 4">
           <img src="../../../static/image/intentionlist/yishenpi.png" alt="">
         </div>
-        <div class="" v-if="orderStatus === 5">
+        <div   v-if="orderStatus === 5">
           <img src="../../../static/image/intentionlist/yiyuding.png" alt="">
         </div>
       </div>
@@ -54,33 +55,41 @@
               <div class="ticketIntent_departDate">
                 {{ ticketdetails.flights[0].departDate.substring(0, 10) }}
               </div>
-              <div class="ti_airline">
+              <div class="ti_airline" v-if="ticketdetails.flights[0].flightNo">
+                {{
+                  company(ticketdetails.flights[0].flightNo.substring(0 , 2), ticketdetails.flights[0].flightNo)
+                }}{{ ticketdetails.flights[0].flightNo }}
+              </div>
+              <div class="ti_airline" v-else>
                 {{
                   company(ticketdetails.airline, ticketdetails.flights[0].flightNo)
                 }}{{ ticketdetails.flights[0].flightNo }}
               </div>
             </div>
             <div class="ticketIntent_button">
-              <span class="ticketIntent_bt_cabin">舱位等级：{{ cabinRating(ticketdetails.flights[0].cabin) }}</span>
+              <span class="ticketIntent_bt_cabin" v-if="ticketdetails.flights[0].cabin">舱位等级：{{ cabinRating(ticketdetails.flights[0].cabin) }}</span>
               <span class="numprice" v-if="numprice != null">票价：￥{{ numprice }}</span>
             </div>
           </div>
 
           <div class="titcket_flights">
             <div class="ti_depart">
-              <span style="">{{ citys(ticketdetails.flights[0].depart) }}</span>
+              <span style="">{{ ticketdetails.flights[0].depart | cityName }}</span>
             </div>
             <div class="ti_flight">
-              <div>
+              <div v-if="ticketdetails.flights[0].departTime">
                 {{ ticketdetails.flights[0].departTime }} - {{ ticketdetails.flights[0].arriveTime }}
+              </div>
+              <div v-else>
+                {{ ticketdetails.departDate }} 
               </div>
               <img src="../../../static/image/jiantou.png">
               <div>
-                {{ ticketdetails.flights[0].flightNo }}&nbsp;
+                {{ ticketdetails.flights[0].flightNo ? ticketdetails.flights[0].flightNo : ticketdetails.airline }}&nbsp;
               </div>
             </div>
             <div class="ti_arrive">
-              <span>{{ citys(ticketdetails.flights[0].arrive) }}</span>
+              <span>{{ ticketdetails.flights[0].arrive | cityName }}</span>
             </div>
           </div>
         </div>
@@ -88,8 +97,8 @@
           <div class="lefbox">航程信息</div>
           <div class="ti_list">
             <div class="hotbox_city">
-              <div class="depart">出发城市：{{ citys(ticketdetails.flights[0].depart) }}</div>
-              <div class="arrive">到达城市：{{ citys(ticketdetails.flights[0].arrive) }}</div>
+              <div class="depart">出发城市：{{ ticketdetails.flights[0].depart | cityName }}</div>
+              <div class="arrive">到达城市：{{ ticketdetails.flights[0].arrive | cityName }}</div>
             </div>
             <div>最早出发时间：{{ ticketdetails.flights[0].minDepartDate }}</div>
             <div>最晚出发时间：{{ ticketdetails.flights[0].maxDepartDate }}</div>
@@ -109,22 +118,21 @@
         <div class="lefbox">联系人信息</div>
         <div class="user">
           <span class="user_name">姓名：{{ ticketdetails.contacts }}</span>
-          <span class="user_phone">手机号：{{ ticketdetails.contactPhone }}</span>
+          <span class="user_phone">手机号：{{ ticketdetails.contactPhone.replace(/(.{3}).*(.{4})/, "$1******$2") }}</span>
         </div>
         </div>
-        <div class="lefbox">乘机人信息</div>
-
-        <div class="pa_list" v-show="null != ticketdetails">
+        <div class="lefbox" v-if="ticketdetails.travelers.length > 0">乘机人信息</div>
+        <div class="pa_list" v-show="ticketdetails !=null">
           <div class="passenger" v-for="(item,index) in ticketdetails.travelers">
             <span class="passenger_name">姓名：{{ item.name }}</span>
-            <span class="passenger_type">乘客类型：成人</span>
-            <span class="passenger_cardType">证件类型：{{ catype(item.cardType) }}</span>
-            <span class="passenger_cardNo">证件号码：{{ item.cardNo }}</span>
-            <span class="passenger_phone">联系电话：{{ item.phone }}</span>
+            <span class="passenger_type">乘客类型：{{item.ageType == 'ADT' ? '成人' : item.ageType == 'INF' ? '婴儿' : '小孩'}}</span>
+            <span class="passenger_cardType">证件类型：{{ item.cardType | catypeEn }}</span>
+            <span class="passenger_cardNo" v-if=" item.cardNo">证件号码：{{ item.cardNo | numberPapers }}</span>
+            <span class="passenger_phone">联系电话：{{ item.phone.replace(/(.{3}).*(.{4})/, "$1******$2") }}</span>
           </div>
         </div>
-        <div v-if="orderStatus == 1 && ticketdetails != null" class="remark">备注：{{ ticketdetails.remark }}</div>
-        <div v-if="orderStatus != 1 && ticketdetails != null" class="remark">注意：{{ ticketdetails.note }}</div>
+        <div v-if="orderStatus == 1 && ticketdetails != null && ticketdetails.remark" class="remark">备注：{{ ticketdetails.remark }}</div>
+        <div v-if="orderStatus != 1 && ticketdetails != null && ticketdetails.note" class="remark">注意：{{ ticketdetails.note }}</div>
 
         <defray business-type="1" product-type="1" :record-no=recordNos :amount=numprice entryMethod=0
                 :pay-status=payStatus intention="1"
@@ -170,7 +178,15 @@
           <div class="tr_ul">
             <div class="tr_uleft">出行事由</div>
             <div class="tr_rights">
-              <el-input v-model="reson" type="textarea" :rows="2" placeholder="请输入出行事由"></el-input>
+              <!-- <el-input v-model="reson" type="textarea" :rows="2" placeholder="请输入出行事由"></el-input> -->
+							<el-select v-model="reson" placeholder="请选择" popper-class="selectPopper" @change="reasonChang">
+								<el-option
+								v-for="item in reasonData"
+								:key="item.id"
+								:label="item.reason"
+								:value="item.id">
+								</el-option>
+							</el-select>
             </div>
           </div>
         </div>
@@ -189,8 +205,12 @@
 <script>
 import airports from '../../../static/js/airports.js';
 import Defray from "@/components/common/defray";
-
+import reasonApi from "@/utils/reasonApi";
+import { catypeEn , cityName ,numberPapers} from "@/utils/common-filters";
 export default {
+		filters:{
+			catypeEn , cityName,numberPapers
+		},
   components: {Defray},
   data() {
     return {
@@ -228,16 +248,26 @@ export default {
       plsitsti: '',
       ticketdetails: null,
       hang: '',//航班名称
-
+      reasonData:[],
+      resonText:'',
     };
   },
-  mounted() {
+  async mounted() {
 
     this.no = this.$route.query.no; //获取上个页面传入的参数
     this.getDetail();
     this.selts(); //查询成本中心
+    this.reasonData = await reasonApi.reason_api()
+			var arrS = this.reasonData.find(item=>item.isDefault == 1) 
+			if(arrS){
+				this.reasonChang(arrS.id)
+			}
   },
   methods: {
+			reasonChang(val){
+				this.resonText = this.reasonData.find(item=>item.id == val).reason
+				this.reson = this.reasonData.find(item=>item.id == val).id
+			},
     async confirm() {
       this.loading = true;
       let dat = [];
@@ -278,11 +308,16 @@ export default {
         let apprvTaskStaffs = {
           costId: this.NameCenter.id,
           costName: this.NameCenter.name,
-          reason: this.reson,
-          apprvTaskStaffs: [{
+            reasonId: this.reson,
+            reason: this.resonText, //事由
+        }
+        if(this.TravelCostCenlist.length > 0){
+          apprvTaskStaffs['apprvTaskStaffs'] = [{
             staffId: this.TravelCostCenlist[0].staffId,
             staffName: this.TravelCostCenlist[0].staffName,
-            deptCost: this.TravelCostCenlist[0].deptCost
+            deptCost: this.TravelCostCenlist[0].deptCost,
+            nodeId: this.TravelCostCenlist[0].nodeId,
+            personId: this.TravelCostCenlist[0].personId,
           }]
         }
         dat = {
@@ -352,27 +387,27 @@ export default {
         }
       })
     },
-    catype(it) {//返回证件类型
-      if ('NI' == it) {
-        return '身份证'//NI
-      } else if ('PP' == it) {
-        return '护照'//PP
-      } else if ('TB' == it) {
-        return '台胞证'//TB
-      } else if ('GA' == it) {
-        return '港澳通行证'//GA
-      }
-    },
+    // catype(it) {//返回证件类型
+    //   if ('NI' == it) {
+    //     return '身份证'//NI
+    //   } else if ('PP' == it) {
+    //     return '护照'//PP
+    //   } else if ('TB' == it) {
+    //     return '台胞证'//TB
+    //   } else if ('GA' == it) {
+    //     return '港澳通行证'//GA
+    //   }
+    // },
     retuns() {
       this.$router.go(-1); //返回上一页
     },
-    citys(its) { //回显城市
-      for (let j = 0; j < this.address.length; j++) { //循环城市
-        if (this.address[j].airportCode == its) {
-          return this.address[j].cityCName
-        }
-      }
-    },
+    // citys(its) { //回显城市
+    //   for (let j = 0; j < this.address.length; j++) { //循环城市
+    //     if (this.address[j].airportCode == its) {
+    //       return this.address[j].cityCName
+    //     }
+    //   }
+    // },
     clearsks() { //取消订单
       this.$confirm('将取消订单，是否继续?', '提示', {
         confirmButtonText: '确定',
@@ -430,7 +465,9 @@ export default {
       this.appswlist(); //重新获取部门和成本中心审批人
     },
     async appswlist() { //选获取部门和成本审批人信息
+   
       let that = this;
+     
       let nuarry = [];
       let travelers = that.ticketdetails.travelers
       let nus = travelers; //出差人的集合

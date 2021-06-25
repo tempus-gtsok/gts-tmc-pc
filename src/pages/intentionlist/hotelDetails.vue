@@ -48,22 +48,23 @@
         <div v-if="plsitsti.hotelPhone != null">酒店电话：{{plsitsti.hotelPhone}}</div>
         <div v-if="plsitsti.bedTypeName != null">酒店床型：{{ plsitsti.bedTypeName }}</div>
         <div>房间数量：{{plsitsti.bookCount}}间</div>
-        <div>房间类型：{{plsitsti.proName}}</div>
-        <div>酒店地址：{{ plsitsti.hotelAddress}}</div>
+        <div v-if="plsitsti.proName">房间类型：{{plsitsti.proName}}</div>
+        <div v-if="plsitsti.hotelAddress">酒店地址：{{ plsitsti.hotelAddress}}</div>
         <div class="lefbox">入住信息</div>
         <div v-if="plsitsti.arrivalDate != null && plsitsti.departureDate != null">
           入住时间：{{ subtime(plsitsti.arrivalDate) }} 至 {{ subtime(plsitsti.departureDate) }} （共{{
             count(subtime(plsitsti.arrivalDate), subtime(plsitsti.departureDate))
           }}晚) 房间数：{{ plsitsti.bookCount }}间
         </div>
+        <div>入住城市：{{ plsitsti.city }}</div>
         <div>入住人：{{ plsitsti.guestNames }}</div>
         <div>联系人：{{plsitsti.contactName}}</div>
-        <div>联系电话：{{plsitsti.contactNumber}}</div>
-        <div>
+        <div v-if="plsitsti.contactNumber">联系电话：{{plsitsti.contactNumber.replace(/(.{3}).*(.{4})/, "$1******$2")}}</div>
+        <div v-if="plsitsti.salePrice">
           <span style="color: #F5A623"> 订单总额：￥{{plsitsti.salePrice }}</span>
         </div>
         <div style="color: red" v-if="orderStatus === '0'">备注：{{plsitsti.remark}}</div>
-        <div style="color: red" v-else>审批备注：{{plsitsti.cancelReason}}</div>
+        <div style="color: red" v-else>取消规则：{{plsitsti.cancelReason}}</div>
         <defray business-type="1" product-type="4" :record-no=recordNos :amount=plsitsti.salePrice entryMethod=0 :pay-status=payStatus intention= 4  v-if="(travelType == 2 && (payStatus == 1 || payStatus == 2))"></defray>
         <div v-if="travelType == 1 && travelNo == null && orderStatus == 1">
         <div>
@@ -103,7 +104,15 @@
         <div class="tr_ul" >
           <div class="tr_uleft">出行事由</div>
           <div class="tr_rights">
-            <el-input v-model="reson" type="textarea" :rows="2" placeholder="请输入出行事由"></el-input>
+            <!-- <el-input v-model="reson" type="textarea" :rows="2" placeholder="请输入出行事由"></el-input> -->
+							<el-select v-model="reson" placeholder="请选择" popper-class="selectPopper" @change="reasonChang">
+								<el-option
+								v-for="item in reasonData"
+								:key="item.id"
+								:label="item.reason"
+								:value="item.id">
+								</el-option>
+							</el-select>
           </div>
         </div>
       </div>
@@ -119,6 +128,7 @@
 
 <script>
 import Defray from "@/components/common/defray";
+import reasonApi from "@/utils/reasonApi";
 export default {
   components: {Defray},
   data() {
@@ -155,16 +165,27 @@ export default {
       travelType: '', //因公 or 因私
       travelNo : '', //销售单号
       apprvTaskStaffs: [], //用于存放成本和部门审批人的参数
-      recordNos: '' //销售单号
+      recordNos: '', //销售单号
+      reasonData:[],
+      resonText:'',
     };
   },
-  mounted() {
+ async mounted() {
 
     this.requireNo = this.$route.query.requireNo; //获取上个页面传入的参数
     this.selts(); //查询成本中心
     this.searchhoter();
+    this.reasonData = await reasonApi.reason_api()
+			var arrS = this.reasonData.find(item=>item.isDefault == 1) 
+			if(arrS){
+				this.reasonChang(arrS.id)
+			}
   },
   methods: {
+			reasonChang(val){
+				this.resonText = this.reasonData.find(item=>item.id == val).reason
+				this.reson = this.reasonData.find(item=>item.id == val).id
+			},
     async confirm(){  //确认意向单
       this.loading = true;
       let dat = [];
@@ -236,11 +257,13 @@ export default {
             costId:this.NameCenter.id,
             costName:this.NameCenter.name,
             beforeMiddle: 2,
-            reason: this.reson,
+            reasonId: this.reson,
+            reason: this.resonText, //事由
             taskType: 2
           }
         }
       }
+      console.log("dat---",dat)
       let res = await this.$api.intentionlist.confirmOrder(dat);
       if (res.code == 200 ){
         this.loading= false;
@@ -446,8 +469,8 @@ export default {
               that.travelType = res.data.holRequire.travelType;
               that.travelNo = res.data.holRequire.travelNo;
               that.hotelOrder = res.data.hotelOrder;
-              that.payStatus = res.data.saleOrder.payStatus;
-              that.recordNos= res.data.saleOrder.transationOrderNo;
+              that.payStatus = res.data.saleOrder ? res.data.saleOrder.payStatus:'';
+              that.recordNos= res.data.saleOrder ? res.data.saleOrder.transationOrderNo : '';
             } else {
               that.$message({
                 message: res.message,

@@ -1,4 +1,5 @@
 <template>
+<!-- 差旅报告-> 综合分析 -->
   <div class="travelbox">
     <travel_report :tarlist_ids=tarlist_id></travel_report>
     <div v-if="rotes('tms:report:button')"  v-loading="loading">
@@ -83,99 +84,104 @@
             </div>
           </div>
         </div>
-        <div class="boxls" v-show="vatypes == false">
-          <div class="boxlsox">
-            <span class="iconfont boxbig" @click="initChartsts('chart')">&#xe607;</span>
-            <div class="chartsty" ref="chart"></div>
+        <div v-if="!dataFlag">
+          <div class="boxls" v-show="vatypes == false">
+            <div class="boxlsox">
+              <span class="iconfont boxbig" @click="initChartsts('chart')">&#xe607;</span>
+              <div class="chartsty" ref="chart"></div>
+            </div>
+            <div class="boxlsox">
+              <span class="iconfont boxbig" @click="initChartsts('charts')">&#xe607;</span>
+              <div class="chartsty" ref="charts"></div>
+            </div>
           </div>
-          <div class="boxlsox">
-            <span class="iconfont boxbig" @click="initChartsts('charts')">&#xe607;</span>
-            <div class="chartsty" ref="charts"></div>
+          <div class="boxls" v-show="vatypes == false">
+            <div class="boxlsox">
+              <span class="iconfont boxbig" @click="initChartsts('chart_s')">&#xe607;</span>
+              <div class="chartsty" ref="chart_s"></div>
+            </div>
+            <div class="boxlsox">
+              <span class="iconfont boxbig" @click="initChartsts('chart_reason')">&#xe607;</span>
+              <div class="chartsty" ref="chart_reason"></div>
+            </div>
+          </div>
+          <div class="tables" v-show="vatypes == true">
+            <div class="tabtop">
+              差旅费用总量分析
+            </div>
+            <el-table id="out-tableone" :header-cell-style="{background:'#f6f6f6',color:'#666'}" border=""
+                      :data="travelexpenses" :span-method="objectSpanMethod" style="width: 100%;">
+              <el-table-column label="项目" align="center">
+                <template slot-scope="scope">{{ sename(scope.row.name) }}</template>
+              </el-table-column>
+              <el-table-column align="center" prop="charges" label="收费项">
+              </el-table-column>
+              <el-table-column align="center" prop="reimbursement" label="实际报销数量">
+              </el-table-column>
+              <el-table-column align="center" label="数量占比">
+                <template slot-scope="scope">{{ scope.row.proportion }} <span v-if="scope.row.proportion != ''">%</span>
+                </template>
+              </el-table-column>
+              <el-table-column align="center" label="实际报销金额">
+                <template slot-scope="scope">{{ scope.row.reimbursementprc }}<span
+                    v-if="scope.row.reimbursementprc != ''">元</span></template>
+              </el-table-column>
+              <el-table-column align="center" width="150" label="实际报销金额占比">
+                <template slot-scope="scope">{{ scope.row.reimbursementamount }}<span
+                    v-if="scope.row.reimbursementamount != ''">%</span></template>
+              </el-table-column>
+              <el-table-column align="center" label="标准金额">
+                <template slot-scope="scope">{{ scope.row.standardamount }}<span
+                    v-if="scope.row.standardamount != ''">元</span></template>
+              </el-table-column>
+              <el-table-column align="center" label="超标总额">
+                <template slot-scope="scope">{{ scope.row.totaloverstandard }}<span
+                    v-if="scope.row.totaloverstandard != ''">元</span></template>
+              </el-table-column>
+              <el-table-column align="center" label="超标占比">
+                <template slot-scope="scope">{{ scope.row.standard }}<span v-if="scope.row.standard != ''">%</span>
+                </template>
+              </el-table-column>
+            </el-table>
+          </div>
+          <div class="tables" v-show="vatypes == true">
+            <div class="tabtop">
+              实际报销差旅费用分析表
+            </div>
+            <el-table id="out-tableones" :header-cell-style="{background:'#f6f6f6',color:'#666'}" border=""
+                      :data="reimbursements" :span-method="objectSpanMethod" style="width: 100%;">
+              <el-table-column label="项目" align="center">
+                <template slot-scope="scope">{{ sename(scope.row.name) }}</template>
+              </el-table-column>
+              <el-table-column align="center" prop="charges" label="收费项">
+              </el-table-column>
+              <el-table-column align="center" prop="reimbursement" label="实际报销数量">
+              </el-table-column>
+              <el-table-column align="center" label="同比">
+                <template slot-scope="scope">{{ scope.row.rearyear }}<span v-if="scope.row.rearyear != ''">%</span>
+                </template>
+              </el-table-column>
+              <el-table-column align="center" label="环比">
+                <template slot-scope="scope">{{ scope.row.reonthmonth }}<span v-if="scope.row.reonthmonth != ''">%</span>
+                </template>
+              </el-table-column>
+              <el-table-column align="center" width="150" label="实际报销金额">
+                <template slot-scope="scope">{{ scope.row.reimbursementamount }}<span
+                    v-if="scope.row.reimbursementamount != ''">元</span></template>
+              </el-table-column>
+              <el-table-column align="center" label="同比">
+                <template slot-scope="scope">{{ scope.row.amaryear }}<span v-if="scope.row.amaryear != ''">%</span>
+                </template>
+              </el-table-column>
+              <el-table-column align="center" label="环比">
+                <template slot-scope="scope">{{ scope.row.amonthmonth }}<span v-if="scope.row.amonthmonth != ''">%</span>
+                </template>
+              </el-table-column>
+            </el-table>
           </div>
         </div>
-        <div class="boxls" v-show="vatypes == false">
-          <div class="boxlsox">
-            <span class="iconfont boxbig" @click="initChartsts('chart_s')">&#xe607;</span>
-            <div class="chartsty" ref="chart_s"></div>
-          </div>
-          <div class="boxlsox">
-            <span class="iconfont boxbig" @click="initChartsts('chart_reason')">&#xe607;</span>
-            <div class="chartsty" ref="chart_reason"></div>
-          </div>
-        </div>
-        <div class="tables" v-show="vatypes == true">
-          <div class="tabtop">
-            差旅费用总量分析
-          </div>
-          <el-table id="out-tableone" :header-cell-style="{background:'#f6f6f6',color:'#666'}" border=""
-                    :data="travelexpenses" :span-method="objectSpanMethod" style="width: 100%;">
-            <el-table-column label="项目" align="center">
-              <template slot-scope="scope">{{ renames(scope.row.name) }}</template>
-            </el-table-column>
-            <el-table-column align="center" prop="charges" label="收费项">
-            </el-table-column>
-            <el-table-column align="center" prop="reimbursement" label="实际报销数量">
-            </el-table-column>
-            <el-table-column align="center" label="数量占比">
-              <template slot-scope="scope">{{ scope.row.proportion }} <span v-if="scope.row.proportion != ''">%</span>
-              </template>
-            </el-table-column>
-            <el-table-column align="center" label="实际报销金额">
-              <template slot-scope="scope">{{ scope.row.reimbursementprc }}<span
-                  v-if="scope.row.reimbursementprc != ''">元</span></template>
-            </el-table-column>
-            <el-table-column align="center" width="150" label="实际报销金额占比">
-              <template slot-scope="scope">{{ scope.row.reimbursementamount }}<span
-                  v-if="scope.row.reimbursementamount != ''">%</span></template>
-            </el-table-column>
-            <el-table-column align="center" label="标准金额">
-              <template slot-scope="scope">{{ scope.row.standardamount }}<span
-                  v-if="scope.row.standardamount != ''">元</span></template>
-            </el-table-column>
-            <el-table-column align="center" label="超标总额">
-              <template slot-scope="scope">{{ scope.row.totaloverstandard }}<span
-                  v-if="scope.row.totaloverstandard != ''">元</span></template>
-            </el-table-column>
-            <el-table-column align="center" label="超标占比">
-              <template slot-scope="scope">{{ scope.row.standard }}<span v-if="scope.row.standard != ''">%</span>
-              </template>
-            </el-table-column>
-          </el-table>
-        </div>
-        <div class="tables" v-show="vatypes == true">
-          <div class="tabtop">
-            实际报销差旅费用分析表
-          </div>
-          <el-table id="out-tableones" :header-cell-style="{background:'#f6f6f6',color:'#666'}" border=""
-                    :data="reimbursements" :span-method="objectSpanMethod" style="width: 100%;">
-            <el-table-column label="项目" align="center">
-              <template slot-scope="scope">{{ renames(scope.row.name) }}</template>
-            </el-table-column>
-            <el-table-column align="center" prop="charges" label="收费项">
-            </el-table-column>
-            <el-table-column align="center" prop="reimbursement" label="实际报销数量">
-            </el-table-column>
-            <el-table-column align="center" label="同比">
-              <template slot-scope="scope">{{ scope.row.rearyear }}<span v-if="scope.row.rearyear != ''">%</span>
-              </template>
-            </el-table-column>
-            <el-table-column align="center" label="环比">
-              <template slot-scope="scope">{{ scope.row.reonthmonth }}<span v-if="scope.row.reonthmonth != ''">%</span>
-              </template>
-            </el-table-column>
-            <el-table-column align="center" width="150" label="实际报销金额">
-              <template slot-scope="scope">{{ scope.row.reimbursementamount }}<span
-                  v-if="scope.row.reimbursementamount != ''">元</span></template>
-            </el-table-column>
-            <el-table-column align="center" label="同比">
-              <template slot-scope="scope">{{ scope.row.amaryear }}<span v-if="scope.row.amaryear != ''">%</span>
-              </template>
-            </el-table-column>
-            <el-table-column align="center" label="环比">
-              <template slot-scope="scope">{{ scope.row.amonthmonth }}<span v-if="scope.row.amonthmonth != ''">%</span>
-              </template>
-            </el-table-column>
-          </el-table>
+        <div class="no-data" v-else>
+                <no-data  class="nodata"></no-data>
         </div>
       </div>
       <div v-show="drawer" class="flobog" @click="drawer = false">
@@ -193,9 +199,9 @@ import travel_report from "./travel_report";
 import XLSX from "xlsx";
 import mergeTableRow from '../../../static/js/hbtablie.js'
 import Travel_report from "./travel_report";
-
+import NoData from "@/components/common/noData";
 export default {
-  components: {Travel_report},
+  components: {Travel_report,NoData},
   data() {
     return {
       components: {travel_report},
@@ -262,7 +268,8 @@ export default {
       tarlist_id: 1,
       details: [],
       compareMap: [],
-      reasonMap: []
+      reasonMap: [],
+      dataFlag:false,
     }
   },
   mounted() {
@@ -347,19 +354,6 @@ export default {
         type: 'success'
       });
       // return wbout;
-    },
-    renames(na) {
-      if (na == 3) {
-        return '保险'
-      } else if (na == 4) {
-        return '酒店'
-      } else if (na == 10) {
-        return '火车'
-      } else if (na == 13) {
-        return '叫车'
-      } else if (na == 1) {
-        return '机票'
-      }
     },
     objectSpanMethod({
                        row,
@@ -496,6 +490,7 @@ export default {
         if (res.code == 200) {
           let dt = res.data;
           if (res.data == null || res.data.length == 0) {
+            this.dataFlag = true
             this.$message({
               message: '数据为空！',
               type: 'warning'
@@ -694,6 +689,20 @@ export default {
         return '叫车'
       }
     },
+    //   renames(na) {
+    //   if (na == 3) {
+    //     return '保险'
+    //   } else if (na == 4) {
+    //     return '酒店'
+    //   } else if (na == 10) {
+    //     return '火车'
+    //   } else if (na == 13) {
+    //     return '叫车'
+    //   } else if (na == 1) {
+    //     return '机票'
+    //   }
+    // },
+
     compare(property) {
       return function (a, b) {
         var value1 = a[property];
@@ -1143,7 +1152,12 @@ export default {
         }
       }
     }
-
+    .no-data{
+      position: relative;
+      .nodata{
+        min-width: 1060px;
+      }
+    }
     .boxls {
       width: 100%;
       margin-top: 10px;

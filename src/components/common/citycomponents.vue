@@ -231,11 +231,12 @@
 				let address = citys.addressAirportAll; //所有机场
 				this.searlist = [];
 				for (let i in address) {
-					if (address[i].airportCName.indexOf(va) != -1 || address[i].airportCode.indexOf(va) != -1) {
-						this.searlist.push({
+					// if (address[i].airportCName.indexOf(va) != -1 || address[i].airportCode.indexOf(va) != -1) {
+						if(address[i].airportCName.indexOf(va) != -1 || address[i].airportCode.indexOf(va) != -1 || address[i].cityCName.indexOf(va) != -1 || address[i].cityFirstSpell.indexOf(va) != -1 || address[i].citySpell.indexOf(va) != -1 ){
+							this.searlist.push({
 							py: address[i].citySpell,
 							id: address[i].airportCode,
-							name: address[i].airportCName,
+							name: address[i].airportCName
 						})
 					}
 				}

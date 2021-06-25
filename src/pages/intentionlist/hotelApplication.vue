@@ -46,7 +46,7 @@
               出差预定
             </div>
             <div class="inputsflor">&emsp;
-              <el-select v-model="bookingType" placeholder="请选择" @change="chans" class="select">
+              <el-select v-model="bookingType" placeholder="请选择" @change="chans" @visible-change="chansClick" class="select">
                 <el-option
                     v-for="item in Booking"
                     :key="item.id"
@@ -57,21 +57,23 @@
             </div>
           </div>
           <div class="vlislit" v-if="popvidshow">
-            <div class='popContainer'></div>
-            <div class="talist" v-for="(item, index) in stlistlist" :key="index"
-                 @click="adduslit(item)">
-              <div class="tl_left">
-                <div class="tl_tops">
-                  <div class="tl_rightl">[酒店]</div>
-                  <div class="tl_rights">{{ item.citys.cityName }}</div>
+            <div class='popContainer' @click="popvidFals()"></div>
+            <div class="talistList">
+              <div class="talist" v-for="(item, index) in stlistlist" :key="index"
+                  @click="adduslit(item)">
+                <div class="tl_left">
+                  <div class="tl_tops">
+                    <div class="tl_rightl">[酒店]</div>
+                    <div class="tl_rights">{{ item.citys.cityName }}</div>
+                  </div>
+                  <div class="tl_bots" v-if="item.citys != null">
+                    {{ item.citys.inDate.substring(0, 10) }}&emsp;入住&emsp;{{ item.citys.outDate.substring(0, 10) }}&emsp;离店
+                  </div>
+                  <div class="tl_botsb">出差事由：{{ item.reson }}</div>
                 </div>
-                <div class="tl_bots" v-if="item.citys != null">
-                  {{ item.citys.inDate.substring(0, 10) }}&emsp;入住&emsp;{{ item.citys.outDate.substring(0, 10) }}&emsp;离店
+                <div class="tl_right">
+                  <div class="tldv">确定</div>
                 </div>
-                <div class="tl_botsb">出差事由：{{ item.reson }}</div>
-              </div>
-              <div class="tl_right">
-                <div class="tldv">确定</div>
               </div>
             </div>
           </div>
@@ -123,7 +125,7 @@
             <div class="box_lef">
               星级要求
             </div>&emsp;
-            <el-select v-model="hotelStarsValue" placeholder="请选择" class="select">
+            <el-select v-model="hotelStarsValue" placeholder="请选择" class="select" @change="hotChang">
               <el-option
                   v-for="item in hotelStars"
                   :key="item.value"
@@ -170,10 +172,32 @@
             <div class="box_lef">
               入住人
             </div>
-            <div class="inputsflor" @click="drawer = true">&emsp;
+            <div class="inputsflor" @click="drawerClick">&emsp;
               <div class="inconts" v-if="busslist.length == 0">请选择入住人员</div>
               <div class="inplis" v-if="busslist.length > 0">{{ buslis(busslist) }}</div>
             </div>
+          </div>
+          <div class="boxiput">
+            <div class="iconfont icon">
+              &#xe8a4;
+            </div>
+            <div class="box_lef">
+              联系人
+            </div>&emsp;
+            <div class="inputsflor">
+            <el-input v-model="contactPersonName" placeholder="请填写联系人姓名" maxlength="20"></el-input>
+            </div>
+          </div>
+          <div class="boxiput">
+            <div class="iconfont icon">
+              &#xe8a4;
+            </div>
+            <div class="box_left_iphone">
+              联系人电话
+            </div>
+            <div class="inputsflor">
+            <el-input v-model="contactPersonIphone" placeholder="请填写联系人电话" maxlength="11"></el-input>
+          </div>
           </div>
           <div class="boxiput">
             <div class="iconfont icon">
@@ -206,10 +230,10 @@
 </template>
 
 <script>
-import passage from '@/components/common/passenger'
-import addcity from '@/components/common/applicataddcity'
-import citysearchh from '@/components/common/citycomponents_h.vue';
-
+import passage from "@/components/common/passenger";
+import addcity from "@/components/common/applicataddcity";
+import citysearchh from "@/components/common/citycomponents_h.vue";
+import { namest } from "@/utils/common-filters";
 export default {
   data() {
     return {
@@ -222,9 +246,10 @@ export default {
       appli: {}, //当前选择申请人
       loading: false,
       appcatlist: [], //行程
-      bots: { //使用props替换掉本来默认的lable和value 的键值
-        value: 'id',
-        label: 'text',
+      bots: {
+        //使用props替换掉本来默认的lable和value 的键值
+        value: "id",
+        label: "text",
         checkStrictly: true, //可以选父级
         emitPath: false,
       },
@@ -232,107 +257,131 @@ export default {
       apprvCost: [],
       drawelist: [], //盒子内容
       datatimes: [],
-      remarks: '', //备注
-      hotelStars: [{
-        label: '二星级/经济',
-        value: 1
-      }, {
-        label: '三星级/舒适',
-        value: 2
-      }, {
-        label: '四星级/高档',
-        value: 3
-      }, {
-        label: '五星级及以上/豪华',
-        value: 4
-      }], //酒店星级选择
-      hotelStarsValue: '', //当前选择的星级
-      hotelName: '', //酒店名称
-      hotelQuantity: '',
+      remarks: "", //备注
+      hotelStars: [
+        {
+          label: "二星级/经济",
+          value: 1,
+        },
+        {
+          label: "三星级/舒适",
+          value: 2,
+        },
+        {
+          label: "四星级/高档",
+          value: 3,
+        },
+        {
+          label: "五星级及以上/豪华",
+          value: 4,
+        },
+      ], //酒店星级选择
+      hotelStarsValue: "", //当前选择的星级
+      hotelName: "", //酒店名称
+      hotelQuantity: "",
       price: {
-        end: '',
-        sta: ''
+        end: "",
+        sta: "",
       },
       hotelBedType: [
         {
-          label: '大床',
-          value: 1
+          label: "大床",
+          value: 1,
         },
         {
-          label: '双床',
+          label: "双床",
           value: 2,
-        }, {
-          label: '不限',
-          value: 3
-        }
+        },
+        {
+          label: "不限",
+          value: 3,
+        },
       ],
-      hotelBedTypeValue: '', //当前选择的床型
+      hotelBedTypeValue: "", //当前选择的床型
       oldtime: 1,
       userid_list: [], //出差的人员
       busslist: [], //出差人员
       applicattime: [], //出差时间
       drawer: false,
-      cause: [{
-        name: '因公',
-        value: 1,
-        id: 1
-      }, {
-        name: '因私',
-        value: 2,
-        id: 2
-      }],
-      Booking: [{
-        label: '否',
-        id: 0
-      }, {
-        label: '是',
-        id: 1
-      }],
-      hotcltys: '', //目的地城市
-      bookingType: '',  //当前选择的出差预订
+      cause: [
+        {
+          name: "因公",
+          value: 1,
+          id: 1,
+        },
+        {
+          name: "因私",
+          value: 2,
+          id: 2,
+        },
+      ],
+      Booking: [
+        {
+          label: "否",
+          id: 0,
+        },
+        {
+          label: "是",
+          id: 1,
+        },
+      ],
+      hotcltys: "", //目的地城市
+      bookingType: "", //当前选择的出差预订
       popvidshow: false,
       dialogVisible: false,
       passengers: [], //出行人员
-      mokksli: '',
+      mokksli: "",
       citylist: [],
       isbeforehand: [], //是否使用出差预定
-      businesstripType: '', //因公 or 因私
+      businesstripType: "", //因公 or 因私
       pickerOptions: {
-        disabledDate: time => {
+        disabledDate: (time) => {
           return this.dealDisabledDate(time);
         },
-      }
-    }
+      },
+      contactPersonName:'',
+      contactPersonIphone:'',
+    };
   },
   components: {
     passage,
     addcity,
-    citysearchh
+    citysearchh,
+  },
+  filters: {
+    namest,
   },
   mounted() {
-    let datas = JSON.parse(sessionStorage.getItem('userinfost')); //检验是否是登录状态
+    let datas = JSON.parse(sessionStorage.getItem("userinfost")); //检验是否是登录状态
     if (datas) {
+      this.contactPersonName = datas.user.name
+      this.contactPersonIphone = datas.user.phone
       if (this.busslist.length == 0) {
-        this.busslist = [{
-          istrue: 1,
-          passengerNo: datas.passengerVo.id, //暂时没有该参数
-          userName: datas.user.name,
-          userId: datas.user.id,
-          deptName: datas.user.deptName,
-          deptId: datas.user.deptId,
-          phone: datas.user.phone,
-          costcenterId: datas.passengerVo.costcenterId,
-          costcenterName: datas.passengerVo.costcenterName
-        }]
-        this.applicantlist = [{
-          userId: datas.user.id,
-          userName: datas.user.name,
-          deptName: datas.user.deptName,
-          deptId: datas.user.deptId,
-          costcenterId: datas.passengerVo.costcenterId,
-          costcenterName: datas.passengerVo.costcenterName,
-          label: datas.user.name + '（' + datas.passengerVo.costcenterName + '）'
-        }]
+        this.busslist = [
+          {
+            istrue: 1,
+            passengerNo: datas.passengerVo.id, //暂时没有该参数
+            userName: datas.user.name,
+            userId: datas.user.id,
+            deptName: datas.user.deptName,
+            deptId: datas.user.deptId,
+            phone: datas.user.phone,
+            costcenterId: datas.passengerVo.costcenterId,
+            costcenterName: datas.passengerVo.costcenterName,
+          },
+        ];
+        this.applicantlist = [
+          {
+            userId: datas.user.id,
+            userName: datas.user.name,
+            deptName: datas.user.deptName,
+            deptId: datas.user.deptId,
+            costcenterId: datas.passengerVo.costcenterId,
+            costcenterName: datas.passengerVo.costcenterName,
+            label:
+              datas.user.name + "（" + datas.passengerVo.costcenterName + "）",
+          },
+        ];
         this.appli = this.applicantlist[0];
       }
     }
@@ -342,7 +391,8 @@ export default {
     this.oldtimsck(); //默认多少天
   },
   methods: {
-    judgment() { //价格范围失去焦点时触发
+    judgment() {
+      //价格范围失去焦点时触发
       let end = this.price.end;
       let sta = this.price.sta;
       if (end < sta) {
@@ -351,67 +401,92 @@ export default {
         this.price.sta = x;
       }
     },
-    async addHotel() { //提交
+    async addHotel() {
+      //提交
       let businesstripType = this.businesstripType; //申请类型
       let bookingType = this.bookingType; //出差预订
       let hotcltys = this.hotcltys; //入住城市
-      let hotelName = this.hotelName;  // 酒店名称
+      let hotelName = this.hotelName; // 酒店名称
       let applicattime = this.applicattime; //入离日期
       let hotelStarsValue = this.hotelStarsValue; //星级
       let hotelBedTypeValue = this.hotelBedTypeValue; //床型
-      let priceSta = this.price.sta;  //起始价格
-      let priceEnd = this.price.end;  //终止价格
-      let busslist = this.busslist;  //入住人员
+      let priceSta = this.price.sta; //起始价格
+      let priceEnd = this.price.end; //终止价格
+      let busslist = this.busslist; //入住人员
       let hotelQuantity = this.hotelQuantity; //酒店房间数量
-      let remarks = this.remarks;  //备注
-      if (businesstripType === '' || businesstripType == null) {
-        this.$message.warning('请选择申请类型！');
+      let remarks = this.remarks; //备注
+      if (businesstripType === "" || businesstripType == null) {
+        this.$message.warning("请选择申请类型！");
         return;
       }
 
-      if ((bookingType === '' || bookingType == null) && businesstripType === 1) {
-        this.$message.warning('请选择出差预订！')
+      if (
+        (bookingType === "" || bookingType == null) &&
+        businesstripType === 1
+      ) {
+        this.$message.warning("请选择出差预订！");
         return;
       }
-      if (hotcltys === '' || hotcltys == null) {
-        this.$message.warning('请选择入住城市');
+      if (hotcltys === "" || hotcltys == null) {
+        this.$message.warning("请选择入住城市");
         return;
       }
-      if (hotelName === '' || hotelName == null) {
-        this.$message.warning('请输出酒店名称');
-        return;
-      }
-
-      if (hotelStarsValue === '' || hotelStarsValue == null) {
-        this.$message.warning('请选择您想要入住酒店的星级');
-        return;
-      }
-
-      if (hotelBedTypeValue === '' || hotelBedTypeValue == null) {
-        this.$message.warning('请选择您对床位的要求');
+      if (hotelName === "" || hotelName == null) {
+        this.$message.warning("请输出酒店名称");
         return;
       }
 
-      if (priceSta === '' || priceSta == null || priceEnd === '' || priceEnd == null) {
-        this.$message.warning('请输入您对酒店预期的价格');
+      if (hotelStarsValue === "" || hotelStarsValue == null) {
+        this.$message.warning("请选择您想要入住酒店的星级");
         return;
       }
 
-      if (hotelQuantity === '' || hotelQuantity == null) {
-        this.$message.warning('请输入您需要的房间数量');
+      if (hotelBedTypeValue === "" || hotelBedTypeValue == null) {
+        this.$message.warning("请选择您对床位的要求");
         return;
       }
-      let travelers = [{
-        name: busslist[0].userName,
-        cardNo: busslist[0].cardNo,
-        cardType: busslist[0].cardType,
-        passengerNo: busslist[0].passengerNo,
-        employeeType: 1,
-        phone: busslist[0].phone,
-        costcenterName: busslist[0].costcenterName,
-        deptName: busslist[0].deptName
-      }];
-      let dat = {}
+
+      if (
+        priceSta === "" ||
+        priceSta == null ||
+        priceEnd === "" ||
+        priceEnd == null
+      ) {
+        this.$message.warning("请输入您对酒店预期的价格");
+        return;
+      }
+
+      if (hotelQuantity === "" || hotelQuantity == null) {
+        this.$message.warning("请输入您需要的房间数量");
+        return;
+      }
+        let travelers = []
+      for (let i = 0; i < busslist.length; i++) {
+        // const element = array[index];
+         travelers.push( {
+          name: busslist[i].userName,
+          cardNo: busslist[i].cardNo,
+          cardType: busslist[i].cardType,
+          passengerNo: busslist[i].passengerNo,
+          employeeType: 1,
+          phone: busslist[i].phone,
+          costcenterName: busslist[i].costcenterName,
+          deptName: busslist[i].deptName,
+        })
+      }
+      // let travelers = [
+      //   {
+      //     name: busslist[0].userName,
+      //     cardNo: busslist[0].cardNo,
+      //     cardType: busslist[0].cardType,
+      //     passengerNo: busslist[0].passengerNo,
+      //     employeeType: 1,
+      //     phone: busslist[0].phone,
+      //     costcenterName: busslist[0].costcenterName,
+      //     deptName: busslist[0].deptName,
+      //   },
+      // ];
+      let dat = {};
       if (businesstripType === 1 && bookingType === 1) {
         dat = {
           arrivalDate: applicattime[0],
@@ -424,9 +499,28 @@ export default {
           hotelName: hotelName,
           bedTypeName: hotelBedTypeValue,
           travelType: businesstripType,
-          travelNo: this.stlistlist[0].citys.travelNo,
+          travelNo: this.passengers[0].travelNo,
           remark: remarks,
-        }
+          contactName: this.contactPersonName, //联系人
+          contactNumber: this.contactPersonIphone,
+        };
+
+        // dat = {
+        //   travelType: 1,
+        //   city: "厦门",
+        //   hotelName: "意向单酒店微信",
+        //   travelNo: "1402495207659065344",
+        //   arrivalDate: "2021-06-10",
+        //   departureDate: "2021-06-11",
+        //   hotelLevel: 1,
+        //   bedTypeName: "大床",
+        //   lowestPrice: "12",
+        //   highestPrice: "23",
+        //   bookCount: "1",
+        //   remark: "得到",
+        //   contactName: "测试九九",
+        //   contactNumber: "13632794599",
+        // };
       } else {
         dat = {
           arrivalDate: applicattime[0],
@@ -440,19 +534,20 @@ export default {
           bedTypeName: hotelBedTypeValue,
           travelType: businesstripType,
           remark: remarks,
-          travelers: JSON.stringify(travelers)
-        }
+          travelers: JSON.stringify(travelers),
+          contactName: this.contactPersonName, //联系人
+          contactNumber: this.contactPersonIphone,
+        };
       }
       let res = await this.$api.intentionlist.submitHolRequire(dat);
       if (res.code == 200) {
         this.$message.success(res.message);
         this.$router.push({
-          path: '/intentList',
+          path: "/intentList",
           query: {
-            id: 4
-          }
-        })
-
+            id: 4,
+          },
+        });
       }
     },
     listchangh(va) {
@@ -463,7 +558,7 @@ export default {
       try {
         this.stlistlist = [];
         let res = await this.$api.home.getAgreeApprvTask({
-          type: 3
+          type: 3,
         });
         if (res.code == 200) {
           this.appartasklist = res.data.concat(this.appartasklist);
@@ -483,34 +578,38 @@ export default {
                   deptId: dat[i].deptId, //部门id
                   costId: dat[i].costId, //成本中心id
                   costName: dat[i].costName, //成本中心名称
-                  travelNo: dat[i].travelNo //出差单号
-                }
+                  travelNo: dat[i].travelNo, //出差单号
+                },
               });
             }
           }
         } else {
           this.$message({
             message: res.message,
-            type: 'warning'
+            type: "warning",
           });
         }
         this.stlistlist.sort(function (a, b) {
-          return a.ctime < b.ctime ? 1 : -1
+          return a.ctime < b.ctime ? 1 : -1;
         }); //从大到小排序
       } catch (e) {
-        console.log(e)
+        console.log(e);
         //TODO handle the exception
       }
     },
     adduslit(item) {
-
       //选择当前出差单
       let vehicleIds = 0;
-      this.applicattime = [item.citys.inDate.substring(0, 10), item.citys.outDate.substring(0, 10)];
-      this.citylist = [{
-        id: item.citys.cityCode,
-        name: item.citys.cityName
-      }];
+      this.applicattime = [
+        item.citys.inDate.substring(0, 10),
+        item.citys.outDate.substring(0, 10),
+      ];
+      this.citylist = [
+        {
+          id: item.citys.cityCode,
+          name: item.citys.cityName,
+        },
+      ];
       this.hot_cyval = item.citys.remark;
       this.hot_cyvals = item.citys.remark;
 
@@ -526,38 +625,64 @@ export default {
           userName: item.nams[i].userName,
           userId: item.nams[i].id,
           vehicleId: item.id, //事前出差单id
-          vehicleIdBack: vehicleIds //事前往返 返回id
+          vehicleIdBack: vehicleIds, //事前往返 返回id
+          travelNo:item.sit.travelNo
         });
-      }
 
+      }
+       this.busslist =  userlis
       this.issera = true;
       this.passengers = userlis;
       this.mokksli = item.sit;
       this.oldtimsck();
     },
+    hotChang(val){
+      console.log('val---',val)
+    },
     chans() {
       if (this.bookingType == 0) {
         this.popvidshow = false;
         this.issera = false;
+        // for (let i = 0; i < this.busslist.length; i++) {
+          // this.busslist = []
+          
+        // }
       } else if (this.bookingType == 1) {
         this.popvidshow = true;
         if (this.stlistlist.length === 0) {
           this.popvidshow = false;
-          this.$message.warning('没有合适的出差申请！')
+          this.$message.warning("没有合适的出差申请！");
           this.bookingType = 0;
         }
       }
-
-
     },
-    namest(it) {
-      var su = [];
-      for (let k in it) {
-        su.push(it[k].name)
+    drawerClick(){
+      this.drawer = this.bookingType == 0 ? true : false
+    },
+    chansClick(va) {
+      if (va == true) {
+        if (this.bookingType == 1) {
+          this.bookingType = "";
+        }
+      } else {
+        if (this.issera) {
+          this.bookingType = this.issera ? 1 : 0;
+        }
       }
-      return su.join(',')
     },
-    add(a, b) { //经纬度的 加减乘除
+    popvidFals() {
+      this.popvidshow = false;
+      this.bookingType = this.issera ? 1 : 0;
+    },
+    // namest(it) {
+    //   var su = [];
+    //   for (let k in it) {
+    //     su.push(it[k].name)
+    //   }
+    //   return su.join(',')
+    // },
+    add(a, b) {
+      //经纬度的 加减乘除
       var c, d, e;
       try {
         c = a.toString().split(".")[1].length;
@@ -569,23 +694,29 @@ export default {
       } catch (f) {
         d = 0;
       }
-      return e = Math.pow(10, Math.max(c, d)), (this.mul(a, e) + this.mul(b, e)) / e;
+      return (
+        (e = Math.pow(10, Math.max(c, d))),
+        (this.mul(a, e) + this.mul(b, e)) / e
+      );
     },
-    mul(a, b) { //乘法
+    mul(a, b) {
+      //乘法
       var c = 0,
-          d = a.toString(),
-          e = b.toString();
+        d = a.toString(),
+        e = b.toString();
       try {
         c += d.split(".")[1].length;
-      } catch (f) {
-      }
+      } catch (f) {}
       try {
         c += e.split(".")[1].length;
-      } catch (f) {
-      }
-      return Number(d.replace(".", "")) * Number(e.replace(".", "")) / Math.pow(10, c);
+      } catch (f) {}
+      return (
+        (Number(d.replace(".", "")) * Number(e.replace(".", ""))) /
+        Math.pow(10, c)
+      );
     },
-    passuser(list) { //选择当前人员
+    passuser(list) {
+      //选择当前人员
       this.drawer = false;
       let that = this;
       that.userid_list = list;
@@ -597,34 +728,37 @@ export default {
         that.userconlist.push({
           name: that.busslist[k].userName,
           passengerNo: that.busslist[k].passengerNo,
-          ist: 0 //0是未选中状态
-        })
+          ist: 0, //0是未选中状态
+        });
         that.costlist.push({
           costcenterName: that.busslist[k].costcenterName,
           costcenterId: that.busslist[k].costcenterId,
           bn: bnsi,
           price: 0,
-          username: [{
-            name: that.busslist[k].userName,
-            passengerNo: that.busslist[k].passengerNo
-          }],
-        })
+          username: [
+            {
+              name: that.busslist[k].userName,
+              passengerNo: that.busslist[k].passengerNo,
+            },
+          ],
+        });
       }
       if (bnsi * that.busslist.length != 100) {
-        let sit = 100 - (that.busslist.length * bnsi); //余数
+        let sit = 100 - that.busslist.length * bnsi; //余数
         for (var i = 0; i < sit; i++) {
           that.costlist[i].bn = bnsi + 1;
         }
-
       }
 
-      let datas = JSON.parse(sessionStorage.getItem('userinfost'));
-      ;
+      let datas = JSON.parse(sessionStorage.getItem("userinfost"));
       that.attdepartment = datas.user.deptName;
       that.applicantlist = [];
       for (let k in that.busslist) {
-        if (that.busslist[k].costcenterName != '' && that.busslist[k].costcenterName != null && that.busslist[k].costcenterName !=
-            undefined) {
+        if (
+          that.busslist[k].costcenterName != "" &&
+          that.busslist[k].costcenterName != null &&
+          that.busslist[k].costcenterName != undefined
+        ) {
           that.applicantlist.push({
             userName: that.busslist[k].userName,
             userId: that.busslist[k].userId,
@@ -632,8 +766,12 @@ export default {
             deptId: that.busslist[k].deptId,
             costcenterId: that.busslist[k].costcenterId,
             costcenterName: that.busslist[k].costcenterName,
-            label: that.busslist[k].userName + '（' + that.busslist[k].costcenterName + '）'
-          })
+            label:
+              that.busslist[k].userName +
+              "（" +
+              that.busslist[k].costcenterName +
+              "）",
+          });
         }
       }
       let ops = false;
@@ -651,8 +789,9 @@ export default {
           userId: datas.user.id,
           costcenterId: datas.passengerVo.costcenterId,
           costcenterName: datas.passengerVo.costcenterName,
-          label: datas.user.name + '（' + datas.passengerVo.costcenterName + '）'
-        })
+          label:
+            datas.user.name + "（" + datas.passengerVo.costcenterName + "）",
+        });
       }
       that.appli = {
         userId: datas.user.id,
@@ -660,16 +799,17 @@ export default {
         deptName: datas.user.deptName,
         deptId: datas.user.deptId,
         costcenterId: datas.passengerVo.costcenterId,
-        costcenterName: datas.passengerVo.costcenterName
-      }
+        costcenterName: datas.passengerVo.costcenterName,
+      };
     },
-    setName(datas, value) { //遍历树  获取id数组
+    setName(datas, value) {
+      //遍历树  获取id数组
       for (var i in datas) {
         if (datas[i].id == value) {
           this.conobj = {
             id: datas[i].id,
-            text: datas[i].text
-          }
+            text: datas[i].text,
+          };
           break;
         }
         if (datas[i].children) {
@@ -690,32 +830,36 @@ export default {
       for (let k in list) {
         li.push(list[k].userName);
       }
-      return li.join(',')
+      return li.join(",");
     },
     applick() {
       this.datatimes = this.applicattime;
       this.appcatlist = []; //清空行程
-      this.oldtimsck()
+      this.oldtimsck();
     },
-    oldtimsck() { //计算多少天
+    oldtimsck() {
+      //计算多少天
       this.oldtime = this.count(this.applicattime[0], this.applicattime[1]); //多少天
     },
     count(ti, ts) {
       let date1 = new Date(ti);
       let date2 = new Date(ts);
-      let date = (date2.getTime() - date1.getTime()) / (1000 * 60 * 60 * 24); /*不用考虑闰年否*/
-      return date
+      let date =
+        (date2.getTime() - date1.getTime()) /
+        (1000 * 60 * 60 * 24); /*不用考虑闰年否*/
+      return date;
     },
-    routens() { //返回列表页面
+    routens() {
+      //返回列表页面
       this.$router.go(-1); //返回上一层
     },
     dealDisabledDate(time) {
       //禁掉小于当前日期
       var times = Date.now();
       return time.getTime() < times - 8.64e7;
-    }
-  }
-}
+    },
+  },
+};
 </script>
 
 <style scoped lang="less">
@@ -737,8 +881,8 @@ export default {
   background-image: none;
   border: none;
   border-radius: 4px;
-  -webkit-transition: border-color .2s cubic-bezier(.645, .045, .355, 1);
-  transition: border-color .2s cubic-bezier(.645, .045, .355, 1);
+  -webkit-transition: border-color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition: border-color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
 }
 
 /deep/ .el-input__inner {
@@ -755,8 +899,8 @@ export default {
   line-height: 40px;
   outline: 0;
   padding: 0 15px 0 0;
-  -webkit-transition: border-color .2s cubic-bezier(.645, .045, .355, 1);
-  transition: border-color .2s cubic-bezier(.645, .045, .355, 1);
+  -webkit-transition: border-color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition: border-color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
   width: 100%;
 }
 
@@ -818,76 +962,83 @@ export default {
     z-index: 2801;
     cursor: pointer;
     overflow: auto;
-
-    .talist {
+    .talistList {
       position: fixed;
-      width: 300px;
-      border-top: 1px solid #e5e5e5;
-      padding: 10px 0;
-      background: #FFFFFF;
-      display: flex;
       z-index: 300;
-
-      .tl_left {
-        height: 60px;
-        width: 78%;
-        margin-left: 2%;
-
-        .tl_tops {
-          display: flex;
-          width: 100%;
-          height: 25px;
-          font-size: 12px;
-          line-height: 25px;
-          color: #333333;
-
-          .tl_rightl {
-            width: 20%;
-          }
-
-          .tl_rights {
-            width: 80%;
-            margin-left: 5px;
-            overflow: hidden;
-            text-overflow: ellipsis; //文本溢出显示省略号
-            white-space: nowrap; //文本不会换行
-          }
-        }
-
-        .tl_bots {
-          width: 100%;
-          height: 20px;
-          font-size: 12px;
-          line-height: 15px;
-        }
-
-        .tl_botsb {
-          width: 100%;
-          height: 20px;
-          font-size: 12px;
-          line-height: 15px;
-          overflow: hidden;
-          text-overflow: ellipsis;
-          white-space: nowrap;
-        }
+      max-height: 300px;
+      overflow-y: scroll;
+      &::-webkit-scrollbar-thumb {
+        background-color: #fff !important;
       }
-
-      .tl_right {
-        width: 20%;
-        height: 60px;
+      .talist {
+        width: 300px;
+        border-top: 1px solid #e5e5e5;
+        padding: 10px 0;
+        background: #ffffff;
         display: flex;
-        align-items: center;
-        justify-content: center;
+        margin-bottom: 10px;
 
-        .tldv {
-          width: 50px;
-          height: 25px;
-          line-height: 25px;
-          text-align: center;
-          font-size: 12px;
-          color: #e5e5e5;
-          background: #007aff;
-          border-radius: 30px;
+        .tl_left {
+          height: 60px;
+          width: 78%;
+          margin-left: 2%;
+
+          .tl_tops {
+            display: flex;
+            width: 100%;
+            height: 25px;
+            font-size: 12px;
+            line-height: 25px;
+            color: #333333;
+
+            .tl_rightl {
+              width: 20%;
+            }
+
+            .tl_rights {
+              width: 80%;
+              margin-left: 5px;
+              overflow: hidden;
+              text-overflow: ellipsis; //文本溢出显示省略号
+              white-space: nowrap; //文本不会换行
+            }
+          }
+
+          .tl_bots {
+            width: 100%;
+            height: 20px;
+            font-size: 12px;
+            line-height: 15px;
+          }
+
+          .tl_botsb {
+            width: 100%;
+            height: 20px;
+            font-size: 12px;
+            line-height: 15px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+          }
+        }
+
+        .tl_right {
+          width: 20%;
+          height: 60px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+
+          .tldv {
+            width: 50px;
+            height: 25px;
+            line-height: 25px;
+            text-align: center;
+            font-size: 12px;
+            color: #e5e5e5;
+            background: #007aff;
+            border-radius: 30px;
+          }
         }
       }
     }
@@ -903,7 +1054,7 @@ export default {
       height: 30px;
       display: flex;
       align-items: center;
-      color: #A0A0A0;
+      color: #a0a0a0;
 
       .apfirst {
         color: #000000;
@@ -933,7 +1084,7 @@ export default {
       width: 200%;
       margin-top: 20px;
       display: flex;
-      color: #5F5F5F;
+      color: #5f5f5f;
 
       .adflex {
         width: 50%;
@@ -943,9 +1094,9 @@ export default {
           width: 100%;
           line-height: 42px;
           border-radius: 3px;
-          color: #FFFFFF;
+          color: #ffffff;
           text-align: center;
-          background-color: #007AFF;
+          background-color: #007aff;
           cursor: pointer;
         }
 
@@ -965,32 +1116,44 @@ export default {
           display: flex;
           align-items: center;
 
-          .box_cen{
-            min-width: 80px;
+          .box_cen {
+            width: 80px;
             text-align: center;
           }
           .box_lef {
             width: 80px;
             text-align: left;
           }
-
+          .box_left_iphone {
+            width: 90px;
+            &>span{
+              margin-right: 10px;
+            }
+            &>span:nth-child(1){
+              color:#007AFF ;
+            }
+          }
+     
           .inputsflor {
             width: calc(100% - 130px);
             height: 42px;
             display: flex;
             cursor: pointer;
-
+             /deep/ .el-input {
+              flex: 1;
+              border: 0;
+            }
             input {
               width: 100%;
               border: 0;
             }
-
-            input::-webkit-input-placeholder {
-              /* 修改字体颜色 */
-              color: #e5e5e5;
-              /* 修改字号，默认继承input */
-              font-size: 14px;
-            }
+            
+            // input::-webkit-input-placeholder {
+            //   /* 修改字体颜色 */
+            //   color: #e5e5e5;
+            //   /* 修改字号，默认继承input */
+            //   font-size: 14px;
+            // }
 
             .datsto {
               font-size: 12px;
@@ -1027,7 +1190,7 @@ export default {
           line-height: 40px;
           width: calc(100% - 40px);
           margin: 0 20px;
-          border-bottom: 1px solid #F1F1F1;
+          border-bottom: 1px solid #f1f1f1;
 
           .coslipc {
             display: flex;

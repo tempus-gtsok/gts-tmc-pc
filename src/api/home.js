@@ -6,6 +6,18 @@ const noSecret = data => { //钉钉免登
 		data: data
 	})
 }
+const currentUserEnterprise = data => { //公司信息列表
+	return http.Post({
+		api: '/tms/api/user/currentUserEnterprise',
+		data: data
+	})
+}
+const changeEnterprise = data => { //修改当前员工所属公司
+	return http.Post({
+		api: '/tms/api/user/changeEnterprise',
+		data: data
+	})
+}
 const getAgreeApprvTask = data => { //出差预定
 	return http.Get({
 		api: '/tms/api/apprv/getAgreeApprvTask',
@@ -54,7 +66,13 @@ const trainWs = data => { //火车经停站
 }
 const searchAirlineAJAX = data => { //飞机搜索
 	return http.Post({
-		api: '/tms/api/dps/airline/searchAirlineAJAX',
+		api: '/tms/api/dps/airline/searchAirline',
+		data: data
+	})
+}
+const fetchCabins = data => { //查询航班舱位列表
+	return http.Get({
+		api: '/tms/api/dps/airline/fetchCabins',
 		data: data
 	})
 }
@@ -105,7 +123,19 @@ const toBook = data => { //保险
 		api: '/tms/api/dps/book/toBook',
 		data: data
 	})
-}
+} 
+const insuranceOrderCancel = data => { // 火车退保
+	return http.Post({
+		api: '/tms/api/insurance/order/insuranceOrderCancel',
+		data: data
+	})
+} 
+const airInsOrderCancel = data => { // 机票退保
+	return http.Post({
+		api: '/tms/api/insurance/order/InsOrderCancel',
+		data: data
+	})
+} 
 const applySaleChange = data => { //飞机改签提交申请
 	return http.Post({
 		api: '/tms/api/internal/change/order/applySaleChange',
@@ -307,10 +337,25 @@ const applyChangeTrain = data => { //当前火车改签
 	})
 }
 
+const getCityName = data => { //获取城市名
+	return http.Get({
+		api: '/tms/api/hotel/search/getCityName',
+		data: data
+	})
+}
+const reasonList = data => { // 出差事由
+	return http.Get({
+		api: '/tms/api/traverRule/reasonList',
+		data: data
+	})
+}
+
 export default {
 	toJinJiangBook,
 	toHomeInnsBook,
 	noSecret,
+	currentUserEnterprise,
+	changeEnterprise,
 	trainWs,
 	accountlogins,
 	getAgreeApprvTask,
@@ -319,6 +364,7 @@ export default {
 	searchpartments,
 	searchTrains,
 	searchAirlineAJAX,
+	fetchCabins,
 	queryAirlineList,
 	getRefundChangeRule,
 	bookTicket,
@@ -352,5 +398,9 @@ export default {
 	toHuazhuBook,
 	toYaduoBook,
 	toOwnBook,
-	toMeituanBook
+	toMeituanBook,
+	getCityName,
+	reasonList,
+	insuranceOrderCancel,
+	airInsOrderCancel,
 }

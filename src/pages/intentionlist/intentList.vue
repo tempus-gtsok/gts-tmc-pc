@@ -2,6 +2,7 @@
        author: I won’t leave my name, for fear of being beaten by someone who takes over
 -->
 <template>
+<!-- 我的意向单 -->
   <div class="header_myorder" v-loading="loading">
     <div class="fexibtns">
 
@@ -96,16 +97,20 @@
           </div>
           <div class="trainslit" v-if="item != null">
             <div class="setlis">
-              <div style="width: 50px;height: 40px;display: flex;align-items: center;justify-content: center;" v-if="item.airline">
-                <img :src="'http://file.feiren.com/00/02/' + item.airline + '.png'" mode="" style="width: 24px;height: 22px;">
+              <div style="width: 50px;height: 40px;display: flex;align-items: center;justify-content: center;">
+                <img v-if="item.flights[0].flightNo!=null" :src="'http://file.feiren.com/00/02/' + item.flights[0].flightNo.substring(0 , 2) + '.png'" mode="" style="width: 24px;height: 22px;">
+                <img v-else :src="'http://file.feiren.com/00/02/' + item.airline + '.png'" mode="" style="width: 24px;height: 22px;">
               </div>
-              <div><span style="font-size: 14px;font-weight:bolder;">{{companys(item.airline)}}</span></div>
+              <div>
+                <span v-if="item.flights[0].flightNo" style="font-size: 14px;font-weight:bolder;">{{companys(item.flights[0].flightNo.substring(0 , 2))}}</span>
+              <span v-else style="font-size: 14px;font-weight:bolder;">{{companys(item.airline)}}</span>
+              </div>
             </div>
             <div class="traboot">
               <div class="trbtfit">
-                <div>{{cityname(item.depart)}}&emsp;-&emsp;{{cityname(item.arrive)}}</div>
+                <div>{{item.depart | cityName}}&emsp;-&emsp;{{item.arrive | cityName}}</div>
                 <div>启程时间：{{item.departDate}}</div>
-                <div v-if="item.travelers">乘机人：{{item.travelers[0].name}}</div>
+                <div v-if="item.travelers.length > 0">乘机人：<span v-for="(na,index) in item.travelers" :key="index">{{na.name}}{{index-1?',':''}}</span></div>
               </div>
               <div class="trbtsed">
                 <div>{{item.serviceLevelName}}</div>
@@ -152,8 +157,12 @@
 <script>
 import airports from '../../../static/js/airports.js'
 import NoData from "@/components/common/noData";
+import {  cityName } from "@/utils/common-filters";
 export default {
   components: {NoData},
+  	filters:{
+			cityName
+		},
   data() {
     return {
       actinst: '',
@@ -365,16 +374,15 @@ export default {
       };
     },
     handleSelect(item) {
-      console.log(item)
     },
-    cityname(name) { //城市名称
-      let that = this;
-      for (let j = 0; j < that.predaddress.length; j++) {
-        if (name == that.predaddress[j].airportCode) {
-          return that.predaddress[j].cityCName;
-        }
-      }
-    },
+    // cityname(name) { //城市名称
+    //   let that = this;
+    //   for (let j = 0; j < that.predaddress.length; j++) {
+    //     if (name == that.predaddress[j].airportCode) {
+    //       return that.predaddress[j].cityCName;
+    //     }
+    //   }
+    // },
     queryAirlineList() { //获取机场名称
       let _this = this;
       _this.$api.order.queryAirlineList().then((res) => {
@@ -402,14 +410,14 @@ export default {
         }
       }
     },
-    company(ie) { //飞机航司名称
-      for (let s in this.hang) {
-        if (ie == s) {
-          ie = this.hang[s];
-          return ie;
-        }
-      }
-    },
+    // company(ie) { //飞机航司名称
+    //   for (let s in this.hang) {
+    //     if (ie == s) {
+    //       ie = this.hang[s];
+    //       return ie;
+    //     }
+    //   }
+    // },
     handleSizeChange(val) {
       this.rowNum = val;
       this.loading = true;
@@ -698,7 +706,7 @@ export default {
             }
 
             .trbtend {
-                width: 73px;
+                min-width: 73px;
               height: 80px;
               display: flex;
               position: relative;

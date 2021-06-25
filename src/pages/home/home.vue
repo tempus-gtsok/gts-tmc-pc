@@ -1,305 +1,308 @@
 <template>
-  <div class="home_box">
-    <div class="homt_img">
-      <div class="home_dv">
-        <div class="home_tst" v-loading="loading2">
-          <div class="home_tars">
-            <div class="hom_topslit">
-              <div v-for="(item,index) in datlist" class="hom_list"
-                   :class="activeIndex == item.id?'hom_listok':''" @click="handleSelect(item.id)"
-                   :key="index">
-                <img :src="item.img" v-if="activeIndex != item.id" alt="">
-                <img :src="item.ims" v-if="activeIndex == item.id" alt="">
-                <p>{{ item.name }}</p>
-              </div>
-            </div>
-            <div class="homts_btns" :class="activeIndex != 1 ? 'homts_btnsd':''">
-              <div class="homt_vls" :class="appartasklist.length > 0 ? '' : 'homt_vlst'">
-                <el-checkbox-group v-model="isbeforehand" @change="chans">
-                  <el-checkbox :disabled="appartasklist.length == 0" :key="isbeforehands.id"
-                               :label="isbeforehands.id">
-                    <span style="font-size: 16px;">{{ isbeforehands.name }}</span>
-                  </el-checkbox>
-                </el-checkbox-group>
-                <div class="appartasklist" @click="popvidshowis" v-if="appartasklist.length > 0">{{
+	<div class="home_box">
+		<div class="homt_img">
+			<div class="home_dv">
+				<div class="home_tst" v-loading="loading2">
+					<div class="home_tars">
+						<div class="hom_topslit">
+							<div v-for="(item,index) in datlist" class="hom_list"
+								:class="activeIndex == item.id?'hom_listok':''" @click="handleSelect(item.id)"
+								:key="index">
+								<img :src="item.img" v-if="activeIndex != item.id" alt="">
+								<img :src="item.ims" v-if="activeIndex == item.id" alt="">
+								<p>{{ item.name }}</p>
+							</div>
+						</div>
+						<div class="homts_btns" :class="activeIndex != 1 ? 'homts_btnsd':''">
+							<div class="homt_vls" :class="appartasklist.length > 0 ? '' : 'homt_vlst'" @click.stop="popvidshowis">
+								<!-- <el-checkbox-group v-model="isbeforehand" @change="chans"  >
+									<el-checkbox  :disabled="appartasklist.length == 0" :key="isbeforehands.id"
+										:label="isbeforehands.id">
+										<span style="font-size: 16px;">{{ isbeforehands.name }}</span>
+									</el-checkbox>
+								</el-checkbox-group> -->
+                <div class="checkbox" :class="{flagCheckClass:flagCheck,flagCheckNodata:appartasklist.length < 1}">
+                  <div>
+                    <i class="el-icon-check"></i>
+                  </div>
+                  <span>使用出差预定</span>
+                </div>
+								<div class="appartasklist"  v-if="appartasklist.length > 0">{{
                     stlistlist.length
                   }}个可用
-                </div>
-                <div class="fiexds" v-if="popvidshow" @click="popvidshow = false"></div>
-                <div class="vlislit" v-if="popvidshow">
-                  <div class="popContainer"></div>
-                  <div class="talist" v-for="(item, index) in stlistlist" :key="index" @click="adduslit(item)">
-                    <div class="tl_left">
-                      <div class="tl_tops">
-                        <div class="tl_rightl">{{ newicname(item.citys.vehicle) }}</div>
-                        <div class="tl_rights">{{ newstaname(item.citys) }}</div>
+								</div>
+								<div class="fiexds" v-if="popvidshow"></div>
+								<div class="vlislit" v-if="popvidshow">
+									<div class="popContainer" @click.stop="popvidshow = false"></div>
+                  <div class="talistData">
+                    <div class="talist" v-for="(item, index) in stlistlist" :key="index"
+                      @click.stop="adduslit(item)">
+                      <div class="tl_left">
+                        <div class="tl_tops">
+                          <div class="tl_rightl">{{ item.citys.vehicle | newicname }}</div>
+                          <div class="tl_rights">{{ newstaname(item.citys) }}</div>
+                        </div>
+                        <div class="tl_bots">{{ item.citys | newdata }}</div>
+                        <div class="tl_botsb">出差事由：{{ item.reson }}</div>
                       </div>
-                      <div class="tl_bots">{{ newdata(item.citys) }}</div>
-                      <div class="tl_botsb">出差事由：{{ item.reson }}</div>
-                    </div>
-                    <div class="tl_right">
-                      <div class="tldv">确定</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="shipping_space" style="margin-left: 15px;">
-                <div class="shipping_choex" v-if="extendOne == 1 && iskok == 1">
-                  <el-checkbox v-model="checked" label="公务机票" border></el-checkbox>
-                </div>
-              </div>
-              <div v-if="iskok == 1" class="srltop">
-                <!-- 飞机 -->
-                <div class="sercits">
-                  <div class="citysleft">
-                    <citysearch @changers="listchang" :ctiys="citylist"
-                                :issera="isbeforehand.length > 0"></citysearch>
-                  </div>
-                </div>
-                <div class="sertys">
-                  <div class="inputsbox">
-                    <div class="block">
-                      <el-date-picker
-                          value-format="yyyy-MM-dd"
-                          style="width: 100%;"
-                          :disabled="isbeforehand.length > 0"
-                          v-model="values"
-                          class="inputst"
-                          type="date"
-                          placeholder="去程日期"
-                          :editable="false"
-                          :clearable="false"
-                          :picker-options="pickerOptions"
-                      ></el-date-picker>
-                    </div>
-                    <div class="thans">
-                      <div></div>
-                    </div>
-                    <div class="block">
-                      <el-date-picker
-                          value-format="yyyy-MM-dd"
-                          style="width: 100%;"
-                          :disabled="isbeforehand.length > 0"
-                          v-model="valuer"
-                          type="date"
-                          class="inputst"
-                          placeholder="返程日期"
-                          :editable="false"
-                          :clearable="true"
-                          :picker-options="pickerOptions"
-                      ></el-date-picker>
-                    </div>
-                  </div>
-                  <div class="dipgright">
-                    <div class="blockops">
-                      <el-select class="selck" v-model="optionstrain" placeholder="请选择"
-                                 :disabled="isbeforehand.length > 0">
-                        <el-option v-for="item in options" :key="item.value" :label="item.label"
-                                   :value="item.value"></el-option>
-                      </el-select>
-                    </div>
-                    <el-button type="primary" @click="selects" v-if="rotes('tms:dps:query')"
-                               style="width: 48%;margin-left: 10px;">搜索
-                    </el-button>
-                  </div>
-                </div>
-
-              </div>
-              <div v-if="iskok == 2" class="srltop">
-                <!-- 火车 -->
-                <div class="sercits">
-                  <div class="citysleft">
-                    <citysearchs @changers="listchangs" :ctiys="citylist"
-                                 :issera="isbeforehand.length > 0"></citysearchs>
-                  </div>
-                </div>
-                <div class="sertys">
-                  <div class="inputsbox">
-                    <div class="block">
-                      <el-date-picker
-                          value-format="yyyy-MM-dd"
-                          style="width: 100%;"
-                          class="inputst"
-                          :disabled="isbeforehand.length > 0"
-                          v-model="traitime"
-                          type="date"
-                          placeholder="出发日期"
-                          :editable="false"
-                          :clearable="false"
-                          :picker-options="pickerOptions"
-                      ></el-date-picker>
-                    </div>
-                  </div>
-                  <div class="dipgright">
-                    <div class="blockops">
-                      <el-select class="selck" v-model="optionstrain" placeholder="请选择"
-                                 :disabled="isbeforehand.length > 0">
-                        <el-option v-for="item in options" :key="item.value" :label="item.label"
-                                   :value="item.value"></el-option>
-                      </el-select>
-                    </div>
-                    <el-button type="primary" style="width: 48%;margin-left: 10px;" v-if="rotes('tms:tra:query')"
-                               @click="selects">搜索
-                    </el-button>
-                  </div>
-
-                </div>
-              </div>
-              <div v-if="iskok == 3" class="srltop">
-                <div class="sercits">
-                  <div class="cityslefts">
-                    <citysearchh @changers="listchangh" :ctiys="citylist"
-                                 :issera="isbeforehand.length > 0"></citysearchh>
-                  </div>
-                  <div class="cityslefts"
-                       style="margin-left: 10px;border: 1px solid #edf0f5;padding: 0 14px;border-radius: 4px;">
-                    <div class="citycom citycom-JD">
-                      <div class="citcom_left">
-                        <el-input
-                            :disabled="hot_cyvals != '' && isbeforehand.length > 0"
-                            v-model="hot_cyval"
-                            @input="inpu"
-                            @focus="foinput"
-                            @blur="bluscity"
-                            style="border: 0;"
-                            class="inputs"
-                            size="medium"
-                            placeholder="酒店名/位置"
-                        ></el-input>
+                      <div class="tl_right">
+                        <div class="tldv">确定</div>
                       </div>
                     </div>
-                    <div class="hotvals" @mouseover="isctyslts = true"
-                         @mouseleave="isctyslts = false" v-if="hotcityname" v-loading="loading">
-                      <div class="section" v-for="(item, index) in stlist" :key="index"
-                           v-if="stlist.length > 0 && hot_cyval == ''">
-                        <div class="city-title">{{ item.name }}</div>
-                        <div class="city-list">
-                          <div class="city-item" v-for="(city, i) in item.list" :key="i"
-                               @click="onSelect(city)">{{ city }}
+                  </div>
+								</div>
+							</div>
+							<div class="shipping_space" style="margin-left: 15px;">
+								<div class="shipping_choex" v-if="extendOne == 1 && iskok == 1">
+									<el-checkbox v-model="checked" label="公务机票" border></el-checkbox>
+								</div>
+							</div>
+							<div v-show="iskok == 1" class="srltop">
+								<!-- 飞机 -->
+								<div class="sercits">
+									<div class="citysleft" v-if="iskok == 1">
+										<citysearch @changers="listchang" :ctiys="citylist"
+											:issera="isbeforehand.length > 0"></citysearch>
+									</div>
+								</div>
+								<div class="sertys">
+									<div class="inputsbox">
+										<div class="block">
+											<el-date-picker value-format="yyyy-MM-dd" style="width: 100%;"
+												:disabled="isbeforehand.length > 0" v-model="values" class="inputst"
+												type="date" placeholder="去程日期" :editable="false" :clearable="false"
+												:picker-options="pickerOptions"></el-date-picker>
+										</div>
+										<div class="thans">
+											<div></div>
+										</div>
+										<div class="block">
+											<el-date-picker value-format="yyyy-MM-dd" style="width: 100%;"
+												:disabled="isbeforehand.length > 0" v-model="valuer" type="date"
+												class="inputst" placeholder="返程日期" :editable="false" :clearable="true"
+												:picker-options="pickerOptions"></el-date-picker>
+										</div>
+									</div>
+									<div class="dipgright">
+										<div class="blockops">
+											<el-select class="selck" v-model="optionstrain" placeholder="请选择"
+												:disabled="isbeforehand.length > 0">
+												<el-option v-for="item in options" :key="item.value" :label="item.label"
+													:value="item.value"></el-option>
+											</el-select>
+										</div>
+										<el-button type="primary" @click="selects" v-if="rotes('tms:dps:query')"
+											style="flex: 6;">搜索
+										</el-button>
+									</div>
+								</div>
+
+							</div>
+							<div v-show="iskok == 2" class="srltop">
+								<!-- 火车 -->
+								<div class="sercits">
+									<div class="citysleft" v-if="iskok == 2">
+										<citysearchs @changers="listchangs" :ctiys="citylist"
+											:issera="isbeforehand.length > 0"></citysearchs>
+									</div>
+								</div>
+								<div class="sertys">
+									<div class="inputsbox">
+										<div class="block">
+											<el-date-picker value-format="yyyy-MM-dd" style="width: 100%;"
+												class="inputst" :disabled="isbeforehand.length > 0" v-model="traitime"
+												type="date" placeholder="出发日期" :editable="false" :clearable="false"
+												:picker-options="pickerOptions"></el-date-picker>
+										</div>
+									</div>
+									<div class="dipgright">
+										<div class="blockops">
+											<el-select class="selck" v-model="optionstrain" placeholder="请选择"
+												:disabled="isbeforehand.length > 0">
+												<el-option v-for="item in options" :key="item.value" :label="item.label"
+													:value="item.value"></el-option>
+											</el-select>
+										</div>
+										<el-button type="primary" style="width: 48%;margin-left: 10px;"
+											v-if="rotes('tms:tra:query')" @click="selects">搜索
+										</el-button>
+									</div>
+
+								</div>
+							</div>
+							<div v-show="iskok == 3" class="srltop">
+								<!-- 酒店 -->
+								<div class="sercits">
+									<div class="cityslefts" v-if="iskok == 3">
+										<citysearchh  @changers="listchangh" :ctiys="citylist"
+											:issera="isbeforehand.length > 0"></citysearchh>
+									</div>
+									<div class="cityslefts"
+										style="margin-left: 10px;border: 1px solid #edf0f5;padding: 0 14px;border-radius: 4px;">
+										<div class="citycom citycom-JD">
+											<div class="citcom_left">
+												<el-input :disabled="hot_cyvals != '' && isbeforehand.length > 0"
+													v-model="hot_cyval" @input="inpu" @focus="foinput" @blur="bluscity"
+													style="border: 0;" class="inputs" size="medium"
+													placeholder="酒店/地铁/机场/火车/商圈"></el-input>
+											</div>
+										</div>
+										<div class="hotvals" @mouseover="isctyslts = true"
+											@mouseleave="isctyslts = false" v-if="hotcityname" v-loading="loading">
+											<div class="section" v-for="(item, index) in stlist" :key="index"
+												v-if="stlist.length > 0 && hot_cyval == ''">
+                         <div class="history" v-if="index == 0 && flag && historyList.length > 0">
+                          <div class="hisTitle">
+                            <span>历史记录</span>
+                            <i class="el-icon-delete" @click="deletClick()"></i>
+                          </div>
+                          <div class="hisData">
+                            <span v-for="(item , index) in historyList" :key="index" @click="hisClick(item , index)" v-if="item.city[0].id == hotcltys[0].id">
+                              {{item.cityval.name}}
+                            </span>
                           </div>
                         </div>
-                      </div>
-                      <div
-                          class="hotsearchs"
-                          v-for="(items, index) in hotsearch"
-                          @click="onSelect(items.name)"
-                          :key="index"
-                          v-if="hot_cyval != '' && hotsearch.length > 0"
-                      >
-                        <div v-html="items.label"></div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="sertys">
-                  <div class="inputsbox">
-                    <div class="blocks">
-                      <el-date-picker
-                          value-format="yyyy-MM-dd"
-                          v-model="hoteltime"
-                          type="daterange"
-                          range-separator="至"
-                          start-placeholder="入店日期"
-                          :disabled="isbeforehand.length > 0"
-                          end-placeholder="离店日期"
-                          class="inputime"
-                          :editable="false"
-                          :clearable="false"
-                          :picker-options="pickerOptions"
-                      ></el-date-picker>
-                    </div>
-                  </div>
-                  <div class="dipgright">
-                    <div class="blockops">
-                      <el-select class="selck" v-model="optionstrain" placeholder="请选择"
-                                 :disabled="isbeforehand.length > 0">
-                        <el-option v-for="item in options" :key="item.value" :label="item.label"
-                                   :value="item.value"></el-option>
-                      </el-select>
-                    </div>
-                    <el-button type="primary" @click="selects" v-if="rotes('tms:hotel:list')"
-                               style="width: 48%;margin-left: 10px;">搜索
-                    </el-button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="personnel">
-            <div class="persotop" @click="addrow" v-if="optionstrain == 1">
-              <div class="iconfont">&#xe603;</div>
-              <div style="margin-left: 10px; width: 200px;"><p>添加旅客</p></div>
-            </div>
-            <div class="perlists">
-              <div class="nopassage" v-if="passengers.length == 0">
-                <img src="../../../static/image/home/nopassage.png" alt="">
-              </div>
-              <div class="passlist" v-if="passengers.length > 0">
-                <div class="passdv" v-for="(item, index) in passengers" :key="index">
-                  {{ item.userName }}
-                  <div class="iconfont passclose" @click="passclose(index)">&#xe620;</div>
-                </div>
-              </div>
-            </div>
-            <el-drawer class="drawerd" size="28%" :with-header="false" :visible.sync="drawer"
-                       direction="rtl">
-              <div class="drawertp">请选择出行旅客</div>
-              <div class="drivpass">
-                <passage @passlist="passuser" :iskok="iskok == 2 ? 2 : 0 "></passage>
-              </div>
-            </el-drawer>
-          </div>
-        </div>
-      </div>
-    </div>
+												<div class="city-title" v-if="item.name && item.list.length > 0">{{ item.name }}</div>
+												<div class="city-list" v-if="item.list.length > 0">
+													<div class="city-item" v-for="(city, i) in item.list" :key="i"
+														@click="onSelect(city , 1)">{{ city }}
+													</div>
+												</div>
+											</div>
+											<div class="hotsearchs" v-for="(items, index) in hotsearch"
+												@click="onSelect(items , 2)" :key="index"
+												v-if="hot_cyval != '' && hotsearch.length > 0">
+												<div class="searchsList">
+													<img :src="items.imgUrl" alt="">
+													<div>
+														<div v-if="items.label" v-html="items.label" :title="items.label.replace(/<[^<>]+>/g,'')"></div>
+														<span :title="items.address">{{items.address}}</span>
+													</div>
+												</div>
+												<span>{{items.type | hotStatus}}</span>
+											</div>
+											<div class="serNoData" v-if="hotsearch.length == 0 && hotcityname && stlist.length == 0">
+												暂无数据
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="sertys">
+									<div class="inputsbox">
+										<div class="blocks">
+											<el-date-picker value-format="yyyy-MM-dd" v-model="hoteltime"
+												type="daterange" range-separator="至" start-placeholder="入店日期"
+												:disabled="isbeforehand.length > 0" end-placeholder="离店日期"
+												class="inputime" :editable="false" :clearable="false"
+												:picker-options="pickerOptions"></el-date-picker>
+										</div>
+									</div>
+									<div class="dipgright">
+										<div class="blockops">
+											<el-select class="selck" v-model="optionstrain" placeholder="请选择"
+												:disabled="isbeforehand.length > 0">
+												<el-option v-for="item in options" :key="item.value" :label="item.label"
+													:value="item.value"></el-option>
+											</el-select>
+										</div>
+										<div class="bloriht">
+											<el-button type="primary" @click="selects(1)" v-if="rotes('tms:hotel:list')"
+												style="width: 48%;margin-left: 10px;">搜索
+											</el-button>
+											<div class="btmaps" @click="selects(2)">
+												<img src="/static/image/home/mapbts.png" mode=""></img>
+												<div>
+													地图查询
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="personnel">
+						<div class="persotop" @click="addrow" v-if="optionstrain == 1">
+							<div class="iconfont">&#xe603;</div>
+							<div style="margin-left: 10px; width: 200px;">
+								<p>添加旅客</p>
+							</div>
+						</div>
+						<div class="perlists">
+							<div class="nopassage" v-if="passengers.length == 0">
+								<img src="../../../static/image/home/nopassage.png" alt="">
+							</div>
+							<div class="passlist" v-if="passengers.length > 0">
+								<div class="passdv" v-for="(item, index) in passengers" :key="index">
+									{{ item.userName }}
+									<div class="iconfont passclose" @click="passclose(index)">&#xe620;</div>
+								</div>
+							</div>
+						</div>
+						<el-drawer class="drawerd" size="28%" :with-header="false" :visible.sync="drawer"
+							direction="rtl">
+							<div class="drawertp">请选择出行旅客</div>
+							<div class="drivpass">
+								<passage @passlist="passuser" :iskok="iskok == 2 ? 2 : 0 "></passage>
+							</div>
+						</el-drawer>
+					</div>
+				</div>
+			</div>
+		</div>
 
-  </div>
+	</div>
 </template>
 
 <script>
-import {
-  mapState
-} from 'vuex';
-import passage from '@/components/common/passenger.vue';
-import citysearch from '@/components/common/citycomponents.vue';
-import citysearchs from '@/components/common/citycomponents_t.vue';
-import citysearchh from '@/components/common/citycomponents_h.vue';
-
+import { mapState } from "vuex";
+import passage from "@/components/common/passenger.vue";
+import citysearch from "@/components/common/citycomponents.vue";
+import citysearchs from "@/components/common/citycomponents_t.vue";
+import citysearchh from "@/components/common/citycomponents_h.vue";
+import { newdata, newicname, hotStatus } from "@/utils/common-filters";
+import costcentersVue from '../businessmanagement/approvalcenterlist/costcenters.vue';
+// import reasonApi from "@/utils/reasonApi";
 export default {
   data() {
     return {
-      datlist: [{
-        id: 1,
-        name: '机票',
-        img: "../../../static/image/home/fat.png",
-        ims: "../../../static/image/home/fatis.png"
-      }, {
-        id: 2,
-        name: '火车',
-        img: "../../../static/image/home/car.png",
-        ims: "../../../static/image/home/caris.png"
-      }, {
-        id: 3,
-        name: '酒店',
-        img: "../../../static/image/home/hotel.png",
-        ims: "../../../static/image/home/hotelis.png"
-      }],
+      datlist: [
+        {
+          id: 1,
+          name: "机票",
+          img: "../../../static/image/home/fat.png",
+          ims: "../../../static/image/home/fatis.png",
+        },
+        {
+          id: 2,
+          name: "火车",
+          img: "../../../static/image/home/car.png",
+          ims: "../../../static/image/home/caris.png",
+        },
+        {
+          id: 3,
+          name: "酒店",
+          img: "../../../static/image/home/hotel.png",
+          ims: "../../../static/image/home/hotelis.png",
+        },
+      ],
       stlistlist: [], //出差单
       popvidshow: false,
       appartasklist: [], //出差单
-      issbeforehand: '',
+      issbeforehand: "",
       isbeforehand: [], //是否使用出差预定
       isbeforehands: {
         id: 1,
-        name: '使用出差预定'
+        name: "使用出差预定",
       },
       tccrBeforeMiddle: 9,
       isctyslts: false,
       checked: true,
-      extendOne: '', //政府采购
+      extendOne: "", //政府采购
       hotsearch: [], //酒店关键词搜索
       hotcityname: false,
-      hot_cyval: '', //酒店关键词
+      hot_cyval: "", //酒店关键词
+      hot_cyvalData: {}, //酒店关键词单条数据集合
       stlist: [], //酒店关键词 商圈
       hotcltys: [], //酒店选择城市
       citylist: [],
@@ -308,48 +311,60 @@ export default {
       frequentravellers: [], //常用旅客
       drawer: false,
       passengers: [], //出行人员
-      optionstrain: '1', //因公因私
+      optionstrain: "1", //因公因私
       isblcks: 2, //是否出差预定
-      activeIndex: '1',
+      activeIndex: "1",
       bt_sbol: true,
       options: [
         {
-          value: '1',
-          label: '因公'
+          value: "1",
+          label: "因公",
         },
         {
-          value: '2',
-          label: '因私'
-        }
+          value: "2",
+          label: "因私",
+        },
       ],
       iskok: 1,
-      hot_cyvals: '',
+      hot_cyvals: "",
       loading: false, //加载...
-      traitime: '', //火车日期
-      hoteltime: '', //酒店日期
-      values: '', //飞机去程日期
-      valuer: '', //飞机回程日期
+      traitime: "", //火车日期
+      hoteltime: "", //酒店日期
+      values: "", //飞机去程日期
+      valuer: "", //飞机回程日期
       mokksli: {}, //事前订单参数
       pickerOptions: {
-        disabledDate: time => {
+        disabledDate: (time) => {
           return this.dealDisabledDate(time);
-        }
+        },
       },
       startDatePickerc: this.beginDatec(),
       endDatePickerc: this.processDatec(),
-      fikdatec: '', //开始时间 创建
-      enddatec: '', //结束时间
-      loading2:false,
+      fikdatec: "", //开始时间 创建
+      enddatec: "", //结束时间
+      loading2: false,
+      flagCheck: false,
+      examineSwitch: "1", //免审总开关
+      reasonList:[],
+      historyList:[],
+      flag:false,
+      flagHis:'',
     };
   },
   components: {
     citysearch,
     citysearchs,
     citysearchh,
-    passage
+    passage,
   },
+  filters: {
+    newdata,
+    newicname,
+    hotStatus,
+  },
+
   computed: {
-    ...mapState(['go_there', 'goName']) //往返的值0是去，1是返回
+    ...mapState(["go_there", "goName"]), //往返的值0是去，1是返回
   },
   watch: {
     optionstrain: {
@@ -357,43 +372,52 @@ export default {
         if (newoptionstrain == 2) {
           this.passengers = [];
         }
-      }
-    }
+      },
+    },
   },
-  mounted() {
-    this.seeidlogin();//sessionId登录
+ async mounted() {
+      //  this.reasonList = await reasonApi.reason_api()
+    this.historyList = JSON.parse(localStorage.getItem('history')) || []
+    this.seeidlogin(); //sessionId登录
+    
+   
   },
   methods: {
     async seeidlogin() {
       this.routs(this.iskok);
       this.bts_b();
       this.userinfos();
-      const userinfo = JSON.parse(sessionStorage.getItem('userinfo')); //关于token的用法
+      const userinfo = JSON.parse(sessionStorage.getItem("userinfo")); //关于token的用法
       if (userinfo) {
         this.tccrBeforeMiddle = userinfo.tccrBeforeMiddle;
       }
+      
     },
     async userinfos() {
-      try {
-        let res = await this.$api.mymessage.username();
-        if (res.code == 200) {
-          sessionStorage.setItem('userinfost', JSON.stringify(res.data));
-        } else {
-          this.$message({
-            message: '获取个人信息失败',
-            type: 'warning'
-          });
+      let userinfosts = sessionStorage.getItem("userinfost");
+      if (userinfosts) {
+      } else {
+        try {
+          let res = await this.$api.mymessage.username();
+          if (res.code == 200) {
+            this.examineSwitch = res.data.examineSwitch;
+            sessionStorage.setItem("userinfost", JSON.stringify(res.data));
+          } else {
+            this.$message({
+              message: "获取个人信息失败",
+              type: "warning",
+            });
+          }
+        } catch (e) {
+          //TODO handle the exception
         }
-      } catch (e) {
-        //TODO handle the exception
       }
-
     },
     passclose(index) {
       if (this.isbeforehand.length > 0) {
         this.$message({
-          message: '事前不能修改出行人员！',
-          type: 'warning'
+          message: "事前不能修改出行人员！",
+          type: "warning",
         });
         return;
       }
@@ -417,36 +441,53 @@ export default {
           this.valuer = "";
         }
         this.values = item.citys.deptDate.substring(0, 10); //出行开始时间
-        this.citylist = [{
-          id: item.citys.deptCityCode,
-          name: item.citys.deptCityName
-        }, {
-          id: item.citys.arrivCityCode,
-          name: item.citys.arrivCityName
-        }];
+        this.citylist = [
+          {
+            id: item.citys.deptCityCode,
+            name: item.citys.deptCityName,
+          },
+          {
+            id: item.citys.arrivCityCode,
+            name: item.citys.arrivCityName,
+          },
+        ];
       } else if (this.iskok == 2) {
         this.traitime = item.citys.deptDate.substring(0, 10); //出行开始时间
-        this.citylist = [{
-          id: item.citys.deptCityCode,
-          name: item.citys.deptCityName
-        }, {
-          id: item.citys.arrivCityCode,
-          name: item.citys.arrivCityName
-        }];
+        this.citylist = [
+          {
+            id: item.citys.deptCityCode,
+            name: item.citys.deptCityName,
+          },
+          {
+            id: item.citys.arrivCityCode,
+            name: item.citys.arrivCityName,
+          },
+        ];
       } else if (this.iskok == 3) {
-        this.hoteltime = [item.citys.inDate.substring(0, 10), item.citys.outDate.substring(0, 10)];
-        this.citylist = [{
-          id: item.citys.cityCode,
-          name: item.citys.cityName
-        }];
+        this.hoteltime = [
+          item.citys.inDate.substring(0, 10),
+          item.citys.outDate.substring(0, 10),
+        ];
+        this.citylist = [
+          {
+            id: item.citys.cityCode,
+            name: item.citys.cityName,
+          },
+        ];
         this.hot_cyval = item.citys.remark;
         this.hot_cyvals = item.citys.remark;
       }
       this.isbeforehand = [1];
       this.popvidshow = false;
       let userlis = [];
+      let bool = false;
       for (var i = 0; i < item.nams.length; i++) {
         //出差人员
+        if (item.nams[i].haveCardInfo == false) {
+          this.$message.warning(item.nams[i].userName + "没有证件信息");
+          bool = true;
+          break;
+        }
 
         userlis.push({
           phone: item.nams[i].phone,
@@ -455,39 +496,94 @@ export default {
           userName: item.nams[i].userName,
           userId: item.nams[i].id,
           vehicleId: item.id, //事前出差单id
-          vehicleIdBack: vehicleIds //事前往返 返回id
+          vehicleIdBack: vehicleIds, //事前往返 返回id
+          reason: item.reson,
+          resonid:item.reasonId,
         });
+      }
+      if (bool) {
+        this.isbeforehand = "";
+        userlis = [];
+        return;
       }
       this.passengers = userlis;
       this.mokksli = item.sit;
+      this.flagCheck = true;
     },
-    chans() {
-      if (this.isbeforehand.length != 0) {
+    // chans() {
+    //   if (this.isbeforehand.length != 0) {
+    //     this.popvidshow = true;
+    //   }
+    // },
+    popvidshowis() {
+      if (this.appartasklist.length < 1)
+        return this.$message.warning("无出差预定！");
+      if (this.flagCheck == false) {
         this.popvidshow = true;
+      } else {
+        this.flagCheck = false;
+        this.passengers = [];
+        if (this.iskok == 3) {
+          this.citylist = [
+            {
+              id: "",
+              name: "",
+            },
+          ];
+        } else {
+          this.citylist = [
+            {
+              id: "",
+              name: "",
+            },
+            {
+              id: "",
+              name: "",
+            },
+          ];
+        }
+
+        this.values = "";
+        this.valuer = "";
+        this.traitime = "";
+        this.hoteltime = "";
+        this.isbeforehand = "";
       }
     },
-    popvidshowis() {
-      this.popvidshow = true;
-    },
-    selects() {
+    selects(maps) {
       if (this.hoteltime.length == 0 && this.iskok == 3) {
         this.$message({
-          message: '请选择入住日期',
-          type: 'warning'
+          message: "请选择入住日期",
+          type: "warning",
+        });
+        return;
+      }
+      if ((!this.hotcltys[0] || !this.hotcltys[0].name) && this.iskok == 3) {
+        this.$message({
+          message: "请选择入住城市",
+          type: "warning",
         });
         return;
       }
       if (this.hoteltime != null && this.iskok == 3) {
-        if (this.hoteltime[0].substring(0, 4) == this.hoteltime[1].substring(0, 4)) {
-          if (this.hoteltime[0].substring(5, 7) == this.hoteltime[1].substring(5, 7)) {
-            if (this.hoteltime[0].substring(8, 10) == this.hoteltime[1].substring(8, 10)) {
-              return this.$message.warning('入住日期必须早于离店日期！');
+        if (
+          this.hoteltime[0].substring(0, 4) == this.hoteltime[1].substring(0, 4)
+        ) {
+          if (
+            this.hoteltime[0].substring(5, 7) ==
+            this.hoteltime[1].substring(5, 7)
+          ) {
+            if (
+              this.hoteltime[0].substring(8, 10) ==
+              this.hoteltime[1].substring(8, 10)
+            ) {
+              return this.$message.warning("入住日期必须早于离店日期！");
             }
           }
         }
       }
       let that = this;
-      this.$store.commit('goName_add', 0);
+      this.$store.commit("goName_add", 0);
       let isbtd = that.optionstrain; //因公还是因私 1为因公
       let isblcks = that.isblcks; //是否出差预定 1为是
       if (this.isbeforehand.length > 0) {
@@ -499,64 +595,72 @@ export default {
       let les = that.cityslists; //飞机城市
       let hotcity = that.hotcltys[0]; //酒店城市
       let hot_cyval = that.hot_cyval; //酒店关键字
+      let hot_cyvalData = that.hot_cyvalData;
       let hoteltime = that.hoteltime; //酒店入住时间
       let firdata = that.traitime; //出发日期
       let values = that.values; //飞机往日期
       let valuer = that.valuer; //飞机返日期
       let passengers = that.passengers; //出行人
       let st = this.tccrBeforeMiddle; //用户是事前还是事中
-      let xin = '1';
+      let xin = "1";
 
 
       if (st == 1 && isblcks == 2 && isbtd == 1) {
         that.$message({
-          message: '请使用出差预定',
-          type: 'warning'
+          message: "请使用出差预定",
+          type: "warning",
         });
         return;
       }
-      if (passengers.length == 0 && (isbtd == 1)) {
+      if (passengers.length == 0 && isbtd == 1) {
         that.$message({
-          message: '请选择出行人',
-          type: 'warning'
+          message: "请选择出行人",
+          type: "warning",
         });
         return;
       }
       if (that.iskok == 1) {
         //飞机
-        if (les.length == 0) {
+        if(les.length < 1 ){
           that.$message({
-            message: '请选择出发城市',
-            type: 'warning'
+            message: "请选择出发城市",
+            type: "warning",
           });
           return;
-        } else if (les[1].name == '') {
+        }
+        if (les[0].name == "") {
           that.$message({
-            message: '请选择到达城市',
-            type: 'warning'
+            message: "请选择出发城市",
+            type: "warning",
+          });
+          return;
+        } else if (les[1].name == "") {
+          that.$message({
+            message: "请选择到达城市",
+            type: "warning",
           });
           return;
         } else if (les[0].name == les[1].name) {
           that.$message({
-            message: '出发城市和到达城市不能相同',
-            type: 'warning'
+            message: "出发城市和到达城市不能相同",
+            type: "warning",
           });
           return;
         }
-        if (values == '') {
+        if (values == "") {
           that.$message({
-            message: '请选择去程日期',
-            type: 'warning'
+            message: "请选择去程日期",
+            type: "warning",
           });
           return;
-        } else if (valuer != '' && valuer != null && values > valuer) {
+        } else if (valuer != "" && valuer != null && values > valuer) {
           that.$message({
-            message: '返程日期不能小于去程日期',
-            type: 'warning'
+            message: "返程日期不能小于去程日期",
+            type: "warning",
           });
           return;
         }
-       //去程
+        //去程
         let data = {};
         if (this.extendOne == 1 && this.checked == true) {
           data = {
@@ -567,8 +671,9 @@ export default {
             isblcks: isblcks, //1事前2事中
             mokksli: this.mokksli,
             isbtd: isbtd, //1因公2因私
-            civilServiceTicket: '1',//是否选中
-            xin: '1'
+            civilServiceTicket: "1", //是否选中
+            examineSwitch: this.examineSwitch,
+            xin: "1",
           };
         } else if (this.extendOne == 1 && this.checked == false) {
           data = {
@@ -579,8 +684,9 @@ export default {
             butalist: passengers, //出行人
             isblcks: isblcks, //1事前2事中
             isbtd: isbtd, //1因公2因私
-            civilServiceTicket: '0',//是否选中
-            xin: '1'
+            examineSwitch: this.examineSwitch,
+            civilServiceTicket: "0", //是否选中
+            xin: "1",
           };
         } else if (this.extendOne == 0) {
           data = {
@@ -590,35 +696,43 @@ export default {
             timedates: valuer == null ? "" : valuer, //回的时间
             butalist: passengers, //出行人
             isblcks: isblcks, //1事前2事中
-            isbtd: isbtd,//1因公2因私
-            xin: '1'
+            isbtd: isbtd, //1因公2因私
+            examineSwitch: this.examineSwitch,
+            xin: "1",
           };
         }
         that.$router.push({
-          path: '/ticketcationform',
+          path: "/ticketcationform",
           query: {
-            data: JSON.stringify(data)
-          }
+            data: JSON.stringify(data),
+          },
         });
       } else if (that.iskok == 2) {
         //火车
-        if (le.length == 0) {
+        if(le.length < 1 ){
           that.$message({
-            message: '请选择出发城市',
-            type: 'warning'
-          });
-          return;
-        } else if (le[1].name == '') {
-          that.$message({
-            message: '请选择到达城市',
-            type: 'warning'
+            message: "请选择到达城市",
+            type: "warning",
           });
           return;
         }
-        if (firdata == '') {
+        if ( le[0].name == "") {
           that.$message({
-            message: '请选择出发日期',
-            type: 'warning'
+            message: "请选择出发城市",
+            type: "warning",
+          });
+          return;
+        } else if (le[1].name == "") {
+          that.$message({
+            message: "请选择到达城市",
+            type: "warning",
+          });
+          return;
+        }
+        if (firdata == "") {
+          that.$message({
+            message: "请选择出发日期",
+            type: "warning",
           });
           return;
         }
@@ -628,157 +742,225 @@ export default {
           timedate: firdata, //时间
           butalist: passengers, //出行人
           isblcks: isblcks, //1事前2事中
-          isbtd: isbtd //1因公2因私
+          isbtd: isbtd, //1因公2因私
+          examineSwitch: this.examineSwitch,
         };
         that.$router.push({
-          path: '/trainlist',
+          path: "/trainlist",
           query: {
-            data: JSON.stringify(data)
-          }
+            data: JSON.stringify(data),
+          },
         });
       } else if (that.iskok == 3) {
+    
         let data = {
           mokksli: this.mokksli,
           city: [hotcity], //城市
-          cityval: hot_cyval, //酒店关键字
+          cityval: hot_cyvalData, //酒店关键字
           timedate: hoteltime, //时间
           butalist: passengers, //出行人
           isblcks: isblcks, //1事前2事中
-          isbtd: isbtd //1因公2因私
+          isbtd: isbtd, //1因公2因私
+          examineSwitch: this.examineSwitch,
+          map: maps,
         };
-        that.$router.push({
-          path: '/hotelist',
-          query: {
-            data: JSON.stringify(data)
+      if(!this.flagHis){
+        if(JSON.stringify(hot_cyvalData) != '{}'){
+          for (let i = 0; i < this.historyList.length; i++) {
+            if(this.historyList[i].cityval.name == hot_cyvalData.name){
+              this.historyList.splice(i,1)
+            }
+          if(i > 8){
+               this.historyList.splice(i,1)
+            }
           }
+          this.historyList.unshift(data)
+          localStorage.setItem("history",JSON.stringify(this.historyList))
+        }
+          that.$router.push({
+          path: "/hotelist",
+          query: {
+            data: JSON.stringify(data),
+          },
         });
+        } else{
+
+          let data = {
+          mokksli: this.mokksli,
+          city: [hotcity], //城市
+          cityval: this.flagHis.cityval, //酒店关键字
+          timedate: hoteltime, //时间
+          butalist: passengers, //出行人
+          isblcks: isblcks, //1事前2事中
+          isbtd: isbtd, //1因公2因私
+          examineSwitch: this.examineSwitch,
+          map: maps,
+        };
+             this.$router.push({
+          path: "/hotelist",
+          query: {
+            data: JSON.stringify(data),
+          },
+        });
+        }    
+            
       }
     },
     mao() {
-      console.log(this.checked);
     },
     addrow() {
       //查看旅客
       if (this.isbeforehand.length > 0) {
         this.$message({
-          message: '事前不能修改出行人员！',
-          type: 'warning'
+          message: "事前不能修改出行人员！",
+          type: "warning",
         });
         return;
       }
       this.drawer = true;
     },
-    foinput() {
-      //判断酒店搜索是否有城市
-      if (this.hotcltys.length > 0 && this.hot_cyval == '' && this.hotcltys != '') {
-        this.hotcityname = true;
-        this.st_right_list();
-      } else if (this.hot_cyval != '') {
-        this.inpu();
-      }
-    },
+    // 酒店输入框失去焦点事件
     bluscity() {
       if (!this.isctyslts) {
         this.hotcityname = false;
       }
+      if (typeof this.hot_cyvalData == "string") {
+        this.hot_cyvalData = { name: this.hot_cyvalData, status: 9 }; //添加识别码
+      }
     },
-    onSelect(val) {
-      //选择当前搜索关键词
-      this.hot_cyval = val;
-      this.hotcityname = false;
+    onSelect(val, num) {
+      this.flagHis = ''
+      //选择当前搜索关键词     新思路：点击搜索列表统一给个状态，
+      if (num == 1) {
+        // 选择城区 添加识别字段
+        this.hot_cyval = val;
+        this.hot_cyvalData = { name: val, status: 7 };
+        this.hotcityname = false;
+      } else {
+        this.hot_cyval = typeof val == "string" ? val : val.name;
+        this.hot_cyvalData = { ...val, status: 8 }; //添加识别码
+        this.hotcityname = false;
+      }
     },
+    //判断酒店搜索是否有城市
+    foinput() {
+      if(!this.flagHis){
+      if (
+        this.hotcltys.length > 0 &&
+        this.hot_cyval == "" &&
+        this.hotcltys != ""
+      ) {
+        this.hotcityname = true;
+        this.st_right_list();
+      } else if (this.hot_cyval != "") {
+        this.inpu();
+      }
+      }
+    },
+    // 输入框值发生变化时请求
     inpu() {
       let that = this;
-      if (that.hot_cyval.length > 0) {
+      if (that.hotcltys.length < 1)
+        return this.$message.error("请选择入住城市");
+      if (that.hot_cyval.length > 0 && this.hot_cyvalData != 7) {
         that.hotcityname = true;
         that.loading = true;
         that.hotsearch = [];
         that.$api.home
-            .getCityNames({cityName: that.hotcltys[0].name, keyword: that.hot_cyval})
-            .then(res => {
-              that.loading = false;
-              if (res.code == 200) {
-                that.hotsearch = res.data;
-              } else {
-                that.$message({
-                  message: res.message,
-                  type: 'warning'
-                });
-              }
-            })
-            .catch(e => {
-              console.log(e);
-              that.loading = false;
-            });
+          .getCityNames({
+            cityName: that.hotcltys[0].name,
+            keyword: that.hot_cyval,
+          })
+          .then((res) => {
+            that.loading = false;
+            if (res.code == 200) {
+              that.hotsearch = res.data;
+            } else {
+              that.$message({
+                message: res.message,
+                type: "warning",
+              });
+            }
+          })
+          .catch((e) => {
+            console.log(e);
+            that.loading = false;
+          });
+      } else {
+        this.st_right_list();
+        // that.hotcityname = false;
       }
+      this.hot_cyvalData = this.hot_cyval;
     },
     async bts_b() {
       let that = this;
       that.loading = true;
       that.$api.home
-          .getCompCustomerInfo()
-          .then(res => {
-            that.loading = false;
-            if (res.code == 200) {
-              that.extendOne = res.data.extendOne;
-            }
-          })
-          .catch(e => {
-            console.log(e);
-            that.loading = false;
-          });
+        .getCompCustomerInfo()
+        .then((res) => {
+          that.loading = false;
+          if (res.code == 200) {
+            that.extendOne = res.data.extendOne;
+          }
+        })
+        .catch((e) => {
+          console.log(e);
+          that.loading = false;
+        });
     },
+    //回显酒店信息
     async st_right_list() {
-      //回显酒店信息
       let that = this;
       that.loading = true;
       that.$api.home
-          .getCityDetail({cityCode: that.hotcltys[0].name})
-          .then(res => {
-            that.stlist = [];
-            that.loading = false;
-            if (res.code == 200) {
-              that.stlist.push({
-                name: '行政区',
-                id: 1,
-                isclk: false, //打开还是关闭
-                oken: false, //是否超过6个
-                list: res.data.cityArea //值
-              });
-              that.stlist.push({
-                name: '机场车站',
-                id: 2,
-                isclk: false, //打开还是关闭
-                oken: false, //是否超过6个
-                list: res.data.cityAirRailWay //值
-              });
-              that.stlist.push({
-                name: '商圈',
-                id: 3,
-                isclk: false, //打开还是关闭
-                oken: false, //是否超过6个
-                list: res.data.cityBusinessSectionInfo //值
-              });
-              that.stlist.push({
-                name: '地铁',
-                id: 3,
-                isclk: false, //打开还是关闭
-                oken: false, //是否超过6个
-                list: res.data.citySubWay //值
-              });
-              that.stlist.push({
-                name: '品牌',
-                id: 3,
-                isclk: false, //打开还是关闭
-                oken: false, //是否超过6个
-                list: that.hotelb(res.data.hotelBrands) //值
-              });
-            }
-          })
-          .catch(e => {
-            console.log(e);
-            that.loading = false;
-          });
+        .getCityDetail({
+          cityCode: that.hotcltys[0].name,
+        })
+        .then((res) => {
+          that.stlist = [];
+          that.loading = false;
+          if (res.code == 200) {
+            that.stlist.push({
+              name: "行政区",
+              id: 1,
+              isclk: false, //打开还是关闭
+              oken: false, //是否超过6个
+              list: res.data.cityArea, //值
+            });
+            that.stlist.push({
+              name: "机场车站",
+              id: 2,
+              isclk: false, //打开还是关闭
+              oken: false, //是否超过6个
+              list: res.data.cityAirRailWay, //值
+            });
+            that.stlist.push({
+              name: "商圈",
+              id: 3,
+              isclk: false, //打开还是关闭
+              oken: false, //是否超过6个
+              list: res.data.cityBusinessSectionInfo, //值
+            });
+            that.stlist.push({
+              name: "地铁",
+              id: 3,
+              isclk: false, //打开还是关闭
+              oken: false, //是否超过6个
+              list: res.data.citySubWay, //值
+            });
+            that.stlist.push({
+              name: "品牌",
+              id: 3,
+              isclk: false, //打开还是关闭
+              oken: false, //是否超过6个
+              list: that.hotelb(res.data.hotelBrands), //值
+            });
+          }
+        })
+        .catch((e) => {
+          console.log(e);
+          that.loading = false;
+        });
     },
     hotelb(item) {
       //返回商圈的值
@@ -790,7 +972,18 @@ export default {
     },
     listchangh(va) {
       //酒店城市
-      this.hotcltys = va;
+      this.flagHis = ''
+       this.hot_cyval= ''
+      this.hotcltys = va;      
+      if(this.hotcltys.length > 0){
+      this.flag = this.historyList.find(item => item.city[0].id == this.hotcltys[0].id)
+      }
+     
+    },
+    hisClick(item , index){
+      this.hot_cyval = item.cityval.name
+      this.flagHis = item
+      this.hotcityname = false
     },
     passuser(list) {
       this.drawer = false;
@@ -811,9 +1004,32 @@ export default {
       this.appartasklist = [];
       this.iskok = key;
       this.routs(key);
-      let city = this.cityslist;
-      this.cityslist = city;
+      this.flagCheck = false;
+        if (this.iskok == 3) {
+          this.citylist = [
+            {
+              id: "",
+              name: "",
+            },
+          ];
+        } else {
+          this.citylist = [
+            {
+              id: "",
+              name: "",
+            },
+            {
+              id: "",
+              name: "",
+            },
+          ];
+        }
 
+      this.values = "";
+      this.valuer = "";
+      this.traitime = "";
+      this.hoteltime = "";
+      this.isbeforehand = "";
     },
     dealDisabledDate(time) {
       //禁掉小于当前日期
@@ -823,97 +1039,104 @@ export default {
     newstaname(tm) {
       //回显城市名称
       if (tm.vehicle == 1 || tm.vehicle == 2) {
-        return tm.deptCityName + '-' + tm.arrivCityName;
+        return tm.deptCityName + "-" + tm.arrivCityName;
       } else {
-        return tm.cityName + '　' + tm.remark;
+        return tm.cityName + "　" + tm.remark;
       }
     },
-    newicname(tm) {
-      //回显类型
-      if (tm == 1) {
-        return '[机票]';
-      } else if (tm == 2) {
-        return '[火车]';
-      } else {
-        return '[酒店]';
-      }
-    },
-    newdata(tm) {
-      //回显时间
-      let sta = '';
-      let stamon = '';
-      let stadta = '';
-      let end = '';
-      let endmon = '';
-      let enddta = '';
-      if (tm.std != 6) {
-        if (tm.std == 4) {
-          sta = new Date(tm.deptDate.replace(/-/g, '/')); //出发日期
-          stamon = this.dats(sta.getMonth() + 1);
-          stadta = this.dats(sta.getDate());
-          end = new Date(tm.deptDates.replace(/-/g, '/')); //到达日期
-          endmon = this.dats(end.getMonth() + 1);
-          enddta = this.dats(end.getDate());
-        } else {
-          sta = new Date(tm.deptDate.replace(/-/g, '/')); //出发日期
-          stamon = this.dats(sta.getMonth() + 1);
-          stadta = this.dats(sta.getDate());
-        }
-      } else {
-        sta = new Date(tm.inDate.replace(/-/g, '/')); //出发日期
-        stamon = this.dats(sta.getMonth() + 1);
-        stadta = this.dats(sta.getDate());
-        end = new Date(tm.outDate.replace(/-/g, '/')); //到达日期
-        endmon = this.dats(end.getMonth() + 1);
-        enddta = this.dats(end.getDate());
-      }
-      if (tm.goBack == 3) {
-        return stamon + '月' + stadta + '日' + '　出发';
-      } else if (tm.std == 4) {
-        if (tm.goBack === 2) {
-          return endmon + '月' + enddta + '日' + '　出发　' + stamon + '月' + stadta + '日' + ' 返回';
-        } else if (tm.goBack === 1) {
-          return stamon + '月' + stadta + '日' + '　出发　' + endmon + '月' + enddta + '日' + ' 返回';
-        }
-      } else if (tm.std == 6) {
-        return stamon + '月' + stadta + '日' + '　入住　' + endmon + '月' + enddta + '日' + ' 离店';
-      } else if (tm.std == 2) {
-        if (tm.goBack === 2) {
-          return stamon + '月' + stadta + '日' + '　出发　'
-        } else if (tm.goBack === 1) {
-          return stamon + '月' + stadta + '日' + '　出发　'
-        }
-      }
-    },
+    // newicname(tm) {
+    // 	//回显类型
+    // 	if (tm == 1) {
+    // 		return '[机票]';
+    // 	} else if (tm == 2) {
+    // 		return '[火车]';
+    // 	} else {
+    // 		return '[酒店]';
+    // 	}
+    // },
+    // newdata(tm) {
+    // 	//回显时间
+    // 	let sta = '';
+    // 	let stamon = '';
+    // 	let stadta = '';
+    // 	let end = '';
+    // 	let endmon = '';
+    // 	let enddta = '';
+    // 	if (tm.std != 6) {
+    // 		if (tm.std == 4) {
+    // 			sta = new Date(tm.deptDate.replace(/-/g, '/')); //出发日期
+    // 			stamon = this.dats(sta.getMonth() + 1);
+    // 			stadta = this.dats(sta.getDate());
+    // 			end = new Date(tm.deptDates.replace(/-/g, '/')); //到达日期
+    // 			endmon = this.dats(end.getMonth() + 1);
+    // 			enddta = this.dats(end.getDate());
+    // 		} else {
+    // 			sta = new Date(tm.deptDate.replace(/-/g, '/')); //出发日期
+    // 			stamon = this.dats(sta.getMonth() + 1);
+    // 			stadta = this.dats(sta.getDate());
+    // 		}
+    // 	} else {
+    // 		sta = new Date(tm.inDate.replace(/-/g, '/')); //出发日期
+    // 		stamon = this.dats(sta.getMonth() + 1);
+    // 		stadta = this.dats(sta.getDate());
+    // 		end = new Date(tm.outDate.replace(/-/g, '/')); //到达日期
+    // 		endmon = this.dats(end.getMonth() + 1);
+    // 		enddta = this.dats(end.getDate());
+    // 	}
+    // 	if (tm.goBack == 3) {
+    // 		return stamon + '月' + stadta + '日' + '　出发';
+    // 	} else if (tm.std == 4) {
+    // 		if (tm.goBack === 2) {
+    // 			return endmon + '月' + enddta + '日' + '　出发　' + stamon + '月' + stadta + '日' + ' 返回';
+    // 		} else if (tm.goBack === 1) {
+    // 			return stamon + '月' + stadta + '日' + '　出发　' + endmon + '月' + enddta + '日' + ' 返回';
+    // 		}
+    // 	} else if (tm.std == 6) {
+    // 		return stamon + '月' + stadta + '日' + '　入住　' + endmon + '月' + enddta + '日' + ' 离店';
+    // 	} else if (tm.std == 2) {
+    // 		if (tm.goBack === 2) {
+    // 			return stamon + '月' + stadta + '日' + '　出发　'
+    // 		} else if (tm.goBack === 1) {
+    // 			return stamon + '月' + stadta + '日' + '　出发　'
+    // 		}
+    // 	}
+    // },
     dats(it) {
       if (it < 10) {
-        return '0' + it;
+        return "0" + it;
       } else {
         return it;
       }
     },
     async routs(it) {
-      this.loading2 = true
+      this.loading2 = true;
       try {
         this.stlistlist = [];
         let retilot = {};
+          //  
         if (it == 1) {
-          retilot = await this.$api.home.getAgreeApprvTask({ //1机票单程 2火车 3酒店  4机票往返
-            type: 4
+          retilot = await this.$api.home.getAgreeApprvTask({
+            //1机票单程 2火车 3酒店  4机票往返
+            type: 4,
           });
           if (retilot.code == 200) {
             this.appartasklist = retilot.data;
             let datS = retilot.data;
             for (let i in datS) {
-              let applivalist = [];
+              let applivalist = [];          
               let appflks = datS[i].tmsGssLink.applyVehicles;
               for (let k = 0; k < appflks.length; k++) {
                 appflks[k].std = 4;
                 let nums = 0;
 
                 for (let p in applivalist) {
-                  if (appflks[k].goBackGroup != null && appflks[k].goBackGroup != undefined) {
-                    if (applivalist[p].citys.goBackGroup == appflks[k].goBackGroup) {
+                  if (
+                    appflks[k].goBackGroup != null &&
+                    appflks[k].goBackGroup != undefined
+                  ) {
+                    if (
+                      applivalist[p].citys.goBackGroup == appflks[k].goBackGroup
+                    ) {
                       nums = 1;
                     }
                   }
@@ -924,27 +1147,26 @@ export default {
                     id: appflks[k].id,
                     ids: appflks[k + 1].id,
                     reson: datS[i].reason,
-                    citys: appflks[k],//出差信息
-                    nams: datS[i].tmsGssLink.applyStaffs,//出差人
+                    reasonId: datS[i].reasonId,
+                    citys: appflks[k], //出差信息
+                    nams: datS[i].tmsGssLink.applyStaffs, //出差人
                     sit: {
-                      deptName: datS[i].deptName,//部门名称
+                      deptName: datS[i].deptName, //部门名称
                       costcenterName: datS[i].costName,
-                      deptId: datS[i].deptId,//部门id
-                      costId: datS[i].costId,//成本中心id
-                      costName: datS[i].costName,//成本中心名称
-                      travelNo: datS[i].travelNo,//出差单号
-                    }
-                  })
+                      deptId: datS[i].deptId, //部门id
+                      costId: datS[i].costId, //成本中心id
+                      costName: datS[i].costName, //成本中心名称
+                      travelNo: datS[i].travelNo, //出差单号
+                    },
+                  });
                 }
               }
               this.stlistlist = this.stlistlist.concat(applivalist);
-              
             }
-
           }
         }
         let res = await this.$api.home.getAgreeApprvTask({
-          type: it
+          type: it,
         });
         if (res.code == 200) {
           this.appartasklist = res.data.concat(this.appartasklist);
@@ -958,6 +1180,7 @@ export default {
                 this.stlistlist.push({
                   id: dat[i].tmsGssLink.applyHotels[k].id,
                   reson: dat[i].reason, //出差事由
+                  reasonId: dat[i].reasonId,
                   citys: datd, //出差信息
                   nams: dat[i].tmsGssLink.applyStaffs, //出差人
                   sit: {
@@ -966,10 +1189,9 @@ export default {
                     deptId: dat[i].deptId, //部门id
                     costId: dat[i].costId, //成本中心id
                     costName: dat[i].costName, //成本中心名称
-                    travelNo: dat[i].travelNo //出差单号
-                  }
+                    travelNo: dat[i].travelNo, //出差单号
+                  },
                 });
-                
               }
             } else {
               for (let k in dat[i].tmsGssLink.applyVehicles) {
@@ -979,6 +1201,7 @@ export default {
                   ctime: new Date(datd.createTime).getTime(),
                   id: dat[i].tmsGssLink.applyVehicles[k].id,
                   reson: dat[i].reason,
+                  resonid: dat[i].reasonId,
                   citys: datd, //出差信息
                   nams: dat[i].tmsGssLink.applyStaffs, //出差人
                   sit: {
@@ -987,28 +1210,33 @@ export default {
                     deptId: dat[i].deptId, //部门id
                     costId: dat[i].costId, //成本中心id
                     costName: dat[i].costName, //成本中心名称
-                    travelNo: dat[i].travelNo //出差单号
-                  }
+                    travelNo: dat[i].travelNo, //出差单号
+                  },
                 });
-                
               }
             }
           }
-           this.loading2 = false
+          this.loading2 = false;
         } else {
+          this.loading2 = false;
           this.$message({
             message: res.message,
-            type: 'warning'
+            type: "warning",
           });
         }
         this.stlistlist.sort(function (a, b) {
-          return a.ctime < b.ctime ? 1 : -1
+          return a.ctime < b.ctime ? 1 : -1;
         }); //从大到小排序
+        // console.log("this.reasonList",this.reasonList)
+      //  for (let i = 0; i < this.stlistlist.length; i++) {
+      //    this.stlistlist[i].reson = this.reasonList.filter(item=> item.id == this.stlistlist[i].reson)[0].reason || this.stlistlist[i].reson
+      //   }
+        
       } catch (e) {
-        console.log(e)
+        console.log(e);
+        this.loading2 = false;
         //TODO handle the exception
       }
-      
     },
     beginDatec() {
       const self = this;
@@ -1019,7 +1247,7 @@ export default {
             return new Date(self.valuer).getTime() < time.getTime();
           } else {
           }
-        }
+        },
       };
     },
     processDatec() {
@@ -1031,10 +1259,14 @@ export default {
             return new Date(self.values).getTime() > time.getTime();
           } else {
           }
-        }
+        },
       };
     },
-  }
+    deletClick(){
+      this.historyList = []
+      localStorage.removeItem("history")
+    },
+  },
 };
 </script>
 
@@ -1068,13 +1300,13 @@ export default {
           .hom_topslit {
             width: 100%;
             height: 88px;
-            background-color: rgba(0, 0, 0, .3);
+            background-color: rgba(0, 0, 0, 0.3);
             border-top-left-radius: 6px;
             border-top-right-radius: 6px;
             line-height: 88px;
             font-size: 22px;
             display: flex;
-            color: #FFFFFF;
+            color: #ffffff;
 
             .hom_list {
               display: flex;
@@ -1082,7 +1314,7 @@ export default {
               justify-content: center;
               width: 284px;
               height: 88px;
-              color: #CCCCCC;
+              color: #cccccc;
               cursor: pointer;
 
               img {
@@ -1092,7 +1324,7 @@ export default {
 
             .hom_listok {
               color: #333333;
-              background-color: #FFFFFF;
+              background-color: #ffffff;
               border-top-left-radius: 6px;
               border-top-right-radius: 6px;
             }
@@ -1104,27 +1336,90 @@ export default {
             border-top-right-radius: 6px;
             border-bottom-left-radius: 6px;
             border-bottom-right-radius: 6px;
-            background-color: #FFFFFF;
+            background-color: #ffffff;
 
             .homt_vls {
               display: flex;
               width: 195px;
               padding: 10px 15px;
               position: relative;
-
+              cursor: pointer;
+              .checkbox {
+                display: flex;
+                align-items: center;
+                & > div {
+                  width: 14px;
+                  height: 14px;
+                  border-radius: 2px;
+                  border: 1px solid #ccc;
+                  text-align: center;
+                  line-height: 14px;
+                  & > .el-icon-check {
+                    font-size: 12px;
+                    line-height: 14px;
+                    display: none;
+                  }
+                }
+                & > span {
+                  font-size: 14px;
+                  line-height: 14px;
+                  margin-left: 5px;
+                }
+              }
+              &:hover {
+                .checkbox {
+                  & > div {
+                    border-color: #409eff;
+                  }
+                  & > span {
+                    color: #409eff;
+                  }
+                }
+              }
+              .flagCheckClass {
+                & > div {
+                  border-color: #409eff;
+                  background: #409eff;
+                  & > .el-icon-check {
+                    display: block;
+                    color: #fff;
+                  }
+                }
+                & > span {
+                  color: #409eff;
+                }
+              }
+              .flagCheckNodata {
+                & > div {
+                  background: #ddd;
+                  border-color: #ccc !important;
+                }
+                & > span {
+                  color: #999;
+                }
+                &:hover {
+                  & > div {
+                    background: #ddd;
+                  }
+                  & > span {
+                    color: #999;
+                  }
+                }
+              }
               .vlislit {
                 position: absolute;
                 left: 190px;
                 top: 10px;
                 width: 270px;
                 padding: 0 10px;
-                max-height: 300px;
+                // min-height: 100px;
+                // max-height: 300px;
                 box-shadow: 0 4px 18px 0 rgba(0, 0, 0, 0.1);
                 border-radius: 3px;
                 background-color: #ffffff;
                 z-index: 10001;
                 cursor: pointer;
-                overflow: auto;
+                // overflow: hidden;
 
                 div.popContainer {
                   position: fixed;
@@ -1137,13 +1432,21 @@ export default {
                 }
 
                 //遮罩层  但是会遮住内容  现无法解决  已搁置
-
+                .talistData{
+                  position: absolute;
+                  left: 0;
+                  top: 0;
+                  width: 270px;
+                  max-height: 270px;
+                  overflow-y: scroll;
+                  z-index: 10002;
+                  padding: 0px 10px;
                 .talist {
                   position: relative;
                   width: 100%;
-                  border: 1px solid #555555;
-                  background: #FFFFFF;
-                  border-radius: 6px;
+                  border: 1px solid #999999;
+                  background: #ffffff;
+                  border-radius: 3px;
                   padding: 10px 0;
                   margin-bottom: 10px;
                   display: flex;
@@ -1211,6 +1514,7 @@ export default {
                       border-radius: 30px;
                     }
                   }
+                }
                 }
               }
 
@@ -1292,8 +1596,10 @@ export default {
                     max-height: 500px;
                     min-height: 300px;
                     overflow-y: scroll;
-                    scrollbar-width: none; /* firefox */
-                    -ms-overflow-style: none; /* IE 10+ */
+                    scrollbar-width: none;
+                    /* firefox */
+                    -ms-overflow-style: none;
+                    /* IE 10+ */
                     background: #ffffff;
                     box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.1);
 
@@ -1338,12 +1644,47 @@ export default {
                     }
 
                     .hotsearchs {
-                      line-height: 25px;
+                      // line-height: 25px;
                       text-indent: 10px;
                       font-size: 14px;
                       cursor: pointer;
-                    }
+                      .mixin_displayBox(@jc:space-between);
+                      padding: 5px;
+                      border-bottom: 1px solid #ccc;
 
+                      & > .searchsList {
+                        display: flex;
+                        align-items: center;
+                        max-width: 80%;
+
+                        & > img {
+                          width: 20px;
+                          height: 20px;
+                        }
+                        & > div {
+                          display: flex;
+                          flex-direction: column;
+                          & > div {
+                            width: 100%;
+                            .mixin_ellipsis();
+                          }
+                          & > span {
+                            width: 100%;
+                            font-size: 12px;
+                            color: #999;
+                            .mixin_ellipsis();
+                          }
+                        }
+                      }
+                      & > span {
+                        padding-left: 10px;
+                      }
+                    }
+                    .serNoData {
+                      min-height: 300px;
+                      .mixin_displayBox();
+                      color: #666;
+                    }
                     .hotsearchs:hover {
                       color: #007aff;
                     }
@@ -1379,7 +1720,6 @@ export default {
                       }
                     }
                   }
-
                 }
               }
 
@@ -1409,7 +1749,6 @@ export default {
                     .inputst /deep/ .el-icon-date {
                       display: none;
                     }
-
                   }
 
                   .thans {
@@ -1418,9 +1757,8 @@ export default {
                     div {
                       width: 10px;
                       height: 2px;
-                      background-color: #CCCCCC;
+                      background-color: #cccccc;
                     }
-
                   }
 
                   .blocks {
@@ -1459,11 +1797,34 @@ export default {
                   .blockops {
                     width: 48%;
                     margin-left: 10px;
-
+                    display: flex;
+                    align-items: center;
+                    border: 1px solid #edf0f5;
                     .selck /deep/ .el-input__inner {
-                      height: 62px;
-                      border: 1px solid #edf0f5;
+                      // height: 62px!important;
+                      border: none;
                       border-radius: 4px;
+                    }
+                  }
+                  .bloriht {
+                    width: 48%;
+                    margin-left: 10px;
+                    display: flex;
+                    .btmaps {
+                      flex: 4;
+                      height: 62px;
+                      display: flex;
+                      align-items: center;
+                      justify-content: center;
+                      flex-direction: column;
+                      color: #999999;
+                      font-size: 10px;
+                      cursor: pointer;
+                      img {
+                        width: 23px;
+                        height: 20px;
+                        margin-bottom: 5px;
+                      }
                     }
                   }
                 }
@@ -1482,7 +1843,7 @@ export default {
           height: 40px;
           padding: 40px 0 0 0;
           border-radius: 6px;
-          background-color: #FFFFFF;
+          background-color: #ffffff;
           min-height: 360px;
           box-shadow: 0 4px 18px 0 rgba(0, 0, 0, 0.1);
 
@@ -1493,8 +1854,9 @@ export default {
             line-height: 30px;
             display: flex;
             align-items: center;
-            color: #409EFF;
+            color: #409eff;
             width: 100px;
+
             p:hover {
               color: #0e7ff1;
             }
@@ -1542,8 +1904,8 @@ export default {
                   text-align: center;
                   line-height: 14px;
                   border-radius: 50%;
-                  background-color: #FFFFFF;
-                  color: #409EFF;
+                  background-color: #ffffff;
+                  color: #409eff;
                   cursor: pointer;
                   font-size: 14px;
                   top: -7px;
@@ -1578,6 +1940,40 @@ export default {
         }
       }
     }
+  }
+}
+.history{
+  width: 100%;
+  &>.hisTitle{
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    color: #666;
+    padding: 0 15px;
+    .el-icon-delete{
+      padding: 0 10px;
+      cursor: pointer;
+      &:hover{
+        color: #0e7ff1;
+      }
+    }
+  }
+  .hisData{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 10px 15px;
+    &>span{
+      padding: 3px 10px;
+      background: #f4f6f8;
+      color: #666;
+      font-size: 12px;
+      margin-right: 10px;
+      border-radius: 15px;
+     cursor: pointer;
+    }
+    &>span:hover{
+        color:#2c81f8 ;
+      }
   }
 }
 </style>

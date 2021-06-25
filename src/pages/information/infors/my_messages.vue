@@ -12,7 +12,7 @@
         </div>
         <div class="userName">
           <div class="userName_right">
-            手机号码:{{ userinfos.user.phone }}
+            手机号码:{{ userinfos.user.phone.replace(/(.{3}).*(.{4})/, "$1******$2") }}
           </div>
           <div class="change_phone" @click="phonei_click">
             <p>更换手机号</p>
@@ -68,9 +68,13 @@
               <div class="userNames_left">
                 {{ item.name }}
               </div>
-              <div class="userNames_right">
-                {{ item.value }}
+              <div class="userNames_right" >
+                {{ item.value | numberPapers }}
               </div>
+              <!-- <div class="userNames_right" v-if="item.flag == true">
+                    {{ item.value}}
+              </div> -->
+              <!-- <i class="el-icon-view" @click="changNum(item,index)"></i> -->
             </div>
             <div class="userNames">
               <div class="userNames_left">
@@ -100,7 +104,7 @@
     <div class="popups" v-if="phone_click">
       <div class="cell_phone_number">更换绑定手机</div>
       <div class="cell_phone">您当前的绑定手机号码</div>
-      <div class="cell_phones">{{ userinfos.user.phone }}</div>
+      <div class="cell_phones">{{ userinfos.user.phone.replace(/(.{3}).*(.{4})/, "$1******$2") }}</div>
       <button class="dimission" @click="submit">更改绑定手机号</button>
       <button class="cancel" @click="companym_click">取消</button>
     </div>
@@ -159,7 +163,7 @@
               </el-option>
             </el-select>
           </div>
-          <div class="Cover_nams"><input type="text" v-model="item.value" class="input_css" :placeholder="item.plahth"/>
+          <div class="Cover_nams"><input type="text" v-model="item.valueFag"  @focus="idFock(index,item.valueFag)" class="input_css" :placeholder="item.plahth"/>
           </div>
           <div class="frop_right">
             <div class="rig_delt" v-if="index > 0" @click="de_icd(item, index)" style="cursor: pointer;">删除</div>
@@ -198,7 +202,7 @@
         </div>
       </div>
     </div>
-    <div class="covers" v-if="covers" @click="">
+    <div class="covers" v-if="covers">
 
     </div>
   </div>
@@ -213,7 +217,11 @@ let hongkongcard = /^[a-zA-Z0-9]{6,10}$/; //港澳通行
 let hometown = /^[a-zA-Z]\d{8}$|^\d{15}$|^\d{17}(\d|x|X)$/; //回乡证
 let name_eng = /^[a-zA-Z\/ ]{2,20}$/;
 let ip_test = /^[1][3456789][0-9]{9}$/;//电话号码正则
+import { numberPapers} from "@/utils/common-filters";
 export default {
+		filters:{
+		   numberPapers
+		},
   data() {
     return {
       loading: false,
@@ -284,6 +292,7 @@ export default {
       totalTime: 30, //记录具体倒计时时间
       canClick: false, //添加canClick
       op_lo: "获取验证码",
+      isTraveler:'',//是否有添加常用旅客的标志
     }
   },
   mounted() {
@@ -329,6 +338,7 @@ export default {
             name: "身份证",
             plahth: "请确保姓名和证件号码与证件一致",
             value: "", //值
+            valueFag:"",
             val: "NI" //对应值
           })
         }
@@ -350,6 +360,7 @@ export default {
           t_name: el[i].t_name,
           name: el[i].name,
           plahth: el[i].plahth,
+          valueFag:numberPapers(el[i].value),
           value: el[i].value,
           val: el[i].val
         })
@@ -375,7 +386,12 @@ export default {
             _this.englishname_list = _this.depd_d(_this.userinfos.passengerVo.certificateList); //证件照1
             _this.englishname_list_modify = _this.depd_d(_this.userinfos.passengerVo.certificateList);
           }
-
+          for (let i = 0; i < _this.englishname_list.length; i++) {
+            _this.englishname_list[i] = {..._this.englishname_list[i],flag:false}
+            
+          }
+          _this.isTraveler =  _this.userinfos.user.isTraveler;
+          this.$emit('isTraveler',this.isTraveler)//向父组件传值
         }
       } catch (e) {
         console.log(e)
@@ -395,6 +411,7 @@ export default {
               t_name: "englishname",
               name: _this.id_list[i].name,
               plahth: "请确保姓名和证件号码与证件一致",
+              valueFag: numberPapers(id[k].cardNo),
               value: id[k].cardNo,
               val: id[k].cardType
             })
@@ -415,6 +432,16 @@ export default {
       this.covers = true;
       this.nameId = null; //id
     },
+    idFock(index,val){
+       // 判断输入传给后台的值是否带星号
+      //  console.log("this.id_list[index].value",val)
+       if( this.englishname_list_modify[index].valueFag[3] == '*'){
+      this.englishname_list_modify[index].value = this.englishname_list_modify[index].valueFag[3] == '*'?this.englishname_list_modify[index].valueFag = '':this.englishname_list_modify[index].valueFag
+       }
+
+     
+    },
+
     dimissions() {
       this.dimiss = true;
       this.dimies = false;
@@ -658,6 +685,8 @@ export default {
         } else if (englishname[i].val == 'HX') {
           englishname[i].name = '台胞证';
         }
+        englishname[i].value = englishname[i].valueFag[3] == "*"? englishname[i].value : englishname[i].valueFag
+
         if (englishname[i].value == "") {
           _this.$message({
             message: '证件信息不能为空',
@@ -759,6 +788,10 @@ export default {
           _this.loading = false;
         }
       }
+    },
+    changNum(item,index){
+      this.englishname_list[index].flag = !this.englishname_list[index].flag
+       this.$forceUpdate()
     }
   }
 }
@@ -998,15 +1031,21 @@ p:hover {
             width: 50%;
             line-height: 35px;
             display: flex;
-
+            align-items: center;
             .userNames_left {
-              width: 30%;
+              width: 32%;
               color: #ABB7C2;
               font-size: 15px;
             }
 
             .userNames_right {
-              width: 40%;
+              // width: 40%;
+              margin-right: 10px;
+            }
+            .el-icon-view{
+              text-indent: 0;
+              color: #007aff;
+              cursor: pointer;
             }
           }
         }

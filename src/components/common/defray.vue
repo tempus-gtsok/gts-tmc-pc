@@ -101,9 +101,9 @@ export default {
     recordNo(item) {
       this.recordNos = item;
     },
-    amount(item) {
-      this.amounts = item;
-    }
+    // amount(item) {
+    //   this.amounts = item;
+    // }
   },
   methods: {
     async getPayWays() { //获取支付方式
@@ -150,6 +150,28 @@ export default {
       }
     },
     async defray() { //支付
+    if(this.$route.path == '/traindefray'){ //火车票页面支付 未占座成功不予支付
+       await this.$api.order
+          .toTrainInfo({
+            trainOrderNo: this.$route.query.data
+          }) .then((res) => {
+            if(res.code != 200 ) return this.$message({message:res.message, type: 'warning'})
+            var data = res.data
+            var status = data.orderExt.orderStatus  // 占座成功
+            if(status != 2) return this.$message({message:'正在占座中，请稍后再试'})   
+            var numprice =  data.orderExt.premium
+            this.$emit('getnewstatus',status,numprice)
+            this.newdefray();//占座成功调用
+          }).catch((err) =>{
+
+          })
+      }else{
+        this. newdefray();
+      }
+    },
+
+  //支付方法 
+   async newdefray(){
       if (this.a === 1000023) {
         this.fullscreenLoading = true;
         try {
@@ -204,7 +226,13 @@ export default {
       } else {
         this.$message('请选择支付方式！');
       }
+
+
     },
+
+
+
+
     // 生成二维码
     crateQrcode() {
       this.qr = new QRCode('qrcode', {

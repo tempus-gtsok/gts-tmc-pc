@@ -1,4 +1,5 @@
 <template>
+<!-- 我的申请单 -->
   <div class="applicalist">
     <div class="applists">
       <div class="addbtns" @click="addappli"
@@ -40,9 +41,10 @@
       <div class="tablist" v-for="(item,index) in tableData" @click="applists(item)"
            v-if="rotes('tms:myi:det') || rotes('tms:exa:det')" :key="index">
         <div class="tsokbox">
-          <div class="tstiles">
-            <img :src="trImg(item.tmsGssLinklist[0])"/><span>{{ newicname(item.tmsGssLinklist[0]) }}</span>
+          <div class="tstiles" v-if="item.tmsGssLinklist.length > 0">
+            <img :src="trImg(item.tmsGssLinklist[0])"/><span>{{ item.tmsGssLinklist[0].vehicle | newicname }}</span>
             <span v-if="item.taskType != 3">&nbsp;-&nbsp;{{ taskty(item.taskType) }}</span>
+            <div class="apply_again" v-if="item.taskType == 1" @click.stop="apply_again(item.id)">再次申请<img src="static/image/home/qiantou.png" class="apply_img"></div>
           </div>
           <div class="statusx" :style="{backgroundImage:backimg(item.status)}">{{ tyname(item.status) }}</div>
           <div class="sta_travel">
@@ -55,7 +57,7 @@
             出行人：{{ usertchsn(item.tmsGssLink.applyStaffs) }}
           </div>
           <div class="tmslist">
-            <div class="tlists" v-if="item.tmsGssLinklist.length > 0 && ints != 3" v-for="(its,ints) in item.tmsGssLinklist"
+            <div class="tlists" v-if="item.tmsGssLinklist.length > 0 && ints < 3" v-for="(its,ints) in item.tmsGssLinklist"
                 :key="ints">
               <div class="tl_right">
                 <div class="tl_tops">
@@ -67,7 +69,7 @@
                     {{ newstaname(its) }}
                   </div>
                 </div>
-                <div class="tl_bots">
+                <div class="tl_bots" >
                   {{ newdata(its) }}
                 </div>
               </div>
@@ -100,9 +102,12 @@
 <script>
 import citys from "../../../static/js/airports.js";
 import NoData from "@/components/common/noData";
-
+import { cityName,newicname } from "@/utils/common-filters";
 export default {
   components: {NoData},
+   filters:{
+     cityName,newicname
+   },
   data() {
     return {
       currentPage3: 1,
@@ -125,16 +130,32 @@ export default {
           value: 0,
         },
         {
-          label: "审批通过",
+          label: "审批中",
           value: 1,
         },
+        {
+          label: "审批通过",
+          value: 2,
+          },
         {
           label: "驳回",
           value: 3,
         },
+        {
+          label: "撤回",
+          value: 4,
+        },
+        {
+          label: "免审",
+          value: 5,
+        },
+        {
+          label: "已取消",
+          value: 6,
+        },
       ],
-      tasktype: "", //状态
-      taskpe: "", //类型
+      tasktype:99, //状态
+      taskpe: 99, //类型
       taskpes: [
         {
           label: "全部",
@@ -176,6 +197,12 @@ export default {
     //监听路由变化
     $route(to, from) {
       this.types = this.$route.query.data; //获取上个页面传入的参数
+      this.seranames = ''
+      this.tasktype = 99
+      this.creatime = ''
+      this.datea = ''
+      this.dates = ''
+      this.taskpe = 99
       this.search();
     },
   },
@@ -186,10 +213,11 @@ export default {
     if (userinfo) {
       this.tccrBeforeMiddle = userinfo.tccrBeforeMiddle;
     }
+    
   },
   methods: {
     backimg(i) {
-      if (i == 4) {
+      if (i == 4 || i== 10 ) {
         return "url(../../../static/image/order/orderba.png)";
       } else if (i == 0) {
         return "url(../../../static/image/order/orderbb.png)";
@@ -200,6 +228,7 @@ export default {
     },
     newdata(tm) {
       //回显时间
+     
       if (tm.vehicle == 3) {
         return (
             tm.inDate.substring(0, 10) +
@@ -219,7 +248,7 @@ export default {
           return tm.deptDate.substring(0, 10) + "   出发";
         }
       } else if (tm.vehicle == 2) {
-        return tm.deptDate.substring(0, 10) + "   出发";
+        return tm.deptDate?tm.deptDate.substring(0, 10) + "   出发" : '';
       }
     },
     newstaname(tm) {
@@ -230,9 +259,9 @@ export default {
         if (tm.deptCityName == null || tm.arrivCityName == null) {
           if (tm.vehicle == 1) {
             return (
-                this.citname(tm.deptCityCode) +
+                cityName(tm.deptCityCode) +
                 "  -  " +
-                this.citname(tm.arrivCityCode)
+                cityName(tm.arrivCityCode)
             );
           }
         } else {
@@ -240,19 +269,19 @@ export default {
         }
       }
     },
-    newicname(tm) {
-      //回显类型
-      if (tm.vehicle == 1) {
-        this.img = '../../../static/image/sqd_hc.png'
-        return "机票";
-      } else if (tm.vehicle == 2) {
-        return "火车";
-      } else if (tm.vehicle == 5) {
-        return "用车";
-      } else {
-        return "酒店";
-      }
-    },
+    // newicname(tm) {
+    //   console.log(tm.vehicle)
+    //   //回显类型
+    //   if (tm.vehicle == 1) {
+    //     return "机票";
+    //   } else if (tm.vehicle == 2) {
+    //     return "火车";
+    //   } else if (tm.vehicle == 5) {
+    //     return "用车";
+    //   } else {
+    //     return "酒店";
+    //   }
+    // },
     trImg(tm){
       if (tm.vehicle == 1) {
         return "../../../static/image/sqd_jp.png";
@@ -264,14 +293,14 @@ export default {
         return "../../../static/image/sqd_jd.png";
       }
     },
-    citname(code) {
-      let datcy = citys.addressAirportAll;
-      for (let i = 0; i < datcy.length; i++) {
-        if (datcy[i].airportCode == code) {
-          return datcy[i].cityCName;
-        }
-      }
-    },
+    // citname(code) {
+    //   let datcy = citys.addressAirportAll;
+    //   for (let i = 0; i < datcy.length; i++) {
+    //     if (datcy[i].airportCode == code) {
+    //       return datcy[i].cityCName;
+    //     }
+    //   }
+    // },
     applists(item) {
       //跳转申请单详情页面
       this.$router.push({
@@ -281,6 +310,14 @@ export default {
           type: this.types,
         },
       });
+    },
+    apply_again(id){ //再次申请
+      this.$router.push({
+        path: '/addapplication',
+        query:{
+          id: id
+        }
+      })
     },
     addappli() {
       //跳转新增申请单页面
@@ -370,6 +407,10 @@ export default {
         return "免审";
       } else if (it == 9) {
         return "已过期";
+      } else if (it == 6) {
+        return "已取消";
+      } else if (it == 7) {
+        return "已使用";
       } else {
         return it;
       }
@@ -617,6 +658,26 @@ export default {
           .mixin_displayBox();
           img{
             margin:0 10px 0 0
+          }
+          .apply_again{
+            border: 1px solid #c4def6;
+            border-radius: 16px;
+            color: #3c85fd;
+            font-size: 14px;
+            width: 90px;
+            line-height: 22px;
+            margin-left: 20px;
+            text-align: center;
+            align-items: center;
+
+            .apply_img{
+              margin-left: 8px;
+              margin-right: 0 !important;
+            }
+          }
+
+          .apply_again:hover {
+            opacity: 0.8;
           }
         }
 

@@ -1,4 +1,5 @@
 <template>
+<!-- 差旅报告->酒店 -->
   <div>
     <div class="travelbox">
       <travel_report :tarlist_ids="tarlist_id"></travel_report>
@@ -191,7 +192,7 @@
 <script>
 import Travel_report from "./travel_report";
 import citysearchs from "../../components/common/citycomponents_t";
-
+import { formatDate } from "@/utils/common";
 export default {
   name: "hotel_report",
   components: { citysearchs, Travel_report },
@@ -232,26 +233,26 @@ export default {
       this.loading = true;
       this.trainreport();
     },
-    formatDate(value) {
-      //时间转换
-      if (value != null && value != "") {
-        let date = new Date(value);
-        let y = date.getFullYear();
-        let MM = date.getMonth() + 1;
-        MM = MM < 10 ? "0" + MM : MM;
-        let d = date.getDate();
-        d = d < 10 ? "0" + d : d;
-        let h = date.getHours();
-        h = h < 10 ? "0" + h : h;
-        let m = date.getMinutes();
-        m = m < 10 ? "0" + m : m;
-        let s = date.getSeconds();
-        s = s < 10 ? "0" + s : s;
-        return y + "-" + MM + "-" + d + " " + h + ":" + m + ":" + s;
-      } else {
-        return "";
-      }
-    },
+    // formatDate(value) {
+    //   //时间转换
+    //   if (value != null && value != "") {
+    //     let date = new Date(value);
+    //     let y = date.getFullYear();
+    //     let MM = date.getMonth() + 1;
+    //     MM = MM < 10 ? "0" + MM : MM;
+    //     let d = date.getDate();
+    //     d = d < 10 ? "0" + d : d;
+    //     let h = date.getHours();
+    //     h = h < 10 ? "0" + h : h;
+    //     let m = date.getMinutes();
+    //     m = m < 10 ? "0" + m : m;
+    //     let s = date.getSeconds();
+    //     s = s < 10 ? "0" + s : s;
+    //     return y + "-" + MM + "-" + d + " " + h + ":" + m + ":" + s;
+    //   } else {
+    //     return "";
+    //   }
+    // },
     async trainreport() {
       if (this.search.departuedate != null && this.search.departuedate != "") {
         let res = await this.$api.travelreport.holCusStatementList({
@@ -261,8 +262,8 @@ export default {
           dateType: 2,
           saleOrderNo: this.search.singleNumber,
           hotelName: this.search.hotelName,
-          startDate: this.formatDate(this.search.departuedate[0]),
-          endDate: this.formatDate(this.search.departuedate[1]),
+          startDate: formatDate(this.search.departuedate[0]),
+          endDate: formatDate(this.search.departuedate[1]),
           hotelOrderNo: this.search.supplier,
           guestName: this.search.travelerName,
         });

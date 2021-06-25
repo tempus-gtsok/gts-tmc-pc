@@ -1,4 +1,5 @@
 <template>
+	<!-- 酒店支付页面 -->
   <div class="hoteorder" v-loading="loading" v-if="plsitsti.hotelOrder != null && plsitsti.hotelOrder != undefined">
     <div class="hotboxs">
       <div class="hot_lefts" style="width: 60%;">
@@ -9,7 +10,7 @@
           <span>￥{{ plsitsti.hotelOrder.totalPrice }}</span>
         </div>
       </div>
-      <img :src="userstatus(orderStatus)" alt="">
+      <img :src="orderStatus | hotellUserstatus" alt="">
     </div>
     <defray business-type="1" product-type="4" :record-no=codes :amount=plsitsti.hotelOrder.totalPrice></defray>
   </div>
@@ -17,9 +18,14 @@
 
 <script>
 import Defray from "@/components/common/defray";
+import { hotellUserstatus } from "@/utils/common-filters";
 export default {
   name: "hotersdefray",
   components: {Defray},
+    filters:{
+			hotellUserstatus
+		},
+
   data(){
     return{
       codes: '', //酒店id
@@ -32,70 +38,70 @@ export default {
   this.searchhoter();
   },
   methods:{
-    userstatus(ite) {
-      //订单状态
-      let arr = [{
-        name: '待审核',
-        id: 650,
-        url: '../../../static/image/home/To-audit.png'
-      },
-        {
-          name: '处理中',
-          id: 100,
-          url: '../../../static/image/home/processing.png'
-        },
-        {
-          name: '拒单',
-          id: 600,
-          url: '../../../static/image/home/From-single.png'
-        },
-        {
-          name: '审批拒绝',
-          id: 121,
-          url: '../../../static/image/home/Approval-refused.png'
-        },
-        {
-          name: '占房成功',
-          id: 122,
-          url: '../../../static/image/home/Building-successful.png'
-        },
-        {
-          name: '申请中',
-          id: 117,
-          url: '../../../static/image/home/processing.png'
-        },
-        {
-          name: '待处理',
-          id: 115,
-          url: '../../../static/image/home/Pending.png'
-        },
-        {
-          name: '预定成功',
-          id: 101,
-          url: '../../../static/image/home/book-successfully.png'
-        },
-        {
-          name: '下单失败',
-          id: 102,
-          url: '../../../static/image/home/Order-failed.png'
-        },
-        {
-          name: '取消中',
-          id: 400,
-          url: '../../../static/image/home/Cancelled.png'
-        },
-        {
-          name: '取消成功',
-          id: 401,
-          url: '../../../static/image/home/Canceled.png'
-        }
-      ];
-      for (let i in arr) {
-        if (arr[i].id == ite) {
-          return arr[i].url;
-        }
-      }
-    },
+    // userstatus(ite) {
+    //   //订单状态
+    //   let arr = [{
+    //     name: '待审核',
+    //     id: 650,
+    //     url: '../../../static/image/home/To-audit.png'
+    //   },
+    //     {
+    //       name: '处理中',
+    //       id: 100,
+    //       url: '../../../static/image/home/processing.png'
+    //     },
+    //     {
+    //       name: '拒单',
+    //       id: 600,
+    //       url: '../../../static/image/home/From-single.png'
+    //     },
+    //     {
+    //       name: '审批拒绝',
+    //       id: 121,
+    //       url: '../../../static/image/home/Approval-refused.png'
+    //     },
+    //     {
+    //       name: '占房成功',
+    //       id: 122,
+    //       url: '../../../static/image/home/Building-successful.png'
+    //     },
+    //     {
+    //       name: '申请中',
+    //       id: 117,
+    //       url: '../../../static/image/home/processing.png'
+    //     },
+    //     {
+    //       name: '待处理',
+    //       id: 115,
+    //       url: '../../../static/image/home/Pending.png'
+    //     },
+    //     {
+    //       name: '预定成功',
+    //       id: 101,
+    //       url: '../../../static/image/home/book-successfully.png'
+    //     },
+    //     {
+    //       name: '下单失败',
+    //       id: 102,
+    //       url: '../../../static/image/home/Order-failed.png'
+    //     },
+    //     {
+    //       name: '取消中',
+    //       id: 400,
+    //       url: '../../../static/image/home/Cancelled.png'
+    //     },
+    //     {
+    //       name: '取消成功',
+    //       id: 401,
+    //       url: '../../../static/image/home/Canceled.png'
+    //     }
+    //   ];
+    //   for (let i in arr) {
+    //     if (arr[i].id == ite) {
+    //       return arr[i].url;
+    //     }
+    //   }
+    // },
     searchhoter() {
       //查询酒店详情
       let that = this;

@@ -12,23 +12,25 @@
     </div>
     <div class="citycom">
       <div class="citcom_left">
-        <el-input :disabled="citylefts" v-model="cityleft.name" @input="inpu('left')" @focus="foinput('left')" @blur="blurinput('left')" class="inputs" size="medium" placeholder="出发城市"></el-input>
+        <el-input v-if="ckidolds == 2" :disabled="citylefts" v-model="cityleft.name" @input="inpu('left')" @focus="foinput('left')" @blur="blurinput('left')" class="inputs" size="medium" placeholder="入住城市"></el-input>
+        
+        <el-input v-else :disabled="citylefts" v-model="cityleft.name" @input="inpu('left')" @focus="foinput('left')" @blur="blurinput('left')" class="inputs" size="medium" placeholder="出发城市"></el-input>
       </div>
-      <div class="citcom_left" v-if="ckidolds == 0 || ckidolds == 1">
+      <div class="citcom_left" v-show="ckidolds == 0 || ckidolds == 1">
         <el-input :disabled="cityrights" v-model="cityright.name" @input="inpu('right')" @focus="foinput('right')" @blur="blurinput('right')"
                   style="border: 0;" class="inputst" size="medium" placeholder="到达城市"></el-input>
       </div>
-      <div class="citysleft" v-if="ckidolds == 2">
-        <div class="citycoms">
+      <div class="citysleft" v-show="ckidolds == 2">
+        <!-- <div class="citycoms">
           <div class="citcom_left">
             <el-input v-model="hot_cyval" @input="inpus" @focus="foinputs" @blur="bluscitys" class="inputst"
                       size="medium" placeholder="酒店名/位置"></el-input>
           </div>
-        </div>
+        </div> -->
         <div class="hotvals" @mouseover="isctyslts = true" @mouseleave="isctyslts = false" v-if="hotcityname" v-loading="loading">
           <div class="section" v-for="(item, index) in stlist" :key="index" v-if="stlist.length > 0 && hot_cyval == ''">
-            <div class="city-title">{{ item.name }}</div>
-            <div class="city-list">
+            <div class="city-title" v-if="item.name && item.list.length > 0">{{ item.name }}</div>
+            <div class="city-list" v-if="item.list.length > 0">
               <div class="city-item" v-for="(city, i) in item.list" :key="i" @click="onSelect(city)">{{ city }}</div>
             </div>
           </div>
@@ -60,24 +62,24 @@
         <div class="searlist" v-for="(item, index) in searlist" @click="searck(item)" :key="index">{{ item.name }}</div>
       </div>
       <div class="caitime">
-        <div class="citsltimes" v-if="ckidolds == 0 || ckidolds == 1">
+        <div class="citsltimes" v-show="ckidolds == 0 || ckidolds == 1">
           <div class="ctimesdv">
             <el-date-picker class="inputime" value-format="yyyy-MM-dd" v-model="fikdate" type="date" placeholder="去程日期"
-                            :editable="false" :picker-options="startDatePicker"></el-date-picker>
+                            :editable="false" :picker-options="startDatePicker" :default-value="applicattime[0]"></el-date-picker>
           </div>
           <div class="ctimesdv">
             <el-date-picker value-format="yyyy-MM-dd" class="inputime iright" v-model="enddate" type="date" placeholder="返程日期"
-                            :editable="false" :picker-options="endDatePicker"></el-date-picker>
+                            :editable="false" :picker-options="endDatePicker" :default-value="applicattime[1]"></el-date-picker>
             <div class="iconfont closetimes" @click="enddate = ''" v-if="enddate != ''">
               &#xe620;
             </div>
           </div>
         </div>
-        <div class="citsltimesk" v-if="ckidolds == 2">
+        <div class="citsltimesk" v-show="ckidolds == 2">
           <div class="ctimesdvs">
             <el-date-picker value-format="yyyy-MM-dd" v-model="hoteltime" @change="hottimeadd" class="inputime" type="daterange"
                             range-separator="至" start-placeholder="入店(入住)日期" end-placeholder="离店(离开)日期" :editable="false" :clearable="false"
-                            :picker-options="pickerOptions" size="144" align="center"></el-date-picker>
+                            :picker-options="pickerOptions" size="144" align="center" :default-value="applicattime[0]"></el-date-picker>
           </div>
         </div>
       </div>
@@ -100,10 +102,14 @@ export default {
   props: {
     datatime: {
       type: Array
+    },
+    applicattime:{
+      type: Array
     }
   },
   data() {
     return {
+      // 选择日期对应出差日期
       pickerOptions: this.hoteltimeend(),
       startDatePicker: this.beginDate(),
       endDatePicker: this.processDate(),
@@ -193,6 +199,7 @@ export default {
   },
   mounted() {
     this.timesck = this.datatime;
+    this.fikdate = this.applicattime[0]
   },
   methods: {
     addapll() { //添加行程
@@ -222,7 +229,8 @@ export default {
           staname: cityleft, //出发城市
           endname: cityright, //到达城市
           sta: fikdate, //出发时间
-          end: '' //返回时间
+          end: '', //返回时间
+          adtime:[fikdate]
         };
         if (enddate) {
           if(new Date(fikdate).getTime() > new Date(enddate).getTime()){
@@ -233,6 +241,7 @@ export default {
             return
           }
           ad.end = enddate; //返回时间
+          ad.adtime = [fikdate,enddate] 
         }
         su.push(ad);
       } else if (this.ckidolds == 1) { //火车
@@ -295,7 +304,8 @@ export default {
           staname: cityleft, //出发城市
           endname: hot_cyval, //到达地址
           sta: hoteltime[0], //出发时间
-          end: hoteltime[1] //返回时间
+          end: hoteltime[1], //返回时间
+          adtime:hoteltime
         });
       }
       this.$emit('addapli', su);
@@ -574,7 +584,7 @@ export default {
         }
       }
     },
-    inpu(it) {
+    async inpu(it) {
       //输入框值发生变化
       this.mostcity = false;
       let va = '';
@@ -596,7 +606,7 @@ export default {
         }
       }
       let address = [];
-      if (this.ckidolds == 1 || this.ckidolds == 2) {
+      if (this.ckidolds == 1 ) {//酒店和火车
         address = citys.addressTrainAll; //所有车站
         this.searlist = [];
         for (let i in address) {
@@ -607,17 +617,20 @@ export default {
             });
           }
         }
-      } else if (this.ckidolds == 0) {
+      } else if (this.ckidolds == 0) {//机票
         address = tkcitys.addressAirportAll; //所有机场
         this.searlist = [];
         for (let i in address) {
-          if (address[i].airportCName.indexOf(va) != -1 || address[i].airportCode.indexOf(va) != -1) {
+          if(address[i].airportCName.indexOf(va) != -1 || address[i].airportCode.indexOf(va) != -1 || address[i].cityCName.indexOf(va) != -1 || address[i].cityFirstSpell.indexOf(va) != -1 || address[i].citySpell.indexOf(va) != -1 ){
             this.searlist.push({
               id: address[i].airportCode,
               name: address[i].airportCName,
             })
           }
         }
+      }else if(this.ckidolds == 2){
+        const res = await this.$api.home.getCityName({cityName:this.cityleft.name})
+        this.searlist = res.data
       }
       if (this.searlist.length > 0) {
         this.oldcitylist = [];
@@ -633,10 +646,12 @@ export default {
       }
       this.mostcitys = false;
     },
+    // 鼠标移入显示对应城市
     selectStyle(item) {
       this.cityslist(item);
       this.citcheck = item.id;
     },
+    // 展示对应城市
     cityslist(its) {
       //弹出层选择城市
       if (its.id == 'rot') {
@@ -765,7 +780,7 @@ export default {
         }
 
         .inputime /deep/ .el-range-input {
-          width: 134px;
+          width: 119px;
           font-size: 14px;
           margin-left: 4px;
         }
@@ -789,8 +804,8 @@ export default {
 
         .closetimes {
           position: absolute;
-          top: 12px;
-          right: 95px;
+          top: 0px;
+          right: 5px;
           cursor: pointer;
           font-size: 14px;
           color: #A7B8C3;
@@ -800,6 +815,8 @@ export default {
         .inputime {
           width: 100%;
         }
+
+        
 
         .inputime /deep/ .el-input__inner {
           width: 134px;
@@ -812,7 +829,9 @@ export default {
 
         .inputime /deep/.el-input__icon {
           display: none;
+    
         }
+       
 
         .iright /deep/ .el-input__inner {
           text-align: center;
@@ -1062,11 +1081,11 @@ export default {
     }
 
     .searchsleft {
-      left: 10%;
+      left: 0%;
     }
 
     .searchsright {
-      left: 70%;
+      left: 25%;
     }
   }
 

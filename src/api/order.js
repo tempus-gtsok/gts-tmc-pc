@@ -39,7 +39,7 @@ const searchHotelOrderList = data => {
 //飞机改签订单查询
 const queryChangeInfo = data => {
     return http.Post({
-        api: '/tms/api/internal/change/order/queryChangeInfo',
+        api: '/tms/api/internal/change/order/queryChangeOrders',
         data: data
     })
 }
@@ -64,6 +64,14 @@ const queryOrderRefundList = data => {
         data: data
     })
 }
+//飞机退票订单查询2
+const queryRefundOrders = data => {
+    return http.Get({
+        api: '/tms/api/dps/order/refurn/queryRefundOrders',
+        data: data
+    })
+}
+
 //查询国内退废单详情
 const orderRefundDetail = data => {
     return http.Get({
@@ -96,6 +104,13 @@ const ruleCheckRepeatBook = data => {
 const getOrderDetailByTranNo = data => {
     return http.Get({
         api: '/tms/api/dps/order/getOrderDetailByTranNo',
+        data: data
+    })
+}
+//新飞机订单详情
+const getOrderDetail = data => {
+    return http.Get({
+        api: '/tms/api/dps/order/getOrderDetail',
         data: data
     })
 }
@@ -263,6 +278,7 @@ export default {
     queryChangeInfo,
     cancelOrder,
     queryOrderRefundList,
+    queryRefundOrders,
     orderRefundDetail,
     getPnrPriceInfor,
     getTravelPolicy,
@@ -289,5 +305,6 @@ export default {
     searchMySelfHotelOrderList,
     queryMyselfOrders,
     getPayWay,
-    getTravelSwitch
+    getTravelSwitch,
+    getOrderDetail
 }

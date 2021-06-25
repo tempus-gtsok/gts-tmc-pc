@@ -1,12 +1,15 @@
 <template>
+	<!-- 火车支付页面 -->
   <div class="hoteorder" v-loading="loading" v-if="plsitsti.orderExt != null && plsitsti.orderExt != undefined">
     <div class="hotboxs">
-      <img :src="userstatus(orderStatus)" alt="">
+      <img :src="orderStatus | orderStatusUrl" alt="">
       <div class="hot_lefts">
-        <div class="train_so">订单已提交成功，请尽快付款！</div>
+        <div class="train_so" v-if="orderStatus==2">已占座成功，请尽快付款！</div>
+        <div class="train_so" v-else>订单已提交，占座成功后请尽快付款！</div>
+
         <div class="train_list">
           <div>订单单号：{{ codes }}</div>
-          <div>取票号：{{ plsitsti.orderExt.ticketNo }}</div>
+          <div v-if="plsitsti.orderExt.ticketNo">取票号：{{ plsitsti.orderExt.ticketNo }}</div>
           <div class="hotbox">
             <div class="pricenum">
               <div>
@@ -18,28 +21,41 @@
         </div>
       </div>
     </div>
-    <defray business-type="1" product-type="10" :record-no=codes :amount=numprice></defray>
+    <defray business-type="1" product-type="10" :record-no=codes :amount=numprice  @getnewstatus='getnewstatus'></defray>
   </div>
 </template>
 
 <script>
 import Defray from "@/components/common/defray";
-
+import { orderStatusUrl } from "@/utils/common-filters";
 export default {
   name: "traindefray",
   components: {Defray},
+  filters:{
+    orderStatusUrl
+  },
   data() {
     return {
       codes: this.$route.query.data, //火车票id
       orderStatus: '', //订单状态
       plsitsti: {}, //火车票详情
       numprice: '999', //总价
+      timer:'',//定时器
     }
   },
   mounted() {
     this.searchhoter();
+    // this.timer = setInterval(this.searchhoter(), 2000);
+    this.timer = setInterval(() => {
+        this.searchhoter()
+    },3000)
   },
   methods: {
+    getnewstatus(status,numprice){
+      this.orderStatus = status;
+      this.numprice = numprice;
+    },
+   
     async searchhoter() {
       //查询火车详情
       let that = this;
@@ -63,19 +79,20 @@ export default {
               }
               that.splog = [...costsp, ...depsp];
               if (res.data.orderExt.orderStatus == 1) {
-                this.$message({
-                  message: "占座中,请注意短信！",
-                  type: 'success'
-                })
+                // this.$message({
+                //   message: "占座中,请注意短信！",
+                //   type: 'success'
+                // })
               }
               that.typename = that.plsitsti.tmsotr.typename; //1因公2因私
-              that.numprice = that.plsitsti.orderExt.premium; //总价
+              that.numprice = that.plsitsti.orderExt.premium ; //总价
               that.tlement = that.plsitsti.tmsotr.settlement; //结算方式
               that.orderStatus = that.plsitsti.orderExt.orderStatus; //订单状态
               if (that.orderStatus == 2) {
-                this.isclose = true
+                clearInterval(this.timer);//清除定时器
+                // this.isclose = true
               } else {
-                this.isclose = false;
+                // this.isclose = false;
               }
               that.userlist = that.plsitsti.saleOrderDetailList; //乘客信息
               that.usersli = false;
@@ -107,68 +124,75 @@ export default {
             console.log(e);
           });
     },
-    userstatus(ite) {
-      //订单状态
-      let arr = [{
-        name: '占座中',
-        id: 1,
-        url: '../../../static/image/home/In-seat.png'
-      }, {
-        name: '占座成功',
-        id: 2,
-        url: '../../../static/image/home/占座成功.png'
-      }, {
-        name: '出票中',
-        id: 3,
-        url: '../../../static/image/home/ticket.png'
-      }, {
-        name: '已出票',
-        id: 4,
-        url: '../../../static/image/home/check.png'
-      }, {
-        name: '退票中',
-        id: 5,
-        url: '../../../static/image/home/Return-ticket.png'
-      }, {
-        name: '改签中',
-        id: 6,
-        url: '../../../static/image/home/Change-central.png'
-      }, {
-        name: '部分退废',
-        id: 7,
-        url: '../../../static/image/home/Part-retirement.png'
-      }, {
-        name: '部分改签',
-        id: 8,
-        url: '../../../static/image/home/Part-change.png'
-      }, {
-        name: '已退',
-        id: 9,
-        url: '../../../static/image/home/Order-returned.png'
-      }, {
-        name: '订单已废弃',
-        id: 10,
-        url: '../../../static/image/home/Order-abandoned.png'
-      }, {
-        name: '已改签',
-        id: 11,
-        url: '../../../static/image/home/Order-changed.png'
-      }, {
-        name: '占座失败',
-        id: 12,
-        url: '../../../static/image/home/Of-failure.png'
-      }, {
-        name: '出票失败',
-        id: 13,
-        url: '../../../static/image/home/Ticket-failure.png'
-      }];
-      for (let i in arr) {
-        if (arr[i].id == ite) {
-          return arr[i].url;
-        }
-      }
+    // userstatus(ite) {
+    //   //订单状态
+    //   let arr = [{
+    //     name: '占座中',
+    //     id: 1,
+    //     url: '../../../static/image/home/In-seat.png'
+    //   }, {
+    //     name: '占座成功',
+    //     id: 2,
+    //     url: '../../../static/image/home/占座成功.png'
+    //   }, {
+    //     name: '出票中',
+    //     id: 3,
+    //     url: '../../../static/image/home/ticket.png'
+    //   }, {
+    //     name: '已出票',
+    //     id: 4,
+    //     url: '../../../static/image/home/check.png'
+    //   }, {
+    //     name: '退票中',
+    //     id: 5,
+    //     url: '../../../static/image/home/Return-ticket.png'
+    //   }, {
+    //     name: '改签中',
+    //     id: 6,
+    //     url: '../../../static/image/home/Change-central.png'
+    //   }, {
+    //     name: '部分退废',
+    //     id: 7,
+    //     url: '../../../static/image/home/Part-retirement.png'
+    //   }, {
+    //     name: '部分改签',
+    //     id: 8,
+    //     url: '../../../static/image/home/Part-change.png'
+    //   }, {
+    //     name: '已退',
+    //     id: 9,
+    //     url: '../../../static/image/home/Order-returned.png'
+    //   }, {
+    //     name: '订单已废弃',
+    //     id: 10,
+    //     url: '../../../static/image/home/Order-abandoned.png'
+    //   }, {
+    //     name: '已改签',
+    //     id: 11,
+    //     url: '../../../static/image/home/Order-changed.png'
+    //   }, {
+    //     name: '占座失败',
+    //     id: 12,
+    //     url: '../../../static/image/home/Of-failure.png'
+    //   }, {
+    //     name: '出票失败',
+    //     id: 13,
+    //     url: '../../../static/image/home/Ticket-failure.png'
+    //   }];
+    //   for (let i in arr) {
+    //     if (arr[i].id == ite) {
+    //       return arr[i].url;
+    //     }
+    //   }
+    // },
+  },
+  beforeRouteLeave(to, from, next) { 
+    if (this.timer) {
+        clearInterval(this.timer);
+    }
+    next(); 
     },
-  }
+
 }
 </script>
 

@@ -1,13 +1,14 @@
 <template>
+<!-- 我的订单->火车票->详情页 -->
 	<div class="hoteorder" v-loading="loading" v-if="plsitsti.orderExt != null && plsitsti.orderExt != undefined">
 		<div class="hotboxs">
 			<img src="../../../../../static/image/left.png" alt="">
-			<div class="hot_lefts">
-				 
-				<div>订单单号：{{ codes }}</div>
+			<div class="hot_lefts">				 
+				<div>预订单号：{{ codes }}</div>
+				<div  v-if="headtravelNo">出差单号：{{ headtravelNo }}</div>
 				<div v-if="plsitsti.orderExt.ticketNo">取票号：{{ plsitsti.orderExt.ticketNo }}</div>
 			</div>
-			<img :src="userstatus(orderStatus)" alt="">
+			<img :src="orderStatus | orderStatusUrl" alt="">
 		</div>
 		<div style="padding: 10px;background-color: #FFFFFF;border-radius: 4px;">
 			<div class="trainsts">
@@ -40,13 +41,33 @@
 						<span>{{item.seatNo}} {{item.seatclass}}</span>
 					</div>
 					<div>
-						<span>{{catype(item.traPassenger.certType)}}：</span>
-						<span>{{item.traPassenger.certNo}}</span>
+						<span>{{item.traPassenger.certType | catypeNum}}：</span>
+						<span>{{item.traPassenger.certNo | numberPapers}}</span>
 					</div>
-					<div>
+					<div v-if="item.ticketNo">
 						<span>票号：</span>
 						<span>{{item.ticketNo}}</span>
 					</div>
+					<!-- <div v-if="item.ticketNo">
+						<span>保险：</span>
+						<span>{{item.ticketNo}}</span>
+					</div>
+					<div v-if="item.ticketNo">
+						<span>保单号：</span>
+						<span>{{item.ticketNo}}</span>
+					</div>
+					<div v-if="item.ticketNo">
+						<span>保单状态：</span>
+						<span>{{item.ticketNo}}</span>
+					</div>
+					<div v-if="item.ticketNo">
+						<span>服务费：</span>
+						<span>{{item.ticketNo}}</span>
+					</div>
+					<div v-if="item.ticketNo">
+						<span>小计：</span>
+						<span>{{item.ticketNo}}</span>
+					</div> -->
 					<div>
 						<span style=" color: #007AFF;">{{userstatuas(item.status)}}</span>
 					</div>
@@ -93,7 +114,7 @@
 									<span>{{item.traPassenger.name}}</span>
 									<span>{{item.seatNo}}</span>
 									<span>{{item.seatclass}}</span>
-									<span>{{catype(item.traPassenger.certType)}}：{{item.traPassenger.certNo}} </span>
+									<span>{{item.traPassenger.certType | catypeNum}}：{{item.traPassenger.certNo | numberPapers}} </span>
 									<span>票号：{{item.ticketNo}} </span>
 									<span style=" color: #007AFF;">{{userstatuas(item.status)}}</span>	
 								</p>
@@ -101,19 +122,19 @@
 						</div>
 					</el-checkbox-group>
 				</div>
-			</div>
+			</div >
 				<div class="hotbox orderPay">
 				<div class="lefbox">支付信息</div>
 				<div class="payData">
-					<div class="tlement">支付方式：{{ settlement(tlement) }}
+					<div class="tlement">支付方式：{{ tlement | settlement }}
 						<div class="payStatus">						
 							<span style="margin-left: 40px"> 订单总额：<p>￥</p><p>{{ numprice }}</p></span>
-							<span style="margin-left: 40px">支付状态：{{this.pustatus(this.payStatus)}}</span>
+							<span style="margin-left: 40px">支付状态：{{this.payStatus | pustatus}}</span>
 						</div>
 					</div>
 				</div>
 				<defray class="payBot" business-type="1" product-type="10" :record-no=codes :amount=numprice :entryMethod=EntryMethod :pay-status="payStatus"
-                v-if="(payStatus == 2 || payStatus == 1 && typename == 2) || (typename == 1 && tlement == 1)" ></defray>
+                v-if="orderStatus == '2' && (((payStatus == 2 || payStatus == 1) && typename == 2) || (typename == 1 && tlement == 1))" ></defray>
 			</div>
 		</div>
 		<div class="boxbtn bottom">
@@ -184,10 +205,15 @@
 
 <script>
 	import Defray from "@/components/common/defray";
+	import { settlement , pustatus , orderStatusId , orderStatusUrl,catypeNum,numberPapers} from "@/utils/common-filters";
   export default {
-    components: {Defray},
+	components: {Defray},
+	filters:{
+		settlement,pustatus,orderStatusId,orderStatusUrl,catypeNum,numberPapers
+	},
     data() {
 			return {
+				headtravelNo:'',//头部出差单号
 				resons: '', //退票原因
 				checkList: [], //选中人员
 				userlist: [], //出行人信息
@@ -222,7 +248,7 @@
 				numprice: '999', //总价
 				apprvTaskStatu: '', //因公审核状态0待审核 1审核中2审核通过
 				orderStatus: '', //订单状态
-        payStatus: '', //支付状态 1 为待支付 2 支付中 3 为已支付，4 为挂帐支付
+        		payStatus: '', //支付状态 1 为待支付 2 支付中 3 为已支付，4 为挂帐支付
 				apprvTaskReason: '出差事由', //出差事由
 				tlement: 0, //1为现结2为月结
 				RuleMas: false, //当前用户是否免审
@@ -232,7 +258,8 @@
 				isnum: 0,
 				usersnamelist: [],
 				applylist: {},
-        EntryMethod : '',
+				EntryMethod : '',
+				msgErr:'',
 			};
 		},
 		mounted() {
@@ -240,8 +267,10 @@
 			this.codes = this.$route.query.data; //获取上个页面传入的参数
 			this.searchhoter();
 			this.getRuleMainSetting();
+			
 		},
 		methods: {
+			
 			updatas(num) { //申请改签或退票
 				if (this.checkList.length == 0) {
 					this.$message({
@@ -277,19 +306,29 @@
 				let userlist = [];
 				let names = [];
 				let passengerNos = [];
+				let sta = []
 				for (let k in uslist) {
 					for (let i in this.usersnamelist) {
 						if (this.usersnamelist[i].traPassenger.id == uslist[k]) {
 							userlist.push({
 								certNo: this.usersnamelist[i].traPassenger.certNo, //证件号码
-								certType: this.catype(this.usersnamelist[i].traPassenger.certType), //证件类型
+								certType: catypeNum(this.usersnamelist[i].traPassenger.certType), //证件类型
 								name: this.usersnamelist[i].traPassenger.name, //名字
+								reason:this.plsitsti.apprvTaskEntityList[0].reason,
+								reasonId:this.plsitsti.apprvTaskEntityList[0].reasonId
 							});
 							passengerNos.push(this.usersnamelist[i].traPassenger.passengerNo)
 							names.push(this.usersnamelist[i].traPassenger.name)
+							sta.push(this.usersnamelist[i].status)
 						}
 					}
 				}
+				if(isnum == 1){
+				var flag = sta.find(item => {
+					if(item == 9 || item != 4) return true
+				})
+				}
+				if(flag) return this.$message.error("一张车票只可以办理一次改签")
 				let nu = this.plsitsti.tmsotr.typename; //因公因私
 				let userlistnos = [];
 				if (nu == 1) { //因公需要从接口中获取用户passengerNo
@@ -481,31 +520,43 @@
 				let TravelDepartlist = that.TravelDepartlist; //部门审批人
 				let NameCenter = that.NameCenter; //成本中心
 				let resons = that.resons; //退票原因
+				let msgErr = this.msgErr; //成本中心校验是否通过
 				if (NameCenter.id == '') {
 					this.$message({
 						message: '请选择成本中心！',
 						type: 'warning'
 					})
 					return
-				} else if (TravelCostCenlist.length == 0 && this.CostCi == true) {
+				}
+				if (TravelCostCenlist.length == 0 && this.CostCi == true) {
 					this.$message({
 						message: '请选择成本审批人！',
 						type: 'warning'
 					})
 					return
-				} else if (TravelDepartlist.length == 0 && this.CostCis == true) {
+				}
+				if (TravelDepartlist.length == 0 && this.CostCis == true) {
 					this.$message({
 						message: '请选择部门审批人！',
 						type: 'warning'
 					})
 					return
-				} else if (resons == '') {
+				}
+				if (resons == '') {
 					this.$message({
 						message: '请输入退票原因！',
 						type: 'warning'
 					})
 					return
 				}
+				if(msgErr){
+					that.$message({
+					message: msgErr,
+					type: 'warning'
+					});
+					return;
+				}
+
 				let apprvTaskStaffts = []; //审核人员
 				for (var i = 0; i < TravelCostCenlist.length; i++) { //成本中心审批人
 					apprvTaskStaffts.push({
@@ -636,8 +687,12 @@
 							that.CostCi = true;
 							that.CostCenterlist = res.data.costStaffs; //成本审批人
 						}
+						this.msgErr = ''
+					}else{
+						this.msgErr =res.message?res.message:'系统错误'
 					}
 				} catch (e) {
+						this.msgErr =res.message?res.message:'系统错误'
 					console.log(e)
 				}
 			},
@@ -716,13 +771,13 @@
 				//返回日期前10位
 				return tiem.substring(0, 10);
 			},
-			settlement(it) {
-				if (it == 1) {
-					return '现结';
-				} else {
-					return '预付月结';
-				}
-			},
+			// settlement(it) {
+			// 	if (it == 1) {
+			// 		return '现结';
+			// 	} else {
+			// 		return '预付月结';
+			// 	}
+			// },
 			async getRuleMainSetting() { //查询当前用户退房是否需要审核
 				this.$api.order.ruleMainSetting().then((res) => {
 					if (res.code == 200) {
@@ -748,91 +803,91 @@
 					console.log(err)
 				})
 			},
-			pustatus(ty) {
-				//支付状态
-				if (ty == 1) {
-					return '待支付';
-				} else if (ty == 2) {
-					return '支付中';
-				} else if (ty == 3) {
-					return '已支付';
-				} else if (ty == 4) {
-					return '为挂帐支付';
-				}
-			},
-			userstatus(ite) {
-				//订单状态
-				let arr = [{
-					name: '占座中',
-					id: 1,
-					url: '../../../static/image/home/In-seat.png'
-				}, {
-					name: '占座成功',
-					id: 2,
-					url: '../../../static/image/home/占座成功.png'
-				}, {
-					name: '出票中',
-					id: 3,
-					url: '../../../static/image/home/ticket.png'
-				}, {
-					name: '已出票',
-					id: 4,
-					url: '../../../static/image/home/check.png'
-				}, {
-					name: '退票中',
-					id: 5,
-					url: '../../../static/image/home/Return-ticket.png'
-				}, {
-					name: '改签中',
-					id: 6,
-					url: '../../../static/image/home/Change-central.png'
-				}, {
-					name: '部分退废',
-					id: 7,
-					url: '../../../static/image/home/Part-retirement.png'
-				}, {
-					name: '部分改签',
-					id: 8,
-					url: '../../../static/image/home/Part-change.png'
-				}, {
-					name: '已退',
-					id: 9,
-					url: '../../../static/image/home/Order-returned.png'
-				}, {
-					name: '订单已废弃',
-					id: 10,
-					url: '../../../static/image/home/Order-abandoned.png'
-				}, {
-					name: '已改签',
-					id: 11,
-					url: '../../../static/image/home/Order-changed.png'
-				}, {
-					name: '占座失败',
-					id: 12,
-					url: '../../../static/image/home/Of-failure.png'
-				}, {
-					name: '出票失败',
-					id: 13,
-					url: '../../../static/image/home/Ticket-failure.png'
-				}];
-				for (let i in arr) {
-					if (arr[i].id == ite) {
-						return arr[i].url;
-					}
-				}
-			},
-			catype(it) {
-				//返回证件类型
-				if (it == 1) {
-					return '身份证'; //NI
-				} else if (it == 2) {
-					return '护照'; //PP
-				} else if (it == 3) {
-					return '台胞证'; //TB
-				} else if (it == 4) {
-					return '港澳通行证'; //GA
-				}
-			},
+			// pustatus(ty) {
+			// 	//支付状态
+			// 	if (ty == 1) {
+			// 		return '待支付';
+			// 	} else if (ty == 2) {
+			// 		return '支付中';
+			// 	} else if (ty == 3) {
+			// 		return '已支付';
+			// 	} else if (ty == 4) {
+			// 		return '为挂帐支付';
+			// 	}
+			// },
+			// userstatus(ite) {
+			// 	//订单状态
+			// 	let arr = [{
+			// 		name: '占座中',
+			// 		id: 1,
+			// 		url: '../../../static/image/home/In-seat.png'
+			// 	}, {
+			// 		name: '占座成功',
+			// 		id: 2,
+			// 		url: '../../../static/image/home/占座成功.png'
+			// 	}, {
+			// 		name: '出票中',
+			// 		id: 3,
+			// 		url: '../../../static/image/home/ticket.png'
+			// 	}, {
+			// 		name: '已出票',
+			// 		id: 4,
+			// 		url: '../../../static/image/home/check.png'
+			// 	}, {
+			// 		name: '退票中',
+			// 		id: 5,
+			// 		url: '../../../static/image/home/Return-ticket.png'
+			// 	}, {
+			// 		name: '改签中',
+			// 		id: 6,
+			// 		url: '../../../static/image/home/Change-central.png'
+			// 	}, {
+			// 		name: '部分退废',
+			// 		id: 7,
+			// 		url: '../../../static/image/home/Part-retirement.png'
+			// 	}, {
+			// 		name: '部分改签',
+			// 		id: 8,
+			// 		url: '../../../static/image/home/Part-change.png'
+			// 	}, {
+			// 		name: '已退',
+			// 		id: 9,
+			// 		url: '../../../static/image/home/Order-returned.png'
+			// 	}, {
+			// 		name: '订单已废弃',
+			// 		id: 10,
+			// 		url: '../../../static/image/home/Order-abandoned.png'
+			// 	}, {
+			// 		name: '已改签',
+			// 		id: 11,
+			// 		url: '../../../static/image/home/Order-changed.png'
+			// 	}, {
+			// 		name: '占座失败',
+			// 		id: 12,
+			// 		url: '../../../static/image/home/Of-failure.png'
+			// 	}, {
+			// 		name: '出票失败',
+			// 		id: 13,
+			// 		url: '../../../static/image/home/Ticket-failure.png'
+			// 	}];
+			// 	for (let i in arr) {
+			// 		if (arr[i].id == ite) {
+			// 			return arr[i].url;
+			// 		}
+			// 	}
+			// },
+			// catype(it) {
+			// 	//返回证件类型
+			// 	if (it == 1) {
+			// 		return '身份证'; //NI
+			// 	} else if (it == 2) {
+			// 		return '护照'; //PP
+			// 	} else if (it == 3) {
+			// 		return '台胞证'; //TB
+			// 	} else if (it == 4) {
+			// 		return '港澳通行证'; //GA
+			// 	}
+			// },
 			searchhoter() {
 				//查询火车详情
 				let that = this;
@@ -845,6 +900,7 @@
 						that.loading = false;
 						if (res.code == 200) {
 							that.plsitsti = res.data;
+							that.headtravelNo = res.data.tmsotr.travelNo;//头部出差单号
 							that.apprvTaskReason = res.data.apprvTaskReason;
 							let costsp = res.data.costLog; //成本审批
 							let depsp = res.data.deptLog; //部门审批
@@ -862,11 +918,13 @@
 								})
 							}
 							that.typename = that.plsitsti.tmsotr.typename; //1因公2因私
-							that.numprice = that.plsitsti.orderExt.premium + (that.plsitsti.salePrice * that.plsitsti.traPassengerList.length); //总价
+							that.numprice = that.plsitsti.orderExt.premium ; //总价
 							that.tlement = that.plsitsti.tmsotr.settlement; //结算方式
 							that.apprvTaskStatu = that.plsitsti.apprvTaskStatu; //审核状态
 							that.orderStatus = that.plsitsti.orderExt.orderStatus; //订单状态
-              that.payStatus = that.plsitsti.orderExt.saleOrder.payStatus; //支付状态
+             	 			that.payStatus = that.plsitsti.orderExt.saleOrder.payStatus; //支付状态
+
+
 							if (that.orderStatus == 2) {
 								this.isclose = true
 							} else {
@@ -875,13 +933,13 @@
 							that.userlist = that.plsitsti.saleOrderDetailList; //乘客信息
 							that.usersli = false;
 							for (let i in that.userlist) {
-								if (that.userlist[i].status == 4) {
+								if (that.userlist[i].status == 4 || that.userlist[i].status == 9) {
 									that.usersli = true;
 								}
 							}
 							this.usersnamelist = []; //可操作人员信息
 							for (let i in this.plsitsti.saleOrderDetailList) {
-								if (this.plsitsti.saleOrderDetailList[i].status == 4) {
+								if (this.plsitsti.saleOrderDetailList[i].status == 4 || this.plsitsti.saleOrderDetailList[i].status == 9) {
 									this.usersnamelist.push(this.plsitsti.saleOrderDetailList[i])
 								}
 							}
@@ -904,6 +962,7 @@
 							}).catch((err) => {
 								console.log(err)
 							})
+
 						} else {
 							that.$message({
 								message: res.message,

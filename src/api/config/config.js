@@ -1,12 +1,15 @@
 var root
 if (process.env.NODE_ENV === 'development') {
     // 开发环境下的代理地址，解决本地跨域跨域，配置在config目录下的index.js dev.proxyTable中
+    // root = 'http://api.dev.gssok.com'
     root = 'http://api.test.gssok.com'
+    // root = 'http://172.16.51.74:9988'
+	// root = 'http://172.16.9.114:9988'
 } else if (process.env.NODE_ENV === 'dev_server') {
-    // 测试服环境下的地址
+    // 测试服环境下的地址 
     root = 'http://api.test.gssok.com'
 } else if (process.env.NODE_ENV === 'production') {
-    // 生产环境，服务器分发
+    // 生产环境，服务器分test发
     root = '/dpv' //http://api.feiren.com/tmsapi
 } else {
     root = 'http://api.dev.gssok.com'

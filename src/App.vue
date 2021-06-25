@@ -93,7 +93,7 @@ input {
 ::-webkit-scrollbar-thumb {
   /* 滑块部分 */
   border-radius: 3px;
-  background-color: #aaaaaa;
+  background-color: #aaa;
 }
 ::-webkit-scrollbar-track {
   /* 轨道部分 */

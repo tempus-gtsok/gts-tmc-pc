@@ -6,10 +6,10 @@
       </div>
     </div>
     <div class="compons">
-      <mymessage v-if="ids == 'my_message'"></mymessage>
+      <mymessage v-if="ids == 'my_message'"  @isTraveler = "getisTraveler"></mymessage>
       <addsress v-if="ids == 'address' && rotes('tms:person:general')"></addsress>
       <managers v-if="ids == 'management'"></managers>
-      <frequent v-if="ids == 'frequenttravellers' && rotes('tms:pas')"></frequent>
+      <frequent v-if="ids == 'frequenttravellers' && rotes('tms:pas')" :isTraveler ="isTraveler"></frequent>
       <travel v-if="ids == 'TravelPolicy'"></travel>
       <changepassword v-if="ids == 'changePassword'"></changepassword>
     </div>
@@ -50,6 +50,7 @@
           }
         ],
         ids: "my_message",
+        isTraveler:'',//是否有添加常用旅客权限
       }
     },
     components: {
@@ -63,6 +64,9 @@
     methods: {
       cekck(it) {
         this.ids = it;
+      },
+      getisTraveler(val){
+        this.isTraveler = val;
       }
     }
   }

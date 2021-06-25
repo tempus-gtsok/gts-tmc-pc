@@ -13,7 +13,7 @@
 						<el-input class="frame_input" type="password" v-model="ruleForm.checkPass" autocomplete="off"></el-input>
 					</el-form-item>
 					<el-form-item>
-						<el-button type="primary" @click="submitForm('ruleForm')">提交</el-button>
+						<el-button type="primary" @click="submitForm('ruleForm')" v-loading = "loading">提交</el-button>
 						<el-button @click="resetForm('ruleForm')">重置</el-button>
 					</el-form-item>
 				</el-form>
@@ -57,6 +57,7 @@
 				}
 			};
 			return {
+				loading:false,
 				ruleForm: {
 					oldPass: '',
 					pass: '',
@@ -80,6 +81,7 @@
 		},
 		methods: {
 			submitForm(formName) {
+				if(this.loading) return
 				this.$refs[formName].validate((valid) => {
 					if (valid) {
 						let oldPass = this.ruleForm.oldPass;
@@ -95,8 +97,10 @@
 							newPassword: pass,
 							oldPassword: oldPass,
 						}
+						this.loading = true;
 						this.$api.Login.changePassword(user).then(res => {
 							if (res.code == 200) {
+								this.loading = false;
 								this.$message.success('修改成功,请重新登录!');
 								setTimeout(() => {
 									this.$router.push({
@@ -104,11 +108,13 @@
 									})
 								}, 2000);
 							} else {
+								this.loading = false;
 								this.$message.error(res.message);
 							}
 						})
 					} else {
 						console.log('error submit!!');
+
 						return false;
 					}
 				});

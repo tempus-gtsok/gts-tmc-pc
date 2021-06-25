@@ -1,4 +1,5 @@
 <template>
+<!-- 我的订单 -->
   <div class="header_myorder" v-loading="loading">
     <div class="fexibtns">
 
@@ -141,7 +142,7 @@
                 <div>出行人：{{ item.traSaleOrderExt.name }}</div>
               </div>
               <div class="trbtsed">
-                <div>￥{{ item.tolPrice}}</div>
+                <div>￥{{ item.traSaleOrderExt.premium}}</div>
               </div>
               <div class="trbtend">
                 <div class="statusx">
@@ -168,8 +169,8 @@
             <div class="traboot">
               <div class="trbtfit" v-if="item.traSaleChangeDetailList">
                 <div v-if="item.traSaleOrderExt.trainName">{{ replacesli(item.traSaleOrderExt.trainName) }}</div>
-                <div >{{ item.traSaleChangeDetailList[0].departTime }}</div>
-                <div>出行人：{{ item.traSaleChangeDetailList[0].passenagerName }}</div>
+                <div v-if="item.traSaleChangeDetailList[0] && item.traSaleChangeDetailList[0].departTime">{{ item.traSaleChangeDetailList[0].departTime }}</div>
+                <div v-if="item.traSaleChangeDetailList[0] && item.traSaleChangeDetailList[0].passenagerName">出行人：{{ item.traSaleChangeDetailList[0].passenagerName }}</div>
               </div>
               <div class="trbtsed">
                 <div v-if="ordertypels == 2">原单:￥{{ item.traSaleOrderExt.premium }} <span
@@ -214,7 +215,7 @@
                 <div>￥{{ item.hotelOrder.totalPrice }}</div>
               </div>
               <div class="trbtend">
-                <img :src="hotelstatusimg(item.hotelOrder.orderStatus)" alt="">
+                <img :class="{imgT:item.hotelOrder.orderStatus == 411 || item.hotelOrder.orderStatus == 410}" :src="item.hotelOrder.orderStatus | hotellUserstatus" alt="">
               </div>
             </div>
           </div>
@@ -230,8 +231,8 @@
               <div class="tartp_e">
                 <div v-if="enterprise == 1">因公出行</div>
                 <div v-if="enterprise == 2">因私出行</div>
-               
-                <div style="color: red;">{{ item[0].itemStatusname }}</div>
+               <!-- 退改字 -->
+                <div style="color: red;">{{ item[0].itemStatusname }}</div> 
                 <div>{{ item[0].orderingTime }}</div>
               </div>
             </div>
@@ -252,7 +253,7 @@
               </div>
               <div class="traboot">
                 <div class="trbtfit">
-                  <div>{{ cityname(item[0].voyagea) }}-{{ cityname(item[0].voyages) }}</div>
+                  <div>{{ item[0].voyagea | cityName }}-{{ item[0].voyages | cityName }}</div>
                   <div class="time"><span>启程时间：{{ item[0].departTime }} - {{ item[0].arriveDate }} </span><span
                       v-if="item.length == 2">返程时间：{{ item[1].departTime }}
 											- {{ item[1].arriveDate }} </span></div>
@@ -263,11 +264,11 @@
                 </div>
                 <div class="trbtend">
                   <div v-if="item[1] == undefined" class="statusx">
-                    <img :src="backimg(item[0].orderStatus)" alt="">
+                    <img :src="item[0].orderStatus | planeConpan" alt="">
                   </div>
                   <div v-else class="statusx">
-                    <img :src="backimg(item[0].orderStatus)" alt="">
-                    <img :src="backimg(item[1].orderStatus)" alt="">
+                    <img :src="item[0].orderStatus | planeConpan" alt="">
+                    <img :src="item[1].orderStatus | planeConpan" alt="">
                   </div>
                 </div>
               </div>
@@ -303,7 +304,7 @@
               </div>
               <div class="traboot">
                 <div class="trbtfit">
-                  <div>{{ cityname(item[0].voyagea) }}-{{ cityname(item[0].voyages) }}</div>
+                  <div>{{ item[0].voyagea | cityName }}-{{ item[0].voyages | cityName }}</div>
                   <div>{{ (item[0].departTime.split('/'))[0] }} - {{ (item[0].arriveDate.split('/'))[0] }}</div>
                   <div>出行人：{{ item[0].passengers }}</div>
                 </div>
@@ -311,7 +312,7 @@
                   <div>￥{{ item[0].dealingTicketTotalPrice }}</div>
                 </div>
                 <div class="trbtend">
-                  <img class="statusx" :src="backimg(item[0].orderStatus)" alt="">
+                  <img class="statusx" :src="item[0].orderStatus | planeConpan" alt="">
                 </div>
               </div>
             </div>
@@ -323,7 +324,7 @@
               <div>国内机票(单程)</div>
               <div>{{ item.transationOrderNo }}</div>
               <div></div>
-              <div v-if="ordertypels == 2">改签时间:{{ item.createTime }}</div>
+              <div v-if="ordertypels == 2">改签时间:{{ item.items[0].createTime }}</div>
               <div v-if="ordertypels == 1">退票时间:{{ item.items[0].createTime }}</div>
             </div>
             <div class="trainslit">
@@ -365,7 +366,9 @@
           </div>
         </div>
       </div>
-      <no-data v-if="shomlist!=undefined&&shomlist.length > 0&&shomlist.length === 0 && loading === false" class="nodata"></no-data>
+     
+      <!-- <no-data v-if="shomlist!=undefined&&shomlist.length > 0&&shomlist.length === 0 && loading === false" class="nodata"></no-data> -->
+      <no-data v-if="shomlist&&shomlist.length == 0 && loading === false" class="nodata"></no-data>
     </div>
     <div class="block" v-if="shomlist!=undefined&&shomlist.length > 0">
       <el-pagination @current-change="handleCurrentChange" :current-page.sync="currentPage3" :page-size="5"
@@ -380,9 +383,13 @@
 <script>
 import airports from '../../../static/js/airports.js'
 import NoData from "@/components/common/noData";
-
+import { company } from "@/utils/common";
+import { arrType , planeStatus,planeRecedeStatus,hotellStatusTow,hotellUserstatus,planeConpan,cityName } from "@/utils/common-filters";
 export default {
   components: {NoData},
+		filters:{
+			arrType,planeStatus,planeRecedeStatus,hotellStatusTow,hotellUserstatus,planeConpan,cityName
+		},
   data() {
     return {
       timeChang:["本月","本周"],
@@ -453,49 +460,49 @@ export default {
         io: 4
       }],
       activeIndex: '1',
-      trainstaus: [{ //火车正常票订单状态
-        name: '不限',
-        id: 0
-      }, {
-        name: '占座中',
-        id: 1
-      }, {
-        name: '待支付',
-        id: 2
-      }, {
-        name: '出票中',
-        id: 3
-      }, {
-        name: '已出票',
-        id: 4
-      }, {
-        name: '退票中',
-        id: 5
-      }, {
-        name: '改签中',
-        id: 6
-      }, {
-        name: '部分退废',
-        id: 7
-      }, {
-        name: '部分改签',
-        id: 8
-      }, {
-        name: '已退',
-        id: 9
-      }, {
-        name: '订单已废弃',
-        id: 10
-      }, {
-        name: '已改签',
-        id: 11
-      }, {
-        name: '占座失败',
-        id: 12
-      }, {
-        name: '出票失败',
-        id: 13
-      }],
+      // trainstaus: [{ //火车正常票订单状态
+      //   name: '不限',
+      //   id: 0
+      // }, {
+      //   name: '占座中',
+      //   id: 1
+      // }, {
+      //   name: '待支付',
+      //   id: 2
+      // }, {
+      //   name: '出票中',
+      //   id: 3
+      // }, {
+      //   name: '已出票',
+      //   id: 4
+      // }, {
+      //   name: '退票中',
+      //   id: 5
+      // }, {
+      //   name: '改签中',
+      //   id: 6
+      // }, {
+      //   name: '部分退废',
+      //   id: 7
+      // }, {
+      //   name: '部分改签',
+      //   id: 8
+      // }, {
+      //   name: '已退',
+      //   id: 9
+      // }, {
+      //   name: '订单已废弃',
+      //   id: 10
+      // }, {
+      //   name: '已改签',
+      //   id: 11
+      // }, {
+      //   name: '占座失败',
+      //   id: 12
+      // }, {
+      //   name: '出票失败',
+      //   id: 13
+      // }],
       trainstaP: [{ //火车改签单状态
         name: '待支付',
         id: 1
@@ -528,75 +535,75 @@ export default {
           id: 8
         }
       ],
-      hotelstaus: [{ //酒店订单状态
-        name: '不限',
-        id: 0
-      }, {
-        name: '待审核',
-        id: 650
-      }, {
-        name: '处理中',
-        id: 100,
-      }, {
-        name: '待处理',
-        id: 115,
-      }, {
-        name: '预定成功',
-        id: 101,
-      }, {
-        name: '下单失败',
-        id: 102,
-      }, {
-        name: '取消中',
-        id: 400
-      }, {
-        name: '取消成功',
-        id: 401
-      }, {
-        name: '审批拒绝',
-        id: 121
-      }, {
-        name: '占房成功',
-        id: 122,
-      }],
-      planestaus: [{ //国内机票订单状态
-        name: '不限',
-        id: 0
-      }, {
-        name: '预订中',
-        id: 1
-      }, {
-        name: '待审核',
-        id: 2
-      },
-        {
-          name: '待提交',
-          id: 3
-        },
-        {
-          name: '出票中',
-          id: 4
-        },
-        {
-          name: '已出票',
-          id: 5
-        }, {
-          name: '已取消',
-          id: 6
-        }, {
-          name: '已拒单',
-          id: 7
-        }, {
-          name: '待支付',
-          id: 8
-        }, {
-          name: '待审批',
-          id: 9
-        }, {
-          name: '已登账',
-          id: 10
-        }
-      ],
+      // hotelstaus: [{ //酒店订单状态
+      //   name: '不限',
+      //   id: 0
+      // }, {
+      //   name: '待审核',
+      //   id: 650
+      // }, {
+      //   name: '处理中',
+      //   id: 100,
+      // }, {
+      //   name: '待处理',
+      //   id: 115,
+      // }, {
+      //   name: '预定成功',
+      //   id: 101,
+      // }, {
+      //   name: '下单失败',
+      //   id: 102,
+      // }, {
+      //   name: '取消中',
+      //   id: 400
+      // }, {
+      //   name: '取消成功',
+      //   id: 401
+      // }, {
+      //   name: '审批拒绝',
+      //   id: 121
+      // }, {
+      //   name: '占房成功',
+      //   id: 122,
+      // }],
+      // planestaus: [{ //国内机票订单状态
+      //   name: '不限',
+      //   id: 0
+      // }, {
+      //   name: '预订中',
+      //   id: 1
+      // }, {
+      //   name: '待审核',
+      //   id: 2
+      // },
+      //   {
+      //     name: '待提交',
+      //     id: 3
+      //   },
+      //   {
+      //     name: '出票中',
+      //     id: 4
+      //   },
+      //   {
+      //     name: '已出票',
+      //     id: 5
+      //   }, {
+      //     name: '已取消',
+      //     id: 6
+      //   }, {
+      //     name: '已拒单',
+      //     id: 7
+      //   }, {
+      //     name: '待支付',
+      //     id: 8
+      //   }, {
+      //     name: '待审批',
+      //     id: 9
+      //   }, {
+      //     name: '已登账',
+      //     id: 10
+      //   }
+      // ],
       planestaust: [{ //国内机票改签订单状态
         name: '不限',
         id: 0
@@ -631,37 +638,37 @@ export default {
         name: '客户驳回',
         id: 10
       }],
-      planestaustp: [{ //国内机票退票状态
-        name: '不限',
-        id: 0
-      }, {
-        name: '新申请',
-        id: 1
-      }, {
-        name: '已取消',
-        id: 2
-      }, {
-        name: '待审批',
-        id: 3
-      }, {
-        name: '已拒绝',
-        id: 4
-      }, {
-        name: '待提交',
-        id: 5
-      }, {
-        name: '已提交',
-        id: 6
-      }, {
-        name: '已完成',
-        id: 7
-      }, {
-        name: '待客户审核',
-        id: 8
-      }, {
-        name: '已驳回',
-        id: 9
-      }],
+      // planestaustp: [{ //国内机票退票状态
+      //   name: '不限',
+      //   id: 0
+      // }, {
+      //   name: '新申请',
+      //   id: 1
+      // }, {
+      //   name: '已取消',
+      //   id: 2
+      // }, {
+      //   name: '待审批',
+      //   id: 3
+      // }, {
+      //   name: '已拒绝',
+      //   id: 4
+      // }, {
+      //   name: '待提交',
+      //   id: 5
+      // }, {
+      //   name: '已提交',
+      //   id: 6
+      // }, {
+      //   name: '已完成',
+      //   id: 7
+      // }, {
+      //   name: '待客户审核',
+      //   id: 8
+      // }, {
+      //   name: '已驳回',
+      //   id: 9
+      // }],
       retreaeform: [{ //机票火车单类型
         name: '不限',
         id: 0
@@ -681,7 +688,7 @@ export default {
       this.acks(actid)
     } else {
       this.queryOrders(); //订单查询
-      this.orderstatuselist = this.planestaus; //默认展示国内机票状态
+      this.orderstatuselist = planeStatus //默认展示国内机票状态
     }
     this.queryAirlineList(); //飞机国内航司查询
     this.predaddress = airports.addressAirportAll;
@@ -698,6 +705,7 @@ export default {
       return ti;
     },
     typstrain(i) {
+      console.log(i)
       if (i == 1) {
         return '../../../static/image/home/unpaid.png'
       } else if (i == 2) {
@@ -716,29 +724,29 @@ export default {
         return '../../../static/image/home/Part-retirement.png'
       }
     },
-    backimg(i) {
-      if (i == 1) {
-        return '../../../static/image/home/book.png'
-      } else if (i == 9) {
-        return '../../../static/image/home/Approval-Pending.png'
-      } else if (i == 10) {
-        return '../../../static/image/home/Has-been-booked.png'
-      } else if (i == 8) {
-        return '../../../static/image/home/unpaid.png'
-      } else if (i == 6) {
-        return '../../../static/image/home/Canceled.png'
-      } else if (i == 7) {
-        return '../../../static/image/home/From-single.png'
-      } else if (i == 4) {
-        return '../../../static/image/home/ticket.png'
-      } else if (i == 5) {
-        return '../../../static/image/home/check.png'
-      } else if (i == 2) {
-        return '../../../static/image/home/To-audit.png'
-      } else if (i == 3) {
-        return '../../../static/image/home/To-submit.png'
-      }
-    },
+    // backimg(i) {
+    //   if (i == 1) {
+    //     return '../../../static/image/home/book.png'
+    //   } else if (i == 9) {
+    //     return '../../../static/image/home/Approval-Pending.png'
+    //   } else if (i == 10) {
+    //     return '../../../static/image/home/Has-been-booked.png'
+    //   } else if (i == 8) {
+    //     return '../../../static/image/home/unpaid.png'
+    //   } else if (i == 6) {
+    //     return '../../../static/image/home/Canceled.png'
+    //   } else if (i == 7) {
+    //     return '../../../static/image/home/From-single.png'
+    //   } else if (i == 4) {
+    //     return '../../../static/image/home/ticket.png'
+    //   } else if (i == 5) {
+    //     return '../../../static/image/home/check.png'
+    //   } else if (i == 2) {
+    //     return '../../../static/image/home/To-audit.png'
+    //   } else if (i == 3) {
+    //     return '../../../static/image/home/To-submit.png'
+    //   }
+    // },
     backimgg(i) {
       if (i == 1) {
         return '../../../static/image/home/new-application.png'
@@ -965,9 +973,9 @@ export default {
           for (let k in _this.shomlist) { //转换城市名
             _this.shomlist[k]['ims'] = 'http://file.feiren.com/00/02/' + _this.shomlist[k].items[0].airline + '.png'
             _this.shomlist[k]['namelist'] = _this.username(_this.shomlist[k].items);
-            _this.shomlist[k]['companys'] = _this.company(_this.shomlist[k].items[0].airline);
-            _this.shomlist[k]['citynames'] = _this.cityname(_this.shomlist[k].items[0].origDepart);
-            _this.shomlist[k]['citynamey'] = _this.cityname(_this.shomlist[k].items[0].origArrive);
+            _this.shomlist[k]['companys'] = company(_this.shomlist[k].items[0].airline , this.hang);
+            _this.shomlist[k]['citynames'] = cityName(_this.shomlist[k].items[0].origDepart);
+            _this.shomlist[k]['citynamey'] = cityName(_this.shomlist[k].items[0].origArrive);
           }
         } else {
           _this.$message({
@@ -1005,9 +1013,9 @@ export default {
           for (let k in dawt) { //转换城市名
             dawt[k]['ims'] = 'http://file.feiren.com/00/02/' + dawt[k].items[0].airline + '.png'
             dawt[k]['namelist'] = _this.username(dawt[k].items);
-            dawt[k]['companys'] = _this.company(dawt[k].items[0].airline);
-            dawt[k]['citynames'] = _this.cityname(dawt[k].items[0].depart);
-            dawt[k]['citynamey'] = _this.cityname(dawt[k].items[0].arrive);
+            dawt[k]['companys'] = company(dawt[k].items[0].airline , this.hang);
+            dawt[k]['citynames'] = cityName(dawt[k].items[0].depart);
+            dawt[k]['citynamey'] = cityName(dawt[k].items[0].arrive);
           }
           _this.shomlist = dawt || [];
         } else {
@@ -1040,17 +1048,27 @@ export default {
         if (res.code == 200) {
           let namelist = res.data;
           let lists = []
-          for (let i in namelist) {
-            lists.push({
-              value: namelist[i].name
-            })
+          if (namelist.length > 0){
+            for (let i in namelist) {
+              lists.push({
+                value: namelist[i].name
+              })
+              let restaurants = lists;
+              let results = queryString ? restaurants.filter(this.createStateFilter(queryString)) : restaurants;
+
+              clearTimeout(this.timeout);
+              this.timeout = setTimeout(() => {
+                cb(results);
+              }, 3000 * Math.random());
+            } 
+          }else {
             let restaurants = lists;
             let results = queryString ? restaurants.filter(this.createStateFilter(queryString)) : restaurants;
 
             clearTimeout(this.timeout);
             this.timeout = setTimeout(() => {
               cb(results);
-            }, 3000 * Math.random());
+            }, 1000 * Math.random());
           }
         } else {
           _this.$message({
@@ -1072,16 +1090,15 @@ export default {
       };
     },
     handleSelect(item) {
-      console.log(item);
     },
-    cityname(name) { //城市名称
-      let that = this;
-      for (let j = 0; j < that.predaddress.length; j++) {
-        if (name == that.predaddress[j].airportCode) {
-          return that.predaddress[j].cityCName;
-        }
-      }
-    },
+    // cityname(name) { //城市名称
+    //   let that = this;
+    //   for (let j = 0; j < that.predaddress.length; j++) {
+    //     if (name == that.predaddress[j].airportCode) {
+    //       return that.predaddress[j].cityCName;
+    //     }
+    //   }
+    // },
     queryAirlineList() { //获取机场名称
       let _this = this;
       _this.$api.order.queryAirlineList().then((res) => {
@@ -1223,14 +1240,14 @@ export default {
         }
       }
     },
-    company(ie) { //飞机航司名称
-      for (let s in this.hang) {
-        if (ie == s) {
-          ie = this.hang[s];
-          return ie;
-        }
-      }
-    },
+    // company(ie) { //飞机航司名称
+    //   for (let s in this.hang) {
+    //     if (ie == s) {
+    //       ie = this.hang[s];
+    //       return ie;
+    //     }
+    //   }
+    // },
     search() { //点击查询
       if (this.actinst == 1 && this.ordertypels == 2) {
         this.queryChangeInfo(); //飞机改签
@@ -1299,7 +1316,7 @@ export default {
           if (this.actinst == 1) {
             this.orderstatuselist = this.planestaust; //展示国内机票状态
           } else if (this.actinst == 'tra') {
-            this.orderstatuselist = this.trainstaus; //展示火车票状态
+            this.orderstatuselist = arrType; //展示火车票状态
           }
           this.queryOrders()
         } else {
@@ -1312,7 +1329,7 @@ export default {
             }
           } else if (this.ordertypels == 1) {
             if (this.actinst == 1) { //飞机退票查询
-              this.orderstatuselist = this.planestaustp; //展示国内机票改签单状态
+              this.orderstatuselist = planeRecedeStatus; //展示国内机票改签单状态
             }
           }
         }
@@ -1344,14 +1361,14 @@ export default {
       this.disablet = false;
       if (it == 1 || it == '1') {
         this.titleds = "出行日期";
-        this.orderstatuselist = this.planestaus; //展示国内机票状态
+        this.orderstatuselist = planeStatus //展示国内机票状态
       } else if (it == 'tra') {
         this.titleds = "出行日期";
-        this.orderstatuselist = this.trainstaus; //展示火车票状态
+        this.orderstatuselist = arrType; //展示火车票状态
       } else if (it == 4 || it == '4') {
         this.titleds = "入住日期";
         this.disablet = true;
-        this.orderstatuselist = this.hotelstaus; //展示酒店状态
+        this.orderstatuselist = hotellStatusTow; //展示酒店状态
       }
       this.curPages = 1; //几页
       this.currentPage3 = 1;
@@ -1371,27 +1388,27 @@ export default {
         this.queryOrders();
       }
     },
-    hotelstatusimg(st) {
-      if (st == 650) {
-        return '../../../static/image/home/To-audit.png'
-      } else if (st == 100) {
-        return '../../../static/image/home/processing.png'
-      } else if (st == 115) {
-        return '../../../static/image/home/Pending.png'
-      } else if (st == 101) {
-        return '../../../static/image/home/订单-预定成功.png'
-      } else if (st == 102) {
-        return '../../../static/image/home/Order-failed.png'
-      } else if (st == 400) {
-        return '../../../static/image/home/Cancelled.png'
-      } else if (st == 401) {
-        return '../../../static/image/home/Canceled.png'
-      } else if (st == 121) {
-        return '../../../static/image/home/Approval-refused.png'
-      } else if (st == 122) {
-        return '../../../static/image/home/Building-successful.png'
-      }
-    },
+    // hotelstatusimg(st) {
+    //   if (st == 650) {
+    //     return '../../../static/image/home/To-audit.png'
+    //   } else if (st == 100) {
+    //     return '../../../static/image/home/processing.png'
+    //   } else if (st == 115) {
+    //     return '../../../static/image/home/Pending.png'
+    //   } else if (st == 101) {
+    //     return '../../../static/image/home/book-successfully.png'
+    //   } else if (st == 102) {
+    //     return '../../../static/image/home/Order-failed.png'
+    //   } else if (st == 400) {
+    //     return '../../../static/image/home/Cancelled.png'
+    //   } else if (st == 401) {
+    //     return '../../../static/image/home/Canceled.png'
+    //   } else if (st == 121) {
+    //     return '../../../static/image/home/Approval-refused.png'
+    //   } else if (st == 122) {
+    //     return '../../../static/image/home/Building-successful.png'
+    //   }
+    // },
     beginDate() {
       const self = this;
       return {
@@ -1794,6 +1811,7 @@ export default {
             }
 
             .trbtend {
+              min-width: 73px;
               height: 80px;
               display: flex;
               position: relative;
@@ -1801,6 +1819,11 @@ export default {
               justify-content: center;
               align-items: center;
               margin-right: 34px;
+              &>.imgT{
+                  width: 90px;
+                  margin-right: -11px;
+                  // height: 73px;
+              }
               .statusx {
                 display: flex;
                 align-items: center;

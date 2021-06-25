@@ -34,35 +34,37 @@
               </el-select>
             </div>
           </div>
-          <div class="boxinput" v-if="businesstripType === 1">
+          <div class="boxinput"  v-if="businesstripType === 1">
             <div class="iconfont icon">
               &#xe8a4;
             </div>
             <div class="box_lef">
               出差预定
             </div>
-            <div class="inputsflor">&emsp;
-              <el-select v-model="bookingType" placeholder="请选择" @change="chans" class="select">
-                <el-option v-for="item in Booking" :key="item.id" :label="item.label" :value="item.id">
+            <div class="inputsflor" >&emsp;
+              <el-select v-model="bookingType" placeholder="请选择" @change="chans" @visible-change="chansClick"  class="select">
+                <el-option v-for="item in Booking" :key="item.id" :label="item.label" :value="item.id" >
                 </el-option>
               </el-select>
             </div>
           </div>
           <div class="vlislit" v-if="popvidshow">
-            <div class='popContainer' v-if="popvidshow"></div>
-            <div class="talist" v-for="(item, index) in stlistlist" :key="index" @click="adduslit(item)">
-              <div class="tl_left">
-                <div class="tl_tops">
-                  <div class="tl_rightl">[机票]</div>
-                  <div class="tl_rights">{{ item.citys.deptCityName }} - {{ item.citys.arrivCityName }}</div>
+            <div class='popContainer' v-if="popvidshow" @click="popvidFals()"></div>
+            <div class="talistList">
+              <div class="talist" v-for="(item, index) in stlistlist" :key="index" @click="adduslit(item)">
+                <div class="tl_left">
+                  <div class="tl_tops">
+                    <div class="tl_rightl">[机票]</div>
+                    <div class="tl_rights" v-if="item.citys">{{ item.citys.deptCityName }} - {{ item.citys.arrivCityName }}</div>
+                  </div>
+                  <div class="tl_bots" v-if="item.citys != null">
+                    出发日期：{{ item.citys.deptDate.substring(0, 10) }}
+                  </div>
+                  <div class="tl_botsb">出差事由：{{ item.reson }}</div>
                 </div>
-                <div class="tl_bots" v-if="item.citys != null">
-                  出发日期：{{ item.citys.deptDate.substring(0, 10) }}
+                <div class="tl_right">
+                  <div class="tldv">确定</div>
                 </div>
-                <div class="tl_botsb">出差事由：{{ item.reson }}</div>
-              </div>
-              <div class="tl_right">
-                <div class="tldv">确定</div>
               </div>
             </div>
           </div>
@@ -150,7 +152,7 @@
             <div class="box_lef">
               出行人
             </div>
-            <div class="inputsflor" @click="drawer = true">&emsp;
+            <div class="inputsflor" @click=" bookingType ? '' : drawer = true">&emsp;
               <div class="inconts" v-if="busslist.length == 0">请选择出行人</div>
               <div class="inplis" v-if="busslist.length > 0">{{ buslis(busslist) }}</div>
             </div>
@@ -162,14 +164,14 @@
             <div class="box_lef">
               乘客人数
             </div>&emsp;
-            <span>成人<el-input class="el_input" v-model="passenger.adult" oninput="value=value.replace(/[^\d]/g,'')"
+            <span>成人<el-input class="el_input" v-model="cr_per" oninput="value=value.replace(/[^\d]/g,'')"
                               placeholder="0" maxlength="3"></el-input>
 							人</span>
-            <span class="boxinput_span">小孩<el-input class="el_input" v-model="passenger.child"
+            <span class="boxinput_span">小孩<el-input class="el_input" v-model="xr_per"
                                                     oninput="value=value.replace(/[^\d]/g,'')"
                                                     placeholder="0" maxlength="3"></el-input>
 							人</span>
-            <span class="boxinput_span">婴儿<el-input class="el_input" v-model="passenger.baby"
+            <span class="boxinput_span">婴儿<el-input class="el_input" v-model="yr_per"
                                                     oninput="value=value.replace(/[^\d]/g,'')"
                                                     placeholder="0" maxlength="3"></el-input>
 							人</span>
@@ -192,6 +194,25 @@
             </div>
             <el-input v-model="contactPersonIphone" placeholder="请填写联系人电话" maxlength="11"></el-input>
           </div>
+          <div class="boxinput"   v-for="(itemL, index) in bookingChang"
+                :key="index">
+            <div class="iconfont icon">
+              &#xe8a4;
+            </div>
+            <div class="box_left_iphone">
+              <span>{{itemL.name}}</span>
+              <span>证件号码</span>             
+            </div>
+           <el-select placeholder="请选择证件" class="seachNo" v-model="itemL.valFlag" @change="certifChang">
+                  <el-option
+                    v-for="item in itemL.certificateList"
+                    :key="item.id"
+                    :label="item.car"
+                    :value="item.id">
+                  </el-option>
+                </el-select>
+          </div>
+
           <div class="boxinput " style="min-height: 200px">
             <div class="box_cen">
               备注
@@ -212,10 +233,14 @@
 
 <script>
 import passage from '@/components/common/passenger'
+import { catypeEn } from "@/utils/common-filters";
 import addcity from '@/components/common/applicataddcity'
 import citysearch from '@/components/common/citycomponents.vue';
-
+let ip_test = /^[1][3456789][0-9]{9}$/; //电话号码正则
 export default {
+  filters: {
+    catypeEn
+  },
   data() {
     return {
       pickerOptions: {
@@ -295,7 +320,11 @@ export default {
       citylist: [],
       businesstripType: '', //因公 or 因私
       airlines: null,
-      airlinesValue: ''
+      airlinesValue: '',
+      bookingChang:'', // 事前出行人信息
+      cr_per:0,
+      xr_per:0,
+      yr_per:0,
     }
 
   },
@@ -306,7 +335,9 @@ export default {
   },
   mounted() {
     let datas = JSON.parse(sessionStorage.getItem('userinfost')); //检验是否是登录状态
-    if (datas) {
+    this.contactPersonName =  datas.user.name
+    this.contactPersonIphone =  datas.user.phone
+   if (datas) {
       if (this.busslist.length == 0) {
         this.busslist = [{
           istrue: 1,
@@ -333,7 +364,9 @@ export default {
         this.appli = this.applicantlist[0];
         this.$api.order.queryAirlineList().then(res => {
           if (res.code == 200) {
-            this.airlines = [];
+            this.airlines = [
+              {value:'',label:'不限'}
+            ];
             let data = res.data.airlineDds;
             for (let i in data) {
               this.airlines.push({
@@ -345,10 +378,27 @@ export default {
         })
       }
     }
+    this.getPassengerL([datas.passengerVo.id])
     this.routs();
   },
   methods: {
-    addIntentionList() {
+   chansClick(va){
+      if(va == true){
+        if(this.bookingType == 1){
+          this.bookingType = ''
+          }  
+      }else{
+        if(this.issera){
+         this.bookingType = this.issera ? 1: 0
+        }
+      }
+     
+    },
+    popvidFals(){
+      this.popvidshow = false
+       this.bookingType = this.issera ? 1: 0
+    },
+      addIntentionList() {
       let businesstripType = this.businesstripType; //因公or因私
       let bookingType = this.bookingType; //出差预订
       let passengerTicket = this.passengerTicket; //目的地
@@ -364,6 +414,55 @@ export default {
       let contactPersonIphone = this.contactPersonIphone; // 联系人电话
       let remarks = this.remarks; //备注
 
+
+      if (businesstripType == '') {
+        this.$message.warning('请选择申请类型！');
+        return;
+      }
+      if (bookingType === '' && businesstripType === 1) {
+        this.$message.warning('请选择出差类型！')
+        return;
+      }
+      if (passengerTicket.length < 2 || passengerTicket[1].name == "" && passengerTicket[1].id == "") {
+        this.$message.warning('请选择目的地！');
+        return;
+      }
+      if (passengerTicket[0].name ==  passengerTicket[1].name) {
+        this.$message.warning('目的地与到达城市不能是同一个');
+        return;
+      }
+      if (earliest === '') {
+        this.$message.warning('请选择最早出发时间！');
+        return;
+      }
+      if (latest === '') {
+        this.$message.warning('请选择最晚出发时间！');
+        return;
+      }
+      if (cabinValue === '') {
+        this.$message.warning('请选择舱位等级！');
+        return;
+      }
+      // if (airlinesValue === '') {
+      //   this.$message.warning('请选择航司！');
+      //   return;
+      // }
+      if (end === '' || sta === '') {
+        this.$message.warning('请填写价格范围！');
+        return;
+      }
+      if (busslist.length === 0) {
+        this.$message.warning('请选择出行人！');
+        return;
+      }
+      if (contactPersonName === '') {
+        this.$message.warning('请填写联系人姓名！');
+        return;
+      }
+      if (contactPersonIphone === '' || !ip_test.test(contactPersonIphone)) {
+        this.$message.warning('请填写联系人电话！');
+        return;
+      }
       let flights = [];
       flights.push({
         depart: passengerTicket[0].id,
@@ -374,64 +473,30 @@ export default {
         maxPrice: end,
         departDate: earliest
       })
-      let peoples = [passenger.adult,
-        passenger.child,
-        passenger.baby
+      let peoples = [this.cr_per,
+        this.xr_per,
+        this.yr_per
       ];
 
-      if (businesstripType == '') {
-        this.$message.warning('请选择申请类型!');
-        return;
-      }
-      if (bookingType === '' && businesstripType === 1) {
-        this.$message.warning('请选择出差类型!')
-        return;
-      }
-      if (end === '' || sta === '') {
-        this.$message.warning('请填写价格范围！');
-        return;
-      }
-      if (passengerTicket.length < 2 || passengerTicket[1].name == "" && passengerTicket[1].id == "") {
-        this.$message.warning('请选择目的地!');
-        return;
-      }
-      if (earliest === '') {
-        this.$message.warning('请选择最早出发时间!');
-        return;
-      }
-      if (latest === '') {
-        this.$message.warning('请选择最晚出发时间!');
-        return;
-      }
-      if (airlinesValue === '') {
-        this.$message.warning('请选择航司！');
-        return;
-      }
-      if (cabinValue === '') {
-        this.$message.warning('请选择舱位等级!');
-        return;
-      }
-      if (busslist.length === 0) {
-        this.$message.warning('请选择出行人!');
-        return;
-      }
-      if (contactPersonName === '') {
-        this.$message.warning('请填写联系人姓名!');
-        return;
-      }
-      if (contactPersonIphone === '') {
-        this.$message.warning('请填写联系人电话！');
-        return;
-      }
       let dat = {};
-      if (bookingType == 0) {
+      console.log("bookingChang-----",this.bookingChang)
+      // if (bookingType == 0) {
         let data = [];
-        for (let i in busslist) {
+        for (let i in this.bookingChang) {
           data.push({
-            name: busslist[i].userName,
-            cardNo: busslist[i].cardNo,
-            cardType: busslist[i].cardType,
-            phone: busslist[i].phone
+            name: this.bookingChang[i].name,
+            cardNo: this.bookingChang[i].cardNo,
+            cardType: this.bookingChang[i].cardType,
+            phone: this.bookingChang[i].phone,
+            passengerNo:this.bookingChang[i].passengerNo,
+            costcenterName: this.bookingChang[i].costcenterName,//成本中心
+            deptName: this.bookingChang[i].deptName,//部门
+            gender: this.bookingChang[i].gender,//性别
+            ageType:this.bookingChang[i].ageType,//乘客类型
+            birthday: this.bookingChang[i].birthdate,//生日
+            deptId : this.bookingChang[i].deptId,
+            userId : this.bookingChang[i].id,
+            tempPerson : this.bookingChang[i].employeeType
           })
           dat = {
             travelType: businesstripType,
@@ -445,19 +510,25 @@ export default {
             remark: remarks
           }
         }
-      } else {
-        dat = {
-          travelType: businesstripType,
-          flights: flights,
-          serviceLevel: cabinValue,
-          airline: airlinesValue,
-          peoples: peoples,
-          travelerNo: this.passengers[0].travelNo,
-          contacts: contactPersonName,
-          contactPhone: contactPersonIphone,
-          remark: remarks
+        if (bookingType != 0) {
+          dat["travelerNo"] =  this.passengers[0].travelNo
+          dat["vehicleId"] =  this.passengers[0].vehicleId
+          dat["vehicleBack"] = ''
+          // dat["vehicleIdBack"] = this.bookingChang[i].vehicleIdBack
         }
-      }
+      // } else {
+      //   dat = {
+      //     travelType: businesstripType,
+      //     flights: flights,
+      //     serviceLevel: cabinValue,
+      //     airline: airlinesValue,
+      //     peoples: peoples,
+      //     travelerNo: this.passengers[0].travelNo,
+      //     contacts: contactPersonName,
+      //     contactPhone: contactPersonIphone,
+      //     remark: remarks
+      //   }
+      // }
       this.$api.intentionlist.addRequire(dat).then(res => {
         if (res.code == 200) {
           this.$message.success('提交成功,工作人员会及时联系你');
@@ -483,6 +554,7 @@ export default {
       this.passengerTicket = va;
     },
     async routs() { //出差预订信息
+  
       try {
         this.stlistlist = [];
         let res = await this.$api.home.getAgreeApprvTask({
@@ -490,11 +562,12 @@ export default {
         });
         if (res.code == 200) {
           let dat = res.data;
+          
           for (let i in dat) {
-            for (let k in dat[i].tmsGssLink.applyStaffs) {
+            for (let k in dat[i].tmsGssLink.applyVehicles) {
               let datd = dat[i].tmsGssLink.applyVehicles[k];
               this.stlistlist.push({
-                id: dat[i].tmsGssLink.applyVehicles[k].id,
+                id: dat[i].tmsGssLink.applyVehicles[k]?dat[i].tmsGssLink.applyVehicles[k].id:'',
                 reson: dat[i].reason, //出差事由
                 citys: datd, //出差信息
                 nams: dat[i].tmsGssLink.applyStaffs, //出差人
@@ -508,6 +581,7 @@ export default {
                 }
               });
             }
+           
           }
         } else {
           this.$message({
@@ -525,7 +599,6 @@ export default {
     },
 
     adduslit(item) {
-
       //选择当前出差单
       let vehicleIds = 0;
       this.citylist = [{
@@ -537,6 +610,7 @@ export default {
       }];
       this.popvidshow = false;
       let userlis = [];
+      var arr = []
       for (var i = 0; i < item.nams.length; i++) {
         //出差人员
 
@@ -550,11 +624,14 @@ export default {
           vehicleId: item.id, //事前出差单id
           vehicleIdBack: vehicleIds //事前往返 返回id
         });
+        arr.push(item.nams[i].passengerNo)
       }
-
       this.issera = true;
+      this.busslist =userlis
       this.passengers = userlis;
       this.mokksli = item.sit;
+      this.getPassengerL(arr)
+
     },
     chans() {
       if (this.bookingType == 0) {
@@ -567,17 +644,19 @@ export default {
           this.popvidshow = false;
           this.bookingType = 0;
         } else {
+          
           this.popvidshow = true;
         }
       }
     },
-    namest(it) {
-      var su = [];
-      for (let k in it) {
-        su.push(it[k].name)
-      }
-      return su.join(',')
-    },
+ 
+    // namest(it) {
+    //   var su = [];
+    //   for (let k in it) {
+    //     su.push(it[k].name)
+    //   }
+    //   return su.join(',')
+    // },
     add(a, b) { //经纬度的 加减乘除
       var c, d, e;
       try {
@@ -613,8 +692,10 @@ export default {
       that.busslist = that.userid_list;
       that.userconlist = [];
       that.costlist = [];
+      var arr = []
       let bnsi = parseInt(100 / that.busslist.length);
       for (let k in that.busslist) {
+        arr.push(that.busslist[k].passengerNo)
         that.userconlist.push({
           name: that.busslist[k].userName,
           passengerNo: that.busslist[k].passengerNo,
@@ -683,6 +764,7 @@ export default {
         costcenterId: datas.passengerVo.costcenterId,
         costcenterName: datas.passengerVo.costcenterName
       }
+      this.getPassengerL(arr)
     },
     setName(datas, value) { //遍历树  获取id数组
       for (var i in datas) {
@@ -730,8 +812,117 @@ export default {
       //禁掉小于当前日期
       var times = Date.now();
       return time.getTime() < times - 8.64e7;
-    }
-  }
+    },
+    // 查看证件数据
+   async getPassengerL(st){
+    //  this.bookingChang = []
+     this.cr_per = 0
+        this.xr_per = 0
+        this.yr_per = 0
+       const res = await this.$api.home
+          .getPassengerListByNos(st)
+          if(res.code != 200) return
+         this.bookingChang = res.data.passList
+      var car = ''
+      var val = ''
+      var valFlag = ''
+      for (let i = 0; i < this.bookingChang.length; i++) {
+        this.bookingChang[i].cardNo = this.bookingChang[i].certificateList[0].cardNo
+        this.bookingChang[i].cardType = this.bookingChang[i].certificateList[0].cardType
+        val = catypeEn(this.bookingChang[i].certificateList[0].cardType)+'  ' + this.bookingChang[i].certificateList[0].cardNo
+        valFlag = catypeEn(this.bookingChang[i].certificateList[0].cardType)+'  ' + this.bookingChang[i].certificateList[0].cardNo
+        this.bookingChang[i]["val"] = val
+        this.bookingChang[i]["valFlag"] = valFlag
+        for (let k = 0; k < this.bookingChang[i].certificateList.length; k++) {
+            car = catypeEn(this.bookingChang[i].certificateList[k].cardType)+'  ' + this.bookingChang[i].certificateList[k].cardNo
+            this.bookingChang[i].certificateList[k] = {...this.bookingChang[i].certificateList[k],'car':car}
+            this.$set(this.bookingChang[i].certificateList[k],'car',car)
+        }
+      let agetys = this.ageData(this.bookingChang[i].birthdate.substring(0,10));
+      this.bookingChang[i]['ageType'] = agetys;//乘客类型
+      if(agetys == 'ADT'){
+        this.cr_per++;
+      } else if(agetys == 'CHD'){
+        this.xr_per++;
+      } else if(agetys == 'INF'){
+        this.yr_per++;
+      }
+      }
+    },
+        // 切换证件信息  并且改变数据里面的值
+    certifChang(value){
+        for (let i = 0; i < this.bookingChang.length; i++) {
+          for (let k = 0; k < this.bookingChang[i].certificateList.length; k++) {
+            if( this.bookingChang[i].certificateList[k].id == value){
+                      this.bookingChang[i].cardNo = this.bookingChang[i].certificateList[k].cardNo
+                      this.bookingChang[i].cardType = this.bookingChang[i].certificateList[k].cardType
+            }
+          }
+      }
+      this.$forceUpdate()
+    },
+    ageData(no){
+      let nums  = this.jsGetAge(no)
+      if(nums <= 2){
+        return 'INF'
+      }else if(2 < nums && nums < 12){
+        return 'CHD'
+      }else if( nums > 12){
+        return 'ADT'
+      }
+    },
+/*根据出生日期算出年龄*/
+ jsGetAge(strBirthday){       
+     var returnAge;
+     var strBirthdayArr=strBirthday.split("-");
+     var birthYear = strBirthdayArr[0];
+     var birthMonth = strBirthdayArr[1];
+     var birthDay = strBirthdayArr[2];
+     
+     var d = new Date();
+     var nowYear = d.getFullYear();
+     var nowMonth = d.getMonth() + 1;
+     var nowDay = d.getDate();
+     
+     if(nowYear == birthYear){
+         returnAge = 0;//同年 则为0岁
+     }
+     else{
+         var ageDiff = nowYear - birthYear ; //年之差
+         if(ageDiff > 0){
+             if(nowMonth == birthMonth) {
+                 var dayDiff = nowDay - birthDay;//日之差
+                 if(dayDiff < 0)
+                 {
+                     returnAge = ageDiff - 1;
+                 }
+                 else
+                 {
+                     returnAge = ageDiff ;
+                 }
+             }
+             else
+             {
+                 var monthDiff = nowMonth - birthMonth;//月之差
+                 if(monthDiff < 0)
+                 {
+                     returnAge = ageDiff - 1;
+                 }
+                 else
+                 {
+                     returnAge = ageDiff ;
+                 }
+             }
+         }
+         else
+         {
+             returnAge = -1;//返回-1 表示出生日期输入错误 晚于今天
+         }
+     }
+     
+     return returnAge;//返回周岁年龄
+     
+ },  }
 }
 </script>
 
@@ -816,15 +1007,22 @@ export default {
     z-index: 2801;
     cursor: pointer;
     overflow: auto;
+    .talistList{
+      position: fixed;
+       z-index: 300;
+       max-height: 300px;
+       overflow-y: scroll;
+        &::-webkit-scrollbar-thumb {
+          background-color: #fff !important;
+        }
 
     .talist {
-      position: fixed;
       width: 250px;
       border: 1px solid #898989;
       padding: 10px 0;
       border-radius: 6px;
       display: flex;
-      z-index: 300;
+      margin-bottom: 10px;
       background: #FFFFFF;
 
       .tl_left {
@@ -890,6 +1088,7 @@ export default {
           border-radius: 30px;
         }
       }
+    }
     }
   }
 
@@ -971,7 +1170,13 @@ export default {
           }
 
           .box_left_iphone {
-            width: 120px;
+            width: 160px;
+            &>span{
+              margin-right: 10px;
+            }
+            &>span:nth-child(1){
+              color:#007AFF ;
+            }
           }
 
           .boxinput_span {
@@ -1007,12 +1212,12 @@ export default {
               border: 0;
             }
 
-            input::-webkit-input-placeholder {
-              /* 修改字体颜色 */
-              color: #e5e5e5;
-              /* 修改字号，默认继承input */
-              font-size: 14px;
-            }
+            // input::-webkit-input-placeholder {
+            //   /* 修改字体颜色 */
+            //   color: #e5e5e5;
+            //   /* 修改字号，默认继承input */
+            //   font-size: 14px;
+            // }
 
             .datsto {
               font-size: 12px;
@@ -1087,5 +1292,8 @@ export default {
       }
     }
   }
+}
+/deep/ .seachNo{
+  width: 320px;
 }
 </style>

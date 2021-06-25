@@ -1,4 +1,5 @@
 <template>
+<!-- 我的订单->机票订单->退票单详情 -->
 	<div class="hoteorder" v-loading="loading" v-if="dtolist.status">
 		<div class="hotboxs">
 			<div class="hotboxe">
@@ -8,12 +9,12 @@
 				<div>申请时间：{{dtolist.createTime}}</div>
 			</div>
 			<div class="hotboxse">
-						<img :src="conpan(orderStatus)" alt="">
+						<img :src="orderStatus | planeRecedeConpan" alt="">
 			</div>
 		</div>
 		<div class="hotbox" style="padding-top: 40px;">
 			<div v-for="(item,index) in orderDetailListy" :key="index" style="width: 100%;border-bottom: 1px solid #f2f2f2;display: flex;align-items: center;">
-					<div class="" style="width: 50%;">
+					<div   style="width: 50%;">
 						<div style="display: flex;">
 							<div v-if="index == 0" style="width: 5%;"><img src="../../../../../static/image/home/go.png"/></div>
 							<div v-if="index == 1" style="width: 5%;"><img src="../../../../../static/image/home/return.png"/></div>
@@ -22,8 +23,8 @@
 						</div>
 					</div>
 					<div style="width: 50%;display: flex;align-items: center;">
-						<div class="" style="font-size: 15px;width: 25%;line-height: 120px;text-align: center;"	>
-							<span style="">{{citys(item.city.depart)}}{{item.city.departTerminal}}</span>
+						<div   style="font-size: 15px;width: 25%;line-height: 120px;text-align: center;"	>
+							<span style="">{{item.city.depart | cityName}}{{item.city.departTerminal}}</span>
 						</div>
 						<div style="width: 50%;text-align: center;text-align: center;">
 							<div style="font-size: 14px; color: #333333;">
@@ -36,20 +37,21 @@
 								{{item.city.flightNo}}
 							</div>
 						</div>
-						<div style="width: 25%;line-height: 120px;text-align: center;">
-							<span>{{citys(item.city.arrive)}}{{item.city.arriveTerminal}}</span>
+						<div style="font-size: 15px;width: 25%;line-height: 120px;text-align: center;">
+							<span>{{item.city.arrive | cityName}}{{item.city.arriveTerminal}}</span>
 						</div>
 					</div>
 				</div>
 				<div style="width: 100%;background: #f2f2f2;color: #333333;font-size: 14px;font-weight: bolder;text-indent: 10px;">乘机人信息</div>
-					<div v-for="(item,index) in newuserlist" :key="index" style="width: 100%;color: #333333;text-indent: 96px;margin-top: 20px;font-size: 14px;">
-						<span style="width: 20%;">姓名：{{item.name}}</span>
+					<div v-for="(liat,indexS) in newuserlist" :key="'it-' + indexS" style="width: 100%;color: #333333;margin-top: 20px;font-size: 14px;">
+						<span style="width: 20%;">姓名：{{liat.name}}</span>
 						<span style="padding: 20px;">出差事由：{{Reason}}</span>
-						<span style="padding: 20px;">服务费：{{item.refundTips}} 元</span>
-						<span style="padding: 20px;">手续费：{{(item.tips + item.refundFee)}} 元</span>
-						<span style="padding: 20px;" v-if="item.refundAmount != null">实际应退：{{item.refundAmount}} 元</span>
-						<span style="width: 30%;">{{catype(item.cardType)}}：{{item.cardNo}}</span>
-						<span style="padding: 20px; color: #007aff;">{{userstatus(item.status)}}</span>
+						<span style="padding: 20px;">服务费：{{liat.refundTips}} 元</span>
+						<span style="padding: 20px;">手续费：{{(liat.tips + liat.refundFee)}} 元</span>
+						<span style="padding: 20px;" v-if="liat.refundAmount != null">实际应退：{{liat.refundAmount}} 元</span>
+						<span style="width: 30%;">{{liat.cardType | catypeEn}}：{{liat.cardNo | numberPapers}}</span>
+						<span style="padding: 20px;">票号：{{liat.ticketNo}}</span>
+						<span style="padding: 20px; color: #007aff;">{{liat.status | userstatus}}</span>
 					</div>
 		</div>
 		<div class="hotbox" v-if="orderStatus== 3">
@@ -67,7 +69,11 @@
 
 <script>
 	import airports from '../../../../../static/js/airports.js'
+	import { userstatus , catypeEn,numberPapers,planeRecedeStatus,planeRecedeConpan,cityName } from "@/utils/common-filters";
 	export default {
+		filters:{
+			userstatus,catypeEn,numberPapers,planeRecedeStatus,planeRecedeConpan,cityName
+		},
 		data() {
 			return {
 				newuserlist: [], //乘客信息
@@ -79,34 +85,34 @@
 				shos: false,
 				orderStatus: '', //订单状态
 				userlist: [], //乘客列表
-				stlist: [{
-					name: '新申请',
-					id: 1
-				}, {
-					name: ':已取消',
-					id: 2
-				}, {
-					name: '待审批',
-					id: 3
-				}, {
-					name: '已拒绝',
-					id: 4
-				}, {
-					name: '待提交',
-					id: 5
-				}, {
-					name: '已提交',
-					id: 6
-				}, {
-					name: '已完成',
-					id: 7
-				}, {
-					name: '待客户审核',
-					id: 8
-				}, {
-					name: '已驳回',
-					id: 9
-				}],
+				// stlist: [{
+				// 	name: '新申请',
+				// 	id: 1
+				// }, {
+				// 	name: ':已取消',
+				// 	id: 2
+				// }, {
+				// 	name: '待审批',
+				// 	id: 3
+				// }, {
+				// 	name: '已拒绝',
+				// 	id: 4
+				// }, {
+				// 	name: '待提交',
+				// 	id: 5
+				// }, {
+				// 	name: '已提交',
+				// 	id: 6
+				// }, {
+				// 	name: '已完成',
+				// 	id: 7
+				// }, {
+				// 	name: '待客户审核',
+				// 	id: 8
+				// }, {
+				// 	name: '已驳回',
+				// 	id: 9
+				// }],
 				vid: 0,
 				codes: 0,
 				dis: false,
@@ -126,32 +132,32 @@
 			this.searchhoter();
 		},
 		methods: {
-			catype(it){//返回证件类型
-				if(it == 'NI'){
-					return '身份证'
-				} else if(it == 'PP'){
-					return '护照'
-				} else if(it == 'TB'){
-					return '台胞证'
-				} else if(it == 'GA'){
-					return '港澳通行证'
-				} else if(it == 'HX'){
-					return '回乡证'
-				} else if(it == 'OS'){
-					return '其他证件'
-				}
-			},
-			userstatus(it) { //乘客当前状态
-				if (it == 0) {
-					return '已取消'
-				} else if (it == 1) {
-					return '正常'
-				} else if (it == 2) {
-					return '改签'
-				} else if (it == 3) {
-					return '废退'
-				}
-			},
+			// catypeEn(it){//返回证件类型
+			// 	if(it == 'NI'){
+			// 		return '身份证'
+			// 	} else if(it == 'PP'){
+			// 		return '护照'
+			// 	} else if(it == 'TB'){
+			// 		return '台胞证'
+			// 	} else if(it == 'GA'){
+			// 		return '港澳通行证'
+			// 	} else if(it == 'HX'){
+			// 		return '回乡证'
+			// 	} else if(it == 'OS'){
+			// 		return '其他证件'
+			// 	}
+			// },
+			// userstatus(it) { //乘客当前状态
+			// 	if (it == 0) {
+			// 		return '已取消'
+			// 	} else if (it == 1) {
+			// 		return '正常'
+			// 	} else if (it == 2) {
+			// 		return '改签'
+			// 	} else if (it == 3) {
+			// 		return '废退'
+			// 	}
+			// },
 			busdate(num,num1){//总时长
 				let st = Date.parse(new Date(num.replace(/-/g, '/')));
 				let st1 = Date.parse(new Date(num1.replace(/-/g, '/')));
@@ -165,65 +171,65 @@
 					return hours + '时'
 				}
 			},
-			citys(its) { //回显城市
-				for (let j = 0; j < this.address.length; j++) { //循环城市
-					if (this.address[j].airportCode == its) {
-						return this.address[j].cityCName
-					}
-				}
-			},
+			// citys(its) { //回显城市
+			// 	for (let j = 0; j < this.address.length; j++) { //循环城市
+			// 		if (this.address[j].airportCode == its) {
+			// 			return this.address[j].cityCName
+			// 		}
+			// 	}
+			// },
 			rest(ite) {
-				let arr = this.stlist;
-				for (let i in arr) {
-					if (arr[i].id == ite) {
-						return arr[i].name
+				
+				for (let i in planeRecedeStatus) {
+					if (planeRecedeStatus[i].id == ite) {
+						return planeRecedeStatus[i].name
 					}
 				}
 			},
-			conpan(ie) {
-				let arr = [{
-							name: '新申请',
-							id: 1,
-							url:'../../../static/image/home/new-application.png'
-						}, {
-							name: ':已取消',
-							id: 2,
-							url:'../../../static/image/home/Canceled.png'
-						}, {
-							name: '待审批',
-							id: 3,
-							url:'../../../static/image/home/Approval-Pending.png'
-						}, {
-							name: '已拒绝',
-							id: 4,
-							url:'../../../static/image/home/Approval-refused.png'
-						}, {
-							name: '待提交',
-							id: 5,
-							url:'../../../static/image/home/check.png'
-						}, {
-							name: '已提交',
-							id: 6,
-							url:'../../../static/image/home/submitted.png'
-						}, {
-							name: '已完成',
-							id: 7,
-							url:'../../../static/image/home/订单-已完成.png'
-						}, {
-							name: '待客户审核',
-							id: 8,
-							url:'../../../static/image/home/待客户审核.png'
-						}, {
-							name: '已驳回',
-							id: 9,
-							url:'../../../static/image/home/been-rejected.png'
-						}]
-				for (let i in arr) {
-					if (arr[i].id == ie) {
-						return arr[i].url
-					}
-				}
-			},
+			// conpan(ie) {
+			// 	let arr = [{
+			// 				name: '新申请',
+			// 				id: 1,
+			// 				url:'../../../static/image/home/new-application.png'
+			// 			}, {
+			// 				name: ':已取消',
+			// 				id: 2,
+			// 				url:'../../../static/image/home/Canceled.png'
+			// 			}, {
+			// 				name: '待审批',
+			// 				id: 3,
+			// 				url:'../../../static/image/home/Approval-Pending.png'
+			// 			}, {
+			// 				name: '已拒绝',
+			// 				id: 4,
+			// 				url:'../../../static/image/home/Approval-refused.png'
+			// 			}, {
+			// 				name: '待提交',
+			// 				id: 5,
+			// 				url:'../../../static/image/home/check.png'
+			// 			}, {
+			// 				name: '已提交',
+			// 				id: 6,
+			// 				url:'../../../static/image/home/submitted.png'
+			// 			}, {
+			// 				name: '已完成',
+			// 				id: 7,
+			// 				url:'../../../static/image/home/订单-已完成.png'
+			// 			}, {
+			// 				name: '待客户审核',
+			// 				id: 8,
+			// 				url:'../../../static/image/home/待客户审核.png'
+			// 			}, {
+			// 				name: '已驳回',
+			// 				id: 9,
+			// 				url:'../../../static/image/home/been-rejected.png'
+			// 			}]
+			// 	for (let i in arr) {
+			// 		if (arr[i].id == ie) {
+			// 			return arr[i].url
+			// 		}
+			// 	}
+			// },
 			async searchhoter() {
 				//查询飞机详情
 				let that = this;
@@ -237,7 +243,7 @@
 					ret = await that.$api.order.queryAirlineList(); //获取航空公司名称
 					that.loading = false;
 					if (res.code == 200) {
-						that.Reason = res.data.saleRefund.reason; //出差事由
+						that.Reason =res.data.saleRefund.reason; //出差事由
 						that.dtolist = res.data.saleRefund; //改签单信息
 						that.hang = ret.data.airlineDds; //航空公司名
 						that.orderStatus = res.data.saleRefund.status; //退费单状态
